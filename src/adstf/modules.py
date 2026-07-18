@@ -1,8 +1,18 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from collections.abc import Callable
+from dataclasses import dataclass, field
 
-from adstf.contracts import ActionType, EvidenceType
+from adstf.contracts import ActionType, EvidenceRecord, EvidenceType
+
+
+EvidenceCriterion = Callable[[list[EvidenceRecord]], bool]
+
+
+@dataclass(frozen=True)
+class VerificationCriterion:
+    name: str
+    evaluate: EvidenceCriterion
 
 
 @dataclass(frozen=True)
@@ -16,6 +26,15 @@ class VulnerabilityModule:
     required_evidence_types: list[EvidenceType]
     requires_control_case: bool
     report_fields: list[str]
+    additional_verification_criteria: list[VerificationCriterion] = field(default_factory=list)
+
+
+def has_browser_execution_signal(evidence: list[EvidenceRecord]) -> bool:
+    return any(
+        item.evidence_type == EvidenceType.BROWSER_OBSERVATION
+        and item.attributes.get("execution_marker_observed") is True
+        for item in evidence
+    )
 
 
 def mvp_modules() -> dict[str, VulnerabilityModule]:
@@ -40,6 +59,12 @@ def mvp_modules() -> dict[str, VulnerabilityModule]:
             ],
             requires_control_case=True,
             report_fields=["payload_marker", "execution_signal", "control_case"],
+            additional_verification_criteria=[
+                VerificationCriterion(
+                    name="has_browser_execution_signal",
+                    evaluate=has_browser_execution_signal,
+                )
+            ],
         ),
         VulnerabilityModule(
             module_id="access.idor_read_only",

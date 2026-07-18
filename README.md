@@ -26,6 +26,8 @@ This project is intended only for ethical, authorized security research in contr
 - The mock dry run uses mock actions only.
 - The DVWA smoke command performs one local in-scope HTTP request and one blocked out-of-scope request. It does not produce vulnerability findings.
 - The reflected-XSS integration logs into local DVWA, uses a safe JavaScript marker assignment, verifies actual browser execution, runs a benign control case, and records artifacts through the existing verifier lifecycle.
+- Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
+- Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
 
 ## Setup

@@ -9,9 +9,12 @@ from urllib.parse import quote
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from playwright.sync_api import sync_playwright
 
+from adstf.browser import BrowserExecutor
 from adstf.config import load_target_config
 from adstf.contracts import (
     ActionRequest,
+    ActionResult,
+    ActionStatus,
     ActionType,
     EvidenceRecord,
     EvidenceType,
@@ -79,28 +82,45 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
     xss_action = _browser_action(
         run_id,
         xss_url,
+        marker,
+        "xss-execution",
         "Submit safe reflected-XSS marker payload and observe browser execution.",
     )
     control_action = _browser_action(
         run_id,
         control_url,
+        None,
+        "xss-control",
         "Submit benign reflected-XSS control marker and confirm no execution.",
     )
     store.save_action_request(xss_action)
     store.save_action_request(control_action)
-
-    for action in (xss_action, control_action):
-        decision = safety.evaluate(action)
-        if not decision.approved:
-            store.save_report(render_placeholder_report(target, []))
-            raise RuntimeError("Browser action blocked by safety boundary: " + "; ".join(decision.reasons))
 
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=headless)
         context = browser.new_context(base_url=target.base_url)
         try:
             page = context.new_page()
-            _login_to_dvwa(page, target.base_url, username, password)
+            login_action = _login_action(run_id, target.base_url)
+            store.save_action_request(login_action)
+            login_observation = _login_to_dvwa(page, target.base_url, username, password)
+            login_evidence = _evidence(
+                run_id=run_id,
+                source="dvwa_xss_reflected",
+                evidence_type=EvidenceType.SESSION_CONTEXT,
+                target_ref=f"{target.base_url}/login.php",
+                summary="DVWA benchmark test user authenticated successfully.",
+                related_action_ids=[login_action.action_id],
+                attributes={
+                    "username": username,
+                    "final_url": login_observation["final_url"],
+                    "authenticated": login_observation["authenticated"],
+                    "password_redacted": True,
+                },
+            )
+            store.save_evidence(login_evidence)
+            store.save_action_result(_action_result(login_action, login_evidence, login_observation))
+
             context.add_cookies(
                 [
                     {
@@ -110,44 +130,32 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
                     }
                 ]
             )
-
-            xss_observation = _observe_url(page, xss_url, marker, "__adstfXssMarker")
-            xss_screenshot = store.save_artifact_bytes(
-                "xss-execution.png",
-                page.screenshot(full_page=True),
+            security_evidence = _evidence(
+                run_id=run_id,
+                source="dvwa_xss_reflected",
+                evidence_type=EvidenceType.VERIFICATION_NOTE,
+                target_ref=target.base_url,
+                summary="DVWA benchmark security level set to low in isolated browser context.",
+                related_action_ids=[login_action.action_id],
+                attributes={"security_level": "low", "scope": "browser_context_cookie"},
             )
-            xss_html = store.save_artifact_text("xss-execution.html", page.content())
+            store.save_evidence(security_evidence)
 
-            control_observation = _observe_url(page, control_url, marker, "__adstfXssMarker")
-            control_screenshot = store.save_artifact_bytes(
-                "xss-control.png",
-                page.screenshot(full_page=True),
-            )
-            control_html = store.save_artifact_text("xss-control.html", page.content())
+            browser_executor = BrowserExecutor(safety, store)
+            xss_result, xss_evidence = browser_executor.observe(xss_action, page)
+            control_result, control_observation_evidence = browser_executor.observe(control_action, page)
         finally:
             context.close()
             browser.close()
 
-    now = datetime.now(UTC).isoformat()
-    xss_evidence = EvidenceRecord(
-        evidence_id=new_id("evidence"),
-        run_id=run_id,
-        source="dvwa_xss_reflected",
-        evidence_type=EvidenceType.BROWSER_OBSERVATION,
-        target_ref=xss_url,
-        created_at=now,
-        summary="Browser observed reflected-XSS execution marker after payload navigation.",
-        data_ref=str(xss_screenshot.relative_to(store.run_dir)),
-        redaction_status=RedactionStatus.ABSENT,
-        related_action_ids=[xss_action.action_id],
-        attributes={
-            "execution_marker_observed": xss_observation["execution_marker_observed"],
-            "marker": marker,
-            "url": xss_url,
-            "html_artifact": str(xss_html.relative_to(store.run_dir)),
-            "screenshot_artifact": str(xss_screenshot.relative_to(store.run_dir)),
-        },
-    )
+    store.save_evidence(xss_evidence)
+    store.save_evidence(control_observation_evidence)
+    store.save_action_result(xss_result)
+    store.save_action_result(control_result)
+    if xss_result.status != ActionStatus.EXECUTED or control_result.status != ActionStatus.EXECUTED:
+        store.save_report(render_placeholder_report(target, []))
+        raise RuntimeError("Browser observation failed or was blocked by safety boundary.")
+
     control_evidence = EvidenceRecord(
         evidence_id=new_id("evidence"),
         run_id=run_id,
@@ -156,16 +164,17 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
         target_ref=control_url,
         created_at=datetime.now(UTC).isoformat(),
         summary="Benign control marker did not set the browser execution marker.",
-        data_ref=str(control_screenshot.relative_to(store.run_dir)),
+        data_ref=control_observation_evidence.data_ref,
         redaction_status=RedactionStatus.ABSENT,
         related_action_ids=[control_action.action_id],
         attributes={
             "is_control_case": True,
-            "control_case_passed": control_observation["execution_marker_observed"] is False,
-            "execution_marker_observed": control_observation["execution_marker_observed"],
+            "control_case_passed": control_observation_evidence.attributes["execution_marker_observed"] is False,
+            "execution_marker_observed": control_observation_evidence.attributes["execution_marker_observed"],
             "control_marker": control_marker,
-            "html_artifact": str(control_html.relative_to(store.run_dir)),
-            "screenshot_artifact": str(control_screenshot.relative_to(store.run_dir)),
+            "control_observation_evidence": control_observation_evidence.evidence_id,
+            "html_artifact": control_observation_evidence.attributes["html_artifact"],
+            "screenshot_artifact": control_observation_evidence.attributes["screenshot_artifact"],
         },
     )
     verification_note = EvidenceRecord(
@@ -182,16 +191,8 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
         attributes={"payload_family": "safe_marker_assignment", "no_cookie_access": True},
     )
 
-    for evidence in (*smoke_evidence, xss_evidence, control_evidence, verification_note):
-        if evidence not in smoke_evidence:
-            store.save_evidence(evidence)
-
-    store.save_action_result(
-        _browser_result(xss_action, xss_evidence.evidence_id, xss_observation, "executed")
-    )
-    store.save_action_result(
-        _browser_result(control_action, control_evidence.evidence_id, control_observation, "executed")
-    )
+    store.save_evidence(control_evidence)
+    store.save_evidence(verification_note)
 
     finding = FindingRecord(
         finding_id=new_id("finding"),
@@ -205,7 +206,10 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
         created_by="dvwa_xss_reflected",
         supporting_evidence_refs=[
             smoke_evidence[0].evidence_id,
+            login_evidence.evidence_id,
+            security_evidence.evidence_id,
             xss_evidence.evidence_id,
+            control_observation_evidence.evidence_id,
             control_evidence.evidence_id,
             verification_note.evidence_id,
         ],
@@ -225,7 +229,15 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
     store.save_finding(requested)
     verifier_result = FindingVerifier(modules).verify(
         requested,
-        [*smoke_evidence, xss_evidence, control_evidence, verification_note],
+        [
+            *smoke_evidence,
+            login_evidence,
+            security_evidence,
+            xss_evidence,
+            control_observation_evidence,
+            control_evidence,
+            verification_note,
+        ],
     )
     store.save_verifier_result(verifier_result)
     verified = apply_verifier_result(requested, verifier_result)
@@ -246,7 +258,13 @@ def _configured_user(test_users: dict[str, str]) -> tuple[str, str]:
     return username, password
 
 
-def _browser_action(run_id: str, url: str, rationale: str) -> ActionRequest:
+def _browser_action(
+    run_id: str,
+    url: str,
+    expected_marker: str | None,
+    artifact_prefix: str,
+    rationale: str,
+) -> ActionRequest:
     return ActionRequest(
         action_id=new_id("action"),
         run_id=run_id,
@@ -255,7 +273,13 @@ def _browser_action(run_id: str, url: str, rationale: str) -> ActionRequest:
         action_type=ActionType.OBSERVE_BROWSER,
         target_ref=url,
         scope_context={},
-        parameters={"url": url},
+        parameters={
+            "url": url,
+            "marker_variable": "__adstfXssMarker",
+            "expected_marker": expected_marker,
+            "artifact_prefix": artifact_prefix,
+            "summary": "Browser observed reflected-XSS endpoint.",
+        },
         preconditions=["authenticated_dvwa_session", "dvwa_security_low"],
         safety_class=SafetyClass.LOW,
         rationale=rationale,
@@ -263,7 +287,24 @@ def _browser_action(run_id: str, url: str, rationale: str) -> ActionRequest:
     )
 
 
-def _login_to_dvwa(page, base_url: str, username: str, password: str) -> None:
+def _login_action(run_id: str, base_url: str) -> ActionRequest:
+    return ActionRequest(
+        action_id=new_id("action"),
+        run_id=run_id,
+        requested_by="dvwa_xss_reflected",
+        module_id="xss.reflected",
+        action_type=ActionType.AUTHENTICATE_TEST_USER,
+        target_ref=f"{base_url}/login.php",
+        scope_context={},
+        parameters={"url": f"{base_url}/login.php", "username": "configured-test-user"},
+        preconditions=["dvwa_running_locally", "dvwa_database_initialized"],
+        safety_class=SafetyClass.LOW,
+        rationale="Authenticate the configured DVWA benchmark test user.",
+        expected_evidence=[EvidenceType.SESSION_CONTEXT],
+    )
+
+
+def _login_to_dvwa(page, base_url: str, username: str, password: str) -> dict:
     page.goto(f"{base_url}/login.php", wait_until="domcontentloaded")
     try:
         page.fill("input[name='username']", username)
@@ -280,35 +321,46 @@ def _login_to_dvwa(page, base_url: str, username: str, password: str) -> None:
     if "login.php" in page.url:
         raise RuntimeError("DVWA login did not establish an authenticated session")
 
-
-def _observe_url(page, url: str, expected_marker: str, variable_name: str) -> dict:
-    page.add_init_script(f"delete window.{variable_name};")
-    page.goto(url, wait_until="domcontentloaded")
-    if "login.php" in page.url or "setup.php" in page.url:
-        raise RuntimeError(f"DVWA did not allow access to the XSS endpoint; current URL is {page.url}")
-    observed = page.evaluate(f"window.{variable_name} === {expected_marker!r}")
-    return {"url": url, "execution_marker_observed": bool(observed)}
+    return {"final_url": page.url, "authenticated": True}
 
 
-def _browser_result(
-    action: ActionRequest,
-    evidence_id: str,
-    observation: dict,
-    status: str,
-):
-    from adstf.contracts import ActionResult, ActionStatus
-
+def _action_result(action: ActionRequest, evidence: EvidenceRecord, observation: dict) -> ActionResult:
     now = datetime.now(UTC).isoformat()
     return ActionResult(
         action_id=action.action_id,
         run_id=action.run_id,
-        status=ActionStatus(status),
+        status=ActionStatus.EXECUTED,
         started_at=now,
         completed_at=now,
         executor="playwright",
         normalized_observations=observation,
-        evidence_refs=[evidence_id],
+        evidence_refs=[evidence.evidence_id],
         safety_notes=[],
+    )
+
+
+def _evidence(
+    *,
+    run_id: str,
+    source: str,
+    evidence_type: EvidenceType,
+    target_ref: str,
+    summary: str,
+    related_action_ids: list[str],
+    attributes: dict,
+) -> EvidenceRecord:
+    return EvidenceRecord(
+        evidence_id=new_id("evidence"),
+        run_id=run_id,
+        source=source,
+        evidence_type=evidence_type,
+        target_ref=target_ref,
+        created_at=datetime.now(UTC).isoformat(),
+        summary=summary,
+        data_ref=None,
+        redaction_status=RedactionStatus.REDACTED,
+        related_action_ids=related_action_ids,
+        attributes=attributes,
     )
 
 
