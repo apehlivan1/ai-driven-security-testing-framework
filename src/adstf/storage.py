@@ -53,6 +53,18 @@ class RunArtifactStore:
         path.write_text(report_markdown, encoding="utf-8")
         return path
 
+    def save_artifact_bytes(self, name: str, data: bytes) -> Path:
+        path = self.run_dir / "artifacts" / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
+        return path
+
+    def save_artifact_text(self, name: str, data: str) -> Path:
+        path = self.run_dir / "artifacts" / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(data, encoding="utf-8")
+        return path
+
     def _write_json(self, path: Path, value: Any) -> Path:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(

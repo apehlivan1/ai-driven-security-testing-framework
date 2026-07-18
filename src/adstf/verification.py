@@ -64,6 +64,17 @@ class FindingVerifier:
             else:
                 criteria_missing.append("has_passing_control_case")
 
+        if finding.module_id == "xss.reflected":
+            criteria_checked.append("has_browser_execution_signal")
+            if any(
+                item.evidence_type == EvidenceType.BROWSER_OBSERVATION
+                and item.attributes.get("execution_marker_observed") is True
+                for item in relevant
+            ):
+                criteria_satisfied.append("has_browser_execution_signal")
+            else:
+                criteria_missing.append("has_browser_execution_signal")
+
         if any(item.attributes.get("rejects_hypothesis") for item in relevant):
             return VerifierResult(
                 verification_result_id=new_id("verification"),

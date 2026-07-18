@@ -6,7 +6,9 @@
   "allowed_ports": [4280],
   "enabled_modules": ["xss.reflected", "access.idor_read_only", "sqli.boolean"],
   "max_actions": 10,
-  "test_users": {},
+  "test_users": {
+    "admin": "password"
+  },
   "metadata": {
     "benchmark": "DVWA",
     "official_repository": "https://github.com/digininja/DVWA",

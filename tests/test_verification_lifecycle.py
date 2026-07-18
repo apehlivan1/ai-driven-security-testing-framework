@@ -57,7 +57,7 @@ class VerificationLifecycleTests(unittest.TestCase):
     def test_verifies_when_required_evidence_and_control_case_exist(self) -> None:
         records = [
             evidence("e-1", EvidenceType.HTTP_EXCHANGE),
-            evidence("e-2", EvidenceType.BROWSER_OBSERVATION),
+            evidence("e-2", EvidenceType.BROWSER_OBSERVATION, {"execution_marker_observed": True}),
             evidence(
                 "e-3",
                 EvidenceType.COMPARISON_RESULT,
@@ -85,6 +85,23 @@ class VerificationLifecycleTests(unittest.TestCase):
 
         self.assertEqual(result.outcome, VerificationOutcome.INCONCLUSIVE)
         self.assertIn("has_passing_control_case", result.criteria_missing)
+
+    def test_xss_requires_explicit_browser_execution_signal(self) -> None:
+        records = [
+            evidence("e-1", EvidenceType.HTTP_EXCHANGE),
+            evidence("e-2", EvidenceType.BROWSER_OBSERVATION, {"execution_marker_observed": False}),
+            evidence(
+                "e-3",
+                EvidenceType.COMPARISON_RESULT,
+                {"is_control_case": True, "control_case_passed": True},
+            ),
+        ]
+        requested = request_verification(finding(["e-1", "e-2", "e-3"]))
+
+        result = FindingVerifier(mvp_modules()).verify(requested, records)
+
+        self.assertEqual(result.outcome, VerificationOutcome.INCONCLUSIVE)
+        self.assertIn("has_browser_execution_signal", result.criteria_missing)
 
     def test_rejects_when_evidence_contradicts_hypothesis(self) -> None:
         records = [
