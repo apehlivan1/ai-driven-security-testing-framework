@@ -28,6 +28,7 @@ class EvidenceType(StrEnum):
     COMPARISON_RESULT = "comparison_result"
     SESSION_CONTEXT = "session_context"
     RESOURCE_OWNERSHIP = "resource_ownership"
+    ATTACK_SURFACE_CANDIDATE = "attack_surface_candidate"
     VERIFICATION_NOTE = "verification_note"
     BLOCKED_ACTION = "blocked_action"
 

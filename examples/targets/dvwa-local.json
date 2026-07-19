@@ -16,6 +16,7 @@
     "pinned_commit": "a96943dc1f52f390ee5df72144660636c4b7dd06",
     "pinned_release_url": "https://github.com/digininja/DVWA/releases/tag/2.5",
     "local_only": true,
+    "reflected_xss_seed_path": "/vulnerabilities/xss_r/",
     "notes": "This smoke target expects the official DVWA project release 2.5 running locally on 127.0.0.1:4280."
   }
 }

@@ -26,6 +26,7 @@ This project is intended only for ethical, authorized security research in contr
 - The mock dry run uses mock actions only.
 - The DVWA smoke command performs one local in-scope HTTP request and one blocked out-of-scope request. It does not produce vulnerability findings.
 - The reflected-XSS integration logs into local DVWA, uses a safe JavaScript marker assignment, verifies actual browser execution, runs a benign control case, and records artifacts through the existing verifier lifecycle.
+- The reflected-XSS integration observes a configured authenticated seed page and discovers simple GET reflected-input candidates before building test and control actions.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
@@ -111,10 +112,13 @@ python -m adstf.dvwa_xss_reflected
 The reflected-XSS integration:
 
 - loads the pinned DVWA target configuration
+- observes the configured reflected-XSS seed page
+- records discovered simple GET reflected-input candidates as evidence
 - confirms the target is reachable
 - logs into DVWA using the configured benchmark test account
 - sets DVWA's benchmark security level to `low` for this controlled local run
-- submits a safe reflected-XSS marker payload to `/vulnerabilities/xss_r/`
+- builds reflected-XSS and control URLs from the selected discovered candidate
+- submits a safe reflected-XSS marker payload
 - observes actual JavaScript execution in Chromium
 - runs a benign non-executing control case
 - stores screenshots and HTML artifacts for reproduction
