@@ -69,7 +69,22 @@ class DevelopmentBenchmarkXssTests(unittest.TestCase):
             case_c = baseline["scenario_results"][1]
             self.assertEqual(case_a["candidates_tested_before_verification"], 2)
             self.assertEqual(case_a["verified_finding_count"], 1)
+            self.assertEqual(case_a["post_run_ground_truth_match_count"], 0)
             self.assertEqual(case_c["no_vulnerability_behavior"], "no_verified_findings")
+            self.assertIsNone(case_c["top_rank_is_vulnerable"])
+            self.assertIsNone(case_c["top_k_recall"])
+            self.assertIsNone(case_c["reciprocal_rank"])
+            lifecycle = evaluation["lifecycle_summary"]
+            self.assertEqual(lifecycle["discovered_candidate_count"], 3)
+            self.assertEqual(lifecycle["tested_hypothesis_count"], 3)
+            self.assertEqual(lifecycle["verifier_confirmed_finding_count"], 1)
+            aggregate = evaluation["aggregate_summary"]["deterministic"]
+            self.assertEqual(aggregate["valid_trial_count"], 1)
+            self.assertEqual(aggregate["vulnerable_candidate_rank_distribution"]["case-a"], {"2": 1})
+            self.assertEqual(
+                aggregate["candidates_tested_before_verification_distribution"]["case-c"],
+                {"not_verified": 1},
+            )
             self.assertEqual(evaluation["ground_truth_used_phase"], "post_run_evaluation_only")
 
 

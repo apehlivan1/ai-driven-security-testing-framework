@@ -167,6 +167,15 @@ $env:OPENAI_RANKING_MODEL = "gpt-5.6-luna"
 python -m adstf.dev_benchmark_xss --ranking-mode both --llm-client command --trials 1 --llm-command python -m adstf.openai_ranking_wrapper
 ```
 
+Run a five-trial development characterization with the same bounded ranking boundary:
+
+```powershell
+$env:PYTHONPATH = "src"
+$env:OPENAI_API_KEY = "<set outside repository>"
+$env:OPENAI_RANKING_MODEL = "gpt-5.6-luna"
+python -m adstf.dev_benchmark_xss --ranking-mode both --llm-client command --trials 5 --llm-command python -m adstf.openai_ranking_wrapper
+```
+
 Provider credentials must be supplied only through environment variables. The wrapper reads `OPENAI_API_KEY` and does not write it to prompts, responses, metrics, or artifacts. Optional environment variables are `OPENAI_RANKING_MODEL`, `OPENAI_TIMEOUT_SECONDS`, and `OPENAI_BASE_URL`.
 
 The development benchmark integration:
@@ -183,6 +192,8 @@ The development benchmark integration:
 - writes post-run benchmark evaluation to `artifacts/benchmark-evaluation.json`
 - writes scenario execution details to `artifacts/scenario-run-summary.json`
 - when LLM ranking is enabled, writes prompt/response artifacts under `artifacts/llm/`
+- separates discovered candidates, tested vulnerability hypotheses, verifier-confirmed findings, and post-run ground-truth matches in the benchmark report and evaluation summary
+- records aggregate repeated-trial metrics while preserving per-trial and per-scenario evaluation details
 
 Ground truth for this development benchmark is stored in [examples/benchmarks/reflected-dev-ground-truth.json](examples/benchmarks/reflected-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by discovery, ranking, verification, or reporting logic.
 
@@ -191,9 +202,13 @@ The benchmark evaluation records:
 - top-1 accuracy over scenarios with a vulnerable candidate
 - top-k recall using each scenario's fixed test budget
 - mean reciprocal rank
+- vulnerable-candidate rank distribution
+- selected-candidate distribution
 - candidates tested before verification
 - verified finding count
 - no-vulnerability scenario behavior
+- valid, invalid, failed, and fallback model-call/trial counts
+- token usage, latency, and estimated cost when available
 - ranking source and trial number
 - model identifier, prompt version, validation errors, and provider failures for LLM ranking runs
 

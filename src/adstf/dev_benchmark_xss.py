@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter, defaultdict
 import json
 import sys
 from dataclasses import dataclass
@@ -45,7 +46,7 @@ from adstf.llm_ranking import (
     ranking_result_artifact,
 )
 from adstf.modules import mvp_modules
-from adstf.reporting import render_placeholder_report
+from adstf.reporting import render_benchmark_report, render_placeholder_report
 from adstf.safety import SafetyBoundary
 from adstf.serialization import to_json_value
 from adstf.storage import RunArtifactStore
@@ -129,11 +130,11 @@ def run_development_benchmark_reflected_xss(
             context.close()
             browser.close()
 
-    store.save_report(render_placeholder_report(target, all_findings, placeholder=False))
     evaluation = evaluate_run_against_ground_truth(
         store.run_dir,
         _ground_truth_path(target),
     )
+    store.save_report(render_benchmark_report(target, all_findings, evaluation))
     store.save_artifact_text(
         "benchmark-evaluation.json",
         json.dumps(to_json_value(evaluation), indent=2, sort_keys=True) + "\n",
@@ -179,11 +180,15 @@ def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) ->
         for ranking_source, trial_number in run_keys
     ]
     deterministic = next((run for run in ranking_runs if run["ranking_source"] == "deterministic"), None)
+    lifecycle_summary = _lifecycle_summary(ranking_runs)
+    aggregate_summary = _aggregate_ranking_runs(ranking_runs)
     return {
         "benchmark_id": truth["benchmark_id"],
         "ground_truth_used_phase": "post_run_evaluation_only",
         "ranking_ruleset_version": truth.get("ranking_ruleset_version", RANKING_RULESET_VERSION),
         "scenario_count": len(truth["scenarios"]),
+        "lifecycle_summary": lifecycle_summary,
+        "aggregate_summary": aggregate_summary,
         "ranking_runs": ranking_runs,
         "deterministic_baseline": deterministic,
         "llm_trials": [run for run in ranking_runs if run["ranking_source"] == "llm"],
@@ -535,6 +540,11 @@ def _evaluate_scenario(
     verified_findings = [
         finding for finding in findings if finding["state"] == FindingState.VERIFIED.value
     ]
+    ground_truth_matches = [
+        finding
+        for finding in verified_findings
+        if _finding_matches_ground_truth(finding, cases)
+    ]
     tested_ranks = sorted(finding["report_fields"]["candidate_rank"] for finding in findings)
     test_budget = (
         ranked_candidates[0]["attributes"].get("test_budget", 0)
@@ -542,55 +552,79 @@ def _evaluate_scenario(
         else 0
     )
     top_k = min(int(test_budget), len(evaluated_candidates))
-    top_k_recall = bool(
-        first_vulnerable and first_vulnerable["rank"] <= top_k
+    top_k_recall = (
+        bool(first_vulnerable["rank"] <= top_k)
+        if first_vulnerable
+        else None
     )
+    selected_candidate = next(
+        (candidate for candidate in evaluated_candidates if candidate["selected"]),
+        None,
+    )
+    first_record = ranked_candidates[0] if ranked_candidates else None
     return {
         "scenario_id": scenario_id,
         "ranking_source": ranking_source,
         "trial_number": trial_number,
         "ranking_ruleset_version": RANKING_RULESET_VERSION,
         "model_identifier": (
-            ranked_candidates[0]["attributes"].get("model_identifier")
-            if ranked_candidates
+            first_record["attributes"].get("model_identifier")
+            if first_record
             else None
         ),
         "provider": (
-            ranked_candidates[0]["attributes"].get("provider")
-            if ranked_candidates
+            first_record["attributes"].get("provider")
+            if first_record
             else None
         ),
         "prompt_version": (
-            ranked_candidates[0]["attributes"].get("prompt_version")
-            if ranked_candidates
+            first_record["attributes"].get("prompt_version")
+            if first_record
             else None
         ),
+        "usage": first_record["attributes"].get("usage") if first_record else None,
+        "cost": first_record["attributes"].get("cost") if first_record else None,
+        "estimated_cost": _estimate_cost(
+            first_record["attributes"].get("usage") if first_record else None,
+            first_record["attributes"].get("model_identifier") if first_record else None,
+        ),
+        "latency_ms": first_record["attributes"].get("latency_ms") if first_record else None,
         "model_validation_errors": (
-            ranked_candidates[0]["attributes"].get("model_validation_errors", [])
-            if ranked_candidates
+            first_record["attributes"].get("model_validation_errors", [])
+            if first_record
             else []
         ),
         "model_provider_failed": bool(
-            ranked_candidates
-            and ranked_candidates[0]["attributes"].get("model_provider_failed", False)
+            first_record
+            and first_record["attributes"].get("model_provider_failed", False)
         ),
+        "discovered_candidate_count": len(evaluated_candidates),
         "candidate_count": len(evaluated_candidates),
         "vulnerable_candidate_count": sum(
             1 for candidate in evaluated_candidates if candidate["ground_truth_vulnerable"]
         ),
-        "top_rank_is_vulnerable": bool(
-            evaluated_candidates and evaluated_candidates[0]["ground_truth_vulnerable"]
+        "selected_candidate_id": selected_candidate["candidate_id"] if selected_candidate else None,
+        "selected_candidate_rank": selected_candidate["rank"] if selected_candidate else None,
+        "top_rank_is_vulnerable": (
+            bool(evaluated_candidates and evaluated_candidates[0]["ground_truth_vulnerable"])
+            if first_vulnerable
+            else None
         ),
         "top_k": top_k,
-        "top_k_recall": 1.0 if top_k_recall else 0.0,
-        "reciprocal_rank": (1.0 / first_vulnerable["rank"]) if first_vulnerable else 0.0,
+        "top_k_recall": (1.0 if top_k_recall else 0.0) if first_vulnerable else None,
+        "reciprocal_rank": (1.0 / first_vulnerable["rank"]) if first_vulnerable else None,
+        "vulnerable_candidate_rank": first_vulnerable["rank"] if first_vulnerable else None,
         "candidates_tested_before_verification": (
             min(finding["report_fields"]["candidate_rank"] for finding in verified_findings)
             if verified_findings
             else None
         ),
         "candidate_test_count": len(tested_ranks),
+        "tested_hypothesis_count": len(tested_ranks),
         "verified_finding_count": len(verified_findings),
+        "verifier_confirmed_finding_count": len(verified_findings),
+        "post_run_ground_truth_match_count": len(ground_truth_matches),
+        "post_run_ground_truth_mismatch_count": len(verified_findings) - len(ground_truth_matches),
         "no_vulnerability_behavior": (
             "no_verified_findings"
             if not first_vulnerable and not verified_findings
@@ -600,6 +634,309 @@ def _evaluate_scenario(
         ),
         "ranked_candidates": evaluated_candidates,
     }
+
+
+def _lifecycle_summary(ranking_runs: list[dict]) -> dict:
+    scenario_results = [
+        result
+        for run in ranking_runs
+        for result in run["scenario_results"]
+    ]
+    return {
+        "discovered_candidate_count": sum(result["discovered_candidate_count"] for result in scenario_results),
+        "tested_hypothesis_count": sum(result["tested_hypothesis_count"] for result in scenario_results),
+        "verifier_confirmed_finding_count": sum(
+            result["verifier_confirmed_finding_count"] for result in scenario_results
+        ),
+        "post_run_ground_truth_match_count": sum(
+            result["post_run_ground_truth_match_count"] for result in scenario_results
+        ),
+        "post_run_ground_truth_mismatch_count": sum(
+            result["post_run_ground_truth_mismatch_count"] for result in scenario_results
+        ),
+    }
+
+
+def _aggregate_ranking_runs(ranking_runs: list[dict]) -> dict:
+    by_source: dict[str, list[dict]] = defaultdict(list)
+    for run in ranking_runs:
+        by_source[run["ranking_source"]].append(run)
+    return {
+        source: _aggregate_source_runs(source, runs)
+        for source, runs in sorted(by_source.items())
+    }
+
+
+def _aggregate_source_runs(source: str, runs: list[dict]) -> dict:
+    scenario_results = [
+        result
+        for run in runs
+        for result in run["scenario_results"]
+    ]
+    valid_results = [
+        result
+        for result in scenario_results
+        if source != "llm" or _scenario_has_valid_model_output(result)
+    ]
+    valid_vulnerable = [
+        result for result in valid_results if result["vulnerable_candidate_count"] > 0
+    ]
+    no_vulnerability_results = [
+        result for result in valid_results if result["vulnerable_candidate_count"] == 0
+    ]
+    trial_statuses = [_trial_status(run) for run in runs]
+    return {
+        "trial_count": len(runs),
+        "valid_trial_count": sum(1 for status in trial_statuses if status["valid"]),
+        "invalid_trial_count": sum(1 for status in trial_statuses if status["invalid"]),
+        "failed_trial_count": sum(1 for status in trial_statuses if status["failed"]),
+        "fallback_trial_count": sum(1 for status in trial_statuses if status["fallback"]),
+        "model_call_count": len(scenario_results) if source == "llm" else 0,
+        "valid_model_call_count": sum(
+            1 for result in scenario_results if _scenario_has_valid_model_output(result)
+        )
+        if source == "llm"
+        else 0,
+        "invalid_model_call_count": sum(
+            1
+            for result in scenario_results
+            if result["model_validation_errors"] and not result["model_provider_failed"]
+        )
+        if source == "llm"
+        else 0,
+        "failed_model_call_count": sum(
+            1 for result in scenario_results if result["model_provider_failed"]
+        )
+        if source == "llm"
+        else 0,
+        "fallback_model_call_count": sum(
+            1
+            for result in scenario_results
+            if result["model_provider_failed"] or result["model_validation_errors"]
+        )
+        if source == "llm"
+        else 0,
+        "top_1_accuracy": _mean(
+            1.0 if result["top_rank_is_vulnerable"] else 0.0
+            for result in valid_vulnerable
+        ),
+        "top_k_recall": _mean(result["top_k_recall"] for result in valid_vulnerable),
+        "mean_reciprocal_rank": _mean(result["reciprocal_rank"] for result in valid_vulnerable),
+        "valid_top_1_accuracy": _mean(
+            1.0 if result["top_rank_is_vulnerable"] else 0.0
+            for result in valid_vulnerable
+        ),
+        "valid_top_k_recall": _mean(result["top_k_recall"] for result in valid_vulnerable),
+        "valid_mean_reciprocal_rank": _mean(
+            result["reciprocal_rank"] for result in valid_vulnerable
+        ),
+        "valid_top_1_accuracy_stddev": _stddev(
+            [1.0 if result["top_rank_is_vulnerable"] else 0.0 for result in valid_vulnerable]
+        ),
+        "valid_top_k_recall_stddev": _stddev(
+            [result["top_k_recall"] for result in valid_vulnerable]
+        ),
+        "valid_mean_reciprocal_rank_stddev": _stddev(
+            [result["reciprocal_rank"] for result in valid_vulnerable]
+        ),
+        "vulnerable_candidate_rank_distribution": _scenario_distribution(
+            valid_vulnerable,
+            "vulnerable_candidate_rank",
+        ),
+        "selected_candidate_distribution": _scenario_distribution(
+            valid_results,
+            "selected_candidate_id",
+        ),
+        "candidates_tested_before_verification_distribution": _scenario_distribution(
+            valid_results,
+            "candidates_tested_before_verification",
+            none_label="not_verified",
+        ),
+        "verified_finding_count_distribution": _scenario_distribution(
+            valid_results,
+            "verified_finding_count",
+        ),
+        "verified_finding_count_total": sum(
+            result["verified_finding_count"] for result in valid_results
+        ),
+        "no_vulnerability_false_positive_count": sum(
+            1 for result in no_vulnerability_results if result["verified_finding_count"] > 0
+        ),
+        "no_vulnerability_behavior_distribution": _scenario_distribution(
+            no_vulnerability_results,
+            "no_vulnerability_behavior",
+        ),
+        "token_usage": _aggregate_usage(valid_results),
+        "latency_ms": _aggregate_latency(valid_results),
+        "estimated_cost": _aggregate_estimated_cost(valid_results),
+        "scenario_aggregates": _aggregate_by_scenario(valid_results),
+    }
+
+
+def _aggregate_by_scenario(results: list[dict]) -> dict:
+    by_scenario: dict[str, list[dict]] = defaultdict(list)
+    for result in results:
+        by_scenario[result["scenario_id"]].append(result)
+    return {
+        scenario_id: {
+            "run_count": len(items),
+            "top_1_accuracy": _mean(
+                1.0 if item["top_rank_is_vulnerable"] else 0.0
+                for item in items
+                if item["vulnerable_candidate_count"] > 0
+            ),
+            "top_k_recall": _mean(
+                item["top_k_recall"]
+                for item in items
+                if item["vulnerable_candidate_count"] > 0
+            ),
+            "mean_reciprocal_rank": _mean(
+                item["reciprocal_rank"]
+                for item in items
+                if item["vulnerable_candidate_count"] > 0
+            ),
+            "vulnerable_candidate_rank_distribution": _distribution(
+                item["vulnerable_candidate_rank"]
+                for item in items
+                if item["vulnerable_candidate_count"] > 0
+            ),
+            "selected_candidate_distribution": _distribution(
+                item["selected_candidate_id"] for item in items
+            ),
+            "candidates_tested_before_verification_distribution": _distribution(
+                (item["candidates_tested_before_verification"] or "not_verified")
+                for item in items
+            ),
+            "verified_finding_count_distribution": _distribution(
+                item["verified_finding_count"] for item in items
+            ),
+            "no_vulnerability_behavior_distribution": _distribution(
+                item["no_vulnerability_behavior"]
+                for item in items
+                if item["vulnerable_candidate_count"] == 0
+            ),
+        }
+        for scenario_id, items in sorted(by_scenario.items())
+    }
+
+
+def _trial_status(run: dict) -> dict:
+    scenario_results = run["scenario_results"]
+    failed = any(result["model_provider_failed"] for result in scenario_results)
+    invalid = any(result["model_validation_errors"] for result in scenario_results)
+    fallback = failed or invalid
+    return {
+        "valid": not fallback,
+        "invalid": invalid and not failed,
+        "failed": failed,
+        "fallback": fallback,
+    }
+
+
+def _scenario_has_valid_model_output(result: dict) -> bool:
+    return not result["model_validation_errors"] and not result["model_provider_failed"]
+
+
+def _finding_matches_ground_truth(finding: dict, cases: dict[tuple[str, str], dict]) -> bool:
+    affected_target = finding.get("affected_target")
+    if not affected_target:
+        return False
+    action_path = urlparse(affected_target).path
+    parameter = finding["report_fields"].get("parameter")
+    case = cases.get((action_path, parameter))
+    return bool(case and case["vulnerable"])
+
+
+def _scenario_distribution(results: list[dict], key: str, none_label: str = "not_applicable") -> dict:
+    by_scenario: dict[str, list[object]] = defaultdict(list)
+    for result in results:
+        value = result.get(key)
+        by_scenario[result["scenario_id"]].append(none_label if value is None else value)
+    return {
+        scenario_id: _distribution(values)
+        for scenario_id, values in sorted(by_scenario.items())
+    }
+
+
+def _distribution(values) -> dict:
+    return dict(sorted(Counter(str(value) for value in values).items()))
+
+
+def _aggregate_usage(results: list[dict]) -> dict:
+    totals: Counter = Counter()
+    for result in results:
+        usage = result.get("usage")
+        if not isinstance(usage, dict):
+            continue
+        for key in ("input_tokens", "output_tokens", "total_tokens"):
+            value = usage.get(key)
+            if isinstance(value, int | float):
+                totals[key] += value
+        details = usage.get("input_tokens_details")
+        if isinstance(details, dict):
+            cached = details.get("cached_tokens")
+            if isinstance(cached, int | float):
+                totals["cached_input_tokens"] += cached
+    return dict(totals)
+
+
+def _aggregate_latency(results: list[dict]) -> dict:
+    values = [
+        result["latency_ms"]
+        for result in results
+        if isinstance(result.get("latency_ms"), int | float)
+    ]
+    return {
+        "count": len(values),
+        "total": sum(values) if values else None,
+        "min": min(values) if values else None,
+        "max": max(values) if values else None,
+        "mean": _mean(values),
+        "stddev": _stddev(values),
+    }
+
+
+def _aggregate_estimated_cost(results: list[dict]) -> dict:
+    values = [
+        result["estimated_cost"]
+        for result in results
+        if isinstance(result.get("estimated_cost"), dict)
+        and isinstance(result["estimated_cost"].get("estimated_usd"), int | float)
+    ]
+    total = sum(value["estimated_usd"] for value in values) if values else None
+    return {
+        "estimated_usd": total,
+        "basis": values[0]["basis"] if values else None,
+    }
+
+
+def _estimate_cost(usage: dict | None, model_identifier: str | None) -> dict | None:
+    if not usage or not model_identifier:
+        return None
+    if "gpt-5.6-luna" not in model_identifier.lower():
+        return None
+    input_tokens = _number(usage.get("input_tokens"))
+    output_tokens = _number(usage.get("output_tokens"))
+    input_details = usage.get("input_tokens_details")
+    cached_tokens = (
+        _number(input_details.get("cached_tokens"))
+        if isinstance(input_details, dict)
+        else 0.0
+    )
+    billable_input = max(input_tokens - cached_tokens, 0.0)
+    estimated = (
+        billable_input * 1.00 / 1_000_000
+        + cached_tokens * 0.10 / 1_000_000
+        + output_tokens * 6.00 / 1_000_000
+    )
+    return {
+        "estimated_usd": estimated,
+        "basis": "gpt-5.6-luna standard pricing: input $1.00/M, cached input $0.10/M, output $6.00/M tokens",
+    }
+
+
+def _number(value) -> float:
+    return float(value) if isinstance(value, int | float) else 0.0
 
 
 def _evaluate_candidate(record: dict, cases: dict[tuple[str, str], dict]) -> dict:
@@ -925,8 +1262,16 @@ def _json_records(directory: Path) -> list[dict]:
 
 
 def _mean(values) -> float | None:
-    items = list(values)
+    items = [value for value in values if value is not None]
     return sum(items) / len(items) if items else None
+
+
+def _stddev(values) -> float | None:
+    items = [value for value in values if value is not None]
+    if not items:
+        return None
+    mean = sum(items) / len(items)
+    return (sum((value - mean) ** 2 for value in items) / len(items)) ** 0.5
 
 
 def main() -> None:
