@@ -1,49 +1,55 @@
 {
   "benchmark_id": "reflected-input-development",
-  "description": "Development-only ground truth for the local reflected-input benchmark. This file must be used only after a run has completed.",
+  "description": "Development-only ground truth for fixed reflected-input benchmark scenarios. This file must be used only after a run has completed.",
   "ground_truth_available_to_framework": false,
-  "cases": [
+  "ranking_ruleset_version": "deterministic-structural-v1",
+  "scenarios": [
     {
-      "action_path": "/alpha",
-      "parameter_name": "term",
-      "vulnerable": true,
-      "expected_verification": "verified",
-      "notes": "The value is reflected into HTML without escaping."
+      "scenario_id": "case-a",
+      "description": "Baseline scenario where the vulnerable candidate is structurally favored.",
+      "expected_vulnerable_count": 1,
+      "cases": [
+        {"action_path": "/alpha", "parameter_name": "term", "vulnerable": true},
+        {"action_path": "/beta", "parameter_name": "item", "vulnerable": false},
+        {"action_path": "/panel", "parameter_name": "item", "vulnerable": false},
+        {"action_path": "/gamma", "parameter_name": "entry", "vulnerable": false},
+        {"action_path": "/delta", "parameter_name": "term", "vulnerable": false},
+        {"action_path": "/delta", "parameter_name": "mode", "vulnerable": false}
+      ]
     },
     {
-      "action_path": "/beta",
-      "parameter_name": "item",
-      "vulnerable": false,
-      "expected_verification": "rejected_or_inconclusive",
-      "notes": "The value is HTML-escaped before rendering."
+      "scenario_id": "case-b",
+      "description": "The vulnerable candidate has required and multi-input structure, so it is not structurally favored.",
+      "expected_vulnerable_count": 1,
+      "cases": [
+        {"action_path": "/s/case-b/kappa", "parameter_name": "query", "vulnerable": false},
+        {"action_path": "/s/case-b/lambda", "parameter_name": "entry", "vulnerable": true},
+        {"action_path": "/s/case-b/lambda", "parameter_name": "trace", "vulnerable": false},
+        {"action_path": "/s/case-b/mu", "parameter_name": "text", "vulnerable": false},
+        {"action_path": "/s/case-b/nu", "parameter_name": "code", "vulnerable": false}
+      ]
     },
     {
-      "action_path": "/panel",
-      "parameter_name": "item",
-      "vulnerable": false,
-      "expected_verification": "rejected_or_inconclusive",
-      "notes": "The seed query value is HTML-escaped before rendering."
+      "scenario_id": "case-c",
+      "description": "No candidate is vulnerable.",
+      "expected_vulnerable_count": 0,
+      "cases": [
+        {"action_path": "/s/case-c/north", "parameter_name": "name", "vulnerable": false},
+        {"action_path": "/s/case-c/east", "parameter_name": "input", "vulnerable": false},
+        {"action_path": "/s/case-c/south", "parameter_name": "comment", "vulnerable": false},
+        {"action_path": "/s/case-c/west", "parameter_name": "term", "vulnerable": false}
+      ]
     },
     {
-      "action_path": "/gamma",
-      "parameter_name": "entry",
-      "vulnerable": false,
-      "expected_verification": "rejected_or_inconclusive",
-      "notes": "The value is escaped and rendered inside a textarea."
-    },
-    {
-      "action_path": "/delta",
-      "parameter_name": "term",
-      "vulnerable": false,
-      "expected_verification": "rejected_or_inconclusive",
-      "notes": "The value is HTML-escaped before rendering."
-    },
-    {
-      "action_path": "/delta",
-      "parameter_name": "mode",
-      "vulnerable": false,
-      "expected_verification": "rejected_or_inconclusive",
-      "notes": "The value is HTML-escaped before rendering."
+      "scenario_id": "case-d",
+      "description": "The vulnerable candidate appears as a query parameter and is ranked behind simple GET forms.",
+      "expected_vulnerable_count": 1,
+      "cases": [
+        {"action_path": "/s/case-d/orange", "parameter_name": "search", "vulnerable": false},
+        {"action_path": "/s/case-d/purple", "parameter_name": "slot", "vulnerable": true},
+        {"action_path": "/s/case-d/silver", "parameter_name": "message", "vulnerable": false},
+        {"action_path": "/s/case-d/yellow", "parameter_name": "note", "vulnerable": false}
+      ]
     }
   ]
 }

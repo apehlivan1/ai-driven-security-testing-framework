@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -32,6 +33,7 @@ from adstf.discovery import (
     discover_reflected_input_candidates,
     rank_reflected_input_candidates,
 )
+from adstf.discovery import DETERMINISTIC_RANKING_RULESET_VERSION as RANKING_RULESET_VERSION
 from adstf.execution import HttpExecutor
 from adstf.lifecycle import apply_verifier_result, new_id, request_verification
 from adstf.modules import mvp_modules
@@ -45,6 +47,13 @@ from adstf.verification import FindingVerifier
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG_PATH = REPO_ROOT / "examples" / "targets" / "reflected-dev-local.json"
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / ".adstf-runs"
+
+
+@dataclass(frozen=True)
+class ScenarioSpec:
+    scenario_id: str
+    seed_paths: list[str]
+    test_budget: int
 
 
 def run_development_benchmark_reflected_xss(
@@ -70,102 +79,240 @@ def run_development_benchmark_reflected_xss(
         store.save_report(render_placeholder_report(target, []))
         raise RuntimeError("Development benchmark is not reachable. Start the local server first.")
 
-    marker = f"adstf_xss_{run_id.replace('-', '_')}"
-    control_marker = f"adstf_control_{run_id.replace('-', '_')}"
+    all_findings: list[FindingRecord] = []
+    scenario_summaries: list[dict] = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=headless)
         context = browser.new_context(base_url=target.base_url)
         try:
             page = context.new_page()
-            seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]] = []
-            candidates: list[ReflectedInputCandidate] = []
-            for index, seed_url in enumerate(_seed_urls(target), start=1):
-                seed_action = _seed_action(run_id, seed_url, index)
-                store.save_action_request(seed_action)
-                seed_result, seed_evidence, discovered = _discover_candidates(
-                    page,
-                    safety,
-                    store,
-                    seed_action,
+            for scenario in _scenario_specs(target):
+                summary, findings = _run_scenario(
+                    scenario=scenario,
+                    page=page,
+                    target=target,
+                    safety=safety,
+                    store=store,
+                    modules=modules,
+                    smoke_evidence=smoke_evidence,
                 )
-                store.save_evidence(seed_evidence)
-                store.save_action_result(seed_result)
-                seed_observations.append((seed_action, seed_result, seed_evidence))
-                candidates.extend(discovered)
-
-            rankings = _rank_candidates(candidates, safety)
-            if not rankings:
-                raise RuntimeError("No simple GET reflected-input candidates were discovered.")
-            candidate_evidence = _candidate_evidence_records(run_id, rankings, seed_observations)
-            for evidence in candidate_evidence:
-                store.save_evidence(evidence)
-
-            selected_ranking = rankings[0]
-            candidate = selected_ranking.candidate
-            xss_url = candidate.url_with_value(
-                f"<script>window.__adstfXssMarker='{marker}'</script>"
-            )
-            control_url = candidate.url_with_value(control_marker)
-            xss_action = _browser_action(
-                run_id,
-                xss_url,
-                marker,
-                "dev-xss-execution",
-                "Submit safe marker payload to selected reflected-input candidate.",
-            )
-            control_action = _browser_action(
-                run_id,
-                control_url,
-                None,
-                "dev-xss-control",
-                "Submit benign control marker to selected reflected-input candidate.",
-            )
-            store.save_action_request(xss_action)
-            store.save_action_request(control_action)
-
-            browser_executor = BrowserExecutor(safety, store)
-            xss_result, xss_evidence = browser_executor.observe(xss_action, page)
-            control_result, control_observation_evidence = browser_executor.observe(control_action, page)
+                scenario_summaries.append(summary)
+                all_findings.extend(findings)
         finally:
             context.close()
             browser.close()
 
+    store.save_report(render_placeholder_report(target, all_findings, placeholder=False))
+    evaluation = evaluate_run_against_ground_truth(
+        store.run_dir,
+        _ground_truth_path(target),
+    )
+    store.save_artifact_text(
+        "benchmark-evaluation.json",
+        json.dumps(to_json_value(evaluation), indent=2, sort_keys=True) + "\n",
+    )
+    store.save_artifact_text(
+        "scenario-run-summary.json",
+        json.dumps(to_json_value(scenario_summaries), indent=2, sort_keys=True) + "\n",
+    )
+    return store.run_dir
+
+
+def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) -> dict:
+    truth = json.loads(ground_truth_path.read_text(encoding="utf-8"))
+    cases_by_scenario = {
+        scenario["scenario_id"]: {
+            (case["action_path"], case["parameter_name"]): case
+            for case in scenario["cases"]
+        }
+        for scenario in truth["scenarios"]
+    }
+    scenario_results = [
+        _evaluate_scenario(run_dir, scenario["scenario_id"], cases_by_scenario[scenario["scenario_id"]])
+        for scenario in truth["scenarios"]
+    ]
+    vulnerable_results = [
+        result for result in scenario_results if result["vulnerable_candidate_count"] > 0
+    ]
+    no_vulnerability_results = [
+        result for result in scenario_results if result["vulnerable_candidate_count"] == 0
+    ]
+    return {
+        "benchmark_id": truth["benchmark_id"],
+        "ground_truth_used_phase": "post_run_evaluation_only",
+        "ranking_ruleset_version": truth.get("ranking_ruleset_version", RANKING_RULESET_VERSION),
+        "scenario_count": len(scenario_results),
+        "top_1_accuracy": _mean(
+            1.0 if result["top_rank_is_vulnerable"] else 0.0
+            for result in vulnerable_results
+        ),
+        "top_k_recall": _mean(result["top_k_recall"] for result in vulnerable_results),
+        "mean_reciprocal_rank": _mean(result["reciprocal_rank"] for result in vulnerable_results),
+        "no_vulnerability_scenario_count": len(no_vulnerability_results),
+        "no_vulnerability_false_positive_count": sum(
+            1 for result in no_vulnerability_results if result["verified_finding_count"] > 0
+        ),
+        "scenario_results": scenario_results,
+    }
+
+
+def _run_scenario(
+    *,
+    scenario: ScenarioSpec,
+    page,
+    target: TargetConfig,
+    safety: SafetyBoundary,
+    store: RunArtifactStore,
+    modules: dict,
+    smoke_evidence: list[EvidenceRecord],
+) -> tuple[dict, list[FindingRecord]]:
+    seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]] = []
+    candidates: list[ReflectedInputCandidate] = []
+    for index, seed_url in enumerate(_seed_urls(target, scenario), start=1):
+        seed_action = _seed_action(store.run_id, scenario.scenario_id, seed_url, index)
+        store.save_action_request(seed_action)
+        seed_result, seed_evidence, discovered = _discover_candidates(page, safety, store, seed_action)
+        store.save_evidence(seed_evidence)
+        store.save_action_result(seed_result)
+        seed_observations.append((seed_action, seed_result, seed_evidence))
+        candidates.extend(discovered)
+
+    rankings = _rank_candidates(candidates, safety)
+    if not rankings:
+        raise RuntimeError(f"No simple GET reflected-input candidates were discovered for {scenario.scenario_id}.")
+    candidate_evidence = _candidate_evidence_records(
+        store.run_id,
+        scenario.scenario_id,
+        scenario.test_budget,
+        rankings,
+        seed_observations,
+    )
+    for evidence in candidate_evidence:
+        store.save_evidence(evidence)
+
+    tested_findings: list[FindingRecord] = []
+    tested_candidates: list[dict] = []
+    verified_finding: FindingRecord | None = None
+    for ranking in rankings[: scenario.test_budget]:
+        tested_candidates.append(
+            {
+                "rank": ranking.rank,
+                "candidate_id": ranking.candidate.candidate_id,
+                "score": ranking.score,
+            }
+        )
+        verified = _test_candidate(
+            scenario=scenario,
+            ranking=ranking,
+            page=page,
+            safety=safety,
+            store=store,
+            modules=modules,
+            smoke_evidence=smoke_evidence,
+            seed_observations=seed_observations,
+            candidate_evidence=candidate_evidence,
+        )
+        tested_findings.append(verified)
+        if verified.state == FindingState.VERIFIED:
+            verified_finding = verified
+            break
+
+    return (
+        {
+            "scenario_id": scenario.scenario_id,
+            "ranking_ruleset_version": RANKING_RULESET_VERSION,
+            "candidate_count": len(rankings),
+            "test_budget": scenario.test_budget,
+            "tested_candidate_count": len(tested_candidates),
+            "verified_finding_id": verified_finding.finding_id if verified_finding else None,
+            "tested_candidates": tested_candidates,
+        },
+        tested_findings,
+    )
+
+
+def _test_candidate(
+    *,
+    scenario: ScenarioSpec,
+    ranking: CandidateRanking,
+    page,
+    safety: SafetyBoundary,
+    store: RunArtifactStore,
+    modules: dict,
+    smoke_evidence: list[EvidenceRecord],
+    seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]],
+    candidate_evidence: list[EvidenceRecord],
+) -> FindingRecord:
+    candidate = ranking.candidate
+    marker = f"adstf_xss_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{ranking.rank}"
+    control_marker = f"adstf_control_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{ranking.rank}"
+    artifact_stem = f"{scenario.scenario_id}-candidate-{ranking.rank}"
+    xss_url = candidate.url_with_value(f"<script>window.__adstfXssMarker='{marker}'</script>")
+    control_url = candidate.url_with_value(control_marker)
+
+    xss_action = _browser_action(
+        store.run_id,
+        scenario.scenario_id,
+        xss_url,
+        marker,
+        f"{artifact_stem}-execution",
+        "Submit safe marker payload to ranked reflected-input candidate.",
+    )
+    control_action = _browser_action(
+        store.run_id,
+        scenario.scenario_id,
+        control_url,
+        None,
+        f"{artifact_stem}-control",
+        "Submit benign control marker to ranked reflected-input candidate.",
+    )
+    store.save_action_request(xss_action)
+    store.save_action_request(control_action)
+
+    browser_executor = BrowserExecutor(safety, store)
+    xss_result, xss_evidence = browser_executor.observe(xss_action, page)
+    control_result, control_observation_evidence = browser_executor.observe(control_action, page)
     store.save_evidence(xss_evidence)
     store.save_evidence(control_observation_evidence)
     store.save_action_result(xss_result)
     store.save_action_result(control_result)
     if xss_result.status != ActionStatus.EXECUTED or control_result.status != ActionStatus.EXECUTED:
-        store.save_report(render_placeholder_report(target, []))
         raise RuntimeError("Browser observation failed or was blocked by safety boundary.")
 
     control_evidence = _control_evidence(
-        run_id,
+        store.run_id,
         control_url,
         control_action,
         control_observation_evidence,
         control_marker,
+        scenario.scenario_id,
     )
     verification_note = _evidence(
-        run_id=run_id,
+        run_id=store.run_id,
         evidence_type=EvidenceType.VERIFICATION_NOTE,
         target_ref=xss_url,
         summary="Reflected-XSS verification used safe JavaScript marker assignment only.",
         related_action_ids=[xss_action.action_id, control_action.action_id],
-        attributes={"payload_family": "safe_marker_assignment", "ground_truth_used": False},
+        attributes={
+            "payload_family": "safe_marker_assignment",
+            "ground_truth_used": False,
+            "scenario_id": scenario.scenario_id,
+            "candidate_rank": ranking.rank,
+        },
     )
     store.save_evidence(control_evidence)
     store.save_evidence(verification_note)
 
     finding = FindingRecord(
         finding_id=new_id("finding"),
-        run_id=run_id,
+        run_id=store.run_id,
         module_id="xss.reflected",
-        title="Reflected XSS executes in development benchmark browser context",
+        title=f"Reflected XSS candidate observed in development benchmark {scenario.scenario_id}",
         category=modules["xss.reflected"].category,
         affected_target=candidate.url_with_value(""),
         state=FindingState.SUSPECTED,
         hypothesis=(
-            "The selected reflected-input candidate executes script supplied through "
+            "The ranked reflected-input candidate may execute script supplied through "
             f"the {candidate.parameter_name} parameter."
         ),
         created_by="dev_benchmark_xss",
@@ -179,11 +326,13 @@ def run_development_benchmark_reflected_xss(
             verification_note.evidence_id,
         ],
         report_fields={
+            "scenario_id": scenario.scenario_id,
             "parameter": candidate.parameter_name,
             "candidate_id": candidate.candidate_id,
-            "candidate_rank": selected_ranking.rank,
-            "candidate_score": selected_ranking.score,
-            "candidate_rationale": selected_ranking.rationale,
+            "candidate_rank": ranking.rank,
+            "candidate_score": ranking.score,
+            "candidate_rationale": ranking.rationale,
+            "ranking_ruleset_version": RANKING_RULESET_VERSION,
             "payload_marker": marker,
             "control_marker": control_marker,
             "execution_artifact": xss_evidence.data_ref,
@@ -211,58 +360,74 @@ def run_development_benchmark_reflected_xss(
     store.save_verifier_result(verifier_result)
     verified = apply_verifier_result(requested, verifier_result)
     store.save_finding(verified)
-    store.save_report(render_placeholder_report(target, [verified], placeholder=False))
+    return verified
 
-    evaluation = evaluate_run_against_ground_truth(
-        store.run_dir,
-        _ground_truth_path(target),
+
+def _evaluate_scenario(
+    run_dir: Path,
+    scenario_id: str,
+    cases: dict[tuple[str, str], dict],
+) -> dict:
+    ranked_candidates = sorted(
+        [
+            record
+            for record in _json_records(run_dir / "evidence")
+            if record["evidence_type"] == EvidenceType.ATTACK_SURFACE_CANDIDATE.value
+            and record["attributes"].get("scenario_id") == scenario_id
+        ],
+        key=lambda record: record["attributes"]["rank"],
     )
-    store.save_artifact_text(
-        "benchmark-evaluation.json",
-        json.dumps(to_json_value(evaluation), indent=2, sort_keys=True) + "\n",
-    )
-
-    if verifier_result.outcome != VerificationOutcome.VERIFIED:
-        raise RuntimeError(
-            "Development benchmark reflected-XSS verification did not produce a verified finding. "
-            f"Outcome was {verifier_result.outcome.value}."
-        )
-    return store.run_dir
-
-
-def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) -> dict:
-    truth = json.loads(ground_truth_path.read_text(encoding="utf-8"))
-    cases = {
-        (case["action_path"], case["parameter_name"]): case
-        for case in truth["cases"]
-    }
-    candidate_records = []
-    for path in (run_dir / "evidence").glob("*.json"):
-        record = json.loads(path.read_text(encoding="utf-8"))
-        if record["evidence_type"] == EvidenceType.ATTACK_SURFACE_CANDIDATE.value:
-            candidate_records.append(record)
-    ranked_candidates = sorted(candidate_records, key=lambda record: record["attributes"]["rank"])
-    evaluated_candidates = [
-        _evaluate_candidate(record, cases)
-        for record in ranked_candidates
-    ]
-    selected = next(
-        (candidate for candidate in evaluated_candidates if candidate["selected"]),
+    evaluated_candidates = [_evaluate_candidate(record, cases) for record in ranked_candidates]
+    first_vulnerable = next(
+        (candidate for candidate in evaluated_candidates if candidate["ground_truth_vulnerable"]),
         None,
     )
     findings = [
-        json.loads(path.read_text(encoding="utf-8"))
-        for path in (run_dir / "findings").glob("*.json")
+        finding
+        for finding in _json_records(run_dir / "findings")
+        if finding["report_fields"].get("scenario_id") == scenario_id
     ]
+    verified_findings = [
+        finding for finding in findings if finding["state"] == FindingState.VERIFIED.value
+    ]
+    tested_ranks = sorted(finding["report_fields"]["candidate_rank"] for finding in findings)
+    test_budget = (
+        ranked_candidates[0]["attributes"].get("test_budget", 0)
+        if ranked_candidates
+        else 0
+    )
+    top_k = min(int(test_budget), len(evaluated_candidates))
+    top_k_recall = bool(
+        first_vulnerable and first_vulnerable["rank"] <= top_k
+    )
     return {
-        "benchmark_id": truth["benchmark_id"],
-        "ground_truth_used_phase": "post_run_evaluation_only",
+        "scenario_id": scenario_id,
+        "ranking_ruleset_version": RANKING_RULESET_VERSION,
         "candidate_count": len(evaluated_candidates),
-        "vulnerable_candidate_count": sum(1 for candidate in evaluated_candidates if candidate["ground_truth_vulnerable"]),
-        "top_rank_is_vulnerable": bool(selected and selected["ground_truth_vulnerable"]),
-        "selected_candidate": selected,
+        "vulnerable_candidate_count": sum(
+            1 for candidate in evaluated_candidates if candidate["ground_truth_vulnerable"]
+        ),
+        "top_rank_is_vulnerable": bool(
+            evaluated_candidates and evaluated_candidates[0]["ground_truth_vulnerable"]
+        ),
+        "top_k": top_k,
+        "top_k_recall": 1.0 if top_k_recall else 0.0,
+        "reciprocal_rank": (1.0 / first_vulnerable["rank"]) if first_vulnerable else 0.0,
+        "candidates_tested_before_verification": (
+            min(finding["report_fields"]["candidate_rank"] for finding in verified_findings)
+            if verified_findings
+            else None
+        ),
+        "candidate_test_count": len(tested_ranks),
+        "verified_finding_count": len(verified_findings),
+        "no_vulnerability_behavior": (
+            "no_verified_findings"
+            if not first_vulnerable and not verified_findings
+            else "verified_without_ground_truth_vulnerability"
+            if not first_vulnerable and verified_findings
+            else "not_applicable"
+        ),
         "ranked_candidates": evaluated_candidates,
-        "verified_finding_count": sum(1 for finding in findings if finding["state"] == FindingState.VERIFIED.value),
     }
 
 
@@ -301,19 +466,39 @@ def _http_smoke_action(run_id: str, base_url: str) -> ActionRequest:
     )
 
 
-def _seed_urls(target: TargetConfig) -> list[str]:
+def _scenario_specs(target: TargetConfig) -> list[ScenarioSpec]:
+    configured = target.metadata.get("scenarios")
+    if isinstance(configured, list) and configured:
+        return [
+            ScenarioSpec(
+                scenario_id=str(item["id"]),
+                seed_paths=[str(path) for path in item["seed_paths"]],
+                test_budget=int(item.get("test_budget", target.max_actions)),
+            )
+            for item in configured
+        ]
     paths = target.metadata.get("reflected_xss_seed_paths", ["/start"])
     if not isinstance(paths, list) or not paths:
         raise ValueError("Development benchmark target requires reflected_xss_seed_paths")
     return [
-        path
-        if str(path).startswith(("http://", "https://"))
-        else urljoin(f"{target.base_url.rstrip('/')}/", str(path))
-        for path in paths
+        ScenarioSpec(
+            scenario_id="case-a",
+            seed_paths=[str(path) for path in paths],
+            test_budget=target.max_actions,
+        )
     ]
 
 
-def _seed_action(run_id: str, seed_url: str, index: int) -> ActionRequest:
+def _seed_urls(target: TargetConfig, scenario: ScenarioSpec) -> list[str]:
+    return [
+        path
+        if str(path).startswith(("http://", "https://"))
+        else urljoin(f"{target.base_url.rstrip('/')}/", str(path))
+        for path in scenario.seed_paths
+    ]
+
+
+def _seed_action(run_id: str, scenario_id: str, seed_url: str, index: int) -> ActionRequest:
     return ActionRequest(
         action_id=new_id("action"),
         run_id=run_id,
@@ -321,10 +506,10 @@ def _seed_action(run_id: str, seed_url: str, index: int) -> ActionRequest:
         module_id="xss.reflected",
         action_type=ActionType.OBSERVE_BROWSER,
         target_ref=seed_url,
-        scope_context={},
+        scope_context={"scenario_id": scenario_id},
         parameters={
             "url": seed_url,
-            "artifact_prefix": f"dev-seed-{index}",
+            "artifact_prefix": f"{scenario_id}-seed-{index}",
             "summary": "Development benchmark seed page observed for reflected-input discovery.",
         },
         preconditions=["development_benchmark_running_locally"],
@@ -366,6 +551,8 @@ def _rank_candidates(
 
 def _candidate_evidence_records(
     run_id: str,
+    scenario_id: str,
+    test_budget: int,
     rankings: list[CandidateRanking],
     seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]],
 ) -> list[EvidenceRecord]:
@@ -378,6 +565,9 @@ def _candidate_evidence_records(
             summary="Discovered and ranked development benchmark reflected-input candidate.",
             related_action_ids=related_action_ids,
             attributes={
+                "scenario_id": scenario_id,
+                "ranking_ruleset_version": RANKING_RULESET_VERSION,
+                "test_budget": test_budget,
                 "all_candidate_count": len(rankings),
                 **candidate_ranking_to_attributes(ranking),
             },
@@ -388,6 +578,7 @@ def _candidate_evidence_records(
 
 def _browser_action(
     run_id: str,
+    scenario_id: str,
     url: str,
     expected_marker: str | None,
     artifact_prefix: str,
@@ -400,7 +591,7 @@ def _browser_action(
         module_id="xss.reflected",
         action_type=ActionType.OBSERVE_BROWSER,
         target_ref=url,
-        scope_context={},
+        scope_context={"scenario_id": scenario_id},
         parameters={
             "url": url,
             "marker_variable": "__adstfXssMarker",
@@ -421,6 +612,7 @@ def _control_evidence(
     control_action: ActionRequest,
     control_observation_evidence: EvidenceRecord,
     control_marker: str,
+    scenario_id: str,
 ) -> EvidenceRecord:
     return EvidenceRecord(
         evidence_id=new_id("evidence"),
@@ -434,6 +626,7 @@ def _control_evidence(
         redaction_status=RedactionStatus.ABSENT,
         related_action_ids=[control_action.action_id],
         attributes={
+            "scenario_id": scenario_id,
             "is_control_case": True,
             "control_case_passed": control_observation_evidence.attributes["execution_marker_observed"] is False,
             "execution_marker_observed": control_observation_evidence.attributes["execution_marker_observed"],
@@ -472,6 +665,15 @@ def _evidence(
         related_action_ids=related_action_ids,
         attributes=attributes,
     )
+
+
+def _json_records(directory: Path) -> list[dict]:
+    return [json.loads(path.read_text(encoding="utf-8")) for path in directory.glob("*.json")]
+
+
+def _mean(values) -> float | None:
+    items = list(values)
+    return sum(items) / len(items) if items else None
 
 
 def main() -> None:

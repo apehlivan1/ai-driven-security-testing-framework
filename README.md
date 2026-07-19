@@ -29,7 +29,8 @@ This project is intended only for ethical, authorized security research in contr
 - The reflected-XSS integration observes configured authenticated seed pages and discovers simple GET-form and query-parameter reflected-input candidates before building test and control actions.
 - Reflected-input candidates are ranked by target-independent structural features such as scope, source type, text-like editable inputs, required-input count, parameter count, and deterministic URL/parameter tie-breaking. The prioritizer does not use benchmark-revealing route labels such as `xss` or `reflect`.
 - Candidate scores, ranking rationale, and selected/non-selected status are recorded as evidence for auditability.
-- A state-free local reflected-input development benchmark provides multiple neutral GET-form and query-parameter candidates across two seed pages, with ground truth stored separately for post-run evaluation only.
+- A state-free local reflected-input development benchmark provides fixed reproducible scenarios with neutral GET-form and query-parameter candidates, with ground truth stored separately for post-run evaluation only.
+- The deterministic reflected-input ranker is versioned as `deterministic-structural-v1`; the benchmark scenarios are meant to evaluate this frozen ruleset, not tune it.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
@@ -132,7 +133,7 @@ The reflected-XSS integration:
 
 ## Run The Local Development Benchmark
 
-This development benchmark is intentionally small and neutral. It is useful for exercising reflected-input discovery and deterministic ranking before introducing an LLM baseline. It is not the final held-out thesis evaluation benchmark.
+This development benchmark is intentionally small and neutral. It is useful for exercising reflected-input discovery, deterministic ranking, candidate testing order, and post-run metrics before introducing an LLM baseline. It is not the final held-out thesis evaluation benchmark.
 
 Start the local state-free benchmark server:
 
@@ -151,12 +152,39 @@ python -m adstf.dev_benchmark_xss
 The development benchmark integration:
 
 - loads [examples/targets/reflected-dev-local.json](examples/targets/reflected-dev-local.json)
-- observes two configured seed pages
+- runs fixed named scenarios on the same local server
+- observes each scenario's configured seed pages
 - discovers multiple simple GET-form and query-parameter candidates
 - ranks candidates without using route or parameter names that reveal vulnerability status
 - records every candidate score, rationale, and selected/non-selected state as evidence
-- tests the selected candidate with the existing browser verification and mandatory control case
+- tests candidates in ranked order until a finding is verified or the scenario budget is exhausted
+- includes scenarios where the vulnerable candidate is structurally favored, not structurally favored, exposed through a query parameter, and absent
 - stores screenshots, HTML artifacts, findings, verifier results, and a report
 - writes post-run benchmark evaluation to `artifacts/benchmark-evaluation.json`
+- writes scenario execution details to `artifacts/scenario-run-summary.json`
 
 Ground truth for this development benchmark is stored in [examples/benchmarks/reflected-dev-ground-truth.json](examples/benchmarks/reflected-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by discovery, ranking, verification, or reporting logic.
+
+The benchmark evaluation records:
+
+- top-1 accuracy over scenarios with a vulnerable candidate
+- top-k recall using each scenario's fixed test budget
+- mean reciprocal rank
+- candidates tested before verification
+- verified finding count
+- no-vulnerability scenario behavior
+
+Current fixed development scenarios:
+
+- `case-a`: baseline scenario where the vulnerable candidate is structurally favored and ranked first.
+- `case-b`: vulnerable candidate is present but not structurally favored; deterministic ranking reaches it after higher-ranked non-vulnerable candidates.
+- `case-c`: no vulnerable candidate; the framework should exhaust the candidate set without a verified finding.
+- `case-d`: vulnerable candidate is exposed as a query parameter and ranked behind simple GET-form candidates.
+
+Latest validated scenario run produced:
+
+- scenario count: `4`
+- top-1 accuracy over vulnerable scenarios: `0.3333333333333333`
+- top-k recall over vulnerable scenarios: `1.0`
+- mean reciprocal rank: `0.5277777777777778`
+- no-vulnerability false-positive count: `0`

@@ -2,55 +2,71 @@ from __future__ import annotations
 
 import argparse
 import html
+from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 
+@dataclass(frozen=True)
+class Reflection:
+    parameter: str
+    escaped: bool
+
+
+SCENARIOS = {"case-a", "case-b", "case-c", "case-d"}
+
+
 def render_response(path: str, query: str = "") -> tuple[int, str]:
+    scenario_id, route = _split_scenario_path(path)
     params = parse_qs(query, keep_blank_values=True)
-    if path == "/health":
+    if route == "/health":
         return 200, _page("Status", "<p>ok</p>")
-    if path == "/reset":
+    if route == "/reset":
         return 200, _page("Reset", "<p>state reset</p>")
-    if path in {"", "/"}:
-        return 200, _page(
-            "Index",
-            """
-            <main>
-              <a href="/start">Start</a>
-              <a href="/panel?item=sample">Panel</a>
-            </main>
-            """,
-        )
-    if path == "/start":
+    if scenario_id == "case-a":
+        return _case_a(route, params, scenario_id)
+    if scenario_id == "case-b":
+        return _case_b(route, params, scenario_id)
+    if scenario_id == "case-c":
+        return _case_c(route, params, scenario_id)
+    if scenario_id == "case-d":
+        return _case_d(route, params, scenario_id)
+    return 404, _page("Not Found", "<p>not found</p>")
+
+
+def _case_a(route: str, params: dict[str, list[str]], scenario_id: str) -> tuple[int, str]:
+    prefix = _prefix(scenario_id)
+    if route in {"", "/"}:
+        return 200, _page("Index", f'<main><a href="{prefix}/start">Start</a></main>')
+    if route == "/start":
         return 200, _page(
             "Start",
-            """
+            f"""
             <main>
-              <form method="GET" action="/alpha">
+              <form method="GET" action="{prefix}/alpha">
                 <label>Term <input type="text" name="term"></label>
                 <button type="submit">Open</button>
               </form>
-              <form method="GET" action="/beta">
+              <form method="GET" action="{prefix}/beta">
                 <label>Item <input type="text" name="item"></label>
                 <button type="submit">Open</button>
               </form>
-              <a href="/panel?item=sample">More options</a>
+              <a href="{prefix}/panel?item=sample">More options</a>
             </main>
             """,
         )
-    if path == "/panel":
+    if route == "/panel":
         item = html.escape(_first(params, "item"))
         return 200, _page(
             "Panel",
             f"""
             <main>
               <p>Current item: {item}</p>
-              <form method="GET" action="/gamma">
+              <form method="GET" action="{prefix}/gamma">
                 <label>Entry <input type="text" name="entry" required></label>
                 <button type="submit">Open</button>
               </form>
-              <form method="GET" action="/delta">
+              <form method="GET" action="{prefix}/delta">
                 <label>Term <input type="text" name="term"></label>
                 <label>Mode <input type="text" name="mode"></label>
                 <button type="submit">Open</button>
@@ -58,24 +74,152 @@ def render_response(path: str, query: str = "") -> tuple[int, str]:
             </main>
             """,
         )
-    if path == "/alpha":
-        term = _first(params, "term")
-        return 200, _page("Alpha", f"<main><p>{term}</p></main>")
-    if path == "/beta":
-        item = html.escape(_first(params, "item"))
-        return 200, _page("Beta", f"<main><p>{item}</p></main>")
-    if path == "/gamma":
-        entry = html.escape(_first(params, "entry"))
-        return 200, _page("Gamma", f"<main><textarea>{entry}</textarea></main>")
-    if path == "/delta":
-        term = html.escape(_first(params, "term"))
-        mode = html.escape(_first(params, "mode"))
-        return 200, _page("Delta", f"<main><p>{term}</p><p>{mode}</p></main>")
+    if route == "/alpha":
+        return _reflected_page("Alpha", params, Reflection("term", escaped=False))
+    if route == "/beta":
+        return _reflected_page("Beta", params, Reflection("item", escaped=True))
+    if route == "/gamma":
+        return _textarea_page("Gamma", params, Reflection("entry", escaped=True))
+    if route == "/delta":
+        return _two_value_page("Delta", params, Reflection("term", escaped=True), Reflection("mode", escaped=True))
+    return 404, _page("Not Found", "<p>not found</p>")
+
+
+def _case_b(route: str, params: dict[str, list[str]], scenario_id: str) -> tuple[int, str]:
+    prefix = _prefix(scenario_id)
+    if route in {"", "/"}:
+        return 200, _page("Index", f'<main><a href="{prefix}/start">Start</a></main>')
+    if route == "/start":
+        return 200, _page(
+            "Start",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/kappa">
+                <label>Query <input type="search" name="query"></label>
+                <button type="submit">Open</button>
+              </form>
+              <form method="GET" action="{prefix}/lambda">
+                <label>Entry <input type="text" name="entry" required></label>
+                <label>Trace <input type="text" name="trace"></label>
+                <button type="submit">Open</button>
+              </form>
+            </main>
+            """,
+        )
+    if route == "/panel":
+        return 200, _page(
+            "Panel",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/mu">
+                <label>Text <input type="text" name="text"></label>
+                <button type="submit">Open</button>
+              </form>
+              <a href="{prefix}/nu?code=sample">Details</a>
+            </main>
+            """,
+        )
+    if route == "/kappa":
+        return _reflected_page("Kappa", params, Reflection("query", escaped=True))
+    if route == "/lambda":
+        return _two_value_page("Lambda", params, Reflection("entry", escaped=False), Reflection("trace", escaped=True))
+    if route == "/mu":
+        return _reflected_page("Mu", params, Reflection("text", escaped=True))
+    if route == "/nu":
+        return _reflected_page("Nu", params, Reflection("code", escaped=True))
+    return 404, _page("Not Found", "<p>not found</p>")
+
+
+def _case_c(route: str, params: dict[str, list[str]], scenario_id: str) -> tuple[int, str]:
+    prefix = _prefix(scenario_id)
+    if route in {"", "/"}:
+        return 200, _page("Index", f'<main><a href="{prefix}/start">Start</a></main>')
+    if route == "/start":
+        return 200, _page(
+            "Start",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/north">
+                <label>Name <input type="text" name="name"></label>
+                <button type="submit">Open</button>
+              </form>
+              <form method="GET" action="{prefix}/east">
+                <label>Input <input type="text" name="input"></label>
+                <button type="submit">Open</button>
+              </form>
+            </main>
+            """,
+        )
+    if route == "/panel":
+        return 200, _page(
+            "Panel",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/south">
+                <label>Comment <textarea name="comment"></textarea></label>
+                <button type="submit">Open</button>
+              </form>
+              <a href="{prefix}/west?term=sample">Details</a>
+            </main>
+            """,
+        )
+    if route == "/north":
+        return _reflected_page("North", params, Reflection("name", escaped=True))
+    if route == "/east":
+        return _reflected_page("East", params, Reflection("input", escaped=True))
+    if route == "/south":
+        return _textarea_page("South", params, Reflection("comment", escaped=True))
+    if route == "/west":
+        return _reflected_page("West", params, Reflection("term", escaped=True))
+    return 404, _page("Not Found", "<p>not found</p>")
+
+
+def _case_d(route: str, params: dict[str, list[str]], scenario_id: str) -> tuple[int, str]:
+    prefix = _prefix(scenario_id)
+    if route in {"", "/"}:
+        return 200, _page("Index", f'<main><a href="{prefix}/start">Start</a></main>')
+    if route == "/start":
+        return 200, _page(
+            "Start",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/orange">
+                <label>Search <input type="search" name="search"></label>
+                <button type="submit">Open</button>
+              </form>
+              <a href="{prefix}/purple?slot=sample">Details</a>
+            </main>
+            """,
+        )
+    if route == "/panel":
+        return 200, _page(
+            "Panel",
+            f"""
+            <main>
+              <form method="GET" action="{prefix}/silver">
+                <label>Message <input type="text" name="message"></label>
+                <button type="submit">Open</button>
+              </form>
+              <form method="GET" action="{prefix}/yellow">
+                <label>Note <input type="text" name="note" required></label>
+                <button type="submit">Open</button>
+              </form>
+            </main>
+            """,
+        )
+    if route == "/orange":
+        return _reflected_page("Orange", params, Reflection("search", escaped=True))
+    if route == "/purple":
+        return _reflected_page("Purple", params, Reflection("slot", escaped=False))
+    if route == "/silver":
+        return _reflected_page("Silver", params, Reflection("message", escaped=True))
+    if route == "/yellow":
+        return _reflected_page("Yellow", params, Reflection("note", escaped=True))
     return 404, _page("Not Found", "<p>not found</p>")
 
 
 class DevelopmentBenchmarkHandler(BaseHTTPRequestHandler):
-    server_version = "ADSTFDevelopmentBenchmark/0.1"
+    server_version = "ADSTFDevelopmentBenchmark/0.2"
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
@@ -89,6 +233,43 @@ class DevelopmentBenchmarkHandler(BaseHTTPRequestHandler):
 
     def log_message(self, format: str, *args: object) -> None:
         return
+
+
+def _split_scenario_path(path: str) -> tuple[str, str]:
+    parts = [part for part in path.split("/") if part]
+    if len(parts) >= 2 and parts[0] == "s" and parts[1] in SCENARIOS:
+        remainder = "/" + "/".join(parts[2:]) if len(parts) > 2 else "/"
+        return parts[1], remainder
+    return "case-a", path
+
+
+def _prefix(scenario_id: str) -> str:
+    return "" if scenario_id == "case-a" else f"/s/{scenario_id}"
+
+
+def _reflected_page(title: str, params: dict[str, list[str]], reflection: Reflection) -> tuple[int, str]:
+    value = _render_value(_first(params, reflection.parameter), reflection.escaped)
+    return 200, _page(title, f"<main><p>{value}</p></main>")
+
+
+def _textarea_page(title: str, params: dict[str, list[str]], reflection: Reflection) -> tuple[int, str]:
+    value = _render_value(_first(params, reflection.parameter), reflection.escaped)
+    return 200, _page(title, f"<main><textarea>{value}</textarea></main>")
+
+
+def _two_value_page(
+    title: str,
+    params: dict[str, list[str]],
+    first: Reflection,
+    second: Reflection,
+) -> tuple[int, str]:
+    first_value = _render_value(_first(params, first.parameter), first.escaped)
+    second_value = _render_value(_first(params, second.parameter), second.escaped)
+    return 200, _page(title, f"<main><p>{first_value}</p><p>{second_value}</p></main>")
+
+
+def _render_value(value: str, escaped: bool) -> str:
+    return html.escape(value) if escaped else value
 
 
 def _page(title: str, body: str) -> str:

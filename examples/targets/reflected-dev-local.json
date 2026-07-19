@@ -11,6 +11,28 @@
     "benchmark": "reflected-input-development",
     "local_only": true,
     "development_benchmark": true,
+    "scenarios": [
+      {
+        "id": "case-a",
+        "seed_paths": ["/start", "/panel?item=sample"],
+        "test_budget": 6
+      },
+      {
+        "id": "case-b",
+        "seed_paths": ["/s/case-b/start", "/s/case-b/panel"],
+        "test_budget": 6
+      },
+      {
+        "id": "case-c",
+        "seed_paths": ["/s/case-c/start", "/s/case-c/panel", "/s/case-c/west?term=sample"],
+        "test_budget": 6
+      },
+      {
+        "id": "case-d",
+        "seed_paths": ["/s/case-d/start", "/s/case-d/panel", "/s/case-d/purple?slot=sample"],
+        "test_budget": 6
+      }
+    ],
     "reflected_xss_seed_paths": [
       "/start",
       "/panel?item=sample"

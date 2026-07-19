@@ -7,6 +7,7 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
 
 TEXT_LIKE_INPUT_TYPES = {"text", "search", "url", "email", "tel", "textarea"}
+DETERMINISTIC_RANKING_RULESET_VERSION = "deterministic-structural-v1"
 WEAK_GENERIC_PARAMETER_NAMES = {
     "comment",
     "input",

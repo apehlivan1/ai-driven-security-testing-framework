@@ -7,6 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from adstf.dev_benchmark_xss import DEFAULT_CONFIG_PATH, DEFAULT_OUTPUT_ROOT, evaluate_run_against_ground_truth
+from adstf.discovery import DETERMINISTIC_RANKING_RULESET_VERSION
 
 
 class DevelopmentBenchmarkXssTests(unittest.TestCase):
@@ -15,7 +16,7 @@ class DevelopmentBenchmarkXssTests(unittest.TestCase):
         self.assertEqual(DEFAULT_CONFIG_PATH.name, "reflected-dev-local.json")
         self.assertEqual(DEFAULT_OUTPUT_ROOT.name, ".adstf-runs")
 
-    def test_post_run_evaluation_uses_separate_ground_truth(self) -> None:
+    def test_post_run_evaluation_reports_ranking_and_verification_metrics(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             run_dir = Path(tmp) / "run"
             evidence_dir = run_dir / "evidence"
@@ -27,58 +28,91 @@ class DevelopmentBenchmarkXssTests(unittest.TestCase):
                 json.dumps(
                     {
                         "benchmark_id": "test-benchmark",
-                        "cases": [
-                            {"action_path": "/alpha", "parameter_name": "term", "vulnerable": True},
-                            {"action_path": "/beta", "parameter_name": "item", "vulnerable": False},
+                        "ranking_ruleset_version": DETERMINISTIC_RANKING_RULESET_VERSION,
+                        "scenarios": [
+                            {
+                                "scenario_id": "case-a",
+                                "cases": [
+                                    {"action_path": "/alpha", "parameter_name": "term", "vulnerable": True},
+                                    {"action_path": "/beta", "parameter_name": "item", "vulnerable": False},
+                                ],
+                            },
+                            {
+                                "scenario_id": "case-c",
+                                "cases": [
+                                    {"action_path": "/north", "parameter_name": "name", "vulnerable": False},
+                                ],
+                            },
                         ],
                     }
                 ),
                 encoding="utf-8",
             )
-            (evidence_dir / "selected.json").write_text(
-                json.dumps(
-                    {
-                        "evidence_type": "attack_surface_candidate",
-                        "attributes": {
-                            "rank": 1,
-                            "score": 165,
-                            "selected": True,
-                            "candidate_id": "candidate-1",
-                            "action_url": "http://127.0.0.1:4291/alpha",
-                            "parameter_name": "term",
-                        },
-                    }
-                ),
-                encoding="utf-8",
-            )
-            (evidence_dir / "other.json").write_text(
-                json.dumps(
-                    {
-                        "evidence_type": "attack_surface_candidate",
-                        "attributes": {
-                            "rank": 2,
-                            "score": 162,
-                            "selected": False,
-                            "candidate_id": "candidate-2",
-                            "action_url": "http://127.0.0.1:4291/beta",
-                            "parameter_name": "item",
-                        },
-                    }
-                ),
-                encoding="utf-8",
-            )
-            (finding_dir / "finding.json").write_text(
-                json.dumps({"state": "verified"}),
-                encoding="utf-8",
-            )
+            _write_candidate(evidence_dir, "case-a", 1, "/beta", "item", selected=True)
+            _write_candidate(evidence_dir, "case-a", 2, "/alpha", "term")
+            _write_candidate(evidence_dir, "case-c", 1, "/north", "name", selected=True)
+            _write_finding(finding_dir, "case-a", 1, "inconclusive")
+            _write_finding(finding_dir, "case-a", 2, "verified")
+            _write_finding(finding_dir, "case-c", 1, "inconclusive")
 
             evaluation = evaluate_run_against_ground_truth(run_dir, ground_truth_path)
 
-            self.assertEqual(evaluation["candidate_count"], 2)
-            self.assertEqual(evaluation["vulnerable_candidate_count"], 1)
-            self.assertTrue(evaluation["top_rank_is_vulnerable"])
-            self.assertEqual(evaluation["verified_finding_count"], 1)
+            self.assertEqual(evaluation["scenario_count"], 2)
+            self.assertEqual(evaluation["top_1_accuracy"], 0.0)
+            self.assertEqual(evaluation["top_k_recall"], 1.0)
+            self.assertEqual(evaluation["mean_reciprocal_rank"], 0.5)
+            self.assertEqual(evaluation["no_vulnerability_scenario_count"], 1)
+            self.assertEqual(evaluation["no_vulnerability_false_positive_count"], 0)
+            case_a = evaluation["scenario_results"][0]
+            case_c = evaluation["scenario_results"][1]
+            self.assertEqual(case_a["candidates_tested_before_verification"], 2)
+            self.assertEqual(case_a["verified_finding_count"], 1)
+            self.assertEqual(case_c["no_vulnerability_behavior"], "no_verified_findings")
             self.assertEqual(evaluation["ground_truth_used_phase"], "post_run_evaluation_only")
+
+
+def _write_candidate(
+    evidence_dir: Path,
+    scenario_id: str,
+    rank: int,
+    action_path: str,
+    parameter_name: str,
+    *,
+    selected: bool = False,
+) -> None:
+    (evidence_dir / f"{scenario_id}-{rank}.json").write_text(
+        json.dumps(
+            {
+                "evidence_type": "attack_surface_candidate",
+                "attributes": {
+                    "scenario_id": scenario_id,
+                    "test_budget": 2,
+                    "rank": rank,
+                    "score": 100 - rank,
+                    "selected": selected,
+                    "candidate_id": f"{scenario_id}-{rank}",
+                    "action_url": f"http://127.0.0.1:4291{action_path}",
+                    "parameter_name": parameter_name,
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+
+
+def _write_finding(finding_dir: Path, scenario_id: str, rank: int, state: str) -> None:
+    (finding_dir / f"{scenario_id}-{rank}.json").write_text(
+        json.dumps(
+            {
+                "state": state,
+                "report_fields": {
+                    "scenario_id": scenario_id,
+                    "candidate_rank": rank,
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":
