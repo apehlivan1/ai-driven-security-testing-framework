@@ -317,3 +317,21 @@ The SQLi integration:
 The SQLi integration does not extract data, bypass authentication, use stacked queries, use destructive payloads, or perform error-based or timing-based SQL injection checks.
 
 Ground truth for this development benchmark is stored in [examples/benchmarks/sqli-dev-ground-truth.json](examples/benchmarks/sqli-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by execution, comparison, verification, or reporting logic.
+
+## Run The Unified MVP Development Harness
+
+The MVP harness runs the existing reflected-XSS, read-only IDOR, and boolean-SQLi development benchmark integrations and aggregates their post-run evaluations. It does not duplicate vulnerability logic, change payloads, change verifier criteria, enable LLM ranking, or run a traditional scanner.
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.mvp_benchmark
+```
+
+The harness starts the local development benchmark server on the configured ports for each slice, runs the existing slice runners, preserves their individual run directories, and writes a consolidated harness run under `.adstf-runs/`.
+
+Harness artifacts include:
+
+- `artifacts/mvp-evaluation-summary.json`: normalized machine-readable summary across all MVP slices
+- `report.md`: human-readable MVP development benchmark report
+
+The normalized summary records target and module identifiers, benchmark ids, enabled modules, budgets, timing, settings, failures, verified/rejected/inconclusive states, and TP/FP/FN/TN classifications. Ground truth is still used only after each slice has completed.
