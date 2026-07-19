@@ -4,6 +4,7 @@ import argparse
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
+from urllib.parse import urljoin
 
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from playwright.sync_api import sync_playwright
@@ -24,9 +25,11 @@ from adstf.contracts import (
     VerificationOutcome,
 )
 from adstf.discovery import (
+    CandidateRanking,
     ReflectedInputCandidate,
-    candidate_to_attributes,
+    candidate_ranking_to_attributes,
     discover_reflected_input_candidates,
+    rank_reflected_input_candidates,
 )
 from adstf.execution import HttpExecutor
 from adstf.lifecycle import apply_verifier_result, new_id, request_verification
@@ -124,33 +127,30 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
             )
             store.save_evidence(security_evidence)
 
-            seed_path = str(target.metadata.get("reflected_xss_seed_path", "/vulnerabilities/xss_r/"))
-            seed_url = f"{target.base_url}{seed_path}"
-            seed_action = _seed_action(run_id, seed_url)
-            store.save_action_request(seed_action)
-            seed_result, seed_evidence, candidates = _discover_candidates(
-                page,
-                safety,
-                store,
-                seed_action,
-            )
-            store.save_evidence(seed_evidence)
-            store.save_action_result(seed_result)
-            candidate = _select_candidate(candidates)
-            candidate_evidence = _evidence(
-                run_id=run_id,
-                source="dvwa_xss_reflected",
-                evidence_type=EvidenceType.ATTACK_SURFACE_CANDIDATE,
-                target_ref=candidate.action_url,
-                summary="Discovered reflected-input candidate from authenticated seed page.",
-                related_action_ids=[seed_action.action_id],
-                attributes={
-                    "selected": True,
-                    "all_candidate_count": len(candidates),
-                    **candidate_to_attributes(candidate),
-                },
-            )
-            store.save_evidence(candidate_evidence)
+            seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]] = []
+            candidates: list[ReflectedInputCandidate] = []
+            for index, seed_url in enumerate(_seed_urls(target.base_url, target.metadata), start=1):
+                seed_action = _seed_action(run_id, seed_url, index)
+                store.save_action_request(seed_action)
+                seed_result, seed_evidence, discovered = _discover_candidates(
+                    page,
+                    safety,
+                    store,
+                    seed_action,
+                )
+                store.save_evidence(seed_evidence)
+                store.save_action_result(seed_result)
+                seed_observations.append((seed_action, seed_result, seed_evidence))
+                candidates.extend(discovered)
+
+            rankings = _rank_candidates(candidates, safety)
+            if not rankings:
+                raise RuntimeError("No simple GET reflected-input candidates were discovered on configured seed pages.")
+            candidate_evidence = _candidate_evidence_records(run_id, rankings, seed_observations)
+            for evidence in candidate_evidence:
+                store.save_evidence(evidence)
+            selected_ranking = rankings[0]
+            candidate = selected_ranking.candidate
 
             payload = f"<script>window.__adstfXssMarker='{marker}'</script>"
             xss_url = candidate.url_with_value(payload)
@@ -233,14 +233,17 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
         category=modules["xss.reflected"].category,
         affected_target=candidate.url_with_value(""),
         state=FindingState.SUSPECTED,
-        hypothesis="The DVWA reflected-XSS endpoint executes script supplied through the name parameter.",
+        hypothesis=(
+            "The selected reflected-input candidate executes script supplied through "
+            f"the {candidate.parameter_name} parameter."
+        ),
         created_by="dvwa_xss_reflected",
         supporting_evidence_refs=[
             smoke_evidence[0].evidence_id,
             login_evidence.evidence_id,
             security_evidence.evidence_id,
-            seed_evidence.evidence_id,
-            candidate_evidence.evidence_id,
+            *[seed_evidence.evidence_id for _, _, seed_evidence in seed_observations],
+            *[evidence.evidence_id for evidence in candidate_evidence],
             xss_evidence.evidence_id,
             control_observation_evidence.evidence_id,
             control_evidence.evidence_id,
@@ -250,6 +253,9 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
             "parameter": candidate.parameter_name,
             "discovered_parameter": candidate.parameter_name,
             "candidate_id": candidate.candidate_id,
+            "candidate_rank": selected_ranking.rank,
+            "candidate_score": selected_ranking.score,
+            "candidate_rationale": selected_ranking.rationale,
             "payload_marker": marker,
             "control_marker": control_marker,
             "execution_artifact": xss_evidence.data_ref,
@@ -268,8 +274,8 @@ def run_dvwa_reflected_xss(config_path: Path, output_root: Path, headless: bool 
             *smoke_evidence,
             login_evidence,
             security_evidence,
-            seed_evidence,
-            candidate_evidence,
+            *[seed_evidence for _, _, seed_evidence in seed_observations],
+            *candidate_evidence,
             xss_evidence,
             control_observation_evidence,
             control_evidence,
@@ -341,7 +347,7 @@ def _login_action(run_id: str, base_url: str) -> ActionRequest:
     )
 
 
-def _seed_action(run_id: str, seed_url: str) -> ActionRequest:
+def _seed_action(run_id: str, seed_url: str, index: int) -> ActionRequest:
     return ActionRequest(
         action_id=new_id("action"),
         run_id=run_id,
@@ -350,7 +356,11 @@ def _seed_action(run_id: str, seed_url: str) -> ActionRequest:
         action_type=ActionType.OBSERVE_BROWSER,
         target_ref=seed_url,
         scope_context={},
-        parameters={"url": seed_url, "artifact_prefix": "xss-seed", "summary": "Authenticated seed page observed for reflected-input discovery."},
+        parameters={
+            "url": seed_url,
+            "artifact_prefix": f"xss-seed-{index}",
+            "summary": "Authenticated seed page observed for reflected-input discovery.",
+        },
         preconditions=["authenticated_dvwa_session", "dvwa_security_low"],
         safety_class=SafetyClass.LOW,
         rationale="Observe configured authenticated seed page and extract simple reflected-input candidates.",
@@ -378,6 +388,20 @@ def _login_to_dvwa(page, base_url: str, username: str, password: str) -> dict:
     return {"final_url": page.url, "authenticated": True}
 
 
+def _seed_urls(base_url: str, metadata: dict) -> list[str]:
+    seed_paths = metadata.get("reflected_xss_seed_paths")
+    if isinstance(seed_paths, list) and seed_paths:
+        paths = [str(seed_path) for seed_path in seed_paths]
+    else:
+        paths = [str(metadata.get("reflected_xss_seed_path", "/vulnerabilities/xss_r/"))]
+    return [
+        seed_path
+        if seed_path.startswith(("http://", "https://"))
+        else urljoin(f"{base_url.rstrip('/')}/", seed_path)
+        for seed_path in paths
+    ]
+
+
 def _discover_candidates(
     page,
     safety: SafetyBoundary,
@@ -392,16 +416,43 @@ def _discover_candidates(
         seed_evidence.attributes["final_url"],
         html_path.read_text(encoding="utf-8"),
     )
-    if not candidates:
-        raise RuntimeError("No simple GET reflected-input candidates were discovered on the seed page.")
     return result, seed_evidence, candidates
 
 
-def _select_candidate(candidates: list[ReflectedInputCandidate]) -> ReflectedInputCandidate:
-    get_candidates = [candidate for candidate in candidates if candidate.method == "GET"]
-    if not get_candidates:
-        raise RuntimeError("No GET reflected-input candidate is available for this milestone.")
-    return get_candidates[0]
+def _rank_candidates(
+    candidates: list[ReflectedInputCandidate],
+    safety: SafetyBoundary,
+) -> list[CandidateRanking]:
+    rankings = rank_reflected_input_candidates(
+        candidates,
+        lambda candidate: safety.evaluate_url(candidate.action_url).approved,
+    )
+    if rankings and not safety.evaluate_url(rankings[0].candidate.action_url).approved:
+        raise RuntimeError("No in-scope reflected-input candidate is available for this milestone.")
+    return rankings
+
+
+def _candidate_evidence_records(
+    run_id: str,
+    rankings: list[CandidateRanking],
+    seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]],
+) -> list[EvidenceRecord]:
+    related_action_ids = [seed_action.action_id for seed_action, _, _ in seed_observations]
+    return [
+        _evidence(
+            run_id=run_id,
+            source="dvwa_xss_reflected",
+            evidence_type=EvidenceType.ATTACK_SURFACE_CANDIDATE,
+            target_ref=ranking.candidate.action_url,
+            summary="Discovered and ranked reflected-input candidate from configured seed pages.",
+            related_action_ids=related_action_ids,
+            attributes={
+                "all_candidate_count": len(rankings),
+                **candidate_ranking_to_attributes(ranking),
+            },
+        )
+        for ranking in rankings
+    ]
 
 
 def _action_result(action: ActionRequest, evidence: EvidenceRecord, observation: dict) -> ActionResult:

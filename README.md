@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test and deterministic reflected-XSS vertical slice**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, a Playwright-based reflected-XSS integration, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, and limited multi-seed reflected-input discovery**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, a Playwright-based reflected-XSS integration, and unit tests.
 
 ## Safety Scope
 
@@ -26,7 +26,9 @@ This project is intended only for ethical, authorized security research in contr
 - The mock dry run uses mock actions only.
 - The DVWA smoke command performs one local in-scope HTTP request and one blocked out-of-scope request. It does not produce vulnerability findings.
 - The reflected-XSS integration logs into local DVWA, uses a safe JavaScript marker assignment, verifies actual browser execution, runs a benign control case, and records artifacts through the existing verifier lifecycle.
-- The reflected-XSS integration observes a configured authenticated seed page and discovers simple GET reflected-input candidates before building test and control actions.
+- The reflected-XSS integration observes configured authenticated seed pages and discovers simple GET-form and query-parameter reflected-input candidates before building test and control actions.
+- Reflected-input candidates are ranked by target-independent structural features such as scope, source type, text-like editable inputs, required-input count, parameter count, and deterministic URL/parameter tie-breaking. The prioritizer does not use benchmark-revealing route labels such as `xss` or `reflect`.
+- Candidate scores, ranking rationale, and selected/non-selected status are recorded as evidence for auditability.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
@@ -112,8 +114,9 @@ python -m adstf.dvwa_xss_reflected
 The reflected-XSS integration:
 
 - loads the pinned DVWA target configuration
-- observes the configured reflected-XSS seed page
-- records discovered simple GET reflected-input candidates as evidence
+- observes the configured reflected-XSS seed pages
+- records discovered simple GET reflected-input candidates from all configured seed pages as evidence
+- ranks discovered candidates with a deterministic target-independent prioritizer
 - confirms the target is reachable
 - logs into DVWA using the configured benchmark test account
 - sets DVWA's benchmark security level to `low` for this controlled local run
