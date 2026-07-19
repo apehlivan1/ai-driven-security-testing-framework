@@ -1,0 +1,58 @@
+{
+  "ground_truth_id": "heldout-ground-truth-v1",
+  "protocol_version": "evaluation-protocol-v1",
+  "description": "Ground truth for held-out evaluation cases. This file must be used only after an evaluation run has completed.",
+  "ground_truth_available_to_framework": false,
+  "cases": [
+    {
+      "case_id": "hx-001",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "vulnerable": true,
+      "vulnerable_candidate": {
+        "path": "/desk/preview",
+        "parameter": "note"
+      }
+    },
+    {
+      "case_id": "hx-002",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "vulnerable": false
+    },
+    {
+      "case_id": "hx-003",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "vulnerable": true,
+      "vulnerable_candidate": {
+        "path": "/queue/submit",
+        "parameter": "comment"
+      }
+    },
+    {
+      "case_id": "hi-001",
+      "target_id": "heldout-idor",
+      "category": "read_only_idor",
+      "vulnerable": true
+    },
+    {
+      "case_id": "hi-002",
+      "target_id": "heldout-idor",
+      "category": "read_only_idor",
+      "vulnerable": false
+    },
+    {
+      "case_id": "hs-001",
+      "target_id": "heldout-sqli",
+      "category": "boolean_sqli",
+      "vulnerable": true
+    },
+    {
+      "case_id": "hs-002",
+      "target_id": "heldout-sqli",
+      "category": "boolean_sqli",
+      "vulnerable": false
+    }
+  ]
+}

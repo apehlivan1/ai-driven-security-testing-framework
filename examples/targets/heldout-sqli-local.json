@@ -1,0 +1,38 @@
+{
+  "name": "Held-Out Boolean Query Benchmark",
+  "base_url": "http://127.0.0.1:4393",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4393],
+  "enabled_modules": ["sqli.boolean"],
+  "max_actions": 24,
+  "test_users": {},
+  "metadata": {
+    "benchmark": "heldout-boolean-query-v1",
+    "local_only": true,
+    "held_out_benchmark": true,
+    "manifest_path": "examples/benchmarks/heldout-manifest-v1.json",
+    "ground_truth_path": "examples/benchmarks/heldout-ground-truth-v1.json",
+    "health_path": "/status",
+    "reset_path": "/reset",
+    "cases": [
+      {
+        "case_id": "hs-001",
+        "path": "/catalog/item",
+        "parameter": "ref",
+        "baseline_value": "A100",
+        "true_value": "missing' OR '1'='1' -- ",
+        "false_value": "missing' AND '1'='2' -- "
+      },
+      {
+        "case_id": "hs-002",
+        "path": "/catalog/card",
+        "parameter": "ref",
+        "baseline_value": "A100",
+        "true_value": "missing' OR '1'='1' -- ",
+        "false_value": "missing' AND '1'='2' -- "
+      }
+    ],
+    "notes": "Held-out local benchmark target. Ground truth is for post-run evaluation only."
+  }
+}

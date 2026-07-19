@@ -1,0 +1,124 @@
+{
+  "manifest_id": "heldout-evaluation-manifest-v1",
+  "protocol_version": "evaluation-protocol-v1",
+  "description": "Held-out benchmark manifest for final evaluation preparation. This file defines cases, scopes, reset behavior, and budgets without revealing expected vulnerability outcomes.",
+  "ground_truth_available_to_framework": false,
+  "ground_truth_path": "examples/benchmarks/heldout-ground-truth-v1.json",
+  "targets": [
+    {
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "config_path": "examples/targets/heldout-xss-local.json",
+      "base_url": "http://127.0.0.1:4391",
+      "allowed_hosts": ["127.0.0.1"],
+      "allowed_ports": [4391],
+      "docker_facing_base_url": "http://host.docker.internal:4391",
+      "health_path": "/status",
+      "reset_path": "/reset",
+      "case_ids": ["hx-001", "hx-002", "hx-003"],
+      "per_case_budget": {
+        "framework_max_actions": 24,
+        "candidate_test_budget": 6,
+        "browser_timeout_seconds": 10,
+        "llm_trials": 5
+      }
+    },
+    {
+      "target_id": "heldout-idor",
+      "category": "read_only_idor",
+      "config_path": "examples/targets/heldout-idor-local.json",
+      "base_url": "http://127.0.0.1:4392",
+      "allowed_hosts": ["127.0.0.1"],
+      "allowed_ports": [4392],
+      "docker_facing_base_url": "http://host.docker.internal:4392",
+      "health_path": "/status",
+      "reset_path": "/reset",
+      "case_ids": ["hi-001", "hi-002"],
+      "per_case_budget": {
+        "framework_max_actions": 24,
+        "http_timeout_seconds": 5,
+        "session_count": 2
+      }
+    },
+    {
+      "target_id": "heldout-sqli",
+      "category": "boolean_sqli",
+      "config_path": "examples/targets/heldout-sqli-local.json",
+      "base_url": "http://127.0.0.1:4393",
+      "allowed_hosts": ["127.0.0.1"],
+      "allowed_ports": [4393],
+      "docker_facing_base_url": "http://host.docker.internal:4393",
+      "health_path": "/status",
+      "reset_path": "/reset",
+      "case_ids": ["hs-001", "hs-002"],
+      "per_case_budget": {
+        "framework_max_actions": 24,
+        "baseline_repetitions": 3,
+        "boolean_pair_repetitions": 3,
+        "http_timeout_seconds": 5
+      }
+    }
+  ],
+  "scanner_budgets": {
+    "zap_image": "zaproxy/zap-stable:2.16.1",
+    "zap_image_digest": "zaproxy/zap-stable@sha256:7840969c7c9fead565bf9734b12f49f6886db90b1d35b1f74d79710bbd081dab",
+    "zap_passive_runtime_budget_minutes_per_target": 1,
+    "zap_active_spider_max_duration_minutes": 1,
+    "zap_active_max_scan_duration_minutes": 2,
+    "zap_active_max_rule_duration_minutes": 1,
+    "zap_active_enabled_rule_ids": [40012, 40018],
+    "idor_scanner_status": "unsupported_excluded_from_scoring"
+  },
+  "evaluation_units": [
+    {
+      "case_id": "hx-001",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "seed_paths": ["/desk/start", "/desk/list?ticket=sample"]
+    },
+    {
+      "case_id": "hx-002",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "seed_paths": ["/ledger/start", "/ledger/detail?code=sample"]
+    },
+    {
+      "case_id": "hx-003",
+      "target_id": "heldout-xss",
+      "category": "reflected_xss",
+      "seed_paths": ["/queue/start", "/queue/panel"]
+    },
+    {
+      "case_id": "hi-001",
+      "target_id": "heldout-idor",
+      "category": "read_only_idor",
+      "path": "/portal/file",
+      "owner_user_label": "user_a",
+      "requesting_user_label": "user_b",
+      "resource_id": "r-218"
+    },
+    {
+      "case_id": "hi-002",
+      "target_id": "heldout-idor",
+      "category": "read_only_idor",
+      "path": "/portal/item",
+      "owner_user_label": "user_a",
+      "requesting_user_label": "user_b",
+      "resource_id": "r-427"
+    },
+    {
+      "case_id": "hs-001",
+      "target_id": "heldout-sqli",
+      "category": "boolean_sqli",
+      "path": "/catalog/item",
+      "parameter": "ref"
+    },
+    {
+      "case_id": "hs-002",
+      "target_id": "heldout-sqli",
+      "category": "boolean_sqli",
+      "path": "/catalog/card",
+      "parameter": "ref"
+    }
+  ]
+}

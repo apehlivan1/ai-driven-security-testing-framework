@@ -1,0 +1,63 @@
+{
+  "name": "Held-Out Read-Only Access Benchmark",
+  "base_url": "http://127.0.0.1:4392",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4392],
+  "enabled_modules": ["access.idor_read_only"],
+  "max_actions": 24,
+  "test_users": {
+    "mira": "mira-password",
+    "niko": "niko-password"
+  },
+  "metadata": {
+    "benchmark": "heldout-read-only-access-v1",
+    "local_only": true,
+    "held_out_benchmark": true,
+    "manifest_path": "examples/benchmarks/heldout-manifest-v1.json",
+    "ground_truth_path": "examples/benchmarks/heldout-ground-truth-v1.json",
+    "health_path": "/status",
+    "reset_path": "/reset",
+    "users": {
+      "user_a": "mira",
+      "user_b": "niko"
+    },
+    "resources": [
+      {
+        "resource_id": "r-218",
+        "owner_user_label": "user_a",
+        "path": "/portal/file",
+        "content_marker": "record-aurora-owner-a"
+      },
+      {
+        "resource_id": "r-319",
+        "owner_user_label": "user_b",
+        "path": "/portal/file",
+        "content_marker": "record-boreal-owner-b"
+      },
+      {
+        "resource_id": "r-427",
+        "owner_user_label": "user_a",
+        "path": "/portal/item",
+        "content_marker": "record-cascade-owner-a"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "hi-001",
+        "owner_user_label": "user_a",
+        "requesting_user_label": "user_b",
+        "resource_id": "r-218",
+        "path": "/portal/file"
+      },
+      {
+        "case_id": "hi-002",
+        "owner_user_label": "user_a",
+        "requesting_user_label": "user_b",
+        "resource_id": "r-427",
+        "path": "/portal/item"
+      }
+    ],
+    "notes": "Held-out local benchmark target. Ground truth is for post-run evaluation only."
+  }
+}

@@ -15,6 +15,7 @@ This project is intended only for ethical, authorized security research in contr
 - [Architecture overview](docs/architecture-overview.md)
 - [MVP scope and verification](docs/mvp-scope-and-verification.md)
 - [Action and evidence contract](docs/action-and-evidence-contract.md)
+- [Evaluation protocol v1](docs/evaluation-protocol-v1.md)
 - [Open architectural decisions](docs/open-decisions.md)
 
 ## Scaffold Decisions
@@ -408,3 +409,22 @@ python -m adstf.mvp_benchmark --zap-passive-summary .adstf-runs/<zap-passive-run
 ```
 
 ZAP active alerts are scanner baseline outputs only. They are not verifier-confirmed framework findings. Read-only IDOR remains unsupported for ZAP active scoring and is excluded from TP/FP/FN/TN calculations.
+
+## Held-Out Evaluation Preparation
+
+The held-out evaluation protocol is frozen in [docs/evaluation-protocol-v1.md](docs/evaluation-protocol-v1.md). Held-out target definitions and ground truth are separated:
+
+- Manifest: [examples/benchmarks/heldout-manifest-v1.json](examples/benchmarks/heldout-manifest-v1.json)
+- Ground truth: [examples/benchmarks/heldout-ground-truth-v1.json](examples/benchmarks/heldout-ground-truth-v1.json)
+- XSS target config: [examples/targets/heldout-xss-local.json](examples/targets/heldout-xss-local.json)
+- IDOR target config: [examples/targets/heldout-idor-local.json](examples/targets/heldout-idor-local.json)
+- SQLi target config: [examples/targets/heldout-sqli-local.json](examples/targets/heldout-sqli-local.json)
+
+Run only structural validation before final evaluation:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.heldout_validation
+```
+
+The structural validator starts the local held-out XSS, IDOR, and SQLi targets, checks only health/reset/scope/schema behavior, records protocol-critical hashes, and confirms that ground truth was not loaded. It does not execute vulnerability tests or produce final evaluation results.

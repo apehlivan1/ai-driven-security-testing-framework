@@ -1,0 +1,37 @@
+{
+  "name": "Held-Out Reflected Input Benchmark",
+  "base_url": "http://127.0.0.1:4391",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4391],
+  "enabled_modules": ["xss.reflected"],
+  "max_actions": 24,
+  "test_users": {},
+  "metadata": {
+    "benchmark": "heldout-reflected-input-v1",
+    "local_only": true,
+    "held_out_benchmark": true,
+    "manifest_path": "examples/benchmarks/heldout-manifest-v1.json",
+    "ground_truth_path": "examples/benchmarks/heldout-ground-truth-v1.json",
+    "health_path": "/status",
+    "reset_path": "/reset",
+    "scenarios": [
+      {
+        "id": "hx-001",
+        "seed_paths": ["/desk/start", "/desk/list?ticket=sample"],
+        "test_budget": 6
+      },
+      {
+        "id": "hx-002",
+        "seed_paths": ["/ledger/start", "/ledger/detail?code=sample"],
+        "test_budget": 6
+      },
+      {
+        "id": "hx-003",
+        "seed_paths": ["/queue/start", "/queue/panel"],
+        "test_budget": 6
+      }
+    ],
+    "notes": "Held-out local benchmark target. Ground truth is for post-run evaluation only."
+  }
+}
