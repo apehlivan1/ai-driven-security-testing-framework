@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from adstf.dev_benchmark_server import render_response
+from adstf.dev_benchmark_server import _idor_get_response, _idor_login_response, render_response
 
 
 class DevelopmentBenchmarkServerTests(unittest.TestCase):
@@ -76,6 +76,34 @@ class DevelopmentBenchmarkServerTests(unittest.TestCase):
 
                 self.assertEqual(status, 200)
                 self.assertNotIn(payload, body)
+
+    def test_idor_login_returns_cookie_without_token_in_body(self) -> None:
+        status, body, headers = _idor_login_response("username=atlas&password=atlas-password")
+
+        self.assertEqual(status, 200)
+        self.assertIn("Set-Cookie", headers)
+        self.assertNotIn("token-atlas-development", body)
+
+    def test_idor_open_route_allows_cross_user_read_for_development_case(self) -> None:
+        status, body, _ = _idor_get_response(
+            "/idor/open",
+            "rid=n-104",
+            "adstf_session=token-blair-development",
+        )
+
+        self.assertEqual(status, 200)
+        self.assertIn("user_a", body)
+        self.assertIn("ledger-alpha-owned-by-user-a", body)
+
+    def test_idor_guarded_route_blocks_cross_user_read_for_control_case(self) -> None:
+        status, body, _ = _idor_get_response(
+            "/idor/guarded",
+            "rid=n-306",
+            "adstf_session=token-blair-development",
+        )
+
+        self.assertEqual(status, 403)
+        self.assertIn("not authorized", body)
 
 
 if __name__ == "__main__":

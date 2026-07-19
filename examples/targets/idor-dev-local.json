@@ -1,0 +1,62 @@
+{
+  "name": "Read-Only IDOR Development Benchmark",
+  "base_url": "http://127.0.0.1:4292",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4292],
+  "enabled_modules": ["access.idor_read_only"],
+  "max_actions": 20,
+  "test_users": {
+    "atlas": "atlas-password",
+    "blair": "blair-password"
+  },
+  "metadata": {
+    "benchmark": "read-only-idor-development",
+    "local_only": true,
+    "development_benchmark": true,
+    "ground_truth_path": "examples/benchmarks/idor-dev-ground-truth.json",
+    "users": {
+      "user_a": "atlas",
+      "user_b": "blair"
+    },
+    "resources": [
+      {
+        "resource_id": "n-104",
+        "owner_user_label": "user_a",
+        "path": "/idor/open",
+        "content_marker": "ledger-alpha-owned-by-user-a"
+      },
+      {
+        "resource_id": "n-205",
+        "owner_user_label": "user_b",
+        "path": "/idor/open",
+        "content_marker": "ledger-beta-owned-by-user-b"
+      },
+      {
+        "resource_id": "n-306",
+        "owner_user_label": "user_a",
+        "path": "/idor/guarded",
+        "content_marker": "ledger-gamma-owned-by-user-a"
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "open-cross-user",
+        "owner_user_label": "user_a",
+        "requesting_user_label": "user_b",
+        "resource_id": "n-104",
+        "path": "/idor/open",
+        "expected_behavior": "vulnerable"
+      },
+      {
+        "case_id": "guarded-cross-user",
+        "owner_user_label": "user_a",
+        "requesting_user_label": "user_b",
+        "resource_id": "n-306",
+        "path": "/idor/guarded",
+        "expected_behavior": "secure"
+      }
+    ],
+    "notes": "State-free local development benchmark for read-only IDOR verification. Ground truth is for post-run evaluation only."
+  }
+}

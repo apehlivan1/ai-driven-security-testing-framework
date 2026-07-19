@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, and a bounded LLM candidate-ranking baseline boundary**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, and a deterministic read-only IDOR vertical slice**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, and unit tests.
 
 ## Safety Scope
 
@@ -32,9 +32,10 @@ This project is intended only for ethical, authorized security research in contr
 - A state-free local reflected-input development benchmark provides fixed reproducible scenarios with neutral GET-form and query-parameter candidates, with ground truth stored separately for post-run evaluation only.
 - The deterministic reflected-input ranker is versioned as `deterministic-structural-v1`; the benchmark scenarios are meant to evaluate this frozen ruleset, not tune it.
 - The bounded LLM ranking path may only rank already discovered candidate IDs and provide rationales. It cannot execute actions, generate payloads, control the browser, verify findings, or access ground truth.
+- The read-only IDOR path uses two isolated benchmark-user sessions referenced by redacted `session_ref` values. Session credentials and tokens stay in memory and are not persisted in action requests, target artifacts, reports, or evidence.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
-- The scaffold performs no crawling, scanner integration, database storage, IDOR testing, SQL injection testing, tool-calling agents, or plugin loading.
+- The scaffold performs no crawling, scanner integration, database storage, SQL injection testing, tool-calling agents, or plugin loading.
 
 ## Setup
 
@@ -250,3 +251,36 @@ Latest validated bounded ranking comparison used the fake provider-neutral model
 - fake LLM validation error count: `0`
 
 The OpenAI command wrapper is available as `python -m adstf.openai_ranking_wrapper`. It uses the command-client boundary, reads credentials from environment variables only, requests structured JSON output, and returns model/provider metadata, latency, raw response, token usage when returned by the provider, and cost as `null` when unavailable. A real-provider smoke run requires `OPENAI_API_KEY` to be set in the shell before running the command.
+
+## Run The Local Read-Only IDOR Development Benchmark
+
+This development benchmark is intentionally small and state-free. It demonstrates two isolated benchmark-user sessions, explicit user-owned resources, a vulnerable read-only cross-user request, and a secure rejected control case. It is not the final held-out thesis evaluation benchmark.
+
+Start the local benchmark server on the IDOR target port:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_server --host 127.0.0.1 --port 4292
+```
+
+Run the deterministic IDOR vertical slice:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_idor
+```
+
+The IDOR integration:
+
+- loads [examples/targets/idor-dev-local.json](examples/targets/idor-dev-local.json)
+- authenticates two configured benchmark users into separate in-memory sessions
+- records redacted `session_context` evidence for user A and user B
+- records explicit `resource_ownership` evidence for benchmark resources
+- confirms successful read access by each user to their own resource
+- replays a read-only cross-user request for an intentionally vulnerable case
+- replays a read-only cross-user request for a secure control case
+- records HTTP exchanges and comparison evidence
+- verifies or rejects findings through the existing verifier lifecycle
+- writes post-run evaluation to `artifacts/idor-benchmark-evaluation.json`
+
+Ground truth for this development benchmark is stored in [examples/benchmarks/idor-dev-ground-truth.json](examples/benchmarks/idor-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by authentication, execution, comparison, verification, or reporting logic.

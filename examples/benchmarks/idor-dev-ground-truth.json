@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "read-only-idor-development",
+  "description": "Development-only ground truth for fixed read-only IDOR benchmark cases. This file must be used only after a run has completed.",
+  "cases": [
+    {
+      "case_id": "open-cross-user",
+      "owner_user_label": "user_a",
+      "requesting_user_label": "user_b",
+      "resource_id": "n-104",
+      "path": "/idor/open",
+      "vulnerable": true
+    },
+    {
+      "case_id": "guarded-cross-user",
+      "owner_user_label": "user_a",
+      "requesting_user_label": "user_b",
+      "resource_id": "n-306",
+      "path": "/idor/guarded",
+      "vulnerable": false
+    }
+  ]
+}

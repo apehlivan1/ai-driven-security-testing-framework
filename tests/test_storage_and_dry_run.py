@@ -27,6 +27,7 @@ class StorageAndDryRunTests(unittest.TestCase):
                 base_url="http://lab.local",
                 allowed_hosts=["lab.local"],
                 enabled_modules=["xss.reflected"],
+                test_users={"alice": "secret-password"},
             )
             store = RunArtifactStore(Path(tmp), "run-1")
             store.initialize(target)
@@ -61,7 +62,10 @@ class StorageAndDryRunTests(unittest.TestCase):
             evidence_path = store.save_evidence(evidence)
 
             payload = json.loads(evidence_path.read_text(encoding="utf-8"))
+            target_payload = json.loads((Path(tmp) / "run-1" / "target.json").read_text(encoding="utf-8"))
             self.assertEqual(payload["evidence_type"], "http_exchange")
+            self.assertEqual(target_payload["test_users"]["alice"], "[redacted]")
+            self.assertNotIn("secret-password", (Path(tmp) / "run-1" / "target.json").read_text(encoding="utf-8"))
             self.assertTrue((Path(tmp) / "run-1" / "actions" / "action-1.json").exists())
 
     def test_dry_run_creates_artifacts_and_report(self) -> None:

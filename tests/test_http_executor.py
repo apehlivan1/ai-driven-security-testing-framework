@@ -9,10 +9,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from adstf.contracts import ActionRequest, ActionStatus, ActionType, EvidenceType, SafetyClass, TargetConfig
 from adstf.execution import HttpExecutor
 from adstf.safety import SafetyBoundary
+from adstf.sessions import SessionRegistry
 
 
 class SmokeHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
+        if self.path == "/cookie":
+            if self.headers.get("Cookie") != "adstf_session=secret-token":
+                self.send_response(401)
+                self.end_headers()
+                return
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(b'{"content_marker":"private"}')
+            return
         if self.path == "/redirect-safe":
             self.send_response(302)
             self.send_header("Location", "/ok")
@@ -107,6 +118,26 @@ class HttpExecutorTests(unittest.TestCase):
         self.assertEqual(result.status, ActionStatus.FAILED)
         self.assertIn("redirect blocked by safety boundary", result.error or "")
         self.assertEqual(evidence[0].evidence_type, EvidenceType.BLOCKED_ACTION)
+
+    def test_injects_session_headers_without_persisting_cookie_in_action(self) -> None:
+        registry = SessionRegistry()
+        session = registry.add_cookie_session(
+            user_label="user_a",
+            username="atlas",
+            cookie_name="adstf_session",
+            token="secret-token",
+        )
+        executor = HttpExecutor(SafetyBoundary(self.target), session_registry=registry)
+        action = self.action(f"http://127.0.0.1:{self.port}/cookie")
+        action.parameters["session_ref"] = session.session_ref
+        action.parameters["capture_body_text"] = True
+
+        result, evidence = executor.execute(action)
+
+        self.assertEqual(result.status, ActionStatus.EXECUTED)
+        self.assertEqual(evidence[0].attributes["status_code"], 200)
+        self.assertIn("private", evidence[0].attributes["body_text"])
+        self.assertNotIn("secret-token", str(action))
 
 
 if __name__ == "__main__":

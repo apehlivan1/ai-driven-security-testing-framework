@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
@@ -14,6 +15,31 @@ class Reflection:
 
 
 SCENARIOS = {"case-a", "case-b", "case-c", "case-d"}
+IDOR_USERS = {
+    "atlas": {"password": "atlas-password", "label": "user_a"},
+    "blair": {"password": "blair-password", "label": "user_b"},
+}
+IDOR_TOKENS = {
+    "token-atlas-development": "user_a",
+    "token-blair-development": "user_b",
+}
+IDOR_RESOURCES = {
+    "n-104": {
+        "owner": "user_a",
+        "content_marker": "ledger-alpha-owned-by-user-a",
+        "endpoint": "open",
+    },
+    "n-205": {
+        "owner": "user_b",
+        "content_marker": "ledger-beta-owned-by-user-b",
+        "endpoint": "open",
+    },
+    "n-306": {
+        "owner": "user_a",
+        "content_marker": "ledger-gamma-owned-by-user-a",
+        "endpoint": "guarded",
+    },
+}
 
 
 def render_response(path: str, query: str = "") -> tuple[int, str]:
@@ -223,10 +249,32 @@ class DevelopmentBenchmarkHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
+        if parsed.path.startswith("/idor/"):
+            status, body, headers = _idor_get_response(
+                parsed.path,
+                parsed.query,
+                self.headers.get("Cookie", ""),
+            )
+            self._send_body(status, body, headers)
+            return
         status, body = render_response(parsed.path, parsed.query)
+        self._send_body(status, body, {"Content-Type": "text/html; charset=utf-8"})
+
+    def do_POST(self) -> None:
+        parsed = urlparse(self.path)
+        if parsed.path != "/idor/login":
+            self._send_body(404, _page("Not Found", "<p>not found</p>"), {"Content-Type": "text/html; charset=utf-8"})
+            return
+        length = int(self.headers.get("Content-Length", "0"))
+        body = self.rfile.read(length).decode("utf-8")
+        status, response_body, headers = _idor_login_response(body)
+        self._send_body(status, response_body, headers)
+
+    def _send_body(self, status: int, body: str, headers: dict[str, str]) -> None:
         body_bytes = body.encode("utf-8")
         self.send_response(status)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
+        for name, value in headers.items():
+            self.send_header(name, value)
         self.send_header("Content-Length", str(len(body_bytes)))
         self.end_headers()
         self.wfile.write(body_bytes)
@@ -241,6 +289,70 @@ def _split_scenario_path(path: str) -> tuple[str, str]:
         remainder = "/" + "/".join(parts[2:]) if len(parts) > 2 else "/"
         return parts[1], remainder
     return "case-a", path
+
+
+def _idor_login_response(body: str) -> tuple[int, str, dict[str, str]]:
+    params = parse_qs(body, keep_blank_values=True)
+    username = _first(params, "username")
+    password = _first(params, "password")
+    user = IDOR_USERS.get(username)
+    if not user or password != user["password"]:
+        return 403, json.dumps({"authenticated": False}), {"Content-Type": "application/json"}
+    token = f"token-{username}-development"
+    return (
+        200,
+        json.dumps({"authenticated": True, "user_label": user["label"]}),
+        {
+            "Content-Type": "application/json",
+            "Set-Cookie": f"adstf_session={token}; HttpOnly; SameSite=Strict",
+        },
+    )
+
+
+def _idor_get_response(
+    path: str,
+    query: str,
+    cookie_header: str,
+) -> tuple[int, str, dict[str, str]]:
+    if path == "/idor/health":
+        return 200, json.dumps({"status": "ok"}), {"Content-Type": "application/json"}
+
+    user_label = _user_label_from_cookie(cookie_header)
+    if not user_label:
+        return 401, json.dumps({"error": "authentication required"}), {"Content-Type": "application/json"}
+
+    params = parse_qs(query, keep_blank_values=True)
+    resource_id = _first(params, "rid")
+    resource = IDOR_RESOURCES.get(resource_id)
+    if not resource:
+        return 404, json.dumps({"error": "resource not found"}), {"Content-Type": "application/json"}
+
+    if path == "/idor/guarded" and resource["owner"] != user_label:
+        return 403, json.dumps({"error": "not authorized"}), {"Content-Type": "application/json"}
+    if path not in {"/idor/open", "/idor/guarded"}:
+        return 404, json.dumps({"error": "not found"}), {"Content-Type": "application/json"}
+
+    return (
+        200,
+        json.dumps(
+            {
+                "resource_id": resource_id,
+                "owner_user_label": resource["owner"],
+                "viewer_user_label": user_label,
+                "content_marker": resource["content_marker"],
+            },
+            sort_keys=True,
+        ),
+        {"Content-Type": "application/json"},
+    )
+
+
+def _user_label_from_cookie(cookie_header: str) -> str | None:
+    for item in cookie_header.split(";"):
+        name, _, value = item.strip().partition("=")
+        if name == "adstf_session":
+            return IDOR_TOKENS.get(value)
+    return None
 
 
 def _prefix(scenario_id: str) -> str:

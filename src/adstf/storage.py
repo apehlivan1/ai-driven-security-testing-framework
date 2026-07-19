@@ -28,7 +28,7 @@ class RunArtifactStore:
     def initialize(self, target: TargetConfig) -> None:
         for name in ("actions", "results", "evidence", "findings", "verification"):
             (self.run_dir / name).mkdir(parents=True, exist_ok=True)
-        self._write_json(self.run_dir / "target.json", target)
+        self._write_json(self.run_dir / "target.json", self._redacted_target(target))
 
     def save_action_request(self, action: ActionRequest) -> Path:
         return self._write_json(self.run_dir / "actions" / f"{action.action_id}.json", action)
@@ -72,3 +72,9 @@ class RunArtifactStore:
             encoding="utf-8",
         )
         return path
+
+    def _redacted_target(self, target: TargetConfig) -> dict[str, Any]:
+        data = to_json_value(target)
+        if isinstance(data, dict) and isinstance(data.get("test_users"), dict):
+            data["test_users"] = {username: "[redacted]" for username in data["test_users"]}
+        return data

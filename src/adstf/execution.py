@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 from datetime import UTC, datetime
 from http.client import HTTPResponse
+from typing import TYPE_CHECKING
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -17,6 +18,9 @@ from adstf.contracts import (
 )
 from adstf.lifecycle import new_id
 from adstf.safety import SafetyBoundary
+
+if TYPE_CHECKING:
+    from adstf.sessions import SessionRegistry
 
 
 class MockExecutor:
@@ -68,10 +72,16 @@ class NoRedirectHandler(HTTPRedirectHandler):
 class HttpExecutor:
     """Minimal deterministic HTTP executor with manual redirect allowlist checks."""
 
-    def __init__(self, safety: SafetyBoundary, timeout_seconds: float = 5.0) -> None:
+    def __init__(
+        self,
+        safety: SafetyBoundary,
+        timeout_seconds: float = 5.0,
+        session_registry: "SessionRegistry | None" = None,
+    ) -> None:
         self._safety = safety
         self._timeout_seconds = timeout_seconds
         self._opener = build_opener(NoRedirectHandler)
+        self._session_registry = session_registry
 
     def execute(self, action: ActionRequest) -> tuple[ActionResult, list[EvidenceRecord]]:
         started = datetime.now(UTC).isoformat()
@@ -153,14 +163,28 @@ class HttpExecutor:
             str(key): str(value)
             for key, value in dict(action.parameters.get("headers", {})).items()
         }
+        session_ref = action.parameters.get("session_ref")
+        if session_ref:
+            if self._session_registry is None:
+                raise RuntimeError("action references a session but no session registry is configured")
+            headers.update(self._session_registry.headers_for(str(session_ref)))
         max_redirects = int(action.parameters.get("max_redirects", 3))
+        capture_body_text = bool(action.parameters.get("capture_body_text", False))
+        body_text_limit = int(action.parameters.get("body_text_limit", 4096))
         redirect_chain: list[dict] = []
 
         for _ in range(max_redirects + 1):
             request = Request(url=url, method=method, headers=headers)
             try:
                 with self._opener.open(request, timeout=self._timeout_seconds) as response:
-                    return self._normalize_response(method, url, response, redirect_chain)
+                    return self._normalize_response(
+                        method,
+                        url,
+                        response,
+                        redirect_chain,
+                        capture_body_text=capture_body_text,
+                        body_text_limit=body_text_limit,
+                    )
             except HTTPError as error:
                 if error.code in {301, 302, 303, 307, 308}:
                     try:
@@ -195,7 +219,14 @@ class HttpExecutor:
                     finally:
                         error.close()
                     continue
-                response_info = self._normalize_response(method, url, error, redirect_chain)
+                response_info = self._normalize_response(
+                    method,
+                    url,
+                    error,
+                    redirect_chain,
+                    capture_body_text=capture_body_text,
+                    body_text_limit=body_text_limit,
+                )
                 error.close()
                 return response_info
             except URLError as error:
@@ -209,11 +240,14 @@ class HttpExecutor:
         final_url: str,
         response: HTTPResponse | HTTPError,
         redirect_chain: list[dict],
+        *,
+        capture_body_text: bool = False,
+        body_text_limit: int = 4096,
     ) -> dict:
         body = response.read()
         headers = dict(response.headers.items())
         content_type = response.headers.get("Content-Type")
-        return {
+        info = {
             "method": method,
             "final_url": final_url,
             "status_code": response.status if hasattr(response, "status") else response.code,
@@ -228,6 +262,10 @@ class HttpExecutor:
             },
             "redirect_chain": redirect_chain,
         }
+        if capture_body_text:
+            info["body_text"] = body[:body_text_limit].decode("utf-8", errors="replace")
+            info["body_text_truncated"] = len(body) > body_text_limit
+        return info
 
     def _blocked_evidence(self, action: ActionRequest, reasons: list[str]) -> EvidenceRecord:
         return EvidenceRecord(

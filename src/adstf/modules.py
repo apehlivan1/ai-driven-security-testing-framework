@@ -37,6 +37,24 @@ def has_browser_execution_signal(evidence: list[EvidenceRecord]) -> bool:
     )
 
 
+def has_distinct_benchmark_sessions(evidence: list[EvidenceRecord]) -> bool:
+    labels = {
+        item.attributes.get("user_label")
+        for item in evidence
+        if item.evidence_type == EvidenceType.SESSION_CONTEXT
+    }
+    return len(labels) >= 2
+
+
+def has_cross_user_read_access(evidence: list[EvidenceRecord]) -> bool:
+    return any(
+        item.evidence_type == EvidenceType.COMPARISON_RESULT
+        and item.attributes.get("cross_user_access_granted") is True
+        and item.attributes.get("owner_user_label") != item.attributes.get("requesting_user_label")
+        for item in evidence
+    )
+
+
 def mvp_modules() -> dict[str, VulnerabilityModule]:
     modules = [
         VulnerabilityModule(
@@ -85,6 +103,16 @@ def mvp_modules() -> dict[str, VulnerabilityModule]:
             ],
             requires_control_case=True,
             report_fields=["owner_user", "requesting_user", "resource_id", "control_case"],
+            additional_verification_criteria=[
+                VerificationCriterion(
+                    name="has_distinct_benchmark_sessions",
+                    evaluate=has_distinct_benchmark_sessions,
+                ),
+                VerificationCriterion(
+                    name="has_cross_user_read_access",
+                    evaluate=has_cross_user_read_access,
+                ),
+            ],
         ),
         VulnerabilityModule(
             module_id="sqli.boolean",
