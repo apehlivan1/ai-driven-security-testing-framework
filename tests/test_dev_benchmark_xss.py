@@ -58,13 +58,15 @@ class DevelopmentBenchmarkXssTests(unittest.TestCase):
             evaluation = evaluate_run_against_ground_truth(run_dir, ground_truth_path)
 
             self.assertEqual(evaluation["scenario_count"], 2)
-            self.assertEqual(evaluation["top_1_accuracy"], 0.0)
-            self.assertEqual(evaluation["top_k_recall"], 1.0)
-            self.assertEqual(evaluation["mean_reciprocal_rank"], 0.5)
-            self.assertEqual(evaluation["no_vulnerability_scenario_count"], 1)
-            self.assertEqual(evaluation["no_vulnerability_false_positive_count"], 0)
-            case_a = evaluation["scenario_results"][0]
-            case_c = evaluation["scenario_results"][1]
+            baseline = evaluation["deterministic_baseline"]
+            self.assertEqual(baseline["ranking_source"], "deterministic")
+            self.assertEqual(baseline["top_1_accuracy"], 0.0)
+            self.assertEqual(baseline["top_k_recall"], 1.0)
+            self.assertEqual(baseline["mean_reciprocal_rank"], 0.5)
+            self.assertEqual(baseline["no_vulnerability_scenario_count"], 1)
+            self.assertEqual(baseline["no_vulnerability_false_positive_count"], 0)
+            case_a = baseline["scenario_results"][0]
+            case_c = baseline["scenario_results"][1]
             self.assertEqual(case_a["candidates_tested_before_verification"], 2)
             self.assertEqual(case_a["verified_finding_count"], 1)
             self.assertEqual(case_c["no_vulnerability_behavior"], "no_verified_findings")

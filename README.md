@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, and a small local reflected-input development benchmark**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, and a bounded LLM candidate-ranking baseline boundary**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, and unit tests.
 
 ## Safety Scope
 
@@ -31,10 +31,10 @@ This project is intended only for ethical, authorized security research in contr
 - Candidate scores, ranking rationale, and selected/non-selected status are recorded as evidence for auditability.
 - A state-free local reflected-input development benchmark provides fixed reproducible scenarios with neutral GET-form and query-parameter candidates, with ground truth stored separately for post-run evaluation only.
 - The deterministic reflected-input ranker is versioned as `deterministic-structural-v1`; the benchmark scenarios are meant to evaluate this frozen ruleset, not tune it.
+- The bounded LLM ranking path may only rank already discovered candidate IDs and provide rationales. It cannot execute actions, generate payloads, control the browser, verify findings, or access ground truth.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
-- The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
-- The scaffold performs no crawling, LLM calls, scanner integration, database storage, IDOR testing, SQL injection testing, or plugin loading.
+- The scaffold performs no crawling, scanner integration, database storage, IDOR testing, SQL injection testing, tool-calling agents, or plugin loading.
 
 ## Setup
 
@@ -142,11 +142,20 @@ $env:PYTHONPATH = "src"
 python -m adstf.dev_benchmark_server --host 127.0.0.1 --port 4291
 ```
 
-Reset is reproducible because the benchmark has no persistent state. Restarting the server is sufficient; the `/reset` endpoint is also available for scripted checks:
+Reset is reproducible because the benchmark has no persistent state. Restarting the server is sufficient; the `/reset` endpoint is also available for scripted checks.
+
+Run the deterministic baseline:
 
 ```powershell
 $env:PYTHONPATH = "src"
 python -m adstf.dev_benchmark_xss
+```
+
+Run the deterministic baseline plus one bounded provider-neutral LLM-ranking trial using the fake model client:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_xss --ranking-mode both --llm-client fake --fake-llm-strategy as_listed --trials 1
 ```
 
 The development benchmark integration:
@@ -162,6 +171,7 @@ The development benchmark integration:
 - stores screenshots, HTML artifacts, findings, verifier results, and a report
 - writes post-run benchmark evaluation to `artifacts/benchmark-evaluation.json`
 - writes scenario execution details to `artifacts/scenario-run-summary.json`
+- when LLM ranking is enabled, writes prompt/response artifacts under `artifacts/llm/`
 
 Ground truth for this development benchmark is stored in [examples/benchmarks/reflected-dev-ground-truth.json](examples/benchmarks/reflected-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by discovery, ranking, verification, or reporting logic.
 
@@ -173,6 +183,22 @@ The benchmark evaluation records:
 - candidates tested before verification
 - verified finding count
 - no-vulnerability scenario behavior
+- ranking source and trial number
+- model identifier, prompt version, validation errors, and provider failures for LLM ranking runs
+
+The LLM ranking artifact records:
+
+- model identifier
+- prompt version
+- model settings
+- structured candidate input
+- prompt
+- raw response
+- parsed ranking
+- validation errors
+- token or cost data when available
+- timestamp
+- trial number
 
 Current fixed development scenarios:
 
@@ -188,3 +214,11 @@ Latest validated scenario run produced:
 - top-k recall over vulnerable scenarios: `1.0`
 - mean reciprocal rank: `0.5277777777777778`
 - no-vulnerability false-positive count: `0`
+
+Latest validated bounded ranking comparison used the fake provider-neutral model client for plumbing validation, not a real LLM provider. It produced:
+
+- deterministic baseline top-1 accuracy: `0.3333333333333333`
+- deterministic baseline mean reciprocal rank: `0.5277777777777778`
+- fake LLM trial top-1 accuracy: `0.3333333333333333`
+- fake LLM trial mean reciprocal rank: `0.5833333333333334`
+- fake LLM validation error count: `0`

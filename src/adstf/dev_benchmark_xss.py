@@ -36,6 +36,14 @@ from adstf.discovery import (
 from adstf.discovery import DETERMINISTIC_RANKING_RULESET_VERSION as RANKING_RULESET_VERSION
 from adstf.execution import HttpExecutor
 from adstf.lifecycle import apply_verifier_result, new_id, request_verification
+from adstf.llm_ranking import (
+    CommandModelClient,
+    FakeModelClient,
+    LLMRankingResult,
+    ModelClient,
+    rank_candidates_with_model,
+    ranking_result_artifact,
+)
 from adstf.modules import mvp_modules
 from adstf.reporting import render_placeholder_report
 from adstf.safety import SafetyBoundary
@@ -56,10 +64,22 @@ class ScenarioSpec:
     test_budget: int
 
 
+@dataclass(frozen=True)
+class RankingRunSpec:
+    ranking_source: str
+    trial_number: int
+    model_client: ModelClient | None = None
+    model_settings: dict | None = None
+
+
 def run_development_benchmark_reflected_xss(
     config_path: Path,
     output_root: Path,
     headless: bool = True,
+    ranking_mode: str = "deterministic",
+    llm_trials: int = 1,
+    model_client: ModelClient | None = None,
+    model_settings: dict | None = None,
 ) -> Path:
     target = load_target_config(config_path)
     run_id = f"dev-benchmark-xss-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
@@ -86,18 +106,25 @@ def run_development_benchmark_reflected_xss(
         context = browser.new_context(base_url=target.base_url)
         try:
             page = context.new_page()
-            for scenario in _scenario_specs(target):
-                summary, findings = _run_scenario(
-                    scenario=scenario,
-                    page=page,
-                    target=target,
-                    safety=safety,
-                    store=store,
-                    modules=modules,
-                    smoke_evidence=smoke_evidence,
-                )
-                scenario_summaries.append(summary)
-                all_findings.extend(findings)
+            for ranking_run in _ranking_run_specs(
+                ranking_mode,
+                llm_trials,
+                model_client,
+                model_settings,
+            ):
+                for scenario in _scenario_specs(target):
+                    summary, findings = _run_scenario(
+                        scenario=scenario,
+                        ranking_run=ranking_run,
+                        page=page,
+                        target=target,
+                        safety=safety,
+                        store=store,
+                        modules=modules,
+                        smoke_evidence=smoke_evidence,
+                    )
+                    scenario_summaries.append(summary)
+                    all_findings.extend(findings)
         finally:
             context.close()
             browser.close()
@@ -127,8 +154,57 @@ def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) ->
         }
         for scenario in truth["scenarios"]
     }
+    candidate_records = [
+        record
+        for record in _json_records(run_dir / "evidence")
+        if record["evidence_type"] == EvidenceType.ATTACK_SURFACE_CANDIDATE.value
+    ]
+    run_keys = sorted(
+        {
+            (
+                record["attributes"].get("ranking_source", "deterministic"),
+                int(record["attributes"].get("trial_number", 1)),
+            )
+            for record in candidate_records
+        }
+    )
+    ranking_runs = [
+        _evaluate_ranking_run(
+            run_dir,
+            truth,
+            cases_by_scenario,
+            ranking_source,
+            trial_number,
+        )
+        for ranking_source, trial_number in run_keys
+    ]
+    deterministic = next((run for run in ranking_runs if run["ranking_source"] == "deterministic"), None)
+    return {
+        "benchmark_id": truth["benchmark_id"],
+        "ground_truth_used_phase": "post_run_evaluation_only",
+        "ranking_ruleset_version": truth.get("ranking_ruleset_version", RANKING_RULESET_VERSION),
+        "scenario_count": len(truth["scenarios"]),
+        "ranking_runs": ranking_runs,
+        "deterministic_baseline": deterministic,
+        "llm_trials": [run for run in ranking_runs if run["ranking_source"] == "llm"],
+    }
+
+
+def _evaluate_ranking_run(
+    run_dir: Path,
+    truth: dict,
+    cases_by_scenario: dict[str, dict[tuple[str, str], dict]],
+    ranking_source: str,
+    trial_number: int,
+) -> dict:
     scenario_results = [
-        _evaluate_scenario(run_dir, scenario["scenario_id"], cases_by_scenario[scenario["scenario_id"]])
+        _evaluate_scenario(
+            run_dir,
+            scenario["scenario_id"],
+            cases_by_scenario[scenario["scenario_id"]],
+            ranking_source,
+            trial_number,
+        )
         for scenario in truth["scenarios"]
     ]
     vulnerable_results = [
@@ -137,10 +213,12 @@ def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) ->
     no_vulnerability_results = [
         result for result in scenario_results if result["vulnerable_candidate_count"] == 0
     ]
+    first_result = next((result for result in scenario_results if result["model_identifier"]), None)
     return {
-        "benchmark_id": truth["benchmark_id"],
-        "ground_truth_used_phase": "post_run_evaluation_only",
-        "ranking_ruleset_version": truth.get("ranking_ruleset_version", RANKING_RULESET_VERSION),
+        "ranking_source": ranking_source,
+        "trial_number": trial_number,
+        "model_identifier": first_result["model_identifier"] if first_result else None,
+        "prompt_version": first_result["prompt_version"] if first_result else None,
         "scenario_count": len(scenario_results),
         "top_1_accuracy": _mean(
             1.0 if result["top_rank_is_vulnerable"] else 0.0
@@ -152,6 +230,12 @@ def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) ->
         "no_vulnerability_false_positive_count": sum(
             1 for result in no_vulnerability_results if result["verified_finding_count"] > 0
         ),
+        "validation_error_count": sum(
+            len(result["model_validation_errors"]) for result in scenario_results
+        ),
+        "provider_failure_count": sum(
+            1 for result in scenario_results if result["model_provider_failed"]
+        ),
         "scenario_results": scenario_results,
     }
 
@@ -159,6 +243,7 @@ def evaluate_run_against_ground_truth(run_dir: Path, ground_truth_path: Path) ->
 def _run_scenario(
     *,
     scenario: ScenarioSpec,
+    ranking_run: RankingRunSpec,
     page,
     target: TargetConfig,
     safety: SafetyBoundary,
@@ -177,15 +262,25 @@ def _run_scenario(
         seed_observations.append((seed_action, seed_result, seed_evidence))
         candidates.extend(discovered)
 
-    rankings = _rank_candidates(candidates, safety)
+    rankings, llm_artifact_ref, llm_result = _build_rankings(
+        candidates=candidates,
+        safety=safety,
+        store=store,
+        scenario=scenario,
+        ranking_run=ranking_run,
+    )
     if not rankings:
         raise RuntimeError(f"No simple GET reflected-input candidates were discovered for {scenario.scenario_id}.")
     candidate_evidence = _candidate_evidence_records(
         store.run_id,
         scenario.scenario_id,
+        ranking_run.ranking_source,
+        ranking_run.trial_number,
         scenario.test_budget,
         rankings,
         seed_observations,
+        llm_artifact_ref,
+        llm_result,
     )
     for evidence in candidate_evidence:
         store.save_evidence(evidence)
@@ -203,6 +298,7 @@ def _run_scenario(
         )
         verified = _test_candidate(
             scenario=scenario,
+            ranking_run=ranking_run,
             ranking=ranking,
             page=page,
             safety=safety,
@@ -220,7 +316,11 @@ def _run_scenario(
     return (
         {
             "scenario_id": scenario.scenario_id,
+            "ranking_source": ranking_run.ranking_source,
+            "trial_number": ranking_run.trial_number,
             "ranking_ruleset_version": RANKING_RULESET_VERSION,
+            "model_identifier": llm_result.model_identifier if llm_result else None,
+            "llm_artifact": llm_artifact_ref,
             "candidate_count": len(rankings),
             "test_budget": scenario.test_budget,
             "tested_candidate_count": len(tested_candidates),
@@ -234,6 +334,7 @@ def _run_scenario(
 def _test_candidate(
     *,
     scenario: ScenarioSpec,
+    ranking_run: RankingRunSpec,
     ranking: CandidateRanking,
     page,
     safety: SafetyBoundary,
@@ -244,9 +345,10 @@ def _test_candidate(
     candidate_evidence: list[EvidenceRecord],
 ) -> FindingRecord:
     candidate = ranking.candidate
-    marker = f"adstf_xss_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{ranking.rank}"
-    control_marker = f"adstf_control_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{ranking.rank}"
-    artifact_stem = f"{scenario.scenario_id}-candidate-{ranking.rank}"
+    run_label = f"{ranking_run.ranking_source}-trial-{ranking_run.trial_number}"
+    marker = f"adstf_xss_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{run_label}_{ranking.rank}"
+    control_marker = f"adstf_control_{store.run_id.replace('-', '_')}_{scenario.scenario_id}_{run_label}_{ranking.rank}"
+    artifact_stem = f"{scenario.scenario_id}-{run_label}-candidate-{ranking.rank}"
     xss_url = candidate.url_with_value(f"<script>window.__adstfXssMarker='{marker}'</script>")
     control_url = candidate.url_with_value(control_marker)
 
@@ -286,6 +388,8 @@ def _test_candidate(
         control_observation_evidence,
         control_marker,
         scenario.scenario_id,
+        ranking_run.ranking_source,
+        ranking_run.trial_number,
     )
     verification_note = _evidence(
         run_id=store.run_id,
@@ -297,6 +401,8 @@ def _test_candidate(
             "payload_family": "safe_marker_assignment",
             "ground_truth_used": False,
             "scenario_id": scenario.scenario_id,
+            "ranking_source": ranking_run.ranking_source,
+            "trial_number": ranking_run.trial_number,
             "candidate_rank": ranking.rank,
         },
     )
@@ -327,6 +433,8 @@ def _test_candidate(
         ],
         report_fields={
             "scenario_id": scenario.scenario_id,
+            "ranking_source": ranking_run.ranking_source,
+            "trial_number": ranking_run.trial_number,
             "parameter": candidate.parameter_name,
             "candidate_id": candidate.candidate_id,
             "candidate_rank": ranking.rank,
@@ -367,6 +475,8 @@ def _evaluate_scenario(
     run_dir: Path,
     scenario_id: str,
     cases: dict[tuple[str, str], dict],
+    ranking_source: str,
+    trial_number: int,
 ) -> dict:
     ranked_candidates = sorted(
         [
@@ -374,6 +484,8 @@ def _evaluate_scenario(
             for record in _json_records(run_dir / "evidence")
             if record["evidence_type"] == EvidenceType.ATTACK_SURFACE_CANDIDATE.value
             and record["attributes"].get("scenario_id") == scenario_id
+            and record["attributes"].get("ranking_source", "deterministic") == ranking_source
+            and int(record["attributes"].get("trial_number", 1)) == trial_number
         ],
         key=lambda record: record["attributes"]["rank"],
     )
@@ -386,6 +498,8 @@ def _evaluate_scenario(
         finding
         for finding in _json_records(run_dir / "findings")
         if finding["report_fields"].get("scenario_id") == scenario_id
+        and finding["report_fields"].get("ranking_source", "deterministic") == ranking_source
+        and int(finding["report_fields"].get("trial_number", 1)) == trial_number
     ]
     verified_findings = [
         finding for finding in findings if finding["state"] == FindingState.VERIFIED.value
@@ -402,7 +516,28 @@ def _evaluate_scenario(
     )
     return {
         "scenario_id": scenario_id,
+        "ranking_source": ranking_source,
+        "trial_number": trial_number,
         "ranking_ruleset_version": RANKING_RULESET_VERSION,
+        "model_identifier": (
+            ranked_candidates[0]["attributes"].get("model_identifier")
+            if ranked_candidates
+            else None
+        ),
+        "prompt_version": (
+            ranked_candidates[0]["attributes"].get("prompt_version")
+            if ranked_candidates
+            else None
+        ),
+        "model_validation_errors": (
+            ranked_candidates[0]["attributes"].get("model_validation_errors", [])
+            if ranked_candidates
+            else []
+        ),
+        "model_provider_failed": bool(
+            ranked_candidates
+            and ranked_candidates[0]["attributes"].get("model_provider_failed", False)
+        ),
         "candidate_count": len(evaluated_candidates),
         "vulnerable_candidate_count": sum(
             1 for candidate in evaluated_candidates if candidate["ground_truth_vulnerable"]
@@ -489,6 +624,31 @@ def _scenario_specs(target: TargetConfig) -> list[ScenarioSpec]:
     ]
 
 
+def _ranking_run_specs(
+    ranking_mode: str,
+    llm_trials: int,
+    model_client: ModelClient | None,
+    model_settings: dict | None,
+) -> list[RankingRunSpec]:
+    if ranking_mode not in {"deterministic", "llm", "both"}:
+        raise ValueError("ranking_mode must be one of: deterministic, llm, both")
+    specs: list[RankingRunSpec] = []
+    if ranking_mode in {"deterministic", "both"}:
+        specs.append(RankingRunSpec("deterministic", 1))
+    if ranking_mode in {"llm", "both"}:
+        client = model_client or FakeModelClient()
+        for trial_number in range(1, llm_trials + 1):
+            specs.append(
+                RankingRunSpec(
+                    "llm",
+                    trial_number,
+                    client,
+                    model_settings or {"temperature": 0.0},
+                )
+            )
+    return specs
+
+
 def _seed_urls(target: TargetConfig, scenario: ScenarioSpec) -> list[str]:
     return [
         path
@@ -549,12 +709,54 @@ def _rank_candidates(
     return rankings
 
 
+def _build_rankings(
+    *,
+    candidates: list[ReflectedInputCandidate],
+    safety: SafetyBoundary,
+    store: RunArtifactStore,
+    scenario: ScenarioSpec,
+    ranking_run: RankingRunSpec,
+) -> tuple[list[CandidateRanking], str | None, LLMRankingResult | None]:
+    if ranking_run.ranking_source == "deterministic":
+        return _rank_candidates(candidates, safety), None, None
+    if ranking_run.model_client is None:
+        raise ValueError("LLM ranking run requires a model client")
+    result = rank_candidates_with_model(
+        candidates=candidates,
+        scenario_id=scenario.scenario_id,
+        trial_number=ranking_run.trial_number,
+        model_client=ranking_run.model_client,
+        settings=ranking_run.model_settings,
+    )
+    artifact = store.save_artifact_text(
+        f"llm/{scenario.scenario_id}-trial-{ranking_run.trial_number}-ranking.json",
+        json.dumps(to_json_value(ranking_result_artifact(result)), indent=2, sort_keys=True) + "\n",
+    )
+    by_id = {candidate.candidate_id: candidate for candidate in candidates}
+    rankings = [
+        CandidateRanking(
+            candidate=by_id[candidate_id],
+            rank=index + 1,
+            score=0,
+            rationale=[result.rationales.get(candidate_id, ""), *result.validation_errors],
+            selected=index == 0,
+        )
+        for index, candidate_id in enumerate(result.ordered_candidate_ids)
+        if candidate_id in by_id
+    ]
+    return rankings, str(artifact.relative_to(store.run_dir)), result
+
+
 def _candidate_evidence_records(
     run_id: str,
     scenario_id: str,
+    ranking_source: str,
+    trial_number: int,
     test_budget: int,
     rankings: list[CandidateRanking],
     seed_observations: list[tuple[ActionRequest, ActionResult, EvidenceRecord]],
+    llm_artifact_ref: str | None,
+    llm_result: LLMRankingResult | None,
 ) -> list[EvidenceRecord]:
     related_action_ids = [seed_action.action_id for seed_action, _, _ in seed_observations]
     return [
@@ -566,8 +768,15 @@ def _candidate_evidence_records(
             related_action_ids=related_action_ids,
             attributes={
                 "scenario_id": scenario_id,
+                "ranking_source": ranking_source,
+                "trial_number": trial_number,
                 "ranking_ruleset_version": RANKING_RULESET_VERSION,
                 "test_budget": test_budget,
+                "llm_artifact": llm_artifact_ref,
+                "model_identifier": llm_result.model_identifier if llm_result else None,
+                "prompt_version": llm_result.prompt_version if llm_result else None,
+                "model_validation_errors": llm_result.validation_errors if llm_result else [],
+                "model_provider_failed": llm_result.provider_failed if llm_result else False,
                 "all_candidate_count": len(rankings),
                 **candidate_ranking_to_attributes(ranking),
             },
@@ -613,6 +822,8 @@ def _control_evidence(
     control_observation_evidence: EvidenceRecord,
     control_marker: str,
     scenario_id: str,
+    ranking_source: str,
+    trial_number: int,
 ) -> EvidenceRecord:
     return EvidenceRecord(
         evidence_id=new_id("evidence"),
@@ -627,6 +838,8 @@ def _control_evidence(
         related_action_ids=[control_action.action_id],
         attributes={
             "scenario_id": scenario_id,
+            "ranking_source": ranking_source,
+            "trial_number": trial_number,
             "is_control_case": True,
             "control_case_passed": control_observation_evidence.attributes["execution_marker_observed"] is False,
             "execution_marker_observed": control_observation_evidence.attributes["execution_marker_observed"],
@@ -683,12 +896,56 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--headed", action="store_true", help="Run Chromium with a visible window.")
+    parser.add_argument(
+        "--ranking-mode",
+        choices=["deterministic", "llm", "both"],
+        default="deterministic",
+        help="Choose deterministic baseline, bounded LLM ranking, or both.",
+    )
+    parser.add_argument("--trials", type=int, default=1, help="Number of LLM ranking trials.")
+    parser.add_argument(
+        "--llm-client",
+        choices=["fake", "command"],
+        default="fake",
+        help="Provider-neutral model client for bounded ranking.",
+    )
+    parser.add_argument(
+        "--fake-llm-strategy",
+        default="as_listed",
+        choices=[
+            "as_listed",
+            "reverse",
+            "duplicate_first",
+            "omit_last",
+            "unknown_first",
+            "malformed",
+            "timeout",
+            "provider_failure",
+        ],
+    )
+    parser.add_argument(
+        "--llm-command",
+        nargs=argparse.REMAINDER,
+        help="Command model client. Receives JSON on stdin and writes model response to stdout.",
+    )
     args = parser.parse_args()
+    model_client: ModelClient | None = None
+    if args.ranking_mode in {"llm", "both"}:
+        if args.llm_client == "command":
+            if not args.llm_command:
+                parser.error("--llm-command is required when --llm-client command is used")
+            model_client = CommandModelClient(args.llm_command)
+        else:
+            model_client = FakeModelClient(strategy=args.fake_llm_strategy)
     try:
         run_dir = run_development_benchmark_reflected_xss(
             args.config,
             args.output_root,
             headless=not args.headed,
+            ranking_mode=args.ranking_mode,
+            llm_trials=args.trials,
+            model_client=model_client,
+            model_settings={"temperature": 0.0},
         )
     except Exception as exc:
         print(f"Development benchmark reflected-XSS integration failed: {exc}", file=sys.stderr)
