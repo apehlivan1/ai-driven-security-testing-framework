@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, a deterministic read-only IDOR vertical slice, and a deterministic non-destructive boolean-SQLi vertical slice**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, SQLi response-differential verification, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, a deterministic read-only IDOR vertical slice, a deterministic non-destructive boolean-SQLi vertical slice, a unified MVP development harness, and a minimal OWASP ZAP passive-baseline adapter**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, SQLi response-differential verification, fixture-based passive scanner alert normalization, and unit tests.
 
 ## Safety Scope
 
@@ -34,6 +34,7 @@ This project is intended only for ethical, authorized security research in contr
 - The bounded LLM ranking path may only rank already discovered candidate IDs and provide rationales. It cannot execute actions, generate payloads, control the browser, verify findings, or access ground truth.
 - The read-only IDOR path uses two isolated benchmark-user sessions referenced by redacted `session_ref` values. Session credentials and tokens stay in memory and are not persisted in action requests, target artifacts, reports, or evidence.
 - The boolean-SQLi path uses repeated baseline, boolean-true, and boolean-false HTTP requests. Verification requires stable baseline behavior and reproducible true/false differences; server errors and reflected payload text alone are not sufficient evidence.
+- The ZAP passive baseline adapter ingests ZAP JSON reports, keeps scanner alerts separate from verifier-confirmed framework findings, maps alerts to XSS and SQLi development cases through explicit versioned rules, and marks IDOR unsupported for passive-scanner scoring.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, scanner integration, framework database storage, tool-calling agents, or plugin loading.
@@ -320,7 +321,7 @@ Ground truth for this development benchmark is stored in [examples/benchmarks/sq
 
 ## Run The Unified MVP Development Harness
 
-The MVP harness runs the existing reflected-XSS, read-only IDOR, and boolean-SQLi development benchmark integrations and aggregates their post-run evaluations. It does not duplicate vulnerability logic, change payloads, change verifier criteria, enable LLM ranking, or run a traditional scanner.
+The MVP harness runs the existing reflected-XSS, read-only IDOR, and boolean-SQLi development benchmark integrations and aggregates their post-run evaluations. It does not duplicate vulnerability logic, change payloads, change verifier criteria, enable LLM ranking, or run a traditional scanner unless a pre-existing ZAP JSON report is explicitly provided for side-by-side baseline presentation.
 
 ```powershell
 $env:PYTHONPATH = "src"
@@ -335,3 +336,45 @@ Harness artifacts include:
 - `report.md`: human-readable MVP development benchmark report
 
 The normalized summary records target and module identifiers, benchmark ids, enabled modules, budgets, timing, settings, failures, verified/rejected/inconclusive states, and TP/FP/FN/TN classifications. Ground truth is still used only after each slice has completed.
+
+To present a ZAP passive-baseline report beside framework results:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.mvp_benchmark --zap-passive-report tests/fixtures/zap/passive-xss-sqli-report.json
+```
+
+The ZAP baseline section is separate from framework findings. ZAP alerts are normalized as scanner alerts, not verifier-confirmed findings.
+
+## Run The ZAP Passive-Baseline Adapter
+
+The passive-baseline adapter supports fixture-based ingestion of OWASP ZAP JSON reports:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.zap_baseline ingest --report tests/fixtures/zap/passive-xss-sqli-report.json
+```
+
+The adapter writes:
+
+- `artifacts/zap-passive-summary.json`: normalized case-level passive-baseline summary
+- `artifacts/zap-passive-raw-alerts.json`: raw normalized scanner alerts retained separately
+- `report.md`: human-readable passive-baseline report
+
+The current mapping rules are versioned as `zap-passive-mapping-v1`. They evaluate only the current reflected-XSS and boolean-SQLi development benchmark cases. Read-only IDOR is recorded as unsupported/not evaluated for passive ZAP and excluded from TP/FP/FN/TN calculations because passive spider alerts do not establish two-user authorization behavior.
+
+An optional live passive smoke can be run with Docker and the pinned image `zaproxy/zap-stable:2.16.1`. The development-target mode starts and resets the local reflected-XSS and boolean-SQLi benchmark targets, then scans their Docker-facing local URLs with ZAP's own spider/passive workflow:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.zap_baseline live --development-xss-sqli --runtime-budget-minutes 1
+```
+
+This command uses ZAP's own spider-generated traffic and JSON reports. It does not proxy the framework's crafted XSS or SQLi test traffic through ZAP for baseline scoring. A live run with no mapped vulnerability alerts is still a valid passive-baseline result.
+
+To render framework results and an already normalized live ZAP summary side by side:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.mvp_benchmark --zap-passive-summary .adstf-runs/<zap-live-run>/artifacts/zap-passive-summary.json
+```

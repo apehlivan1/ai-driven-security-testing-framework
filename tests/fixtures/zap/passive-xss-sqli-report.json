@@ -1,0 +1,59 @@
+{
+  "@version": "2.16.1",
+  "site": [
+    {
+      "@host": "127.0.0.1",
+      "@name": "http://127.0.0.1:4291",
+      "@port": "4291",
+      "@ssl": "false",
+      "alerts": [
+        {
+          "pluginid": "40012",
+          "alert": "Cross Site Scripting (Reflected)",
+          "riskdesc": "High (Medium)",
+          "confidence": "Medium",
+          "cweid": "79",
+          "wascid": "8",
+          "instances": [
+            {
+              "uri": "http://127.0.0.1:4291/alpha?term=sample",
+              "method": "GET",
+              "param": "term",
+              "evidence": "sample"
+            }
+          ]
+        },
+        {
+          "pluginid": "40018",
+          "alert": "SQL Injection",
+          "riskdesc": "High (Medium)",
+          "confidence": "Medium",
+          "cweid": "89",
+          "wascid": "19",
+          "instances": [
+            {
+              "uri": "http://127.0.0.1:4293/sqli/view?item=sample",
+              "method": "GET",
+              "param": "item",
+              "evidence": "sample"
+            }
+          ]
+        },
+        {
+          "pluginid": "10027",
+          "alert": "Information Disclosure - Suspicious Comments",
+          "riskdesc": "Informational (Low)",
+          "confidence": "Low",
+          "instances": [
+            {
+              "uri": "http://127.0.0.1:4291/misc?note=sample",
+              "method": "GET",
+              "param": "note",
+              "evidence": "TODO"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

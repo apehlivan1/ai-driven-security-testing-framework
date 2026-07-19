@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from adstf.mvp_benchmark import normalize_mvp_results
+from adstf.mvp_benchmark import normalize_mvp_results, render_mvp_report
 
 
 class MvpBenchmarkTests(unittest.TestCase):
@@ -92,6 +92,32 @@ class MvpBenchmarkTests(unittest.TestCase):
         self.assertEqual(summary["counts"]["TP"], 1)
         self.assertEqual(summary["counts"]["TN"], 1)
         self.assertEqual(summary["counts"]["FN"], 1)
+
+    def test_renders_traditional_scanner_baselines_separately(self) -> None:
+        summary = normalize_mvp_results(
+            [],
+            started_at="2026-07-19T00:00:00+00:00",
+            completed_at="2026-07-19T00:00:01+00:00",
+            settings={"traditional_scanner_enabled": True},
+            baselines=[
+                {
+                    "baseline_id": "zap_passive",
+                    "mapping_version": "zap-passive-mapping-v1",
+                    "evaluated_case_count": 6,
+                    "unsupported_case_count": 2,
+                    "raw_alert_count": 3,
+                    "matched_alert_count": 2,
+                    "unmatched_alert_count": 1,
+                    "counts": {"TP": 2, "FP": 0, "FN": 2, "TN": 2},
+                }
+            ],
+        )
+
+        report = render_mvp_report(summary)
+
+        self.assertEqual(summary["baselines"][0]["baseline_id"], "zap_passive")
+        self.assertIn("Traditional Scanner Baselines", report)
+        self.assertIn("zap_passive", report)
 
 
 def _slice_result(name: str, module_id: str, cases: list[dict]) -> dict:

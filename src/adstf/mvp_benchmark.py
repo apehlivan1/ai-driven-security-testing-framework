@@ -79,7 +79,12 @@ SLICES = [
 ]
 
 
-def run_mvp_benchmark(output_root: Path = DEFAULT_OUTPUT_ROOT, start_servers: bool = True) -> Path:
+def run_mvp_benchmark(
+    output_root: Path = DEFAULT_OUTPUT_ROOT,
+    start_servers: bool = True,
+    zap_passive_report: Path | None = None,
+    zap_passive_summary: Path | None = None,
+) -> Path:
     run_id = f"mvp-benchmark-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
     run_dir = output_root / run_id
     artifact_dir = run_dir / "artifacts"
@@ -97,6 +102,19 @@ def run_mvp_benchmark(output_root: Path = DEFAULT_OUTPUT_ROOT, start_servers: bo
             _run_slices(output_root, slice_results)
 
     completed = datetime.now(UTC)
+    baselines = []
+    if zap_passive_report is not None:
+        from adstf.zap_baseline import load_zap_report, normalize_zap_passive_report
+
+        baselines.append(
+            normalize_zap_passive_report(
+                load_zap_report(zap_passive_report),
+                report_path=str(zap_passive_report),
+            )
+        )
+    if zap_passive_summary is not None:
+        baselines.append(json.loads(zap_passive_summary.read_text(encoding="utf-8")))
+
     summary = normalize_mvp_results(
         slice_results,
         started_at=started.isoformat(),
@@ -106,8 +124,9 @@ def run_mvp_benchmark(output_root: Path = DEFAULT_OUTPUT_ROOT, start_servers: bo
             "runner_mode": "deterministic_mvp_development",
             "xss_ranking_mode": "deterministic",
             "llm_enabled": False,
-            "traditional_scanner_enabled": False,
+            "traditional_scanner_enabled": bool(baselines),
         },
+        baselines=baselines,
     )
     (artifact_dir / "mvp-evaluation-summary.json").write_text(
         json.dumps(to_json_value(summary), indent=2, sort_keys=True) + "\n",
@@ -173,6 +192,7 @@ def normalize_mvp_results(
     started_at: str,
     completed_at: str,
     settings: dict,
+    baselines: list[dict] | None = None,
 ) -> dict:
     normalized_slices = [_normalize_slice(result) for result in slice_results]
     cases = [
@@ -194,6 +214,7 @@ def normalize_mvp_results(
         "counts": counts,
         "slices": normalized_slices,
         "cases": cases,
+        "baselines": baselines or [],
     }
 
 
@@ -352,6 +373,24 @@ def render_mvp_report(summary: dict) -> str:
         lines.append(
             f"- `{case['suite_case_id']}`: state `{case['finding_state']}`, classification `{case['classification']}`"
         )
+    if summary.get("baselines"):
+        lines.extend(["", "## Traditional Scanner Baselines", ""])
+        for baseline in summary["baselines"]:
+            counts = baseline["counts"]
+            lines.extend(
+                [
+                    f"### {baseline['baseline_id']}",
+                    "",
+                    f"- Mapping version: `{baseline['mapping_version']}`",
+                    f"- Evaluated cases: `{baseline['evaluated_case_count']}`",
+                    f"- Unsupported cases: `{baseline['unsupported_case_count']}`",
+                    f"- Raw alerts: `{baseline['raw_alert_count']}`",
+                    f"- Matched alerts: `{baseline['matched_alert_count']}`",
+                    f"- Unmatched alerts: `{baseline['unmatched_alert_count']}`",
+                    f"- TP/FP/FN/TN: `{counts['TP']}/{counts['FP']}/{counts['FN']}/{counts['TN']}`",
+                    "",
+                ]
+            )
     lines.append("")
     return "\n".join(lines)
 
@@ -387,9 +426,26 @@ def main() -> None:
         action="store_true",
         help="Assume benchmark servers are already running on configured ports.",
     )
+    parser.add_argument(
+        "--zap-passive-report",
+        type=Path,
+        default=None,
+        help="Optional OWASP ZAP JSON report to normalize beside framework results.",
+    )
+    parser.add_argument(
+        "--zap-passive-summary",
+        type=Path,
+        default=None,
+        help="Optional pre-normalized ZAP passive summary to render beside framework results.",
+    )
     args = parser.parse_args()
     try:
-        run_dir = run_mvp_benchmark(args.output_root, start_servers=not args.no_start_servers)
+        run_dir = run_mvp_benchmark(
+            args.output_root,
+            start_servers=not args.no_start_servers,
+            zap_passive_report=args.zap_passive_report,
+            zap_passive_summary=args.zap_passive_summary,
+        )
     except Exception as exc:
         print(f"MVP benchmark harness failed: {exc}", file=sys.stderr)
         raise SystemExit(1) from exc
