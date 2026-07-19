@@ -15,7 +15,8 @@ This project is intended only for ethical, authorized security research in contr
 - [Architecture overview](docs/architecture-overview.md)
 - [MVP scope and verification](docs/mvp-scope-and-verification.md)
 - [Action and evidence contract](docs/action-and-evidence-contract.md)
-- [Evaluation protocol v1](docs/evaluation-protocol-v1.md)
+- [Evaluation protocol v1.1](docs/evaluation-protocol-v1.1.md)
+- [Evaluation protocol v1, superseded](docs/evaluation-protocol-v1.md)
 - [Open architectural decisions](docs/open-decisions.md)
 
 ## Scaffold Decisions
@@ -412,7 +413,7 @@ ZAP active alerts are scanner baseline outputs only. They are not verifier-confi
 
 ## Held-Out Evaluation Preparation
 
-The held-out evaluation protocol is frozen in [docs/evaluation-protocol-v1.md](docs/evaluation-protocol-v1.md). Held-out target definitions and ground truth are separated:
+The held-out evaluation protocol is frozen in [docs/evaluation-protocol-v1.1.md](docs/evaluation-protocol-v1.1.md). Version 1 is preserved as a superseded historical protocol in [docs/evaluation-protocol-v1.md](docs/evaluation-protocol-v1.md). Held-out target definitions and ground truth are separated:
 
 - Manifest: [examples/benchmarks/heldout-manifest-v1.json](examples/benchmarks/heldout-manifest-v1.json)
 - Ground truth: [examples/benchmarks/heldout-ground-truth-v1.json](examples/benchmarks/heldout-ground-truth-v1.json)
