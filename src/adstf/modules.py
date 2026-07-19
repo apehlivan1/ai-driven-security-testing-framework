@@ -55,6 +55,25 @@ def has_cross_user_read_access(evidence: list[EvidenceRecord]) -> bool:
     )
 
 
+def has_stable_baseline_behavior(evidence: list[EvidenceRecord]) -> bool:
+    return any(
+        item.evidence_type == EvidenceType.COMPARISON_RESULT
+        and item.attributes.get("baseline_stable") is True
+        and item.attributes.get("server_error_observed") is not True
+        for item in evidence
+    )
+
+
+def has_reproducible_boolean_difference(evidence: list[EvidenceRecord]) -> bool:
+    return any(
+        item.evidence_type == EvidenceType.COMPARISON_RESULT
+        and item.attributes.get("true_false_difference_reproducible") is True
+        and item.attributes.get("server_error_observed") is not True
+        and item.attributes.get("reflected_payload_only") is not True
+        for item in evidence
+    )
+
+
 def mvp_modules() -> dict[str, VulnerabilityModule]:
     modules = [
         VulnerabilityModule(
@@ -131,6 +150,16 @@ def mvp_modules() -> dict[str, VulnerabilityModule]:
             ],
             requires_control_case=True,
             report_fields=["parameter", "baseline", "true_condition", "false_condition"],
+            additional_verification_criteria=[
+                VerificationCriterion(
+                    name="has_stable_baseline_behavior",
+                    evaluate=has_stable_baseline_behavior,
+                ),
+                VerificationCriterion(
+                    name="has_reproducible_boolean_difference",
+                    evaluate=has_reproducible_boolean_difference,
+                ),
+            ],
         ),
     ]
     return {module.module_id: module for module in modules}

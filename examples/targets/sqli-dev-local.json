@@ -1,0 +1,37 @@
+{
+  "name": "Boolean SQL Injection Development Benchmark",
+  "base_url": "http://127.0.0.1:4293",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4293],
+  "enabled_modules": ["sqli.boolean"],
+  "max_actions": 20,
+  "test_users": {},
+  "metadata": {
+    "benchmark": "boolean-sqli-development",
+    "local_only": true,
+    "development_benchmark": true,
+    "ground_truth_path": "examples/benchmarks/sqli-dev-ground-truth.json",
+    "cases": [
+      {
+        "case_id": "view-boolean",
+        "path": "/sqli/view",
+        "parameter": "item",
+        "baseline_value": "alpha",
+        "true_value": "missing' OR '1'='1' -- ",
+        "false_value": "missing' AND '1'='2' -- ",
+        "expected_behavior": "vulnerable"
+      },
+      {
+        "case_id": "safe-boolean",
+        "path": "/sqli/safe",
+        "parameter": "item",
+        "baseline_value": "alpha",
+        "true_value": "missing' OR '1'='1' -- ",
+        "false_value": "missing' AND '1'='2' -- ",
+        "expected_behavior": "secure"
+      }
+    ],
+    "notes": "State-free local development benchmark for non-destructive boolean-based SQL injection verification. Ground truth is for post-run evaluation only."
+  }
+}

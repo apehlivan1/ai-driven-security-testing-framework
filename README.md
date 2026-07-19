@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, and a deterministic read-only IDOR vertical slice**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, a deterministic read-only IDOR vertical slice, and a deterministic non-destructive boolean-SQLi vertical slice**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, SQLi response-differential verification, and unit tests.
 
 ## Safety Scope
 
@@ -33,9 +33,10 @@ This project is intended only for ethical, authorized security research in contr
 - The deterministic reflected-input ranker is versioned as `deterministic-structural-v1`; the benchmark scenarios are meant to evaluate this frozen ruleset, not tune it.
 - The bounded LLM ranking path may only rank already discovered candidate IDs and provide rationales. It cannot execute actions, generate payloads, control the browser, verify findings, or access ground truth.
 - The read-only IDOR path uses two isolated benchmark-user sessions referenced by redacted `session_ref` values. Session credentials and tokens stay in memory and are not persisted in action requests, target artifacts, reports, or evidence.
+- The boolean-SQLi path uses repeated baseline, boolean-true, and boolean-false HTTP requests. Verification requires stable baseline behavior and reproducible true/false differences; server errors and reflected payload text alone are not sufficient evidence.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
-- The scaffold performs no crawling, scanner integration, database storage, SQL injection testing, tool-calling agents, or plugin loading.
+- The scaffold performs no crawling, scanner integration, framework database storage, tool-calling agents, or plugin loading.
 
 ## Setup
 
@@ -284,3 +285,35 @@ The IDOR integration:
 - writes post-run evaluation to `artifacts/idor-benchmark-evaluation.json`
 
 Ground truth for this development benchmark is stored in [examples/benchmarks/idor-dev-ground-truth.json](examples/benchmarks/idor-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by authentication, execution, comparison, verification, or reporting logic.
+
+## Run The Local Boolean-SQLi Development Benchmark
+
+This development benchmark is intentionally small and state-free from the framework's perspective. The benchmark target uses an in-memory SQLite database internally to provide one genuinely vulnerable boolean-SQLi case and one parameterized secure control case. The framework itself does not use database storage.
+
+Start the local benchmark server on the SQLi target port:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_server --host 127.0.0.1 --port 4293
+```
+
+Run the deterministic boolean-SQLi vertical slice:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_sqli
+```
+
+The SQLi integration:
+
+- loads [examples/targets/sqli-dev-local.json](examples/targets/sqli-dev-local.json)
+- sends repeated baseline requests
+- sends repeated bounded boolean-true and boolean-false requests
+- records HTTP exchanges and normalized response fingerprints
+- records comparison evidence for baseline stability and true/false reproducibility
+- verifies or rejects findings through the existing verifier lifecycle
+- writes post-run evaluation to `artifacts/sqli-benchmark-evaluation.json`
+
+The SQLi integration does not extract data, bypass authentication, use stacked queries, use destructive payloads, or perform error-based or timing-based SQL injection checks.
+
+Ground truth for this development benchmark is stored in [examples/benchmarks/sqli-dev-ground-truth.json](examples/benchmarks/sqli-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by execution, comparison, verification, or reporting logic.

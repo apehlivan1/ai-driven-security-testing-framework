@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "boolean-sqli-development",
+  "description": "Development-only ground truth for fixed boolean-based SQL injection benchmark cases. This file must be used only after a run has completed.",
+  "cases": [
+    {
+      "case_id": "view-boolean",
+      "path": "/sqli/view",
+      "parameter": "item",
+      "vulnerable": true
+    },
+    {
+      "case_id": "safe-boolean",
+      "path": "/sqli/safe",
+      "parameter": "item",
+      "vulnerable": false
+    }
+  ]
+}

@@ -48,7 +48,11 @@ def finding(
         run_id="run-1",
         module_id=module_id,
         title="Possible reflected XSS",
-        category="reflected_xss" if module_id == "xss.reflected" else "read_only_idor",
+        category={
+            "xss.reflected": "reflected_xss",
+            "access.idor_read_only": "read_only_idor",
+            "sqli.boolean": "boolean_sqli",
+        }[module_id],
         affected_target="http://lab.local/search?q=",
         state=state,
         hypothesis="Input may execute in browser context.",
@@ -202,6 +206,75 @@ class VerificationLifecycleTests(unittest.TestCase):
 
         self.assertEqual(result.outcome, VerificationOutcome.INCONCLUSIVE)
         self.assertIn("has_distinct_benchmark_sessions", result.criteria_missing)
+
+    def test_sqli_verifies_with_stable_baseline_and_reproducible_boolean_difference(self) -> None:
+        records = [
+            evidence("h-1", EvidenceType.HTTP_EXCHANGE, {"status_code": 200}),
+            evidence(
+                "c-1",
+                EvidenceType.COMPARISON_RESULT,
+                {
+                    "is_control_case": True,
+                    "control_case_passed": True,
+                    "baseline_stable": True,
+                    "true_false_difference_reproducible": True,
+                    "server_error_observed": False,
+                    "reflected_payload_only": False,
+                },
+            ),
+        ]
+        requested = request_verification(finding(["h-1", "c-1"], module_id="sqli.boolean"))
+
+        result = FindingVerifier(mvp_modules()).verify(requested, records)
+
+        self.assertEqual(result.outcome, VerificationOutcome.VERIFIED)
+        self.assertIn("has_stable_baseline_behavior", result.criteria_satisfied)
+        self.assertIn("has_reproducible_boolean_difference", result.criteria_satisfied)
+
+    def test_sqli_rejects_secure_control_that_contradicts_hypothesis(self) -> None:
+        records = [
+            evidence("h-1", EvidenceType.HTTP_EXCHANGE, {"status_code": 200}),
+            evidence(
+                "c-1",
+                EvidenceType.COMPARISON_RESULT,
+                {
+                    "is_control_case": True,
+                    "control_case_passed": True,
+                    "baseline_stable": True,
+                    "true_false_difference_reproducible": False,
+                    "rejects_hypothesis": True,
+                },
+            ),
+        ]
+        requested = request_verification(finding(["h-1", "c-1"], module_id="sqli.boolean"))
+
+        result = FindingVerifier(mvp_modules()).verify(requested, records)
+
+        self.assertEqual(result.outcome, VerificationOutcome.REJECTED)
+
+    def test_sqli_is_inconclusive_when_difference_is_only_server_error(self) -> None:
+        records = [
+            evidence("h-1", EvidenceType.HTTP_EXCHANGE, {"status_code": 500}),
+            evidence(
+                "c-1",
+                EvidenceType.COMPARISON_RESULT,
+                {
+                    "is_control_case": True,
+                    "control_case_passed": True,
+                    "baseline_stable": True,
+                    "true_false_difference_reproducible": True,
+                    "server_error_observed": True,
+                    "reflected_payload_only": False,
+                },
+            ),
+        ]
+        requested = request_verification(finding(["h-1", "c-1"], module_id="sqli.boolean"))
+
+        result = FindingVerifier(mvp_modules()).verify(requested, records)
+
+        self.assertEqual(result.outcome, VerificationOutcome.INCONCLUSIVE)
+        self.assertIn("has_stable_baseline_behavior", result.criteria_missing)
+        self.assertIn("has_reproducible_boolean_difference", result.criteria_missing)
 
     def test_invalid_lifecycle_transition_raises(self) -> None:
         with self.assertRaises(ValueError):

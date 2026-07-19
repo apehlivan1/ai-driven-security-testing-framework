@@ -4,7 +4,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from adstf.dev_benchmark_server import _idor_get_response, _idor_login_response, render_response
+from adstf.dev_benchmark_server import (
+    _idor_get_response,
+    _idor_login_response,
+    _sqli_get_response,
+    render_response,
+)
 
 
 class DevelopmentBenchmarkServerTests(unittest.TestCase):
@@ -104,6 +109,37 @@ class DevelopmentBenchmarkServerTests(unittest.TestCase):
 
         self.assertEqual(status, 403)
         self.assertIn("not authorized", body)
+
+    def test_sqli_vulnerable_route_changes_for_boolean_conditions(self) -> None:
+        true_status, true_body, _ = _sqli_get_response(
+            "/sqli/view",
+            "item=missing%27+OR+%271%27%3D%271%27+--+",
+        )
+        false_status, false_body, _ = _sqli_get_response(
+            "/sqli/view",
+            "item=missing%27+AND+%271%27%3D%272%27+--+",
+        )
+
+        self.assertEqual(true_status, 200)
+        self.assertEqual(false_status, 200)
+        self.assertNotEqual(true_body, false_body)
+        self.assertIn('"count": 3', true_body)
+        self.assertIn('"count": 0', false_body)
+
+    def test_sqli_secure_route_treats_boolean_payloads_as_literal_values(self) -> None:
+        true_status, true_body, _ = _sqli_get_response(
+            "/sqli/safe",
+            "item=missing%27+OR+%271%27%3D%271%27+--+",
+        )
+        false_status, false_body, _ = _sqli_get_response(
+            "/sqli/safe",
+            "item=missing%27+AND+%271%27%3D%272%27+--+",
+        )
+
+        self.assertEqual(true_status, 200)
+        self.assertEqual(false_status, 200)
+        self.assertEqual(true_body, false_body)
+        self.assertIn('"count": 0', true_body)
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import sqlite3
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
@@ -40,6 +41,11 @@ IDOR_RESOURCES = {
         "endpoint": "guarded",
     },
 }
+SQLI_ROWS = [
+    ("alpha", "North ledger", 1),
+    ("bravo", "South ledger", 1),
+    ("charlie", "Archived ledger", 0),
+]
 
 
 def render_response(path: str, query: str = "") -> tuple[int, str]:
@@ -257,6 +263,10 @@ class DevelopmentBenchmarkHandler(BaseHTTPRequestHandler):
             )
             self._send_body(status, body, headers)
             return
+        if parsed.path.startswith("/sqli/"):
+            status, body, headers = _sqli_get_response(parsed.path, parsed.query)
+            self._send_body(status, body, headers)
+            return
         status, body = render_response(parsed.path, parsed.query)
         self._send_body(status, body, {"Content-Type": "text/html; charset=utf-8"})
 
@@ -353,6 +363,65 @@ def _user_label_from_cookie(cookie_header: str) -> str | None:
         if name == "adstf_session":
             return IDOR_TOKENS.get(value)
     return None
+
+
+def _sqli_get_response(path: str, query: str) -> tuple[int, str, dict[str, str]]:
+    if path == "/sqli/health":
+        return 200, json.dumps({"status": "ok"}), {"Content-Type": "application/json"}
+    params = parse_qs(query, keep_blank_values=True)
+    value = _first(params, "item")
+    if path == "/sqli/view":
+        return _sqli_lookup_unsafe(value)
+    if path == "/sqli/safe":
+        return _sqli_lookup_safe(value)
+    return 404, json.dumps({"error": "not found"}), {"Content-Type": "application/json"}
+
+
+def _sqli_lookup_unsafe(value: str) -> tuple[int, str, dict[str, str]]:
+    database = _sqli_database()
+    try:
+        rows = database.execute(
+            "SELECT code, label FROM entries "
+            f"WHERE code = '{value}' AND visible = 1 ORDER BY code"
+        ).fetchall()
+    except sqlite3.Error:
+        return 400, json.dumps({"error": "invalid input"}), {"Content-Type": "application/json"}
+    finally:
+        database.close()
+    return _sqli_rows_response(rows)
+
+
+def _sqli_lookup_safe(value: str) -> tuple[int, str, dict[str, str]]:
+    database = _sqli_database()
+    try:
+        rows = database.execute(
+            "SELECT code, label FROM entries WHERE code = ? AND visible = 1 ORDER BY code",
+            (value,),
+        ).fetchall()
+    finally:
+        database.close()
+    return _sqli_rows_response(rows)
+
+
+def _sqli_database() -> sqlite3.Connection:
+    database = sqlite3.connect(":memory:")
+    database.execute("CREATE TABLE entries (code TEXT PRIMARY KEY, label TEXT, visible INTEGER)")
+    database.executemany("INSERT INTO entries VALUES (?, ?, ?)", SQLI_ROWS)
+    return database
+
+
+def _sqli_rows_response(rows: list[tuple[str, str]]) -> tuple[int, str, dict[str, str]]:
+    return (
+        200,
+        json.dumps(
+            {
+                "count": len(rows),
+                "items": [{"code": code, "label": label} for code, label in rows],
+            },
+            sort_keys=True,
+        ),
+        {"Content-Type": "application/json"},
+    )
 
 
 def _prefix(scenario_id: str) -> str:
