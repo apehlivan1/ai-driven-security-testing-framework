@@ -24,6 +24,24 @@ DEFAULT_OUTPUT_ROOT = REPO_ROOT / ".adstf-runs"
 DEFAULT_ZAP_IMAGE = "zaproxy/zap-stable:2.16.1"
 ZAP_PASSIVE_SUMMARY_VERSION = "zap-passive-summary-v1"
 ZAP_PASSIVE_MAPPING_VERSION = "zap-passive-mapping-v1"
+ZAP_ACTIVE_SUMMARY_VERSION = "zap-active-summary-v1"
+ZAP_ACTIVE_MAPPING_VERSION = "zap-active-mapping-v1"
+ZAP_ACTIVE_POLICY_VERSION = "zap-active-policy-v1"
+
+ACTIVE_SCAN_RULES = [
+    {
+        "id": 40012,
+        "name": "Cross Site Scripting (Reflected)",
+        "threshold": "Medium",
+        "strength": "Low",
+    },
+    {
+        "id": 40018,
+        "name": "SQL Injection",
+        "threshold": "Medium",
+        "strength": "Low",
+    },
+]
 
 
 @dataclass(frozen=True)
@@ -150,7 +168,7 @@ def load_zap_report(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def extract_zap_alerts(report: dict) -> list[dict]:
+def extract_zap_alerts(report: dict, *, source: str = "zap_passive") -> list[dict]:
     alerts: list[dict] = []
     for alert in _iter_report_alerts(report):
         instances = alert.get("instances") or []
@@ -165,7 +183,7 @@ def extract_zap_alerts(report: dict) -> list[dict]:
                 }
             ]
         for index, instance in enumerate(instances):
-            normalized = _normalize_alert_instance(alert, instance, index)
+            normalized = _normalize_alert_instance(alert, instance, index, source=source)
             alerts.append(normalized)
     return alerts
 
@@ -178,7 +196,53 @@ def normalize_zap_passive_report(
     started_at: str | None = None,
     completed_at: str | None = None,
 ) -> dict:
-    raw_alerts = extract_zap_alerts(report)
+    return _normalize_zap_report(
+        report,
+        baseline_id="zap_passive",
+        summary_version=ZAP_PASSIVE_SUMMARY_VERSION,
+        mapping_version=ZAP_PASSIVE_MAPPING_VERSION,
+        source="zap_passive",
+        report_path=report_path,
+        settings=settings,
+        started_at=started_at,
+        completed_at=completed_at,
+    )
+
+
+def normalize_zap_active_report(
+    report: dict,
+    *,
+    report_path: str | None = None,
+    settings: dict | None = None,
+    started_at: str | None = None,
+    completed_at: str | None = None,
+) -> dict:
+    return _normalize_zap_report(
+        report,
+        baseline_id="zap_active",
+        summary_version=ZAP_ACTIVE_SUMMARY_VERSION,
+        mapping_version=ZAP_ACTIVE_MAPPING_VERSION,
+        source="zap_active",
+        report_path=report_path,
+        settings=settings,
+        started_at=started_at,
+        completed_at=completed_at,
+    )
+
+
+def _normalize_zap_report(
+    report: dict,
+    *,
+    baseline_id: str,
+    summary_version: str,
+    mapping_version: str,
+    source: str,
+    report_path: str | None,
+    settings: dict | None,
+    started_at: str | None,
+    completed_at: str | None,
+) -> dict:
+    raw_alerts = extract_zap_alerts(report, source=source)
     mapped_alert_ids: set[str] = set()
     cases = []
     for rule in EVALUATED_MAPPING_RULES:
@@ -193,9 +257,9 @@ def normalize_zap_passive_report(
     ]
     counts = _classification_counts(cases)
     return {
-        "baseline_id": "zap_passive",
-        "summary_version": ZAP_PASSIVE_SUMMARY_VERSION,
-        "mapping_version": ZAP_PASSIVE_MAPPING_VERSION,
+        "baseline_id": baseline_id,
+        "summary_version": summary_version,
+        "mapping_version": mapping_version,
         "started_at": started_at,
         "completed_at": completed_at,
         "report_path": report_path,
@@ -203,17 +267,17 @@ def normalize_zap_passive_report(
         "report_metadata": _report_metadata(report),
         "ground_truth_used_phase": "post_run_evaluation_only",
         "scan_configuration": {
-            **_default_scan_configuration(),
+            **_default_scan_configuration(baseline_id),
             **(settings or {}),
         },
         "evaluated_case_count": len(cases),
-        "unsupported_case_count": len(UNSUPPORTED_IDOR_CASES),
+        "unsupported_case_count": len(_unsupported_idor_cases(baseline_id)),
         "raw_alert_count": len(raw_alerts),
         "matched_alert_count": sum(len(case["mapped_alerts"]) for case in cases),
         "unmatched_alert_count": len(unmatched_alerts),
         "counts": counts,
         "cases": cases,
-        "unsupported_cases": list(UNSUPPORTED_IDOR_CASES),
+        "unsupported_cases": _unsupported_idor_cases(baseline_id),
         "unmatched_alerts": unmatched_alerts,
         "raw_alerts": raw_alerts,
     }
@@ -343,10 +407,118 @@ def run_live_passive_zap_smoke(
     return run_dir
 
 
+def run_live_active_zap_baseline(
+    target_urls: list[str],
+    output_root: Path = DEFAULT_OUTPUT_ROOT,
+    *,
+    zap_image: str = DEFAULT_ZAP_IMAGE,
+    spider_max_duration_minutes: int = 1,
+    active_max_scan_duration_minutes: int = 2,
+    active_max_rule_duration_minutes: int = 1,
+    start_development_targets: bool = False,
+) -> Path:
+    if shutil.which("docker") is None:
+        raise RuntimeError("Docker is required for the live ZAP active baseline.")
+    if not target_urls:
+        raise ValueError("at least one target URL is required")
+    run_id = f"zap-active-live-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
+    run_dir = output_root / run_id
+    artifact_dir = run_dir / "artifacts"
+    artifact_dir.mkdir(parents=True, exist_ok=True)
+    zap_image_digest = _docker_image_digest(zap_image)
+    started = datetime.now(UTC)
+
+    target_context: AbstractContextManager | None = (
+        LocalZapDevelopmentTargets() if start_development_targets else None
+    )
+    target_status: list[dict] = []
+    command_results: list[dict] = []
+    report_paths: list[Path] = []
+    if target_context is None:
+        _check_live_target_urls(target_urls, target_status)
+        _run_active_zap_for_targets(
+            target_urls,
+            artifact_dir,
+            zap_image,
+            spider_max_duration_minutes,
+            active_max_scan_duration_minutes,
+            active_max_rule_duration_minutes,
+            command_results,
+            report_paths,
+        )
+    else:
+        with target_context as targets:
+            target_status.extend(targets.status)
+            _run_active_zap_for_targets(
+                target_urls,
+                artifact_dir,
+                zap_image,
+                spider_max_duration_minutes,
+                active_max_scan_duration_minutes,
+                active_max_rule_duration_minutes,
+                command_results,
+                report_paths,
+            )
+
+    completed = datetime.now(UTC)
+    for command_result in command_results:
+        if command_result["returncode"] not in {0, 1, 2}:
+            raise RuntimeError(
+                "ZAP active command failed before producing a usable report: "
+                + str(command_result["returncode"])
+            )
+    combined_report = _combine_zap_reports([load_zap_report(path) for path in report_paths])
+    combined_report_path = artifact_dir / "zap-active-combined-report.json"
+    combined_report_path.write_text(
+        json.dumps(to_json_value(combined_report), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    settings = {
+        "zap_image": zap_image,
+        "zap_image_digest": zap_image_digest,
+        "target_urls": target_urls,
+        "traffic_source": "zap_spider_and_active_scan_generated",
+        "active_scan_enabled": True,
+        "authenticated_context": False,
+        "start_development_targets": start_development_targets,
+        "policy_version": ZAP_ACTIVE_POLICY_VERSION,
+        "mapping_version": ZAP_ACTIVE_MAPPING_VERSION,
+        "enabled_scan_rules": ACTIVE_SCAN_RULES,
+        "spider_max_duration_minutes": spider_max_duration_minutes,
+        "active_max_scan_duration_minutes": active_max_scan_duration_minutes,
+        "active_max_rule_duration_minutes": active_max_rule_duration_minutes,
+        "target_status": target_status,
+        "zap_command_results": command_results,
+        "scope_validation": _scope_validation(combined_report, target_urls),
+    }
+    summary = normalize_zap_active_report(
+        combined_report,
+        report_path=str(combined_report_path),
+        settings=settings,
+        started_at=started.isoformat(),
+        completed_at=completed.isoformat(),
+    )
+    (artifact_dir / "zap-active-summary.json").write_text(
+        json.dumps(to_json_value(summary), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    (artifact_dir / "zap-active-raw-alerts.json").write_text(
+        json.dumps(to_json_value(summary["raw_alerts"]), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    (run_dir / "report.md").write_text(render_zap_report(summary), encoding="utf-8")
+    return run_dir
+
+
 def render_zap_passive_report(summary: dict) -> str:
+    return render_zap_report(summary)
+
+
+def render_zap_report(summary: dict) -> str:
     counts = summary["counts"]
+    title = "ZAP Active Baseline Report" if summary["baseline_id"] == "zap_active" else "ZAP Passive Baseline Report"
     lines = [
-        "# ZAP Passive Baseline Report",
+        f"# {title}",
         "",
         f"- Baseline: `{summary['baseline_id']}`",
         f"- Mapping version: `{summary['mapping_version']}`",
@@ -380,7 +552,7 @@ def _iter_report_alerts(report: dict) -> list[dict]:
     return alerts
 
 
-def _normalize_alert_instance(alert: dict, instance: dict, index: int) -> dict:
+def _normalize_alert_instance(alert: dict, instance: dict, index: int, *, source: str) -> dict:
     alert_id = str(alert.get("pluginid") or alert.get("pluginId") or alert.get("id") or "")
     name = str(alert.get("alert") or alert.get("name") or "")
     url = str(instance.get("uri") or instance.get("url") or "")
@@ -399,7 +571,7 @@ def _normalize_alert_instance(alert: dict, instance: dict, index: int) -> dict:
         "attack": str(instance.get("attack") or ""),
         "cwe_id": str(alert.get("cweid") or ""),
         "wasc_id": str(alert.get("wascid") or ""),
-        "source": "zap_passive",
+        "source": source,
     }
 
 
@@ -460,19 +632,39 @@ def _classification_counts(cases: list[dict]) -> dict:
     }
 
 
-def _default_scan_configuration() -> dict:
+def _default_scan_configuration(baseline_id: str) -> dict:
+    active = baseline_id == "zap_active"
     return {
-        "baseline_type": "zap_passive",
+        "baseline_type": baseline_id,
         "zap_image": DEFAULT_ZAP_IMAGE,
         "zap_version": "2.16.1",
-        "active_scan_enabled": False,
+        "active_scan_enabled": active,
         "authenticated_context": False,
-        "traffic_source": "zap_spider_generated_or_report_fixture",
+        "traffic_source": (
+            "zap_spider_and_active_scan_generated"
+            if active
+            else "zap_spider_generated_or_report_fixture"
+        ),
         "runtime_budget_minutes": None,
         "report_format": "json",
         "rule_addon_versions": "not_present_in_report_unless_report_metadata_provides_them",
         "scope": "explicit mapped local development benchmark cases only",
     }
+
+
+def _unsupported_idor_cases(baseline_id: str) -> list[dict]:
+    reason = (
+        "ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior."
+        if baseline_id == "zap_active"
+        else "ZAP passive spider alerts do not establish two-user read-only authorization behavior."
+    )
+    return [
+        {
+            **case,
+            "reason": reason,
+        }
+        for case in UNSUPPORTED_IDOR_CASES
+    ]
 
 
 def _report_metadata(report: dict) -> dict:
@@ -569,6 +761,156 @@ def _run_zap_for_targets(
         json.dumps(to_json_value(command_results), indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+def _run_active_zap_for_targets(
+    target_urls: list[str],
+    artifact_dir: Path,
+    zap_image: str,
+    spider_max_duration_minutes: int,
+    active_max_scan_duration_minutes: int,
+    active_max_rule_duration_minutes: int,
+    command_results: list[dict],
+    report_paths: list[Path],
+) -> None:
+    for index, target_url in enumerate(target_urls, start=1):
+        report_name = f"zap-active-report-{index}.json"
+        plan_name = f"zap-active-plan-{index}.yaml"
+        plan_path = artifact_dir / plan_name
+        plan_path.write_text(
+            _active_automation_plan(
+                target_url,
+                report_name,
+                spider_max_duration_minutes=spider_max_duration_minutes,
+                active_max_scan_duration_minutes=active_max_scan_duration_minutes,
+                active_max_rule_duration_minutes=active_max_rule_duration_minutes,
+            ),
+            encoding="utf-8",
+        )
+        command = [
+            "docker",
+            "run",
+            "--rm",
+            "-v",
+            f"{artifact_dir}:/zap/wrk:rw",
+            zap_image,
+            "zap.sh",
+            "-cmd",
+            "-autorun",
+            f"/zap/wrk/{plan_name}",
+        ]
+        started = datetime.now(UTC)
+        started_perf = time.perf_counter()
+        timeout_seconds = max(
+            180,
+            (spider_max_duration_minutes + active_max_scan_duration_minutes + 1) * 90,
+        )
+        completed_process = subprocess.run(
+            command,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=timeout_seconds,
+        )
+        completed = datetime.now(UTC)
+        report_path = artifact_dir / report_name
+        command_result = {
+            "target_url": target_url,
+            "plan_name": plan_name,
+            "plan_path": str(plan_path),
+            "report_name": report_name,
+            "report_path": str(report_path),
+            "command": command,
+            "returncode": completed_process.returncode,
+            "stdout": completed_process.stdout,
+            "stderr": completed_process.stderr,
+            "duration_ms": int((time.perf_counter() - started_perf) * 1000),
+            "started_at": started.isoformat(),
+            "completed_at": completed.isoformat(),
+            "report_written": report_path.exists(),
+        }
+        command_results.append(command_result)
+    (artifact_dir / "zap-active-commands.json").write_text(
+        json.dumps(to_json_value(command_results), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    for command_result in command_results:
+        report_path = Path(command_result["report_path"])
+        if not report_path.exists():
+            raise RuntimeError(f"ZAP did not write the expected active JSON report: {report_path}")
+        report_paths.append(report_path)
+
+
+def _active_automation_plan(
+    target_url: str,
+    report_name: str,
+    *,
+    spider_max_duration_minutes: int,
+    active_max_scan_duration_minutes: int,
+    active_max_rule_duration_minutes: int,
+) -> str:
+    context_name = "zap-active-local-development"
+    rule_lines = "\n".join(
+        [
+            "    - id: {id}\n      name: {name}\n      threshold: {threshold}\n      strength: {strength}".format(
+                **rule
+            )
+            for rule in ACTIVE_SCAN_RULES
+        ]
+    )
+    include_path = _automation_include_path(target_url)
+    return f"""env:
+  contexts:
+  - name: {context_name}
+    urls:
+    - {target_url}
+    includePaths:
+    - {include_path}
+    excludePaths: []
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: false
+jobs:
+- type: passiveScan-config
+  parameters:
+    maxAlertsPerRule: 10
+- type: spider
+  parameters:
+    context: {context_name}
+    url: {target_url}
+    maxDuration: {spider_max_duration_minutes}
+- type: activeScan
+  parameters:
+    context: {context_name}
+    policy: Default Policy
+    maxScanDurationInMins: {active_max_scan_duration_minutes}
+    maxRuleDurationInMins: {active_max_rule_duration_minutes}
+  policyDefinition:
+    defaultStrength: Low
+    defaultThreshold: Off
+    rules:
+{rule_lines}
+- type: passiveScan-wait
+  parameters:
+    maxDuration: 1
+- type: report
+  parameters:
+    template: traditional-json
+    reportDir: /zap/wrk/
+    reportFile: {report_name}
+    reportTitle: ZAP Active Baseline Report
+    reportDescription: {ZAP_ACTIVE_POLICY_VERSION}
+"""
+
+
+def _automation_include_path(target_url: str) -> str:
+    parsed = urlparse(target_url)
+    if parsed.query:
+        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}.*"
+    if parsed.path and parsed.path != "/":
+        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}.*"
+    return f"{parsed.scheme}://{parsed.netloc}/.*"
 
 
 def _combine_zap_reports(reports: list[dict]) -> dict:
@@ -719,11 +1061,24 @@ def main() -> None:
         help="Start/reset local XSS and SQLi development targets and scan their Docker-facing URLs.",
     )
 
+    active = subparsers.add_parser("active-live", help="Run a bounded live ZAP active baseline.")
+    active.add_argument("--target-url", action="append", default=[])
+    active.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
+    active.add_argument("--zap-image", default=DEFAULT_ZAP_IMAGE)
+    active.add_argument("--spider-max-duration-minutes", type=int, default=1)
+    active.add_argument("--active-max-scan-duration-minutes", type=int, default=2)
+    active.add_argument("--active-max-rule-duration-minutes", type=int, default=1)
+    active.add_argument(
+        "--development-xss-sqli",
+        action="store_true",
+        help="Start/reset local XSS and SQLi development targets and scan bounded local seed URLs.",
+    )
+
     args = parser.parse_args()
     try:
         if args.command == "ingest":
             run_dir = write_zap_passive_summary(args.report, args.output_root)
-        else:
+        elif args.command == "live":
             target_urls = list(args.target_url)
             if args.development_xss_sqli:
                 target_urls.extend(
@@ -739,10 +1094,29 @@ def main() -> None:
                 runtime_budget_minutes=args.runtime_budget_minutes,
                 start_development_targets=args.development_xss_sqli,
             )
+        else:
+            target_urls = list(args.target_url)
+            if args.development_xss_sqli:
+                target_urls.extend(
+                    [
+                        "http://host.docker.internal:4291/",
+                        "http://host.docker.internal:4293/sqli/view?item=alpha",
+                        "http://host.docker.internal:4293/sqli/safe?item=alpha",
+                    ]
+                )
+            run_dir = run_live_active_zap_baseline(
+                target_urls,
+                args.output_root,
+                zap_image=args.zap_image,
+                spider_max_duration_minutes=args.spider_max_duration_minutes,
+                active_max_scan_duration_minutes=args.active_max_scan_duration_minutes,
+                active_max_rule_duration_minutes=args.active_max_rule_duration_minutes,
+                start_development_targets=args.development_xss_sqli,
+            )
     except Exception as exc:
-        print(f"ZAP passive baseline failed: {exc}", file=sys.stderr)
+        print(f"ZAP baseline failed: {exc}", file=sys.stderr)
         raise SystemExit(1) from exc
-    print(f"ZAP passive baseline artifacts written to: {run_dir}")
+    print(f"ZAP baseline artifacts written to: {run_dir}")
 
 
 if __name__ == "__main__":

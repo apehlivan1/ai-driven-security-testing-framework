@@ -84,6 +84,7 @@ def run_mvp_benchmark(
     start_servers: bool = True,
     zap_passive_report: Path | None = None,
     zap_passive_summary: Path | None = None,
+    zap_active_summary: Path | None = None,
 ) -> Path:
     run_id = f"mvp-benchmark-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
     run_dir = output_root / run_id
@@ -114,6 +115,8 @@ def run_mvp_benchmark(
         )
     if zap_passive_summary is not None:
         baselines.append(json.loads(zap_passive_summary.read_text(encoding="utf-8")))
+    if zap_active_summary is not None:
+        baselines.append(json.loads(zap_active_summary.read_text(encoding="utf-8")))
 
     summary = normalize_mvp_results(
         slice_results,
@@ -438,6 +441,12 @@ def main() -> None:
         default=None,
         help="Optional pre-normalized ZAP passive summary to render beside framework results.",
     )
+    parser.add_argument(
+        "--zap-active-summary",
+        type=Path,
+        default=None,
+        help="Optional pre-normalized ZAP active summary to render beside framework results.",
+    )
     args = parser.parse_args()
     try:
         run_dir = run_mvp_benchmark(
@@ -445,6 +454,7 @@ def main() -> None:
             start_servers=not args.no_start_servers,
             zap_passive_report=args.zap_passive_report,
             zap_passive_summary=args.zap_passive_summary,
+            zap_active_summary=args.zap_active_summary,
         )
     except Exception as exc:
         print(f"MVP benchmark harness failed: {exc}", file=sys.stderr)

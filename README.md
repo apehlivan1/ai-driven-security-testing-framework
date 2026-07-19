@@ -378,3 +378,33 @@ To render framework results and an already normalized live ZAP summary side by s
 $env:PYTHONPATH = "src"
 python -m adstf.mvp_benchmark --zap-passive-summary .adstf-runs/<zap-live-run>/artifacts/zap-passive-summary.json
 ```
+
+## Run The ZAP Active-Baseline Adapter
+
+The active-baseline adapter uses a bounded OWASP ZAP Automation Framework plan against only the disposable local reflected-XSS and boolean-SQLi development targets. It is separate from the passive baseline and uses:
+
+- baseline identity: `zap_active`
+- policy version: `zap-active-policy-v1`
+- mapping version: `zap-active-mapping-v1`
+- pinned image: `zaproxy/zap-stable:2.16.1`
+- enabled active rules: reflected XSS `40012` and SQL injection `40018`
+- default strength: `Low`
+- default threshold: `Off`
+- enabled-rule threshold: `Medium`
+- unauthenticated local scan context
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.zap_baseline active-live --development-xss-sqli --spider-max-duration-minutes 1 --active-max-scan-duration-minutes 2 --active-max-rule-duration-minutes 1
+```
+
+The command writes the generated Automation Framework plans, raw ZAP JSON reports, combined report, normalized active summary, raw normalized alert list, Docker image digest, commands, timing, target health/reset checks, and scope validation under `.adstf-runs/`.
+
+To render framework, passive ZAP, and active ZAP results side by side:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.mvp_benchmark --zap-passive-summary .adstf-runs/<zap-passive-run>/artifacts/zap-passive-summary.json --zap-active-summary .adstf-runs/<zap-active-run>/artifacts/zap-active-summary.json
+```
+
+ZAP active alerts are scanner baseline outputs only. They are not verifier-confirmed framework findings. Read-only IDOR remains unsupported for ZAP active scoring and is excluded from TP/FP/FN/TN calculations.
