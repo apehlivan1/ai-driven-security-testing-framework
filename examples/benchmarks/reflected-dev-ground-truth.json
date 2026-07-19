@@ -1,0 +1,49 @@
+{
+  "benchmark_id": "reflected-input-development",
+  "description": "Development-only ground truth for the local reflected-input benchmark. This file must be used only after a run has completed.",
+  "ground_truth_available_to_framework": false,
+  "cases": [
+    {
+      "action_path": "/alpha",
+      "parameter_name": "term",
+      "vulnerable": true,
+      "expected_verification": "verified",
+      "notes": "The value is reflected into HTML without escaping."
+    },
+    {
+      "action_path": "/beta",
+      "parameter_name": "item",
+      "vulnerable": false,
+      "expected_verification": "rejected_or_inconclusive",
+      "notes": "The value is HTML-escaped before rendering."
+    },
+    {
+      "action_path": "/panel",
+      "parameter_name": "item",
+      "vulnerable": false,
+      "expected_verification": "rejected_or_inconclusive",
+      "notes": "The seed query value is HTML-escaped before rendering."
+    },
+    {
+      "action_path": "/gamma",
+      "parameter_name": "entry",
+      "vulnerable": false,
+      "expected_verification": "rejected_or_inconclusive",
+      "notes": "The value is escaped and rendered inside a textarea."
+    },
+    {
+      "action_path": "/delta",
+      "parameter_name": "term",
+      "vulnerable": false,
+      "expected_verification": "rejected_or_inconclusive",
+      "notes": "The value is HTML-escaped before rendering."
+    },
+    {
+      "action_path": "/delta",
+      "parameter_name": "mode",
+      "vulnerable": false,
+      "expected_verification": "rejected_or_inconclusive",
+      "notes": "The value is HTML-escaped before rendering."
+    }
+  ]
+}

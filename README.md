@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, and limited multi-seed reflected-input discovery**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, a Playwright-based reflected-XSS integration, and unit tests.
+Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, and a small local reflected-input development benchmark**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, and unit tests.
 
 ## Safety Scope
 
@@ -29,9 +29,11 @@ This project is intended only for ethical, authorized security research in contr
 - The reflected-XSS integration observes configured authenticated seed pages and discovers simple GET-form and query-parameter reflected-input candidates before building test and control actions.
 - Reflected-input candidates are ranked by target-independent structural features such as scope, source type, text-like editable inputs, required-input count, parameter count, and deterministic URL/parameter tie-breaking. The prioritizer does not use benchmark-revealing route labels such as `xss` or `reflect`.
 - Candidate scores, ranking rationale, and selected/non-selected status are recorded as evidence for auditability.
+- A state-free local reflected-input development benchmark provides multiple neutral GET-form and query-parameter candidates across two seed pages, with ground truth stored separately for post-run evaluation only.
 - Browser observations use a reusable browser executor that checks scope before navigation and validates the final page URL after navigation.
 - Reflected-XSS-specific verification criteria live with the XSS module definition rather than inside the generic verifier.
 - The scaffold performs no crawling, LLM calls, scanner integration, database storage, ground-truth evaluation, IDOR testing, SQL injection testing, or plugin loading.
+- The scaffold performs no crawling, LLM calls, scanner integration, database storage, IDOR testing, SQL injection testing, or plugin loading.
 
 ## Setup
 
@@ -127,3 +129,34 @@ The reflected-XSS integration:
 - stores screenshots and HTML artifacts for reproduction
 - sends the finding through the existing verifier lifecycle
 - exits successfully only when the verifier returns `verified`
+
+## Run The Local Development Benchmark
+
+This development benchmark is intentionally small and neutral. It is useful for exercising reflected-input discovery and deterministic ranking before introducing an LLM baseline. It is not the final held-out thesis evaluation benchmark.
+
+Start the local state-free benchmark server:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_server --host 127.0.0.1 --port 4291
+```
+
+Reset is reproducible because the benchmark has no persistent state. Restarting the server is sufficient; the `/reset` endpoint is also available for scripted checks:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m adstf.dev_benchmark_xss
+```
+
+The development benchmark integration:
+
+- loads [examples/targets/reflected-dev-local.json](examples/targets/reflected-dev-local.json)
+- observes two configured seed pages
+- discovers multiple simple GET-form and query-parameter candidates
+- ranks candidates without using route or parameter names that reveal vulnerability status
+- records every candidate score, rationale, and selected/non-selected state as evidence
+- tests the selected candidate with the existing browser verification and mandatory control case
+- stores screenshots, HTML artifacts, findings, verifier results, and a report
+- writes post-run benchmark evaluation to `artifacts/benchmark-evaluation.json`
+
+Ground truth for this development benchmark is stored in [examples/benchmarks/reflected-dev-ground-truth.json](examples/benchmarks/reflected-dev-ground-truth.json). It is intended only for post-run evaluation and must not be used by discovery, ranking, verification, or reporting logic.

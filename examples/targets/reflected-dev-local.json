@@ -1,0 +1,21 @@
+{
+  "name": "Reflected Input Development Benchmark",
+  "base_url": "http://127.0.0.1:4291",
+  "allowed_hosts": ["127.0.0.1"],
+  "allowed_schemes": ["http"],
+  "allowed_ports": [4291],
+  "enabled_modules": ["xss.reflected"],
+  "max_actions": 20,
+  "test_users": {},
+  "metadata": {
+    "benchmark": "reflected-input-development",
+    "local_only": true,
+    "development_benchmark": true,
+    "reflected_xss_seed_paths": [
+      "/start",
+      "/panel?item=sample"
+    ],
+    "ground_truth_path": "examples/benchmarks/reflected-dev-ground-truth.json",
+    "notes": "State-free local development benchmark for reflected-input discovery and ranking. Ground truth is for post-run evaluation only."
+  }
+}
