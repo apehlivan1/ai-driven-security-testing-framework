@@ -213,11 +213,21 @@ def _evaluate_ranking_run(
     no_vulnerability_results = [
         result for result in scenario_results if result["vulnerable_candidate_count"] == 0
     ]
+    clean_results = [
+        result
+        for result in scenario_results
+        if ranking_source != "llm"
+        or (not result["model_validation_errors"] and not result["model_provider_failed"])
+    ]
+    clean_vulnerable_results = [
+        result for result in clean_results if result["vulnerable_candidate_count"] > 0
+    ]
     first_result = next((result for result in scenario_results if result["model_identifier"]), None)
     return {
         "ranking_source": ranking_source,
         "trial_number": trial_number,
         "model_identifier": first_result["model_identifier"] if first_result else None,
+        "provider": first_result["provider"] if first_result else None,
         "prompt_version": first_result["prompt_version"] if first_result else None,
         "scenario_count": len(scenario_results),
         "top_1_accuracy": _mean(
@@ -226,6 +236,15 @@ def _evaluate_ranking_run(
         ),
         "top_k_recall": _mean(result["top_k_recall"] for result in vulnerable_results),
         "mean_reciprocal_rank": _mean(result["reciprocal_rank"] for result in vulnerable_results),
+        "valid_metric_scenario_count": len(clean_results),
+        "valid_top_1_accuracy": _mean(
+            1.0 if result["top_rank_is_vulnerable"] else 0.0
+            for result in clean_vulnerable_results
+        ),
+        "valid_top_k_recall": _mean(result["top_k_recall"] for result in clean_vulnerable_results),
+        "valid_mean_reciprocal_rank": _mean(
+            result["reciprocal_rank"] for result in clean_vulnerable_results
+        ),
         "no_vulnerability_scenario_count": len(no_vulnerability_results),
         "no_vulnerability_false_positive_count": sum(
             1 for result in no_vulnerability_results if result["verified_finding_count"] > 0
@@ -235,6 +254,18 @@ def _evaluate_ranking_run(
         ),
         "provider_failure_count": sum(
             1 for result in scenario_results if result["model_provider_failed"]
+        ),
+        "fallback_used_count": sum(
+            1
+            for result in scenario_results
+            if result["ranking_source"] == "llm"
+            and (result["model_validation_errors"] or result["model_provider_failed"])
+        ),
+        "valid_model_output_count": sum(
+            1
+            for result in scenario_results
+            if result["ranking_source"] != "llm"
+            or (not result["model_validation_errors"] and not result["model_provider_failed"])
         ),
         "scenario_results": scenario_results,
     }
@@ -524,6 +555,11 @@ def _evaluate_scenario(
             if ranked_candidates
             else None
         ),
+        "provider": (
+            ranked_candidates[0]["attributes"].get("provider")
+            if ranked_candidates
+            else None
+        ),
         "prompt_version": (
             ranked_candidates[0]["attributes"].get("prompt_version")
             if ranked_candidates
@@ -774,7 +810,11 @@ def _candidate_evidence_records(
                 "test_budget": test_budget,
                 "llm_artifact": llm_artifact_ref,
                 "model_identifier": llm_result.model_identifier if llm_result else None,
+                "provider": llm_result.provider if llm_result else None,
+                "latency_ms": llm_result.latency_ms if llm_result else None,
                 "prompt_version": llm_result.prompt_version if llm_result else None,
+                "usage": llm_result.usage if llm_result else None,
+                "cost": llm_result.cost if llm_result else None,
                 "model_validation_errors": llm_result.validation_errors if llm_result else [],
                 "model_provider_failed": llm_result.provider_failed if llm_result else False,
                 "all_candidate_count": len(rankings),

@@ -5,7 +5,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from adstf.discovery import ReflectedInputCandidate
-from adstf.llm_ranking import FakeModelClient, parse_model_ranking, rank_candidates_with_model
+from adstf.llm_ranking import (
+    FakeModelClient,
+    _completion_from_command_stdout,
+    parse_model_ranking,
+    rank_candidates_with_model,
+)
 
 
 class LLMRankingTests(unittest.TestCase):
@@ -78,6 +83,31 @@ class LLMRankingTests(unittest.TestCase):
         self.assertTrue(result.provider_failed)
         self.assertTrue(any("timeout" in error for error in result.validation_errors))
         self.assertEqual(result.ordered_candidate_ids, ["a"])
+
+    def test_command_envelope_preserves_provider_metadata(self) -> None:
+        completion = _completion_from_command_stdout(
+            __import__("json").dumps(
+                {
+                    "provider": "example",
+                    "model_identifier": "example-model",
+                    "raw_response": '{"ranking":[]}',
+                    "usage": {"input_tokens": 10, "output_tokens": 3},
+                    "cost": {"estimated_usd": 0.01},
+                    "latency_ms": 123,
+                    "metadata": {"response_id": "resp_1"},
+                }
+            ),
+            fallback_model_identifier="fallback",
+            fallback_latency_ms=999,
+        )
+
+        self.assertEqual(completion.provider, "example")
+        self.assertEqual(completion.model_identifier, "example-model")
+        self.assertEqual(completion.raw_response, '{"ranking":[]}')
+        self.assertEqual(completion.usage["input_tokens"], 10)
+        self.assertEqual(completion.cost["estimated_usd"], 0.01)
+        self.assertEqual(completion.latency_ms, 123)
+        self.assertEqual(completion.metadata["response_id"], "resp_1")
 
 
 def candidate(candidate_id: str, path: str, parameter_name: str) -> ReflectedInputCandidate:

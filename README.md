@@ -158,6 +158,17 @@ $env:PYTHONPATH = "src"
 python -m adstf.dev_benchmark_xss --ranking-mode both --llm-client fake --fake-llm-strategy as_listed --trials 1
 ```
 
+Run one real OpenAI provider smoke trial through the command-client boundary:
+
+```powershell
+$env:PYTHONPATH = "src"
+$env:OPENAI_API_KEY = "<set outside repository>"
+$env:OPENAI_RANKING_MODEL = "gpt-5.6-luna"
+python -m adstf.dev_benchmark_xss --ranking-mode both --llm-client command --trials 1 --llm-command python -m adstf.openai_ranking_wrapper
+```
+
+Provider credentials must be supplied only through environment variables. The wrapper reads `OPENAI_API_KEY` and does not write it to prompts, responses, metrics, or artifacts. Optional environment variables are `OPENAI_RANKING_MODEL`, `OPENAI_TIMEOUT_SECONDS`, and `OPENAI_BASE_URL`.
+
 The development benchmark integration:
 
 - loads [examples/targets/reflected-dev-local.json](examples/targets/reflected-dev-local.json)
@@ -222,3 +233,5 @@ Latest validated bounded ranking comparison used the fake provider-neutral model
 - fake LLM trial top-1 accuracy: `0.3333333333333333`
 - fake LLM trial mean reciprocal rank: `0.5833333333333334`
 - fake LLM validation error count: `0`
+
+The OpenAI command wrapper is available as `python -m adstf.openai_ranking_wrapper`. It uses the command-client boundary, reads credentials from environment variables only, requests structured JSON output, and returns model/provider metadata, latency, raw response, token usage when returned by the provider, and cost as `null` when unavailable. A real-provider smoke run requires `OPENAI_API_KEY` to be set in the shell before running the command.

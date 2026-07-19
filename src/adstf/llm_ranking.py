@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Protocol
@@ -27,6 +28,9 @@ class ModelCompletion:
     raw_response: str
     usage: dict | None = None
     cost: dict | None = None
+    provider: str | None = None
+    latency_ms: int | None = None
+    metadata: dict | None = None
 
 
 class ModelClient(Protocol):
@@ -84,6 +88,7 @@ class CommandModelClient:
             "candidate_input": candidate_input,
             "settings": settings,
         }
+        started = time.perf_counter()
         try:
             completed = subprocess.run(
                 self.command,
@@ -97,11 +102,11 @@ class CommandModelClient:
             raise ModelTimeoutError(f"model command timed out after {self.timeout_seconds} seconds") from exc
         if completed.returncode != 0:
             raise ModelProviderError(completed.stderr.strip() or f"model command exited with {completed.returncode}")
-        return ModelCompletion(
-            self.model_identifier,
+        latency_ms = int((time.perf_counter() - started) * 1000)
+        return _completion_from_command_stdout(
             completed.stdout,
-            usage=None,
-            cost=None,
+            fallback_model_identifier=self.model_identifier,
+            fallback_latency_ms=latency_ms,
         )
 
 
@@ -118,6 +123,9 @@ class LLMRankingResult:
     prompt: str
     usage: dict | None
     cost: dict | None
+    provider: str | None
+    latency_ms: int | None
+    provider_metadata: dict | None
     timestamp: str
     trial_number: int
     scenario_id: str
@@ -154,6 +162,9 @@ def rank_candidates_with_model(
             prompt=prompt,
             usage=None,
             cost=None,
+            provider=None,
+            latency_ms=None,
+            provider_metadata=None,
             timestamp=datetime.now(UTC).isoformat(),
             trial_number=trial_number,
             scenario_id=scenario_id,
@@ -176,6 +187,9 @@ def rank_candidates_with_model(
         prompt=prompt,
         usage=completion.usage,
         cost=completion.cost,
+        provider=completion.provider,
+        latency_ms=completion.latency_ms,
+        provider_metadata=completion.metadata,
         timestamp=datetime.now(UTC).isoformat(),
         trial_number=trial_number,
         scenario_id=scenario_id,
@@ -262,6 +276,7 @@ def ranking_result_artifact(result: LLMRankingResult) -> dict:
         "trial_number": result.trial_number,
         "timestamp": result.timestamp,
         "model_identifier": result.model_identifier,
+        "provider": result.provider,
         "prompt_version": result.prompt_version,
         "model_settings": result.model_settings,
         "candidate_input": result.candidate_input,
@@ -271,6 +286,39 @@ def ranking_result_artifact(result: LLMRankingResult) -> dict:
         "rationales": result.rationales,
         "validation_errors": result.validation_errors,
         "provider_failed": result.provider_failed,
+        "latency_ms": result.latency_ms,
         "usage": result.usage,
         "cost": result.cost,
+        "provider_metadata": result.provider_metadata,
     }
+
+
+def _completion_from_command_stdout(
+    stdout: str,
+    *,
+    fallback_model_identifier: str,
+    fallback_latency_ms: int,
+) -> ModelCompletion:
+    try:
+        data = json.loads(stdout)
+    except json.JSONDecodeError:
+        return ModelCompletion(
+            fallback_model_identifier,
+            stdout,
+            latency_ms=fallback_latency_ms,
+        )
+    if not isinstance(data, dict) or "raw_response" not in data:
+        return ModelCompletion(
+            fallback_model_identifier,
+            stdout,
+            latency_ms=fallback_latency_ms,
+        )
+    return ModelCompletion(
+        model_identifier=str(data.get("model_identifier", fallback_model_identifier)),
+        raw_response=str(data["raw_response"]),
+        usage=data.get("usage") if isinstance(data.get("usage"), dict) else None,
+        cost=data.get("cost") if isinstance(data.get("cost"), dict) else None,
+        provider=str(data["provider"]) if data.get("provider") is not None else None,
+        latency_ms=int(data.get("latency_ms", fallback_latency_ms)),
+        metadata=data.get("metadata") if isinstance(data.get("metadata"), dict) else None,
+    )
