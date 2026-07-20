@@ -1,0 +1,44 @@
+{
+  "control_cases": [
+    {
+      "evidence_id": "evidence-23789bb99891",
+      "passed": true,
+      "summary": "Compared owner and cross-user read behavior for hi-002."
+    }
+  ],
+  "criteria_checked": [
+    "has_session_context",
+    "has_resource_ownership",
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_distinct_benchmark_sessions",
+    "has_cross_user_read_access"
+  ],
+  "criteria_missing": [
+    "has_cross_user_read_access"
+  ],
+  "criteria_satisfied": [
+    "has_session_context",
+    "has_resource_ownership",
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_distinct_benchmark_sessions"
+  ],
+  "evidence_refs": [
+    "evidence-1f6ab49aa518",
+    "evidence-61858c54c107",
+    "evidence-c49838d6e399",
+    "evidence-c6559b58a4fc",
+    "evidence-ddb735bb3cee",
+    "evidence-23789bb99891"
+  ],
+  "finding_id": "finding-6a26f26546b0",
+  "limitations": [],
+  "module_id": "access.idor_read_only",
+  "outcome": "rejected",
+  "rationale": "Evidence contradicts the suspected vulnerability.",
+  "reproduction_status": "not_reproduced",
+  "verification_result_id": "verification-9341d1f61a8a"
+}

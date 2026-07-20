@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/detail?code=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-98f4b14a5cb0",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the code parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+    "candidate_rank": 3,
+    "candidate_rationale": [
+      "Editable text input is a valid candidate, but it overlaps the same endpoint and parameter with the observed query source."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-3-candidate-3-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-3_3",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-3-candidate-3-execution.png",
+    "parameter": "code",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-3_3",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 3
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-4d0a51f90dbd",
+    "evidence-6a85bf8481b4",
+    "evidence-720d206d06e5",
+    "evidence-e7544b684019",
+    "evidence-e86ef8cf4de0",
+    "evidence-1257af4641fa",
+    "evidence-1419ecd7f910",
+    "evidence-0e98db04281e",
+    "evidence-1498ff44cf69"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-4b340451cfda"
+}

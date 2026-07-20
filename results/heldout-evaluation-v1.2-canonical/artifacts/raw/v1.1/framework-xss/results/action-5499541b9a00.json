@@ -1,0 +1,24 @@
+{
+  "action_id": "action-5499541b9a00",
+  "completed_at": "2026-07-20T06:45:40.618722+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-1afdddb58ab7"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/desk/start",
+    "html_artifact": "artifacts\\hx-001-seed-1.html",
+    "marker": null,
+    "marker_variable": null,
+    "page_title": "Desk",
+    "requested_url": "http://127.0.0.1:4391/desk/start",
+    "screenshot_artifact": "artifacts\\hx-001-seed-1.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:40.492987+00:00",
+  "status": "executed"
+}

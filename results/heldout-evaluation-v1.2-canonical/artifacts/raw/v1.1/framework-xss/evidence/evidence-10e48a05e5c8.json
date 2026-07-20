@@ -1,0 +1,23 @@
+{
+  "attributes": {
+    "candidate_rank": 2,
+    "ground_truth_used": false,
+    "payload_family": "safe_marker_assignment",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 2
+  },
+  "created_at": "2026-07-20T06:45:36.627625+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-10e48a05e5c8",
+  "evidence_type": "verification_note",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-27e3df7e829b",
+    "action-1c2fcb91d288"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Reflected-XSS verification used safe JavaScript marker assignment only.",
+  "target_ref": "http://127.0.0.1:4391/ledger/detail?code=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-002_llm-trial-2_2%27%3C%2Fscript%3E"
+}

@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/queue/submit?comment=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-884e95f73848",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the comment parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+    "candidate_rank": 1,
+    "candidate_rationale": [
+      "User-controlled comment text is the strongest likely reflection point, with a required input on the submission endpoint."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-003-llm-trial-1-candidate-1-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-003_llm-trial-1_1",
+    "execution_artifact": "artifacts\\hx-003-llm-trial-1-candidate-1-execution.png",
+    "parameter": "comment",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-003_llm-trial-1_1",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "trial_number": 1
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-f6d2fd85e67f",
+    "evidence-7c76a6c8ff54",
+    "evidence-78755aa16d88",
+    "evidence-991b09b9d5e1",
+    "evidence-0f7b5fab77c2",
+    "evidence-d451fad98444",
+    "evidence-582301a0d194",
+    "evidence-cae9eb2df0d3",
+    "evidence-dac4ccd3741d"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-003",
+  "verification_result_ref": "verification-0619d0504427"
+}

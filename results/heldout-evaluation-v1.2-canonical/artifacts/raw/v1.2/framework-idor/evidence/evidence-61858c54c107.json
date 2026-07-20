@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "credential_redacted": true,
+    "header_names": [
+      "Cookie"
+    ],
+    "session_ref": "session-user_b-d352bda5a836",
+    "token_redacted": true,
+    "token_sha256": "d352bda5a836495b174b9b8733198e7450817d8a516655212d787dd412a5375a",
+    "user_label": "user_b",
+    "username": "niko"
+  },
+  "created_at": "2026-07-20T09:32:01.528226+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-61858c54c107",
+  "evidence_type": "session_context",
+  "redaction_status": "isolated",
+  "related_action_ids": [
+    "action-94a6524cedd2"
+  ],
+  "run_id": "heldout-framework-idor-v1.2",
+  "source": "session_registry",
+  "summary": "Authenticated isolated benchmark session for user_b.",
+  "target_ref": "session-user_b-d352bda5a836"
+}

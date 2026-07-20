@@ -1,0 +1,128 @@
+{
+  "common_xss_sqli_scope": {
+    "framework_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 2,
+      "TP": 3
+    },
+    "zap_active_counts": {
+      "FN": 2,
+      "FP": 0,
+      "TN": 2,
+      "TP": 1,
+      "alerted": 1,
+      "no_alert": 4
+    },
+    "zap_passive_counts": {
+      "FN": 3,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0,
+      "alerted": 0,
+      "no_alert": 5
+    },
+    "zap_supported_case_count": 5
+  },
+  "framework": {
+    "counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 3,
+      "TP": 4
+    },
+    "heldout_case_count": 7,
+    "idor_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 1
+    },
+    "sqli_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 1
+    },
+    "xss_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 2
+    }
+  },
+  "git_head": "7c2466121a888b4edf359d3166c45c687a06d765",
+  "git_tag": "evaluation-protocol-v1.2",
+  "idor_treatment": {
+    "framework_supported": true,
+    "zap_active_supported": false,
+    "zap_passive_supported": false,
+    "zap_unsupported_case_ids": [
+      "heldout-idor::hi-001",
+      "heldout-idor::hi-002"
+    ]
+  },
+  "llm_ranking": {
+    "call_count": 15,
+    "failed_call_count": 0,
+    "fallback_call_count": 0,
+    "invalid_call_count": 0,
+    "metrics": {
+      "candidates_tested_before_verification": {
+        "1": 10,
+        "3": 5
+      },
+      "mean_reciprocal_rank": 1.0,
+      "no_vulnerability_false_positive_count": 0,
+      "run_count": 15,
+      "selected_candidate_distribution": {
+        "get-form:http://127.0.0.1:4391/desk/preview:note": 5,
+        "get-form:http://127.0.0.1:4391/ledger/memo:memo": 5,
+        "get-form:http://127.0.0.1:4391/queue/submit:comment": 5
+      },
+      "top_1_accuracy": 1.0,
+      "top_k_recall": 1.0,
+      "verified_finding_count": 10,
+      "vulnerable_rank_distribution": {
+        "1": 10
+      }
+    },
+    "model_identifier": "gpt-5.6-luna",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "separate_from_verifier_findings": true,
+    "token_latency_cost": {
+      "cost_basis": null,
+      "estimated_cost_usd": null,
+      "latency_ms": {
+        "count": 15,
+        "max": 49294,
+        "mean": 6383.733333333334,
+        "min": 2667,
+        "total": 95756
+      },
+      "usage_totals": {
+        "cached_input_tokens": 0,
+        "input_tokens": 6390,
+        "output_tokens": 3904,
+        "total_tokens": 10294
+      }
+    },
+    "trial_count_configured": 5,
+    "valid_call_count": 15
+  },
+  "package_kind": "canonical_heldout_results_package",
+  "protocol_compliance": {
+    "ground_truth_loaded_after_affected_execution": true,
+    "idor_evidence_sets_isolated": true,
+    "reran_unaffected_xss_or_sqli": false,
+    "zap_mapping_profile": "heldout"
+  },
+  "protocol_version": "evaluation-protocol-v1.2",
+  "scanner_alerts_are_not_framework_findings": true,
+  "secret_scan": {
+    "checked": true,
+    "credential_or_secret_literal_found": false,
+    "findings": []
+  }
+}

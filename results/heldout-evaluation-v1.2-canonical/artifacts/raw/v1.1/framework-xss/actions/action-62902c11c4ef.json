@@ -1,0 +1,26 @@
+{
+  "action_id": "action-62902c11c4ef",
+  "action_type": "observe_browser",
+  "expected_evidence": [
+    "browser_observation"
+  ],
+  "module_id": "xss.reflected",
+  "parameters": {
+    "artifact_prefix": "hx-001-llm-trial-1-candidate-1-control",
+    "expected_marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "summary": "Browser observed selected development benchmark candidate.",
+    "url": "http://127.0.0.1:4391/desk/preview?note=adstf_control_heldout_framework_xss_hx-001_llm-trial-1_1"
+  },
+  "preconditions": [
+    "development_benchmark_running_locally"
+  ],
+  "rationale": "Submit benign control marker to ranked reflected-input candidate.",
+  "requested_by": "dev_benchmark_xss",
+  "run_id": "heldout-framework-xss",
+  "safety_class": "low",
+  "scope_context": {
+    "scenario_id": "hx-001"
+  },
+  "target_ref": "http://127.0.0.1:4391/desk/preview?note=adstf_control_heldout_framework_xss_hx-001_llm-trial-1_1"
+}

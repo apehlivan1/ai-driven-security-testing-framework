@@ -1,0 +1,44 @@
+{
+  "control_cases": [
+    {
+      "evidence_id": "evidence-7d22ba81c875",
+      "passed": true,
+      "summary": "Compared baseline, boolean-true, and boolean-false responses for hs-002."
+    }
+  ],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_missing": [
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior"
+  ],
+  "evidence_refs": [
+    "evidence-ec896cde2503",
+    "evidence-ecce4d1b0bea",
+    "evidence-efa4d80e99c7",
+    "evidence-1de9f37618f5",
+    "evidence-dc1c0412704b",
+    "evidence-fa1e2cfb3885",
+    "evidence-06b040062166",
+    "evidence-5f22305f5203",
+    "evidence-337e4147ef55",
+    "evidence-7d22ba81c875"
+  ],
+  "finding_id": "finding-b94a006a5118",
+  "limitations": [],
+  "module_id": "sqli.boolean",
+  "outcome": "rejected",
+  "rationale": "Evidence contradicts the suspected vulnerability.",
+  "reproduction_status": "not_reproduced",
+  "verification_result_id": "verification-a1607f2a4d8a"
+}

@@ -1,0 +1,24 @@
+{
+  "action_id": "action-b0a438223eb9",
+  "completed_at": "2026-07-20T06:45:16.108021+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-632dc714c517"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/queue/view?token=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-003_deterministic-trial-1_1%27%3C%2Fscript%3E",
+    "html_artifact": "artifacts\\hx-003-deterministic-trial-1-candidate-1-execution.html",
+    "marker": "adstf_xss_heldout_framework_xss_hx-003_deterministic-trial-1_1",
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "View",
+    "requested_url": "http://127.0.0.1:4391/queue/view?token=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-003_deterministic-trial-1_1%27%3C%2Fscript%3E",
+    "screenshot_artifact": "artifacts\\hx-003-deterministic-trial-1-candidate-1-execution.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:16.020372+00:00",
+  "status": "executed"
+}

@@ -1,0 +1,29 @@
+{
+  "action_id": "action-e6e2d950d87b",
+  "completed_at": "2026-07-20T06:47:10.216084+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-dc1c0412704b"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 25,
+    "body_sha256": "e00bd93766dc5c8e149e0981d8cdd875228e2a3f13a52001754c77d2ca03638d",
+    "body_text": "{\"count\": 0, \"items\": []}",
+    "body_text_truncated": false,
+    "content_type": "application/json",
+    "final_url": "http://127.0.0.1:4393/catalog/card?ref=missing%27+OR+%271%27%3D%271%27+--+",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "ADSTFHeldoutBenchmark/0.1 Python/3.14.0"
+    },
+    "method": "GET",
+    "reason": "OK",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "heldout-framework-sqli",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:10.200749+00:00",
+  "status": "executed"
+}

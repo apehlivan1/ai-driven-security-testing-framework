@@ -1,0 +1,29 @@
+{
+  "action_id": "action-2347e0d5e465",
+  "action_type": "replay_request",
+  "expected_evidence": [
+    "http_exchange"
+  ],
+  "module_id": "access.idor_read_only",
+  "parameters": {
+    "body_text_limit": 2048,
+    "capture_body_text": true,
+    "method": "GET",
+    "session_ref": "session-user_a-340bf5400ad8",
+    "url": "http://127.0.0.1:4392/portal/file?doc=r-218"
+  },
+  "preconditions": [
+    "authenticated_isolated_session",
+    "read_only_request"
+  ],
+  "rationale": "Replay read-only held-out IDOR request for hi-001 owner read.",
+  "requested_by": "heldout_evaluation_v1_2",
+  "run_id": "heldout-framework-idor-v1.2",
+  "safety_class": "low",
+  "scope_context": {
+    "case_id": "hi-001",
+    "resource_id": "r-218",
+    "user_label": "user_a"
+  },
+  "target_ref": "http://127.0.0.1:4392/portal/file?doc=r-218"
+}

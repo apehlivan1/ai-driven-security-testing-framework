@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/detail?code=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-9f393cedb0f3",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the code parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+    "candidate_rank": 2,
+    "candidate_rationale": [
+      "Observed query parameter provides a directly addressable, externally supplied reflection point."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-3-candidate-2-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-3_2",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-3-candidate-2-execution.png",
+    "parameter": "code",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-3_2",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 3
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-4d0a51f90dbd",
+    "evidence-6a85bf8481b4",
+    "evidence-720d206d06e5",
+    "evidence-e7544b684019",
+    "evidence-e86ef8cf4de0",
+    "evidence-63e1481fe823",
+    "evidence-ddc35860be50",
+    "evidence-b2ab1fabfaa4",
+    "evidence-690c78e508f2"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-67158322acc9"
+}

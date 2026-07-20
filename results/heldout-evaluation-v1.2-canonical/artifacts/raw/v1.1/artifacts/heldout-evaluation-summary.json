@@ -1,0 +1,614 @@
+{
+  "common_scope": {
+    "framework_xss_sqli_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 2,
+      "TP": 3
+    },
+    "idor_treatment": "reported separately for framework; unsupported and excluded for ZAP baselines",
+    "zap_active_counts": {
+      "FN": 4,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0,
+      "alerted": 0,
+      "no_alert": 6
+    },
+    "zap_passive_counts": {
+      "FN": 4,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0,
+      "alerted": 0,
+      "no_alert": 6
+    }
+  },
+  "distinctions": {
+    "discovered_candidates": 54,
+    "post_run_ground_truth_classifications_present": true,
+    "scanner_alerts": 53,
+    "tested_hypotheses": 36,
+    "verifier_confirmed_findings": 13
+  },
+  "execution": {
+    "framework_idor": {
+      "action_counts": {
+        "blocked": 0,
+        "executed": 8,
+        "failed": 0,
+        "requested": 8
+      },
+      "run_dir": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\framework\\heldout-framework-idor",
+      "state_counts": {
+        "inconclusive": 0,
+        "rejected": 2,
+        "verified": 0
+      }
+    },
+    "framework_sqli": {
+      "action_counts": {
+        "blocked": 0,
+        "executed": 19,
+        "failed": 0,
+        "requested": 19
+      },
+      "run_dir": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\framework\\heldout-framework-sqli",
+      "state_counts": {
+        "inconclusive": 0,
+        "rejected": 1,
+        "verified": 1
+      }
+    },
+    "framework_xss": {
+      "action_counts": {
+        "blocked": 0,
+        "executed": 101,
+        "failed": 0,
+        "requested": 101
+      },
+      "discovered_candidates": 54,
+      "run_dir": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\framework\\heldout-framework-xss",
+      "tested_hypotheses": 32,
+      "verifier_confirmed_findings": 12
+    }
+  },
+  "framework": {
+    "combined_counts": {
+      "FN": 1,
+      "FP": 0,
+      "TN": 3,
+      "TP": 3
+    },
+    "idor_evaluation": {
+      "case_count": 2,
+      "case_results": [
+        {
+          "case_id": "hi-001",
+          "classification": "FN",
+          "expected_vulnerable": true,
+          "finding_state": "rejected"
+        },
+        {
+          "case_id": "hi-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "finding_state": "rejected"
+        }
+      ],
+      "counts": {
+        "FN": 1,
+        "FP": 0,
+        "TN": 1,
+        "TP": 0
+      },
+      "result_validity": "suspect_harness_defect",
+      "states": {
+        "rejected": 2
+      },
+      "validity_note": "hi-001 rejection was caused by rejecting control evidence included in the vulnerable finding support set by the temporary evaluation harness."
+    },
+    "sqli_evaluation": {
+      "case_count": 2,
+      "case_results": [
+        {
+          "case_id": "hs-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "finding_state": "verified"
+        },
+        {
+          "case_id": "hs-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "finding_state": "rejected"
+        }
+      ],
+      "counts": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 1,
+        "TP": 1
+      },
+      "states": {
+        "rejected": 1,
+        "verified": 1
+      }
+    },
+    "xss_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 2
+    },
+    "xss_evaluation": {
+      "case_count": 3,
+      "counts": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 1,
+        "TP": 2
+      },
+      "deterministic": {
+        "candidates_tested_before_verification": {
+          "2": 2,
+          "3": 1
+        },
+        "mean_reciprocal_rank": 0.5,
+        "no_vulnerability_false_positive_count": 0,
+        "run_count": 3,
+        "selected_candidate_distribution": {
+          "get-form:http://127.0.0.1:4391/desk/card:label": 1,
+          "get-form:http://127.0.0.1:4391/ledger/detail:code": 1,
+          "get-form:http://127.0.0.1:4391/queue/view:token": 1
+        },
+        "top_1_accuracy": 0.0,
+        "top_k_recall": 1.0,
+        "verified_finding_count": 2,
+        "vulnerable_rank_distribution": {
+          "2": 2
+        }
+      },
+      "llm": {
+        "candidates_tested_before_verification": {
+          "1": 10,
+          "3": 5
+        },
+        "mean_reciprocal_rank": 1.0,
+        "no_vulnerability_false_positive_count": 0,
+        "run_count": 15,
+        "selected_candidate_distribution": {
+          "get-form:http://127.0.0.1:4391/desk/preview:note": 5,
+          "get-form:http://127.0.0.1:4391/ledger/memo:memo": 5,
+          "get-form:http://127.0.0.1:4391/queue/submit:comment": 5
+        },
+        "top_1_accuracy": 1.0,
+        "top_k_recall": 1.0,
+        "verified_finding_count": 10,
+        "vulnerable_rank_distribution": {
+          "1": 10
+        }
+      },
+      "results": [
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "deterministic",
+          "reciprocal_rank": 0.5,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/card:label",
+          "tested_candidate_count": 2,
+          "top_1": false,
+          "top_k": true,
+          "trial_number": 1,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 2
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "deterministic",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 1,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "deterministic",
+          "reciprocal_rank": 0.5,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/view:token",
+          "tested_candidate_count": 2,
+          "top_1": false,
+          "top_k": true,
+          "trial_number": 1,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 2
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 1,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "llm",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 1,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 1,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 2,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "llm",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 2,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 2,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 3,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "llm",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 3,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 3,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 4,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "llm",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 4,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 4,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-001",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 5,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+          "vulnerable_rank": 1
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-002",
+          "classification": "TN",
+          "expected_vulnerable": false,
+          "ranking_source": "llm",
+          "reciprocal_rank": null,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+          "tested_candidate_count": 3,
+          "top_1": null,
+          "top_k": null,
+          "trial_number": 5,
+          "verified": false,
+          "vulnerable_candidate_id": null,
+          "vulnerable_rank": null
+        },
+        {
+          "candidate_count": 3,
+          "case_id": "hx-003",
+          "classification": "TP",
+          "expected_vulnerable": true,
+          "ranking_source": "llm",
+          "reciprocal_rank": 1.0,
+          "selected_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "tested_candidate_count": 1,
+          "top_1": true,
+          "top_k": true,
+          "trial_number": 5,
+          "verified": true,
+          "vulnerable_candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+          "vulnerable_rank": 1
+        }
+      ]
+    }
+  },
+  "harness_defects": [
+    {
+      "affected_scoring": "none for raw execution; final aggregate produced by postprocessor",
+      "description": "Initial aggregate reporter failed after execution due to a TypeError while summing IDOR/SQLi state counts. Preserved raw artifacts were postprocessed without rerunning experiments.",
+      "id": "post-run-report-typeerror",
+      "phase": "post_run_reporting"
+    },
+    {
+      "affected_scoring": "framework IDOR TP/FN classification should be treated as invalid/suspect for thesis interpretation; raw verifier and evidence artifacts are retained for audit",
+      "description": "The temporary held-out IDOR harness reused the secure control comparison as rejects_hypothesis evidence for the vulnerable hi-001 finding. The frozen verifier rejects any finding with rejecting supporting evidence, so hi-001 was rejected despite cross_user_read_access being satisfied.",
+      "id": "idor-control-reject-evidence-reused",
+      "phase": "heldout_framework_idor_harness"
+    }
+  ],
+  "llm": {
+    "call_count": 15,
+    "failed_call_count": 0,
+    "fallback_call_count": 0,
+    "invalid_call_count": 0,
+    "model_identifier": "gpt-5.6-luna",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "token_latency_cost": {
+      "cost_basis": null,
+      "estimated_cost_usd": null,
+      "latency_ms": {
+        "count": 15,
+        "max": 49294,
+        "mean": 6383.733333333334,
+        "min": 2667,
+        "total": 95756
+      },
+      "usage_totals": {
+        "cached_input_tokens": 0,
+        "input_tokens": 6390,
+        "output_tokens": 3904,
+        "total_tokens": 10294
+      }
+    },
+    "trial_count_configured": 5,
+    "valid_call_count": 15
+  },
+  "post_run_ground_truth": {
+    "case_count": 7,
+    "loaded_after_execution_completed": true,
+    "path": "examples/benchmarks/heldout-ground-truth-v1.json"
+  },
+  "postprocessed_at": "2026-07-20T06:52:26.023275+00:00",
+  "preflight": {
+    "checked_at": "2026-07-20T06:45:12.280046+00:00",
+    "hash_mismatches": {},
+    "hashes": {
+      "examples/benchmarks/heldout-ground-truth-v1.json": "393bdd0b3646fe28aa8527dc3d6ef4afa287155af7ea7ce0b2e8456475e45878",
+      "examples/benchmarks/heldout-manifest-v1.json": "81981053a3bcb7f806746c2515172ab28d4598804085edf7e7da0e4b76faf080",
+      "examples/targets/heldout-idor-local.json": "e9b01625e30523f44be18a6e9342978ce9afb44dcf16e20ca11fdcbbf8610c92",
+      "examples/targets/heldout-sqli-local.json": "69a078d876644c8e4432cdaf85c04d0c008b05e4ede030c687fab865b22fe13b",
+      "examples/targets/heldout-xss-local.json": "0c7901443aa10ccc35da38bf3f65e723d973c75bc8de20cf494340bb1f54f803",
+      "src/adstf/discovery.py": "e360edc3d440bc65ddc199e6fa9b5a8afb80ed5a60d40139a3f218c06cd54305",
+      "src/adstf/heldout_benchmark_server.py": "7f634bc3fb780e6ab83116262193fd90036c8e87160913334875e0838f1dd893",
+      "src/adstf/heldout_validation.py": "9ff6b7095139d752b2e5be2debbed3bd357e9e8920831dd28aeb25d6dda25cb9",
+      "src/adstf/llm_ranking.py": "7f39e73faf024eec0c7bf03e995e63572ad4ccc9c8f895f44bd6ae9a1de89e25",
+      "src/adstf/mvp_benchmark.py": "1ea300dd75de250d6e082c6722ea87cd158b612c47b56a7a7216587e2382a8ed",
+      "src/adstf/openai_ranking_wrapper.py": "78db929df3ab691cbaa36fdae5a799c68e3dc8f6850b8e1edc0fe4b9f7a3f0df",
+      "src/adstf/verification.py": "4a108365c9fab4c1cb2f7af36d1e47d46f8d6109153cc803d4a450f8525b3cb7",
+      "src/adstf/zap_baseline.py": "67390438c4b374d4d9c2d3a0cdc7cf819972365574c16559eea90699341794d0"
+    },
+    "head": "e6a17d330602db28363424b41acc6c94c8afb75b",
+    "head_matches_tag": true,
+    "llm_trials": 5,
+    "model_settings": {
+      "max_output_tokens": 1200,
+      "temperature_parameter": "omitted"
+    },
+    "openai_api_key_present": true,
+    "openai_ranking_model": "gpt-5.6-luna",
+    "openai_send_temperature": null,
+    "openai_send_temperature_valid": true,
+    "prompt_version": "llm-candidate-ranking-v1",
+    "protocol_version": "evaluation-protocol-v1.1",
+    "tag_commit": "e6a17d330602db28363424b41acc6c94c8afb75b",
+    "tag_name": "evaluation-protocol-v1.1",
+    "working_tree_clean": true,
+    "zap_active_mapping_version": "zap-active-mapping-v1",
+    "zap_active_policy_version": "zap-active-policy-v1",
+    "zap_digest_matches_protocol": true,
+    "zap_image": "zaproxy/zap-stable:2.16.1",
+    "zap_image_digest": "zaproxy/zap-stable@sha256:7840969c7c9fead565bf9734b12f49f6886db90b1d35b1f74d79710bbd081dab",
+    "zap_passive_mapping_version": "zap-passive-mapping-v1",
+    "zap_pull_returncode": 0
+  },
+  "protocol_version": "evaluation-protocol-v1.1",
+  "reporting_note": "Initial aggregate reporter failed after execution due to a post-run TypeError; this postprocessor used preserved raw artifacts and did not rerun experiments.",
+  "run_dir": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z",
+  "scanner_baselines": {
+    "zap_active": {
+      "counts": {
+        "FN": 4,
+        "FP": 0,
+        "TN": 2,
+        "TP": 0,
+        "alerted": 0,
+        "no_alert": 6
+      },
+      "matched_alert_count": 0,
+      "raw_alert_count": 14,
+      "summary_path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\zap_active\\artifacts\\zap-active-summary.json",
+      "unmatched_alert_count": 14,
+      "unsupported_case_count": 2
+    },
+    "zap_passive": {
+      "counts": {
+        "FN": 4,
+        "FP": 0,
+        "TN": 2,
+        "TP": 0,
+        "alerted": 0,
+        "no_alert": 6
+      },
+      "matched_alert_count": 0,
+      "raw_alert_count": 39,
+      "summary_path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\zap_passive\\artifacts\\zap-passive-summary.json",
+      "unmatched_alert_count": 39,
+      "unsupported_case_count": 2
+    }
+  },
+  "secret_scan": {
+    "checked": true,
+    "credential_or_secret_literal_found": false,
+    "findings": []
+  }
+}

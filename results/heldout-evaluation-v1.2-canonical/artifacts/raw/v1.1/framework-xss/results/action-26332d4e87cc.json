@@ -1,0 +1,24 @@
+{
+  "action_id": "action-26332d4e87cc",
+  "completed_at": "2026-07-20T06:47:05.147713+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-4e3b04758f60"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": true,
+    "final_url": "http://127.0.0.1:4391/queue/submit?comment=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-003_llm-trial-5_1%27%3C%2Fscript%3E",
+    "html_artifact": "artifacts\\hx-003-llm-trial-5-candidate-1-execution.html",
+    "marker": "adstf_xss_heldout_framework_xss_hx-003_llm-trial-5_1",
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "Submit",
+    "requested_url": "http://127.0.0.1:4391/queue/submit?comment=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-003_llm-trial-5_1%27%3C%2Fscript%3E",
+    "screenshot_artifact": "artifacts\\hx-003-llm-trial-5-candidate-1-execution.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:05.026313+00:00",
+  "status": "executed"
+}

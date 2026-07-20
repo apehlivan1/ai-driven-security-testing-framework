@@ -1,0 +1,24 @@
+{
+  "action_id": "action-b6215b343e7f",
+  "completed_at": "2026-07-20T06:45:33.021140+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-db93fb42b6bb"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "html_artifact": "artifacts\\hx-002-seed-2.html",
+    "marker": null,
+    "marker_variable": null,
+    "page_title": "Detail",
+    "requested_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "screenshot_artifact": "artifacts\\hx-002-seed-2.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:32.899010+00:00",
+  "status": "executed"
+}

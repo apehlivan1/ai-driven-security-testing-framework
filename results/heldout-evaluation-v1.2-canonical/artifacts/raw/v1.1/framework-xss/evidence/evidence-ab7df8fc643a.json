@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/ledger/detail?code=adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_1",
+    "html_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-1-control.html",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "Detail",
+    "requested_url": "http://127.0.0.1:4391/ledger/detail?code=adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_1",
+    "screenshot_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-1-control.png"
+  },
+  "created_at": "2026-07-20T06:45:15.502045+00:00",
+  "data_ref": "artifacts\\hx-002-deterministic-trial-1-candidate-1-control.png",
+  "evidence_id": "evidence-ab7df8fc643a",
+  "evidence_type": "browser_observation",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-8a22c84becfc"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "browser_executor",
+  "summary": "Browser observed selected development benchmark candidate.",
+  "target_ref": "http://127.0.0.1:4391/ledger/detail?code=adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_1"
+}

@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/queue/submit?comment=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-2134a8d1b710",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the comment parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+    "candidate_rank": 1,
+    "candidate_rationale": [
+      "Free-text comment input is the strongest reflection candidate due to its likely user-controlled content and required submission context."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-003-llm-trial-5-candidate-1-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-003_llm-trial-5_1",
+    "execution_artifact": "artifacts\\hx-003-llm-trial-5-candidate-1-execution.png",
+    "parameter": "comment",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-003_llm-trial-5_1",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "trial_number": 5
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-dbee2be37729",
+    "evidence-09570288ee95",
+    "evidence-08bbbdb75981",
+    "evidence-60c3289e0b3c",
+    "evidence-f0bbcd33c7ec",
+    "evidence-4e3b04758f60",
+    "evidence-6c26c6901367",
+    "evidence-84832033a57b",
+    "evidence-ed09253a11d0"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-003",
+  "verification_result_ref": "verification-064fe4348eaa"
+}

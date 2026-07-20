@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/memo?memo=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-b92c57d0cddd",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the memo parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+    "candidate_rank": 1,
+    "candidate_rationale": [
+      "Free-form textarea input is likely to support broad reflection contexts and offers the richest testing surface."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-3-candidate-1-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-3_1",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-3-candidate-1-execution.png",
+    "parameter": "memo",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-3_1",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 3
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-4d0a51f90dbd",
+    "evidence-6a85bf8481b4",
+    "evidence-720d206d06e5",
+    "evidence-e7544b684019",
+    "evidence-e86ef8cf4de0",
+    "evidence-ae3539103c1f",
+    "evidence-7a372a5e7a3c",
+    "evidence-0959de0e9af5",
+    "evidence-72052c5b9341"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-501d917e20b0"
+}

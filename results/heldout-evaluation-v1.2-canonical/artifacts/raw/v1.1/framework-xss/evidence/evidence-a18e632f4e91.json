@@ -1,0 +1,59 @@
+{
+  "attributes": {
+    "action_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "all_candidate_count": 3,
+    "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+    "cost": null,
+    "editable_input_count": 1,
+    "input_type": "query_parameter",
+    "latency_ms": 3033,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-2-ranking.json",
+    "method": "GET",
+    "model_identifier": "gpt-5.6-luna",
+    "model_provider_failed": false,
+    "model_validation_errors": [],
+    "page_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "parameter_count": 1,
+    "parameter_name": "code",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "rank": 2,
+    "ranking_rationale": [
+      "Direct query parameter on the detail endpoint is readily testable and may be reflected in the response."
+    ],
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "required_input_count": 0,
+    "scenario_id": "hx-002",
+    "score": 0,
+    "selected": false,
+    "source": "query_parameter",
+    "test_budget": 6,
+    "trial_number": 2,
+    "usage": {
+      "input_tokens": 427,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 279,
+      "output_tokens_details": {
+        "reasoning_tokens": 116
+      },
+      "total_tokens": 706
+    }
+  },
+  "created_at": "2026-07-20T06:45:36.201459+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-a18e632f4e91",
+  "evidence_type": "attack_surface_candidate",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-0485d4315ef0",
+    "action-b6215b343e7f"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Discovered and ranked development benchmark reflected-input candidate.",
+  "target_ref": "http://127.0.0.1:4391/ledger/detail?code=sample"
+}

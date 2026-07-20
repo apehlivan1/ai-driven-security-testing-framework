@@ -1,0 +1,24 @@
+{
+  "action_id": "action-992496fe190b",
+  "completed_at": "2026-07-20T06:45:15.202629+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-957ac7b24764"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/ledger/start",
+    "html_artifact": "artifacts\\hx-002-seed-1.html",
+    "marker": null,
+    "marker_variable": null,
+    "page_title": "Ledger",
+    "requested_url": "http://127.0.0.1:4391/ledger/start",
+    "screenshot_artifact": "artifacts\\hx-002-seed-1.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:15.137168+00:00",
+  "status": "executed"
+}

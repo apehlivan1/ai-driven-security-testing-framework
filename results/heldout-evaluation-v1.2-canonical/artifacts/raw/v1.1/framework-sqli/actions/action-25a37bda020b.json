@@ -1,0 +1,28 @@
+{
+  "action_id": "action-25a37bda020b",
+  "action_type": "replay_request",
+  "expected_evidence": [
+    "http_exchange"
+  ],
+  "module_id": "sqli.boolean",
+  "parameters": {
+    "body_text_limit": 2048,
+    "capture_body_text": true,
+    "method": "GET",
+    "url": "http://127.0.0.1:4393/catalog/item?ref=missing%27+OR+%271%27%3D%271%27+--+"
+  },
+  "preconditions": [
+    "heldout_target_running",
+    "read_only_request"
+  ],
+  "rationale": "Replay non-destructive boolean SQLi true_3 request.",
+  "requested_by": "heldout_evaluation",
+  "run_id": "heldout-framework-sqli",
+  "safety_class": "low",
+  "scope_context": {
+    "case_id": "hs-001",
+    "parameter": "ref",
+    "phase": "true_3"
+  },
+  "target_ref": "http://127.0.0.1:4393/catalog/item?ref=missing%27+OR+%271%27%3D%271%27+--+"
+}

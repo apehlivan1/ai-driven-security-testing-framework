@@ -1,0 +1,59 @@
+{
+  "attributes": {
+    "action_url": "http://127.0.0.1:4391/ledger/memo",
+    "all_candidate_count": 3,
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+    "cost": null,
+    "editable_input_count": 1,
+    "input_type": "textarea",
+    "latency_ms": 3821,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-1-ranking.json",
+    "method": "GET",
+    "model_identifier": "gpt-5.6-luna",
+    "model_provider_failed": false,
+    "model_validation_errors": [],
+    "page_url": "http://127.0.0.1:4391/ledger/start",
+    "parameter_count": 1,
+    "parameter_name": "memo",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "rank": 1,
+    "ranking_rationale": [
+      "Textarea provides a free-form memo field, offering the broadest user-controlled input surface."
+    ],
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "required_input_count": 0,
+    "scenario_id": "hx-002",
+    "score": 0,
+    "selected": true,
+    "source": "get_form",
+    "test_budget": 6,
+    "trial_number": 1,
+    "usage": {
+      "input_tokens": 427,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 310,
+      "output_tokens_details": {
+        "reasoning_tokens": 152
+      },
+      "total_tokens": 737
+    }
+  },
+  "created_at": "2026-07-20T06:45:24.497804+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-7999c74bef4d",
+  "evidence_type": "attack_surface_candidate",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-ef70dc33121c",
+    "action-b8e567395e72"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Discovered and ranked development benchmark reflected-input candidate.",
+  "target_ref": "http://127.0.0.1:4391/ledger/memo"
+}

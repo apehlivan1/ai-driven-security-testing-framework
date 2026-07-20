@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "checksum_entries": 776,
+    "checksum_mismatches": [],
+    "common_framework_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 2,
+      "TP": 3
+    },
+    "credential_literal_found": false,
+    "framework_case_count": 7,
+    "framework_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 3,
+      "TP": 4
+    },
+    "git_head": "7c2466121a888b4edf359d3166c45c687a06d765",
+    "git_tag": "evaluation-protocol-v1.2",
+    "llm_latency_ms": {
+      "count": 15,
+      "max": 49294,
+      "mean": 6383.733333333334,
+      "min": 2667,
+      "total": 95756
+    },
+    "llm_token_usage": {
+      "cached_input_tokens": 0,
+      "input_tokens": 6390,
+      "output_tokens": 3904,
+      "total_tokens": 10294
+    },
+    "llm_trial_count": 15,
+    "llm_valid_call_count": 15,
+    "package_directory_outside_ignored_adstf_runs": true,
+    "working_tree_clean_before_packaging": true,
+    "working_tree_status_basis": "Read-only git status check was clean immediately before temporary packager creation; untracked results/ is the expected package output.",
+    "zap_active_counts": {
+      "FN": 2,
+      "FP": 0,
+      "TN": 2,
+      "TP": 1
+    },
+    "zap_active_evaluated_case_count": 5,
+    "zap_passive_counts": {
+      "FN": 3,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0
+    },
+    "zap_passive_evaluated_case_count": 5,
+    "zap_unsupported_idor_ids": [
+      "heldout-idor::hi-001",
+      "heldout-idor::hi-002"
+    ]
+  },
+  "errors": [],
+  "package_path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\heldout-evaluation-v1.2-canonical",
+  "valid": true,
+  "validated_at": "2026-07-20T10:33:51.997016+00:00",
+  "validation_id": "canonical-heldout-results-package-v1"
+}

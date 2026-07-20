@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/desk/start",
+    "html_artifact": "artifacts\\hx-001-seed-1.html",
+    "marker": null,
+    "marker_variable": null,
+    "page_title": "Desk",
+    "requested_url": "http://127.0.0.1:4391/desk/start",
+    "screenshot_artifact": "artifacts\\hx-001-seed-1.png"
+  },
+  "created_at": "2026-07-20T06:45:40.618421+00:00",
+  "data_ref": "artifacts\\hx-001-seed-1.png",
+  "evidence_id": "evidence-1afdddb58ab7",
+  "evidence_type": "browser_observation",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-5499541b9a00"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "browser_executor",
+  "summary": "Development benchmark seed page observed for reflected-input discovery.",
+  "target_ref": "http://127.0.0.1:4391/desk/start"
+}

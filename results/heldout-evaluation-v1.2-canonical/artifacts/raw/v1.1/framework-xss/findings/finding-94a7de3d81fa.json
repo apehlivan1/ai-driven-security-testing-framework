@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/desk/preview?note=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-94a7de3d81fa",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the note parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+    "candidate_rank": 1,
+    "candidate_rationale": [
+      "Preview-oriented endpoint with a direct editable text input, making it a strong reflected-input candidate."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-001-llm-trial-1-candidate-1-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-001_llm-trial-1_1",
+    "execution_artifact": "artifacts\\hx-001-llm-trial-1-candidate-1-execution.png",
+    "parameter": "note",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-001_llm-trial-1_1",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "trial_number": 1
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-a24f935aa466",
+    "evidence-bf222229a54a",
+    "evidence-1161c5006be3",
+    "evidence-c29b82a8fbcb",
+    "evidence-ba2c381a7387",
+    "evidence-f73568451400",
+    "evidence-c53e0d8a028a",
+    "evidence-1b6e9eb179b5",
+    "evidence-3b1b65ab9ef2"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-001",
+  "verification_result_ref": "verification-3e46c3c8a801"
+}

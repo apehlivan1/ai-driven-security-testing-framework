@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/detail?code=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-9d49c2910047",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the code parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+    "candidate_rank": 3,
+    "candidate_rationale": [
+      "Single text field offers a similar detail-endpoint test surface, but is less directly represented than the discovered query parameter."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-2-candidate-3-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-2_3",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-2-candidate-3-execution.png",
+    "parameter": "code",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-2_3",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 2
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-adc723b480af",
+    "evidence-db93fb42b6bb",
+    "evidence-5a765236b35d",
+    "evidence-a18e632f4e91",
+    "evidence-9fa7d818739d",
+    "evidence-33d0a54cbbdf",
+    "evidence-74611e27660d",
+    "evidence-567a97bf6f26",
+    "evidence-a146f8214209"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-7fd399154ea1"
+}

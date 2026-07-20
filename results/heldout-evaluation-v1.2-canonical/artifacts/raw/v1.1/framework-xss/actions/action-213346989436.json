@@ -1,0 +1,25 @@
+{
+  "action_id": "action-213346989436",
+  "action_type": "observe_browser",
+  "expected_evidence": [
+    "browser_observation",
+    "attack_surface_candidate"
+  ],
+  "module_id": "xss.reflected",
+  "parameters": {
+    "artifact_prefix": "hx-001-seed-1",
+    "summary": "Development benchmark seed page observed for reflected-input discovery.",
+    "url": "http://127.0.0.1:4391/desk/start"
+  },
+  "preconditions": [
+    "development_benchmark_running_locally"
+  ],
+  "rationale": "Observe configured seed page and extract simple reflected-input candidates.",
+  "requested_by": "dev_benchmark_xss",
+  "run_id": "heldout-framework-xss",
+  "safety_class": "low",
+  "scope_context": {
+    "scenario_id": "hx-001"
+  },
+  "target_ref": "http://127.0.0.1:4391/desk/start"
+}

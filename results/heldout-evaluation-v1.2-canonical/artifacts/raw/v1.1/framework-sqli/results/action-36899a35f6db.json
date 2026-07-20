@@ -1,0 +1,29 @@
+{
+  "action_id": "action-36899a35f6db",
+  "completed_at": "2026-07-20T06:47:10.021326+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-50acf243bd9b"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 66,
+    "body_sha256": "f48a2ad7e44994c48701ef6efb56acc449798b10b242eb51a6da4c188c3a10be",
+    "body_text": "{\"count\": 1, \"items\": [{\"code\": \"A100\", \"label\": \"Atlas record\"}]}",
+    "body_text_truncated": false,
+    "content_type": "application/json",
+    "final_url": "http://127.0.0.1:4393/catalog/item?ref=A100",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "ADSTFHeldoutBenchmark/0.1 Python/3.14.0"
+    },
+    "method": "GET",
+    "reason": "OK",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "heldout-framework-sqli",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:10.018855+00:00",
+  "status": "executed"
+}

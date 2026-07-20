@@ -1,0 +1,29 @@
+{
+  "action_id": "action-b6ca104bef4d",
+  "completed_at": "2026-07-20T09:32:01.626359+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-ddb735bb3cee"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 27,
+    "body_sha256": "df604741012e71bd543a05d49e984e54d3028e331718cb989c11f4e60704b901",
+    "body_text": "{\"error\": \"not authorized\"}",
+    "body_text_truncated": false,
+    "content_type": "application/json",
+    "final_url": "http://127.0.0.1:4392/portal/item?doc=r-427",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "ADSTFHeldoutBenchmark/0.1 Python/3.14.0"
+    },
+    "method": "GET",
+    "reason": "Forbidden",
+    "redirect_chain": [],
+    "status_code": 403
+  },
+  "run_id": "heldout-framework-idor-v1.2",
+  "safety_notes": [],
+  "started_at": "2026-07-20T09:32:01.612077+00:00",
+  "status": "executed"
+}

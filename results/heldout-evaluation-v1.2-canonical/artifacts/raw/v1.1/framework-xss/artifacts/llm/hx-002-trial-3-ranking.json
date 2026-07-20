@@ -1,0 +1,80 @@
+{
+  "candidate_input": [
+    {
+      "action_path": "/ledger/detail",
+      "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "code",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/ledger/memo",
+      "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+      "editable_input_count": 1,
+      "input_type": "textarea",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "memo",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/ledger/detail",
+      "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "code",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "cost": null,
+  "latency_ms": 3179,
+  "model_identifier": "gpt-5.6-luna",
+  "model_settings": {
+    "max_output_tokens": 1200
+  },
+  "parsed_ranking": [
+    "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+    "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+    "get-form:http://127.0.0.1:4391/ledger/detail:code"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/ledger/detail\",\n    \"candidate_id\": \"get-form:http://127.0.0.1:4391/ledger/detail:code\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"code\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/ledger/memo\",\n    \"candidate_id\": \"get-form:http://127.0.0.1:4391/ledger/memo:memo\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"textarea\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"memo\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/ledger/detail\",\n    \"candidate_id\": \"query:http://127.0.0.1:4391/ledger/detail?code=sample:code\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"code\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "openai",
+  "provider_failed": false,
+  "provider_metadata": {
+    "base_url": "https://api.openai.com/v1",
+    "candidate_count": 3,
+    "response_id": "resp_0a89b6d9850410f0006a5dc41a97708194ad1c685d658f1f30",
+    "status": "completed"
+  },
+  "rationales": {
+    "get-form:http://127.0.0.1:4391/ledger/detail:code": "Editable text input is a valid candidate, but it overlaps the same endpoint and parameter with the observed query source.",
+    "get-form:http://127.0.0.1:4391/ledger/memo:memo": "Free-form textarea input is likely to support broad reflection contexts and offers the richest testing surface.",
+    "query:http://127.0.0.1:4391/ledger/detail?code=sample:code": "Observed query parameter provides a directly addressable, externally supplied reflection point."
+  },
+  "raw_response": "{\"ranking\":[{\"candidate_id\":\"get-form:http://127.0.0.1:4391/ledger/memo:memo\",\"rationale\":\"Free-form textarea input is likely to support broad reflection contexts and offers the richest testing surface.\"},{\"candidate_id\":\"query:http://127.0.0.1:4391/ledger/detail?code=sample:code\",\"rationale\":\"Observed query parameter provides a directly addressable, externally supplied reflection point.\"},{\"candidate_id\":\"get-form:http://127.0.0.1:4391/ledger/detail:code\",\"rationale\":\"Editable text input is a valid candidate, but it overlaps the same endpoint and parameter with the observed query source.\"}]}",
+  "scenario_id": "hx-002",
+  "timestamp": "2026-07-20T06:45:50.319746+00:00",
+  "trial_number": 3,
+  "usage": {
+    "input_tokens": 427,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 257,
+    "output_tokens_details": {
+      "reasoning_tokens": 102
+    },
+    "total_tokens": 684
+  },
+  "validation_errors": []
+}

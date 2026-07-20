@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "content_marker": "record-aurora-owner-a",
+    "ground_truth_used": false,
+    "owner_user_label": "user_a",
+    "resource_id": "r-218"
+  },
+  "created_at": "2026-07-20T09:32:01.532813+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-b34dab7d2efb",
+  "evidence_type": "resource_ownership",
+  "redaction_status": "absent",
+  "related_action_ids": [],
+  "run_id": "heldout-framework-idor-v1.2",
+  "source": "heldout_benchmark_config",
+  "summary": "Benchmark setup establishes owner for resource r-218.",
+  "target_ref": "http://127.0.0.1:4392/portal/file?doc=r-218"
+}

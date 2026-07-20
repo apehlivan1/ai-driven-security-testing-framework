@@ -1,0 +1,24 @@
+{
+  "action_id": "action-baebc9d0c650",
+  "completed_at": "2026-07-20T06:47:01.285624+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-d5b6a3b2dea5"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/ledger/memo?memo=adstf_control_heldout_framework_xss_hx-002_llm-trial-5_1",
+    "html_artifact": "artifacts\\hx-002-llm-trial-5-candidate-1-control.html",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "Memo",
+    "requested_url": "http://127.0.0.1:4391/ledger/memo?memo=adstf_control_heldout_framework_xss_hx-002_llm-trial-5_1",
+    "screenshot_artifact": "artifacts\\hx-002-llm-trial-5-candidate-1-control.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:01.140321+00:00",
+  "status": "executed"
+}

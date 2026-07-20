@@ -1,0 +1,142 @@
+{
+  "authoritative_counts": {
+    "common_xss_sqli_framework_scope": {
+      "case_count": 5,
+      "counts": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 2,
+        "TP": 3
+      }
+    },
+    "framework": {
+      "case_count": 7,
+      "counts": {
+        "FN": 0,
+        "FP": 0,
+        "TN": 3,
+        "TP": 4
+      }
+    },
+    "zap_active": {
+      "counts": {
+        "FN": 2,
+        "FP": 0,
+        "TN": 2,
+        "TP": 1
+      },
+      "evaluated_case_count": 5
+    },
+    "zap_passive": {
+      "counts": {
+        "FN": 3,
+        "FP": 0,
+        "TN": 2,
+        "TP": 0
+      },
+      "evaluated_case_count": 5
+    }
+  },
+  "created_at": "2026-07-20T10:32:39.572314+00:00",
+  "generated_tables": [
+    "tables/framework-cases.csv",
+    "tables/zap-cases.csv",
+    "tables/common-scope-comparison.csv",
+    "tables/llm-ranking-trials.csv",
+    "tables/xss-ranking-metrics.csv",
+    "tables/summary-metrics.json"
+  ],
+  "ledgers": [
+    "ledgers/included-results.csv",
+    "ledgers/excluded-superseded-results.csv"
+  ],
+  "notes": [
+    "LLM ranking results are reported separately from verifier-confirmed findings.",
+    "Scanner alerts are reported separately from framework verifier findings.",
+    "IDOR is framework-supported and ZAP-unsupported/excluded from ZAP scoring.",
+    "No experiments were rerun to create this package."
+  ],
+  "package_id": "heldout-evaluation-v1.2-canonical",
+  "package_version": "1.0",
+  "protocol": {
+    "git_head": "7c2466121a888b4edf359d3166c45c687a06d765",
+    "git_tag": "evaluation-protocol-v1.2",
+    "protocol_critical_hashes": {
+      "examples/benchmarks/heldout-ground-truth-v1.json": "393bdd0b3646fe28aa8527dc3d6ef4afa287155af7ea7ce0b2e8456475e45878",
+      "examples/benchmarks/heldout-manifest-v1.json": "81981053a3bcb7f806746c2515172ab28d4598804085edf7e7da0e4b76faf080",
+      "examples/targets/heldout-idor-local.json": "e9b01625e30523f44be18a6e9342978ce9afb44dcf16e20ca11fdcbbf8610c92",
+      "examples/targets/heldout-sqli-local.json": "69a078d876644c8e4432cdaf85c04d0c008b05e4ede030c687fab865b22fe13b",
+      "examples/targets/heldout-xss-local.json": "0c7901443aa10ccc35da38bf3f65e723d973c75bc8de20cf494340bb1f54f803",
+      "src/adstf/discovery.py": "e360edc3d440bc65ddc199e6fa9b5a8afb80ed5a60d40139a3f218c06cd54305",
+      "src/adstf/heldout_benchmark_server.py": "7f634bc3fb780e6ab83116262193fd90036c8e87160913334875e0838f1dd893",
+      "src/adstf/heldout_evaluation.py": "40f301478d51e2e770c8a701fbe2d5cd6dabf482838aeae5bf13c04eb0e3872a",
+      "src/adstf/heldout_validation.py": "ffa1077b2ebb7cde37991d3c65e94c1a443e2cd2736d305da84d6447de6a9180",
+      "src/adstf/llm_ranking.py": "7f39e73faf024eec0c7bf03e995e63572ad4ccc9c8f895f44bd6ae9a1de89e25",
+      "src/adstf/mvp_benchmark.py": "1ea300dd75de250d6e082c6722ea87cd158b612c47b56a7a7216587e2382a8ed",
+      "src/adstf/openai_ranking_wrapper.py": "78db929df3ab691cbaa36fdae5a799c68e3dc8f6850b8e1edc0fe4b9f7a3f0df",
+      "src/adstf/verification.py": "4a108365c9fab4c1cb2f7af36d1e47d46f8d6109153cc803d4a450f8525b3cb7",
+      "src/adstf/zap_baseline.py": "df4a9364e1769865436b6269a42f868255f720246d6e58af6af4e0888fa67c5b",
+      "tests/test_heldout_evaluation.py": "a9a46e5baafa0dc174551b59b469d669689bc989b030db8e2493a58e5a305cf8"
+    },
+    "protocol_document": "docs/evaluation-protocol-v1.2.md",
+    "version": "evaluation-protocol-v1.2",
+    "working_tree_status_basis": "Read-only git status check was clean immediately before temporary packager creation; untracked results/ is the expected package output.",
+    "working_tree_status_before_packaging": ""
+  },
+  "purpose": "Canonical, version-controlled held-out evaluation package built from completed valid artifacts only.",
+  "raw_artifact_roots": [
+    {
+      "component": "xss_framework_and_llm",
+      "package_path": "artifacts/raw/v1.1/framework-xss",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\framework\\heldout-framework-xss"
+    },
+    {
+      "component": "sqli_framework",
+      "package_path": "artifacts/raw/v1.1/framework-sqli",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z\\framework\\heldout-framework-sqli"
+    },
+    {
+      "component": "idor_framework",
+      "package_path": "artifacts/raw/v1.2/framework-idor",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-v1.2-affected-20260720T093154Z\\framework\\heldout-framework-idor-v1.2"
+    },
+    {
+      "component": "zap_passive",
+      "package_path": "artifacts/raw/v1.2/zap-passive",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-v1.2-affected-20260720T093154Z\\zap_passive"
+    },
+    {
+      "component": "zap_active",
+      "package_path": "artifacts/raw/v1.2/zap-active",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-v1.2-affected-20260720T093154Z\\zap_active"
+    },
+    {
+      "component": "v1_2_aggregate",
+      "package_path": "artifacts/raw/v1.2/artifacts/heldout-evaluation-v1.2-affected-summary.json",
+      "source": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-v1.2-affected-20260720T093154Z\\artifacts\\heldout-evaluation-v1.2-affected-summary.json"
+    }
+  ],
+  "source_runs": {
+    "corrected_v1_2_rerun": {
+      "included_components": [
+        "idor_framework",
+        "zap_passive",
+        "zap_active",
+        "mixed_provenance_aggregate_summary"
+      ],
+      "reason": "Reran only components affected by v1.1 defects under evaluation-protocol-v1.2.",
+      "run_id": "heldout-evaluation-v1.2-affected-20260720T093154Z",
+      "source_root": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-v1.2-affected-20260720T093154Z"
+    },
+    "reused_unaffected_v1_1": {
+      "included_components": [
+        "xss_deterministic_framework",
+        "xss_llm_ranking_trials",
+        "sqli_framework"
+      ],
+      "reason": "Unaffected by documented v1.1 defects and not rerun under v1.2.",
+      "run_id": "heldout-evaluation-20260720T064510Z",
+      "source_root": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runs\\heldout-evaluation-20260720T064510Z"
+    }
+  }
+}

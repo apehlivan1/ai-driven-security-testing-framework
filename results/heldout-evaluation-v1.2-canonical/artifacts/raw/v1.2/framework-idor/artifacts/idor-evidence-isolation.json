@@ -1,0 +1,21 @@
+{
+  "case_evidence_sets": {
+    "hi-001": [
+      "evidence-1f6ab49aa518",
+      "evidence-61858c54c107",
+      "evidence-b34dab7d2efb",
+      "evidence-34e38a4bc0d1",
+      "evidence-7f38238c510d",
+      "evidence-ce896b5f5bdc"
+    ],
+    "hi-002": [
+      "evidence-1f6ab49aa518",
+      "evidence-61858c54c107",
+      "evidence-c49838d6e399",
+      "evidence-c6559b58a4fc",
+      "evidence-ddb735bb3cee",
+      "evidence-23789bb99891"
+    ]
+  },
+  "cross_case_rejecting_evidence_blocked": true
+}

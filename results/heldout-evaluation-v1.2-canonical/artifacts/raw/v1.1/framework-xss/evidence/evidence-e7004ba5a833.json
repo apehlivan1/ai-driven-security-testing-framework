@@ -1,0 +1,23 @@
+{
+  "attributes": {
+    "candidate_rank": 2,
+    "ground_truth_used": false,
+    "payload_family": "safe_marker_assignment",
+    "ranking_source": "deterministic",
+    "scenario_id": "hx-002",
+    "trial_number": 1
+  },
+  "created_at": "2026-07-20T06:45:15.651332+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-e7004ba5a833",
+  "evidence_type": "verification_note",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-16629c02f813",
+    "action-6a3c40c96b7c"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Reflected-XSS verification used safe JavaScript marker assignment only.",
+  "target_ref": "http://127.0.0.1:4391/ledger/memo?memo=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_xss_heldout_framework_xss_hx-002_deterministic-trial-1_2%27%3C%2Fscript%3E"
+}

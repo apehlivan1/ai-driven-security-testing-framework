@@ -1,0 +1,24 @@
+{
+  "action_id": "action-bab5d0caedf2",
+  "completed_at": "2026-07-20T06:45:14.970138+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-9206d1077212"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/desk/card?label=adstf_control_heldout_framework_xss_hx-001_deterministic-trial-1_1",
+    "html_artifact": "artifacts\\hx-001-deterministic-trial-1-candidate-1-control.html",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "Card",
+    "requested_url": "http://127.0.0.1:4391/desk/card?label=adstf_control_heldout_framework_xss_hx-001_deterministic-trial-1_1",
+    "screenshot_artifact": "artifacts\\hx-001-deterministic-trial-1-candidate-1-control.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:14.892517+00:00",
+  "status": "executed"
+}

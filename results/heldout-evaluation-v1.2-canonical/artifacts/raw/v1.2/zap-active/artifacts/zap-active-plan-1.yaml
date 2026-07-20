@@ -1,0 +1,49 @@
+env:
+  contexts:
+  - name: zap-active-local-development
+    urls:
+    - http://host.docker.internal:4391/
+    includePaths:
+    - http://host.docker.internal:4391/.*
+    excludePaths: []
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: false
+jobs:
+- type: passiveScan-config
+  parameters:
+    maxAlertsPerRule: 10
+- type: spider
+  parameters:
+    context: zap-active-local-development
+    url: http://host.docker.internal:4391/
+    maxDuration: 1
+- type: activeScan
+  parameters:
+    context: zap-active-local-development
+    policy: Default Policy
+    maxScanDurationInMins: 2
+    maxRuleDurationInMins: 1
+  policyDefinition:
+    defaultStrength: Low
+    defaultThreshold: Off
+    rules:
+    - id: 40012
+      name: Cross Site Scripting (Reflected)
+      threshold: Medium
+      strength: Low
+    - id: 40018
+      name: SQL Injection
+      threshold: Medium
+      strength: Low
+- type: passiveScan-wait
+  parameters:
+    maxDuration: 1
+- type: report
+  parameters:
+    template: traditional-json
+    reportDir: /zap/wrk/
+    reportFile: zap-active-report-1.json
+    reportTitle: ZAP Active Baseline Report
+    reportDescription: zap-active-policy-v1

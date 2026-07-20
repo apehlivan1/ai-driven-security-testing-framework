@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/detail?code=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-455dd4b089df",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the code parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+    "candidate_rank": 3,
+    "candidate_rationale": [
+      "Single text input is a simple candidate, but offers less input surface than the textarea."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-5-candidate-3-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-5_3",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-5-candidate-3-execution.png",
+    "parameter": "code",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-5_3",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 5
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-a665263b0238",
+    "evidence-d8f3e6fa0901",
+    "evidence-9e431b9d40f8",
+    "evidence-99e69a858d1b",
+    "evidence-d8b25b8764ce",
+    "evidence-6303481fbcab",
+    "evidence-126fa2a5e2e9",
+    "evidence-e0c2add5a09e",
+    "evidence-bd073b5ce348"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-908c3bdadd8c"
+}

@@ -1,0 +1,24 @@
+{
+  "action_id": "action-f3fb87386e12",
+  "completed_at": "2026-07-20T06:45:25.309473+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-f6d2fd85e67f"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/queue/start",
+    "html_artifact": "artifacts\\hx-003-seed-1.html",
+    "marker": null,
+    "marker_variable": null,
+    "page_title": "Queue",
+    "requested_url": "http://127.0.0.1:4391/queue/start",
+    "screenshot_artifact": "artifacts\\hx-003-seed-1.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:25.210147+00:00",
+  "status": "executed"
+}

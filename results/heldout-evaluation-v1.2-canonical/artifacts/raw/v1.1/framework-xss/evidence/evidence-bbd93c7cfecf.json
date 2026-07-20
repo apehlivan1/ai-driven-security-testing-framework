@@ -1,0 +1,59 @@
+{
+  "attributes": {
+    "action_url": "http://127.0.0.1:4391/queue/view",
+    "all_candidate_count": 3,
+    "candidate_id": "get-form:http://127.0.0.1:4391/queue/view:token",
+    "cost": null,
+    "editable_input_count": 1,
+    "input_type": "search",
+    "latency_ms": 2933,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-4-ranking.json",
+    "method": "GET",
+    "model_identifier": "gpt-5.6-luna",
+    "model_provider_failed": false,
+    "model_validation_errors": [],
+    "page_url": "http://127.0.0.1:4391/queue/panel",
+    "parameter_count": 1,
+    "parameter_name": "token",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "rank": 2,
+    "ranking_rationale": [
+      "Search token is directly user-controlled and displayed by a view endpoint, making it a plausible reflection point."
+    ],
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "required_input_count": 0,
+    "scenario_id": "hx-003",
+    "score": 0,
+    "selected": false,
+    "source": "get_form",
+    "test_budget": 6,
+    "trial_number": 4,
+    "usage": {
+      "input_tokens": 424,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 243,
+      "output_tokens_details": {
+        "reasoning_tokens": 85
+      },
+      "total_tokens": 667
+    }
+  },
+  "created_at": "2026-07-20T06:46:53.143449+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-bbd93c7cfecf",
+  "evidence_type": "attack_surface_candidate",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-37d91c9587ae",
+    "action-a8887932ec8d"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Discovered and ranked development benchmark reflected-input candidate.",
+  "target_ref": "http://127.0.0.1:4391/queue/view"
+}

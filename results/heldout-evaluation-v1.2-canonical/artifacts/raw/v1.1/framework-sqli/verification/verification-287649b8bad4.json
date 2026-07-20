@@ -1,0 +1,43 @@
+{
+  "control_cases": [
+    {
+      "evidence_id": "evidence-cc36e3db487b",
+      "passed": true,
+      "summary": "Compared baseline, boolean-true, and boolean-false responses for hs-001."
+    }
+  ],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_missing": [],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "evidence_refs": [
+    "evidence-50acf243bd9b",
+    "evidence-3ce23845f476",
+    "evidence-e542dee4210e",
+    "evidence-23be131efa5b",
+    "evidence-f10761cf9a1d",
+    "evidence-8c4a3d5a0adb",
+    "evidence-50d2c090ff4b",
+    "evidence-54365dd6cd26",
+    "evidence-b624779c2c97",
+    "evidence-cc36e3db487b"
+  ],
+  "finding_id": "finding-8a7dc3c3eed4",
+  "limitations": [],
+  "module_id": "sqli.boolean",
+  "outcome": "verified",
+  "rationale": "Required evidence and control cases satisfy the module criteria.",
+  "reproduction_status": "reproduced",
+  "verification_result_id": "verification-287649b8bad4"
+}

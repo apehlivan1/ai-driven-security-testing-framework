@@ -1,0 +1,80 @@
+{
+  "candidate_input": [
+    {
+      "action_path": "/queue/submit",
+      "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "comment",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/queue/submit",
+      "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:key",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "key",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/queue/view",
+      "candidate_id": "get-form:http://127.0.0.1:4391/queue/view:token",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "token",
+      "required_input_count": 0,
+      "source": "get_form"
+    }
+  ],
+  "cost": null,
+  "latency_ms": 2915,
+  "model_identifier": "gpt-5.6-luna",
+  "model_settings": {
+    "max_output_tokens": 1200
+  },
+  "parsed_ranking": [
+    "get-form:http://127.0.0.1:4391/queue/submit:comment",
+    "get-form:http://127.0.0.1:4391/queue/view:token",
+    "get-form:http://127.0.0.1:4391/queue/submit:key"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/queue/submit\",\n    \"candidate_id\": \"get-form:http://127.0.0.1:4391/queue/submit:comment\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"comment\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/queue/submit\",\n    \"candidate_id\": \"get-form:http://127.0.0.1:4391/queue/submit:key\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"key\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/queue/view\",\n    \"candidate_id\": \"get-form:http://127.0.0.1:4391/queue/view:token\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"search\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"token\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "openai",
+  "provider_failed": false,
+  "provider_metadata": {
+    "base_url": "https://api.openai.com/v1",
+    "candidate_count": 3,
+    "response_id": "resp_04810b6763801dea006a5dc410b48c819390d59f70e955452b",
+    "status": "completed"
+  },
+  "rationales": {
+    "get-form:http://127.0.0.1:4391/queue/submit:comment": "User-controlled text field on a submission endpoint is the strongest reflected-input candidate.",
+    "get-form:http://127.0.0.1:4391/queue/submit:key": "Editable submission parameter, but its key-like semantics make reflection less likely than comment or search text.",
+    "get-form:http://127.0.0.1:4391/queue/view:token": "Search input on a view endpoint is directly user-controlled and likely to be rendered in results or status output."
+  },
+  "raw_response": "{\"ranking\":[{\"candidate_id\":\"get-form:http://127.0.0.1:4391/queue/submit:comment\",\"rationale\":\"User-controlled text field on a submission endpoint is the strongest reflected-input candidate.\"},{\"candidate_id\":\"get-form:http://127.0.0.1:4391/queue/view:token\",\"rationale\":\"Search input on a view endpoint is directly user-controlled and likely to be rendered in results or status output.\"},{\"candidate_id\":\"get-form:http://127.0.0.1:4391/queue/submit:key\",\"rationale\":\"Editable submission parameter, but its key-like semantics make reflection less likely than comment or search text.\"}]}",
+  "scenario_id": "hx-003",
+  "timestamp": "2026-07-20T06:45:40.134906+00:00",
+  "trial_number": 2,
+  "usage": {
+    "input_tokens": 424,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 215,
+    "output_tokens_details": {
+      "reasoning_tokens": 62
+    },
+    "total_tokens": 639
+  },
+  "validation_errors": []
+}

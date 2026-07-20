@@ -1,0 +1,27 @@
+{
+  "action_id": "action-621bc248b9b4",
+  "completed_at": "2026-07-20T06:47:10.015428+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-f0558bde5f37"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 34,
+    "body_sha256": "5bc6a87de7c7938a642e71c1d2e493269cca8a4b6b3572522da7fe4d908d5092",
+    "content_type": "application/json",
+    "final_url": "http://127.0.0.1:4393/status",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "ADSTFHeldoutBenchmark/0.1 Python/3.14.0"
+    },
+    "method": "GET",
+    "reason": "OK",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "heldout-framework-sqli",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:10.013215+00:00",
+  "status": "executed"
+}

@@ -1,0 +1,414 @@
+[
+  {
+    "candidate_count": 3,
+    "llm_artifact": null,
+    "model_identifier": null,
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "deterministic",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 2,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/card:label",
+        "rank": 1,
+        "score": 162
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 2,
+        "score": 162
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": "finding-a62ba88b6f14"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": null,
+    "model_identifier": null,
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "deterministic",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 1,
+        "score": 162
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 2,
+        "score": 162
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 3,
+        "score": 127
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": null,
+    "model_identifier": null,
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "deterministic",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 2,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/view:token",
+        "rank": 1,
+        "score": 162
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 2,
+        "score": 155
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": "finding-d6a7974279b4"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-1-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": "finding-94a7de3d81fa"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-1-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 1,
+        "score": 0
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 2,
+        "score": 0
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 3,
+        "score": 0
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-1-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 1,
+    "verified_finding_id": "finding-884e95f73848"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-2-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 2,
+    "verified_finding_id": "finding-fad9c51abe17"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-2-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 1,
+        "score": 0
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 2,
+        "score": 0
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 3,
+        "score": 0
+      }
+    ],
+    "trial_number": 2,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-2-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 2,
+    "verified_finding_id": "finding-cc87b06e0351"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-3-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 3,
+    "verified_finding_id": "finding-fd1acf7013ab"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-3-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 1,
+        "score": 0
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 2,
+        "score": 0
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 3,
+        "score": 0
+      }
+    ],
+    "trial_number": 3,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-3-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 3,
+    "verified_finding_id": "finding-dcafccfb07cc"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-4-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 4,
+    "verified_finding_id": "finding-df24cd0f4dc7"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-4-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 1,
+        "score": 0
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 2,
+        "score": 0
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 3,
+        "score": 0
+      }
+    ],
+    "trial_number": 4,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-4-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 4,
+    "verified_finding_id": "finding-a8ebcb100582"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-5-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-001",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/desk/preview:note",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 5,
+    "verified_finding_id": "finding-d06398aa2ac0"
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-002-trial-5-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "test_budget": 6,
+    "tested_candidate_count": 3,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+        "rank": 1,
+        "score": 0
+      },
+      {
+        "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+        "rank": 2,
+        "score": 0
+      },
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+        "rank": 3,
+        "score": 0
+      }
+    ],
+    "trial_number": 5,
+    "verified_finding_id": null
+  },
+  {
+    "candidate_count": 3,
+    "llm_artifact": "artifacts\\llm\\hx-003-trial-5-ranking.json",
+    "model_identifier": "gpt-5.6-luna",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-003",
+    "test_budget": 6,
+    "tested_candidate_count": 1,
+    "tested_candidates": [
+      {
+        "candidate_id": "get-form:http://127.0.0.1:4391/queue/submit:comment",
+        "rank": 1,
+        "score": 0
+      }
+    ],
+    "trial_number": 5,
+    "verified_finding_id": "finding-2134a8d1b710"
+  }
+]

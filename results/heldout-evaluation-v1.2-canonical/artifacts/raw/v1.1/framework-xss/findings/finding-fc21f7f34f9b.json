@@ -1,0 +1,44 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/detail?code=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-fc21f7f34f9b",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the code parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/detail:code",
+    "candidate_rank": 3,
+    "candidate_rationale": [
+      "Single text field is a narrower reflection surface and overlaps with the equivalent detail query candidate."
+    ],
+    "candidate_score": 0,
+    "control_artifact": "artifacts\\hx-002-llm-trial-4-candidate-3-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-4_3",
+    "execution_artifact": "artifacts\\hx-002-llm-trial-4-candidate-3-execution.png",
+    "parameter": "code",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_llm-trial-4_3",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "trial_number": 4
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-9c029a829b9b",
+    "evidence-bceb932192e5",
+    "evidence-8822167af949",
+    "evidence-460887082d62",
+    "evidence-3d83c76e8dcc",
+    "evidence-a02334441c33",
+    "evidence-3a78c2b295ac",
+    "evidence-a32e8b97bf11",
+    "evidence-648e1f894dd4"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-6e844cc34f6c"
+}

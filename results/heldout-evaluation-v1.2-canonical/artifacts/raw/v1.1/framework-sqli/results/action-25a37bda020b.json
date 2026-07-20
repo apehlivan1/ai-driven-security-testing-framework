@@ -1,0 +1,29 @@
+{
+  "action_id": "action-25a37bda020b",
+  "completed_at": "2026-07-20T06:47:10.067986+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-8c4a3d5a0adb"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 154,
+    "body_sha256": "2f017b1fd54e9c399cc12d9ac746cc7a95c39c8c504ba0cd8b8c40d09db4fe69",
+    "body_text": "{\"count\": 3, \"items\": [{\"code\": \"A100\", \"label\": \"Atlas record\"}, {\"code\": \"B200\", \"label\": \"Boreal record\"}, {\"code\": \"C300\", \"label\": \"Closed record\"}]}",
+    "body_text_truncated": false,
+    "content_type": "application/json",
+    "final_url": "http://127.0.0.1:4393/catalog/item?ref=missing%27+OR+%271%27%3D%271%27+--+",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "ADSTFHeldoutBenchmark/0.1 Python/3.14.0"
+    },
+    "method": "GET",
+    "reason": "OK",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "heldout-framework-sqli",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:47:10.065749+00:00",
+  "status": "executed"
+}

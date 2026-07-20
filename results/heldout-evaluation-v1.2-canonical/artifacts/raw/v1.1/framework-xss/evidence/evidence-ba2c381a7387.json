@@ -1,0 +1,59 @@
+{
+  "attributes": {
+    "action_url": "http://127.0.0.1:4391/desk/list?ticket=sample",
+    "all_candidate_count": 3,
+    "candidate_id": "query:http://127.0.0.1:4391/desk/list?ticket=sample:ticket",
+    "cost": null,
+    "editable_input_count": 1,
+    "input_type": "query_parameter",
+    "latency_ms": 3494,
+    "llm_artifact": "artifacts\\llm\\hx-001-trial-1-ranking.json",
+    "method": "GET",
+    "model_identifier": "gpt-5.6-luna",
+    "model_provider_failed": false,
+    "model_validation_errors": [],
+    "page_url": "http://127.0.0.1:4391/desk/list?ticket=sample",
+    "parameter_count": 1,
+    "parameter_name": "ticket",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "rank": 3,
+    "ranking_rationale": [
+      "Single editable query parameter offers a straightforward reflection candidate, but list rendering is less specifically indicative than preview or card output."
+    ],
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "llm",
+    "required_input_count": 0,
+    "scenario_id": "hx-001",
+    "score": 0,
+    "selected": false,
+    "source": "query_parameter",
+    "test_budget": 6,
+    "trial_number": 1,
+    "usage": {
+      "input_tokens": 427,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 211,
+      "output_tokens_details": {
+        "reasoning_tokens": 52
+      },
+      "total_tokens": 638
+    }
+  },
+  "created_at": "2026-07-20T06:45:20.181689+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-ba2c381a7387",
+  "evidence_type": "attack_surface_candidate",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-ba03a04435f8",
+    "action-201fbfa7589b"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Discovered and ranked development benchmark reflected-input candidate.",
+  "target_ref": "http://127.0.0.1:4391/desk/list?ticket=sample"
+}

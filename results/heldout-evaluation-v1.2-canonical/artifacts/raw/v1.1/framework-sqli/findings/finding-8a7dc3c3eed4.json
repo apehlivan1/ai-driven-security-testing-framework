@@ -1,0 +1,34 @@
+{
+  "affected_target": "http://127.0.0.1:4393/catalog/item?ref=",
+  "category": "boolean_sqli",
+  "confidence": "verified_by_reproducible_boolean_response_difference",
+  "created_by": "heldout_evaluation",
+  "deduplication_key": null,
+  "finding_id": "finding-8a7dc3c3eed4",
+  "hypothesis": "The ref parameter may alter database query logic through boolean conditions.",
+  "module_id": "sqli.boolean",
+  "report_fields": {
+    "baseline": "[configured baseline value]",
+    "case_id": "hs-001",
+    "false_condition": "[bounded boolean false condition]",
+    "parameter": "ref",
+    "true_condition": "[bounded boolean true condition]"
+  },
+  "run_id": "heldout-framework-sqli",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-50acf243bd9b",
+    "evidence-3ce23845f476",
+    "evidence-e542dee4210e",
+    "evidence-23be131efa5b",
+    "evidence-f10761cf9a1d",
+    "evidence-8c4a3d5a0adb",
+    "evidence-50d2c090ff4b",
+    "evidence-54365dd6cd26",
+    "evidence-b624779c2c97",
+    "evidence-cc36e3db487b"
+  ],
+  "title": "Boolean SQL injection hypothesis for held-out case hs-001",
+  "verification_result_ref": "verification-287649b8bad4"
+}

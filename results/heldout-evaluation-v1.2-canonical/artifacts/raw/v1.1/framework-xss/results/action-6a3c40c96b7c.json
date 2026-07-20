@@ -1,0 +1,24 @@
+{
+  "action_id": "action-6a3c40c96b7c",
+  "completed_at": "2026-07-20T06:45:15.643502+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-5b24b695acdc"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "http://127.0.0.1:4391/ledger/memo?memo=adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_2",
+    "html_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-2-control.html",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "Memo",
+    "requested_url": "http://127.0.0.1:4391/ledger/memo?memo=adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_2",
+    "screenshot_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-2-control.png"
+  },
+  "run_id": "heldout-framework-xss",
+  "safety_notes": [],
+  "started_at": "2026-07-20T06:45:15.570182+00:00",
+  "status": "executed"
+}

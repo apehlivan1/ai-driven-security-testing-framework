@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "control_case_passed": true,
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_llm-trial-1_2",
+    "control_observation_evidence": "evidence-49ff15df3356",
+    "execution_marker_observed": false,
+    "html_artifact": "artifacts\\hx-002-llm-trial-1-candidate-2-control.html",
+    "is_control_case": true,
+    "ranking_source": "llm",
+    "scenario_id": "hx-002",
+    "screenshot_artifact": "artifacts\\hx-002-llm-trial-1-candidate-2-control.png",
+    "trial_number": 1
+  },
+  "created_at": "2026-07-20T06:45:24.982333+00:00",
+  "data_ref": "artifacts\\hx-002-llm-trial-1-candidate-2-control.png",
+  "evidence_id": "evidence-b0e4a0113b4c",
+  "evidence_type": "comparison_result",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-90f9072c5971"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Benign control marker did not set the browser execution marker.",
+  "target_ref": "http://127.0.0.1:4391/ledger/detail?code=adstf_control_heldout_framework_xss_hx-002_llm-trial-1_2"
+}

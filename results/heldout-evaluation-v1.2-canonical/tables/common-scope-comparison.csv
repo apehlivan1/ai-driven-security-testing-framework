@@ -1,0 +1,6 @@
+suite_case_id,category,expected_vulnerable,framework_classification,framework_finding_state,zap_passive_classification,zap_passive_scanner_state,zap_active_classification,zap_active_scanner_state,notes
+heldout-xss::hx-001,reflected_xss,True,TP,verified,FN,no_alert,FN,no_alert,Common XSS+SQLi scope only; IDOR excluded for ZAP.
+heldout-xss::hx-002,reflected_xss,False,TN,rejected,TN,no_alert,TN,no_alert,Common XSS+SQLi scope only; IDOR excluded for ZAP.
+heldout-xss::hx-003,reflected_xss,True,TP,verified,FN,no_alert,FN,no_alert,Common XSS+SQLi scope only; IDOR excluded for ZAP.
+heldout-sqli::hs-001,boolean_sqli,True,TP,verified,FN,no_alert,TP,alerted,Common XSS+SQLi scope only; IDOR excluded for ZAP.
+heldout-sqli::hs-002,boolean_sqli,False,TN,rejected,TN,no_alert,TN,no_alert,Common XSS+SQLi scope only; IDOR excluded for ZAP.

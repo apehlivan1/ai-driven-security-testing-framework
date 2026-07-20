@@ -1,0 +1,38 @@
+[
+  {
+    "body_prefix": "{\"status\": \"ok\", \"target\": \"xss\"}",
+    "checked_at": "2026-07-20T09:32:01.011048+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4391/status"
+  },
+  {
+    "body_prefix": "{\"status\": \"reset\", \"target\": \"xss\"}",
+    "checked_at": "2026-07-20T09:32:01.253659+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4391/reset"
+  },
+  {
+    "body_prefix": "{\"status\": \"ok\", \"target\": \"idor\"}",
+    "checked_at": "2026-07-20T09:32:01.268394+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4392/status"
+  },
+  {
+    "body_prefix": "{\"status\": \"reset\", \"target\": \"idor\"}",
+    "checked_at": "2026-07-20T09:32:01.280620+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4392/reset"
+  },
+  {
+    "body_prefix": "{\"status\": \"ok\", \"target\": \"sqli\"}",
+    "checked_at": "2026-07-20T09:32:01.287752+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4393/status"
+  },
+  {
+    "body_prefix": "{\"status\": \"reset\", \"target\": \"sqli\"}",
+    "checked_at": "2026-07-20T09:32:01.307167+00:00",
+    "status_code": 200,
+    "url": "http://127.0.0.1:4393/reset"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "affected_target": "http://127.0.0.1:4391/ledger/memo?memo=",
+  "category": "reflected_xss",
+  "confidence": "verified_by_browser_marker",
+  "created_by": "dev_benchmark_xss",
+  "deduplication_key": null,
+  "finding_id": "finding-b72f1804c59c",
+  "hypothesis": "The ranked reflected-input candidate may execute script supplied through the memo parameter.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "candidate_id": "get-form:http://127.0.0.1:4391/ledger/memo:memo",
+    "candidate_rank": 2,
+    "candidate_rationale": [
+      "candidate action URL is inside the configured target scope",
+      "GET form candidate can be exercised by submitting editable inputs",
+      "candidate uses a text-like editable input",
+      "form has a single editable input",
+      "candidate does not require additional mandatory inputs",
+      "candidate uses the allowed GET method"
+    ],
+    "candidate_score": 162,
+    "control_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-2-control.png",
+    "control_marker": "adstf_control_heldout_framework_xss_hx-002_deterministic-trial-1_2",
+    "execution_artifact": "artifacts\\hx-002-deterministic-trial-1-candidate-2-execution.png",
+    "parameter": "memo",
+    "payload_marker": "adstf_xss_heldout_framework_xss_hx-002_deterministic-trial-1_2",
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "deterministic",
+    "scenario_id": "hx-002",
+    "trial_number": 1
+  },
+  "run_id": "heldout-framework-xss",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-ac68aaa8e42f",
+    "evidence-957ac7b24764",
+    "evidence-7bd5f6aa6015",
+    "evidence-e649ec521526",
+    "evidence-d6c05a629859",
+    "evidence-009753ee2737",
+    "evidence-c02c16cded0f",
+    "evidence-5b24b695acdc",
+    "evidence-b92d7844f27c",
+    "evidence-e7004ba5a833"
+  ],
+  "title": "Reflected XSS candidate observed in development benchmark hx-002",
+  "verification_result_ref": "verification-6d8cd2305527"
+}

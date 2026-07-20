@@ -1,0 +1,3 @@
+ranking_source,run_count,top_1_accuracy,top_k_recall,mean_reciprocal_rank,verified_finding_count,no_vulnerability_false_positive_count,candidates_tested_before_verification,selected_candidate_distribution,vulnerable_rank_distribution
+deterministic-structural-v1,3,0.0,1.0,0.5,2,0,"{'2': 2, '3': 1}","{'get-form:http://127.0.0.1:4391/desk/card:label': 1, 'get-form:http://127.0.0.1:4391/ledger/detail:code': 1, 'get-form:http://127.0.0.1:4391/queue/view:token': 1}",{'2': 2}
+llm-candidate-ranking-v1,15,1.0,1.0,1.0,10,0,"{'1': 10, '3': 5}","{'get-form:http://127.0.0.1:4391/desk/preview:note': 5, 'get-form:http://127.0.0.1:4391/ledger/memo:memo': 5, 'get-form:http://127.0.0.1:4391/queue/submit:comment': 5}",{'1': 10}

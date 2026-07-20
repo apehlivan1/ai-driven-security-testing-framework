@@ -1,0 +1,29 @@
+{
+  "affected_target": "http://127.0.0.1:4392/portal/file?doc=r-218",
+  "category": "read_only_idor",
+  "confidence": "verified_by_cross_user_http_comparison",
+  "created_by": "heldout_evaluation_v1_2",
+  "deduplication_key": null,
+  "finding_id": "finding-c3cd1c7bbd09",
+  "hypothesis": "A second isolated user may read a resource owned by the first user through a read-only request.",
+  "module_id": "access.idor_read_only",
+  "report_fields": {
+    "case_id": "hi-001",
+    "owner_user": "user_a",
+    "requesting_user": "user_b",
+    "resource_id": "r-218"
+  },
+  "run_id": "heldout-framework-idor-v1.2",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-1f6ab49aa518",
+    "evidence-61858c54c107",
+    "evidence-b34dab7d2efb",
+    "evidence-34e38a4bc0d1",
+    "evidence-7f38238c510d",
+    "evidence-ce896b5f5bdc"
+  ],
+  "title": "Read-only IDOR hypothesis for held-out case hi-001",
+  "verification_result_ref": "verification-8e5e6641eceb"
+}

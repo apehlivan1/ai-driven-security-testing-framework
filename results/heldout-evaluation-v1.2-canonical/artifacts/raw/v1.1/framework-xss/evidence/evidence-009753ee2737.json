@@ -1,0 +1,52 @@
+{
+  "attributes": {
+    "action_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "all_candidate_count": 3,
+    "candidate_id": "query:http://127.0.0.1:4391/ledger/detail?code=sample:code",
+    "cost": null,
+    "editable_input_count": 1,
+    "input_type": "query_parameter",
+    "latency_ms": null,
+    "llm_artifact": null,
+    "method": "GET",
+    "model_identifier": null,
+    "model_provider_failed": false,
+    "model_validation_errors": [],
+    "page_url": "http://127.0.0.1:4391/ledger/detail?code=sample",
+    "parameter_count": 1,
+    "parameter_name": "code",
+    "prompt_version": null,
+    "provider": null,
+    "rank": 3,
+    "ranking_rationale": [
+      "candidate action URL is inside the configured target scope",
+      "existing query parameter candidate is directly replayable",
+      "form has a single editable input",
+      "candidate does not require additional mandatory inputs",
+      "candidate uses the allowed GET method"
+    ],
+    "ranking_ruleset_version": "deterministic-structural-v1",
+    "ranking_source": "deterministic",
+    "required_input_count": 0,
+    "scenario_id": "hx-002",
+    "score": 127,
+    "selected": false,
+    "source": "query_parameter",
+    "test_budget": 6,
+    "trial_number": 1,
+    "usage": null
+  },
+  "created_at": "2026-07-20T06:45:15.302070+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-009753ee2737",
+  "evidence_type": "attack_surface_candidate",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-992496fe190b",
+    "action-0d42aa114dcc"
+  ],
+  "run_id": "heldout-framework-xss",
+  "source": "dev_benchmark_xss",
+  "summary": "Discovered and ranked development benchmark reflected-input candidate.",
+  "target_ref": "http://127.0.0.1:4391/ledger/detail?code=sample"
+}
