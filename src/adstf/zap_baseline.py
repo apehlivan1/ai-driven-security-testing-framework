@@ -24,8 +24,10 @@ DEFAULT_OUTPUT_ROOT = REPO_ROOT / ".adstf-runs"
 DEFAULT_ZAP_IMAGE = "zaproxy/zap-stable:2.16.1"
 ZAP_PASSIVE_SUMMARY_VERSION = "zap-passive-summary-v1"
 ZAP_PASSIVE_MAPPING_VERSION = "zap-passive-mapping-v1"
+ZAP_HELDOUT_PASSIVE_MAPPING_VERSION = "zap-heldout-passive-mapping-v1"
 ZAP_ACTIVE_SUMMARY_VERSION = "zap-active-summary-v1"
 ZAP_ACTIVE_MAPPING_VERSION = "zap-active-mapping-v1"
+ZAP_HELDOUT_ACTIVE_MAPPING_VERSION = "zap-heldout-active-mapping-v1"
 ZAP_ACTIVE_POLICY_VERSION = "zap-active-policy-v1"
 
 ACTIVE_SCAN_RULES = [
@@ -57,6 +59,7 @@ class ZapMappingRule:
     path: str
     parameter: str
     alert_terms: tuple[str, ...]
+    alternate_locations: tuple[tuple[str, str], ...] = ()
 
 
 EVALUATED_MAPPING_RULES = [
@@ -163,6 +166,98 @@ UNSUPPORTED_IDOR_CASES = [
     },
 ]
 
+HELDOUT_MAPPING_RULES = [
+    ZapMappingRule(
+        suite_case_id="heldout-xss::hx-001",
+        case_id="hx-001",
+        benchmark_slice="heldout-xss",
+        benchmark_id="heldout-reflected-input-v1",
+        module_id="xss.reflected",
+        category="reflected_xss",
+        target_name="Held-Out Reflected Input Benchmark",
+        expected_vulnerable=True,
+        path="/desk/preview",
+        parameter="note",
+        alert_terms=("cross site scripting", "xss"),
+    ),
+    ZapMappingRule(
+        suite_case_id="heldout-xss::hx-002",
+        case_id="hx-002",
+        benchmark_slice="heldout-xss",
+        benchmark_id="heldout-reflected-input-v1",
+        module_id="xss.reflected",
+        category="reflected_xss",
+        target_name="Held-Out Reflected Input Benchmark",
+        expected_vulnerable=False,
+        path="/ledger/detail",
+        parameter="code",
+        alert_terms=("cross site scripting", "xss"),
+        alternate_locations=(("/ledger/memo", "memo"),),
+    ),
+    ZapMappingRule(
+        suite_case_id="heldout-xss::hx-003",
+        case_id="hx-003",
+        benchmark_slice="heldout-xss",
+        benchmark_id="heldout-reflected-input-v1",
+        module_id="xss.reflected",
+        category="reflected_xss",
+        target_name="Held-Out Reflected Input Benchmark",
+        expected_vulnerable=True,
+        path="/queue/submit",
+        parameter="comment",
+        alert_terms=("cross site scripting", "xss"),
+    ),
+    ZapMappingRule(
+        suite_case_id="heldout-sqli::hs-001",
+        case_id="hs-001",
+        benchmark_slice="heldout-sqli",
+        benchmark_id="heldout-boolean-query-v1",
+        module_id="sqli.boolean",
+        category="boolean_sqli",
+        target_name="Held-Out Boolean Query Benchmark",
+        expected_vulnerable=True,
+        path="/catalog/item",
+        parameter="ref",
+        alert_terms=("sql injection",),
+    ),
+    ZapMappingRule(
+        suite_case_id="heldout-sqli::hs-002",
+        case_id="hs-002",
+        benchmark_slice="heldout-sqli",
+        benchmark_id="heldout-boolean-query-v1",
+        module_id="sqli.boolean",
+        category="boolean_sqli",
+        target_name="Held-Out Boolean Query Benchmark",
+        expected_vulnerable=False,
+        path="/catalog/card",
+        parameter="ref",
+        alert_terms=("sql injection",),
+    ),
+]
+
+HELDOUT_UNSUPPORTED_IDOR_CASES = [
+    {
+        "suite_case_id": "heldout-idor::hi-001",
+        "case_id": "hi-001",
+        "benchmark_slice": "heldout-idor",
+        "benchmark_id": "heldout-read-only-access-v1",
+        "module_id": "access.idor_read_only",
+        "category": "read_only_idor",
+        "evaluation_status": "unsupported",
+        "reason": "ZAP scans do not establish two-user read-only authorization behavior.",
+    },
+    {
+        "suite_case_id": "heldout-idor::hi-002",
+        "case_id": "hi-002",
+        "benchmark_slice": "heldout-idor",
+        "benchmark_id": "heldout-read-only-access-v1",
+        "module_id": "access.idor_read_only",
+        "category": "read_only_idor",
+        "evaluation_status": "unsupported",
+        "reason": "ZAP scans do not establish two-user read-only authorization behavior.",
+    },
+]
+
 
 def load_zap_report(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -195,12 +290,19 @@ def normalize_zap_passive_report(
     settings: dict | None = None,
     started_at: str | None = None,
     completed_at: str | None = None,
+    mapping_profile: str = "development",
 ) -> dict:
+    mapping_version = (
+        ZAP_HELDOUT_PASSIVE_MAPPING_VERSION
+        if mapping_profile == "heldout"
+        else ZAP_PASSIVE_MAPPING_VERSION
+    )
     return _normalize_zap_report(
         report,
         baseline_id="zap_passive",
         summary_version=ZAP_PASSIVE_SUMMARY_VERSION,
-        mapping_version=ZAP_PASSIVE_MAPPING_VERSION,
+        mapping_version=mapping_version,
+        mapping_profile=mapping_profile,
         source="zap_passive",
         report_path=report_path,
         settings=settings,
@@ -216,12 +318,19 @@ def normalize_zap_active_report(
     settings: dict | None = None,
     started_at: str | None = None,
     completed_at: str | None = None,
+    mapping_profile: str = "development",
 ) -> dict:
+    mapping_version = (
+        ZAP_HELDOUT_ACTIVE_MAPPING_VERSION
+        if mapping_profile == "heldout"
+        else ZAP_ACTIVE_MAPPING_VERSION
+    )
     return _normalize_zap_report(
         report,
         baseline_id="zap_active",
         summary_version=ZAP_ACTIVE_SUMMARY_VERSION,
-        mapping_version=ZAP_ACTIVE_MAPPING_VERSION,
+        mapping_version=mapping_version,
+        mapping_profile=mapping_profile,
         source="zap_active",
         report_path=report_path,
         settings=settings,
@@ -236,6 +345,7 @@ def _normalize_zap_report(
     baseline_id: str,
     summary_version: str,
     mapping_version: str,
+    mapping_profile: str,
     source: str,
     report_path: str | None,
     settings: dict | None,
@@ -245,7 +355,9 @@ def _normalize_zap_report(
     raw_alerts = extract_zap_alerts(report, source=source)
     mapped_alert_ids: set[str] = set()
     cases = []
-    for rule in EVALUATED_MAPPING_RULES:
+    mapping_rules = _mapping_rules(mapping_profile)
+    unsupported_cases = _unsupported_idor_cases(baseline_id, mapping_profile)
+    for rule in mapping_rules:
         matching_alerts = [alert for alert in raw_alerts if _alert_matches_rule(alert, rule)]
         for alert in matching_alerts:
             mapped_alert_ids.add(alert["alert_instance_id"])
@@ -271,13 +383,14 @@ def _normalize_zap_report(
             **(settings or {}),
         },
         "evaluated_case_count": len(cases),
-        "unsupported_case_count": len(_unsupported_idor_cases(baseline_id)),
+        "mapping_profile": mapping_profile,
+        "unsupported_case_count": len(unsupported_cases),
         "raw_alert_count": len(raw_alerts),
         "matched_alert_count": sum(len(case["mapped_alerts"]) for case in cases),
         "unmatched_alert_count": len(unmatched_alerts),
         "counts": counts,
         "cases": cases,
-        "unsupported_cases": _unsupported_idor_cases(baseline_id),
+        "unsupported_cases": unsupported_cases,
         "unmatched_alerts": unmatched_alerts,
         "raw_alerts": raw_alerts,
     }
@@ -580,15 +693,28 @@ def _alert_matches_rule(alert: dict, rule: ZapMappingRule) -> bool:
     if not any(term in name for term in rule.alert_terms):
         return False
     parsed = urlparse(alert["url"])
-    if rule.parameter:
-        parameters = set(parse_qs(parsed.query).keys())
+    return any(
+        _alert_matches_location(alert, parsed.path, parsed.query, path, parameter)
+        for path, parameter in ((rule.path, rule.parameter), *rule.alternate_locations)
+    )
+
+
+def _alert_matches_location(
+    alert: dict,
+    parsed_path: str,
+    parsed_query: str,
+    rule_path: str,
+    rule_parameter: str,
+) -> bool:
+    if rule_parameter:
+        parameters = set(parse_qs(parsed_query).keys())
         if alert["parameter"]:
             parameters.add(alert["parameter"])
-        if rule.parameter not in parameters:
+        if rule_parameter not in parameters:
             return False
-    if rule.path == "/s/case-c":
-        return parsed.path.startswith("/s/case-c/")
-    return parsed.path == rule.path
+    if rule_path == "/s/case-c":
+        return parsed_path.startswith("/s/case-c/")
+    return parsed_path == rule_path
 
 
 def _case_record(rule: ZapMappingRule, alerts: list[dict], scanner_alerted: bool) -> dict:
@@ -652,18 +778,27 @@ def _default_scan_configuration(baseline_id: str) -> dict:
     }
 
 
-def _unsupported_idor_cases(baseline_id: str) -> list[dict]:
+def _mapping_rules(mapping_profile: str) -> list[ZapMappingRule]:
+    if mapping_profile == "development":
+        return EVALUATED_MAPPING_RULES
+    if mapping_profile == "heldout":
+        return HELDOUT_MAPPING_RULES
+    raise ValueError("mapping_profile must be one of: development, heldout")
+
+
+def _unsupported_idor_cases(baseline_id: str, mapping_profile: str = "development") -> list[dict]:
     reason = (
         "ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior."
         if baseline_id == "zap_active"
         else "ZAP passive spider alerts do not establish two-user read-only authorization behavior."
     )
+    cases = HELDOUT_UNSUPPORTED_IDOR_CASES if mapping_profile == "heldout" else UNSUPPORTED_IDOR_CASES
     return [
         {
             **case,
             "reason": reason,
         }
-        for case in UNSUPPORTED_IDOR_CASES
+        for case in cases
     ]
 
 

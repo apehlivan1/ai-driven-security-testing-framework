@@ -14,6 +14,7 @@ from urllib.request import urlopen
 
 from adstf.config import load_target_config
 from adstf.heldout_benchmark_server import make_server
+from adstf.heldout_evaluation import validate_heldout_evaluation_harness
 from adstf.serialization import to_json_value
 
 
@@ -72,6 +73,7 @@ def run_heldout_structural_validation(
     started = datetime.now(UTC)
 
     manifest_result = validate_heldout_manifest(manifest_path)
+    harness_result = validate_heldout_evaluation_harness(manifest_path)
     target_checks: list[dict] = []
     with HeldoutValidationServers():
         time.sleep(0.2)
@@ -87,6 +89,7 @@ def run_heldout_structural_validation(
         "completed_at": completed.isoformat(),
         "git_commit": _git_commit(),
         "manifest_validation": manifest_result,
+        "harness_validation": harness_result,
         "target_checks": target_checks,
         "artifact_schema_checks": {
             "manifest_has_targets": manifest_result["target_count"] == 3,
@@ -95,7 +98,11 @@ def run_heldout_structural_validation(
             "health_reset_only": True,
         },
         "file_hashes": file_hashes,
-        "valid": manifest_result["valid"] and all(check["ok"] for check in target_checks),
+        "valid": (
+            manifest_result["valid"]
+            and harness_result["valid"]
+            and all(check["ok"] for check in target_checks)
+        ),
     }
     (artifact_dir / "heldout-structural-validation.json").write_text(
         json.dumps(to_json_value(result), indent=2, sort_keys=True) + "\n",
@@ -205,8 +212,12 @@ def _hash_protocol_files(manifest_path: Path) -> dict:
         REPO_ROOT / "src" / "adstf" / "verification.py",
         REPO_ROOT / "src" / "adstf" / "discovery.py",
         REPO_ROOT / "src" / "adstf" / "llm_ranking.py",
+        REPO_ROOT / "src" / "adstf" / "openai_ranking_wrapper.py",
         REPO_ROOT / "src" / "adstf" / "zap_baseline.py",
         REPO_ROOT / "src" / "adstf" / "mvp_benchmark.py",
+        REPO_ROOT / "src" / "adstf" / "heldout_benchmark_server.py",
+        REPO_ROOT / "src" / "adstf" / "heldout_evaluation.py",
+        REPO_ROOT / "src" / "adstf" / "heldout_validation.py",
     ]
     return {
         str(path.relative_to(REPO_ROOT)): _sha256(path)
@@ -241,6 +252,7 @@ def _render_report(result: dict) -> str:
         f"- Valid: `{result['valid']}`",
         f"- Git commit: `{result['git_commit']}`",
         f"- Ground truth loaded: `{result['manifest_validation']['ground_truth_loaded']}`",
+        f"- Harness validation: `{result['harness_validation']['valid']}`",
         f"- Health/reset only: `{result['artifact_schema_checks']['health_reset_only']}`",
         "",
         "## Target Checks",
