@@ -1,0 +1,299 @@
+{
+  "analysis_id": "heldout-evaluation-v1.2-descriptive-analysis",
+  "common_scope_metrics": [
+    {
+      "FN": 0,
+      "FP": 0,
+      "TN": 2,
+      "TP": 3,
+      "accuracy": 1.0,
+      "cases": 5,
+      "detection_rate": 1.0,
+      "evaluation": "Framework common scope",
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "scope": "xss+sqli",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/common-scope-comparison.csv",
+      "specificity": 1.0
+    },
+    {
+      "FN": 3,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0,
+      "accuracy": 0.4,
+      "cases": 5,
+      "detection_rate": 0.0,
+      "evaluation": "ZAP passive",
+      "f1_score": "not_applicable",
+      "precision": "not_applicable",
+      "recall": 0.0,
+      "scope": "xss+sqli",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "specificity": 1.0
+    },
+    {
+      "FN": 2,
+      "FP": 0,
+      "TN": 2,
+      "TP": 1,
+      "accuracy": 0.6,
+      "cases": 5,
+      "detection_rate": 0.3333,
+      "evaluation": "ZAP active",
+      "f1_score": 0.5,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "scope": "xss+sqli",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "specificity": 1.0
+    }
+  ],
+  "created_at": "2026-07-20T12:49:57.044131+00:00",
+  "framework_by_category": [
+    {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 2,
+      "accuracy": 1.0,
+      "cases": 3,
+      "detection_rate": 1.0,
+      "evaluation": "Framework Reflected XSS",
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "scope": "reflected_xss",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv",
+      "specificity": 1.0
+    },
+    {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 1,
+      "accuracy": 1.0,
+      "cases": 2,
+      "detection_rate": 1.0,
+      "evaluation": "Framework Read-only IDOR",
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "scope": "read_only_idor",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv",
+      "specificity": 1.0
+    },
+    {
+      "FN": 0,
+      "FP": 0,
+      "TN": 1,
+      "TP": 1,
+      "accuracy": 1.0,
+      "cases": 2,
+      "detection_rate": 1.0,
+      "evaluation": "Framework Boolean-based SQLi",
+      "f1_score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "scope": "boolean_sqli",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv",
+      "specificity": 1.0
+    }
+  ],
+  "framework_overall": {
+    "FN": 0,
+    "FP": 0,
+    "TN": 3,
+    "TP": 4,
+    "accuracy": 1.0,
+    "cases": 7,
+    "detection_rate": 1.0,
+    "evaluation": "Framework overall",
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "scope": "xss+sqli+idor",
+    "source": "results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv",
+    "specificity": 1.0
+  },
+  "git_head": "7c2466121a888b4edf359d3166c45c687a06d765",
+  "git_tag": "evaluation-protocol-v1.2",
+  "llm_usage_latency_cost": [
+    {
+      "cached_input_tokens": 0,
+      "call_count": 15,
+      "configured_trials": 5,
+      "cost_basis": "not_available",
+      "estimated_cost_usd": "not_available",
+      "failed_call_count": 0,
+      "fallback_call_count": 0,
+      "input_tokens": 6390,
+      "invalid_call_count": 0,
+      "latency_count": 15,
+      "latency_max_ms": 49294,
+      "latency_mean_ms": 6383.73,
+      "latency_min_ms": 2667,
+      "latency_total_ms": 95756,
+      "model_identifier": "gpt-5.6-luna",
+      "output_tokens": 3904,
+      "prompt_version": "llm-candidate-ranking-v1",
+      "provider": "openai",
+      "total_tokens": 10294,
+      "valid_call_count": 15
+    }
+  ],
+  "metrics_policy": {
+    "descriptive_only": true,
+    "llm_trials_are_not_independent_benchmark_cases": true,
+    "no_statistical_significance_claims": true,
+    "undefined_metrics_value": "not_applicable"
+  },
+  "protocol_version": "evaluation-protocol-v1.2",
+  "runtime_failure_summary": [
+    {
+      "blocked_actions": 0,
+      "component": "framework_xss_reused_v1.1",
+      "executed_actions": 101,
+      "failed_actions": 0,
+      "notes": "Reused unaffected v1.1 artifact; action counts available, explicit runtime not available.",
+      "provider_or_scanner_failures": "not_applicable",
+      "requested_actions": 101,
+      "runtime_ms": "not_available_in_canonical_summary",
+      "source_run_id": "heldout-evaluation-20260720T064510Z"
+    },
+    {
+      "blocked_actions": 0,
+      "component": "framework_sqli_reused_v1.1",
+      "executed_actions": 19,
+      "failed_actions": 0,
+      "notes": "Reused unaffected v1.1 artifact; action counts available, explicit runtime not available.",
+      "provider_or_scanner_failures": "not_applicable",
+      "requested_actions": 19,
+      "runtime_ms": "not_available_in_canonical_summary",
+      "source_run_id": "heldout-evaluation-20260720T064510Z"
+    },
+    {
+      "blocked_actions": "not_available_in_canonical_summary",
+      "component": "framework_idor_corrected_v1.2",
+      "executed_actions": "not_available_in_canonical_summary",
+      "failed_actions": "not_available_in_canonical_summary",
+      "notes": "Corrected IDOR rerun has case outcomes and isolated evidence confirmation; per-module action counts are not reported in canonical summary.",
+      "provider_or_scanner_failures": 0,
+      "requested_actions": "not_available_in_canonical_summary",
+      "runtime_ms": "part_of_affected_v1.2_run_not_individually_reported",
+      "source_run_id": "heldout-evaluation-v1.2-affected-20260720T093154Z"
+    },
+    {
+      "blocked_actions": "not_applicable",
+      "component": "zap_passive_corrected_v1.2",
+      "executed_actions": "not_applicable",
+      "failed_actions": "not_applicable",
+      "notes": "Raw alerts 38, matched 0, unmatched 38.",
+      "provider_or_scanner_failures": 0,
+      "requested_actions": "not_applicable",
+      "runtime_ms": 143183,
+      "source_run_id": "heldout-evaluation-v1.2-affected-20260720T093154Z"
+    },
+    {
+      "blocked_actions": "not_applicable",
+      "component": "zap_active_corrected_v1.2",
+      "executed_actions": "not_applicable",
+      "failed_actions": "not_applicable",
+      "notes": "One ZAP command returned 2 with a recorded spider warning but wrote a report; policy retained it per protocol.",
+      "provider_or_scanner_failures": 0,
+      "requested_actions": "not_applicable",
+      "runtime_ms": 139569,
+      "source_run_id": "heldout-evaluation-v1.2-affected-20260720T093154Z"
+    },
+    {
+      "blocked_actions": "not_applicable",
+      "component": "llm_ranking_reused_v1.1",
+      "executed_actions": "not_applicable",
+      "failed_actions": "not_applicable",
+      "notes": "15 valid calls, 0 invalid, 0 fallback.",
+      "provider_or_scanner_failures": 0,
+      "requested_actions": "not_applicable",
+      "runtime_ms": 95756,
+      "source_run_id": "heldout-evaluation-20260720T064510Z"
+    }
+  ],
+  "source_package": "results/heldout-evaluation-v1.2-canonical",
+  "source_package_manifest_sha256": "8374d318fe31a44a56377dfc9885ad773431e1038475f8e5308706fa160a08e0",
+  "unsupported_idor_for_zap": [
+    {
+      "baseline_id": "zap_passive",
+      "case_id": "hi-001",
+      "category": "read_only_idor",
+      "evaluation_status": "unsupported",
+      "reason": "ZAP passive spider alerts do not establish two-user read-only authorization behavior.",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "suite_case_id": "heldout-idor::hi-001"
+    },
+    {
+      "baseline_id": "zap_passive",
+      "case_id": "hi-002",
+      "category": "read_only_idor",
+      "evaluation_status": "unsupported",
+      "reason": "ZAP passive spider alerts do not establish two-user read-only authorization behavior.",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "suite_case_id": "heldout-idor::hi-002"
+    },
+    {
+      "baseline_id": "zap_active",
+      "case_id": "hi-001",
+      "category": "read_only_idor",
+      "evaluation_status": "unsupported",
+      "reason": "ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior.",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "suite_case_id": "heldout-idor::hi-001"
+    },
+    {
+      "baseline_id": "zap_active",
+      "case_id": "hi-002",
+      "category": "read_only_idor",
+      "evaluation_status": "unsupported",
+      "reason": "ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior.",
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv",
+      "suite_case_id": "heldout-idor::hi-002"
+    }
+  ],
+  "xss_ranking": [
+    {
+      "candidates_tested_before_verification": {
+        "2": 2,
+        "3": 1
+      },
+      "mean_reciprocal_rank": 0.5,
+      "no_vulnerability_false_positive_count": 0,
+      "ranking_source": "deterministic-structural-v1",
+      "runs_or_trials": 3,
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/xss-ranking-metrics.csv",
+      "top_1_accuracy": 0.0,
+      "top_k_recall": 1.0,
+      "unit": "independent held-out XSS case",
+      "verified_finding_count": 2,
+      "vulnerable_rank_distribution": {
+        "2": 2
+      }
+    },
+    {
+      "candidates_tested_before_verification": {
+        "1": 10,
+        "3": 5
+      },
+      "mean_reciprocal_rank": 1.0,
+      "no_vulnerability_false_positive_count": 0,
+      "ranking_source": "llm-candidate-ranking-v1",
+      "runs_or_trials": 15,
+      "source": "results/heldout-evaluation-v1.2-canonical/tables/xss-ranking-metrics.csv",
+      "top_1_accuracy": 1.0,
+      "top_k_recall": 1.0,
+      "unit": "LLM trial over held-out XSS case",
+      "verified_finding_count": 10,
+      "vulnerable_rank_distribution": {
+        "1": 10
+      }
+    }
+  ]
+}

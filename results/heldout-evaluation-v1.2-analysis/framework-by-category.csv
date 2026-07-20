@@ -1,0 +1,5 @@
+evaluation,scope,cases,TP,FP,FN,TN,accuracy,precision,recall,specificity,f1_score,detection_rate,source
+Framework Reflected XSS,reflected_xss,3,2,0,0,1,1.0,1.0,1.0,1.0,1.0,1.0,results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv
+Framework Read-only IDOR,read_only_idor,2,1,0,0,1,1.0,1.0,1.0,1.0,1.0,1.0,results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv
+Framework Boolean-based SQLi,boolean_sqli,2,1,0,0,1,1.0,1.0,1.0,1.0,1.0,1.0,results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv
+Framework overall,xss+sqli+idor,7,4,0,0,3,1.0,1.0,1.0,1.0,1.0,1.0,results/heldout-evaluation-v1.2-canonical/tables/framework-cases.csv

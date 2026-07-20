@@ -1,0 +1,4 @@
+evaluation,scope,cases,TP,FP,FN,TN,accuracy,precision,recall,specificity,f1_score,detection_rate,source
+Framework common scope,xss+sqli,5,3,0,0,2,1.0,1.0,1.0,1.0,1.0,1.0,results/heldout-evaluation-v1.2-canonical/tables/common-scope-comparison.csv
+ZAP passive,xss+sqli,5,0,0,3,2,0.4,not_applicable,0.0,1.0,not_applicable,0.0,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv
+ZAP active,xss+sqli,5,1,0,2,2,0.6,1.0,0.3333,1.0,0.5,0.3333,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv

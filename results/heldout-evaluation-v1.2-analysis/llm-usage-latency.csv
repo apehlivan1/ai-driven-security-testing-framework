@@ -1,0 +1,2 @@
+provider,model_identifier,prompt_version,configured_trials,call_count,valid_call_count,invalid_call_count,failed_call_count,fallback_call_count,input_tokens,output_tokens,cached_input_tokens,total_tokens,latency_count,latency_total_ms,latency_mean_ms,latency_min_ms,latency_max_ms,estimated_cost_usd,cost_basis
+openai,gpt-5.6-luna,llm-candidate-ranking-v1,5,15,15,0,0,0,6390,3904,0,10294,15,95756,6383.73,2667,49294,not_available,not_available

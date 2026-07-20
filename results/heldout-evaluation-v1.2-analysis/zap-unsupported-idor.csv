@@ -1,0 +1,5 @@
+baseline_id,suite_case_id,case_id,category,evaluation_status,reason,source
+zap_passive,heldout-idor::hi-001,hi-001,read_only_idor,unsupported,ZAP passive spider alerts do not establish two-user read-only authorization behavior.,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv
+zap_passive,heldout-idor::hi-002,hi-002,read_only_idor,unsupported,ZAP passive spider alerts do not establish two-user read-only authorization behavior.,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv
+zap_active,heldout-idor::hi-001,hi-001,read_only_idor,unsupported,ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior.,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv
+zap_active,heldout-idor::hi-002,hi-002,read_only_idor,unsupported,ZAP active unauthenticated scanner alerts do not establish two-user read-only authorization behavior.,results/heldout-evaluation-v1.2-canonical/tables/zap-cases.csv

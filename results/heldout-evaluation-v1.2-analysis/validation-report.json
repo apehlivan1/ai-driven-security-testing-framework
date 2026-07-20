@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "canonical_package_valid": true,
+    "checksum_entries": 13,
+    "common_framework_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 2,
+      "TP": 3
+    },
+    "framework_case_count": 7,
+    "framework_counts": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 3,
+      "TP": 4
+    },
+    "llm_trial_count": 15,
+    "zap_active_counts": {
+      "FN": 2,
+      "FP": 0,
+      "TN": 2,
+      "TP": 1
+    },
+    "zap_active_evaluated_case_count": 5,
+    "zap_passive_counts": {
+      "FN": 3,
+      "FP": 0,
+      "TN": 2,
+      "TP": 0
+    },
+    "zap_passive_evaluated_case_count": 5,
+    "zap_unsupported_idor_rows": 4
+  },
+  "errors": [],
+  "source_package": "results/heldout-evaluation-v1.2-canonical",
+  "valid": true,
+  "validated_at": "2026-07-20T12:50:37.662959+00:00",
+  "validation_id": "heldout-v1.2-analysis-consistency-checks"
+}
