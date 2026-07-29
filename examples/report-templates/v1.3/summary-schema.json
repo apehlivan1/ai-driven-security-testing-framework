@@ -1,0 +1,24 @@
+{
+  "schema_version": "v1.3-summary-template",
+  "template_status": "schema_only_no_experiment_results",
+  "study_id": "",
+  "protocol_version": "",
+  "provenance": {
+    "git_commit_or_tag": "",
+    "generated_at": "",
+    "source_artifacts": []
+  },
+  "measurements": {
+    "schema_version": "measurement-summary-v1.3",
+    "action_counts": {},
+    "request_counts": {},
+    "first_verified_finding": {},
+    "verifier_decisions": {},
+    "model_provider": {},
+    "classification_counts": {},
+    "case_accounting": {}
+  },
+  "tables": [],
+  "figures": [],
+  "limitations": []
+}

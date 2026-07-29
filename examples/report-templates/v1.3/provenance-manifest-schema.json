@@ -1,0 +1,24 @@
+{
+  "schema_version": "v1.3-provenance-manifest-template",
+  "template_status": "schema_only_no_experiment_results",
+  "study_id": "",
+  "protocol_version": "",
+  "git_commit_or_tag": "",
+  "created_at": "",
+  "included_artifacts": [
+    {
+      "artifact_id": "",
+      "path": "",
+      "sha256": "",
+      "role": "",
+      "source_run_id": ""
+    }
+  ],
+  "excluded_artifacts": [
+    {
+      "artifact_id": "",
+      "path": "",
+      "reason": ""
+    }
+  ]
+}

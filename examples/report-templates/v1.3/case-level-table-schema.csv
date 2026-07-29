@@ -1,0 +1,2 @@
+template_status,schema_version,study_id,run_id,case_id,category,arm,expected_vulnerable,observed_state,classification,verifier_outcome,scanner_alerted,unsupported,ground_truth_phase,source_artifact_ref
+schema_only_no_experiment_results,v1.3-case-table,,,,,,,,,,,,,
