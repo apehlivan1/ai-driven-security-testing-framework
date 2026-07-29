@@ -1,0 +1,44 @@
+{
+  "$id": "local-ranking-readiness-json-schema-v1.3",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "ranking": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "enum": [
+              "local-readiness-alpha-term",
+              "local-readiness-bravo-memo",
+              "local-readiness-cedar-query",
+              "local-readiness-delta-name",
+              "local-readiness-ember-note",
+              "local-readiness-fable-ref",
+              "local-readiness-grove-page",
+              "local-readiness-harbor-mode"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 96,
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 8,
+      "minItems": 8,
+      "type": "array"
+    }
+  },
+  "required": [
+    "ranking"
+  ],
+  "title": "ADSTF local candidate-ranking readiness response",
+  "type": "object"
+}

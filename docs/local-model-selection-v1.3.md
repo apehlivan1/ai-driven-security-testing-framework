@@ -348,6 +348,64 @@ content in the adapter. Any such correction must be versioned before rerunning
 readiness for all four models. Individual model-specific tuning remains
 forbidden.
 
+## Output-Boundary Correction
+
+The repository now includes a narrow output-boundary audit and corrected
+readiness package:
+
+- module: `src/adstf/local_runtime_output_boundary.py`;
+- package: `results/local-runtime-output-boundary-v1.3/`;
+- transport settings version: `llama-completion-transport-boundary-v1.3`;
+- parser rule version: `llama-completion-transport-parser-v1.3`;
+- selected common interface: `llama-completion` stdout/stderr transport with a
+  versioned output-boundary parser;
+- schema: unchanged `local-ranking-readiness-json-schema-v1.3`;
+- prompt: unchanged `llm-candidate-ranking-v1`;
+- candidate input: unchanged synthetic eight-candidate readiness input;
+- final 24-scenario XSS v1.3 benchmark used: no;
+- calibration bake-off executed: no;
+- vulnerability testing executed: no;
+- final model selected: no.
+
+Root cause:
+
+- generated JSON was written to stdout;
+- timing and system metadata were written to stderr;
+- the fixed literal `[end of text]` appeared on stdout after an otherwise
+  complete JSON object for all four models;
+- `--special` was not enabled, and prompt display was disabled;
+- the application parser correctly rejected the unseparated stdout as extra
+  data.
+
+Correction:
+
+- retain raw stdout and stderr unchanged;
+- treat `[end of text]` as a llama.cpp runtime/EOS presentation marker only
+  when it is the exact trailing suffix after an otherwise valid JSON object;
+- store normalized model content separately from raw process output;
+- leave genuine extra model-generated text invalid;
+- leave marker-like text inside JSON rationales untouched;
+- apply the same transport rule to all four models.
+
+`llama-server.exe` is available in the provisioned release and its executable
+hash is recorded in the output-boundary package. It was not selected for this
+correction because the corrected `llama-completion` interface gives a clear
+content/metadata boundary while avoiding a new HTTP server lifecycle before the
+measured bake-off.
+
+Corrected readiness result:
+
+| Candidate | Readiness status | Stop condition | Token limit reached |
+| --- | --- | --- | --- |
+| Qwen2.5 7B Instruct Q4_K_M | ready | EOS runtime marker separated | false |
+| Phi-3.5 Mini Instruct Q4_K_M | ready | EOS runtime marker separated | false |
+| Mistral 7B Instruct v0.3 Q4_K_M | ready | EOS runtime marker separated | false |
+| Gemma 3 4B IT Q4_K_M | ready | EOS runtime marker separated | false |
+
+The measured 72-call calibration bake-off is now technically ready to execute,
+subject to preserving the same prompt, schema, candidates, generation settings,
+parser rule and model shortlist.
+
 ## Sources Used
 
 - Qwen2.5 7B Instruct GGUF model card:
@@ -369,8 +427,7 @@ forbidden.
 
 ## Next Narrow Task
 
-Correct the shared local-runtime output boundary for v1.3 readiness without
-changing the prompt, candidates, model shortlist or per-model settings. The
-correction must apply to all four models, preserve raw stdout, keep strict JSON
-validation, and rerun exactly the same non-scored readiness request for every
-shortlisted model before the measured 72-call bake-off is authorized.
+Run the measured 72-call local-model calibration bake-off using the frozen
+calibration scenarios and the corrected common transport boundary. The run must
+not use the final 24-scenario XSS v1.3 benchmark, change the prompt or schema,
+or tune models individually.

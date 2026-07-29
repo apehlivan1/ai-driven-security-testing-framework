@@ -146,6 +146,42 @@ readiness evidence, not as model-quality or ranking-performance evidence. The
 measured bake-off is not ready until a single global output-boundary correction
 is defined, versioned and rerun for all four shortlisted models.
 
+Local runtime output-boundary audit and corrected readiness package:
+
+- Path: `results/local-runtime-output-boundary-v1.3/`
+- Manifest: `results/local-runtime-output-boundary-v1.3/manifest.json`
+- Transport settings:
+  `results/local-runtime-output-boundary-v1.3/transport-settings.json`
+- JSON schema:
+  `results/local-runtime-output-boundary-v1.3/local-ranking-readiness-schema-v1.3.json`
+- Exact commands:
+  `results/local-runtime-output-boundary-v1.3/exact-commands/`
+- Raw stdout/stderr and normalized content:
+  `results/local-runtime-output-boundary-v1.3/raw/`
+- Normalized readiness results:
+  `results/local-runtime-output-boundary-v1.3/normalized/readiness-results.csv`
+- Validation report:
+  `results/local-runtime-output-boundary-v1.3/validation-report.json`
+- Audit report:
+  `results/local-runtime-output-boundary-v1.3/output-boundary-audit.md`
+- Runtime-interface table:
+  `results/local-runtime-output-boundary-v1.3/thesis-runtime-interface-table.md`
+- Checksums:
+  `results/local-runtime-output-boundary-v1.3/checksums.sha256`
+
+This package corrects the shared readiness issue without changing the prompt,
+schema, candidate input, model shortlist or per-model settings. The selected
+common transport is `llama-completion` with stdout/stderr separation and a
+versioned parser rule that separates only the exact trailing `[end of text]`
+runtime marker after an otherwise valid JSON object. Raw stdout and stderr are
+still retained. All four shortlisted models completed the synthetic
+eight-candidate readiness contract after this correction.
+
+The output-boundary package is readiness evidence only. It is not the 72-call
+measured calibration bake-off, does not use the final 24-scenario XSS v1.3
+benchmark, does not execute vulnerability tests, and does not select a final
+local model.
+
 Planned v1.3 result package layout:
 
 ```text

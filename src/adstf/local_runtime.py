@@ -135,6 +135,26 @@ SMOKE_MODEL_ORDER = (
     "qwen2_5_7b_instruct_gguf_q4_k_m",
 )
 
+LLAMA_COMPLETION_EOS_MARKER = " [end of text]"
+
+
+@dataclass(frozen=True)
+class LlamaCompletionTransport:
+    raw_stdout: str
+    raw_stderr: str
+    normalized_content: str
+    runtime_marker: str | None
+    marker_separated: bool
+    parser_rule_version: str
+    stdout_byte_length: int
+    stderr_byte_length: int
+    stdout_sha256: str
+    stderr_sha256: str
+    stop_reason: str
+    generated_token_count: int | str
+    token_limit_reached: bool | str
+    timing: dict[str, Any]
+
 
 @dataclass(frozen=True)
 class LlamaCppCliClient:
@@ -200,9 +220,14 @@ class LlamaCppCliClient:
         latency_ms = int((time.perf_counter() - started) * 1000)
         if completed.returncode != 0:
             raise ModelProviderError(_safe_stderr(completed.stderr) or f"llama.cpp exited with {completed.returncode}")
+        transport = parse_llama_completion_transport(
+            stdout=completed.stdout,
+            stderr=completed.stderr,
+            max_output_tokens=runtime_settings["max_output_tokens"],
+        )
         return ModelCompletion(
             model_identifier=self.model_identifier,
-            raw_response=completed.stdout.strip(),
+            raw_response=transport.normalized_content,
             usage={"input_tokens": NOT_AVAILABLE, "output_tokens": NOT_AVAILABLE, "total_tokens": NOT_AVAILABLE},
             cost={"availability": NOT_AVAILABLE},
             provider="local-llama.cpp",
@@ -211,6 +236,9 @@ class LlamaCppCliClient:
                 "runtime": "llama.cpp",
                 "runtime_backend": LLAMA_CPP_RELEASE["backend"],
                 "runtime_settings": runtime_settings,
+                "exact_command": command,
+                "returncode": completed.returncode,
+                "transport": to_json_value(transport),
                 "stderr_tail": _safe_stderr(completed.stderr),
             },
         )
@@ -274,6 +302,78 @@ def run_subprocess_with_timeout(
         stdout, stderr = process.communicate(timeout=10)
         raise subprocess.TimeoutExpired(command, timeout, output=stdout, stderr=stderr)
     return subprocess.CompletedProcess(command, process.returncode, stdout=stdout, stderr=stderr)
+
+
+def parse_llama_completion_transport(
+    *,
+    stdout: str,
+    stderr: str,
+    max_output_tokens: int,
+) -> LlamaCompletionTransport:
+    stripped = stdout.strip()
+    marker = None
+    marker_separated = False
+    normalized = stripped
+    if stripped.endswith(LLAMA_COMPLETION_EOS_MARKER):
+        prefix = stripped[: -len(LLAMA_COMPLETION_EOS_MARKER)].rstrip()
+        if _is_json_object(prefix):
+            marker = LLAMA_COMPLETION_EOS_MARKER.strip()
+            marker_separated = True
+            normalized = prefix
+
+    generated = _generated_token_count(stderr)
+    token_limit_reached: bool | str = NOT_AVAILABLE
+    if isinstance(generated, int):
+        token_limit_reached = generated >= max_output_tokens - 1
+
+    return LlamaCompletionTransport(
+        raw_stdout=stdout,
+        raw_stderr=stderr,
+        normalized_content=normalized,
+        runtime_marker=marker,
+        marker_separated=marker_separated,
+        parser_rule_version="llama-completion-transport-parser-v1.3",
+        stdout_byte_length=len(stdout.encode("utf-8")),
+        stderr_byte_length=len(stderr.encode("utf-8")),
+        stdout_sha256=hashlib.sha256(stdout.encode("utf-8")).hexdigest(),
+        stderr_sha256=hashlib.sha256(stderr.encode("utf-8")).hexdigest(),
+        stop_reason="eos_runtime_marker" if marker_separated else "not_available",
+        generated_token_count=generated,
+        token_limit_reached=token_limit_reached,
+        timing=_timing_metadata(stderr),
+    )
+
+
+def _is_json_object(text: str) -> bool:
+    try:
+        return isinstance(json.loads(text), dict)
+    except json.JSONDecodeError:
+        return False
+
+
+def _generated_token_count(stderr: str) -> Any:
+    import re
+
+    matches = re.findall(r"eval time\s*=.*?/\s*(\d+)\s+runs", stderr, flags=re.IGNORECASE)
+    if not matches:
+        return NOT_AVAILABLE
+    return int(matches[-1])
+
+
+def _timing_metadata(stderr: str) -> dict[str, Any]:
+    import re
+
+    patterns = {
+        "load_time_ms": r"load time\s*=\s*([0-9.]+)\s*ms",
+        "prompt_eval_time_ms": r"prompt eval time\s*=\s*([0-9.]+)\s*ms",
+        "eval_time_ms": r"eval time\s*=\s*([0-9.]+)\s*ms",
+        "total_time_ms": r"total time\s*=\s*([0-9.]+)\s*ms",
+    }
+    result: dict[str, Any] = {}
+    for key, pattern in patterns.items():
+        matches = re.findall(pattern, stderr, flags=re.IGNORECASE)
+        result[key] = float(matches[-1]) if matches else NOT_AVAILABLE
+    return result
 
 
 def smoke_candidates() -> list[ReflectedInputCandidate]:

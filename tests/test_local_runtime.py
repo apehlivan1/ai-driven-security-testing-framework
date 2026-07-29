@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from adstf.local_runtime import (
+    LLAMA_COMPLETION_EOS_MARKER,
     LLAMA_CPP_RELEASE,
     MODEL_ARTIFACTS,
     PROVISIONING_VERSION,
@@ -15,6 +16,7 @@ from adstf.local_runtime import (
     LlamaCppCliClient,
     llama_cli_command,
     model_metadata,
+    parse_llama_completion_transport,
     smoke_candidates,
     validate_smoke_package,
     write_smoke_package,
@@ -101,6 +103,81 @@ class LocalRuntimeTests(unittest.TestCase):
         self.assertEqual(result.cost["availability"], NOT_AVAILABLE)
         self.assertEqual(result.usage["total_tokens"], NOT_AVAILABLE)
         self.assertEqual(result.ordered_candidate_ids[0], "local-smoke-alpha-term")
+        self.assertIn("transport", result.provider_metadata)
+        self.assertEqual(result.provider_metadata["returncode"], 0)
+
+    def test_transport_parser_separates_known_runtime_marker_after_valid_json(self) -> None:
+        raw_json = json.dumps(
+            {
+                "ranking": [
+                    {"candidate_id": "local-smoke-alpha-term", "rationale": "text form"},
+                ]
+            }
+        )
+        transport = parse_llama_completion_transport(
+            stdout=raw_json + LLAMA_COMPLETION_EOS_MARKER,
+            stderr="llama_perf_context_print:        eval time = 100.00 ms /    42 runs",
+            max_output_tokens=768,
+        )
+
+        self.assertEqual(transport.normalized_content, raw_json)
+        self.assertTrue(transport.marker_separated)
+        self.assertEqual(transport.runtime_marker, "[end of text]")
+        self.assertEqual(transport.stop_reason, "eos_runtime_marker")
+        self.assertFalse(transport.token_limit_reached)
+
+    def test_transport_parser_keeps_genuine_extra_model_text_invalid(self) -> None:
+        raw = '{"ranking": []} unexpected generated text'
+        transport = parse_llama_completion_transport(stdout=raw, stderr="", max_output_tokens=768)
+
+        self.assertEqual(transport.normalized_content, raw)
+        self.assertFalse(transport.marker_separated)
+
+    def test_transport_parser_does_not_remove_marker_like_text_inside_json(self) -> None:
+        raw = json.dumps(
+            {
+                "ranking": [
+                    {
+                        "candidate_id": "local-smoke-alpha-term",
+                        "rationale": "The literal [end of text] is part of this rationale.",
+                    }
+                ]
+            }
+        )
+        transport = parse_llama_completion_transport(stdout=raw, stderr="", max_output_tokens=768)
+
+        self.assertEqual(transport.normalized_content, raw)
+        self.assertFalse(transport.marker_separated)
+
+    def test_transport_parser_records_token_limit_truncation(self) -> None:
+        transport = parse_llama_completion_transport(
+            stdout="{",
+            stderr="llama_perf_context_print:        eval time = 100.00 ms /   767 runs",
+            max_output_tokens=768,
+        )
+
+        self.assertEqual(transport.generated_token_count, 767)
+        self.assertTrue(transport.token_limit_reached)
+
+    def test_nonzero_local_runtime_exit_is_provider_failure(self) -> None:
+        def fake_runner(command, **kwargs):
+            return subprocess.CompletedProcess(command, 2, stdout="raw stdout", stderr="runtime error")
+
+        result = rank_candidates_with_model(
+            candidates=smoke_candidates(),
+            scenario_id="local-runtime-smoke-non-scored",
+            trial_number=1,
+            model_client=LlamaCppCliClient(
+                executable=Path("llama-cli.exe"),
+                model_path=Path("model.gguf"),
+                model_identifier="fake-local",
+                runner=fake_runner,
+            ),
+            settings=RUNTIME_SETTINGS,
+        )
+
+        self.assertTrue(result.provider_failed)
+        self.assertTrue(any("runtime error" in error for error in result.validation_errors))
 
     def test_malformed_local_output_is_recorded_not_repaired(self) -> None:
         def fake_runner(command, **kwargs):
