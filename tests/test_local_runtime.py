@@ -41,9 +41,26 @@ class LocalRuntimeTests(unittest.TestCase):
         self.assertNotIn("-no-cnv", command)
         self.assertNotIn("--simple-io", command)
         self.assertIn("--no-display-prompt", command)
+        self.assertIn("--single-turn", command)
         self.assertEqual(command[command.index("--temp") + 1], "0.0")
         self.assertEqual(command[command.index("-n") + 1], "32")
         self.assertEqual(command[command.index("--seed") + 1], "42")
+
+    def test_llama_cli_command_can_apply_common_json_schema(self) -> None:
+        command = llama_cli_command(
+            Path("llama-cli.exe"),
+            Path("model.gguf"),
+            Path("prompt.txt"),
+            context_size_tokens=4096,
+            max_output_tokens=768,
+            temperature=0.0,
+            top_p=1.0,
+            seed=42,
+            threads=8,
+            json_schema_path=Path("ranking.schema.json"),
+        )
+
+        self.assertEqual(command[command.index("--json-schema-file") + 1], "ranking.schema.json")
 
     def test_local_client_preserves_restricted_ranking_contract(self) -> None:
         def fake_runner(command, **kwargs):

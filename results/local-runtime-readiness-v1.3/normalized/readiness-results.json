@@ -1,0 +1,94 @@
+[
+  {
+    "all_candidate_ids_once": false,
+    "contract_completed": false,
+    "display_name": "Qwen2.5 7B Instruct GGUF Q4_K_M",
+    "duplicate_candidate_ids": false,
+    "final_model_selection_made": false,
+    "generated_token_count_observed": 270,
+    "json_parsed": false,
+    "latency_ms": 128360,
+    "memory_available_after_bytes": "not_available",
+    "memory_available_before_bytes": "not_available",
+    "memory_available_delta_bytes": "not_available",
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "omitted_candidate_ids": false,
+    "output_not_truncated": false,
+    "provider_failed": false,
+    "readiness_status": "not_ready",
+    "scored": false,
+    "unknown_candidate_ids": false,
+    "validation_errors": [
+      "malformed JSON response: Extra data"
+    ]
+  },
+  {
+    "all_candidate_ids_once": false,
+    "contract_completed": false,
+    "display_name": "Phi-3.5 Mini Instruct GGUF Q4_K_M",
+    "duplicate_candidate_ids": false,
+    "final_model_selection_made": false,
+    "generated_token_count_observed": 448,
+    "json_parsed": false,
+    "latency_ms": 149873,
+    "memory_available_after_bytes": "not_available",
+    "memory_available_before_bytes": "not_available",
+    "memory_available_delta_bytes": "not_available",
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "omitted_candidate_ids": false,
+    "output_not_truncated": false,
+    "provider_failed": false,
+    "readiness_status": "not_ready",
+    "scored": false,
+    "unknown_candidate_ids": false,
+    "validation_errors": [
+      "malformed JSON response: Extra data"
+    ]
+  },
+  {
+    "all_candidate_ids_once": false,
+    "contract_completed": false,
+    "display_name": "Mistral 7B Instruct v0.3 GGUF Q4_K_M",
+    "duplicate_candidate_ids": false,
+    "final_model_selection_made": false,
+    "generated_token_count_observed": 322,
+    "json_parsed": false,
+    "latency_ms": 136664,
+    "memory_available_after_bytes": "not_available",
+    "memory_available_before_bytes": "not_available",
+    "memory_available_delta_bytes": "not_available",
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "omitted_candidate_ids": false,
+    "output_not_truncated": false,
+    "provider_failed": false,
+    "readiness_status": "not_ready",
+    "scored": false,
+    "unknown_candidate_ids": false,
+    "validation_errors": [
+      "malformed JSON response: Extra data"
+    ]
+  },
+  {
+    "all_candidate_ids_once": false,
+    "contract_completed": false,
+    "display_name": "Gemma 3 4B IT GGUF Q4_K_M",
+    "duplicate_candidate_ids": false,
+    "final_model_selection_made": false,
+    "generated_token_count_observed": 222,
+    "json_parsed": false,
+    "latency_ms": 60228,
+    "memory_available_after_bytes": "not_available",
+    "memory_available_before_bytes": "not_available",
+    "memory_available_delta_bytes": "not_available",
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "omitted_candidate_ids": false,
+    "output_not_truncated": false,
+    "provider_failed": false,
+    "readiness_status": "not_ready",
+    "scored": false,
+    "unknown_candidate_ids": false,
+    "validation_errors": [
+      "malformed JSON response: Extra data"
+    ]
+  }
+]

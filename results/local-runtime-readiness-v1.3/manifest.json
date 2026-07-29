@@ -1,0 +1,18 @@
+{
+  "artifact_status": "non_scored_local_runtime_structured_output_readiness",
+  "calibration_bakeoff_executed": false,
+  "created_at": "2026-07-29T22:45:01.754018+00:00",
+  "final_24_scenario_xss_v13_used": false,
+  "final_model_selection_made": false,
+  "json_schema_sha256": "6a0b522dc4c759edd54774c14e866952b7e8cffa63509e404287b0a3b230d380",
+  "json_schema_version": "local-ranking-readiness-json-schema-v1.3",
+  "measured_bakeoff_ready": false,
+  "model_count": 4,
+  "previous_32_token_smoke_interpretation": "truncated configuration-validation outputs, not model-quality failures",
+  "provisioning_package_reference": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\local-runtime-provisioning-v1.3",
+  "readiness_request_count": 4,
+  "ready_model_count": 0,
+  "schema_version": "local-runtime-readiness-v1.3",
+  "settings_version": "local-ranking-execution-settings-v1.3-readiness",
+  "vulnerability_testing_performed": false
+}

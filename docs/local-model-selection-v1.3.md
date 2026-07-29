@@ -298,6 +298,56 @@ An initial attempt using `llama-cli.exe` was preserved separately as an
 invocation-defect artifact because that executable entered interactive
 conversation behavior. The corrected adapter uses `llama-completion.exe`.
 
+## Structured-Output Readiness
+
+The repository now includes a separate non-scored structured-output readiness
+package:
+
+- readiness module: `src/adstf/local_runtime_readiness.py`;
+- readiness package: `results/local-runtime-readiness-v1.3/`;
+- runtime: llama.cpp release `b9637`, Windows CPU x64 build;
+- executable: `llama-completion.exe`;
+- constrained output mechanism: `--json-schema-file`;
+- schema version: `local-ranking-readiness-json-schema-v1.3`;
+- context size: 4096 tokens;
+- maximum output: 768 tokens;
+- timeout: 300 seconds per model;
+- decoding settings: temperature 0.0, top-p 1.0, seed 42;
+- prompt: unchanged `llm-candidate-ranking-v1`;
+- candidate input: one synthetic maximum-shape readiness request with eight
+  candidates, not part of the six calibration scenarios and not part of the
+  final 24-scenario XSS v1.3 benchmark;
+- scoring status: non-scored, no final model selection.
+
+The 768-token limit was chosen from the worst permitted response shape: one
+JSON object containing eight ranking entries, every existing candidate ID once,
+and bounded rationales up to 96 characters. This leaves margin above the
+expected JSON length while remaining small enough for CPU feasibility checks.
+
+Readiness outcome:
+
+| Candidate | Readiness status | Main validation result |
+| --- | --- | --- |
+| Qwen2.5 7B Instruct Q4_K_M | not ready | strict parser rejected extra data after JSON |
+| Phi-3.5 Mini Instruct Q4_K_M | not ready | strict parser rejected extra data after JSON |
+| Mistral 7B Instruct v0.3 Q4_K_M | not ready | strict parser rejected extra data after JSON |
+| Gemma 3 4B IT Q4_K_M | not ready | strict parser rejected extra data after JSON |
+
+All four models loaded and produced complete-looking JSON, but the runtime
+stdout appended a literal `[end of text]` marker after the JSON object. The
+existing parser correctly treated this as `malformed JSON response: Extra data`.
+This is a shared runtime/configuration compatibility issue, not a measured
+model-quality result.
+
+The measured 72-call bake-off is therefore not ready to execute under the
+current common configuration. The next correction should be global and applied
+identically to all four models, for example by selecting a llama.cpp one-shot
+output mode or documented runtime argument that does not append the end marker,
+or by formally separating documented runtime terminators from model-generated
+content in the adapter. Any such correction must be versioned before rerunning
+readiness for all four models. Individual model-specific tuning remains
+forbidden.
+
 ## Sources Used
 
 - Qwen2.5 7B Instruct GGUF model card:
@@ -319,8 +369,8 @@ conversation behavior. The corrected adapter uses `llama-completion.exe`.
 
 ## Next Narrow Task
 
-Implement the local llama.cpp runtime adapter and setup checklist without
-running the live bake-off. The adapter should preserve the existing
-candidate-ranking contract, capture runtime/model metadata, and include offline
-tests with fake server or CLI responses. Model download and live calibration
-bake-off execution should remain a separate explicitly authorized milestone.
+Correct the shared local-runtime output boundary for v1.3 readiness without
+changing the prompt, candidates, model shortlist or per-model settings. The
+correction must apply to all four models, preserve raw stdout, keep strict JSON
+validation, and rerun exactly the same non-scored readiness request for every
+shortlisted model before the measured 72-call bake-off is authorized.

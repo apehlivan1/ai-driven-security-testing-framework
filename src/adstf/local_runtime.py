@@ -148,6 +148,7 @@ class LlamaCppCliClient:
     top_p: float = RUNTIME_SETTINGS["top_p"]
     seed: int = RUNTIME_SETTINGS["seed"]
     threads: int = RUNTIME_SETTINGS["threads"]
+    json_schema_path: Path | None = None
     runner: Callable[..., subprocess.CompletedProcess[str]] | None = None
 
     def complete(self, prompt: str, candidate_input: list[dict], settings: dict) -> ModelCompletion:
@@ -162,6 +163,7 @@ class LlamaCppCliClient:
             "top_p": float(settings.get("top_p", self.top_p)),
             "seed": int(settings.get("seed", self.seed)),
             "threads": int(settings.get("threads", self.threads)),
+            "json_schema_path": settings.get("json_schema_path", str(self.json_schema_path) if self.json_schema_path else None),
         }
         started = time.perf_counter()
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".prompt.txt", delete=False) as handle:
@@ -178,6 +180,9 @@ class LlamaCppCliClient:
                 top_p=runtime_settings["top_p"],
                 seed=runtime_settings["seed"],
                 threads=runtime_settings["threads"],
+                json_schema_path=Path(runtime_settings["json_schema_path"])
+                if runtime_settings.get("json_schema_path")
+                else None,
             )
             try:
                 runner = self.runner or run_subprocess_with_timeout
@@ -222,8 +227,9 @@ def llama_cli_command(
     top_p: float,
     seed: int,
     threads: int,
+    json_schema_path: Path | None = None,
 ) -> list[str]:
-    return [
+    command = [
         str(executable),
         "-m",
         str(model_path),
@@ -242,7 +248,11 @@ def llama_cli_command(
         "-t",
         str(threads),
         "--no-display-prompt",
+        "--single-turn",
     ]
+    if json_schema_path is not None:
+        command.extend(["--json-schema-file", str(json_schema_path)])
+    return command
 
 
 def run_subprocess_with_timeout(
@@ -252,6 +262,7 @@ def run_subprocess_with_timeout(
 ) -> subprocess.CompletedProcess[str]:
     process = subprocess.Popen(
         command,
+        stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         encoding="utf-8",

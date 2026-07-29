@@ -1,0 +1,15 @@
+{
+  "calibration_bakeoff_executed": false,
+  "errors": [],
+  "final_24_scenario_xss_v13_used": false,
+  "final_model_selection_made": false,
+  "global_configuration_revision_required": true,
+  "live_model_execution_performed": true,
+  "measured_bakeoff_ready": false,
+  "proposed_global_revision_if_needed": "If any model remains not_ready, revise only the common configuration, for example by increasing the shared output cap or timeout, then rerun readiness for all four models.",
+  "readiness_row_count": 4,
+  "ready_model_count": 0,
+  "schema_version": "local-runtime-readiness-validation-v1.3",
+  "valid": true,
+  "vulnerability_testing_performed": false
+}

@@ -115,6 +115,37 @@ interactive conversation behavior. The final package uses
 `llama-completion.exe`; only the final package should be cited as v1.3 local
 runtime provisioning evidence.
 
+Local structured-output readiness package:
+
+- Path: `results/local-runtime-readiness-v1.3/`
+- Manifest: `results/local-runtime-readiness-v1.3/manifest.json`
+- Frozen settings:
+  `results/local-runtime-readiness-v1.3/execution-settings.json`
+- JSON schema:
+  `results/local-runtime-readiness-v1.3/local-ranking-readiness-schema-v1.3.json`
+- Runtime metadata: `results/local-runtime-readiness-v1.3/runtime-metadata.json`
+- Hardware report: `results/local-runtime-readiness-v1.3/hardware-report.json`
+- Raw readiness outputs: `results/local-runtime-readiness-v1.3/raw/`
+- Normalized readiness results:
+  `results/local-runtime-readiness-v1.3/normalized/readiness-results.csv`
+- Validation report:
+  `results/local-runtime-readiness-v1.3/validation-report.json`
+- Checksums: `results/local-runtime-readiness-v1.3/checksums.sha256`
+
+This package is a non-scored pre-bake-off readiness validation only. It uses
+one synthetic eight-candidate input that is separate from both the six
+calibration scenarios and the final 24-scenario XSS v1.3 benchmark. It does not
+run vulnerability tests, does not use final held-out scenarios, does not run the
+72-call calibration bake-off, and does not select a model.
+
+The readiness run found a shared output-boundary issue: all four models loaded
+and generated complete-looking JSON, but `llama-completion.exe` appended
+`[end of text]` after the JSON object. The strict parser rejected this as extra
+data for all four models. This should be cited as runtime/configuration
+readiness evidence, not as model-quality or ranking-performance evidence. The
+measured bake-off is not ready until a single global output-boundary correction
+is defined, versioned and rerun for all four shortlisted models.
+
 Planned v1.3 result package layout:
 
 ```text
