@@ -1,0 +1,244 @@
+{
+  "allowed_hosts": [
+    "127.0.0.1"
+  ],
+  "allowed_ports": [
+    4395
+  ],
+  "allowed_schemes": [
+    "http"
+  ],
+  "base_url": "http://127.0.0.1:4395",
+  "enabled_modules": [
+    "xss.reflected"
+  ],
+  "max_actions": 200,
+  "metadata": {
+    "benchmark": "xss-v13-expanded-reflected-input",
+    "benchmark_version": "xss-v13-manifest-v1",
+    "development_benchmark": true,
+    "ground_truth_path": "examples/benchmarks/xss-v13-ground-truth.json",
+    "local_only": true,
+    "notes": "Expanded reflected-XSS benchmark. Ground truth is separate and may be used only during post-run evaluation.",
+    "scenarios": [
+      {
+        "id": "x13-001",
+        "seed_paths": [
+          "/suite-v13/x13-001/north",
+          "/suite-v13/x13-001/cedar?item=sample",
+          "/suite-v13/x13-001/dune"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-002",
+        "seed_paths": [
+          "/suite-v13/x13-002/north",
+          "/suite-v13/x13-002/river",
+          "/suite-v13/x13-002/keel?ref=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-003",
+        "seed_paths": [
+          "/suite-v13/x13-003/north",
+          "/suite-v13/x13-003/east",
+          "/suite-v13/x13-003/west?view=sample&page=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-004",
+        "seed_paths": [
+          "/suite-v13/x13-004/north",
+          "/suite-v13/x13-004/south",
+          "/suite-v13/x13-004/west?ref=sample&kind=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-005",
+        "seed_paths": [
+          "/suite-v13/x13-005/north",
+          "/suite-v13/x13-005/east",
+          "/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-006",
+        "seed_paths": [
+          "/suite-v13/x13-006/north",
+          "/suite-v13/x13-006/east",
+          "/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-007",
+        "seed_paths": [
+          "/suite-v13/x13-007/north",
+          "/suite-v13/x13-007/east?ref=sample&view=sample",
+          "/suite-v13/x13-007/south"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-008",
+        "seed_paths": [
+          "/suite-v13/x13-008/north",
+          "/suite-v13/x13-008/east",
+          "/suite-v13/x13-008/south?item=sample&mode=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-009",
+        "seed_paths": [
+          "/suite-v13/x13-009/north",
+          "/suite-v13/x13-009/east",
+          "/suite-v13/x13-009/west?ref=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-010",
+        "seed_paths": [
+          "/suite-v13/x13-010/north",
+          "/suite-v13/x13-010/east",
+          "/suite-v13/x13-010/south?code=sample&view=sample&page=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-011",
+        "seed_paths": [
+          "/suite-v13/x13-011/north",
+          "/suite-v13/x13-011/east?line=sample&page=sample",
+          "/suite-v13/x13-011/south"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-012",
+        "seed_paths": [
+          "/suite-v13/x13-012/north",
+          "/suite-v13/x13-012/east",
+          "/suite-v13/x13-012/south",
+          "/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-013",
+        "seed_paths": [
+          "/suite-v13/x13-013/north",
+          "/suite-v13/x13-013/east",
+          "/suite-v13/x13-013/south?view=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-014",
+        "seed_paths": [
+          "/suite-v13/x13-014/north",
+          "/suite-v13/x13-014/east?page=sample&kind=sample",
+          "/suite-v13/x13-014/south"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-015",
+        "seed_paths": [
+          "/suite-v13/x13-015/north",
+          "/suite-v13/x13-015/east",
+          "/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-016",
+        "seed_paths": [
+          "/suite-v13/x13-016/north",
+          "/suite-v13/x13-016/east",
+          "/suite-v13/x13-016/south?page=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-017",
+        "seed_paths": [
+          "/suite-v13/x13-017/north",
+          "/suite-v13/x13-017/east?item=sample&line=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-018",
+        "seed_paths": [
+          "/suite-v13/x13-018/north",
+          "/suite-v13/x13-018/east",
+          "/suite-v13/x13-018/south?ref=sample&page=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-019",
+        "seed_paths": [
+          "/suite-v13/x13-019/north",
+          "/suite-v13/x13-019/east",
+          "/suite-v13/x13-019/south?code=sample&view=sample&kind=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-020",
+        "seed_paths": [
+          "/suite-v13/x13-020/north",
+          "/suite-v13/x13-020/east",
+          "/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-021",
+        "seed_paths": [
+          "/suite-v13/x13-021/north",
+          "/suite-v13/x13-021/east",
+          "/suite-v13/x13-021/south?code=sample&view=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-022",
+        "seed_paths": [
+          "/suite-v13/x13-022/north",
+          "/suite-v13/x13-022/east?term=sample&page=sample",
+          "/suite-v13/x13-022/south"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-023",
+        "seed_paths": [
+          "/suite-v13/x13-023/north",
+          "/suite-v13/x13-023/east",
+          "/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample"
+        ],
+        "test_budget": 4
+      },
+      {
+        "id": "x13-024",
+        "seed_paths": [
+          "/suite-v13/x13-024/north",
+          "/suite-v13/x13-024/east?item=sample&view=sample"
+        ],
+        "test_budget": 4
+      }
+    ],
+    "v13_extended_study": true
+  },
+  "name": "XSS v1.3 Expanded Reflected-Input Benchmark",
+  "test_users": {}
+}

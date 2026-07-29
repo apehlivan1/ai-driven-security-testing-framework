@@ -1,0 +1,356 @@
+{
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count_distribution": {
+    "4": 4,
+    "5": 5,
+    "6": 8,
+    "7": 4,
+    "8": 3
+  },
+  "candidate_count_max": 8,
+  "candidate_count_min": 4,
+  "errors": [],
+  "ground_truth_path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\examples\\benchmarks\\xss-v13-ground-truth.json",
+  "ground_truth_semantics_loaded": false,
+  "ground_truth_sha256": "dd11ab45a0af8e5a14620447ec044e504a38bb7ea3866526ea20b6adfc0f84ff",
+  "manifest_version": "xss-v13-manifest-v1",
+  "neutral_name_check": {
+    "banned_terms": [
+      "attack",
+      "control",
+      "exploit",
+      "negative",
+      "reflect",
+      "safe",
+      "script",
+      "sink",
+      "vuln",
+      "xss"
+    ],
+    "errors": [],
+    "valid": true
+  },
+  "outcome_counts": {
+    "negative": 8,
+    "vulnerable": 16
+  },
+  "scenario_count": 24,
+  "scenario_summaries": [
+    {
+      "candidate_count": 4,
+      "outcome_class": "vulnerable",
+      "position_design": "structurally favoured GET text input",
+      "scenario_id": "x13-001",
+      "seed_count": 3,
+      "structural_challenge": "one safe reflected distractor",
+      "tags": [
+        "safe-reflection-distractor",
+        "favoured-positive"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "vulnerable",
+      "position_design": "structurally unfavoured query parameter",
+      "scenario_id": "x13-002",
+      "seed_count": 3,
+      "structural_challenge": "forms look more promising than the query parameter",
+      "tags": [
+        "query-positive",
+        "adversarial-structure"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "position_design": "second form on second seed page",
+      "scenario_id": "x13-003",
+      "seed_count": 3,
+      "structural_challenge": "first seed contains only safe reflections",
+      "tags": [
+        "multi-seed",
+        "safe-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "position_design": "required-field form with vulnerable optional field",
+      "scenario_id": "x13-004",
+      "seed_count": 3,
+      "structural_challenge": "required decoy looks dominant",
+      "tags": [
+        "required-field-decoy",
+        "form-structure-decoy"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "outcome_class": "vulnerable",
+      "position_design": "textarea candidate",
+      "scenario_id": "x13-005",
+      "seed_count": 3,
+      "structural_challenge": "several text input distractors",
+      "tags": [
+        "textarea-positive",
+        "input-type-variation"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "outcome_class": "vulnerable",
+      "position_design": "query parameter on neutral detail page",
+      "scenario_id": "x13-006",
+      "seed_count": 3,
+      "structural_challenge": "many editable form distractors",
+      "tags": [
+        "high-candidate-count",
+        "query-positive"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "vulnerable",
+      "position_design": "structurally favoured search input",
+      "scenario_id": "x13-007",
+      "seed_count": 3,
+      "structural_challenge": "safe reflected query parameter distractor",
+      "tags": [
+        "favoured-positive",
+        "query-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "position_design": "unfavoured candidate with generic parameter name",
+      "scenario_id": "x13-008",
+      "seed_count": 3,
+      "structural_challenge": "parameter names do not reveal intent",
+      "tags": [
+        "neutral-naming",
+        "adversarial-structure"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "outcome_class": "vulnerable",
+      "position_design": "form action on second page",
+      "scenario_id": "x13-009",
+      "seed_count": 3,
+      "structural_challenge": "first page has only escaped reflections",
+      "tags": [
+        "multi-seed",
+        "escaped-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "outcome_class": "vulnerable",
+      "position_design": "candidate after two non-reflecting candidates",
+      "scenario_id": "x13-010",
+      "seed_count": 3,
+      "structural_challenge": "non-reflection decoys",
+      "tags": [
+        "non-reflection-decoy",
+        "candidate-order"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "position_design": "query parameter requiring stable baseline",
+      "scenario_id": "x13-011",
+      "seed_count": 3,
+      "structural_challenge": "response shape similar to safe cases",
+      "tags": [
+        "query-positive",
+        "evidence-robustness"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "outcome_class": "vulnerable",
+      "position_design": "structurally unfavoured candidate among many safe reflections",
+      "scenario_id": "x13-012",
+      "seed_count": 4,
+      "structural_challenge": "simple structural ranking likely misleading",
+      "tags": [
+        "adversarial-structure",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "vulnerable",
+      "position_design": "form with two editable fields where only one executes",
+      "scenario_id": "x13-013",
+      "seed_count": 3,
+      "structural_challenge": "companion field is escaped",
+      "tags": [
+        "parameter-level-distinction",
+        "form-structure-decoy"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "position_design": "hidden behind seed page ordering",
+      "scenario_id": "x13-014",
+      "seed_count": 3,
+      "structural_challenge": "safe page appears first",
+      "tags": [
+        "seed-order",
+        "multi-seed"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "outcome_class": "vulnerable",
+      "position_design": "safe-looking route with vulnerable field",
+      "scenario_id": "x13-015",
+      "seed_count": 3,
+      "structural_challenge": "route name is neutral",
+      "tags": [
+        "route-neutral",
+        "candidate-order"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "vulnerable",
+      "position_design": "vulnerable candidate appears after stable safe reflection",
+      "scenario_id": "x13-016",
+      "seed_count": 3,
+      "structural_challenge": "safe candidate has stronger generic features",
+      "tags": [
+        "adversarial-structure",
+        "safe-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-017",
+      "seed_count": 2,
+      "structural_challenge": "all reflections escaped",
+      "tags": [
+        "negative",
+        "escaped-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-018",
+      "seed_count": 3,
+      "structural_challenge": "submitted values are not reflected",
+      "tags": [
+        "negative",
+        "non-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-019",
+      "seed_count": 3,
+      "structural_challenge": "multiple safe reflections across seed pages",
+      "tags": [
+        "negative",
+        "multi-seed"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-020",
+      "seed_count": 3,
+      "structural_challenge": "many candidates, all non-executing",
+      "tags": [
+        "negative",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-021",
+      "seed_count": 3,
+      "structural_challenge": "required fields and query parameters are decoys",
+      "tags": [
+        "negative",
+        "required-field-decoy",
+        "query-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-022",
+      "seed_count": 3,
+      "structural_challenge": "literal-like payload text remains escaped or inert",
+      "tags": [
+        "negative",
+        "non-executable-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-023",
+      "seed_count": 3,
+      "structural_challenge": "structurally strong candidates are all safe",
+      "tags": [
+        "negative",
+        "adversarial-structure",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "outcome_class": "negative",
+      "position_design": "none",
+      "scenario_id": "x13-024",
+      "seed_count": 2,
+      "structural_challenge": "stable pages with no executable sink",
+      "tags": [
+        "negative",
+        "sanity-control"
+      ],
+      "test_budget": 4
+    }
+  ],
+  "valid": true,
+  "validation_id": "xss-v13-structural-validation-v1"
+}

@@ -1,0 +1,451 @@
+{
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count_bounds": {
+    "max": 8,
+    "min": 4
+  },
+  "description": "Expanded v1.3 reflected-XSS structural benchmark manifest. Semantic ground truth is separate and reserved for post-run evaluation.",
+  "ground_truth_available_to_framework": false,
+  "ground_truth_path": "examples/benchmarks/xss-v13-ground-truth.json",
+  "manifest_version": "xss-v13-manifest-v1",
+  "negative_scenario_count": 8,
+  "ranking_ruleset_version": "deterministic-structural-v1",
+  "scenario_count": 24,
+  "scenarios": [
+    {
+      "candidate_count": 4,
+      "id": "x13-001",
+      "outcome_class": "vulnerable",
+      "position_design": "structurally favoured GET text input",
+      "purpose": "Basic positive control with multiple candidates.",
+      "seed_paths": [
+        "/suite-v13/x13-001/north",
+        "/suite-v13/x13-001/cedar?item=sample",
+        "/suite-v13/x13-001/dune"
+      ],
+      "structural_challenge": "one safe reflected distractor",
+      "tags": [
+        "safe-reflection-distractor",
+        "favoured-positive"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "id": "x13-002",
+      "outcome_class": "vulnerable",
+      "position_design": "structurally unfavoured query parameter",
+      "purpose": "Tests whether ranking over-prefers forms over an existing query parameter.",
+      "seed_paths": [
+        "/suite-v13/x13-002/north",
+        "/suite-v13/x13-002/river",
+        "/suite-v13/x13-002/keel?ref=sample"
+      ],
+      "structural_challenge": "forms look more promising than the query parameter",
+      "tags": [
+        "query-positive",
+        "adversarial-structure"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-003",
+      "outcome_class": "vulnerable",
+      "position_design": "second form on second seed page",
+      "purpose": "Multi-seed prioritization where the first seed contains safe reflections.",
+      "seed_paths": [
+        "/suite-v13/x13-003/north",
+        "/suite-v13/x13-003/east",
+        "/suite-v13/x13-003/west?view=sample&page=sample"
+      ],
+      "structural_challenge": "first seed contains only safe reflections",
+      "tags": [
+        "multi-seed",
+        "safe-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-004",
+      "outcome_class": "vulnerable",
+      "position_design": "required-field form with vulnerable optional field",
+      "purpose": "Required-field decoy with a vulnerable optional text field.",
+      "seed_paths": [
+        "/suite-v13/x13-004/north",
+        "/suite-v13/x13-004/south",
+        "/suite-v13/x13-004/west?ref=sample&kind=sample"
+      ],
+      "structural_challenge": "required decoy looks dominant",
+      "tags": [
+        "required-field-decoy",
+        "form-structure-decoy"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "id": "x13-005",
+      "outcome_class": "vulnerable",
+      "position_design": "textarea candidate",
+      "purpose": "Input-type variation using a textarea candidate.",
+      "seed_paths": [
+        "/suite-v13/x13-005/north",
+        "/suite-v13/x13-005/east",
+        "/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample"
+      ],
+      "structural_challenge": "several text input distractors",
+      "tags": [
+        "textarea-positive",
+        "input-type-variation"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "id": "x13-006",
+      "outcome_class": "vulnerable",
+      "position_design": "query parameter on neutral detail page",
+      "purpose": "High candidate-count case with a query parameter on a neutral detail page.",
+      "seed_paths": [
+        "/suite-v13/x13-006/north",
+        "/suite-v13/x13-006/east",
+        "/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample"
+      ],
+      "structural_challenge": "many editable form distractors",
+      "tags": [
+        "high-candidate-count",
+        "query-positive"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "id": "x13-007",
+      "outcome_class": "vulnerable",
+      "position_design": "structurally favoured search input",
+      "purpose": "Checks a structurally favoured search input with a query-parameter distractor.",
+      "seed_paths": [
+        "/suite-v13/x13-007/north",
+        "/suite-v13/x13-007/east?ref=sample&view=sample",
+        "/suite-v13/x13-007/south"
+      ],
+      "structural_challenge": "safe reflected query parameter distractor",
+      "tags": [
+        "favoured-positive",
+        "query-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-008",
+      "outcome_class": "vulnerable",
+      "position_design": "unfavoured candidate with generic parameter name",
+      "purpose": "Neutral naming under ambiguity.",
+      "seed_paths": [
+        "/suite-v13/x13-008/north",
+        "/suite-v13/x13-008/east",
+        "/suite-v13/x13-008/south?item=sample&mode=sample"
+      ],
+      "structural_challenge": "parameter names do not reveal intent",
+      "tags": [
+        "neutral-naming",
+        "adversarial-structure"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "id": "x13-009",
+      "outcome_class": "vulnerable",
+      "position_design": "form action on second page",
+      "purpose": "Escaped-reflection distractor where the actionable form is on the second page.",
+      "seed_paths": [
+        "/suite-v13/x13-009/north",
+        "/suite-v13/x13-009/east",
+        "/suite-v13/x13-009/west?ref=sample"
+      ],
+      "structural_challenge": "first page has only escaped reflections",
+      "tags": [
+        "multi-seed",
+        "escaped-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "id": "x13-010",
+      "outcome_class": "vulnerable",
+      "position_design": "candidate after two non-reflecting candidates",
+      "purpose": "Discovery includes non-reflecting inputs before the vulnerable candidate.",
+      "seed_paths": [
+        "/suite-v13/x13-010/north",
+        "/suite-v13/x13-010/east",
+        "/suite-v13/x13-010/south?code=sample&view=sample&page=sample"
+      ],
+      "structural_challenge": "non-reflection decoys",
+      "tags": [
+        "non-reflection-decoy",
+        "candidate-order"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-011",
+      "outcome_class": "vulnerable",
+      "position_design": "query parameter requiring stable baseline",
+      "purpose": "Evidence robustness with a stable-baseline query parameter.",
+      "seed_paths": [
+        "/suite-v13/x13-011/north",
+        "/suite-v13/x13-011/east?line=sample&page=sample",
+        "/suite-v13/x13-011/south"
+      ],
+      "structural_challenge": "response shape similar to safe cases",
+      "tags": [
+        "query-positive",
+        "evidence-robustness"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "id": "x13-012",
+      "outcome_class": "vulnerable",
+      "position_design": "structurally unfavoured candidate among many safe reflections",
+      "purpose": "Adversarial structural case where simple ranking signals are misleading.",
+      "seed_paths": [
+        "/suite-v13/x13-012/north",
+        "/suite-v13/x13-012/east",
+        "/suite-v13/x13-012/south",
+        "/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample"
+      ],
+      "structural_challenge": "simple structural ranking likely misleading",
+      "tags": [
+        "adversarial-structure",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "id": "x13-013",
+      "outcome_class": "vulnerable",
+      "position_design": "form with two editable fields where only one executes",
+      "purpose": "Parameter-level distinction inside a multi-input form.",
+      "seed_paths": [
+        "/suite-v13/x13-013/north",
+        "/suite-v13/x13-013/east",
+        "/suite-v13/x13-013/south?view=sample"
+      ],
+      "structural_challenge": "companion field is escaped",
+      "tags": [
+        "parameter-level-distinction",
+        "form-structure-decoy"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-014",
+      "outcome_class": "vulnerable",
+      "position_design": "hidden behind seed page ordering",
+      "purpose": "Seed order puts safe pages before the vulnerable candidate.",
+      "seed_paths": [
+        "/suite-v13/x13-014/north",
+        "/suite-v13/x13-014/east?page=sample&kind=sample",
+        "/suite-v13/x13-014/south"
+      ],
+      "structural_challenge": "safe page appears first",
+      "tags": [
+        "seed-order",
+        "multi-seed"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "id": "x13-015",
+      "outcome_class": "vulnerable",
+      "position_design": "safe-looking route with vulnerable field",
+      "purpose": "Route-neutral positive case.",
+      "seed_paths": [
+        "/suite-v13/x13-015/north",
+        "/suite-v13/x13-015/east",
+        "/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample"
+      ],
+      "structural_challenge": "route name is neutral",
+      "tags": [
+        "route-neutral",
+        "candidate-order"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "id": "x13-016",
+      "outcome_class": "vulnerable",
+      "position_design": "vulnerable candidate appears after stable safe reflection",
+      "purpose": "Ranker-adversarial positive where a safe candidate has stronger generic features.",
+      "seed_paths": [
+        "/suite-v13/x13-016/north",
+        "/suite-v13/x13-016/east",
+        "/suite-v13/x13-016/south?page=sample"
+      ],
+      "structural_challenge": "safe candidate has stronger generic features",
+      "tags": [
+        "adversarial-structure",
+        "safe-reflection-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "id": "x13-017",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Escaped negative control.",
+      "seed_paths": [
+        "/suite-v13/x13-017/north",
+        "/suite-v13/x13-017/east?item=sample&line=sample"
+      ],
+      "structural_challenge": "all reflections escaped",
+      "tags": [
+        "negative",
+        "escaped-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 5,
+      "id": "x13-018",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Non-reflection negative control.",
+      "seed_paths": [
+        "/suite-v13/x13-018/north",
+        "/suite-v13/x13-018/east",
+        "/suite-v13/x13-018/south?ref=sample&page=sample"
+      ],
+      "structural_challenge": "submitted values are not reflected",
+      "tags": [
+        "negative",
+        "non-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-019",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Multi-seed negative with several safe reflections.",
+      "seed_paths": [
+        "/suite-v13/x13-019/north",
+        "/suite-v13/x13-019/east",
+        "/suite-v13/x13-019/south?code=sample&view=sample&kind=sample"
+      ],
+      "structural_challenge": "multiple safe reflections across seed pages",
+      "tags": [
+        "negative",
+        "multi-seed"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 7,
+      "id": "x13-020",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "High candidate-count negative where all candidates are non-executing.",
+      "seed_paths": [
+        "/suite-v13/x13-020/north",
+        "/suite-v13/x13-020/east",
+        "/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample"
+      ],
+      "structural_challenge": "many candidates, all non-executing",
+      "tags": [
+        "negative",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-021",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Decoy-rich negative with required fields and query parameters.",
+      "seed_paths": [
+        "/suite-v13/x13-021/north",
+        "/suite-v13/x13-021/east",
+        "/suite-v13/x13-021/south?code=sample&view=sample"
+      ],
+      "structural_challenge": "required fields and query parameters are decoys",
+      "tags": [
+        "negative",
+        "required-field-decoy",
+        "query-distractor"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 6,
+      "id": "x13-022",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Reflection-is-not-execution control.",
+      "seed_paths": [
+        "/suite-v13/x13-022/north",
+        "/suite-v13/x13-022/east?term=sample&page=sample",
+        "/suite-v13/x13-022/south"
+      ],
+      "structural_challenge": "literal-like payload text remains escaped or inert",
+      "tags": [
+        "negative",
+        "non-executable-reflection"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 8,
+      "id": "x13-023",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Adversarial negative where structurally strong candidates are safe.",
+      "seed_paths": [
+        "/suite-v13/x13-023/north",
+        "/suite-v13/x13-023/east",
+        "/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample"
+      ],
+      "structural_challenge": "structurally strong candidates are all safe",
+      "tags": [
+        "negative",
+        "adversarial-structure",
+        "high-candidate-count"
+      ],
+      "test_budget": 4
+    },
+    {
+      "candidate_count": 4,
+      "id": "x13-024",
+      "outcome_class": "negative",
+      "position_design": "none",
+      "purpose": "Simple negative sanity case.",
+      "seed_paths": [
+        "/suite-v13/x13-024/north",
+        "/suite-v13/x13-024/east?item=sample&view=sample"
+      ],
+      "structural_challenge": "stable pages with no executable sink",
+      "tags": [
+        "negative",
+        "sanity-control"
+      ],
+      "test_budget": 4
+    }
+  ],
+  "target_config_path": "examples/targets/xss-v13-local.json",
+  "vulnerable_scenario_count": 16
+}

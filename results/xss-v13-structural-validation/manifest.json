@@ -1,0 +1,17 @@
+{
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "included_artifacts": [
+    "examples\\benchmarks\\xss-v13-manifest.json",
+    "examples\\benchmarks\\xss-v13-ground-truth.json",
+    "examples\\targets\\xss-v13-local.json",
+    "docs\\benchmark-catalog-v1.3.md",
+    "results\\xss-v13-structural-validation\\structural-validation-summary.json",
+    "results\\xss-v13-structural-validation\\structural-validation-report.md",
+    "results\\xss-v13-structural-validation\\scenario-matrix.csv",
+    "results\\xss-v13-structural-validation\\benchmark-summary-table-template.md",
+    "results\\xss-v13-structural-validation\\benchmark-summary-table-template.tex"
+  ],
+  "schema_version": "xss-v13-structural-validation-package-v1",
+  "template_status": "structural_validation_only_no_experimental_results",
+  "validation_id": "xss-v13-structural-validation-v1"
+}

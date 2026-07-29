@@ -1,0 +1,999 @@
+{
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "description": "Semantic ground truth for v1.3 reflected-XSS scenarios. Use only after execution completes.",
+  "ground_truth_available_to_framework": false,
+  "ground_truth_version": "xss-v13-ground-truth-v1",
+  "ranking_ruleset_version": "deterministic-structural-v1",
+  "scenarios": [
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-001/amber",
+          "behavior": "raw",
+          "parameter_name": "tone",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-001/birch",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-001/cedar",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-001/dune",
+          "behavior": "none",
+          "parameter_name": "line",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-001"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-002/lumen",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-002/mason",
+          "behavior": "escaped",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-002/noble",
+          "behavior": "none",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-002/olive",
+          "behavior": "escaped",
+          "parameter_name": "code",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-002/keel",
+          "behavior": "raw",
+          "parameter_name": "ref",
+          "vulnerable": true
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-002"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-003/atlas",
+          "behavior": "escaped",
+          "parameter_name": "word",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-003/brook",
+          "behavior": "escaped",
+          "parameter_name": "note",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-003/cabin",
+          "behavior": "escaped",
+          "parameter_name": "mark",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-003/delta",
+          "behavior": "raw",
+          "parameter_name": "line",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-003/west",
+          "behavior": "none",
+          "parameter_name": "view",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-003/west",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-003"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-004/echo",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-004/echo",
+          "behavior": "raw",
+          "parameter_name": "memo",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-004/field",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-004/grove",
+          "behavior": "none",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-004/west",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-004/west",
+          "behavior": "none",
+          "parameter_name": "kind",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-004"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-005/harbor",
+          "behavior": "raw",
+          "parameter_name": "comment",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-005/iris",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-005/juniper",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-005/krypton",
+          "behavior": "none",
+          "parameter_name": "title",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-005/south",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-005/south",
+          "behavior": "none",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-005/south",
+          "behavior": "escaped",
+          "parameter_name": "view",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-005"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-006/lagoon",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/mesa",
+          "behavior": "escaped",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/nectar",
+          "behavior": "none",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/onyx",
+          "behavior": "escaped",
+          "parameter_name": "message",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/detail",
+          "behavior": "raw",
+          "parameter_name": "ref",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-006/detail",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/detail",
+          "behavior": "none",
+          "parameter_name": "mode",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-006/detail",
+          "behavior": "escaped",
+          "parameter_name": "kind",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-006"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-007/prism",
+          "behavior": "raw",
+          "parameter_name": "search",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-007/quartz",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-007/east",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-007/east",
+          "behavior": "none",
+          "parameter_name": "view",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-007/ridge",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-007"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-008/sable",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-008/tango",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-008/umber",
+          "behavior": "none",
+          "parameter_name": "line",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-008/umber",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-008/south",
+          "behavior": "raw",
+          "parameter_name": "item",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-008/south",
+          "behavior": "escaped",
+          "parameter_name": "mode",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-008"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-009/violet",
+          "behavior": "escaped",
+          "parameter_name": "term",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-009/willow",
+          "behavior": "escaped",
+          "parameter_name": "note",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-009/xenon",
+          "behavior": "raw",
+          "parameter_name": "entry",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-009/west",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-009"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-010/yarrow",
+          "behavior": "none",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-010/zenith",
+          "behavior": "none",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-010/aurora",
+          "behavior": "raw",
+          "parameter_name": "text",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-010/benton",
+          "behavior": "escaped",
+          "parameter_name": "line",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-010/south",
+          "behavior": "none",
+          "parameter_name": "code",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-010/south",
+          "behavior": "escaped",
+          "parameter_name": "view",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-010/south",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-010"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-011/cobalt",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-011/drift",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-011/east",
+          "behavior": "raw",
+          "parameter_name": "line",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-011/east",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-011/ember",
+          "behavior": "none",
+          "parameter_name": "title",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-011/fable",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-011"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-012/garden",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/hazel",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/islet",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/juno",
+          "behavior": "escaped",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/kepler",
+          "behavior": "none",
+          "parameter_name": "message",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/west",
+          "behavior": "raw",
+          "parameter_name": "slot",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-012/west",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-012/west",
+          "behavior": "escaped",
+          "parameter_name": "mode",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-012"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-013/larch",
+          "behavior": "raw",
+          "parameter_name": "memo",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-013/larch",
+          "behavior": "escaped",
+          "parameter_name": "code",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-013/marble",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-013/nova",
+          "behavior": "none",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-013/south",
+          "behavior": "escaped",
+          "parameter_name": "view",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-013"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-014/orbit",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-014/pearl",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-014/east",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-014/east",
+          "behavior": "none",
+          "parameter_name": "kind",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-014/quill",
+          "behavior": "raw",
+          "parameter_name": "line",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-014/raven",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-014"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-015/stone",
+          "behavior": "escaped",
+          "parameter_name": "title",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-015/thistle",
+          "behavior": "none",
+          "parameter_name": "comment",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-015/upland",
+          "behavior": "raw",
+          "parameter_name": "message",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-015/south",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-015/south",
+          "behavior": "none",
+          "parameter_name": "mode",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-015/south",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-015/south",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-015"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-016/valley",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-016/walnut",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-016/yonder",
+          "behavior": "raw",
+          "parameter_name": "slot",
+          "vulnerable": true
+        },
+        {
+          "action_path": "/suite-v13/x13-016/yonder",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-016/south",
+          "behavior": "none",
+          "parameter_name": "page",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 1,
+      "scenario_id": "x13-016"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-017/amber",
+          "behavior": "escaped",
+          "parameter_name": "tone",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-017/birch",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-017/east",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-017/east",
+          "behavior": "escaped",
+          "parameter_name": "line",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-017"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-018/cedar",
+          "behavior": "none",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-018/dune",
+          "behavior": "none",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-018/echo",
+          "behavior": "none",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-018/south",
+          "behavior": "none",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-018/south",
+          "behavior": "none",
+          "parameter_name": "page",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-018"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-019/field",
+          "behavior": "escaped",
+          "parameter_name": "comment",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-019/grove",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-019/harbor",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-019/south",
+          "behavior": "escaped",
+          "parameter_name": "code",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-019/south",
+          "behavior": "escaped",
+          "parameter_name": "view",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-019/south",
+          "behavior": "none",
+          "parameter_name": "kind",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-019"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-020/iris",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/juniper",
+          "behavior": "escaped",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/krypton",
+          "behavior": "none",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/lagoon",
+          "behavior": "escaped",
+          "parameter_name": "message",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/south",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/south",
+          "behavior": "none",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-020/south",
+          "behavior": "escaped",
+          "parameter_name": "mode",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-020"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-021/mesa",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-021/mesa",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-021/nectar",
+          "behavior": "none",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-021/onyx",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-021/south",
+          "behavior": "escaped",
+          "parameter_name": "code",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-021/south",
+          "behavior": "none",
+          "parameter_name": "view",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-021"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-022/prism",
+          "behavior": "escaped",
+          "parameter_name": "line",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-022/quartz",
+          "behavior": "textarea",
+          "parameter_name": "comment",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-022/east",
+          "behavior": "escaped",
+          "parameter_name": "term",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-022/east",
+          "behavior": "escaped",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-022/ridge",
+          "behavior": "none",
+          "parameter_name": "title",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-022/sable",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-022"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-023/tango",
+          "behavior": "escaped",
+          "parameter_name": "search",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/umber",
+          "behavior": "escaped",
+          "parameter_name": "query",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/violet",
+          "behavior": "escaped",
+          "parameter_name": "name",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/willow",
+          "behavior": "none",
+          "parameter_name": "text",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/south",
+          "behavior": "escaped",
+          "parameter_name": "ref",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/south",
+          "behavior": "none",
+          "parameter_name": "page",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/south",
+          "behavior": "escaped",
+          "parameter_name": "mode",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-023/south",
+          "behavior": "escaped",
+          "parameter_name": "kind",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-023"
+    },
+    {
+      "cases": [
+        {
+          "action_path": "/suite-v13/x13-024/xenon",
+          "behavior": "escaped",
+          "parameter_name": "memo",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-024/yarrow",
+          "behavior": "none",
+          "parameter_name": "line",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-024/east",
+          "behavior": "escaped",
+          "parameter_name": "item",
+          "vulnerable": false
+        },
+        {
+          "action_path": "/suite-v13/x13-024/east",
+          "behavior": "none",
+          "parameter_name": "view",
+          "vulnerable": false
+        }
+      ],
+      "expected_vulnerable_count": 0,
+      "scenario_id": "x13-024"
+    }
+  ]
+}

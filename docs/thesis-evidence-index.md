@@ -45,6 +45,19 @@ The v1.3 study is separate from v1.2. Its purpose is to strengthen measurement
 quality, XSS ranking ablation, and reproducibility without changing the
 authority boundary of the framework.
 
+Implemented structural benchmark assets:
+
+- Manifest: `examples/benchmarks/xss-v13-manifest.json`
+- Semantic ground truth: `examples/benchmarks/xss-v13-ground-truth.json`
+- Target configuration: `examples/targets/xss-v13-local.json`
+- Catalog: `docs/benchmark-catalog-v1.3.md`
+- Structural validation package: `results/xss-v13-structural-validation/`
+
+The v1.3 XSS structural validation package contains scenario design and
+structural-validation evidence only. It does not contain ranking results,
+browser vulnerability-test results, ZAP results, LLM outputs, final scoring, or
+thesis conclusions.
+
 Planned v1.3 result package layout:
 
 ```text
