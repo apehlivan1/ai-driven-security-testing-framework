@@ -58,6 +58,19 @@ structural-validation evidence only. It does not contain ranking results,
 browser vulnerability-test results, ZAP results, LLM outputs, final scoring, or
 thesis conclusions.
 
+Local model feasibility and bake-off design:
+
+- Design document: `docs/local-model-selection-v1.3.md`
+- Selection manifest: `results/local-model-selection-v1.3/local-model-selection-manifest.json`
+- Shortlist comparison table: `results/local-model-selection-v1.3/model-runtime-comparison.csv`
+- Risk assessment: `results/local-model-selection-v1.3/reproducibility-risk-assessment.md`
+- Checksums: `results/local-model-selection-v1.3/checksums.sha256`
+
+These files contain measured machine facts, a model shortlist, and pre-defined
+bake-off rules only. They do not contain model downloads, model outputs,
+ranking trials, benchmark scores, final local-model selection, or v1.3 protocol
+freeze decisions.
+
 Planned v1.3 result package layout:
 
 ```text

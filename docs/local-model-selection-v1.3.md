@@ -1,0 +1,262 @@
+# Local Open-Weights Model Feasibility and Bake-Off Design v1.3
+
+Status: feasibility, shortlist, and bake-off design only. No model was
+downloaded, no inference engine was installed, no ranking trials were run, no
+local model was finally selected, and `evaluation-protocol-v1.3` is not frozen.
+
+The final v1.3 local model must be selected only after all shortlisted
+candidates are tested under identical measured conditions on development or
+calibration scenarios that are not part of the final 24-scenario v1.3 XSS
+held-out benchmark.
+
+## Authority Boundary
+
+The local model receives only the same structured candidate metadata as the
+proprietary model under `llm-candidate-ranking-v1`.
+
+Allowed output:
+
+- an ordered list of existing candidate IDs;
+- brief rationales for those existing candidate IDs.
+
+Forbidden inputs:
+
+- raw HTML;
+- source code;
+- browser state;
+- screenshots;
+- credentials;
+- API keys;
+- session values;
+- semantic ground truth;
+- unrelated workspace content.
+
+Forbidden authority:
+
+- payload generation;
+- action execution;
+- browser or HTTP control;
+- verification;
+- finding confirmation.
+
+The deterministic verifier remains the only component allowed to confirm,
+reject, or mark findings inconclusive.
+
+## Measured Machine Facts
+
+Measured on this workstation during this milestone:
+
+| Property | Measured value | Notes |
+| --- | --- | --- |
+| Operating system | Windows 10, version `10.0.19045` | Python/platform and .NET system info |
+| Architecture | `AMD64` | Python/platform |
+| CPU | 11th Gen Intel Core i7-1165G7 @ 2.80GHz | Windows registry |
+| Usable logical processors | 8 | `os.cpu_count()` and environment |
+| Physical core count | not directly measured | CIM access was denied; operational planning should use 8 logical processors |
+| Total RAM | 16,895,107,072 bytes, about 15.7 GiB | .NET `ComputerInfo` |
+| Available RAM at inspection | 3,470,745,600 bytes, about 3.2 GiB | Snapshot only; not a fixed machine limit |
+| GPU | Intel Iris Xe Graphics | Registry display driver data |
+| Dedicated VRAM | `not_available` | Integrated GPU; adapter memory not exposed |
+| Confirmed acceleration APIs | CPU; no CUDA detected | `nvidia-smi` and `nvcc` absent |
+| Potential acceleration APIs | DirectX driver present; Vulkan/SYCL not verified | Must be measured if used |
+| Free disk on repo drive | about 291.2 GB decimal, 271.2 GiB | Python `shutil.disk_usage` |
+| Python | 3.14.0 | Current process |
+| pip | 25.2 | Current Python |
+| Playwright | 1.61.0 | Installed |
+| Docker CLI | 29.0.1 | Docker daemon was not reachable |
+| Docker Compose | 2.40.3-desktop.1 | CLI present |
+
+Installed local inference runtime inspection:
+
+| Runtime | Available now | Evidence |
+| --- | --- | --- |
+| Ollama | no | `where.exe ollama` not found |
+| llama.cpp CLI/server | no | `where.exe llama-cli llama-server` not found |
+| LM Studio CLI | no | `where.exe lmstudio` not found |
+| Transformers | no | Python import check failed |
+| vLLM | no | Python import check failed |
+| llama-cpp-python | no | Python import check failed |
+| Docker Model Runner | partial | Docker CLI plugin listed, but Docker daemon was unavailable |
+
+## Practical Constraints
+
+- The machine should be treated as CPU-first for the local-model study.
+- A quantized GGUF model is the lowest-risk format for this environment.
+- Python-native GPU/ML stacks are not a good first choice because Python 3.14
+  and missing `torch`/`transformers`/`vLLM` increase setup risk.
+- Current free RAM is low for 7B models, but total RAM is sufficient if other
+  applications are closed before a measured smoke test.
+- The planned local arm requires at least 120 ranking calls for the v1.3 XSS
+  study: 24 scenarios x 5 trials.
+- The bake-off must measure actual latency and output validity before choosing
+  the final primary and fallback model.
+
+## Shortlisted Candidate Models
+
+The shortlist intentionally spans more than one model family. All entries are
+estimates until measured in the bake-off.
+
+| Candidate | Family | Runtime | Quantization | Expected memory | Expected latency | JSON reliability estimate | License/reproducibility notes | Shortlist reason |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M` | Qwen | llama.cpp | Q4_K_M | 4.68 GB weights; plan 7-9 GB RAM | 20-60 seconds/call | strong | Apache 2.0 model card; official GGUF repo available | Strong structured-data and JSON-oriented instruction-following candidate |
+| `bartowski/Phi-3.5-mini-instruct-GGUF:Q4_K_M` or equivalent Phi GGUF | Phi | llama.cpp | Q4_K_M | 2.39 GB weights; plan 4-6 GB RAM | 8-25 seconds/call | medium | Microsoft base model is MIT; community quant provenance and hash required | Best low-memory fallback candidate |
+| `mistralai/Mistral-7B-Instruct-v0.3` GGUF Q4_K_M | Mistral | llama.cpp | Q4_K_M | 7B Q4 class; plan 7-9 GB RAM | 20-60 seconds/call | medium | Apache 2.0 model card; exact GGUF source must be pinned | Strong open Apache-licensed alternative family |
+| `tensorblock/gemma-3-4b-it-GGUF:Q4_K_M` or equivalent Gemma 3 4B GGUF | Gemma | llama.cpp | Q4_K_M | 2.49 GB weights; plan 4-6 GB RAM | 8-30 seconds/call | medium | Gemma license; access/license terms must be recorded | Smaller non-Qwen, non-Phi candidate with practical memory profile |
+
+Not shortlisted for the first bake-off:
+
+- Llama 3.1 8B Instruct: runnable, but gated access and Llama-specific license
+  terms add friction for the first local academic baseline.
+- Ollama-managed tags: easy to use, but less transparent than direct GGUF file
+  hashing unless blob digests are carefully recorded.
+- Transformers/vLLM: not currently installed and likely to create avoidable
+  Python/runtime setup complexity on this machine.
+
+## Calibration Bake-Off Design
+
+The bake-off must run before final local-model selection and before freezing
+`evaluation-protocol-v1.3`.
+
+Calibration set:
+
+- Use development/calibration reflected-input scenarios only.
+- Do not use the final 24-scenario v1.3 held-out XSS benchmark.
+- Recommended minimum: 6 calibration scenarios.
+- Include 4 vulnerable and 2 negative scenarios.
+- Include 4-8 discovered candidates per scenario.
+- Include at least:
+  - one structurally favoured vulnerable candidate;
+  - one structurally unfavoured vulnerable candidate;
+  - one negative case with strong-looking safe candidates;
+  - one multi-seed case;
+  - one query-parameter case;
+  - one required-field/form-structure decoy case.
+
+Identical conditions for every shortlisted model:
+
+- same candidate input schema;
+- same `llm-candidate-ranking-v1` prompt;
+- same candidate ordering in the request;
+- same context size;
+- same maximum output tokens;
+- same decoding settings;
+- same timeout;
+- same parser and validation rules;
+- same deterministic fallback policy for safe continuation;
+- same hardware state recording;
+- same trial count.
+
+Recommended bake-off trial count:
+
+- 3 trials per calibration scenario per shortlisted model.
+
+For 4 shortlisted models and 6 calibration scenarios:
+
+```text
+4 models x 6 scenarios x 3 trials = 72 ranking calls
+```
+
+This is large enough to measure validity, latency, and stability without
+spending the full 120-call final-study budget before model selection.
+
+## Pre-Registered Selection Metrics
+
+The final local primary and fallback should be selected using these metrics,
+calculated on calibration data only:
+
+1. Valid-output rate.
+2. Malformed-output rate.
+3. Unknown/duplicate/omitted candidate-ID rate.
+4. Timeout/failure rate.
+5. Top-1 accuracy on vulnerable calibration scenarios.
+6. Top-k recall using the frozen calibration test budget.
+7. Mean reciprocal rank on vulnerable calibration scenarios.
+8. No-vulnerability false-positive selection behavior.
+9. Ranking stability across repeated trials.
+10. Median and p90 latency per ranking call.
+11. Estimated total runtime for 120 final v1.3 calls.
+12. Peak memory/RAM feasibility observed during smoke execution, if measurable.
+13. License and reproducibility metadata completeness.
+
+The bake-off report must preserve results for every tested model, even though
+only the selected primary and fallback remain in the final v1.3 evaluation
+configuration.
+
+## Tie-Breaking Rules
+
+Apply these rules in order, before looking at final held-out results:
+
+1. Exclude any model with valid-output rate below 90%.
+2. Exclude any model with timeout/failure rate above 10%.
+3. Exclude any model that cannot complete the calibration bake-off without
+   memory pressure severe enough to invalidate timing.
+4. Among remaining models, prefer higher mean reciprocal rank.
+5. If MRR differs by less than 0.05, prefer higher valid-output rate.
+6. If still tied, prefer lower median latency.
+7. If still tied, prefer more complete reproducibility metadata and simpler
+   license terms.
+8. If still tied, prefer the smaller model because the final study requires 120
+   local ranking calls.
+
+Fallback model selection:
+
+- choose the highest-ranked model that is materially smaller or faster than the
+  primary, unless it failed validity thresholds.
+
+## Metadata Required During Bake-Off
+
+For every tested model:
+
+- model repository;
+- model revision/commit;
+- exact filename(s);
+- file size(s);
+- SHA-256 hash for every model artifact;
+- quantization;
+- base model;
+- license;
+- llama.cpp release tag;
+- llama.cpp binary SHA-256;
+- backend used: CPU, Vulkan, SYCL, OpenVINO, or other;
+- thread count;
+- context size;
+- maximum output tokens;
+- temperature;
+- top_p;
+- seed;
+- prompt version;
+- full prompt text;
+- raw response;
+- parsed ranking;
+- validation errors;
+- latency;
+- timeout/failure status;
+- hardware snapshot;
+- execution timestamp.
+
+## Sources Used
+
+- Qwen2.5 7B Instruct GGUF model card:
+  <https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF>
+- Qwen2.5 7B Instruct model card:
+  <https://huggingface.co/Qwen/Qwen2.5-7B-Instruct>
+- llama.cpp README and backend documentation:
+  <https://github.com/ggml-org/llama.cpp>
+- llama.cpp releases:
+  <https://github.com/ggml-org/llama.cpp/releases>
+- Phi-3.5 Mini Instruct model card:
+  <https://huggingface.co/microsoft/Phi-3.5-mini-instruct>
+- Phi-3.5 Mini GGUF quantization page:
+  <https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF>
+- Mistral 7B Instruct v0.3 model card:
+  <https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3>
+- Gemma 3 4B GGUF page:
+  <https://huggingface.co/tensorblock/gemma-3-4b-it-GGUF>
+
+## Next Narrow Task
+
+Implement the local-model bake-off harness and metadata schema using fake local
+model responses only. The harness should support the shortlisted model manifest,
+calibration scenario inputs, identical-condition enforcement, validation/error
+accounting, and result packaging. Do not download models or run live model
+trials until a separate setup milestone is authorized.

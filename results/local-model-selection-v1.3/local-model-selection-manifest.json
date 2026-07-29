@@ -1,0 +1,136 @@
+{
+  "schema_version": "local-model-feasibility-and-bakeoff-design-v1.3",
+  "status": "shortlist_and_bakeoff_design_only_no_final_selection_no_model_downloaded_no_trials_run",
+  "measured_machine_facts": {
+    "operating_system": "Windows 10 10.0.19045",
+    "architecture": "AMD64",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+    "usable_logical_processors": 8,
+    "physical_core_count": "not_directly_measured_cim_access_denied",
+    "total_ram_bytes": 16895107072,
+    "available_ram_bytes_at_inspection": 3470745600,
+    "gpu_model": "Intel(R) Iris(R) Xe Graphics",
+    "dedicated_vram_bytes": "not_available",
+    "confirmed_acceleration_apis": ["cpu", "no_cuda_detected"],
+    "potential_unverified_acceleration_apis": ["directx_driver_present", "vulkan_or_sycl_not_verified"],
+    "free_disk_bytes": 291205574656,
+    "python_version": "3.14.0",
+    "pip_version": "25.2",
+    "playwright_version": "1.61.0",
+    "docker_cli_version": "29.0.1",
+    "docker_compose_version": "2.40.3-desktop.1",
+    "docker_daemon_available": false
+  },
+  "installed_runtime_inspection": {
+    "ollama": false,
+    "llama_cpp_cli_or_server": false,
+    "lm_studio_cli": false,
+    "python_transformers": false,
+    "python_vllm": false,
+    "python_llama_cpp": false,
+    "docker_model_runner_plugin": "present_but_docker_daemon_unavailable"
+  },
+  "shortlisted_candidates": [
+    {
+      "candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "family": "Qwen",
+      "runtime": "llama.cpp",
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "quantization": "Q4_K_M",
+      "estimated_memory": "4.68 GB weights plus overhead; plan 7-9 GB RAM",
+      "estimated_latency_seconds_per_call": "20-60",
+      "license": "apache-2.0",
+      "shortlist_reason": "strong structured-data and JSON-oriented instruction-following candidate"
+    },
+    {
+      "candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+      "family": "Phi",
+      "runtime": "llama.cpp",
+      "model_identifier": "bartowski/Phi-3.5-mini-instruct-GGUF:Q4_K_M",
+      "base_model_identifier": "microsoft/Phi-3.5-mini-instruct",
+      "quantization": "Q4_K_M",
+      "estimated_memory": "2.39 GB weights plus overhead; plan 4-6 GB RAM",
+      "estimated_latency_seconds_per_call": "8-25",
+      "license": "mit_base_model_community_quant_provenance_required",
+      "shortlist_reason": "low-memory candidate for fallback comparison"
+    },
+    {
+      "candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+      "family": "Mistral",
+      "runtime": "llama.cpp",
+      "model_identifier": "mistralai/Mistral-7B-Instruct-v0.3 GGUF Q4_K_M",
+      "quantization": "Q4_K_M",
+      "estimated_memory": "7B Q4 class; plan 7-9 GB RAM",
+      "estimated_latency_seconds_per_call": "20-60",
+      "license": "apache-2.0",
+      "shortlist_reason": "strong Apache-licensed alternative model family"
+    },
+    {
+      "candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "family": "Gemma",
+      "runtime": "llama.cpp",
+      "model_identifier": "tensorblock/gemma-3-4b-it-GGUF:Q4_K_M",
+      "quantization": "Q4_K_M",
+      "estimated_memory": "2.49 GB weights plus overhead; plan 4-6 GB RAM",
+      "estimated_latency_seconds_per_call": "8-30",
+      "license": "gemma_license_terms_to_record",
+      "shortlist_reason": "smaller non-Qwen and non-Phi candidate with practical memory profile"
+    }
+  ],
+  "bakeoff_design": {
+    "final_model_selection_deferred": true,
+    "calibration_scenarios_are_not_final_heldout_xss_v13": true,
+    "recommended_calibration_scenario_count": 6,
+    "recommended_calibration_distribution": {
+      "vulnerable": 4,
+      "negative": 2
+    },
+    "trials_per_model_per_scenario": 3,
+    "shortlisted_model_count": 4,
+    "planned_bakeoff_ranking_calls": 72,
+    "identical_conditions": [
+      "same_candidate_input_schema",
+      "same_llm_candidate_ranking_v1_prompt",
+      "same_candidate_ordering",
+      "same_context_size",
+      "same_max_output_tokens",
+      "same_decoding_settings",
+      "same_timeout",
+      "same_parser_and_validation_rules",
+      "same_failure_handling",
+      "same_hardware_state_recording"
+    ]
+  },
+  "selection_rules": [
+    "exclude_valid_output_rate_below_90_percent",
+    "exclude_timeout_or_failure_rate_above_10_percent",
+    "exclude_memory_pressure_invalidating_timing",
+    "prefer_higher_mean_reciprocal_rank",
+    "if_mrr_difference_below_0_05_prefer_higher_valid_output_rate",
+    "if_still_tied_prefer_lower_median_latency",
+    "if_still_tied_prefer_more_complete_reproducibility_metadata_and_simpler_license",
+    "if_still_tied_prefer_smaller_model"
+  ],
+  "authority_boundary": {
+    "allowed_input": "structured_candidate_metadata_for_llm-candidate-ranking-v1",
+    "allowed_output": "ordered_existing_candidate_ids_with_brief_rationales",
+    "forbidden_inputs": [
+      "raw_html",
+      "source_code",
+      "browser_state",
+      "screenshots",
+      "credentials",
+      "ground_truth",
+      "api_keys",
+      "session_values",
+      "unrelated_workspace_content"
+    ],
+    "forbidden_authority": [
+      "payload_generation",
+      "action_execution",
+      "browser_control",
+      "verification",
+      "finding_confirmation"
+    ]
+  }
+}
