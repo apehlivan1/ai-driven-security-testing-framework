@@ -1,0 +1,36 @@
+{
+  "all_files_present": true,
+  "candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+  "chat_template": "repository GGUF chat template recorded by Hugging Face metadata",
+  "display_name": "Qwen2.5 7B Instruct GGUF Q4_K_M",
+  "family": "Qwen",
+  "file_count": 2,
+  "files": [
+    {
+      "exists": true,
+      "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\qwen2_5_7b_instruct_gguf_q4_k_m\\qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db",
+      "size_bytes": 3993201344
+    },
+    {
+      "exists": true,
+      "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\qwen2_5_7b_instruct_gguf_q4_k_m\\qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a",
+      "size_bytes": 689872288
+    }
+  ],
+  "license": "apache-2.0",
+  "primary_model_filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+  "quantization": "Q4_K_M",
+  "repository": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+  "required_runtime_arguments": [
+    "-m",
+    "<first split GGUF file; companion shard in same directory>"
+  ],
+  "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+  "schema_version": "local-model-artifact-metadata-v1.3",
+  "source": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF",
+  "total_size_bytes": 4683073632
+}

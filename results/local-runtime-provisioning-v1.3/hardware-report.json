@@ -1,0 +1,20 @@
+{
+  "available_ram_bytes": "not_available",
+  "captured_at": "2026-07-29T19:41:52.265878+00:00",
+  "cuda_detected": false,
+  "disk_free_bytes_repo_drive": 283755597824,
+  "gpu": [],
+  "llama_cpp_runtime": "not_available",
+  "lm_studio_runtime": "not_available",
+  "logical_processors": 8,
+  "machine": "AMD64",
+  "ollama_runtime": "not_available",
+  "operating_system": "Windows-10-10.0.19045-SP0",
+  "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "python_version": "3.14.0",
+  "release": "10",
+  "schema_version": "local-runtime-hardware-report-v1.3",
+  "system": "Windows",
+  "total_ram_bytes": "not_available",
+  "version": "10.0.19045"
+}

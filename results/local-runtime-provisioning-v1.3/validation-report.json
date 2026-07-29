@@ -1,0 +1,12 @@
+{
+  "calibration_bakeoff_executed": false,
+  "errors": [],
+  "final_24_scenario_xss_v13_used": false,
+  "final_model_selection_made": false,
+  "live_model_execution_performed": true,
+  "model_metadata_count": 4,
+  "schema_version": "local-runtime-smoke-validation-v1.3",
+  "smoke_row_count": 4,
+  "valid": true,
+  "vulnerability_testing_performed": false
+}

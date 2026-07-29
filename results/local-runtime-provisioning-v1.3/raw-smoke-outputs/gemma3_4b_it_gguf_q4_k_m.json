@@ -1,0 +1,98 @@
+{
+  "artifact_status": "non_scored_local_runtime_smoke",
+  "calibration_bakeoff_scenario_used": false,
+  "candidate_input": [
+    {
+      "action_path": "/local-smoke/alpha",
+      "candidate_id": "local-smoke-alpha-term",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "term",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/local-smoke/bravo",
+      "candidate_id": "local-smoke-bravo-ref",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "ref",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/local-smoke/cedar",
+      "candidate_id": "local-smoke-cedar-note",
+      "editable_input_count": 2,
+      "input_type": "textarea",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "note",
+      "required_input_count": 1,
+      "source": "get_form"
+    }
+  ],
+  "cost": {
+    "availability": "not_available"
+  },
+  "final_24_scenario_xss_v13_used": false,
+  "latency_ms": 27059,
+  "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+  "model_identifier": "Gemma 3 4B IT GGUF Q4_K_M",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 32,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "prompt_template": "llm-candidate-ranking-v1 prompt passed to llama.cpp as a plain completion prompt",
+    "seed": 42,
+    "smoke_only": true,
+    "temperature": 0.0,
+    "threads": 8,
+    "timeout_seconds": 120,
+    "top_p": 1.0
+  },
+  "parsed_ranking": [
+    "local-smoke-alpha-term",
+    "local-smoke-bravo-ref",
+    "local-smoke-cedar-note"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/local-smoke/alpha\",\n    \"candidate_id\": \"local-smoke-alpha-term\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"term\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/local-smoke/bravo\",\n    \"candidate_id\": \"local-smoke-bravo-ref\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"ref\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/local-smoke/cedar\",\n    \"candidate_id\": \"local-smoke-cedar-note\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"textarea\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"note\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "local-llama.cpp",
+  "provider_failed": false,
+  "provider_metadata": {
+    "runtime": "llama.cpp",
+    "runtime_backend": "cpu",
+    "runtime_settings": {
+      "context_size_tokens": 4096,
+      "max_output_tokens": 32,
+      "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "prompt_template": "llm-candidate-ranking-v1 prompt passed to llama.cpp as a plain completion prompt",
+      "seed": 42,
+      "smoke_only": true,
+      "temperature": 0.0,
+      "threads": 8,
+      "timeout_seconds": 120,
+      "top_p": 1.0
+    },
+    "stderr_tail": " | \n0.06.678.359 I \n0.06.683.224 I llama_completion: interactive mode on.\n0.06.683.235 I sampler seed: 42\n0.06.683.276 I sampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\n0.06.683.293 I sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \n0.06.683.295 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 32, n_keep = 1\n0.06.683.296 I \n0.06.683.297 I == Running in interactive mode. ==\n0.06.683.297 I  - Press Ctrl+C to interject at any time.\n0.06.683.298 I  - Press Return to return control to the AI.\n - To return control without starting a new line, end your input with '/'.\n - If you want to submit another line, end your input with '\\'.\n0.06.683.299 I  - Not using system message. To change it, set a different value via -sys PROMPT\n0.06.683.300 I \n0.26.353.139 I common_perf_print:    sampling time =      35.90 ms\n0.26.353.143 I common_perf_print:    samplers time =      14.49 ms /   458 tokens\n0.26.353.151 I common_perf_print:        load time =    5342.31 ms\n0.26.353.180 I common_perf_print: prompt eval time =   14929.66 ms /   426 tokens (   35.05 ms per token,    28.53 tokens per second)\n0.26.353.307 I common_perf_print:        eval time =    4545.74 ms /    31 runs   (  146.64 ms per token,     6.82 tokens per second)\n0.26.353.310 I common_perf_print:       total time =   19675.01 ms /   457 tokens\n0.26.353.315 I common_perf_print: unaccounted time =     163.71 ms /   0.8 %      (total - sampling - prompt eval - eval) / (total)\n0.26.353.316 I common_perf_print:    graphs reused =         31\n"
+  },
+  "rationales": {},
+  "raw_response": "```json\n{\"ranking\":[\n  {\"candidate_id\":\"local-smoke-alpha-term\", \"rationale\":\"Simple GET request with a single parameter\n> EOF by user",
+  "scenario_id": "local-runtime-smoke-non-scored",
+  "timestamp": "2026-07-29T19:43:22.952626+00:00",
+  "trial_number": 1,
+  "usage": {
+    "input_tokens": "not_available",
+    "output_tokens": "not_available",
+    "total_tokens": "not_available"
+  },
+  "validation_errors": [
+    "malformed JSON response: Expecting value"
+  ],
+  "vulnerability_testing_performed": false
+}

@@ -259,6 +259,45 @@ selection gates, tie-breaking order, parser behavior, and authority boundary.
 Only the fake model client should be replaced with a measured local runtime
 client after model artifacts and runtime binaries are installed and hashed.
 
+## Local Runtime Provisioning Smoke
+
+The repository now includes a local llama.cpp-compatible runtime adapter and a
+non-scored provisioning smoke package:
+
+- adapter module: `src/adstf/local_runtime.py`;
+- smoke command module: `src/adstf/local_runtime_smoke.py`;
+- provisioning package: `results/local-runtime-provisioning-v1.3/`;
+- runtime: llama.cpp release `b9637`, Windows CPU x64 build;
+- executable used for smoke: `llama-completion.exe`;
+- backend used: CPU;
+- smoke output cap: 32 tokens;
+- smoke timeout: 120 seconds per model;
+- prompt: unchanged `llm-candidate-ranking-v1`;
+- candidate data: three synthetic local-smoke candidates, not part of the
+  six calibration scenarios and not part of the final 24-scenario XSS v1.3
+  benchmark;
+- scoring status: non-scored, no final model selection.
+
+All four shortlisted GGUF artifacts were downloaded, hashed and recorded:
+
+| Candidate | Repository | Revision | Artifact status |
+| --- | --- | --- | --- |
+| Qwen2.5 7B Instruct Q4_K_M | `Qwen/Qwen2.5-7B-Instruct-GGUF` | `bb5d59e06d9551d752d08b292a50eb208b07ab1f` | downloaded and hashed |
+| Phi-3.5 Mini Instruct Q4_K_M | `bartowski/Phi-3.5-mini-instruct-GGUF` | `6d70da17e749a471ccb62ade694486011a75cda3` | downloaded and hashed |
+| Mistral 7B Instruct v0.3 Q4_K_M | `bartowski/Mistral-7B-Instruct-v0.3-GGUF` | `61fd4167fff3ab01ee1cfe0da183fa27a944db48` | downloaded and hashed |
+| Gemma 3 4B IT Q4_K_M | `ggml-org/gemma-3-4b-it-GGUF` | `d0976223747697cb51e056d85c532013931fe52e` | downloaded and hashed |
+
+The smoke run confirmed that the local runtime could load each model, return
+raw output, and exercise the existing parser and validation path. The outputs
+were malformed for all four models because the smoke cap was intentionally
+small. This must not be interpreted as model performance. The measured bake-off
+still needs a separate execution with the pre-registered calibration scenarios,
+the final bake-off output limit, and the frozen model-selection rules.
+
+An initial attempt using `llama-cli.exe` was preserved separately as an
+invocation-defect artifact because that executable entered interactive
+conversation behavior. The corrected adapter uses `llama-completion.exe`.
+
 ## Sources Used
 
 - Qwen2.5 7B Instruct GGUF model card:

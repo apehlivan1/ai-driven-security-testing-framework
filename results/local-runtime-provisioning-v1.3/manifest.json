@@ -1,0 +1,15 @@
+{
+  "artifact_status": "non_scored_local_runtime_provisioning_and_smoke",
+  "created_at": "2026-07-29T19:45:22.933073+00:00",
+  "final_24_scenario_xss_v13_used": false,
+  "final_model_selection_made": false,
+  "measured_calibration_bakeoff_executed": false,
+  "model_count": 4,
+  "runtime_backend": "cpu",
+  "runtime_id": "llama.cpp-b9637-win-cpu-x64-llama-completion",
+  "runtime_release_tag": "b9637",
+  "schema_version": "local-runtime-provisioning-v1.3",
+  "smoke_request_count": 4,
+  "validation_valid": true,
+  "vulnerability_testing_performed": false
+}

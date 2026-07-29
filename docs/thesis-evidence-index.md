@@ -87,6 +87,34 @@ the reporting structure, metric derivation, invalid-output accounting and
 selection logic, but it does not run local models and does not select the final
 primary or fallback model.
 
+Local runtime provisioning and non-scored smoke package:
+
+- Path: `results/local-runtime-provisioning-v1.3/`
+- Manifest: `results/local-runtime-provisioning-v1.3/manifest.json`
+- Runtime metadata: `results/local-runtime-provisioning-v1.3/runtime-metadata.json`
+- Hardware report: `results/local-runtime-provisioning-v1.3/hardware-report.json`
+- Model metadata: `results/local-runtime-provisioning-v1.3/model-metadata/`
+- Raw smoke outputs: `results/local-runtime-provisioning-v1.3/raw-smoke-outputs/`
+- Normalized smoke results:
+  `results/local-runtime-provisioning-v1.3/normalized/smoke-results.csv`
+- Download and licence ledger:
+  `results/local-runtime-provisioning-v1.3/download-and-licence-ledger.csv`
+- Checksums: `results/local-runtime-provisioning-v1.3/checksums.sha256`
+
+This package records the provisioned llama.cpp CPU runtime and the four
+shortlisted GGUF artifacts. It is a local-runtime feasibility smoke only: it is
+not the measured 72-call calibration bake-off, does not use the final
+24-scenario XSS v1.3 benchmark, does not execute vulnerability tests, and does
+not select a local primary or fallback model. The smoke confirmed local model
+loading and raw output capture, but the 32-token smoke cap produced malformed
+JSON for all four models. Those malformed smoke responses are reproducibility
+evidence, not performance results.
+
+During provisioning, an initial `llama-cli.exe` invocation was found to enter
+interactive conversation behavior. The final package uses
+`llama-completion.exe`; only the final package should be cited as v1.3 local
+runtime provisioning evidence.
+
 Planned v1.3 result package layout:
 
 ```text

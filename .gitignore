@@ -209,6 +209,9 @@ tempCodeRunnerFile.py
 # Local scaffold run artifacts
 .adstf-runs/
 .external/
+.adstf-downloads/
+.adstf-models/
+.adstf-runtimes/
 
 # PyPI configuration file
 .pypirc
