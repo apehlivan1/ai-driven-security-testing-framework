@@ -1,0 +1,120 @@
+{
+  "artifact_status": "non_experimental_fake_model_response",
+  "candidate_input": [
+    {
+      "action_path": "/calibration/cal-xss-003/ember",
+      "candidate_id": "cal-xss-003-ember-memo",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "memo",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-003/ember",
+      "candidate_id": "cal-xss-003-ember-name",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "name",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-003/fable",
+      "candidate_id": "cal-xss-003-fable-search",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "search",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-003/grove",
+      "candidate_id": "cal-xss-003-grove-mode",
+      "editable_input_count": 2,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "mode",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-003/grove",
+      "candidate_id": "cal-xss-003-grove-page",
+      "editable_input_count": 2,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-003/harbor",
+      "candidate_id": "cal-xss-003-harbor-line",
+      "editable_input_count": 1,
+      "input_type": "textarea",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "line",
+      "required_input_count": 0,
+      "source": "get_form"
+    }
+  ],
+  "cost": null,
+  "fake_data": true,
+  "latency_ms": 240,
+  "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+  "model_identifier": "fake-phi-3.5-mini-instruct-gguf-q4-k-m",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 512,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "seed": 42,
+    "temperature": 0.0,
+    "timeout_seconds": 120,
+    "top_p": 1.0,
+    "trial_number": 3
+  },
+  "parsed_ranking": [
+    "cal-xss-003-harbor-line",
+    "cal-xss-003-grove-page",
+    "cal-xss-003-grove-mode",
+    "cal-xss-003-fable-search",
+    "cal-xss-003-ember-name",
+    "cal-xss-003-ember-memo"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/calibration/cal-xss-003/ember\",\n    \"candidate_id\": \"cal-xss-003-ember-memo\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"memo\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-003/ember\",\n    \"candidate_id\": \"cal-xss-003-ember-name\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"name\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-003/fable\",\n    \"candidate_id\": \"cal-xss-003-fable-search\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"search\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"search\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-003/grove\",\n    \"candidate_id\": \"cal-xss-003-grove-mode\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"mode\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-003/grove\",\n    \"candidate_id\": \"cal-xss-003-grove-page\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"page\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-003/harbor\",\n    \"candidate_id\": \"cal-xss-003-harbor-line\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"textarea\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"line\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "fake-local",
+  "provider_failed": false,
+  "provider_metadata": {
+    "fake_data": true,
+    "strategy": "reverse"
+  },
+  "rationales": {
+    "cal-xss-003-ember-memo": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-003-ember-name": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-003-fable-search": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-003-grove-mode": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-003-grove-page": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-003-harbor-line": "Fake local-model bake-off response for harness validation only."
+  },
+  "raw_response": "{\"ranking\": [{\"candidate_id\": \"cal-xss-003-harbor-line\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-003-grove-page\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-003-grove-mode\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-003-fable-search\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-003-ember-name\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-003-ember-memo\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}]}",
+  "scenario_id": "cal-xss-003",
+  "timestamp": "2026-07-29T17:41:52.981001+00:00",
+  "trial_number": 3,
+  "usage": {
+    "input_tokens": 173,
+    "output_tokens": 48
+  },
+  "validation_errors": []
+}

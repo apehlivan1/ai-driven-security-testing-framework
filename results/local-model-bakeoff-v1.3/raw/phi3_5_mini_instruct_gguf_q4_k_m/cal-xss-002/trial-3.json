@@ -1,0 +1,107 @@
+{
+  "artifact_status": "non_experimental_fake_model_response",
+  "candidate_input": [
+    {
+      "action_path": "/calibration/cal-xss-002/atlas",
+      "candidate_id": "cal-xss-002-atlas-query",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "query",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-002/brook",
+      "candidate_id": "cal-xss-002-brook-name",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "name",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-002/cabin",
+      "candidate_id": "cal-xss-002-cabin-ref",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "ref",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-002/dune",
+      "candidate_id": "cal-xss-002-dune-kind",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "kind",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-002/dune",
+      "candidate_id": "cal-xss-002-dune-memo",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "memo",
+      "required_input_count": 1,
+      "source": "get_form"
+    }
+  ],
+  "cost": null,
+  "fake_data": true,
+  "latency_ms": 240,
+  "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+  "model_identifier": "fake-phi-3.5-mini-instruct-gguf-q4-k-m",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 512,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "seed": 42,
+    "temperature": 0.0,
+    "timeout_seconds": 120,
+    "top_p": 1.0,
+    "trial_number": 3
+  },
+  "parsed_ranking": [
+    "cal-xss-002-dune-memo",
+    "cal-xss-002-dune-kind",
+    "cal-xss-002-cabin-ref",
+    "cal-xss-002-brook-name",
+    "cal-xss-002-atlas-query"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/calibration/cal-xss-002/atlas\",\n    \"candidate_id\": \"cal-xss-002-atlas-query\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"search\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"query\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-002/brook\",\n    \"candidate_id\": \"cal-xss-002-brook-name\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"name\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-002/cabin\",\n    \"candidate_id\": \"cal-xss-002-cabin-ref\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"ref\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-002/dune\",\n    \"candidate_id\": \"cal-xss-002-dune-kind\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"kind\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-002/dune\",\n    \"candidate_id\": \"cal-xss-002-dune-memo\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"memo\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "fake-local",
+  "provider_failed": false,
+  "provider_metadata": {
+    "fake_data": true,
+    "strategy": "reverse"
+  },
+  "rationales": {
+    "cal-xss-002-atlas-query": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-002-brook-name": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-002-cabin-ref": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-002-dune-kind": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-002-dune-memo": "Fake local-model bake-off response for harness validation only."
+  },
+  "raw_response": "{\"ranking\": [{\"candidate_id\": \"cal-xss-002-dune-memo\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-002-dune-kind\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-002-cabin-ref\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-002-brook-name\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-002-atlas-query\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}]}",
+  "scenario_id": "cal-xss-002",
+  "timestamp": "2026-07-29T17:41:52.980759+00:00",
+  "trial_number": 3,
+  "usage": {
+    "input_tokens": 153,
+    "output_tokens": 40
+  },
+  "validation_errors": []
+}

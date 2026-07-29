@@ -1,0 +1,15 @@
+{
+  "artifact_status": "shortlist_metadata_no_model_downloaded",
+  "candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+  "display_name": "Gemma 3 4B IT GGUF Q4_K_M",
+  "expected_memory_gb": 4.0,
+  "family": "Gemma",
+  "license_note": "Gemma license terms and community quant provenance must be recorded.",
+  "metadata_completeness_score": 0.85,
+  "model_file_sha256": "not_available",
+  "model_identifier": "tensorblock/gemma-3-4b-it-GGUF:Q4_K_M",
+  "quantization": "Q4_K_M",
+  "runtime": "llama.cpp",
+  "runtime_binary_sha256": "not_available",
+  "timeout_seconds": 120
+}

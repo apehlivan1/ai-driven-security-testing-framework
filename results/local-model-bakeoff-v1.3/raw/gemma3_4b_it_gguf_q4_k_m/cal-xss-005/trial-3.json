@@ -1,0 +1,107 @@
+{
+  "artifact_status": "non_experimental_fake_model_response",
+  "candidate_input": [
+    {
+      "action_path": "/calibration/cal-xss-005/east",
+      "candidate_id": "cal-xss-005-east-query",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "query",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-005/north",
+      "candidate_id": "cal-xss-005-north-search",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "search",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-005/south",
+      "candidate_id": "cal-xss-005-south-name",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "name",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-005/west",
+      "candidate_id": "cal-xss-005-west-page",
+      "editable_input_count": 2,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-005/west",
+      "candidate_id": "cal-xss-005-west-ref",
+      "editable_input_count": 2,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "ref",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "cost": null,
+  "fake_data": true,
+  "latency_ms": 300,
+  "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+  "model_identifier": "fake-gemma-3-4b-it-gguf-q4-k-m",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 512,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "seed": 42,
+    "temperature": 0.0,
+    "timeout_seconds": 120,
+    "top_p": 1.0,
+    "trial_number": 3
+  },
+  "parsed_ranking": [
+    "cal-xss-005-east-query",
+    "cal-xss-005-north-search",
+    "cal-xss-005-south-name",
+    "cal-xss-005-west-page",
+    "cal-xss-005-west-ref"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/calibration/cal-xss-005/east\",\n    \"candidate_id\": \"cal-xss-005-east-query\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"query\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-005/north\",\n    \"candidate_id\": \"cal-xss-005-north-search\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"search\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"search\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-005/south\",\n    \"candidate_id\": \"cal-xss-005-south-name\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"name\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-005/west\",\n    \"candidate_id\": \"cal-xss-005-west-page\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"page\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-005/west\",\n    \"candidate_id\": \"cal-xss-005-west-ref\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"ref\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "fake-local",
+  "provider_failed": false,
+  "provider_metadata": {
+    "fake_data": true,
+    "strategy": "as_listed"
+  },
+  "rationales": {
+    "cal-xss-005-east-query": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-005-north-search": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-005-south-name": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-005-west-page": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-005-west-ref": "Fake local-model bake-off response for harness validation only."
+  },
+  "raw_response": "{\"ranking\": [{\"candidate_id\": \"cal-xss-005-east-query\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-005-north-search\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-005-south-name\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-005-west-page\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-005-west-ref\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}]}",
+  "scenario_id": "cal-xss-005",
+  "timestamp": "2026-07-29T17:41:52.984275+00:00",
+  "trial_number": 3,
+  "usage": {
+    "input_tokens": 153,
+    "output_tokens": 40
+  },
+  "validation_errors": []
+}

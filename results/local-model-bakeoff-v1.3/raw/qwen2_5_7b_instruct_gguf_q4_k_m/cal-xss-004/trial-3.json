@@ -1,0 +1,133 @@
+{
+  "artifact_status": "non_experimental_fake_model_response",
+  "candidate_input": [
+    {
+      "action_path": "/calibration/cal-xss-004/iris",
+      "candidate_id": "cal-xss-004-iris-search",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "search",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/juniper",
+      "candidate_id": "cal-xss-004-juniper-query",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "query",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/krypton",
+      "candidate_id": "cal-xss-004-krypton-name",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "name",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/lagoon",
+      "candidate_id": "cal-xss-004-lagoon-mode",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "mode",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/lagoon",
+      "candidate_id": "cal-xss-004-lagoon-page",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/lagoon",
+      "candidate_id": "cal-xss-004-lagoon-slot",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "slot",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-004/mesa",
+      "candidate_id": "cal-xss-004-mesa-comment",
+      "editable_input_count": 1,
+      "input_type": "textarea",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "comment",
+      "required_input_count": 0,
+      "source": "get_form"
+    }
+  ],
+  "cost": null,
+  "fake_data": true,
+  "latency_ms": 480,
+  "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+  "model_identifier": "fake-qwen2.5-7b-instruct-gguf-q4-k-m",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 512,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "seed": 42,
+    "temperature": 0.0,
+    "timeout_seconds": 120,
+    "top_p": 1.0,
+    "trial_number": 3
+  },
+  "parsed_ranking": [
+    "cal-xss-004-iris-search",
+    "cal-xss-004-juniper-query",
+    "cal-xss-004-krypton-name",
+    "cal-xss-004-lagoon-mode",
+    "cal-xss-004-lagoon-page",
+    "cal-xss-004-lagoon-slot",
+    "cal-xss-004-mesa-comment"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/calibration/cal-xss-004/iris\",\n    \"candidate_id\": \"cal-xss-004-iris-search\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"search\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"search\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/juniper\",\n    \"candidate_id\": \"cal-xss-004-juniper-query\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"query\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/krypton\",\n    \"candidate_id\": \"cal-xss-004-krypton-name\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"name\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/lagoon\",\n    \"candidate_id\": \"cal-xss-004-lagoon-mode\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"mode\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/lagoon\",\n    \"candidate_id\": \"cal-xss-004-lagoon-page\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"page\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/lagoon\",\n    \"candidate_id\": \"cal-xss-004-lagoon-slot\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"slot\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-004/mesa\",\n    \"candidate_id\": \"cal-xss-004-mesa-comment\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"textarea\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"comment\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "fake-local",
+  "provider_failed": false,
+  "provider_metadata": {
+    "fake_data": true,
+    "strategy": "as_listed"
+  },
+  "rationales": {
+    "cal-xss-004-iris-search": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-juniper-query": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-krypton-name": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-lagoon-mode": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-lagoon-page": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-lagoon-slot": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-004-mesa-comment": "Fake local-model bake-off response for harness validation only."
+  },
+  "raw_response": "{\"ranking\": [{\"candidate_id\": \"cal-xss-004-iris-search\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-juniper-query\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-krypton-name\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-lagoon-mode\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-lagoon-page\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-lagoon-slot\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-004-mesa-comment\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}]}",
+  "scenario_id": "cal-xss-004",
+  "timestamp": "2026-07-29T17:41:52.979798+00:00",
+  "trial_number": 3,
+  "usage": {
+    "input_tokens": 193,
+    "output_tokens": 56
+  },
+  "validation_errors": []
+}

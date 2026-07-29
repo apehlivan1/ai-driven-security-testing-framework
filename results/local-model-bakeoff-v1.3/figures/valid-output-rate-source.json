@@ -1,0 +1,27 @@
+{
+  "artifact_status": "fake_non_experimental_source_data",
+  "metric": "valid_output_rate_by_model",
+  "rows": [
+    {
+      "fake_data": true,
+      "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "valid_output_rate": 1.0
+    },
+    {
+      "fake_data": true,
+      "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+      "valid_output_rate": 1.0
+    },
+    {
+      "fake_data": true,
+      "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+      "valid_output_rate": 0.8888888888888888
+    },
+    {
+      "fake_data": true,
+      "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "valid_output_rate": 0.8333333333333334
+    }
+  ],
+  "schema_version": "local-model-bakeoff-figure-source-v1.3"
+}

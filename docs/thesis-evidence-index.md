@@ -71,6 +71,22 @@ bake-off rules only. They do not contain model downloads, model outputs,
 ranking trials, benchmark scores, final local-model selection, or v1.3 protocol
 freeze decisions.
 
+Local model fake bake-off harness package:
+
+- Path: `results/local-model-bakeoff-v1.3/`
+- Manifest: `results/local-model-bakeoff-v1.3/manifest.json`
+- Fake trial rows: `results/local-model-bakeoff-v1.3/trial-results.csv`
+- Model summaries: `results/local-model-bakeoff-v1.3/model-summary.csv`
+- Selection-decision placeholder: `results/local-model-bakeoff-v1.3/selection-decision.json`
+- Validation report: `results/local-model-bakeoff-v1.3/validation-report.json`
+- Figure placeholders and source data:
+  `results/local-model-bakeoff-v1.3/figures/`
+
+This package is fake/non-experimental harness-validation data only. It exercises
+the reporting structure, metric derivation, invalid-output accounting and
+selection logic, but it does not run local models and does not select the final
+primary or fallback model.
+
 Planned v1.3 result package layout:
 
 ```text

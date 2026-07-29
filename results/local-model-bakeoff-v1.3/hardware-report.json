@@ -1,0 +1,22 @@
+{
+  "architecture": "AMD64",
+  "artifact_status": "static_selection_milestone_snapshot",
+  "available_ram_bytes_at_selection_inspection": 3470745600,
+  "cpu_model": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+  "cuda_detected": false,
+  "dedicated_vram_bytes": "not_available",
+  "gpu_model": "Intel(R) Iris(R) Xe Graphics",
+  "installed_runtime_status": {
+    "llama_cpp_cli_or_server": false,
+    "llama_cpp_python": false,
+    "lm_studio_cli": false,
+    "ollama": false,
+    "transformers": false,
+    "vllm": false
+  },
+  "operating_system": "Windows 10 10.0.19045",
+  "python_version": "3.14.0",
+  "schema_version": "local-model-bakeoff-hardware-report-v1.3",
+  "total_ram_bytes": 16895107072,
+  "usable_logical_processors": 8
+}

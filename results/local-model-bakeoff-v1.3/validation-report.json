@@ -1,0 +1,9 @@
+{
+  "actual_trial_count": 72,
+  "errors": [],
+  "expected_trial_count": 72,
+  "fake_data": true,
+  "selection_finalized": false,
+  "valid": true,
+  "validation_id": "local-model-bakeoff-package-validation-v1.3"
+}

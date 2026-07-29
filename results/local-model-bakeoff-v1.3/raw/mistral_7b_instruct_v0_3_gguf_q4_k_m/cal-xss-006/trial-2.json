@@ -1,0 +1,120 @@
+{
+  "artifact_status": "non_experimental_fake_model_response",
+  "candidate_input": [
+    {
+      "action_path": "/calibration/cal-xss-006/olive",
+      "candidate_id": "cal-xss-006-olive-memo",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "memo",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-006/olive",
+      "candidate_id": "cal-xss-006-olive-name",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "name",
+      "required_input_count": 1,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-006/pearl",
+      "candidate_id": "cal-xss-006-pearl-line",
+      "editable_input_count": 1,
+      "input_type": "textarea",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "line",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/calibration/cal-xss-006/quill",
+      "candidate_id": "cal-xss-006-quill-kind",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "kind",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-006/quill",
+      "candidate_id": "cal-xss-006-quill-mode",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "mode",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/calibration/cal-xss-006/quill",
+      "candidate_id": "cal-xss-006-quill-ref",
+      "editable_input_count": 3,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "ref",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "cost": null,
+  "fake_data": true,
+  "latency_ms": 520,
+  "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+  "model_identifier": "fake-mistral-7b-instruct-v0.3-gguf-q4-k-m",
+  "model_settings": {
+    "context_size_tokens": 4096,
+    "max_output_tokens": 512,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "seed": 42,
+    "temperature": 0.0,
+    "timeout_seconds": 120,
+    "top_p": 1.0,
+    "trial_number": 2
+  },
+  "parsed_ranking": [
+    "cal-xss-006-olive-memo",
+    "cal-xss-006-olive-name",
+    "cal-xss-006-pearl-line",
+    "cal-xss-006-quill-kind",
+    "cal-xss-006-quill-mode",
+    "cal-xss-006-quill-ref"
+  ],
+  "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/calibration/cal-xss-006/olive\",\n    \"candidate_id\": \"cal-xss-006-olive-memo\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"memo\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-006/olive\",\n    \"candidate_id\": \"cal-xss-006-olive-name\",\n    \"editable_input_count\": 2,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 2,\n    \"parameter_name\": \"name\",\n    \"required_input_count\": 1,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-006/pearl\",\n    \"candidate_id\": \"cal-xss-006-pearl-line\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"textarea\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"line\",\n    \"required_input_count\": 0,\n    \"source\": \"get_form\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-006/quill\",\n    \"candidate_id\": \"cal-xss-006-quill-kind\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"kind\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-006/quill\",\n    \"candidate_id\": \"cal-xss-006-quill-mode\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"mode\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  },\n  {\n    \"action_path\": \"/calibration/cal-xss-006/quill\",\n    \"candidate_id\": \"cal-xss-006-quill-ref\",\n    \"editable_input_count\": 3,\n    \"input_type\": \"query_parameter\",\n    \"method\": \"GET\",\n    \"parameter_count\": 3,\n    \"parameter_name\": \"ref\",\n    \"required_input_count\": 0,\n    \"source\": \"query_parameter\"\n  }\n]",
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "fake-local",
+  "provider_failed": false,
+  "provider_metadata": {
+    "fake_data": true,
+    "strategy": "as_listed"
+  },
+  "rationales": {
+    "cal-xss-006-olive-memo": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-006-olive-name": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-006-pearl-line": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-006-quill-kind": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-006-quill-mode": "Fake local-model bake-off response for harness validation only.",
+    "cal-xss-006-quill-ref": "Fake local-model bake-off response for harness validation only."
+  },
+  "raw_response": "{\"ranking\": [{\"candidate_id\": \"cal-xss-006-olive-memo\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-006-olive-name\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-006-pearl-line\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-006-quill-kind\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-006-quill-mode\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}, {\"candidate_id\": \"cal-xss-006-quill-ref\", \"rationale\": \"Fake local-model bake-off response for harness validation only.\"}]}",
+  "scenario_id": "cal-xss-006",
+  "timestamp": "2026-07-29T17:41:52.983076+00:00",
+  "trial_number": 2,
+  "usage": {
+    "input_tokens": 173,
+    "output_tokens": 48
+  },
+  "validation_errors": []
+}

@@ -234,6 +234,31 @@ For every tested model:
 - hardware snapshot;
 - execution timestamp.
 
+## Implemented Harness Support
+
+The repository now includes a reusable fake-only bake-off harness:
+
+- module: `src/adstf/local_model_bakeoff.py`;
+- fake package: `results/local-model-bakeoff-v1.3/`;
+- calibration set version: `local-model-calibration-xss-v1.3`;
+- selection rule version: `local-model-selection-rules-v1.3`;
+- trial design: 4 shortlisted models x 6 calibration scenarios x 3 trials =
+  72 ranking calls;
+- final held-out XSS v1.3 scenarios used: no;
+- live model execution: no;
+- final local model selection: no.
+
+The harness uses the existing `llm-candidate-ranking-v1` prompt and parser.
+The fake package deliberately includes valid and invalid fake responses so that
+malformed JSON, duplicate IDs, unknown IDs, omitted IDs, timeouts, and provider
+failures are represented in the validation path. These fake outputs are
+non-experimental test data and must not be interpreted as model performance.
+
+The live bake-off must reuse the same scenario definitions, trial counts,
+selection gates, tie-breaking order, parser behavior, and authority boundary.
+Only the fake model client should be replaced with a measured local runtime
+client after model artifacts and runtime binaries are installed and hashed.
+
 ## Sources Used
 
 - Qwen2.5 7B Instruct GGUF model card:
@@ -255,8 +280,8 @@ For every tested model:
 
 ## Next Narrow Task
 
-Implement the local-model bake-off harness and metadata schema using fake local
-model responses only. The harness should support the shortlisted model manifest,
-calibration scenario inputs, identical-condition enforcement, validation/error
-accounting, and result packaging. Do not download models or run live model
-trials until a separate setup milestone is authorized.
+Implement the local llama.cpp runtime adapter and setup checklist without
+running the live bake-off. The adapter should preserve the existing
+candidate-ranking contract, capture runtime/model metadata, and include offline
+tests with fake server or CLI responses. Model download and live calibration
+bake-off execution should remain a separate explicitly authorized milestone.

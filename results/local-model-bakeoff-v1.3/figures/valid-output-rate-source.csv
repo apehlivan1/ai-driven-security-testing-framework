@@ -1,0 +1,5 @@
+model_candidate_id,valid_output_rate,fake_data
+qwen2_5_7b_instruct_gguf_q4_k_m,1.0,True
+phi3_5_mini_instruct_gguf_q4_k_m,1.0,True
+mistral_7b_instruct_v0_3_gguf_q4_k_m,0.8888888888888888,True
+gemma3_4b_it_gguf_q4_k_m,0.8333333333333334,True

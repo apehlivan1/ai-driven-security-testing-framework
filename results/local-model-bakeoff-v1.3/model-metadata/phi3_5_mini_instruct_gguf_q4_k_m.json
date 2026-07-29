@@ -1,0 +1,15 @@
+{
+  "artifact_status": "shortlist_metadata_no_model_downloaded",
+  "candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+  "display_name": "Phi-3.5 Mini Instruct GGUF Q4_K_M",
+  "expected_memory_gb": 4.0,
+  "family": "Phi",
+  "license_note": "MIT base model; community GGUF quant provenance required.",
+  "metadata_completeness_score": 0.9,
+  "model_file_sha256": "not_available",
+  "model_identifier": "bartowski/Phi-3.5-mini-instruct-GGUF:Q4_K_M",
+  "quantization": "Q4_K_M",
+  "runtime": "llama.cpp",
+  "runtime_binary_sha256": "not_available",
+  "timeout_seconds": 120
+}

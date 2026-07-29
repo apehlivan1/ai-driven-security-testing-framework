@@ -1,0 +1,15 @@
+{
+  "artifact_status": "shortlist_metadata_no_model_downloaded",
+  "candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+  "display_name": "Mistral 7B Instruct v0.3 GGUF Q4_K_M",
+  "expected_memory_gb": 7.0,
+  "family": "Mistral",
+  "license_note": "Apache 2.0 model card; exact GGUF source must be pinned.",
+  "metadata_completeness_score": 0.95,
+  "model_file_sha256": "not_available",
+  "model_identifier": "mistralai/Mistral-7B-Instruct-v0.3 GGUF Q4_K_M",
+  "quantization": "Q4_K_M",
+  "runtime": "llama.cpp",
+  "runtime_binary_sha256": "not_available",
+  "timeout_seconds": 120
+}

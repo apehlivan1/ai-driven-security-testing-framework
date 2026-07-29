@@ -1,0 +1,51 @@
+{
+  "artifact_status": "selection_logic_exercised_on_fake_data_no_model_selected",
+  "eligible_candidates_for_logic_validation_only": [
+    "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "phi3_5_mini_instruct_gguf_q4_k_m"
+  ],
+  "fallback_model_candidate_id": "not_applicable",
+  "final_selection_made": false,
+  "hard_eligibility_gates": [
+    {
+      "metric": "valid_output_rate",
+      "operator": ">=",
+      "threshold": 0.9
+    },
+    {
+      "metric": "timeout_provider_failure_rate",
+      "operator": "<=",
+      "threshold": 0.1
+    },
+    {
+      "metric": "memory_feasible",
+      "operator": "==",
+      "threshold": true
+    },
+    {
+      "metric": "completed_required_calibration_scenarios",
+      "operator": "==",
+      "threshold": "required_calibration_scenarios"
+    }
+  ],
+  "primary_model_candidate_id": "not_applicable",
+  "ranked_candidates_for_logic_validation_only": [
+    "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "phi3_5_mini_instruct_gguf_q4_k_m",
+    "gemma3_4b_it_gguf_q4_k_m",
+    "mistral_7b_instruct_v0_3_gguf_q4_k_m"
+  ],
+  "reason": "Fake responses validate harness, metrics and selection logic only. Live calibration bake-off required before selection.",
+  "selection_rule_version": "local-model-selection-rules-v1.3",
+  "tie_breaking_order": [
+    "higher_mean_reciprocal_rank",
+    "higher_top_1_accuracy",
+    "higher_top_k_recall",
+    "higher_ranking_stability",
+    "lower_malformed_output_rate",
+    "lower_median_latency_ms",
+    "lower_estimated_peak_memory_gb",
+    "higher_metadata_completeness_score",
+    "lexicographic_model_candidate_id"
+  ]
+}

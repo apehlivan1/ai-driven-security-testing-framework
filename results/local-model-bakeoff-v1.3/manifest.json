@@ -1,0 +1,15 @@
+{
+  "artifact_status": "non_experimental_fake_model_bakeoff",
+  "calibration_set_version": "local-model-calibration-xss-v1.3",
+  "fake_data": true,
+  "final_heldout_xss_v13_used": false,
+  "final_model_selection_made": false,
+  "live_model_execution_performed": false,
+  "model_count": 4,
+  "model_download_performed": false,
+  "scenario_count": 6,
+  "schema_version": "local-model-bakeoff-v1.3",
+  "selection_rule_version": "local-model-selection-rules-v1.3",
+  "trial_count": 72,
+  "trials_per_model_per_scenario": 3
+}
