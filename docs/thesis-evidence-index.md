@@ -254,6 +254,37 @@ would consume identical candidate inputs. It does not execute scored ranking
 trials, browser vulnerability verification, deterministic evaluation, ZAP or
 post-run ground-truth scoring.
 
+XSS v1.3 ablation harness-readiness package:
+
+- Path: `results/xss-v13-ablation-harness-readiness/`
+- Harness module: `src/adstf/xss_v13_ablation_harness.py`
+- Manifest: `results/xss-v13-ablation-harness-readiness/manifest.json`
+- Preflight report:
+  `results/xss-v13-ablation-harness-readiness/preflight-report.json`
+- Execution schedule:
+  `results/xss-v13-ablation-harness-readiness/normalized/execution-schedule.csv`
+- Arm summary:
+  `results/xss-v13-ablation-harness-readiness/normalized/arm-summary.csv`
+- Scenario summary:
+  `results/xss-v13-ablation-harness-readiness/normalized/scenario-summary.csv`
+- Validation report:
+  `results/xss-v13-ablation-harness-readiness/validation-report.json`
+- Human-readable report:
+  `results/xss-v13-ablation-harness-readiness/report.md`
+- Thesis table templates:
+  `results/xss-v13-ablation-harness-readiness/tables/`
+- Checksums:
+  `results/xss-v13-ablation-harness-readiness/checksums.sha256`
+
+This package validates the final v1.3 execution-harness plumbing without
+scored execution. It schedules the three frozen arms
+`deterministic_structural`, `proprietary_gpt` and `local_qwen` against the 24
+frozen candidate snapshots and records the expected denominators, package
+layout, checksum coverage, preflight checks and post-run scoring interface. It
+does not call the OpenAI API, does not run local-model inference, does not
+execute browser vulnerability verification, does not run ZAP, and does not load
+ground truth.
+
 Planned v1.3 result package layout:
 
 ```text

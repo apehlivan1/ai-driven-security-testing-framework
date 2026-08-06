@@ -1,0 +1,6 @@
+{
+  "function": "adstf.xss_v13_ablation_harness.score_post_run_cases",
+  "ground_truth_loaded_during_preflight_or_dry_run": false,
+  "ground_truth_may_load_only_after_execution_complete": true,
+  "schema_version": "xss-v13-ablation-harness-v1-post-run-scoring-interface"
+}

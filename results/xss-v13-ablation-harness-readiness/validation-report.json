@@ -1,0 +1,18 @@
+{
+  "actual_schedule_rows": 264,
+  "browser_vulnerability_verification_executed": false,
+  "errors": [],
+  "expected_arm_denominators": {
+    "deterministic_structural": 24,
+    "local_qwen": 120,
+    "proprietary_gpt": 120
+  },
+  "expected_schedule_rows": 264,
+  "ground_truth_loaded": false,
+  "local_model_calls_executed": false,
+  "proprietary_api_calls_executed": false,
+  "schema_version": "xss-v13-ablation-harness-readiness-v1-validation",
+  "scored_calls_executed": false,
+  "valid": true,
+  "zap_executed": false
+}

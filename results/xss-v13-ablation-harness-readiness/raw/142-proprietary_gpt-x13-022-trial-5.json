@@ -1,0 +1,11 @@
+{
+  "arm_id": "proprietary_gpt",
+  "candidate_count": 6,
+  "candidate_snapshot_sha256": "0643b8ac383858f901b8169db98ad2bf17f174edeb8e6797602b6b37eb21c38f",
+  "scenario_id": "x13-022",
+  "schedule_index": 142,
+  "status": "planned_not_executed",
+  "test_budget": 4,
+  "top_k": 4,
+  "trial_number": 5
+}
