@@ -1,0 +1,119 @@
+{
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count": 8,
+  "candidate_input": [
+    {
+      "action_path": "/suite-v13/x13-012/garden",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-012/garden:search",
+      "editable_input_count": 1,
+      "input_type": "search",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "search",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/hazel",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-012/hazel:query",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "query",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/islet",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-012/islet:name",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "name",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/juno",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-012/juno:text",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "text",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/kepler",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-012/kepler:message",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "message",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/west",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:mode",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "mode",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/west",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:page",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-012/west",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:slot",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 3,
+      "parameter_name": "slot",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "created_from": "rendered v1.3 seed pages processed by discover_reflected_input_candidates",
+  "excluded_data": [
+    "semantic case labels",
+    "vulnerability status",
+    "ground-truth cases",
+    "credentials",
+    "session values",
+    "raw HTML",
+    "browser state",
+    "source code"
+  ],
+  "manifest_version": "xss-v13-manifest-v1",
+  "ranking_prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "x13-012",
+  "schema_version": "xss-v13-candidate-snapshot-v1",
+  "seed_paths": [
+    "/suite-v13/x13-012/north",
+    "/suite-v13/x13-012/east",
+    "/suite-v13/x13-012/south",
+    "/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample"
+  ],
+  "test_budget": 4,
+  "top_k": 4
+}

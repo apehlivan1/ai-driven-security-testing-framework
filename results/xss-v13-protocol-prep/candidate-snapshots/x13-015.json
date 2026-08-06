@@ -1,0 +1,107 @@
+{
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count": 7,
+  "candidate_input": [
+    {
+      "action_path": "/suite-v13/x13-015/stone",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-015/stone:title",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "title",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/thistle",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-015/thistle:comment",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "comment",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/upland",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-015/upland:message",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "message",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/south",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:item",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 4,
+      "parameter_name": "item",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/south",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:mode",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 4,
+      "parameter_name": "mode",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/south",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:page",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 4,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-015/south",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:ref",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 4,
+      "parameter_name": "ref",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "created_from": "rendered v1.3 seed pages processed by discover_reflected_input_candidates",
+  "excluded_data": [
+    "semantic case labels",
+    "vulnerability status",
+    "ground-truth cases",
+    "credentials",
+    "session values",
+    "raw HTML",
+    "browser state",
+    "source code"
+  ],
+  "manifest_version": "xss-v13-manifest-v1",
+  "ranking_prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "x13-015",
+  "schema_version": "xss-v13-candidate-snapshot-v1",
+  "seed_paths": [
+    "/suite-v13/x13-015/north",
+    "/suite-v13/x13-015/east",
+    "/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample"
+  ],
+  "test_budget": 4,
+  "top_k": 4
+}

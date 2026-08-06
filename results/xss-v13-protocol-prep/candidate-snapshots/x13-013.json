@@ -1,0 +1,85 @@
+{
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count": 5,
+  "candidate_input": [
+    {
+      "action_path": "/suite-v13/x13-013/larch",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:code",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "code",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-013/larch",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:memo",
+      "editable_input_count": 2,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "memo",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-013/marble",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-013/marble:query",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "query",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-013/nova",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-013/nova:item",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "item",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-013/south",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-013/south?view=sample:view",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "view",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "created_from": "rendered v1.3 seed pages processed by discover_reflected_input_candidates",
+  "excluded_data": [
+    "semantic case labels",
+    "vulnerability status",
+    "ground-truth cases",
+    "credentials",
+    "session values",
+    "raw HTML",
+    "browser state",
+    "source code"
+  ],
+  "manifest_version": "xss-v13-manifest-v1",
+  "ranking_prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "x13-013",
+  "schema_version": "xss-v13-candidate-snapshot-v1",
+  "seed_paths": [
+    "/suite-v13/x13-013/north",
+    "/suite-v13/x13-013/east",
+    "/suite-v13/x13-013/south?view=sample"
+  ],
+  "test_budget": 4,
+  "top_k": 4
+}

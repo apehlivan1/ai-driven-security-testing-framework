@@ -1,0 +1,26 @@
+{
+  "arm_ids": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "browser_vulnerability_verification_executed": false,
+  "budget_values": [
+    4
+  ],
+  "candidate_snapshots_contain_ground_truth": false,
+  "errors": [],
+  "ground_truth_semantics_loaded": false,
+  "scenario_count": 24,
+  "schema_version": "xss-v13-protocol-dry-validation-v1",
+  "scored_trials_executed": false,
+  "shared_candidate_inputs_across_arms": true,
+  "top_k_definition": "top_k = min(test_budget, discovered_candidate_count)",
+  "v1_2_artifacts_modified": false,
+  "valid": true,
+  "warnings": [
+    "ready for protocol commit/tag only after generated files are committed and the working tree is clean"
+  ],
+  "zap_executed": false
+}

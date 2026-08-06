@@ -1,0 +1,96 @@
+{
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_count": 6,
+  "candidate_input": [
+    {
+      "action_path": "/suite-v13/x13-014/orbit",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-014/orbit:search",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "search",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-014/pearl",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-014/pearl:name",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "name",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-014/quill",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-014/quill:line",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "line",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-014/raven",
+      "candidate_id": "get-form:http://127.0.0.1:4395/suite-v13/x13-014/raven:memo",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "memo",
+      "required_input_count": 0,
+      "source": "get_form"
+    },
+    {
+      "action_path": "/suite-v13/x13-014/east",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:kind",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "kind",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    },
+    {
+      "action_path": "/suite-v13/x13-014/east",
+      "candidate_id": "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:page",
+      "editable_input_count": 1,
+      "input_type": "query_parameter",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "page",
+      "required_input_count": 0,
+      "source": "query_parameter"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "created_from": "rendered v1.3 seed pages processed by discover_reflected_input_candidates",
+  "excluded_data": [
+    "semantic case labels",
+    "vulnerability status",
+    "ground-truth cases",
+    "credentials",
+    "session values",
+    "raw HTML",
+    "browser state",
+    "source code"
+  ],
+  "manifest_version": "xss-v13-manifest-v1",
+  "ranking_prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "x13-014",
+  "schema_version": "xss-v13-candidate-snapshot-v1",
+  "seed_paths": [
+    "/suite-v13/x13-014/north",
+    "/suite-v13/x13-014/east?page=sample&kind=sample",
+    "/suite-v13/x13-014/south"
+  ],
+  "test_budget": 4,
+  "top_k": 4
+}

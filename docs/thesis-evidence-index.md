@@ -228,6 +228,32 @@ The selected primary model for the constrained local candidate-ranking task is
 scenarios and available local CPU hardware. All four model results remain
 preserved for thesis reporting.
 
+XSS v1.3 protocol-preparation dry-validation package:
+
+- Path: `results/xss-v13-protocol-prep/`
+- Draft protocol: `docs/evaluation-protocol-v1.3.md`
+- Candidate snapshot index:
+  `results/xss-v13-protocol-prep/candidate-snapshot-index.json`
+- Candidate snapshots:
+  `results/xss-v13-protocol-prep/candidate-snapshots/`
+- Arm input ledger:
+  `results/xss-v13-protocol-prep/arm-input-ledger.json`
+- Dry-run configuration:
+  `results/xss-v13-protocol-prep/dry-run-config.json`
+- Dry-validation summary:
+  `results/xss-v13-protocol-prep/dry-validation-summary.json`
+- Human-readable report:
+  `results/xss-v13-protocol-prep/report.md`
+- Checksums:
+  `results/xss-v13-protocol-prep/checksums.sha256`
+
+This package is protocol-freeze preparation only. It creates one
+ground-truth-free candidate snapshot for each of the 24 v1.3 XSS scenarios and
+proves that `deterministic_structural`, `proprietary_gpt` and `local_qwen`
+would consume identical candidate inputs. It does not execute scored ranking
+trials, browser vulnerability verification, deterministic evaluation, ZAP or
+post-run ground-truth scoring.
+
 Planned v1.3 result package layout:
 
 ```text

@@ -1,13 +1,15 @@
 # Local Open-Weights Model Feasibility and Bake-Off Design v1.3
 
-Status: feasibility, shortlist, and bake-off design only. No model was
-downloaded, no inference engine was installed, no ranking trials were run, no
-local model was finally selected, and `evaluation-protocol-v1.3` is not frozen.
+Status: feasibility, shortlist, runtime provisioning, readiness validation and
+measured calibration bake-off completed. The selected primary local model for
+the constrained v1.3 candidate-ranking task is
+`qwen2_5_7b_instruct_gguf_q4_k_m`. The selected contingency model is
+`gemma3_4b_it_gguf_q4_k_m`. `evaluation-protocol-v1.3` is not frozen.
 
-The final v1.3 local model must be selected only after all shortlisted
-candidates are tested under identical measured conditions on development or
-calibration scenarios that are not part of the final 24-scenario v1.3 XSS
-held-out benchmark.
+The selection was made only after all shortlisted candidates were tested under
+identical measured conditions on development/calibration scenarios that are not
+part of the final 24-scenario v1.3 XSS benchmark. All four model results remain
+preserved for thesis reporting.
 
 ## Authority Boundary
 
@@ -427,7 +429,8 @@ parser rule and model shortlist.
 
 ## Next Narrow Task
 
-Run the measured 72-call local-model calibration bake-off using the frozen
-calibration scenarios and the corrected common transport boundary. The run must
-not use the final 24-scenario XSS v1.3 benchmark, change the prompt or schema,
-or tune models individually.
+Prepare the executable v1.3 XSS ablation protocol for freezing. The preparation
+must create ground-truth-free candidate snapshots for the final 24 scenarios,
+prove that deterministic, proprietary GPT and local Qwen arms consume identical
+candidate inputs, record the Qwen/Gemma fallback rule, and stop before any
+scored final experiment is run.

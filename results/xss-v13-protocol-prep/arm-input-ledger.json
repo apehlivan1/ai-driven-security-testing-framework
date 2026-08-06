@@ -1,0 +1,1242 @@
+{
+  "arm_ids": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "arms": [
+    {
+      "arm_id": "deterministic_structural",
+      "scenario_inputs": [
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/birch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/dune:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-001/cedar?item=sample:item"
+          ],
+          "candidate_input_sha256": "86e8471347fd33a95b95d6c9fe5114642a906278de47493094d876fa8094c795",
+          "scenario_id": "x13-001",
+          "snapshot_path": "candidate-snapshots/x13-001.json",
+          "snapshot_sha256": "cec87b69b1e7979014798d595419bc6200e8f8ffb496c0e9b1380676edc0d200",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/lumen:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/mason:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/noble:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/olive:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-002/keel?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "723e005446bf4c12be98e7085e37724d4e69ec75059cb322ca8859a14bd568c1",
+          "scenario_id": "x13-002",
+          "snapshot_path": "candidate-snapshots/x13-002.json",
+          "snapshot_sha256": "bc24344257e4415d7e904688ac55dd0581b26a4382c50e2d43686612eb2ad544",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/atlas:word",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/brook:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/cabin:mark",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/delta:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "62dbda36a4326645655fb54450f9b4bb8bfa9b058858c26c35adbcffe9c1fd24",
+          "scenario_id": "x13-003",
+          "snapshot_path": "candidate-snapshots/x13-003.json",
+          "snapshot_sha256": "0cebf7058380f6888a2ae9d999a9127ea9c88077dbca55160e5e5d07ae5f141c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/field:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/grove:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "53af8029b8c943f1c8ffe835aa1dcffea4bb1100fdecb0dc10b5ab00d631b935",
+          "scenario_id": "x13-004",
+          "snapshot_path": "candidate-snapshots/x13-004.json",
+          "snapshot_sha256": "0d7de2362b8eccccb555a2986667fc9e2ca92f0bef647a05b4fb42880a4dcfd0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/harbor:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/iris:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/juniper:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/krypton:title",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "d522b983952d09db4ed33c62424330b15f204c4bdad49db3db61089333b722e7",
+          "scenario_id": "x13-005",
+          "snapshot_path": "candidate-snapshots/x13-005.json",
+          "snapshot_sha256": "462f8e551c2125f42d6748f5b82e34e6dcb8ec2e61ced83f44678637eafcbf4c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/lagoon:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/mesa:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/nectar:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/onyx:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "57086366ee4e6fe40273e286c8f16cb2a7da1c2ef325b2708eccbeb6a9f42e7b",
+          "scenario_id": "x13-006",
+          "snapshot_path": "candidate-snapshots/x13-006.json",
+          "snapshot_sha256": "7f019c02dc8f39ef2df466624ac9ee18dd06d07581169c6cf93047f8280c1fc6",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/prism:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/quartz:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/ridge:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "7143565ba5ae0763fd4c7cf0573c3622e4db8472e77c4a9fb6bf2afbeaf6ba07",
+          "scenario_id": "x13-007",
+          "snapshot_path": "candidate-snapshots/x13-007.json",
+          "snapshot_sha256": "cebaadc1acf8f7f7a1b3922ba925fc8573e15698078f6f1e4b919316004d3229",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/sable:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/tango:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:mode"
+          ],
+          "candidate_input_sha256": "a6693cf150b0e3b8c8af74386e00f22b1c1b7623d2392b33dbb1a13de1313819",
+          "scenario_id": "x13-008",
+          "snapshot_path": "candidate-snapshots/x13-008.json",
+          "snapshot_sha256": "be3f071709dc182ecd47f261edeee6ef727e8604bf0d6b06c60f08001a59c9a0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/violet:term",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/willow:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/xenon:entry",
+            "query:http://127.0.0.1:4395/suite-v13/x13-009/west?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "778da6048f802c273c194cf6b2dbc6ecd0c7d57f9646e70ada60fde0f56c16fc",
+          "scenario_id": "x13-009",
+          "snapshot_path": "candidate-snapshots/x13-009.json",
+          "snapshot_sha256": "bd7ce795c18887c917c91c9d8fb56eb1d083e54727fab846dfd139b626d75e47",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/aurora:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/benton:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/yarrow:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/zenith:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "7513a35844fc0c7bfcb603eabe73729e2c3a43f0083202d63612ff34f6ba2ee1",
+          "scenario_id": "x13-010",
+          "snapshot_path": "candidate-snapshots/x13-010.json",
+          "snapshot_sha256": "7cefff21444f6b13803cb8a91939b63f441a8d291aaf989fbb94340050a0abc5",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/cobalt:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/drift:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/ember:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/fable:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:page"
+          ],
+          "candidate_input_sha256": "de5a03bc89c9553f71d032edec99289bfab23f8a723602b32492c154e50a6bbd",
+          "scenario_id": "x13-011",
+          "snapshot_path": "candidate-snapshots/x13-011.json",
+          "snapshot_sha256": "3e005b08d2622a0271711847876211481df224e26190ae86bc4ba77352194b75",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/garden:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/hazel:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/islet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/juno:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/kepler:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:slot"
+          ],
+          "candidate_input_sha256": "270677e4e3788c27973424a9b973ef534dc56612cbfc40167f8d6a6bf60e6338",
+          "scenario_id": "x13-012",
+          "snapshot_path": "candidate-snapshots/x13-012.json",
+          "snapshot_sha256": "075cf70082364c0e70fa591fea45fa3a2530b2beb79d9da8f5ace223dcfd465e",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:code",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/marble:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/nova:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-013/south?view=sample:view"
+          ],
+          "candidate_input_sha256": "67d9da936d747e2acc61f40bfc9af447b2ee426579ed50f669363529959642c7",
+          "scenario_id": "x13-013",
+          "snapshot_path": "candidate-snapshots/x13-013.json",
+          "snapshot_sha256": "209e7332153d943c382475cf2545573004a4f501656acdfa5b986fcfcdc57978",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/orbit:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/pearl:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/quill:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/raven:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:page"
+          ],
+          "candidate_input_sha256": "65962a7c0c60cfd95956ba614d977f615f0f745fc2597886a85e622598eccb45",
+          "scenario_id": "x13-014",
+          "snapshot_path": "candidate-snapshots/x13-014.json",
+          "snapshot_sha256": "28ff9af599c874d4e43c65d5f9c2d31bf74ddc4de0fb2d81c3bfdc84cadff4e7",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/stone:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/thistle:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/upland:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:ref"
+          ],
+          "candidate_input_sha256": "cec22232e8e515cbd36656d712db9e7280ad387d46533a4e106210df3e8e4af2",
+          "scenario_id": "x13-015",
+          "snapshot_path": "candidate-snapshots/x13-015.json",
+          "snapshot_sha256": "2f27c361e997c902d09325a5a604ea9d7016e49c27af153e6f7afc9fa9b54ad8",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/valley:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/walnut:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:slot",
+            "query:http://127.0.0.1:4395/suite-v13/x13-016/south?page=sample:page"
+          ],
+          "candidate_input_sha256": "f22cfbfe812d9e28177a61e5b28cb4bd2bab7fa8b7b3166b9a0210d3a053a1ae",
+          "scenario_id": "x13-016",
+          "snapshot_path": "candidate-snapshots/x13-016.json",
+          "snapshot_sha256": "cfc2fc98e0ee2155d35b8690cdf4fad192ee5281d30145b273913af84ec9888d",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/birch:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:line"
+          ],
+          "candidate_input_sha256": "1dc98631204f7f0df6fff6a1e20ba8c4b9e175099982e385d65bc8ebe221d76e",
+          "scenario_id": "x13-017",
+          "snapshot_path": "candidate-snapshots/x13-017.json",
+          "snapshot_sha256": "d38d8eec81ece4fed15c6e4c12a60d22b89086dfed996c0ad75e9fa5c693300b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/cedar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/dune:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/echo:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:ref"
+          ],
+          "candidate_input_sha256": "c40a0e0dd29f9633988987c663d12f98b4c8f84d6c8fd2553043581817d1bab9",
+          "scenario_id": "x13-018",
+          "snapshot_path": "candidate-snapshots/x13-018.json",
+          "snapshot_sha256": "de0bf26ce84fc1e45c14a4ee8d9cb6f1c2c658880f35855eeb5427286e4685d3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/field:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/grove:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/harbor:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:view"
+          ],
+          "candidate_input_sha256": "c50f5583c41162ec8bbcf811b416c679c91476b0e41cf5bf9c5086f222adc68d",
+          "scenario_id": "x13-019",
+          "snapshot_path": "candidate-snapshots/x13-019.json",
+          "snapshot_sha256": "fb6255f9bc760839945e1ed578ed55ac7e6b7793b366e8b1527be7ea25f5404a",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/iris:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/juniper:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/krypton:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/lagoon:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:ref"
+          ],
+          "candidate_input_sha256": "4080877d3ba9a92d3b9bf031e52ca0f049eae8a27622ea29c55630bb33deb8be",
+          "scenario_id": "x13-020",
+          "snapshot_path": "candidate-snapshots/x13-020.json",
+          "snapshot_sha256": "5bf1b7202d5b4d4cb8198e59924f3e9f7f6eaa06a315631b84527e676d70edde",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/nectar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/onyx:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "2d21f57af9105f9900a5266b372baa9c740d289ccbc6aa531223c3ea31fd381e",
+          "scenario_id": "x13-021",
+          "snapshot_path": "candidate-snapshots/x13-021.json",
+          "snapshot_sha256": "dd14572a52ef084e950e06625b75cc03bacaed4fb95a94e347fafe1c4e22208f",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/prism:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/quartz:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/ridge:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/sable:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:term"
+          ],
+          "candidate_input_sha256": "0643b8ac383858f901b8169db98ad2bf17f174edeb8e6797602b6b37eb21c38f",
+          "scenario_id": "x13-022",
+          "snapshot_path": "candidate-snapshots/x13-022.json",
+          "snapshot_sha256": "c9a3a4b509fd29d54240d3f60ce91d697d08ba4faa53b2abaec76d08ab93512b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/tango:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/umber:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/violet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/willow:text",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "a302f26a9e7e4a98e869a0129d059927103b33101a6416b60f14fe94d590b848",
+          "scenario_id": "x13-023",
+          "snapshot_path": "candidate-snapshots/x13-023.json",
+          "snapshot_sha256": "b31a5f0c01c8fd2bc2ebd75091a1fa8fa61862d8eb19b12dc5d244a56beee0e3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/xenon:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/yarrow:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "07f1e765a2c5d4a41b6e0fe1adf869d37cac0bc409b9409f9c03235f88f6c16c",
+          "scenario_id": "x13-024",
+          "snapshot_path": "candidate-snapshots/x13-024.json",
+          "snapshot_sha256": "03c1c331882c47d4b23aac370762d7da6fa4c85a4ee0520e9df6434c5b2fdd97",
+          "test_budget": 4,
+          "top_k": 4
+        }
+      ]
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "scenario_inputs": [
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/birch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/dune:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-001/cedar?item=sample:item"
+          ],
+          "candidate_input_sha256": "86e8471347fd33a95b95d6c9fe5114642a906278de47493094d876fa8094c795",
+          "scenario_id": "x13-001",
+          "snapshot_path": "candidate-snapshots/x13-001.json",
+          "snapshot_sha256": "cec87b69b1e7979014798d595419bc6200e8f8ffb496c0e9b1380676edc0d200",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/lumen:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/mason:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/noble:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/olive:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-002/keel?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "723e005446bf4c12be98e7085e37724d4e69ec75059cb322ca8859a14bd568c1",
+          "scenario_id": "x13-002",
+          "snapshot_path": "candidate-snapshots/x13-002.json",
+          "snapshot_sha256": "bc24344257e4415d7e904688ac55dd0581b26a4382c50e2d43686612eb2ad544",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/atlas:word",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/brook:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/cabin:mark",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/delta:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "62dbda36a4326645655fb54450f9b4bb8bfa9b058858c26c35adbcffe9c1fd24",
+          "scenario_id": "x13-003",
+          "snapshot_path": "candidate-snapshots/x13-003.json",
+          "snapshot_sha256": "0cebf7058380f6888a2ae9d999a9127ea9c88077dbca55160e5e5d07ae5f141c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/field:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/grove:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "53af8029b8c943f1c8ffe835aa1dcffea4bb1100fdecb0dc10b5ab00d631b935",
+          "scenario_id": "x13-004",
+          "snapshot_path": "candidate-snapshots/x13-004.json",
+          "snapshot_sha256": "0d7de2362b8eccccb555a2986667fc9e2ca92f0bef647a05b4fb42880a4dcfd0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/harbor:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/iris:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/juniper:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/krypton:title",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "d522b983952d09db4ed33c62424330b15f204c4bdad49db3db61089333b722e7",
+          "scenario_id": "x13-005",
+          "snapshot_path": "candidate-snapshots/x13-005.json",
+          "snapshot_sha256": "462f8e551c2125f42d6748f5b82e34e6dcb8ec2e61ced83f44678637eafcbf4c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/lagoon:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/mesa:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/nectar:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/onyx:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "57086366ee4e6fe40273e286c8f16cb2a7da1c2ef325b2708eccbeb6a9f42e7b",
+          "scenario_id": "x13-006",
+          "snapshot_path": "candidate-snapshots/x13-006.json",
+          "snapshot_sha256": "7f019c02dc8f39ef2df466624ac9ee18dd06d07581169c6cf93047f8280c1fc6",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/prism:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/quartz:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/ridge:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "7143565ba5ae0763fd4c7cf0573c3622e4db8472e77c4a9fb6bf2afbeaf6ba07",
+          "scenario_id": "x13-007",
+          "snapshot_path": "candidate-snapshots/x13-007.json",
+          "snapshot_sha256": "cebaadc1acf8f7f7a1b3922ba925fc8573e15698078f6f1e4b919316004d3229",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/sable:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/tango:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:mode"
+          ],
+          "candidate_input_sha256": "a6693cf150b0e3b8c8af74386e00f22b1c1b7623d2392b33dbb1a13de1313819",
+          "scenario_id": "x13-008",
+          "snapshot_path": "candidate-snapshots/x13-008.json",
+          "snapshot_sha256": "be3f071709dc182ecd47f261edeee6ef727e8604bf0d6b06c60f08001a59c9a0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/violet:term",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/willow:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/xenon:entry",
+            "query:http://127.0.0.1:4395/suite-v13/x13-009/west?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "778da6048f802c273c194cf6b2dbc6ecd0c7d57f9646e70ada60fde0f56c16fc",
+          "scenario_id": "x13-009",
+          "snapshot_path": "candidate-snapshots/x13-009.json",
+          "snapshot_sha256": "bd7ce795c18887c917c91c9d8fb56eb1d083e54727fab846dfd139b626d75e47",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/aurora:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/benton:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/yarrow:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/zenith:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "7513a35844fc0c7bfcb603eabe73729e2c3a43f0083202d63612ff34f6ba2ee1",
+          "scenario_id": "x13-010",
+          "snapshot_path": "candidate-snapshots/x13-010.json",
+          "snapshot_sha256": "7cefff21444f6b13803cb8a91939b63f441a8d291aaf989fbb94340050a0abc5",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/cobalt:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/drift:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/ember:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/fable:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:page"
+          ],
+          "candidate_input_sha256": "de5a03bc89c9553f71d032edec99289bfab23f8a723602b32492c154e50a6bbd",
+          "scenario_id": "x13-011",
+          "snapshot_path": "candidate-snapshots/x13-011.json",
+          "snapshot_sha256": "3e005b08d2622a0271711847876211481df224e26190ae86bc4ba77352194b75",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/garden:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/hazel:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/islet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/juno:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/kepler:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:slot"
+          ],
+          "candidate_input_sha256": "270677e4e3788c27973424a9b973ef534dc56612cbfc40167f8d6a6bf60e6338",
+          "scenario_id": "x13-012",
+          "snapshot_path": "candidate-snapshots/x13-012.json",
+          "snapshot_sha256": "075cf70082364c0e70fa591fea45fa3a2530b2beb79d9da8f5ace223dcfd465e",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:code",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/marble:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/nova:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-013/south?view=sample:view"
+          ],
+          "candidate_input_sha256": "67d9da936d747e2acc61f40bfc9af447b2ee426579ed50f669363529959642c7",
+          "scenario_id": "x13-013",
+          "snapshot_path": "candidate-snapshots/x13-013.json",
+          "snapshot_sha256": "209e7332153d943c382475cf2545573004a4f501656acdfa5b986fcfcdc57978",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/orbit:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/pearl:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/quill:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/raven:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:page"
+          ],
+          "candidate_input_sha256": "65962a7c0c60cfd95956ba614d977f615f0f745fc2597886a85e622598eccb45",
+          "scenario_id": "x13-014",
+          "snapshot_path": "candidate-snapshots/x13-014.json",
+          "snapshot_sha256": "28ff9af599c874d4e43c65d5f9c2d31bf74ddc4de0fb2d81c3bfdc84cadff4e7",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/stone:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/thistle:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/upland:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:ref"
+          ],
+          "candidate_input_sha256": "cec22232e8e515cbd36656d712db9e7280ad387d46533a4e106210df3e8e4af2",
+          "scenario_id": "x13-015",
+          "snapshot_path": "candidate-snapshots/x13-015.json",
+          "snapshot_sha256": "2f27c361e997c902d09325a5a604ea9d7016e49c27af153e6f7afc9fa9b54ad8",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/valley:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/walnut:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:slot",
+            "query:http://127.0.0.1:4395/suite-v13/x13-016/south?page=sample:page"
+          ],
+          "candidate_input_sha256": "f22cfbfe812d9e28177a61e5b28cb4bd2bab7fa8b7b3166b9a0210d3a053a1ae",
+          "scenario_id": "x13-016",
+          "snapshot_path": "candidate-snapshots/x13-016.json",
+          "snapshot_sha256": "cfc2fc98e0ee2155d35b8690cdf4fad192ee5281d30145b273913af84ec9888d",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/birch:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:line"
+          ],
+          "candidate_input_sha256": "1dc98631204f7f0df6fff6a1e20ba8c4b9e175099982e385d65bc8ebe221d76e",
+          "scenario_id": "x13-017",
+          "snapshot_path": "candidate-snapshots/x13-017.json",
+          "snapshot_sha256": "d38d8eec81ece4fed15c6e4c12a60d22b89086dfed996c0ad75e9fa5c693300b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/cedar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/dune:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/echo:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:ref"
+          ],
+          "candidate_input_sha256": "c40a0e0dd29f9633988987c663d12f98b4c8f84d6c8fd2553043581817d1bab9",
+          "scenario_id": "x13-018",
+          "snapshot_path": "candidate-snapshots/x13-018.json",
+          "snapshot_sha256": "de0bf26ce84fc1e45c14a4ee8d9cb6f1c2c658880f35855eeb5427286e4685d3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/field:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/grove:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/harbor:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:view"
+          ],
+          "candidate_input_sha256": "c50f5583c41162ec8bbcf811b416c679c91476b0e41cf5bf9c5086f222adc68d",
+          "scenario_id": "x13-019",
+          "snapshot_path": "candidate-snapshots/x13-019.json",
+          "snapshot_sha256": "fb6255f9bc760839945e1ed578ed55ac7e6b7793b366e8b1527be7ea25f5404a",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/iris:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/juniper:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/krypton:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/lagoon:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:ref"
+          ],
+          "candidate_input_sha256": "4080877d3ba9a92d3b9bf031e52ca0f049eae8a27622ea29c55630bb33deb8be",
+          "scenario_id": "x13-020",
+          "snapshot_path": "candidate-snapshots/x13-020.json",
+          "snapshot_sha256": "5bf1b7202d5b4d4cb8198e59924f3e9f7f6eaa06a315631b84527e676d70edde",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/nectar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/onyx:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "2d21f57af9105f9900a5266b372baa9c740d289ccbc6aa531223c3ea31fd381e",
+          "scenario_id": "x13-021",
+          "snapshot_path": "candidate-snapshots/x13-021.json",
+          "snapshot_sha256": "dd14572a52ef084e950e06625b75cc03bacaed4fb95a94e347fafe1c4e22208f",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/prism:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/quartz:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/ridge:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/sable:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:term"
+          ],
+          "candidate_input_sha256": "0643b8ac383858f901b8169db98ad2bf17f174edeb8e6797602b6b37eb21c38f",
+          "scenario_id": "x13-022",
+          "snapshot_path": "candidate-snapshots/x13-022.json",
+          "snapshot_sha256": "c9a3a4b509fd29d54240d3f60ce91d697d08ba4faa53b2abaec76d08ab93512b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/tango:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/umber:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/violet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/willow:text",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "a302f26a9e7e4a98e869a0129d059927103b33101a6416b60f14fe94d590b848",
+          "scenario_id": "x13-023",
+          "snapshot_path": "candidate-snapshots/x13-023.json",
+          "snapshot_sha256": "b31a5f0c01c8fd2bc2ebd75091a1fa8fa61862d8eb19b12dc5d244a56beee0e3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/xenon:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/yarrow:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "07f1e765a2c5d4a41b6e0fe1adf869d37cac0bc409b9409f9c03235f88f6c16c",
+          "scenario_id": "x13-024",
+          "snapshot_path": "candidate-snapshots/x13-024.json",
+          "snapshot_sha256": "03c1c331882c47d4b23aac370762d7da6fa4c85a4ee0520e9df6434c5b2fdd97",
+          "test_budget": 4,
+          "top_k": 4
+        }
+      ]
+    },
+    {
+      "arm_id": "local_qwen",
+      "scenario_inputs": [
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/birch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-001/dune:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-001/cedar?item=sample:item"
+          ],
+          "candidate_input_sha256": "86e8471347fd33a95b95d6c9fe5114642a906278de47493094d876fa8094c795",
+          "scenario_id": "x13-001",
+          "snapshot_path": "candidate-snapshots/x13-001.json",
+          "snapshot_sha256": "cec87b69b1e7979014798d595419bc6200e8f8ffb496c0e9b1380676edc0d200",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/lumen:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/mason:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/noble:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-002/olive:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-002/keel?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "723e005446bf4c12be98e7085e37724d4e69ec75059cb322ca8859a14bd568c1",
+          "scenario_id": "x13-002",
+          "snapshot_path": "candidate-snapshots/x13-002.json",
+          "snapshot_sha256": "bc24344257e4415d7e904688ac55dd0581b26a4382c50e2d43686612eb2ad544",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/atlas:word",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/brook:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/cabin:mark",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-003/delta:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-003/west?view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "62dbda36a4326645655fb54450f9b4bb8bfa9b058858c26c35adbcffe9c1fd24",
+          "scenario_id": "x13-003",
+          "snapshot_path": "candidate-snapshots/x13-003.json",
+          "snapshot_sha256": "0cebf7058380f6888a2ae9d999a9127ea9c88077dbca55160e5e5d07ae5f141c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/echo:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/field:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-004/grove:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-004/west?ref=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "53af8029b8c943f1c8ffe835aa1dcffea4bb1100fdecb0dc10b5ab00d631b935",
+          "scenario_id": "x13-004",
+          "snapshot_path": "candidate-snapshots/x13-004.json",
+          "snapshot_sha256": "0d7de2362b8eccccb555a2986667fc9e2ca92f0bef647a05b4fb42880a4dcfd0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/harbor:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/iris:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/juniper:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-005/krypton:title",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-005/south?memo=sample&ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "d522b983952d09db4ed33c62424330b15f204c4bdad49db3db61089333b722e7",
+          "scenario_id": "x13-005",
+          "snapshot_path": "candidate-snapshots/x13-005.json",
+          "snapshot_sha256": "462f8e551c2125f42d6748f5b82e34e6dcb8ec2e61ced83f44678637eafcbf4c",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/lagoon:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/mesa:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/nectar:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-006/onyx:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-006/detail?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "57086366ee4e6fe40273e286c8f16cb2a7da1c2ef325b2708eccbeb6a9f42e7b",
+          "scenario_id": "x13-006",
+          "snapshot_path": "candidate-snapshots/x13-006.json",
+          "snapshot_sha256": "7f019c02dc8f39ef2df466624ac9ee18dd06d07581169c6cf93047f8280c1fc6",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/prism:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/quartz:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-007/ridge:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:ref",
+            "query:http://127.0.0.1:4395/suite-v13/x13-007/east?ref=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "7143565ba5ae0763fd4c7cf0573c3622e4db8472e77c4a9fb6bf2afbeaf6ba07",
+          "scenario_id": "x13-007",
+          "snapshot_path": "candidate-snapshots/x13-007.json",
+          "snapshot_sha256": "cebaadc1acf8f7f7a1b3922ba925fc8573e15698078f6f1e4b919316004d3229",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/sable:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/tango:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-008/umber:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-008/south?item=sample&mode=sample:mode"
+          ],
+          "candidate_input_sha256": "a6693cf150b0e3b8c8af74386e00f22b1c1b7623d2392b33dbb1a13de1313819",
+          "scenario_id": "x13-008",
+          "snapshot_path": "candidate-snapshots/x13-008.json",
+          "snapshot_sha256": "be3f071709dc182ecd47f261edeee6ef727e8604bf0d6b06c60f08001a59c9a0",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/violet:term",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/willow:note",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-009/xenon:entry",
+            "query:http://127.0.0.1:4395/suite-v13/x13-009/west?ref=sample:ref"
+          ],
+          "candidate_input_sha256": "778da6048f802c273c194cf6b2dbc6ecd0c7d57f9646e70ada60fde0f56c16fc",
+          "scenario_id": "x13-009",
+          "snapshot_path": "candidate-snapshots/x13-009.json",
+          "snapshot_sha256": "bd7ce795c18887c917c91c9d8fb56eb1d083e54727fab846dfd139b626d75e47",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/aurora:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/benton:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/yarrow:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-010/zenith:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-010/south?code=sample&view=sample&page=sample:view"
+          ],
+          "candidate_input_sha256": "7513a35844fc0c7bfcb603eabe73729e2c3a43f0083202d63612ff34f6ba2ee1",
+          "scenario_id": "x13-010",
+          "snapshot_path": "candidate-snapshots/x13-010.json",
+          "snapshot_sha256": "7cefff21444f6b13803cb8a91939b63f441a8d291aaf989fbb94340050a0abc5",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/cobalt:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/drift:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/ember:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-011/fable:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-011/east?line=sample&page=sample:page"
+          ],
+          "candidate_input_sha256": "de5a03bc89c9553f71d032edec99289bfab23f8a723602b32492c154e50a6bbd",
+          "scenario_id": "x13-011",
+          "snapshot_path": "candidate-snapshots/x13-011.json",
+          "snapshot_sha256": "3e005b08d2622a0271711847876211481df224e26190ae86bc4ba77352194b75",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/garden:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/hazel:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/islet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/juno:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-012/kepler:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-012/west?slot=sample&page=sample&mode=sample:slot"
+          ],
+          "candidate_input_sha256": "270677e4e3788c27973424a9b973ef534dc56612cbfc40167f8d6a6bf60e6338",
+          "scenario_id": "x13-012",
+          "snapshot_path": "candidate-snapshots/x13-012.json",
+          "snapshot_sha256": "075cf70082364c0e70fa591fea45fa3a2530b2beb79d9da8f5ace223dcfd465e",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:code",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/larch:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/marble:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-013/nova:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-013/south?view=sample:view"
+          ],
+          "candidate_input_sha256": "67d9da936d747e2acc61f40bfc9af447b2ee426579ed50f669363529959642c7",
+          "scenario_id": "x13-013",
+          "snapshot_path": "candidate-snapshots/x13-013.json",
+          "snapshot_sha256": "209e7332153d943c382475cf2545573004a4f501656acdfa5b986fcfcdc57978",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/orbit:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/pearl:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/quill:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-014/raven:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-014/east?page=sample&kind=sample:page"
+          ],
+          "candidate_input_sha256": "65962a7c0c60cfd95956ba614d977f615f0f745fc2597886a85e622598eccb45",
+          "scenario_id": "x13-014",
+          "snapshot_path": "candidate-snapshots/x13-014.json",
+          "snapshot_sha256": "28ff9af599c874d4e43c65d5f9c2d31bf74ddc4de0fb2d81c3bfdc84cadff4e7",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/stone:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/thistle:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-015/upland:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-015/south?ref=sample&mode=sample&page=sample&item=sample:ref"
+          ],
+          "candidate_input_sha256": "cec22232e8e515cbd36656d712db9e7280ad387d46533a4e106210df3e8e4af2",
+          "scenario_id": "x13-015",
+          "snapshot_path": "candidate-snapshots/x13-015.json",
+          "snapshot_sha256": "2f27c361e997c902d09325a5a604ea9d7016e49c27af153e6f7afc9fa9b54ad8",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/valley:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/walnut:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-016/yonder:slot",
+            "query:http://127.0.0.1:4395/suite-v13/x13-016/south?page=sample:page"
+          ],
+          "candidate_input_sha256": "f22cfbfe812d9e28177a61e5b28cb4bd2bab7fa8b7b3166b9a0210d3a053a1ae",
+          "scenario_id": "x13-016",
+          "snapshot_path": "candidate-snapshots/x13-016.json",
+          "snapshot_sha256": "cfc2fc98e0ee2155d35b8690cdf4fad192ee5281d30145b273913af84ec9888d",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/amber:tone",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-017/birch:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-017/east?item=sample&line=sample:line"
+          ],
+          "candidate_input_sha256": "1dc98631204f7f0df6fff6a1e20ba8c4b9e175099982e385d65bc8ebe221d76e",
+          "scenario_id": "x13-017",
+          "snapshot_path": "candidate-snapshots/x13-017.json",
+          "snapshot_sha256": "d38d8eec81ece4fed15c6e4c12a60d22b89086dfed996c0ad75e9fa5c693300b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 5,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/cedar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/dune:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-018/echo:name",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-018/south?ref=sample&page=sample:ref"
+          ],
+          "candidate_input_sha256": "c40a0e0dd29f9633988987c663d12f98b4c8f84d6c8fd2553043581817d1bab9",
+          "scenario_id": "x13-018",
+          "snapshot_path": "candidate-snapshots/x13-018.json",
+          "snapshot_sha256": "de0bf26ce84fc1e45c14a4ee8d9cb6f1c2c658880f35855eeb5427286e4685d3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/field:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/grove:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-019/harbor:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-019/south?code=sample&view=sample&kind=sample:view"
+          ],
+          "candidate_input_sha256": "c50f5583c41162ec8bbcf811b416c679c91476b0e41cf5bf9c5086f222adc68d",
+          "scenario_id": "x13-019",
+          "snapshot_path": "candidate-snapshots/x13-019.json",
+          "snapshot_sha256": "fb6255f9bc760839945e1ed578ed55ac7e6b7793b366e8b1527be7ea25f5404a",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 7,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/iris:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/juniper:text",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/krypton:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-020/lagoon:message",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-020/south?ref=sample&page=sample&mode=sample:ref"
+          ],
+          "candidate_input_sha256": "4080877d3ba9a92d3b9bf031e52ca0f049eae8a27622ea29c55630bb33deb8be",
+          "scenario_id": "x13-020",
+          "snapshot_path": "candidate-snapshots/x13-020.json",
+          "snapshot_sha256": "5bf1b7202d5b4d4cb8198e59924f3e9f7f6eaa06a315631b84527e676d70edde",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/mesa:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/nectar:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-021/onyx:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:code",
+            "query:http://127.0.0.1:4395/suite-v13/x13-021/south?code=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "2d21f57af9105f9900a5266b372baa9c740d289ccbc6aa531223c3ea31fd381e",
+          "scenario_id": "x13-021",
+          "snapshot_path": "candidate-snapshots/x13-021.json",
+          "snapshot_sha256": "dd14572a52ef084e950e06625b75cc03bacaed4fb95a94e347fafe1c4e22208f",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 6,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/prism:line",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/quartz:comment",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/ridge:title",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-022/sable:memo",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-022/east?term=sample&page=sample:term"
+          ],
+          "candidate_input_sha256": "0643b8ac383858f901b8169db98ad2bf17f174edeb8e6797602b6b37eb21c38f",
+          "scenario_id": "x13-022",
+          "snapshot_path": "candidate-snapshots/x13-022.json",
+          "snapshot_sha256": "c9a3a4b509fd29d54240d3f60ce91d697d08ba4faa53b2abaec76d08ab93512b",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 8,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/tango:search",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/umber:query",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/violet:name",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-023/willow:text",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:kind",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:mode",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:page",
+            "query:http://127.0.0.1:4395/suite-v13/x13-023/south?ref=sample&page=sample&mode=sample&kind=sample:ref"
+          ],
+          "candidate_input_sha256": "a302f26a9e7e4a98e869a0129d059927103b33101a6416b60f14fe94d590b848",
+          "scenario_id": "x13-023",
+          "snapshot_path": "candidate-snapshots/x13-023.json",
+          "snapshot_sha256": "b31a5f0c01c8fd2bc2ebd75091a1fa8fa61862d8eb19b12dc5d244a56beee0e3",
+          "test_budget": 4,
+          "top_k": 4
+        },
+        {
+          "candidate_count": 4,
+          "candidate_ids": [
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/xenon:memo",
+            "get-form:http://127.0.0.1:4395/suite-v13/x13-024/yarrow:line",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:item",
+            "query:http://127.0.0.1:4395/suite-v13/x13-024/east?item=sample&view=sample:view"
+          ],
+          "candidate_input_sha256": "07f1e765a2c5d4a41b6e0fe1adf869d37cac0bc409b9409f9c03235f88f6c16c",
+          "scenario_id": "x13-024",
+          "snapshot_path": "candidate-snapshots/x13-024.json",
+          "snapshot_sha256": "03c1c331882c47d4b23aac370762d7da6fa4c85a4ee0520e9df6434c5b2fdd97",
+          "test_budget": 4,
+          "top_k": 4
+        }
+      ]
+    }
+  ],
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "input_policy": "Every arm consumes the same immutable per-scenario candidate snapshot by SHA-256 reference.",
+  "schema_version": "xss-v13-three-arm-input-ledger-v1"
+}

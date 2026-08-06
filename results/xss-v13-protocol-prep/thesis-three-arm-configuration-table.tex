@@ -1,0 +1,15 @@
+% Status: configuration table only. No experimental results are included.
+\begin{table}[ht]
+\centering
+\caption{Frozen arms proposed for the v1.3 XSS ablation study.}
+\label{tab:xss-v13-ablation-arms}
+\begin{tabular}{llll}
+\hline
+Arm & Authority & Trials/scenario & Provider/model \\
+\hline
+deterministic\_structural & Deterministic ranking & 1 & deterministic-structural-v1 \\
+proprietary\_gpt & Bounded hosted LLM ranking & 5 & OpenAI gpt-5.6-luna \\
+local\_qwen & Bounded local LLM ranking & 5 & Qwen2.5 7B Instruct GGUF Q4\_K\_M \\
+\hline
+\end{tabular}
+\end{table}

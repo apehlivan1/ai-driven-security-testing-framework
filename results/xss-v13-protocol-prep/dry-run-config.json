@@ -1,0 +1,166 @@
+{
+  "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+  "benchmark_id": "xss-v13-expanded-reflected-input",
+  "candidate_budget": {
+    "source": "xss-v13 manifest per-scenario test_budget",
+    "top_k_definition": "top_k = min(test_budget, discovered_candidate_count)",
+    "unique_budget_values": [
+      4
+    ]
+  },
+  "failure_handling": {
+    "duplicate_unknown_or_omitted_ids": "invalid model output; parser records exact validation errors",
+    "invalid_model_output": "record validation errors; exclude from valid LLM ranking metrics; do not silently repair",
+    "provider_failure_or_timeout": "record failed trial; do not silently retry or improve ranking metrics",
+    "scored_retry_policy": "no silent retry; infrastructure retries require predeclared rule and retained artifacts"
+  },
+  "fallback_rule": {
+    "activation_condition": "documented pre-execution technical failure preventing Qwen from participating",
+    "activation_requirement": "protocol revision and complete rerun of affected local-model experiment",
+    "contingency_model": "gemma3_4b_it_gguf_q4_k_m",
+    "local_scored_arm": "Qwen only",
+    "silent_replacement_allowed": false
+  },
+  "manifest_version": "xss-v13-manifest-v1",
+  "metric_capability": {
+    "deterministic_provider_cost_policy": "not_applicable",
+    "dry_shape_validation": {
+      "deterministic_structural": [
+        "action_counts",
+        "case_accounting",
+        "classification_counts",
+        "first_verified_finding",
+        "model_provider",
+        "request_counts",
+        "schema_version",
+        "undefined_values",
+        "verifier_decisions"
+      ],
+      "local_qwen": [
+        "action_counts",
+        "case_accounting",
+        "classification_counts",
+        "first_verified_finding",
+        "model_provider",
+        "request_counts",
+        "schema_version",
+        "undefined_values",
+        "verifier_decisions"
+      ],
+      "proprietary_gpt": [
+        "action_counts",
+        "case_accounting",
+        "classification_counts",
+        "first_verified_finding",
+        "model_provider",
+        "request_counts",
+        "schema_version",
+        "undefined_values",
+        "verifier_decisions"
+      ]
+    },
+    "llm_provider_cost_missing_policy": "not_available",
+    "measurement_schema_version": "measurement-summary-v1.3",
+    "required_metric_groups": [
+      "action_counts",
+      "request_counts",
+      "first_verified_finding",
+      "verifier_decisions",
+      "model_provider",
+      "classification_counts",
+      "case_accounting"
+    ],
+    "undefined_value_policy": {
+      "not_applicable": "The metric has no meaningful denominator or does not apply to this arm/run.",
+      "not_available": "The artifact set does not contain the data required to derive the metric."
+    }
+  },
+  "protocol_draft_path": "docs/evaluation-protocol-v1.3.md",
+  "protocol_draft_status": "draft_not_frozen_not_tagged",
+  "ranking_arms": [
+    {
+      "arm_id": "deterministic_structural",
+      "arm_type": "deterministic",
+      "provider_cost": "not_applicable",
+      "ranking_ruleset_version": "deterministic-structural-v1",
+      "trial_count_per_scenario": 1
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "arm_type": "proprietary_llm",
+      "command_client": "python -m adstf.openai_ranking_wrapper",
+      "model_identifier": "gpt-5.6-luna",
+      "parser": "adstf.llm_ranking.parse_model_ranking",
+      "prompt_version": "llm-candidate-ranking-v1",
+      "provider": "openai",
+      "settings": {
+        "OPENAI_RANKING_MODEL": "gpt-5.6-luna",
+        "OPENAI_SEND_TEMPERATURE": "unset_or_false",
+        "max_output_tokens": 1200,
+        "provider_default_temperature": "used",
+        "structured_output": "OpenAI Responses API json_schema candidate_ranking",
+        "temperature_parameter": "omitted",
+        "timeout_seconds": 60
+      },
+      "trial_count_per_scenario": 5
+    },
+    {
+      "arm_id": "local_qwen",
+      "arm_type": "local_llm",
+      "contingency_model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "parser": "adstf.llm_ranking.parse_model_ranking after llama-completion transport parsing",
+      "primary_model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "prompt_version": "llm-candidate-ranking-v1",
+      "provider": "local-llama.cpp",
+      "settings": {
+        "context_size_tokens": 4096,
+        "json_schema": "local-ranking-readiness-json-schema-v1.3 with scenario-specific candidate_id enum",
+        "max_output_tokens": 768,
+        "runtime": "llama.cpp b9637 Windows CPU x64",
+        "seed": 42,
+        "temperature": 0.0,
+        "threads": 8,
+        "timeout_seconds": 300,
+        "top_p": 1.0,
+        "transport": "llama-completion stdout/stderr with llama-completion-transport-parser-v1.3"
+      },
+      "settings_source": "results/local-runtime-output-boundary-v1.3/transport-settings.json",
+      "trial_count_per_scenario": 5
+    }
+  ],
+  "scenario_count": 24,
+  "scenario_ids": [
+    "x13-001",
+    "x13-002",
+    "x13-003",
+    "x13-004",
+    "x13-005",
+    "x13-006",
+    "x13-007",
+    "x13-008",
+    "x13-009",
+    "x13-010",
+    "x13-011",
+    "x13-012",
+    "x13-013",
+    "x13-014",
+    "x13-015",
+    "x13-016",
+    "x13-017",
+    "x13-018",
+    "x13-019",
+    "x13-020",
+    "x13-021",
+    "x13-022",
+    "x13-023",
+    "x13-024"
+  ],
+  "schema_version": "xss-v13-protocol-dry-validation-v1",
+  "snapshot_version": "xss-v13-candidate-snapshot-v1",
+  "v1_2_separation": {
+    "v1_2_canonical_artifacts_modified": false,
+    "v1_2_protocol_files_modified": false,
+    "v1_2_result_artifacts_modified": false
+  }
+}
