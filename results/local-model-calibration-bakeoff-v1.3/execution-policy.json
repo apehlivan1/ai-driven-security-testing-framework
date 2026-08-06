@@ -1,0 +1,10 @@
+{
+  "execution_schedule": "model-major deterministic order: shortlisted model order, calibration scenario order, trial 1..3",
+  "final_24_scenario_xss_v13_used": false,
+  "process_reset_rule": "fresh llama-completion process per scored call; no model server or cache shared across scored calls",
+  "retry_attempts_performed": 0,
+  "retry_policy": "no silent retries; scored failures are retained. Retry is allowed only for a clearly identified external infrastructure interruption and both attempts must remain in artifacts.",
+  "schema_version": "local-model-live-bakeoff-execution-policy-v1.3",
+  "vulnerability_testing_performed": false,
+  "warm_up_rule": "no separate warm-up request; every scored call starts a fresh llama-completion process and uses the runtime default warmup behavior"
+}

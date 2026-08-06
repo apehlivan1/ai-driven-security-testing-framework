@@ -1,0 +1,29 @@
+{
+  "all_files_present": true,
+  "candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+  "chat_template": "repository GGUF chat template recorded by Hugging Face metadata",
+  "display_name": "Gemma 3 4B IT GGUF Q4_K_M",
+  "family": "Gemma",
+  "file_count": 1,
+  "files": [
+    {
+      "exists": true,
+      "filename": "gemma-3-4b-it-Q4_K_M.gguf",
+      "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\gemma3_4b_it_gguf_q4_k_m\\gemma-3-4b-it-Q4_K_M.gguf",
+      "sha256": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
+      "size_bytes": 2489757856
+    }
+  ],
+  "license": "gemma",
+  "primary_model_filename": "gemma-3-4b-it-Q4_K_M.gguf",
+  "quantization": "Q4_K_M",
+  "repository": "ggml-org/gemma-3-4b-it-GGUF",
+  "required_runtime_arguments": [
+    "-m",
+    "<GGUF file>"
+  ],
+  "revision": "d0976223747697cb51e056d85c532013931fe52e",
+  "schema_version": "local-model-artifact-metadata-v1.3",
+  "source": "https://huggingface.co/ggml-org/gemma-3-4b-it-GGUF",
+  "total_size_bytes": 2489757856
+}

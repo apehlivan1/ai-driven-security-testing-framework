@@ -1,0 +1,85 @@
+{
+  "negative_scenario_count": 2,
+  "scenario_count": 6,
+  "scenarios": [
+    {
+      "candidate_count": 4,
+      "outcome_class": "vulnerable",
+      "purpose": "Structurally favoured vulnerable text form.",
+      "scenario_id": "cal-xss-001",
+      "tags": [
+        "favoured-positive"
+      ],
+      "vulnerable_candidate_ids": [
+        "cal-xss-001-alpha-term"
+      ]
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "vulnerable",
+      "purpose": "Unfavoured vulnerable query parameter behind stronger form decoys.",
+      "scenario_id": "cal-xss-002",
+      "tags": [
+        "query-positive",
+        "adversarial-structure"
+      ],
+      "vulnerable_candidate_ids": [
+        "cal-xss-002-cabin-ref"
+      ]
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "vulnerable",
+      "purpose": "Required-field form decoy where optional companion field is vulnerable.",
+      "scenario_id": "cal-xss-003",
+      "tags": [
+        "required-field-decoy",
+        "form-structure-decoy"
+      ],
+      "vulnerable_candidate_ids": [
+        "cal-xss-003-ember-memo"
+      ]
+    },
+    {
+      "candidate_count": 7,
+      "outcome_class": "vulnerable",
+      "purpose": "Multi-seed style candidate set with vulnerable candidate late in structural order.",
+      "scenario_id": "cal-xss-004",
+      "tags": [
+        "multi-seed",
+        "adversarial-structure"
+      ],
+      "vulnerable_candidate_ids": [
+        "cal-xss-004-lagoon-slot"
+      ]
+    },
+    {
+      "candidate_count": 5,
+      "outcome_class": "negative",
+      "purpose": "Negative scenario with strong-looking reflected candidates.",
+      "scenario_id": "cal-xss-005",
+      "tags": [
+        "negative",
+        "strong-looking-safe-candidates"
+      ],
+      "vulnerable_candidate_ids": []
+    },
+    {
+      "candidate_count": 6,
+      "outcome_class": "negative",
+      "purpose": "Negative required-field and query-parameter decoy scenario.",
+      "scenario_id": "cal-xss-006",
+      "tags": [
+        "negative",
+        "required-field-decoy",
+        "query-distractor"
+      ],
+      "vulnerable_candidate_ids": []
+    }
+  ],
+  "schema_version": "local-model-calibration-xss-v1.3",
+  "status": "calibration_only_not_final_heldout_xss_v13",
+  "test_budget": 4,
+  "trials_per_model_per_scenario": 3,
+  "vulnerable_scenario_count": 4
+}

@@ -1,0 +1,43 @@
+{
+  "$id": "local-ranking-readiness-json-schema-v1.3-cal-xss-004",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "ranking": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "enum": [
+              "cal-xss-004-iris-search",
+              "cal-xss-004-juniper-query",
+              "cal-xss-004-krypton-name",
+              "cal-xss-004-lagoon-slot",
+              "cal-xss-004-lagoon-page",
+              "cal-xss-004-lagoon-mode",
+              "cal-xss-004-mesa-comment"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 96,
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 7,
+      "minItems": 7,
+      "type": "array"
+    }
+  },
+  "required": [
+    "ranking"
+  ],
+  "title": "ADSTF local candidate-ranking calibration response for cal-xss-004",
+  "type": "object"
+}

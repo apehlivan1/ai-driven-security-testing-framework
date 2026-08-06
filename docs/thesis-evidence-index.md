@@ -182,6 +182,52 @@ measured calibration bake-off, does not use the final 24-scenario XSS v1.3
 benchmark, does not execute vulnerability tests, and does not select a final
 local model.
 
+Measured local-model calibration bake-off package:
+
+- Path: `results/local-model-calibration-bakeoff-v1.3/`
+- Manifest: `results/local-model-calibration-bakeoff-v1.3/manifest.json`
+- Execution policy:
+  `results/local-model-calibration-bakeoff-v1.3/execution-policy.json`
+- Deterministic schedule:
+  `results/local-model-calibration-bakeoff-v1.3/execution-schedule.csv`
+- Transport settings:
+  `results/local-model-calibration-bakeoff-v1.3/transport-settings.json`
+- Calibration schemas:
+  `results/local-model-calibration-bakeoff-v1.3/schemas/`
+- Raw per-call artifacts:
+  `results/local-model-calibration-bakeoff-v1.3/raw/`
+- Exact commands:
+  `results/local-model-calibration-bakeoff-v1.3/exact-commands/`
+- Normalized trial results:
+  `results/local-model-calibration-bakeoff-v1.3/normalized/trial-results.csv`
+- Model summaries:
+  `results/local-model-calibration-bakeoff-v1.3/model-summary.csv`
+- Selection decision:
+  `results/local-model-calibration-bakeoff-v1.3/selection-decision.json`
+- Validation report:
+  `results/local-model-calibration-bakeoff-v1.3/validation-report.json`
+- Human-readable analysis:
+  `results/local-model-calibration-bakeoff-v1.3/analysis-report.md`
+- Thesis-ready tables:
+  `results/local-model-calibration-bakeoff-v1.3/thesis-tables.md`
+- Figure source data:
+  `results/local-model-calibration-bakeoff-v1.3/figures/`
+- Checksums:
+  `results/local-model-calibration-bakeoff-v1.3/checksums.sha256`
+
+This package is measured calibration evidence for local open-weights model
+selection only. It uses the six calibration/development scenarios, three
+scored trials per model per scenario, and 72 scored calls total. It does not
+use the final 24-scenario XSS v1.3 benchmark, does not execute browser
+vulnerability tests, does not run ZAP, and does not freeze
+`evaluation-protocol-v1.3`.
+
+The selected primary model for the constrained local candidate-ranking task is
+`qwen2_5_7b_instruct_gguf_q4_k_m`. The selected fallback is
+`gemma3_4b_it_gguf_q4_k_m`. The selection is limited to the frozen calibration
+scenarios and available local CPU hardware. All four model results remain
+preserved for thesis reporting.
+
 Planned v1.3 result package layout:
 
 ```text

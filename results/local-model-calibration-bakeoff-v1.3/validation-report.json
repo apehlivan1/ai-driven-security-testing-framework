@@ -1,0 +1,12 @@
+{
+  "actual_scored_call_count": 72,
+  "errors": [],
+  "expected_scored_call_count": 72,
+  "final_24_scenario_xss_v13_used": false,
+  "schema_version": "local-model-live-bakeoff-validation-v1.3",
+  "scored_calls_per_model": 18,
+  "selection_finalized": true,
+  "trials_per_model_per_scenario": 3,
+  "valid": true,
+  "vulnerability_testing_performed": false
+}

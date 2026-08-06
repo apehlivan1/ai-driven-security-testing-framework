@@ -1,0 +1,29 @@
+{
+  "all_files_present": true,
+  "candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+  "chat_template": "repository GGUF chat template recorded by Hugging Face metadata",
+  "display_name": "Mistral 7B Instruct v0.3 GGUF Q4_K_M",
+  "family": "Mistral",
+  "file_count": 1,
+  "files": [
+    {
+      "exists": true,
+      "filename": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+      "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\mistral_7b_instruct_v0_3_gguf_q4_k_m\\Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+      "sha256": "1270d22c0fbb3d092fb725d4d96c457b7b687a5f5a715abe1e818da303e562b6",
+      "size_bytes": 4372812000
+    }
+  ],
+  "license": "apache-2.0",
+  "primary_model_filename": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+  "quantization": "Q4_K_M",
+  "repository": "bartowski/Mistral-7B-Instruct-v0.3-GGUF",
+  "required_runtime_arguments": [
+    "-m",
+    "<GGUF file>"
+  ],
+  "revision": "61fd4167fff3ab01ee1cfe0da183fa27a944db48",
+  "schema_version": "local-model-artifact-metadata-v1.3",
+  "source": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF",
+  "total_size_bytes": 4372812000
+}

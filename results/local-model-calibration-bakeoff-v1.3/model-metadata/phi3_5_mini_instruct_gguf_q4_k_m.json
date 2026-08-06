@@ -1,0 +1,29 @@
+{
+  "all_files_present": true,
+  "candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+  "chat_template": "repository GGUF chat template recorded by Hugging Face metadata",
+  "display_name": "Phi-3.5 Mini Instruct GGUF Q4_K_M",
+  "family": "Phi",
+  "file_count": 1,
+  "files": [
+    {
+      "exists": true,
+      "filename": "Phi-3.5-mini-instruct-Q4_K_M.gguf",
+      "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\phi3_5_mini_instruct_gguf_q4_k_m\\Phi-3.5-mini-instruct-Q4_K_M.gguf",
+      "sha256": "e4165e3a71af97f1b4820da61079826d8752a2088e313af0c7d346796c38eff5",
+      "size_bytes": 2393232672
+    }
+  ],
+  "license": "mit",
+  "primary_model_filename": "Phi-3.5-mini-instruct-Q4_K_M.gguf",
+  "quantization": "Q4_K_M",
+  "repository": "bartowski/Phi-3.5-mini-instruct-GGUF",
+  "required_runtime_arguments": [
+    "-m",
+    "<GGUF file>"
+  ],
+  "revision": "6d70da17e749a471ccb62ade694486011a75cda3",
+  "schema_version": "local-model-artifact-metadata-v1.3",
+  "source": "https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF",
+  "total_size_bytes": 2393232672
+}

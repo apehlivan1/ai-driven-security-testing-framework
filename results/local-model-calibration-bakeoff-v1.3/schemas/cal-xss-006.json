@@ -1,0 +1,42 @@
+{
+  "$id": "local-ranking-readiness-json-schema-v1.3-cal-xss-006",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "ranking": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "enum": [
+              "cal-xss-006-olive-name",
+              "cal-xss-006-olive-memo",
+              "cal-xss-006-pearl-line",
+              "cal-xss-006-quill-ref",
+              "cal-xss-006-quill-mode",
+              "cal-xss-006-quill-kind"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 96,
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 6,
+      "minItems": 6,
+      "type": "array"
+    }
+  },
+  "required": [
+    "ranking"
+  ],
+  "title": "ADSTF local candidate-ranking calibration response for cal-xss-006",
+  "type": "object"
+}

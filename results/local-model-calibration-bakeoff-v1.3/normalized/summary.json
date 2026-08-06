@@ -1,0 +1,231 @@
+{
+  "artifact_status": "measured_live_local_model_calibration_summary",
+  "elapsed_seconds": 4310.618,
+  "final_24_scenario_xss_v13_used": false,
+  "models": [
+    {
+      "allowed_timeout_runtime_failure_count": 1,
+      "artifact_status": "measured_live_model_summary",
+      "completed_required_calibration_scenarios": 6,
+      "eligibility_reasons": [],
+      "eligible": true,
+      "estimated_peak_memory_gb": 7.0,
+      "fake_data": false,
+      "family": "Qwen",
+      "invalid_candidate_id_rate": 0.0,
+      "malformed_output_rate": 0.0,
+      "mean_reciprocal_rank": 0.6190476190476191,
+      "median_latency_ms": 59630.5,
+      "memory_feasibility_note": "no local runtime memory failure observed during scored calls; per-call available-memory snapshots retained when accessible",
+      "memory_feasible": true,
+      "metadata_completeness_score": 1.0,
+      "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "negative_top_candidate_distribution": {
+        "cal-xss-005-west-ref": 3,
+        "cal-xss-006-olive-memo": 3
+      },
+      "negative_trial_count": 6,
+      "p90_latency_ms": 66957,
+      "ranking_stability": 1.0,
+      "required_calibration_scenarios": 6,
+      "required_trial_count": 18,
+      "required_valid_output_count": 17,
+      "resource_use_metric": 7.0,
+      "stop_reason_distribution": {
+        "eos_runtime_marker": 18
+      },
+      "timeout_provider_failure_rate": 0.0,
+      "timeout_runtime_failure_count": 0,
+      "top_1_accuracy": 0.5,
+      "top_k_recall": 0.75,
+      "trial_count": 18,
+      "valid_negative_trial_count": 6,
+      "valid_output_count": 18,
+      "valid_output_rate": 1.0,
+      "valid_trial_count": 18
+    },
+    {
+      "allowed_timeout_runtime_failure_count": 1,
+      "artifact_status": "measured_live_model_summary",
+      "completed_required_calibration_scenarios": 6,
+      "eligibility_reasons": [],
+      "eligible": true,
+      "estimated_peak_memory_gb": 4.0,
+      "fake_data": false,
+      "family": "Phi",
+      "invalid_candidate_id_rate": 0.0,
+      "malformed_output_rate": 0.0,
+      "mean_reciprocal_rank": 0.5,
+      "median_latency_ms": 66435.0,
+      "memory_feasibility_note": "no local runtime memory failure observed during scored calls; per-call available-memory snapshots retained when accessible",
+      "memory_feasible": true,
+      "metadata_completeness_score": 0.9,
+      "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+      "model_identifier": "bartowski/Phi-3.5-mini-instruct-GGUF:Q4_K_M",
+      "negative_top_candidate_distribution": {
+        "cal-xss-005-west-ref": 3,
+        "cal-xss-006-quill-ref": 3
+      },
+      "negative_trial_count": 6,
+      "p90_latency_ms": 83143,
+      "ranking_stability": 1.0,
+      "required_calibration_scenarios": 6,
+      "required_trial_count": 18,
+      "required_valid_output_count": 17,
+      "resource_use_metric": 4.0,
+      "stop_reason_distribution": {
+        "eos_runtime_marker": 18
+      },
+      "timeout_provider_failure_rate": 0.0,
+      "timeout_runtime_failure_count": 0,
+      "top_1_accuracy": 0.25,
+      "top_k_recall": 0.75,
+      "trial_count": 18,
+      "valid_negative_trial_count": 6,
+      "valid_output_count": 18,
+      "valid_output_rate": 1.0,
+      "valid_trial_count": 18
+    },
+    {
+      "allowed_timeout_runtime_failure_count": 1,
+      "artifact_status": "measured_live_model_summary",
+      "completed_required_calibration_scenarios": 6,
+      "eligibility_reasons": [
+        "valid_output_count_below_17_of_18"
+      ],
+      "eligible": false,
+      "estimated_peak_memory_gb": 7.0,
+      "fake_data": false,
+      "family": "Mistral",
+      "invalid_candidate_id_rate": 0.16666666666666666,
+      "malformed_output_rate": 0.0,
+      "mean_reciprocal_rank": 0.7777777777777778,
+      "median_latency_ms": 77663.0,
+      "memory_feasibility_note": "no local runtime memory failure observed during scored calls; per-call available-memory snapshots retained when accessible",
+      "memory_feasible": true,
+      "metadata_completeness_score": 0.95,
+      "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+      "model_identifier": "mistralai/Mistral-7B-Instruct-v0.3 GGUF Q4_K_M",
+      "negative_top_candidate_distribution": {
+        "cal-xss-005-west-page": 3,
+        "cal-xss-006-quill-ref": 3
+      },
+      "negative_trial_count": 6,
+      "p90_latency_ms": 100705,
+      "ranking_stability": 1.0,
+      "required_calibration_scenarios": 6,
+      "required_trial_count": 18,
+      "required_valid_output_count": 17,
+      "resource_use_metric": 7.0,
+      "stop_reason_distribution": {
+        "eos_runtime_marker": 18
+      },
+      "timeout_provider_failure_rate": 0.0,
+      "timeout_runtime_failure_count": 0,
+      "top_1_accuracy": 0.6666666666666666,
+      "top_k_recall": 1.0,
+      "trial_count": 18,
+      "valid_negative_trial_count": 6,
+      "valid_output_count": 15,
+      "valid_output_rate": 0.8333333333333334,
+      "valid_trial_count": 15
+    },
+    {
+      "allowed_timeout_runtime_failure_count": 1,
+      "artifact_status": "measured_live_model_summary",
+      "completed_required_calibration_scenarios": 6,
+      "eligibility_reasons": [],
+      "eligible": true,
+      "estimated_peak_memory_gb": 4.0,
+      "fake_data": false,
+      "family": "Gemma",
+      "invalid_candidate_id_rate": 0.0,
+      "malformed_output_rate": 0.0,
+      "mean_reciprocal_rank": 0.5416666666666666,
+      "median_latency_ms": 32024.5,
+      "memory_feasibility_note": "no local runtime memory failure observed during scored calls; per-call available-memory snapshots retained when accessible",
+      "memory_feasible": true,
+      "metadata_completeness_score": 0.85,
+      "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "model_identifier": "tensorblock/gemma-3-4b-it-GGUF:Q4_K_M",
+      "negative_top_candidate_distribution": {
+        "cal-xss-005-west-ref": 3,
+        "cal-xss-006-quill-ref": 3
+      },
+      "negative_trial_count": 6,
+      "p90_latency_ms": 39498,
+      "ranking_stability": 1.0,
+      "required_calibration_scenarios": 6,
+      "required_trial_count": 18,
+      "required_valid_output_count": 17,
+      "resource_use_metric": 4.0,
+      "stop_reason_distribution": {
+        "eos_runtime_marker": 18
+      },
+      "timeout_provider_failure_rate": 0.0,
+      "timeout_runtime_failure_count": 0,
+      "top_1_accuracy": 0.25,
+      "top_k_recall": 1.0,
+      "trial_count": 18,
+      "valid_negative_trial_count": 6,
+      "valid_output_count": 18,
+      "valid_output_rate": 1.0,
+      "valid_trial_count": 18
+    }
+  ],
+  "schema_version": "local-model-calibration-bakeoff-v1.3",
+  "scored_call_count": 72,
+  "selection_decision": {
+    "eligible_candidates": [
+      "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "gemma3_4b_it_gguf_q4_k_m",
+      "phi3_5_mini_instruct_gguf_q4_k_m"
+    ],
+    "fallback_model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "final_selection_made": true,
+    "hard_eligibility_gates": [
+      {
+        "metric": "valid_output_rate",
+        "operator": ">=",
+        "threshold": 0.9
+      },
+      {
+        "metric": "timeout_provider_failure_rate",
+        "operator": "<=",
+        "threshold": 0.1
+      },
+      {
+        "metric": "memory_feasible",
+        "operator": "==",
+        "threshold": true
+      },
+      {
+        "metric": "completed_required_calibration_scenarios",
+        "operator": "==",
+        "threshold": "required_calibration_scenarios"
+      }
+    ],
+    "primary_model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "ranked_candidates": [
+      "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "gemma3_4b_it_gguf_q4_k_m",
+      "phi3_5_mini_instruct_gguf_q4_k_m",
+      "mistral_7b_instruct_v0_3_gguf_q4_k_m"
+    ],
+    "selection_rule_version": "local-model-selection-rules-v1.3",
+    "tie_breaking_order": [
+      "higher_mean_reciprocal_rank",
+      "higher_top_1_accuracy",
+      "higher_top_k_recall",
+      "higher_ranking_stability",
+      "lower_malformed_output_rate",
+      "lower_median_latency_ms",
+      "lower_estimated_peak_memory_gb",
+      "higher_metadata_completeness_score",
+      "lexicographic_model_candidate_id"
+    ]
+  },
+  "validation_valid": true,
+  "vulnerability_testing_performed": false
+}

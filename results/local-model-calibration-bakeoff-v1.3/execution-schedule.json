@@ -1,0 +1,650 @@
+[
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 1,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 2,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 3,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 4,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 5,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 6,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 7,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 8,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 9,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 10,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 11,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 12,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 13,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 14,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 15,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 16,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 17,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 18,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 19,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 20,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 21,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 22,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 23,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 24,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 25,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 26,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 27,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 28,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 29,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 30,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 31,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 32,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 33,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 34,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 35,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 36,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 37,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 38,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 39,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 40,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 41,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 42,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 43,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 44,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 45,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 46,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 47,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 48,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 49,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 50,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 51,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 52,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 53,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 54,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 55,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 56,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 4,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-001",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 57,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 58,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 59,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-002",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 60,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 61,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 62,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-003",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 63,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 64,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 65,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 7,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-004",
+    "scenario_outcome_class": "vulnerable",
+    "schedule_index": 66,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 67,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 68,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-005",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 69,
+    "scored": true,
+    "trial_number": 3
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 70,
+    "scored": true,
+    "trial_number": 1
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 71,
+    "scored": true,
+    "trial_number": 2
+  },
+  {
+    "candidate_count": 6,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "scenario_id": "cal-xss-006",
+    "scenario_outcome_class": "negative",
+    "schedule_index": 72,
+    "scored": true,
+    "trial_number": 3
+  }
+]

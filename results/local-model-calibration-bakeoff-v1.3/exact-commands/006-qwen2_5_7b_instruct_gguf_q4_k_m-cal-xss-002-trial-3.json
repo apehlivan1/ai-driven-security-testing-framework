@@ -1,0 +1,30 @@
+{
+  "exact_command": [
+    "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runtimes\\llama.cpp-b9637\\cpu-x64\\llama-completion.exe",
+    "-m",
+    "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\qwen2_5_7b_instruct_gguf_q4_k_m\\qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+    "-f",
+    "C:\\Users\\SELUAPNS\\AppData\\Local\\Temp\\tmp7jarlao0.prompt.txt",
+    "-c",
+    "4096",
+    "-n",
+    "768",
+    "--temp",
+    "0.0",
+    "--top-p",
+    "1.0",
+    "--seed",
+    "42",
+    "-t",
+    "8",
+    "--no-display-prompt",
+    "--single-turn",
+    "--json-schema-file",
+    "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\local-model-calibration-bakeoff-v1.3\\schemas\\cal-xss-002.json"
+  ],
+  "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+  "process_return_code": 0,
+  "scenario_id": "cal-xss-002",
+  "schedule_index": 6,
+  "trial_number": 3
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "mean_reciprocal_rank": 0.6190476190476191,
+    "median_latency_ms": 59630.5,
+    "model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+    "top_1_accuracy": 0.5,
+    "top_k_recall": 0.75
+  },
+  {
+    "mean_reciprocal_rank": 0.5,
+    "median_latency_ms": 66435.0,
+    "model_candidate_id": "phi3_5_mini_instruct_gguf_q4_k_m",
+    "top_1_accuracy": 0.25,
+    "top_k_recall": 0.75
+  },
+  {
+    "mean_reciprocal_rank": 0.7777777777777778,
+    "median_latency_ms": 77663.0,
+    "model_candidate_id": "mistral_7b_instruct_v0_3_gguf_q4_k_m",
+    "top_1_accuracy": 0.6666666666666666,
+    "top_k_recall": 1.0
+  },
+  {
+    "mean_reciprocal_rank": 0.5416666666666666,
+    "median_latency_ms": 32024.5,
+    "model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+    "top_1_accuracy": 0.25,
+    "top_k_recall": 1.0
+  }
+]

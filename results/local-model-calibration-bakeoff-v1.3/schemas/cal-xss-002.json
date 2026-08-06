@@ -1,0 +1,41 @@
+{
+  "$id": "local-ranking-readiness-json-schema-v1.3-cal-xss-002",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "ranking": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "enum": [
+              "cal-xss-002-atlas-query",
+              "cal-xss-002-brook-name",
+              "cal-xss-002-cabin-ref",
+              "cal-xss-002-dune-memo",
+              "cal-xss-002-dune-kind"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 96,
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 5,
+      "minItems": 5,
+      "type": "array"
+    }
+  },
+  "required": [
+    "ranking"
+  ],
+  "title": "ADSTF local candidate-ranking calibration response for cal-xss-002",
+  "type": "object"
+}

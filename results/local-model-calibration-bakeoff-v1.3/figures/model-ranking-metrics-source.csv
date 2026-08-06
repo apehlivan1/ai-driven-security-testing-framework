@@ -1,0 +1,5 @@
+model_candidate_id,mean_reciprocal_rank,top_1_accuracy,top_k_recall,median_latency_ms
+qwen2_5_7b_instruct_gguf_q4_k_m,0.6190476190476191,0.5,0.75,59630.5
+phi3_5_mini_instruct_gguf_q4_k_m,0.5,0.25,0.75,66435.0
+mistral_7b_instruct_v0_3_gguf_q4_k_m,0.7777777777777778,0.6666666666666666,1.0,77663.0
+gemma3_4b_it_gguf_q4_k_m,0.5416666666666666,0.25,1.0,32024.5
