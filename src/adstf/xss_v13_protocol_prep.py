@@ -29,7 +29,7 @@ CANDIDATE_SNAPSHOT_VERSION = "xss-v13-candidate-snapshot-v1"
 ARM_INPUT_LEDGER_VERSION = "xss-v13-three-arm-input-ledger-v1"
 DRY_VALIDATION_VERSION = "xss-v13-protocol-dry-validation-v1"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "results" / "xss-v13-protocol-prep"
-PROTOCOL_DRAFT_PATH = REPO_ROOT / "docs" / "evaluation-protocol-v1.3.md"
+PROTOCOL_PATH = REPO_ROOT / "docs" / "evaluation-protocol-v1.3.md"
 SNAPSHOT_DIR_NAME = "candidate-snapshots"
 ARM_IDS = ("deterministic_structural", "proprietary_gpt", "local_qwen")
 LOCAL_PRIMARY_MODEL_ID = "qwen2_5_7b_instruct_gguf_q4_k_m"
@@ -55,7 +55,7 @@ def build_protocol_prep_package(
     output_dir: Path = DEFAULT_OUTPUT_DIR,
     manifest_path: Path = DEFAULT_MANIFEST_PATH,
     target_config_path: Path = DEFAULT_TARGET_CONFIG_PATH,
-    protocol_draft_path: Path = PROTOCOL_DRAFT_PATH,
+    protocol_path: Path = PROTOCOL_PATH,
 ) -> dict[str, Any]:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     target_config = json.loads(target_config_path.read_text(encoding="utf-8"))
@@ -75,7 +75,7 @@ def build_protocol_prep_package(
         manifest=manifest,
         target_config=target_config,
         snapshot_records=snapshot_records,
-        protocol_draft_path=protocol_draft_path,
+        protocol_path=protocol_path,
     )
     validation = validate_protocol_prep_package(
         manifest=manifest,
@@ -100,7 +100,7 @@ def build_protocol_prep_package(
         target_config=target_config,
         validation=validation,
         snapshot_records=snapshot_records,
-        protocol_draft_path=protocol_draft_path,
+        protocol_path=protocol_path,
     )
     _write_json(output_dir / "manifest.json", package_manifest)
     checksum_paths = [
@@ -198,14 +198,14 @@ def build_dry_run_config(
     manifest: dict[str, Any],
     target_config: dict[str, Any],
     snapshot_records: list[dict[str, Any]],
-    protocol_draft_path: Path,
+    protocol_path: Path,
 ) -> dict[str, Any]:
     del target_config
     return {
         "schema_version": DRY_VALIDATION_VERSION,
         "artifact_status": NOT_EXPERIMENTAL,
-        "protocol_draft_path": protocol_draft_path.relative_to(REPO_ROOT).as_posix(),
-        "protocol_draft_status": "draft_not_frozen_not_tagged",
+        "protocol_path": protocol_path.relative_to(REPO_ROOT).as_posix(),
+        "protocol_status": "frozen_pending_repository_commit_and_annotated_tag",
         "benchmark_id": manifest["benchmark_id"],
         "manifest_version": manifest["manifest_version"],
         "snapshot_version": CANDIDATE_SNAPSHOT_VERSION,
@@ -443,7 +443,7 @@ def package_manifest_data(
     target_config: dict[str, Any],
     validation: dict[str, Any],
     snapshot_records: list[dict[str, Any]],
-    protocol_draft_path: Path,
+    protocol_path: Path,
 ) -> dict[str, Any]:
     return {
         "schema_version": PROTOCOL_PREP_VERSION,
@@ -455,16 +455,16 @@ def package_manifest_data(
         "scenario_count": len(snapshot_records),
         "arm_ids": list(ARM_IDS),
         "validation_valid": validation["valid"],
-        "protocol_draft_path": protocol_draft_path.relative_to(REPO_ROOT).as_posix(),
-        "protocol_draft_sha256": sha256_file(protocol_draft_path) if protocol_draft_path.exists() else "not_available",
+        "protocol_path": protocol_path.relative_to(REPO_ROOT).as_posix(),
+        "protocol_sha256": sha256_file(protocol_path) if protocol_path.exists() else "not_available",
         "included_artifacts": [
             path.relative_to(output_dir).as_posix()
             for path in sorted(output_dir.rglob("*"))
             if path.is_file() and path.name not in {"manifest.json", "checksums.sha256"}
         ],
         "v1_2_artifacts_modified": False,
-        "freeze_status": "not_frozen_not_tagged",
-        "freeze_condition": "dry validation must pass, protocol package must be committed, and the working tree must be clean before tagging",
+        "freeze_status": "frozen_protocol_pending_repository_commit_and_annotated_tag",
+        "freeze_condition": "dry validation must pass, protocol package must be committed, working tree must be clean, and annotated tag evaluation-protocol-v1.3 must point to that commit",
     }
 
 
@@ -503,9 +503,9 @@ def render_report(validation: dict[str, Any], snapshot_records: list[dict[str, A
             "",
             "## Freeze Blockers",
             "",
-            "- `evaluation-protocol-v1.3` is still a draft.",
-            "- The generated package must be reviewed and committed.",
-            "- The repository must be clean before an annotated protocol tag is created.",
+            "- The generated package records protocol-freeze readiness.",
+            "- The final repository-level freeze is complete only when this package is committed and tagged with `evaluation-protocol-v1.3`.",
+            "- Any later methodological change requires a separately versioned protocol revision.",
         ]
     )
     if validation["errors"]:
@@ -613,7 +613,7 @@ def _display_path(path: Path) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Prepare and dry-validate the draft v1.3 XSS ablation protocol.")
+    parser = argparse.ArgumentParser(description="Prepare and dry-validate the frozen v1.3 XSS ablation protocol.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     args = parser.parse_args()
     manifest = build_protocol_prep_package(output_dir=args.output_dir)

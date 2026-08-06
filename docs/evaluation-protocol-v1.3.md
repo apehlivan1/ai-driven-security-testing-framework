@@ -1,18 +1,14 @@
-# Evaluation Protocol v1.3 Draft
+# Evaluation Protocol v1.3
 
-Status: **draft, not frozen, not tagged**.
+Status: **frozen executable protocol**.
 
-This document defines the proposed executable protocol for the v1.3 reflected-XSS
-ranking ablation study. It must not be treated as frozen until:
+This document defines the executable protocol for the v1.3 reflected-XSS
+ranking ablation study. The authoritative frozen repository state is the commit
+pointed to by the annotated Git tag `evaluation-protocol-v1.3`.
 
-1. the v1.3 dry-validation package passes;
-2. all protocol-critical files and generated dry-validation artifacts are
-   committed;
-3. the working tree is clean;
-4. an annotated Git tag is created for `evaluation-protocol-v1.3`.
-
-No v1.3 scored experiments may be interpreted as protocol-compliant until that
-tag exists.
+Any later methodological change requires a separately versioned protocol
+revision. The frozen protocol must not be edited in place after the tag is
+created.
 
 ## Relationship To v1.2
 
@@ -51,6 +47,21 @@ Benchmark:
 - scenario manifest: `examples/benchmarks/xss-v13-manifest.json`;
 - semantic ground truth: `examples/benchmarks/xss-v13-ground-truth.json`;
 - candidate snapshot version: `xss-v13-candidate-snapshot-v1`.
+
+Protocol-critical artifact hashes recorded before tagging:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `examples/benchmarks/xss-v13-manifest.json` | `afc598b4e8abf050b6fa8ef49998950ea7c3ccde1029d3155b92aa3a6758365b` |
+| `examples/targets/xss-v13-local.json` | `f48ab88eead31af322f8edf7af0e4bf17f67a4475e3450bebeb0f80aeaafbe82` |
+| `docs/metrics-definition-v1.3.md` | `b089cceb5eddb5400c4eb9d6661226873222d1c372e9230345c7709fb8e411ca` |
+| `src/adstf/llm_ranking.py` | `7f39e73faf024eec0c7bf03e995e63572ad4ccc9c8f895f44bd6ae9a1de89e25` |
+| `src/adstf/openai_ranking_wrapper.py` | `78db929df3ab691cbaa36fdae5a799c68e3dc8f6850b8e1edc0fe4b9f7a3f0df` |
+| `src/adstf/local_runtime.py` | `f663557b94396bc22b7931a40f3981e2c91effb283fa92f91ec571e201210986` |
+| `src/adstf/local_runtime_output_boundary.py` | `d875c00ecea5629d488582343976e0c25c7a85ca95e3297d1382fe4a1ace865c` |
+| `results/local-runtime-output-boundary-v1.3/transport-settings.json` | `36c8dfa71b26b655226abec9dbf1a8188f5f915e4accbea672a7e0f86afacfa7` |
+| `results/local-runtime-provisioning-v1.3/model-metadata/qwen2_5_7b_instruct_gguf_q4_k_m.json` | `6c9d90954bf1ceb5933c002fa306dd2455a83e74c642675d463a36f4bb075b6e` |
+| `results/local-model-calibration-bakeoff-v1.3/selection-decision.json` | `c049479d0ea5a375661d91eb28713c448e82bba9403e985a2f85c078674b5a5c` |
 
 The v1.3 XSS benchmark contains exactly 24 independent scenarios:
 
@@ -126,8 +137,7 @@ The proprietary GPT arm uses:
 - temperature parameter: omitted;
 - provider/model default temperature: used;
 - maximum output tokens: 1200;
-- timeout: 60 seconds per call unless the wrapper records a different explicit
-  frozen value before protocol freeze.
+- timeout: 60 seconds per call.
 
 The local Qwen arm uses:
 
@@ -241,6 +251,25 @@ Undefined values must use:
 
 Repeated LLM trials are not independent benchmark cases.
 
+## Post-run Scoring
+
+Semantic ground truth may be loaded only after all ranking, candidate testing,
+browser execution, evidence collection and verifier decisions for the relevant
+run have completed.
+
+Post-run scoring must:
+
+- use the frozen v1.3 ground-truth file only in the evaluation/scoring phase;
+- classify verifier-confirmed findings against the ground truth;
+- keep ranking metrics separate from verifier-confirmed findings;
+- keep negative-scenario metrics separate where vulnerable-candidate ranking
+  metrics are not applicable;
+- exclude invalid, malformed, timed-out or provider-failed model trials from
+  valid LLM ranking-performance aggregates while retaining them in artifact
+  counts;
+- count repeated LLM trials as model trials, not as independent benchmark
+  cases.
+
 ## Reporting And Provenance
 
 Every v1.3 XSS ablation package must contain:
@@ -293,12 +322,15 @@ changed based on results:
 Any genuine integration defect requires a documented protocol revision and a
 complete rerun of affected experiments.
 
-## Current Draft Blockers
+## Protocol Revision Rule
 
-This draft cannot be frozen until:
+The protocol is frozen at the annotated Git tag `evaluation-protocol-v1.3`.
+After that tag is created, the following require a new protocol version rather
+than an edit to this file:
 
-- the v1.3 XSS protocol preparation dry-validation package passes;
-- candidate snapshot checksums are recorded;
-- the protocol-critical files are committed;
-- the working tree is clean;
-- an annotated `evaluation-protocol-v1.3` tag is created.
+- any scenario or candidate snapshot change;
+- any prompt, parser, model, provider or runtime setting change;
+- any payload, verifier, budget, top-k or metric-definition change;
+- any fallback activation that replaces the Qwen local arm;
+- any post-run scoring or reporting-rule change;
+- any correction required by a genuine integration defect.

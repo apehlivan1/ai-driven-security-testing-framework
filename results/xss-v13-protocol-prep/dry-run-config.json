@@ -75,8 +75,8 @@
       "not_available": "The artifact set does not contain the data required to derive the metric."
     }
   },
-  "protocol_draft_path": "docs/evaluation-protocol-v1.3.md",
-  "protocol_draft_status": "draft_not_frozen_not_tagged",
+  "protocol_path": "docs/evaluation-protocol-v1.3.md",
+  "protocol_status": "frozen_pending_repository_commit_and_annotated_tag",
   "ranking_arms": [
     {
       "arm_id": "deterministic_structural",

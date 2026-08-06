@@ -6,9 +6,9 @@
   ],
   "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
   "benchmark_id": "xss-v13-expanded-reflected-input",
-  "created_at": "2026-08-06T21:21:53.515862+00:00",
-  "freeze_condition": "dry validation must pass, protocol package must be committed, and the working tree must be clean before tagging",
-  "freeze_status": "not_frozen_not_tagged",
+  "created_at": "2026-08-06T21:34:23.948079+00:00",
+  "freeze_condition": "dry validation must pass, protocol package must be committed, working tree must be clean, and annotated tag evaluation-protocol-v1.3 must point to that commit",
+  "freeze_status": "frozen_protocol_pending_repository_commit_and_annotated_tag",
   "included_artifacts": [
     "arm-input-ledger.json",
     "candidate-snapshot-index.json",
@@ -44,8 +44,8 @@
     "thesis-three-arm-configuration-table.tex"
   ],
   "manifest_version": "xss-v13-manifest-v1",
-  "protocol_draft_path": "docs/evaluation-protocol-v1.3.md",
-  "protocol_draft_sha256": "b8b71d39af1909df8a150c2aabaf68b6c46c2d4baf577caca418bef399f64ec0",
+  "protocol_path": "docs/evaluation-protocol-v1.3.md",
+  "protocol_sha256": "d68dcb0423f698e8869de0deac7961ee54ff3cf4804aaabad85de9718b5d4d2f",
   "scenario_count": 24,
   "schema_version": "xss-v13-protocol-prep-v1",
   "target_config": "XSS v1.3 Expanded Reflected-Input Benchmark",

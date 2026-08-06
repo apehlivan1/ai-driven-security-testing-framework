@@ -4,7 +4,8 @@ Status: feasibility, shortlist, runtime provisioning, readiness validation and
 measured calibration bake-off completed. The selected primary local model for
 the constrained v1.3 candidate-ranking task is
 `qwen2_5_7b_instruct_gguf_q4_k_m`. The selected contingency model is
-`gemma3_4b_it_gguf_q4_k_m`. `evaluation-protocol-v1.3` is not frozen.
+`gemma3_4b_it_gguf_q4_k_m`. The selected models are referenced by the frozen
+`evaluation-protocol-v1.3`.
 
 The selection was made only after all shortlisted candidates were tested under
 identical measured conditions on development/calibration scenarios that are not

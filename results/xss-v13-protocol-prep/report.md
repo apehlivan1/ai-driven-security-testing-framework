@@ -21,9 +21,9 @@ Status: dry validation only. No scored ranking trials, browser vulnerability ver
 
 ## Freeze Blockers
 
-- `evaluation-protocol-v1.3` is still a draft.
-- The generated package must be reviewed and committed.
-- The repository must be clean before an annotated protocol tag is created.
+- The generated package records protocol-freeze readiness.
+- The final repository-level freeze is complete only when this package is committed and tagged with `evaluation-protocol-v1.3`.
+- Any later methodological change requires a separately versioned protocol revision.
 
 ## Warnings
 
