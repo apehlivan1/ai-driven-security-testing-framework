@@ -1,0 +1,4 @@
+arm_id,scheduled_ranking_rows,valid_ranking_rows,provider_failed_rows,malformed_rows,retried_rows,vulnerable_trial_rows,valid_vulnerable_trial_rows,negative_trial_rows,top_1_accuracy_valid_vulnerable,top_k_recall_valid_vulnerable,mrr_valid_vulnerable,verified_finding_runs_all,verified_finding_runs_valid,negative_false_positive_runs_valid,candidates_tested_total,latency_ms_min,latency_ms_mean,latency_ms_median,latency_ms_max
+deterministic_structural,24,24,0,0,0,16,16,8,0.25,0.6875,0.43854166666666666,11,11,0,80,not_available,not_available,not_available,not_available
+proprietary_gpt,120,0,120,120,0,80,0,40,not_applicable,not_applicable,not_applicable,55,0,0,380,not_available,not_available,not_available,not_available
+local_qwen,120,120,0,0,0,80,80,40,0.3125,0.6875,0.49583333333333335,55,55,0,375,50242,111983.88333333333,111040.0,194949

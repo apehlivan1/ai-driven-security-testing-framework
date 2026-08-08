@@ -1,0 +1,4 @@
+arm_id,attempted_calls,valid_calls,schema_invalid_calls,provider_failures,runtime_failures,timeouts,retries,gemma_activated
+deterministic_structural,0,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable,0,False
+proprietary_gpt,120,116,4,0,0,0,0,False
+local_qwen,120,120,0,0,0,0,0,False

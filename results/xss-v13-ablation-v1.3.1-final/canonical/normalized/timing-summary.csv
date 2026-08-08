@@ -1,0 +1,7 @@
+arm_id,aggregate_scope,ranking_rows,independent_scenario_count,vulnerable_scenario_rows,negative_scenario_rows,trials_with_verified_finding,trials_without_verified_finding,timing_not_available_count,negative_verified_rows,time_to_first_verified_finding_ms_min,time_to_first_verified_finding_ms_median,time_to_first_verified_finding_ms_mean,time_to_first_verified_finding_ms_max,requests_to_first_verified_finding_min,requests_to_first_verified_finding_median,requests_to_first_verified_finding_mean,requests_to_first_verified_finding_max,candidates_tested_before_first_verification_min,candidates_tested_before_first_verification_median,candidates_tested_before_first_verification_mean,candidates_tested_before_first_verification_max,cost_per_verified_finding_usd
+deterministic_structural,all_retained_trials,24,24,16,8,11,13,0,0,343,1140,1004.818,1648,2,6,5.091,8,1,3,2.545,4,not_applicable
+deterministic_structural,valid_rankings_only,24,24,16,8,11,13,0,0,343,1140,1004.818,1648,2,6,5.091,8,1,3,2.545,4,not_applicable
+proprietary_gpt,all_retained_trials,120,24,80,40,58,62,0,0,146,356.5,523.121,2557,2,4.0,4.759,8,1,2.0,2.379,4,not_available
+proprietary_gpt,valid_rankings_only,116,24,78,38,56,60,0,0,146,354.5,511.268,2557,2,4.0,4.714,8,1,2.0,2.357,4,not_available
+local_qwen,all_retained_trials,120,24,80,40,55,65,0,0,146,323,345.618,657,2,4,4.182,8,1,2,2.091,4,not_available
+local_qwen,valid_rankings_only,120,24,80,40,55,65,0,0,146,323,345.618,657,2,4,4.182,8,1,2,2.091,4,not_available

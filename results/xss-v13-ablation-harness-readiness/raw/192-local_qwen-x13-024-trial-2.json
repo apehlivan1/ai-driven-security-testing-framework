@@ -1,0 +1,11 @@
+{
+  "arm_id": "local_qwen",
+  "candidate_count": 4,
+  "candidate_snapshot_sha256": "07f1e765a2c5d4a41b6e0fe1adf869d37cac0bc409b9409f9c03235f88f6c16c",
+  "scenario_id": "x13-024",
+  "schedule_index": 192,
+  "status": "planned_not_executed",
+  "test_budget": 4,
+  "top_k": 4,
+  "trial_number": 2
+}

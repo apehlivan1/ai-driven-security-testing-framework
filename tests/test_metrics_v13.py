@@ -94,6 +94,27 @@ class MetricsV13Tests(unittest.TestCase):
         self.assertEqual(first["candidates_tested_before_first_verification"], NOT_APPLICABLE)
         self.assertEqual(measurements["model_provider"]["cost_per_verified_finding_usd"], NOT_APPLICABLE)
 
+    def test_verification_completed_at_supports_time_to_first_verified_finding(self) -> None:
+        measurements = derive_measurements(
+            action_requests=[_action("a1", "observe_browser", "candidate-1")],
+            action_results=[
+                _result("a1", "executed", "2026-08-08T10:00:00+00:00", "2026-08-08T10:00:01+00:00", {"browser_navigation_count": 1, "candidate_id": "candidate-1"})
+            ],
+            findings=[
+                {
+                    "state": "verified",
+                    "report_fields": {"verification_completed_at": "2026-08-08T10:00:03+00:00"},
+                }
+            ],
+            candidate_based=True,
+        )
+
+        first = measurements["first_verified_finding"]
+        self.assertEqual(first["timestamp"], "2026-08-08T10:00:03+00:00")
+        self.assertEqual(first["time_to_first_verified_finding_ms"], 3000)
+        self.assertEqual(first["requests_to_first_verified_finding"], 1)
+        self.assertEqual(first["candidates_tested_before_first_verification"], 1)
+
     def test_repeated_llm_trials_are_not_independent_cases(self) -> None:
         measurements = derive_measurements(
             model_artifacts=[

@@ -1,0 +1,180 @@
+{
+  "classification_by_arm_all_retained": {
+    "deterministic_structural": {
+      "TN": 69,
+      "TP": 11
+    },
+    "local_qwen": {
+      "TN": 320,
+      "TP": 55
+    },
+    "proprietary_gpt": {
+      "TN": 328,
+      "TP": 58
+    }
+  },
+  "classification_by_arm_valid_rankings_only": {
+    "deterministic_structural": {
+      "TN": 69,
+      "TP": 11
+    },
+    "local_qwen": {
+      "TN": 320,
+      "TP": 55
+    },
+    "proprietary_gpt": {
+      "TN": 316,
+      "TP": 56
+    }
+  },
+  "protocol_tag": "evaluation-protocol-v1.3.1",
+  "provider_metrics": [
+    {
+      "arm_id": "deterministic_structural",
+      "attempted_calls": 0,
+      "cost_availability": "not_applicable",
+      "generated_tokens_mean": "not_applicable",
+      "input_tokens": "not_applicable",
+      "latency_ms_max": "not_applicable",
+      "latency_ms_mean": "not_applicable",
+      "latency_ms_median": "not_applicable",
+      "latency_ms_min": "not_applicable",
+      "malformed_output_rate": "not_applicable",
+      "model_identifier": "not_applicable",
+      "output_tokens": "not_applicable",
+      "provider": "deterministic",
+      "provider_applicable": false,
+      "provider_failure_rate": "not_applicable",
+      "provider_failures": "not_applicable",
+      "response_ids_present": "not_applicable",
+      "retries": 0,
+      "runtime_failures": "not_applicable",
+      "runtime_marker_separated": "not_applicable",
+      "runtime_total_time_ms_median": "not_applicable",
+      "schema_invalid_calls": "not_applicable",
+      "timeouts": "not_applicable",
+      "token_limit_reached": "not_applicable",
+      "total_tokens": "not_applicable",
+      "valid_calls": "not_applicable"
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "attempted_calls": 120,
+      "cost_availability": "not_available (120)",
+      "generated_tokens_mean": "not_available",
+      "input_tokens": 96185,
+      "latency_ms_max": 16234,
+      "latency_ms_mean": 4610.925,
+      "latency_ms_median": 4512.0,
+      "latency_ms_min": 3105,
+      "malformed_output_rate": 0.033333,
+      "model_identifier": "gpt-5.6-luna (120)",
+      "output_tokens": 60857,
+      "provider": "openai (120)",
+      "provider_applicable": true,
+      "provider_failure_rate": 0.0,
+      "provider_failures": 0,
+      "response_ids_present": 120,
+      "retries": 0,
+      "runtime_failures": 0,
+      "runtime_marker_separated": "not_applicable",
+      "runtime_total_time_ms_median": "not_available",
+      "schema_invalid_calls": 4,
+      "timeouts": 0,
+      "token_limit_reached": "not_applicable",
+      "total_tokens": 157042,
+      "valid_calls": 116
+    },
+    {
+      "arm_id": "local_qwen",
+      "attempted_calls": 120,
+      "cost_availability": "not_available (120)",
+      "generated_tokens_mean": 393.833333,
+      "input_tokens": "not_available",
+      "latency_ms_max": 129494,
+      "latency_ms_mean": 85342.558333,
+      "latency_ms_median": 82839.0,
+      "latency_ms_min": 49075,
+      "malformed_output_rate": 0.0,
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M (120)",
+      "output_tokens": "not_available",
+      "provider": "local-llama.cpp (120)",
+      "provider_applicable": true,
+      "provider_failure_rate": 0.0,
+      "provider_failures": 0,
+      "response_ids_present": 0,
+      "retries": 0,
+      "runtime_failures": 0,
+      "runtime_marker_separated": 120,
+      "runtime_total_time_ms_median": 78709.255,
+      "schema_invalid_calls": 0,
+      "timeouts": 0,
+      "token_limit_reached": 0,
+      "total_tokens": "not_available",
+      "valid_calls": 120
+    }
+  ],
+  "ranking_metrics_valid_only": [
+    {
+      "aggregate_scope": "valid_rankings_only",
+      "arm_id": "deterministic_structural",
+      "mean_candidates_tested": 3.333333,
+      "median_candidates_tested": 4.0,
+      "missing_vulnerable_in_topk": 5,
+      "mrr": 0.385417,
+      "negative_false_positive_rate": 0.0,
+      "negative_ranking_rows": 8,
+      "negative_verified_rows": 0,
+      "ranking_rows": 24,
+      "top1_accuracy": 0.25,
+      "topk_recall": 0.6875,
+      "verified_finding_rows": 11,
+      "vulnerable_rank_1": 4,
+      "vulnerable_rank_2": 1,
+      "vulnerable_rank_3": 2,
+      "vulnerable_rank_4": 4,
+      "vulnerable_ranking_rows": 16
+    },
+    {
+      "aggregate_scope": "valid_rankings_only",
+      "arm_id": "proprietary_gpt",
+      "mean_candidates_tested": 3.206897,
+      "median_candidates_tested": 4.0,
+      "missing_vulnerable_in_topk": 22,
+      "mrr": 0.405983,
+      "negative_false_positive_rate": 0.0,
+      "negative_ranking_rows": 38,
+      "negative_verified_rows": 0,
+      "ranking_rows": 116,
+      "top1_accuracy": 0.217949,
+      "topk_recall": 0.717949,
+      "verified_finding_rows": 56,
+      "vulnerable_rank_1": 17,
+      "vulnerable_rank_2": 18,
+      "vulnerable_rank_3": 5,
+      "vulnerable_rank_4": 16,
+      "vulnerable_ranking_rows": 78
+    },
+    {
+      "aggregate_scope": "valid_rankings_only",
+      "arm_id": "local_qwen",
+      "mean_candidates_tested": 3.125,
+      "median_candidates_tested": 4.0,
+      "missing_vulnerable_in_topk": 25,
+      "mrr": 0.442708,
+      "negative_false_positive_rate": 0.0,
+      "negative_ranking_rows": 40,
+      "negative_verified_rows": 0,
+      "ranking_rows": 120,
+      "top1_accuracy": 0.3125,
+      "topk_recall": 0.6875,
+      "verified_finding_rows": 55,
+      "vulnerable_rank_1": 25,
+      "vulnerable_rank_2": 5,
+      "vulnerable_rank_3": 20,
+      "vulnerable_rank_4": 5,
+      "vulnerable_ranking_rows": 80
+    }
+  ],
+  "schema_version": "xss-v13-1-figure-source-v1"
+}

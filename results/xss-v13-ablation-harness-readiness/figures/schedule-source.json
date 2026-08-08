@@ -1,0 +1,29 @@
+[
+  {
+    "arm_id": "deterministic_structural",
+    "dry_run_status": "planned_not_executed",
+    "max_candidate_tests": 96,
+    "provider_calls": 0,
+    "scenario_count": 24,
+    "scheduled_ranking_calls": 24,
+    "trials_per_scenario": 1
+  },
+  {
+    "arm_id": "proprietary_gpt",
+    "dry_run_status": "planned_not_executed",
+    "max_candidate_tests": 480,
+    "provider_calls": 120,
+    "scenario_count": 24,
+    "scheduled_ranking_calls": 120,
+    "trials_per_scenario": 5
+  },
+  {
+    "arm_id": "local_qwen",
+    "dry_run_status": "planned_not_executed",
+    "max_candidate_tests": 480,
+    "provider_calls": 120,
+    "scenario_count": 24,
+    "scheduled_ranking_calls": 120,
+    "trials_per_scenario": 5
+  }
+]

@@ -1,0 +1,4 @@
+arm_id,scenario_count,scheduled_ranking_calls,trials_per_scenario,max_candidate_tests,provider_calls,dry_run_status
+deterministic_structural,24,24,1,96,0,planned_not_executed
+proprietary_gpt,24,120,5,480,120,planned_not_executed
+local_qwen,24,120,5,480,120,planned_not_executed

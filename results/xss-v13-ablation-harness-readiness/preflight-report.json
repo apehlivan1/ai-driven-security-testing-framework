@@ -1,0 +1,163 @@
+{
+  "checks": [
+    {
+      "check": "git_tag_ancestor",
+      "passed": true
+    },
+    {
+      "check": "protocol_file_present",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:docs/metrics-definition-v1.3.md",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:src/adstf/llm_ranking.py",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:src/adstf/openai_ranking_wrapper.py",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:src/adstf/local_runtime.py",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:src/adstf/local_runtime_output_boundary.py",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:examples/benchmarks/xss-v13-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:examples/targets/xss-v13-local.json",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:results/local-runtime-output-boundary-v1.3/transport-settings.json",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:results/local-runtime-provisioning-v1.3/model-metadata/qwen2_5_7b_instruct_gguf_q4_k_m.json",
+      "passed": true
+    },
+    {
+      "check": "protocol_hash:results/local-model-calibration-bakeoff-v1.3/selection-decision.json",
+      "passed": true
+    },
+    {
+      "check": "snapshot_count_24",
+      "passed": true
+    },
+    {
+      "check": "snapshot_checksums_valid",
+      "passed": true
+    },
+    {
+      "check": "snapshots_ground_truth_free",
+      "passed": true
+    },
+    {
+      "check": "snapshots_do_not_load_ground_truth_semantics",
+      "passed": true
+    },
+    {
+      "check": "llama_completion_runtime_hash",
+      "passed": true
+    },
+    {
+      "check": "qwen_model_hash:qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "passed": true
+    },
+    {
+      "check": "qwen_model_hash:qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "passed": true
+    },
+    {
+      "check": "gemma_is_contingency_only",
+      "passed": true
+    },
+    {
+      "check": "output_not_v1_2_or_protected_v1_3",
+      "passed": true
+    },
+    {
+      "check": "output_dir_empty_or_allowed_readiness_overwrite",
+      "passed": true
+    },
+    {
+      "check": "openai_send_temperature_unset_or_false",
+      "passed": true
+    },
+    {
+      "check": "openai_api_key_present_for_future_measured_execution",
+      "passed": true,
+      "required_for_dry_run": false,
+      "secret_value_recorded": false
+    },
+    {
+      "actual": "not_available",
+      "check": "openai_model_exact_for_future_measured_execution",
+      "expected": "gpt-5.6-luna",
+      "passed": false,
+      "required_for_dry_run": false
+    }
+  ],
+  "errors": [],
+  "ground_truth_loaded": false,
+  "measured_execution": false,
+  "openai_api_key_present": true,
+  "openai_model_identifier_resolved": "not_available",
+  "openai_secret_recorded": false,
+  "schema_version": "xss-v13-ablation-harness-v1-preflight",
+  "snapshot_validation": {
+    "budget_values": [
+      4
+    ],
+    "candidate_count_distribution": {
+      "4": 4,
+      "5": 5,
+      "6": 8,
+      "7": 4,
+      "8": 3
+    },
+    "checksum_errors": [],
+    "checksums_valid": true,
+    "errors": [],
+    "ground_truth_semantics_loaded": false,
+    "scenario_count": 24,
+    "scenario_ids": [
+      "x13-001",
+      "x13-002",
+      "x13-003",
+      "x13-004",
+      "x13-005",
+      "x13-006",
+      "x13-007",
+      "x13-008",
+      "x13-009",
+      "x13-010",
+      "x13-011",
+      "x13-012",
+      "x13-013",
+      "x13-014",
+      "x13-015",
+      "x13-016",
+      "x13-017",
+      "x13-018",
+      "x13-019",
+      "x13-020",
+      "x13-021",
+      "x13-022",
+      "x13-023",
+      "x13-024"
+    ],
+    "snapshots_contain_ground_truth": false,
+    "top_k_definition": "top_k = min(test_budget, discovered_candidate_count)",
+    "valid": true
+  },
+  "valid": true
+}

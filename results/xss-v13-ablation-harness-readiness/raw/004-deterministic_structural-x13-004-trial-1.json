@@ -1,0 +1,11 @@
+{
+  "arm_id": "deterministic_structural",
+  "candidate_count": 6,
+  "candidate_snapshot_sha256": "53af8029b8c943f1c8ffe835aa1dcffea4bb1100fdecb0dc10b5ab00d631b935",
+  "scenario_id": "x13-004",
+  "schedule_index": 4,
+  "status": "planned_not_executed",
+  "test_budget": 4,
+  "top_k": 4,
+  "trial_number": 1
+}

@@ -1,0 +1,61 @@
+{
+  "action_counts": {
+    "approved": 1671,
+    "blocked": 0,
+    "executed": 1671,
+    "failed": 0,
+    "requested": 1671,
+    "result_record_count": 1671,
+    "skipped": 0
+  },
+  "case_accounting": {
+    "case_count": 835,
+    "independent_model_scenario_count": 24,
+    "model_trial_count": 240,
+    "note": "Repeated LLM trials are counted as model trials, not independent benchmark cases."
+  },
+  "classification_counts": {
+    "FN": 0,
+    "FP": 0,
+    "TN": 714,
+    "TP": 121
+  },
+  "first_verified_finding": {
+    "candidates_tested_before_first_verification": "not_available",
+    "requests_to_first_verified_finding": "not_available",
+    "time_to_first_verified_finding_ms": "not_available",
+    "timestamp": "not_available"
+  },
+  "model_provider": {
+    "cost_availability": "not_applicable",
+    "cost_per_ranking_trial_usd": "not_applicable",
+    "cost_per_verified_finding_usd": "not_applicable",
+    "latency_ms": "not_applicable",
+    "malformed_output_count": "not_applicable",
+    "malformed_output_rate": "not_applicable",
+    "provider_applicable": false,
+    "provider_failure_count": "not_applicable",
+    "provider_failure_rate": "not_applicable",
+    "timeout_count": "not_applicable",
+    "timeout_rate": "not_applicable",
+    "tokens": "not_applicable",
+    "trial_count": "not_applicable",
+    "valid_trial_count": "not_applicable"
+  },
+  "request_counts": {
+    "browser_navigations": 1670,
+    "http_requests": 1,
+    "inferred_count_fields": 1671
+  },
+  "schema_version": "measurement-summary-v1.3",
+  "undefined_values": {
+    "not_applicable": "The metric has no meaningful denominator or does not apply to this arm/run.",
+    "not_available": "The artifact set does not contain the data required to derive the metric."
+  },
+  "verifier_decisions": {
+    "inconclusive": 714,
+    "rejected": 0,
+    "total": 835,
+    "verified": 121
+  }
+}

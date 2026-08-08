@@ -1,0 +1,10 @@
+{
+  "browser_verification_executed": false,
+  "errors": [],
+  "ground_truth_loaded": false,
+  "local_qwen_inference_executed": false,
+  "provider_readiness_live_call_executed": false,
+  "schema_version": "xss-v13-1-amendment-readiness-v1-validation",
+  "scored_experiment_executed": false,
+  "valid": true
+}

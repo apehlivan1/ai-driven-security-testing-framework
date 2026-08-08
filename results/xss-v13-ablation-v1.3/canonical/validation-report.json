@@ -1,0 +1,36 @@
+{
+  "case_rows_by_arm": {
+    "deterministic_structural": 80,
+    "local_qwen": 375,
+    "proprietary_gpt": 380
+  },
+  "classification_counts": {
+    "FN": 0,
+    "FP": 0,
+    "TN": 714,
+    "TP": 121
+  },
+  "denominators": {
+    "actual": {
+      "deterministic_structural": 24,
+      "local_qwen": 120,
+      "proprietary_gpt": 120
+    },
+    "expected": {
+      "deterministic_structural": 24,
+      "local_qwen": 120,
+      "proprietary_gpt": 120
+    },
+    "total": 264
+  },
+  "errors": [],
+  "gemma_activated": false,
+  "ground_truth_used_phase": "post_run_scoring_only",
+  "no_silent_retries": true,
+  "protocol_tag": "evaluation-protocol-v1.3",
+  "provider_failure_handling": "provider-failed or malformed ranking rows are retained and excluded from valid ranking-performance aggregates",
+  "schema_version": "xss-v13-ablation-validation-v1",
+  "source_run_dir": "results/xss-v13-ablation-v1.3/xss-v13-ablation-20260807T081244Z",
+  "v1_2_substitution_used": false,
+  "valid": true
+}
