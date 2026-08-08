@@ -394,8 +394,14 @@ Final corrected XSS v1.3.1 ablation package:
   `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.csv`
 - Measurement summary:
   `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/measurement-summary.json`
+- Timing summary:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-summary.csv`
+- Per-scenario/per-trial timing:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-trials.csv`
 - Thesis tables:
   `results/xss-v13-ablation-v1.3.1-final/canonical/tables/`
+- Timing appendix:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/tables/timing-appendix.md`
 - Figures and source data:
   `results/xss-v13-ablation-v1.3.1-final/canonical/figures/`
 - Checksums:
@@ -408,6 +414,13 @@ completion timestamp retention. It produced 24 deterministic rows, 120
 proprietary GPT rows and 120 local Qwen rows. The GPT arm had 116 valid
 rankings, 4 schema-invalid rankings and 0 provider failures. The Qwen arm had
 120 valid rankings. No Gemma contingency was activated.
+
+The timing appendix is derived only from retained v1.3.1 timestamps, scenario
+summaries, action results and finding records. Negative scenarios and trials
+without verifier-confirmed findings use `not_applicable`, repeated LLM trials
+remain model trials rather than independent scenarios, and cost-per-finding
+remains `not_available` because no frozen numeric USD pricing basis was
+recorded.
 
 The package should be cited for the final XSS ablation discussion. The raw
 source run is preserved separately and should remain local unless a deliberate

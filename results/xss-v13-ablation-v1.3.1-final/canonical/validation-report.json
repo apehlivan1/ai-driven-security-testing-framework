@@ -135,6 +135,28 @@
         "hits": []
       },
       "passed": true
+    },
+    {
+      "check": "timing_trial_rows_264",
+      "details": {
+        "actual": 264
+      },
+      "passed": true
+    },
+    {
+      "check": "timing_summary_valid_scope_arm_count_3",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "timing_negative_verified_rows_zero",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "timing_cost_per_finding_remains_not_available_for_model_arms",
+      "details": {},
+      "passed": true
     }
   ],
   "errors": [],

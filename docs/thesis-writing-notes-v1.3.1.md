@@ -72,8 +72,19 @@ Efficiency:
 
 - Time to first verifier-confirmed finding: 8858 ms.
 - Requests to first verifier-confirmed finding: 3.
+- Candidates tested before first verifier-confirmed finding: 1.
+- Valid-row median time to first verifier-confirmed finding:
+  deterministic structural 1140 ms, proprietary GPT 354.5 ms, local Qwen
+  323 ms.
+- Valid-row median requests to first verifier-confirmed finding:
+  deterministic structural 6, proprietary GPT 4.0, local Qwen 4.
 - Total GPT tokens: 157042.
 - GPT cost: `not_available`.
+
+When discussing timing, state that the comparative timing table is derived from
+retained v1.3.1 timestamps. Provider/model latency is reported separately in
+provider metrics, and cost-per-finding remains `not_available` because no
+frozen numeric USD pricing basis exists.
 
 ## Where Each Claim Comes From
 

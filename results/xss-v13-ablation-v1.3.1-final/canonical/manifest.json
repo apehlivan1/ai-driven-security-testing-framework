@@ -24,9 +24,15 @@
     "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranking-trials.json",
     "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.csv",
     "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-summary.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-summary.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-trials.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/timing-trials.json",
     "results/xss-v13-ablation-v1.3.1-final/canonical/report.md",
     "results/xss-v13-ablation-v1.3.1-final/canonical/tables/thesis-tables.md",
     "results/xss-v13-ablation-v1.3.1-final/canonical/tables/thesis-tables.tex",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/tables/timing-appendix.md",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/tables/timing-appendix.tex",
     "results/xss-v13-ablation-v1.3.1-final/canonical/validation-report.json"
   ],
   "case_row_count": 841,
@@ -47,5 +53,10 @@
   "scenario_count": 24,
   "schema_version": "xss-v13-1-canonical-package-v1",
   "source_run_dir": "results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-20260808T103409Z",
+  "timing_cleanup": {
+    "cost_per_finding": "not_available for model arms; no frozen numeric USD pricing basis",
+    "no_file_modification_times_used": true,
+    "source": "retained v1.3.1 timestamps only"
+  },
   "vulnerable_scenario_count": 16
 }

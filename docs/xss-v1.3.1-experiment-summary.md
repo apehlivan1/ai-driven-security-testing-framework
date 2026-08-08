@@ -92,6 +92,7 @@ The negative-scenario false-positive rate is 0.0 for all three arms.
 | --- | ---: |
 | Time to first verifier-confirmed finding, ms | 8858 |
 | Requests to first verifier-confirmed finding | 3 |
+| Candidates tested before first verifier-confirmed finding | 1 |
 | Total action requests | 1683 |
 | Browser navigations | 1682 |
 | HTTP requests | 1 |
@@ -100,9 +101,21 @@ The negative-scenario false-positive rate is 0.0 for all three arms.
 | GPT total tokens | 157042 |
 
 `verification_completed_at` is retained for all 841 verifier results, so the
-time-to-first-verified-finding metric is now available. Candidate count to first
-verification remains `not_available` in the global measurement summary because
-the retained aggregate does not expose enough ordering data for that field.
+time-to-first-verified-finding metric is now available. The final canonical
+package also includes per-arm and per-scenario/per-trial timing tables derived
+from retained timestamps, scenario summaries and action results. Negative
+scenarios and trials with no verifier-confirmed finding use `not_applicable`.
+
+Valid-row comparative timing:
+
+| Arm | Verified trials | Median ms | Mean ms | Median requests | Median candidates |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Deterministic structural | 11 | 1140 | 1004.818 | 6 | 3 |
+| Proprietary GPT | 56 | 354.5 | 511.268 | 4.0 | 2.0 |
+| Local Qwen | 55 | 323 | 345.618 | 4 | 2 |
+
+For LLM arms, model/provider latency is reported separately in provider
+metrics and is not silently folded into the timestamp-derived timing table.
 
 GPT cost is `not_available` because no numeric USD cost artifact was retained.
 Local Qwen cost is also `not_available`; provider cost is not applicable for the
