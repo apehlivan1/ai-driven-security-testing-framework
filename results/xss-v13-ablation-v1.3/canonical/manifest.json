@@ -1,0 +1,28 @@
+{
+  "analysis_report": "analysis-report.md",
+  "arm_ids": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "case_row_count": 835,
+  "figure_outputs": [
+    "figures/valid-ranking-rows.png",
+    "figures/valid-ranking-rows.pdf",
+    "figures/valid-ranking-rows.csv",
+    "figures/valid-ranking-rows.json"
+  ],
+  "ground_truth_used_phase": "post_run_scoring_only",
+  "normalized_tables": [
+    "case-results.csv",
+    "ranking-trials.csv",
+    "ranked-candidates.csv",
+    "arm-level-metrics.csv",
+    "provider-metrics.csv"
+  ],
+  "protocol_tag": "evaluation-protocol-v1.3",
+  "scenario_count": 24,
+  "schema_version": "xss-v13-ablation-canonical-package-v1",
+  "source_run_dir": "results/xss-v13-ablation-v1.3/xss-v13-ablation-20260807T081244Z",
+  "validation_report": "validation-report.json"
+}

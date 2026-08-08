@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "arm_id": "deterministic_structural",
+      "valid_ranking_rows": 24
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "valid_ranking_rows": 0
+    },
+    {
+      "arm_id": "local_qwen",
+      "valid_ranking_rows": 120
+    }
+  ]
+}

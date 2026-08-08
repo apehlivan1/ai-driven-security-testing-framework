@@ -1,0 +1,15 @@
+% XSS v1.3 ablation thesis table. Descriptive results only.
+\begin{table}[ht]
+\centering
+\caption{XSS v1.3 ablation ranking-arm summary}
+\label{tab:xss-v13-ablation-summary}
+\begin{tabular}{lrrrrrr}
+\hline
+Arm & Rows & Valid & Failed & Top-1 & Top-k & MRR \\
+\hline
+deterministic\_structural & 24 & 24 & 0 & 0.250 & 0.688 & 0.439 \
+proprietary\_gpt & 120 & 0 & 120 & n/a & n/a & n/a \
+local\_qwen & 120 & 120 & 0 & 0.312 & 0.688 & 0.496 \
+\hline
+\end{tabular}
+\end{table}
