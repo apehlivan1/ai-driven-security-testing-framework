@@ -1,0 +1,10 @@
+{
+  "base_protocol_tag": "evaluation-protocol-v1.3",
+  "created_at": "2026-08-08T09:03:03.179941+00:00",
+  "draft_protocol": "docs/evaluation-protocol-v1.3.1.md",
+  "provider_connectivity_readiness": "provider-connectivity-readiness.json",
+  "schema_version": "xss-v13-1-amendment-readiness-v1",
+  "status": "draft_amendment_readiness_only_no_scored_execution",
+  "timestamp_metric_dry_validation": "timestamp-metric-dry-validation.json",
+  "validation_report": "validation-report.json"
+}

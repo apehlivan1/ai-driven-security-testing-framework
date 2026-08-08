@@ -1,0 +1,78 @@
+{
+  "artifact": {
+    "candidate_input": [
+      {
+        "action_path": "/provider-connectivity-readiness-v1.3.1/action-a",
+        "candidate_id": "provider-readiness:candidate-a",
+        "editable_input_count": 1,
+        "input_type": "text",
+        "method": "GET",
+        "parameter_count": 1,
+        "parameter_name": "alpha",
+        "required_input_count": 0,
+        "source": "synthetic_readiness"
+      },
+      {
+        "action_path": "/provider-connectivity-readiness-v1.3.1/action-b",
+        "candidate_id": "provider-readiness:candidate-b",
+        "editable_input_count": 1,
+        "input_type": "text",
+        "method": "GET",
+        "parameter_count": 1,
+        "parameter_name": "beta",
+        "required_input_count": 0,
+        "source": "synthetic_readiness"
+      }
+    ],
+    "cost": null,
+    "latency_ms": null,
+    "model_identifier": "gpt-5.6-luna",
+    "model_settings": {
+      "max_output_tokens": 1200,
+      "non_scored_readiness": true,
+      "provider_default_temperature_used": true,
+      "temperature_parameter": "omitted"
+    },
+    "parsed_ranking": [
+      "provider-readiness:candidate-a",
+      "provider-readiness:candidate-b"
+    ],
+    "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/provider-connectivity-readiness-v1.3.1/action-a\",\n    \"candidate_id\": \"provider-readiness:candidate-a\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"alpha\",\n    \"required_input_count\": 0,\n    \"source\": \"synthetic_readiness\"\n  },\n  {\n    \"action_path\": \"/provider-connectivity-readiness-v1.3.1/action-b\",\n    \"candidate_id\": \"provider-readiness:candidate-b\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"beta\",\n    \"required_input_count\": 0,\n    \"source\": \"synthetic_readiness\"\n  }\n]",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": null,
+    "provider_failed": false,
+    "provider_metadata": null,
+    "rationales": {
+      "provider-readiness:candidate-a": "Fake model ranking for deterministic plumbing validation.",
+      "provider-readiness:candidate-b": "Fake model ranking for deterministic plumbing validation."
+    },
+    "raw_response": "{\"ranking\": [{\"candidate_id\": \"provider-readiness:candidate-a\", \"rationale\": \"Fake model ranking for deterministic plumbing validation.\"}, {\"candidate_id\": \"provider-readiness:candidate-b\", \"rationale\": \"Fake model ranking for deterministic plumbing validation.\"}]}",
+    "scenario_id": "provider-connectivity-readiness-v1.3.1",
+    "timestamp": "2026-08-08T09:03:03.179761+00:00",
+    "trial_number": 0,
+    "usage": {
+      "completion_tokens": 12,
+      "prompt_tokens": 93
+    },
+    "validation_errors": []
+  },
+  "candidate_count": 2,
+  "cost_present": false,
+  "execution_mode": "fake_offline_validation",
+  "held_out_scenario_used": false,
+  "latency_ms": "not_available",
+  "live_provider_call_executed": false,
+  "model_identifier": "gpt-5.6-luna",
+  "parsed_candidate_count": 2,
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": null,
+  "provider_failed": false,
+  "raw_response_present": true,
+  "scenario_id": "provider-connectivity-readiness-v1.3.1",
+  "schema_version": "xss-v13-1-provider-connectivity-readiness-v1",
+  "scored_observation_created": false,
+  "status": "non_scored_provider_connectivity_readiness",
+  "usage_present": true,
+  "valid": true,
+  "validation_errors": []
+}

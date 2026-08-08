@@ -35,7 +35,7 @@ from adstf.discovery import (
 from adstf.dev_benchmark_xss import _test_candidate
 from adstf.execution import HttpExecutor
 from adstf.lifecycle import new_id
-from adstf.llm_ranking import CommandModelClient, LLMRankingResult, ModelClient, rank_candidates_with_model, ranking_result_artifact
+from adstf.llm_ranking import CommandModelClient, FakeModelClient, LLMRankingResult, ModelClient, rank_candidates_with_model, ranking_result_artifact
 from adstf.local_runtime import MODEL_ARTIFACTS, MODEL_ROOT, RUNTIME_ROOT, LlamaCppCliClient, sha256_file as runtime_sha256_file
 from adstf.local_runtime_output_boundary import transport_settings
 from adstf.local_runtime_readiness import readiness_json_schema
@@ -65,6 +65,7 @@ SNAPSHOT_PACKAGE_DIR = REPO_ROOT / "results" / "xss-v13-protocol-prep"
 SNAPSHOT_DIR = SNAPSHOT_PACKAGE_DIR / "candidate-snapshots"
 SNAPSHOT_CHECKSUMS_PATH = SNAPSHOT_PACKAGE_DIR / "checksums.sha256"
 DEFAULT_READINESS_DIR = REPO_ROOT / "results" / "xss-v13-ablation-harness-readiness"
+DEFAULT_AMENDMENT_READINESS_DIR = REPO_ROOT / "results" / "xss-v13-1-amendment-readiness"
 FINAL_PACKAGE_DIR = REPO_ROOT / "results" / "xss-v13-ablation-v1.3"
 LLAMA_COMPLETION_EXE = RUNTIME_ROOT / "cpu-x64" / "llama-completion.exe"
 DETERMINISTIC_TRIALS = 1
@@ -93,6 +94,8 @@ PROTECTED_OUTPUT_DIRS = {
     (REPO_ROOT / "results" / "local-model-calibration-bakeoff-v1.3").resolve(),
 }
 GROUND_TRUTH_PATH = REPO_ROOT / "examples" / "benchmarks" / "xss-v13-ground-truth.json"
+PROVIDER_CONNECTIVITY_SCENARIO_ID = "provider-connectivity-readiness-v1.3.1"
+AMENDMENT_READINESS_VERSION = "xss-v13-1-amendment-readiness-v1"
 
 
 class HarnessReadinessError(RuntimeError):
@@ -256,6 +259,153 @@ def create_local_qwen_client(schema_path: Path) -> LlamaCppCliClient:
         threads=8,
         json_schema_path=schema_path,
     )
+
+
+def provider_connectivity_readiness(
+    *,
+    model_client: ModelClient | None = None,
+    env: Mapping[str, str | None] | None = None,
+    output_dir: Path | None = None,
+) -> dict[str, Any]:
+    live_provider_call_executed = model_client is None
+    if model_client is None:
+        model_client = create_proprietary_gpt_client(env)
+    candidates = _provider_readiness_candidates()
+    result = rank_candidates_with_model(
+        candidates=candidates,
+        scenario_id=PROVIDER_CONNECTIVITY_SCENARIO_ID,
+        trial_number=0,
+        model_client=model_client,
+        settings={
+            "temperature_parameter": "omitted",
+            "provider_default_temperature_used": True,
+            "max_output_tokens": 1200,
+            "non_scored_readiness": True,
+        },
+    )
+    report = {
+        "schema_version": "xss-v13-1-provider-connectivity-readiness-v1",
+        "status": "non_scored_provider_connectivity_readiness",
+        "execution_mode": "live_provider_connectivity" if live_provider_call_executed else "fake_offline_validation",
+        "live_provider_call_executed": live_provider_call_executed,
+        "held_out_scenario_used": False,
+        "scored_observation_created": False,
+        "scenario_id": PROVIDER_CONNECTIVITY_SCENARIO_ID,
+        "model_identifier": result.model_identifier,
+        "prompt_version": result.prompt_version,
+        "provider": result.provider,
+        "provider_failed": result.provider_failed,
+        "validation_errors": result.validation_errors,
+        "raw_response_present": result.raw_response is not None,
+        "usage_present": result.usage is not None,
+        "cost_present": result.cost is not None,
+        "latency_ms": result.latency_ms if result.latency_ms is not None else NOT_AVAILABLE,
+        "candidate_count": len(candidates),
+        "parsed_candidate_count": len(result.ordered_candidate_ids),
+        "valid": result.is_valid,
+        "artifact": ranking_result_artifact(result),
+    }
+    if output_dir is not None:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(output_dir / "provider-connectivity-readiness.json", report)
+    return report
+
+
+def build_amendment_readiness_package(output_dir: Path = DEFAULT_AMENDMENT_READINESS_DIR) -> dict[str, Any]:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    provider_readiness = provider_connectivity_readiness(
+        model_client=FakeModelClient(model_identifier=PROPRIETARY_MODEL_IDENTIFIER),
+    )
+    timestamp_validation = timestamp_metric_dry_validation()
+    validation = {
+        "schema_version": f"{AMENDMENT_READINESS_VERSION}-validation",
+        "valid": provider_readiness["valid"] and timestamp_validation["valid"],
+        "provider_readiness_live_call_executed": False,
+        "scored_experiment_executed": False,
+        "browser_verification_executed": False,
+        "local_qwen_inference_executed": False,
+        "ground_truth_loaded": False,
+        "errors": [
+            *([] if provider_readiness["valid"] else ["fake provider readiness failed"]),
+            *timestamp_validation["errors"],
+        ],
+    }
+    manifest = {
+        "schema_version": AMENDMENT_READINESS_VERSION,
+        "status": "draft_amendment_readiness_only_no_scored_execution",
+        "created_at": datetime.now(UTC).isoformat(),
+        "base_protocol_tag": PROTOCOL_TAG,
+        "draft_protocol": "docs/evaluation-protocol-v1.3.1.md",
+        "provider_connectivity_readiness": "provider-connectivity-readiness.json",
+        "timestamp_metric_dry_validation": "timestamp-metric-dry-validation.json",
+        "validation_report": "validation-report.json",
+    }
+    _write_json(output_dir / "manifest.json", manifest)
+    _write_json(output_dir / "provider-connectivity-readiness.json", provider_readiness)
+    _write_json(output_dir / "timestamp-metric-dry-validation.json", timestamp_validation)
+    _write_json(output_dir / "validation-report.json", validation)
+    _write_text(output_dir / "report.md", render_amendment_readiness_report(validation, provider_readiness, timestamp_validation))
+    _write_text(output_dir / "thesis-readiness-table.md", render_amendment_readiness_table(validation, provider_readiness, timestamp_validation))
+    checksum_paths = [path for path in sorted(output_dir.rglob("*")) if path.is_file() and path.name != "checksums.sha256"]
+    _write_text(output_dir / "checksums.sha256", render_checksums(checksum_paths))
+    return {
+        "manifest": manifest,
+        "provider_readiness": provider_readiness,
+        "timestamp_validation": timestamp_validation,
+        "validation": validation,
+    }
+
+
+def timestamp_metric_dry_validation() -> dict[str, Any]:
+    measurements = derive_measurements(
+        action_requests=[
+            {
+                "action_id": "action-1",
+                "action_type": "observe_browser",
+                "scope_context": {"candidate_id": "candidate-a"},
+                "parameters": {},
+            }
+        ],
+        action_results=[
+            {
+                "action_id": "action-1",
+                "status": "executed",
+                "started_at": "2026-08-08T10:00:00+00:00",
+                "completed_at": "2026-08-08T10:00:02+00:00",
+                "normalized_observations": {"browser_navigation_count": 1, "candidate_id": "candidate-a"},
+            }
+        ],
+        findings=[
+            {
+                "state": "verified",
+                "report_fields": {"verification_completed_at": "2026-08-08T10:00:03+00:00"},
+            }
+        ],
+        verifier_results=[{"outcome": "verified", "completed_at": "2026-08-08T10:00:03+00:00"}],
+        candidate_based=True,
+    )
+    first = measurements["first_verified_finding"]
+    expected = {
+        "timestamp": "2026-08-08T10:00:03+00:00",
+        "time_to_first_verified_finding_ms": 3000,
+        "requests_to_first_verified_finding": 1,
+        "candidates_tested_before_first_verification": 1,
+    }
+    errors = [
+        key
+        for key, expected_value in expected.items()
+        if first.get(key) != expected_value
+    ]
+    return {
+        "schema_version": "xss-v13-1-timestamp-metric-dry-validation-v1",
+        "valid": not errors,
+        "errors": errors,
+        "clock_source": "timezone-aware UTC datetime captured by the deterministic verifier at completion",
+        "timestamp_field": "FindingRecord.report_fields.verification_completed_at",
+        "file_time_reconstruction_used": False,
+        "measurements": measurements,
+        "expected_first_verified_finding": expected,
+    }
 
 
 def run_measured_xss_v13_ablation(
@@ -645,6 +795,71 @@ def _path_from_target(target_ref: str | None) -> str:
     from urllib.parse import urlparse
 
     return urlparse(target_ref).path
+
+
+def _provider_readiness_candidates() -> list[ReflectedInputCandidate]:
+    base_url = "http://127.0.0.1/provider-connectivity-readiness-v1.3.1"
+    return [
+        ReflectedInputCandidate(
+            candidate_id="provider-readiness:candidate-a",
+            page_url=f"{base_url}/page-a",
+            action_url=f"{base_url}/action-a",
+            method="GET",
+            parameter_name="alpha",
+            source="synthetic_readiness",
+            input_type="text",
+            editable_input_count=1,
+            required_input_count=0,
+            parameter_count=1,
+        ),
+        ReflectedInputCandidate(
+            candidate_id="provider-readiness:candidate-b",
+            page_url=f"{base_url}/page-b",
+            action_url=f"{base_url}/action-b",
+            method="GET",
+            parameter_name="beta",
+            source="synthetic_readiness",
+            input_type="text",
+            editable_input_count=1,
+            required_input_count=0,
+            parameter_count=1,
+        ),
+    ]
+
+
+def render_amendment_readiness_report(
+    validation: dict[str, Any],
+    provider_readiness: dict[str, Any],
+    timestamp_validation: dict[str, Any],
+) -> str:
+    return (
+        "# XSS v1.3.1 Amendment Readiness\n\n"
+        "Status: draft amendment readiness only. No scored experiment, live provider call, "
+        "local-model inference, browser verification, or ground-truth scoring was executed.\n\n"
+        f"- Validation valid: `{validation['valid']}`\n"
+        f"- Fake provider readiness valid: `{provider_readiness['valid']}`\n"
+        f"- Timestamp metric dry validation valid: `{timestamp_validation['valid']}`\n"
+        f"- Timestamp source: `{timestamp_validation['timestamp_field']}`\n"
+        f"- File-time reconstruction used: `{timestamp_validation['file_time_reconstruction_used']}`\n"
+        f"- Scored experiment executed: `{validation['scored_experiment_executed']}`\n"
+    )
+
+
+def render_amendment_readiness_table(
+    validation: dict[str, Any],
+    provider_readiness: dict[str, Any],
+    timestamp_validation: dict[str, Any],
+) -> str:
+    return (
+        "# XSS v1.3.1 Amendment Readiness Table\n\n"
+        "| Check | Result |\n"
+        "| --- | --- |\n"
+        f"| Overall validation | `{validation['valid']}` |\n"
+        f"| Provider readiness mechanism | `{provider_readiness['valid']}` |\n"
+        f"| Timestamp metric fixture | `{timestamp_validation['valid']}` |\n"
+        f"| Live provider call executed | `{validation['provider_readiness_live_call_executed']}` |\n"
+        f"| Scored experiment executed | `{validation['scored_experiment_executed']}` |\n"
+    )
 
 
 def deterministic_rank_snapshot(snapshot: dict[str, Any], base_url: str) -> list[str]:
@@ -1073,6 +1288,11 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="command", required=True)
     dry = subparsers.add_parser("dry-run", help="Generate a non-scored harness-readiness package.")
     dry.add_argument("--output-dir", type=Path, default=DEFAULT_READINESS_DIR)
+    amendment = subparsers.add_parser("amendment-readiness", help="Generate a non-scored v1.3.1 amendment-readiness package.")
+    amendment.add_argument("--output-dir", type=Path, default=DEFAULT_AMENDMENT_READINESS_DIR)
+    provider = subparsers.add_parser("provider-readiness", help="Run a non-scored proprietary-provider connectivity readiness check.")
+    provider.add_argument("--output-dir", type=Path, default=DEFAULT_AMENDMENT_READINESS_DIR)
+    provider.add_argument("--fake", action="store_true", help="Use the fake model client for offline validation.")
     preflight = subparsers.add_parser("preflight", help="Run read-only measured-execution preflight checks.")
     preflight.add_argument("--output-dir", type=Path, default=FINAL_PACKAGE_DIR)
     execute = subparsers.add_parser("execute", help="Run the frozen measured v1.3 XSS ablation study.")
@@ -1084,6 +1304,17 @@ def main() -> None:
         if not package["validation"]["valid"]:
             raise SystemExit("xss v1.3 harness dry-run validation failed")
         print(f"XSS v1.3 harness readiness artifacts written to: {args.output_dir}")
+    elif args.command == "amendment-readiness":
+        package = build_amendment_readiness_package(args.output_dir)
+        if not package["validation"]["valid"]:
+            raise SystemExit("xss v1.3.1 amendment readiness validation failed")
+        print(f"XSS v1.3.1 amendment readiness artifacts written to: {args.output_dir}")
+    elif args.command == "provider-readiness":
+        client = FakeModelClient(model_identifier=PROPRIETARY_MODEL_IDENTIFIER) if args.fake else None
+        report = provider_connectivity_readiness(model_client=client, output_dir=args.output_dir)
+        print(json.dumps(to_json_value(report), indent=2, sort_keys=True))
+        if not report["valid"]:
+            raise SystemExit(1)
     elif args.command == "preflight":
         report = preflight_check(measured_execution=True, output_dir=args.output_dir)
         print(json.dumps(to_json_value(report), indent=2, sort_keys=True))

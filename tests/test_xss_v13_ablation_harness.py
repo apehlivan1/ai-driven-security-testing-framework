@@ -16,17 +16,21 @@ from adstf.xss_v13_ablation_harness import (
     LLM_TRIALS,
     PROPRIETARY_MODEL_IDENTIFIER,
     PROTECTED_OUTPUT_DIRS,
+    build_amendment_readiness_package,
     build_execution_schedule,
     build_harness_readiness_package,
     create_proprietary_gpt_client,
     load_frozen_snapshots,
     measurement_template_summary,
     preflight_check,
+    provider_connectivity_readiness,
     score_post_run_cases,
     summarize_schedule,
+    timestamp_metric_dry_validation,
     validate_harness_readiness,
     validate_snapshot_package,
 )
+from adstf.llm_ranking import FakeModelClient
 from adstf.xss_v13_protocol_prep import ARM_IDS, LOCAL_CONTINGENCY_MODEL_ID, LOCAL_PRIMARY_MODEL_ID
 
 
@@ -200,6 +204,52 @@ class XssV13AblationHarnessTests(unittest.TestCase):
 
         self.assertFalse(hasattr(harness, "discover_reflected_input_candidates"))
         self.assertEqual(harness.DEFAULT_READINESS_DIR, DEFAULT_READINESS_DIR)
+
+    def test_provider_connectivity_readiness_uses_non_scored_synthetic_candidates(self) -> None:
+        report = provider_connectivity_readiness(
+            model_client=FakeModelClient(model_identifier=PROPRIETARY_MODEL_IDENTIFIER)
+        )
+
+        self.assertTrue(report["valid"], report["validation_errors"])
+        self.assertFalse(report["held_out_scenario_used"])
+        self.assertFalse(report["scored_observation_created"])
+        self.assertFalse(report["live_provider_call_executed"])
+        self.assertEqual(report["execution_mode"], "fake_offline_validation")
+        self.assertEqual(report["scenario_id"], "provider-connectivity-readiness-v1.3.1")
+        self.assertEqual(report["model_identifier"], PROPRIETARY_MODEL_IDENTIFIER)
+        self.assertEqual(report["candidate_count"], 2)
+
+    def test_provider_connectivity_readiness_records_provider_failure(self) -> None:
+        report = provider_connectivity_readiness(
+            model_client=FakeModelClient(model_identifier=PROPRIETARY_MODEL_IDENTIFIER, strategy="provider_failure")
+        )
+
+        self.assertFalse(report["valid"])
+        self.assertTrue(report["provider_failed"])
+        self.assertIn("fake provider failure", " ".join(report["validation_errors"]))
+
+    def test_timestamp_metric_dry_validation_is_deterministic(self) -> None:
+        report = timestamp_metric_dry_validation()
+
+        self.assertTrue(report["valid"], report["errors"])
+        first = report["measurements"]["first_verified_finding"]
+        self.assertEqual(first["timestamp"], "2026-08-08T10:00:03+00:00")
+        self.assertEqual(first["time_to_first_verified_finding_ms"], 3000)
+        self.assertFalse(report["file_time_reconstruction_used"])
+
+    def test_amendment_readiness_package_is_non_scored(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "amendment"
+            package = build_amendment_readiness_package(output)
+
+            self.assertTrue(package["validation"]["valid"], package["validation"]["errors"])
+            self.assertFalse(package["validation"]["provider_readiness_live_call_executed"])
+            self.assertFalse(package["validation"]["scored_experiment_executed"])
+            self.assertFalse(package["validation"]["browser_verification_executed"])
+            self.assertTrue((output / "manifest.json").exists())
+            self.assertTrue((output / "provider-connectivity-readiness.json").exists())
+            self.assertTrue((output / "timestamp-metric-dry-validation.json").exists())
+            self.assertTrue((output / "checksums.sha256").exists())
 
 
 if __name__ == "__main__":

@@ -151,3 +151,4 @@ class VerifierResult:
     reproduction_status: str
     rationale: str
     limitations: list[str]
+    completed_at: str | None = None

@@ -285,6 +285,60 @@ does not call the OpenAI API, does not run local-model inference, does not
 execute browser vulnerability verification, does not run ZAP, and does not load
 ground truth.
 
+Final XSS v1.3 ablation result package:
+
+- Path: `results/xss-v13-ablation-v1.3/`
+- Source run:
+  `results/xss-v13-ablation-v1.3/xss-v13-ablation-20260807T081244Z/`
+- Canonical package: `results/xss-v13-ablation-v1.3/canonical/`
+- Manifest: `results/xss-v13-ablation-v1.3/canonical/manifest.json`
+- Validation report:
+  `results/xss-v13-ablation-v1.3/canonical/validation-report.json`
+- Analysis report:
+  `results/xss-v13-ablation-v1.3/canonical/analysis-report.md`
+- Ranking-trial data:
+  `results/xss-v13-ablation-v1.3/canonical/normalized/ranking-trials.csv`
+- Ranked-candidate data:
+  `results/xss-v13-ablation-v1.3/canonical/normalized/ranked-candidates.csv`
+- Arm-level metrics:
+  `results/xss-v13-ablation-v1.3/canonical/normalized/arm-level-metrics.csv`
+- Provider metrics:
+  `results/xss-v13-ablation-v1.3/canonical/normalized/provider-metrics.csv`
+- Thesis tables:
+  `results/xss-v13-ablation-v1.3/canonical/tables/`
+- Figure outputs:
+  `results/xss-v13-ablation-v1.3/canonical/figures/`
+- Checksums:
+  `results/xss-v13-ablation-v1.3/canonical/checksums.sha256`
+
+This package is the measured final v1.3 reflected-XSS ablation under
+`evaluation-protocol-v1.3`. It compares `deterministic_structural`,
+`proprietary_gpt` and `local_qwen` on the 24 frozen candidate snapshots. The
+package keeps repeated LLM trials separate from independent benchmark cases,
+loads semantic ground truth only for post-run scoring, and records provider
+failures separately from valid ranking-performance aggregates. It does not
+contain ZAP, IDOR or SQLi expansion results.
+
+Draft v1.3.1 recovery amendment and readiness package:
+
+- Draft amendment: `docs/evaluation-protocol-v1.3.1.md`
+- Readiness package: `results/xss-v13-1-amendment-readiness/`
+- Manifest: `results/xss-v13-1-amendment-readiness/manifest.json`
+- Provider-connectivity readiness fixture:
+  `results/xss-v13-1-amendment-readiness/provider-connectivity-readiness.json`
+- Timestamp metric dry validation:
+  `results/xss-v13-1-amendment-readiness/timestamp-metric-dry-validation.json`
+- Validation report:
+  `results/xss-v13-1-amendment-readiness/validation-report.json`
+- Checksums: `results/xss-v13-1-amendment-readiness/checksums.sha256`
+
+This package is amendment-readiness evidence only. It does not run scored
+experiments, live provider calls, local Qwen inference, browser verification or
+ground-truth scoring. It documents the v1.3 GPT infrastructure failure,
+validates the non-scored provider-readiness mechanism with a fake provider, and
+dry-validates that the existing time-to-first-verifier-confirmed-finding metric
+can be derived once verifier completion timestamps are retained.
+
 Planned v1.3 result package layout:
 
 ```text

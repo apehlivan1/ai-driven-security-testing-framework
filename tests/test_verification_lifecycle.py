@@ -78,8 +78,10 @@ class VerificationLifecycleTests(unittest.TestCase):
         updated = apply_verifier_result(requested, result)
 
         self.assertEqual(result.outcome, VerificationOutcome.VERIFIED)
+        self.assertIsNotNone(result.completed_at)
         self.assertEqual(updated.state, FindingState.VERIFIED)
         self.assertEqual(updated.verification_result_ref, result.verification_result_id)
+        self.assertEqual(updated.report_fields["verification_completed_at"], result.completed_at)
 
     def test_inconclusive_when_control_case_is_missing(self) -> None:
         records = [

@@ -24,10 +24,15 @@ def apply_verifier_result(finding: FindingRecord, result: VerifierResult) -> Fin
         VerificationOutcome.INCONCLUSIVE: FindingState.INCONCLUSIVE,
     }[result.outcome]
 
+    report_fields = dict(finding.report_fields)
+    if result.completed_at:
+        report_fields.setdefault("verification_completed_at", result.completed_at)
+
     return replace(
         finding,
         state=next_state,
         verification_result_ref=result.verification_result_id,
+        report_fields=report_fields,
     )
 
 

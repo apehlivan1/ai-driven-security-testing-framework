@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import UTC, datetime
+
 from adstf.contracts import (
     EvidenceRecord,
     EvidenceType,
@@ -85,6 +87,7 @@ class FindingVerifier:
                 reproduction_status="not_reproduced",
                 rationale="Evidence contradicts the suspected vulnerability.",
                 limitations=[],
+                completed_at=_utc_now(),
             )
 
         if criteria_missing:
@@ -103,6 +106,7 @@ class FindingVerifier:
             reproduction_status="reproduced",
             rationale="Required evidence and control cases satisfy the module criteria.",
             limitations=[],
+            completed_at=_utc_now(),
         )
 
     def _inconclusive(
@@ -125,4 +129,9 @@ class FindingVerifier:
             reproduction_status="not_determined",
             rationale="Verification criteria were not fully satisfied.",
             limitations=["missing or insufficient evidence"],
+            completed_at=_utc_now(),
         )
+
+
+def _utc_now() -> str:
+    return datetime.now(UTC).isoformat()
