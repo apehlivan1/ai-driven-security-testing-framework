@@ -223,3 +223,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ignore raw execution directories
+results/xss-v13-ablation-v1.3/xss-v13-ablation-*/
