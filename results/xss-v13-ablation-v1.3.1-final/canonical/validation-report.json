@@ -1,0 +1,145 @@
+{
+  "base_protocol_tag": "evaluation-protocol-v1.3",
+  "checks": [
+    {
+      "check": "ranking_denominator_deterministic_structural_24",
+      "details": {
+        "actual": 24
+      },
+      "passed": true
+    },
+    {
+      "check": "ranking_denominator_proprietary_gpt_120",
+      "details": {
+        "actual": 120
+      },
+      "passed": true
+    },
+    {
+      "check": "ranking_denominator_local_qwen_120",
+      "details": {
+        "actual": 120
+      },
+      "passed": true
+    },
+    {
+      "check": "ranking_denominator_total_264",
+      "details": {
+        "actual": 264
+      },
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_count_24",
+      "details": {
+        "actual": 24
+      },
+      "passed": true
+    },
+    {
+      "check": "preflight_valid",
+      "details": {
+        "preflight_errors": []
+      },
+      "passed": true
+    },
+    {
+      "check": "snapshot_checksums_valid",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "snapshot_ground_truth_free",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "ground_truth_not_loaded_during_preflight",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "model_candidate_inputs_equal_snapshots",
+      "details": {
+        "errors": []
+      },
+      "passed": true
+    },
+    {
+      "check": "summary_budget_and_topk_match_snapshots",
+      "details": {
+        "errors": []
+      },
+      "passed": true
+    },
+    {
+      "check": "qwen_runtime_hash_matches",
+      "details": {
+        "runtime_path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-runtimes\\llama.cpp-b9637\\cpu-x64\\llama-completion.exe"
+      },
+      "passed": true
+    },
+    {
+      "check": "qwen_model_hashes_match",
+      "details": {
+        "files": [
+          {
+            "exists": true,
+            "file": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+            "matches": true
+          },
+          {
+            "exists": true,
+            "file": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+            "matches": true
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "gemma_not_activated",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "verification_completed_at_available_for_all_verifier_results",
+      "details": {
+        "completed_at_count": 841,
+        "verification_count": 841
+      },
+      "passed": true
+    },
+    {
+      "check": "proprietary_gpt_provider_failures_zero",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "proprietary_gpt_schema_invalid_four",
+      "details": {
+        "actual": 4
+      },
+      "passed": true
+    },
+    {
+      "check": "local_qwen_valid_120",
+      "details": {
+        "actual": 120
+      },
+      "passed": true
+    },
+    {
+      "check": "no_credential_markers_in_canonical_text_artifacts",
+      "details": {
+        "hits": []
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "protocol_tag": "evaluation-protocol-v1.3.1",
+  "schema_version": "xss-v13-1-canonical-validation-v1",
+  "source_run_dir": "results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-20260808T103409Z",
+  "valid": true
+}

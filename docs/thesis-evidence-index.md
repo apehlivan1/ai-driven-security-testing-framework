@@ -1,8 +1,9 @@
 # Thesis Evidence Index
 
 Status: living index for thesis evidence. evaluation-protocol-v1.2 artifacts
-remain frozen historical evidence. v1.3 outputs are planned report structures
-and must not overwrite v1.2 results.
+remain frozen historical evidence. The final corrected v1.3.1 XSS ablation
+package is the current canonical evidence source for the expanded reflected-XSS
+ranking study.
 
 ## Frozen v1.2 Evidence
 
@@ -319,6 +320,11 @@ loads semantic ground truth only for post-run scoring, and records provider
 failures separately from valid ranking-performance aggregates. It does not
 contain ZAP, IDOR or SQLi expansion results.
 
+This package is historical evidence for the initial v1.3 attempt. The GPT arm
+was affected by a local socket-permission infrastructure failure before
+provider access and should not be used as final GPT model-performance evidence.
+Use the corrected v1.3.1 canonical package below for final XSS ablation results.
+
 Frozen v1.3.1 recovery amendment and readiness package:
 
 - Frozen amendment: `docs/evaluation-protocol-v1.3.1.md`
@@ -359,6 +365,53 @@ This artifact records one manually executed, non-scored connectivity check from
 a normal local PowerShell environment. It uses only synthetic readiness
 candidates and does not use a benchmark scenario, load ground truth, run Qwen
 inference, execute browser verification, or create a scored observation.
+
+Final corrected XSS v1.3.1 ablation package:
+
+- Frozen protocol: `docs/evaluation-protocol-v1.3.1.md`
+- Experiment summary: `docs/xss-v1.3.1-experiment-summary.md`
+- Thesis writing notes: `docs/thesis-writing-notes-v1.3.1.md`
+- Experiment history: `docs/experiment-history.md`
+- Source run:
+  `results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-20260808T103409Z/`
+- Canonical package:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/`
+- Manifest:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/manifest.json`
+- Validation report:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/validation-report.json`
+- Human-readable analysis:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/analysis-report.md`
+- Ranking-trial table:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranking-trials.csv`
+- Ranked-candidate table:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranked-candidates.csv`
+- Arm-level metrics:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/arm-level-metrics.csv`
+- Provider metrics:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/provider-metrics.csv`
+- Reliability summary:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.csv`
+- Measurement summary:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/normalized/measurement-summary.json`
+- Thesis tables:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/tables/`
+- Figures and source data:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/figures/`
+- Checksums:
+  `results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256`
+
+This package is the final corrected reflected-XSS ablation evidence under
+`evaluation-protocol-v1.3.1`. It preserves v1.3 as the base protocol while
+using the recovery amendment for provider-connectivity readiness and verifier
+completion timestamp retention. It produced 24 deterministic rows, 120
+proprietary GPT rows and 120 local Qwen rows. The GPT arm had 116 valid
+rankings, 4 schema-invalid rankings and 0 provider failures. The Qwen arm had
+120 valid rankings. No Gemma contingency was activated.
+
+The package should be cited for the final XSS ablation discussion. The raw
+source run is preserved separately and should remain local unless a deliberate
+raw-evidence archival decision is made.
 
 Planned v1.3 result package layout:
 

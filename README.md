@@ -4,7 +4,7 @@ Thesis title: **Design and Evaluation of an AI-Driven Framework for Automated We
 
 This repository is the planning workspace for a master's thesis project focused on designing and evaluating an AI-driven framework for authorized, controlled, black-box security testing of laboratory web applications.
 
-Current status: **minimal Python implementation scaffold with a local DVWA HTTP smoke test, deterministic reflected-XSS vertical slice, limited multi-seed reflected-input discovery, a small local reflected-input development benchmark, a bounded LLM candidate-ranking baseline boundary, a deterministic read-only IDOR vertical slice, a deterministic non-destructive boolean-SQLi vertical slice, a unified MVP development harness, and a minimal OWASP ZAP passive-baseline adapter**. The repository contains core contracts, file-based run artifacts, deterministic safety and verification lifecycle behavior, a mock dry run, a minimal HTTP executor, Playwright-based reflected-XSS integrations, provider-neutral candidate ranking, isolated benchmark-user session support, SQLi response-differential verification, fixture-based passive scanner alert normalization, and unit tests.
+Current status: **implemented research prototype with frozen thesis evidence packages**. The repository contains deterministic discovery, safety, execution, evidence and verifier lifecycle code; bounded candidate ranking by deterministic, proprietary-LLM and local open-weights model arms; representative XSS, read-only IDOR and non-destructive boolean-SQLi modules; development and held-out benchmarks; ZAP passive/active baseline adapters; and reproducible file-based run artifacts. The latest corrected XSS ablation evidence is frozen under `evaluation-protocol-v1.3.1` and compares `deterministic_structural`, `proprietary_gpt` and `local_qwen` on 24 frozen reflected-XSS candidate snapshots.
 
 ## Safety Scope
 
@@ -16,9 +16,29 @@ This project is intended only for ethical, authorized security research in contr
 - [MVP scope and verification](docs/mvp-scope-and-verification.md)
 - [Action and evidence contract](docs/action-and-evidence-contract.md)
 - [Evaluation protocol v1.2](docs/evaluation-protocol-v1.2.md)
+- [Evaluation protocol v1.3](docs/evaluation-protocol-v1.3.md)
+- [Evaluation protocol v1.3.1](docs/evaluation-protocol-v1.3.1.md)
+- [XSS v1.3.1 experiment summary](docs/xss-v1.3.1-experiment-summary.md)
+- [Thesis writing notes v1.3.1](docs/thesis-writing-notes-v1.3.1.md)
+- [Experiment history](docs/experiment-history.md)
+- [Thesis evidence index](docs/thesis-evidence-index.md)
 - [Evaluation protocol v1.1, superseded](docs/evaluation-protocol-v1.1.md)
 - [Evaluation protocol v1, superseded](docs/evaluation-protocol-v1.md)
 - [Open architectural decisions](docs/open-decisions.md)
+
+## Latest Evidence Status
+
+The final corrected XSS ablation package is:
+
+`results/xss-v13-ablation-v1.3.1-final/canonical/`
+
+It preserves the bounded AI architecture: the LLMs only rank existing structured
+candidate IDs, while safety, execution, evidence collection and finding
+confirmation remain deterministic. The package includes normalized JSON/CSV
+results, thesis-ready Markdown and LaTeX tables, figure outputs, provenance,
+checksums and validation reports. The results are valid for the frozen local
+benchmark and should not be interpreted as a general claim of model or scanner
+superiority.
 
 ## Scaffold Decisions
 

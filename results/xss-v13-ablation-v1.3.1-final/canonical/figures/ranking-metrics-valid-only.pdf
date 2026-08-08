@@ -1,0 +1,46 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 866 >>
+stream
+BT /F1 18 Tf 50 760 Td (v1.3.1 XSS ablation ranking metrics - valid ranking rows) Tj ET
+BT /F1 11 Tf 50 730 Td (deterministic_structural: top-1 0.2500, top-k 0.6875, MRR 0.3854) Tj ET
+BT /F1 11 Tf 50 712 Td (proprietary_gpt: top-1 0.2179, top-k 0.7179, MRR 0.4060) Tj ET
+BT /F1 11 Tf 50 694 Td (local_qwen: top-1 0.3125, top-k 0.6875, MRR 0.4427) Tj ET
+BT /F1 10 Tf 80 445 Td (top1_accuracy) Tj ET
+0.239 0.463 0.718 rg 80 470 25 45.00 re f
+0.322 0.627 0.357 rg 115 470 25 39.23 re f
+0.769 0.463 0.231 rg 150 470 25 56.25 re f
+BT /F1 10 Tf 240 445 Td (topk_recall) Tj ET
+0.239 0.463 0.718 rg 240 470 25 123.75 re f
+0.322 0.627 0.357 rg 275 470 25 129.23 re f
+0.769 0.463 0.231 rg 310 470 25 123.75 re f
+BT /F1 10 Tf 400 445 Td (mrr) Tj ET
+0.239 0.463 0.718 rg 400 470 25 69.38 re f
+0.322 0.627 0.357 rg 435 470 25 73.08 re f
+0.769 0.463 0.231 rg 470 470 25 79.69 re f
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+1228
+%%EOF

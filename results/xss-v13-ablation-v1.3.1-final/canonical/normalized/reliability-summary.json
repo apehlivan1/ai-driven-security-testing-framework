@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "arm_id": "deterministic_structural",
+      "attempted_calls": 0,
+      "gemma_activated": false,
+      "provider_failures": "not_applicable",
+      "retries": 0,
+      "runtime_failures": "not_applicable",
+      "schema_invalid_calls": "not_applicable",
+      "timeouts": "not_applicable",
+      "valid_calls": "not_applicable"
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "attempted_calls": 120,
+      "gemma_activated": false,
+      "provider_failures": 0,
+      "retries": 0,
+      "runtime_failures": 0,
+      "schema_invalid_calls": 4,
+      "timeouts": 0,
+      "valid_calls": 116
+    },
+    {
+      "arm_id": "local_qwen",
+      "attempted_calls": 120,
+      "gemma_activated": false,
+      "provider_failures": 0,
+      "retries": 0,
+      "runtime_failures": 0,
+      "schema_invalid_calls": 0,
+      "timeouts": 0,
+      "valid_calls": 120
+    }
+  ]
+}

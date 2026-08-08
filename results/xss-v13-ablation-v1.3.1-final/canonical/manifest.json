@@ -1,0 +1,51 @@
+{
+  "arm_ids": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "base_protocol_tag": "evaluation-protocol-v1.3",
+  "canonical_files": [
+    "results/xss-v13-ablation-v1.3.1-final/canonical/analysis-report.md",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/figures/ranking-metrics-valid-only.pdf",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/figures/ranking-metrics-valid-only.png",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/figures/source-data.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/manifest.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/arm-level-metrics.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/arm-level-metrics.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/case-results.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/case-results.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/measurement-summary.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/provider-metrics.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/provider-metrics.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranked-candidates.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranked-candidates.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranking-trials.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/ranking-trials.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.csv",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/reliability-summary.json",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/report.md",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/tables/thesis-tables.md",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/tables/thesis-tables.tex",
+    "results/xss-v13-ablation-v1.3.1-final/canonical/validation-report.json"
+  ],
+  "case_row_count": 841,
+  "created_at": "2026-08-08T19:03:33.720148+00:00",
+  "gemma_contingency_activated": false,
+  "ground_truth_used_phase": "post_run_scoring_only",
+  "negative_scenario_count": 8,
+  "package_dir": "results/xss-v13-ablation-v1.3.1-final/canonical",
+  "protocol_relationship": "evaluation-protocol-v1.3.1 is a recovery amendment to evaluation-protocol-v1.3",
+  "protocol_tag": "evaluation-protocol-v1.3.1",
+  "ranking_denominators": {
+    "deterministic_structural": 24,
+    "local_qwen": 120,
+    "proprietary_gpt": 120,
+    "total": 264
+  },
+  "raw_run_modified": false,
+  "scenario_count": 24,
+  "schema_version": "xss-v13-1-canonical-package-v1",
+  "source_run_dir": "results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-20260808T103409Z",
+  "vulnerable_scenario_count": 16
+}
