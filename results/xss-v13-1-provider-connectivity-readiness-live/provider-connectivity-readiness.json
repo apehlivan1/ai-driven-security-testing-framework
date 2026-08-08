@@ -1,0 +1,91 @@
+{
+  "artifact": {
+    "candidate_input": [
+      {
+        "action_path": "/provider-connectivity-readiness-v1.3.1/action-a",
+        "candidate_id": "provider-readiness:candidate-a",
+        "editable_input_count": 1,
+        "input_type": "text",
+        "method": "GET",
+        "parameter_count": 1,
+        "parameter_name": "alpha",
+        "required_input_count": 0,
+        "source": "synthetic_readiness"
+      },
+      {
+        "action_path": "/provider-connectivity-readiness-v1.3.1/action-b",
+        "candidate_id": "provider-readiness:candidate-b",
+        "editable_input_count": 1,
+        "input_type": "text",
+        "method": "GET",
+        "parameter_count": 1,
+        "parameter_name": "beta",
+        "required_input_count": 0,
+        "source": "synthetic_readiness"
+      }
+    ],
+    "cost": null,
+    "latency_ms": 5225,
+    "model_identifier": "gpt-5.6-luna",
+    "model_settings": {
+      "max_output_tokens": 1200,
+      "non_scored_readiness": true,
+      "provider_default_temperature_used": true,
+      "temperature_parameter": "omitted"
+    },
+    "parsed_ranking": [
+      "provider-readiness:candidate-a",
+      "provider-readiness:candidate-b"
+    ],
+    "prompt": "You rank reflected-input candidates for authorized local security testing.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"action_path\": \"/provider-connectivity-readiness-v1.3.1/action-a\",\n    \"candidate_id\": \"provider-readiness:candidate-a\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"alpha\",\n    \"required_input_count\": 0,\n    \"source\": \"synthetic_readiness\"\n  },\n  {\n    \"action_path\": \"/provider-connectivity-readiness-v1.3.1/action-b\",\n    \"candidate_id\": \"provider-readiness:candidate-b\",\n    \"editable_input_count\": 1,\n    \"input_type\": \"text\",\n    \"method\": \"GET\",\n    \"parameter_count\": 1,\n    \"parameter_name\": \"beta\",\n    \"required_input_count\": 0,\n    \"source\": \"synthetic_readiness\"\n  }\n]",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai",
+    "provider_failed": false,
+    "provider_metadata": {
+      "base_url": "https://api.openai.com/v1",
+      "candidate_count": 2,
+      "response_id": "resp_0d3a46dc70b8bdc7006a770120f59481968cda35a377b3d05f",
+      "status": "completed"
+    },
+    "rationales": {
+      "provider-readiness:candidate-a": "Tie-ranked first; it offers one editable text input via GET with a single optional parameter, providing a straightforward reflection test surface.",
+      "provider-readiness:candidate-b": "Equivalent test surface to candidate A: one editable text input via GET with a single optional parameter; ranked second only as a deterministic tie-break."
+    },
+    "raw_response": "{\"ranking\":[{\"candidate_id\":\"provider-readiness:candidate-a\",\"rationale\":\"Tie-ranked first; it offers one editable text input via GET with a single optional parameter, providing a straightforward reflection test surface.\"},{\"candidate_id\":\"provider-readiness:candidate-b\",\"rationale\":\"Equivalent test surface to candidate A: one editable text input via GET with a single optional parameter; ranked second only as a deterministic tie-break.\"}]}",
+    "scenario_id": "provider-connectivity-readiness-v1.3.1",
+    "timestamp": "2026-08-08T10:12:54.090376+00:00",
+    "trial_number": 0,
+    "usage": {
+      "input_tokens": 325,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 146,
+      "output_tokens_details": {
+        "reasoning_tokens": 49
+      },
+      "total_tokens": 471
+    },
+    "validation_errors": []
+  },
+  "candidate_count": 2,
+  "cost_present": false,
+  "execution_mode": "live_provider_connectivity",
+  "held_out_scenario_used": false,
+  "latency_ms": 5225,
+  "live_provider_call_executed": true,
+  "model_identifier": "gpt-5.6-luna",
+  "parsed_candidate_count": 2,
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider": "openai",
+  "provider_failed": false,
+  "raw_response_present": true,
+  "scenario_id": "provider-connectivity-readiness-v1.3.1",
+  "schema_version": "xss-v13-1-provider-connectivity-readiness-v1",
+  "scored_observation_created": false,
+  "status": "non_scored_provider_connectivity_readiness",
+  "usage_present": true,
+  "valid": true,
+  "validation_errors": []
+}
