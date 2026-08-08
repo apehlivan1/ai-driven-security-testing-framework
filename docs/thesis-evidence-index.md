@@ -319,9 +319,9 @@ loads semantic ground truth only for post-run scoring, and records provider
 failures separately from valid ranking-performance aggregates. It does not
 contain ZAP, IDOR or SQLi expansion results.
 
-Draft v1.3.1 recovery amendment and readiness package:
+Frozen v1.3.1 recovery amendment and readiness package:
 
-- Draft amendment: `docs/evaluation-protocol-v1.3.1.md`
+- Frozen amendment: `docs/evaluation-protocol-v1.3.1.md`
 - Readiness package: `results/xss-v13-1-amendment-readiness/`
 - Manifest: `results/xss-v13-1-amendment-readiness/manifest.json`
 - Provider-connectivity readiness fixture:
@@ -338,6 +338,27 @@ ground-truth scoring. It documents the v1.3 GPT infrastructure failure,
 validates the non-scored provider-readiness mechanism with a fake provider, and
 dry-validates that the existing time-to-first-verifier-confirmed-finding metric
 can be derived once verifier completion timestamps are retained.
+
+Live v1.3.1 proprietary-provider connectivity readiness artifact:
+
+- Path:
+  `results/xss-v13-1-provider-connectivity-readiness-live/provider-connectivity-readiness.json`
+- Model identifier: `gpt-5.6-luna`
+- Provider: `openai`
+- Prompt version: `llm-candidate-ranking-v1`
+- Temperature parameter: omitted, provider default used
+- Live provider call executed: `true`
+- Provider failed: `false`
+- Valid: `true`
+- Held-out scenario used: `false`
+- Scored observation created: `false`
+- Usage metadata present: `true`
+- Latency recorded: `true`
+
+This artifact records one manually executed, non-scored connectivity check from
+a normal local PowerShell environment. It uses only synthetic readiness
+candidates and does not use a benchmark scenario, load ground truth, run Qwen
+inference, execute browser verification, or create a scored observation.
 
 Planned v1.3 result package layout:
 

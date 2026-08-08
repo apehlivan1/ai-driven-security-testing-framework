@@ -1,6 +1,6 @@
 # Evaluation Protocol v1.3.1
 
-Status: **draft recovery amendment**.
+Status: **frozen recovery amendment**.
 
 This document is a recovery amendment to the frozen
 `evaluation-protocol-v1.3`. It does not replace or edit the frozen v1.3
@@ -8,9 +8,9 @@ protocol, annotated tag, candidate snapshots, or completed v1.3 result package.
 Those artifacts remain historical evidence of the first frozen execution
 attempt.
 
-The amendment may be frozen only after review, commit, clean working tree
-confirmation, and a new annotated tag. Until then, this document is not an
-executable frozen protocol.
+This amendment is frozen by the annotated Git tag
+`evaluation-protocol-v1.3.1`. Later methodological changes require a separately
+versioned amendment and must not modify this frozen protocol in place.
 
 ## Provenance
 
@@ -30,6 +30,27 @@ Historical v1.3 result package:
 - status: retained as historical evidence;
 - GPT observations: retained as provider-call infrastructure failures, not GPT
   ranking-performance observations.
+
+v1.3.1 live provider-connectivity readiness evidence:
+
+- artifact:
+  `results/xss-v13-1-provider-connectivity-readiness-live/provider-connectivity-readiness.json`;
+- model identifier: `gpt-5.6-luna`;
+- provider: `openai`;
+- prompt version: `llm-candidate-ranking-v1`;
+- temperature parameter: omitted, provider default used;
+- live provider call executed: `true`;
+- provider failed: `false`;
+- valid: `true`;
+- held-out scenario used: `false`;
+- scored observation created: `false`;
+- usage metadata present: `true`;
+- latency recorded: `true`.
+
+This readiness evidence confirms that the frozen proprietary provider boundary
+is reachable from a normal local PowerShell environment. It supports treating
+the v1.3 `[WinError 10013]` failures as execution-environment infrastructure
+failures rather than GPT model-performance evidence.
 
 ## Defects Motivating v1.3.1
 
@@ -130,8 +151,8 @@ Instrumentation-critical implementation hashes at draft preparation time:
 | `src/adstf/lifecycle.py` | `c47d336f795c913564c91190e207dd1051491d96d754db4315869b720324099f` |
 | `src/adstf/xss_v13_ablation_harness.py` | `6686753ab8ef1fe3522d75853925b3d75b7ac6e4e0416076aa3d8900e47c728d` |
 
-These hashes must be recomputed before any future freeze if implementation
-files change after this draft.
+These hashes were verified before the v1.3.1 freeze. Any future implementation
+change affecting these files requires a separately versioned amendment.
 
 ## Recovery Scope
 
@@ -152,9 +173,18 @@ The original v1.3 failed GPT observations must remain preserved and cited as
 superseded infrastructure-failure evidence. They must not be deleted or
 silently replaced.
 
-If a future write-up chooses not to report time-to-first for v1.3.1, a narrower
-`proprietary_gpt`-only recovery could be justified only by a separate explicit
-protocol decision before rerun. This draft does not choose that narrower path.
+v1.3.1 chooses the complete three-arm rerun. The final corrected study must run
+`deterministic_structural`, `proprietary_gpt` and `local_qwen` under the same
+corrected instrumentation and common execution environment.
+
+The expected frozen denominators are:
+
+| Arm | Ranking rows |
+| --- | ---: |
+| `deterministic_structural` | 24 |
+| `proprietary_gpt` | 120 |
+| `local_qwen` | 120 |
+| Total | 264 |
 
 ## Failure Handling
 
@@ -200,14 +230,15 @@ execution.
 
 ## Freeze Rule
 
-This draft must not be treated as frozen. Freezing v1.3.1 requires:
+This protocol is frozen. Freezing v1.3.1 required:
 
 1. all offline tests passing;
 2. amendment-readiness validation passing;
-3. updated hashes where necessary;
-4. clean working tree;
+3. live non-scored proprietary-provider connectivity readiness passing;
+4. updated hashes where necessary;
 5. commit;
-6. annotated tag, for example `evaluation-protocol-v1.3.1`.
+6. clean working tree;
+7. annotated tag `evaluation-protocol-v1.3.1`.
 
 After freezing, any further change to scenarios, snapshots, prompts, parser,
 model identifiers, settings, budgets, verifier criteria, metrics or recovery
