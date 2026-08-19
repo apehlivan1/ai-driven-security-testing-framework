@@ -228,3 +228,6 @@ __marimo__/
 results/xss-v13-ablation-v1.3/xss-v13-ablation-*/
 # Raw v1.3.1 XSS execution evidence - retained locally, not versioned
 results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-*/
+
+# references used in thesis
+thesis/literature/section-2.1/*.pdf
