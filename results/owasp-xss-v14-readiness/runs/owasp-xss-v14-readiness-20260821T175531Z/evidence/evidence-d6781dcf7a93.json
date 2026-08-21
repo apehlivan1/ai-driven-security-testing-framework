@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "action_status": "executed",
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01591?BenchmarkTest01591=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000257%27%3C%2Fscript%3E",
+    "ground_truth_used": false,
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01591?BenchmarkTest01591=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000257%27%3C%2Fscript%3E",
+    "opaque_candidate_id": "ox14-c000257",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01591?BenchmarkTest01591=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000257%27%3C%2Fscript%3E",
+    "role": "marker",
+    "transport": "parameter"
+  },
+  "created_at": "2026-08-21T17:55:37.907948+00:00",
+  "data_ref": "artifacts\\ox14-c000257-marker.png",
+  "evidence_id": "evidence-d6781dcf7a93",
+  "evidence_type": "http_exchange",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-e39991657d48"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "source": "owasp_xss_v14_readiness",
+  "summary": "Browser main-document HTTP observation for OWASP readiness marker request.",
+  "target_ref": "/external-v14/case-000257"
+}

@@ -51,11 +51,24 @@ class BrowserExecutor:
                 page.route("**/*", guard_route)
                 route_installed = True
 
+            headers = action.parameters.get("headers")
+            headers_installed = False
+            normalized_headers: dict[str, str] = {}
+            navigation_options: dict[str, Any] = {"wait_until": "domcontentloaded"}
+            if isinstance(headers, dict) and headers and hasattr(page, "set_extra_http_headers"):
+                normalized_headers = {str(key): str(value) for key, value in headers.items()}
+                page.set_extra_http_headers(normalized_headers)
+                headers_installed = True
+                for key, value in normalized_headers.items():
+                    if key.lower() == "referer":
+                        navigation_options["referer"] = value
+                        break
+
             url = str(action.parameters.get("url") or action.target_ref)
             marker_variable = action.parameters.get("marker_variable")
             if marker_variable and hasattr(page, "add_init_script"):
                 page.add_init_script(f"delete window.{marker_variable};")
-            page.goto(url, wait_until="domcontentloaded")
+            response = page.goto(url, **navigation_options)
 
             final_url = str(getattr(page, "url", url))
             final_decision = self._safety.evaluate_url(
@@ -97,6 +110,9 @@ class BrowserExecutor:
                 attributes={
                     "requested_url": url,
                     "final_url": final_url,
+                    "request_header_names": sorted(str(key) for key in headers) if isinstance(headers, dict) else [],
+                    "main_response_status": getattr(response, "status", None),
+                    "main_response_url": getattr(response, "url", None),
                     "page_title": title,
                     "execution_marker_observed": execution_marker_observed,
                     "marker": expected_marker,
@@ -114,6 +130,8 @@ class BrowserExecutor:
             evidence = self._blocked_evidence(action, reasons)
             return self._result(action, ActionStatus.FAILED, started, evidence, reasons), evidence
         finally:
+            if "headers_installed" in locals() and headers_installed and hasattr(page, "set_extra_http_headers"):
+                page.set_extra_http_headers({})
             if route_installed and hasattr(page, "unroute"):
                 page.unroute("**/*", guard_route)
 

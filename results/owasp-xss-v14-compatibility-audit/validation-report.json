@@ -1,0 +1,9 @@
+{
+  "case_audit_rows": 455,
+  "errors": [],
+  "negative_rows": 209,
+  "valid": true,
+  "vulnerable_rows": 246,
+  "warnings": [],
+  "xss_expected_rows": 455
+}

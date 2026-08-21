@@ -232,4 +232,4 @@ results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-*/
 # references used for thesis writing
 thesis/literature/section-2.1/*.pdf
 thesis/literature/section-2.2/*.pdf
-thesis/chapters/
+thesis/

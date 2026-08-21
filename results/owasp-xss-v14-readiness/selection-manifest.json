@@ -1,0 +1,214 @@
+{
+  "benchmark_provenance": {
+    "current_branch": "master",
+    "declared_benchmark_version": "1.2",
+    "expected_results_file": "expectedresults-1.2.csv",
+    "expected_results_sha256": "f0311c850dea7f15125113f7cfdbd7ad612d7f5951c7331584f6981b6ae2d630",
+    "official_remote": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+    "pinned_git_revision": "ba2e3f9a29fa3bde6a5c073d679393c9b94f025f",
+    "repository_status": "clean"
+  },
+  "distribution": {
+    "by_expected_result": {
+      "non_vulnerable": 10,
+      "vulnerable": 10
+    },
+    "by_input_source": {
+      "header": 4,
+      "parameter": 4,
+      "parameter_map": 4,
+      "parameter_name_enumeration": 4,
+      "query_string": 4
+    },
+    "count": 20
+  },
+  "name": "owasp-xss-v14-readiness-selection",
+  "seed": "owasp-xss-v14-readiness-selection-v1",
+  "selected_before_runtime_execution": true,
+  "selected_cases": [
+    {
+      "benchmark_case_id": "BenchmarkTest00280",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "header",
+      "opaque_candidate_id": "ox14-c000028",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00280.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest00543",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter_name_enumeration",
+      "opaque_candidate_id": "ox14-c000080",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00543.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01053",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "header",
+      "opaque_candidate_id": "ox14-c000166",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01053.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01175",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "header",
+      "opaque_candidate_id": "ox14-c000176",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01175.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01179",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "header",
+      "opaque_candidate_id": "ox14-c000180",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01179.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01254",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter",
+      "opaque_candidate_id": "ox14-c000187",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01254.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01338",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter_map",
+      "opaque_candidate_id": "ox14-c000206",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01338.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01345",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter_map",
+      "opaque_candidate_id": "ox14-c000213",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01345.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01508",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter",
+      "opaque_candidate_id": "ox14-c000240",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01508.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01591",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter",
+      "opaque_candidate_id": "ox14-c000257",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01591.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01667",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "query_string",
+      "opaque_candidate_id": "ox14-c000276",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01667.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01670",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "query_string",
+      "opaque_candidate_id": "ox14-c000279",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01670.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest01671",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "query_string",
+      "opaque_candidate_id": "ox14-c000280",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest01671.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02127",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter",
+      "opaque_candidate_id": "ox14-c000325",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02127.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02223",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter_map",
+      "opaque_candidate_id": "ox14-c000338",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02223.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02230",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter_map",
+      "opaque_candidate_id": "ox14-c000345",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02230.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02316",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "vulnerable",
+      "input_source": "parameter_name_enumeration",
+      "opaque_candidate_id": "ox14-c000360",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02316.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02320",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter_name_enumeration",
+      "opaque_candidate_id": "ox14-c000364",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02320.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02331",
+      "compatibility_class": "ADAPTER_SUPPORTED",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "parameter_name_enumeration",
+      "opaque_candidate_id": "ox14-c000375",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02331.java"
+    },
+    {
+      "benchmark_case_id": "BenchmarkTest02609",
+      "compatibility_class": "DIRECT",
+      "evaluation_role": "READINESS_ONLY",
+      "expected_result": "non_vulnerable",
+      "input_source": "query_string",
+      "opaque_candidate_id": "ox14-c000436",
+      "source_file": "src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest02609.java"
+    }
+  ],
+  "selection_algorithm": "For each supported input_source and expected_result stratum, sort compatible original cases by SHA-256(seed|input_source|expected_result|benchmark_case_id|benchmark_revision) and select the first two.",
+  "selection_notes": [],
+  "status": "frozen_readiness_subset",
+  "target_per_input_source_per_label": 2
+}

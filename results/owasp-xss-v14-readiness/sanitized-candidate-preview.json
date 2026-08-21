@@ -1,0 +1,222 @@
+[
+  {
+    "action_path": "/external-v14/case-000028",
+    "candidate_id": "ox14-c000028",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000028",
+    "required_input_count": 0,
+    "source": "request_header"
+  },
+  {
+    "action_path": "/external-v14/case-000080",
+    "candidate_id": "ox14-c000080",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000080",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000166",
+    "candidate_id": "ox14-c000166",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000166",
+    "required_input_count": 0,
+    "source": "request_header"
+  },
+  {
+    "action_path": "/external-v14/case-000176",
+    "candidate_id": "ox14-c000176",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000176",
+    "required_input_count": 0,
+    "source": "request_header"
+  },
+  {
+    "action_path": "/external-v14/case-000180",
+    "candidate_id": "ox14-c000180",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000180",
+    "required_input_count": 0,
+    "source": "request_header"
+  },
+  {
+    "action_path": "/external-v14/case-000187",
+    "candidate_id": "ox14-c000187",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000187",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000206",
+    "candidate_id": "ox14-c000206",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000206",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000213",
+    "candidate_id": "ox14-c000213",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000213",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000240",
+    "candidate_id": "ox14-c000240",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000240",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000257",
+    "candidate_id": "ox14-c000257",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000257",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000276",
+    "candidate_id": "ox14-c000276",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000276",
+    "required_input_count": 0,
+    "source": "query_string"
+  },
+  {
+    "action_path": "/external-v14/case-000279",
+    "candidate_id": "ox14-c000279",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000279",
+    "required_input_count": 0,
+    "source": "query_string"
+  },
+  {
+    "action_path": "/external-v14/case-000280",
+    "candidate_id": "ox14-c000280",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000280",
+    "required_input_count": 0,
+    "source": "query_string"
+  },
+  {
+    "action_path": "/external-v14/case-000325",
+    "candidate_id": "ox14-c000325",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000325",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000338",
+    "candidate_id": "ox14-c000338",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000338",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000345",
+    "candidate_id": "ox14-c000345",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000345",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000360",
+    "candidate_id": "ox14-c000360",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000360",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000364",
+    "candidate_id": "ox14-c000364",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000364",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000375",
+    "candidate_id": "ox14-c000375",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000375",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000436",
+    "candidate_id": "ox14-c000436",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000436",
+    "required_input_count": 0,
+    "source": "query_string"
+  }
+]

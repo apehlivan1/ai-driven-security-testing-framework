@@ -1,0 +1,34 @@
+{
+  "artifact_status": "pre_execution_validation_no_final_cases_executed",
+  "browser_verification_executed": false,
+  "counts": {
+    "compatible_after_adapters": 408,
+    "excluded": 47,
+    "final_confirmatory_eligible": 388,
+    "final_confirmatory_eligible_non_vulnerable": 152,
+    "final_confirmatory_eligible_vulnerable": 236,
+    "original_xss_cases": 455,
+    "readiness_only": 20
+  },
+  "created_at": "2026-08-21T21:39:38.435724+00:00",
+  "errors": [],
+  "excluded_in_final_corpus": false,
+  "final_confirmatory_cases_executed": false,
+  "gpt_calls_executed": false,
+  "ground_truth_exposed_to_ranker": false,
+  "model_facing_snapshot_leak_count": 0,
+  "protocol_path": "docs/evaluation-protocol-v1.4.md",
+  "protocol_sha256": "172a583322cd73e6553ea05d9209a33bf216eed6b62d74f98653e893722e473a",
+  "qwen_calls_executed": false,
+  "readiness_only_in_final_corpus": false,
+  "scenario_count": 266,
+  "schema_version": "owasp-xss-v14-preflight-validation-v1",
+  "trial_denominators": {
+    "deterministic_structural": 266,
+    "local_qwen": 1330,
+    "proprietary_gpt": 1330,
+    "total_ranking_rows": 2926
+  },
+  "valid": true,
+  "warnings": []
+}

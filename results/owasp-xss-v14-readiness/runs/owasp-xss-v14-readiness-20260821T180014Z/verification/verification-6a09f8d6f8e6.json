@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-08-21T18:00:19.205507+00:00",
+  "control_cases": [],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_browser_observation",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_browser_execution_signal"
+  ],
+  "criteria_missing": [
+    "has_browser_execution_signal"
+  ],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_browser_observation",
+    "has_comparison_result",
+    "has_passing_control_case"
+  ],
+  "evidence_refs": [
+    "evidence-eb7969f50355",
+    "evidence-9e2d5cdc7eb2",
+    "evidence-49299e749a0a",
+    "evidence-9b68f0ed49ee",
+    "evidence-c74fdf880d1b",
+    "evidence-0dcf6b4f9b4d"
+  ],
+  "finding_id": "finding-f996dc0431cc",
+  "limitations": [
+    "missing or insufficient evidence"
+  ],
+  "module_id": "xss.reflected",
+  "outcome": "inconclusive",
+  "rationale": "Verification criteria were not fully satisfied.",
+  "reproduction_status": "not_determined",
+  "verification_result_id": "verification-6a09f8d6f8e6"
+}

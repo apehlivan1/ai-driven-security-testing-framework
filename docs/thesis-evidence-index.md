@@ -486,3 +486,106 @@ results/<study-id>/
 - Provider cost remains `not_available` unless a provider artifact contains a
   numeric USD cost field or a defensible external cost source is recorded before
   the experiment.
+
+## v1.4 OWASP Benchmark XSS External-Validation Preparation
+
+The v1.4 OWASP Benchmark XSS line is a separate external-validation preparation
+track. It does not modify or supersede the frozen v1.3.1 XSS ablation evidence.
+No scored GPT, Qwen or final ranking experiment has been run for v1.4.
+
+Design and protocol-preparation documents:
+
+- Study design:
+  `thesis/evaluation/v1.4-owasp-xss-study-design.md`
+- Compatibility schema:
+  `thesis/evaluation/v1.4-owasp-xss-compatibility-schema.md`
+- Decision log:
+  `thesis/evaluation/v1.4-owasp-xss-decision-log.md`
+- Draft protocol, not frozen:
+  `docs/evaluation-protocol-v1.4-draft.md`
+
+Compatibility audit artifacts:
+
+- Audit directory:
+  `results/owasp-xss-v14-compatibility-audit/`
+- Case audit:
+  `results/owasp-xss-v14-compatibility-audit/case-audit.csv`
+- Audit summary:
+  `results/owasp-xss-v14-compatibility-audit/audit-summary.md`
+- Machine-readable summary:
+  `results/owasp-xss-v14-compatibility-audit/audit-summary.json`
+- Benchmark provenance:
+  `results/owasp-xss-v14-compatibility-audit/provenance.json`
+- Audit validation:
+  `results/owasp-xss-v14-compatibility-audit/validation-report.json`
+
+Non-scored READINESS_ONLY validation artifacts:
+
+- Readiness directory:
+  `results/owasp-xss-v14-readiness/`
+- Selection manifest:
+  `results/owasp-xss-v14-readiness/selection-manifest.json`
+- Sanitized candidate preview:
+  `results/owasp-xss-v14-readiness/sanitized-candidate-preview.json`
+- Internal provenance:
+  `results/owasp-xss-v14-readiness/internal-provenance.json`
+- Execution specifications:
+  `results/owasp-xss-v14-readiness/execution-specifications.json`
+- Readiness results:
+  `results/owasp-xss-v14-readiness/readiness-results.json`
+- Human-readable readiness report:
+  `results/owasp-xss-v14-readiness/readiness-report.md`
+- Readiness validation:
+  `results/owasp-xss-v14-readiness/validation-report.json`
+- Checksums:
+  `results/owasp-xss-v14-readiness/checksums.json`
+
+Current v1.4 readiness status: the pinned OWASP Benchmark Java v1.2 XSS corpus
+contains 455 labelled XSS cases. The deterministic audit projects 408
+compatible cases after justified deterministic adapters and 47 excluded cases.
+Twenty compatible cases are reserved as `READINESS_ONLY`, leaving 388
+`FINAL_CONFIRMATORY_ELIGIBLE` cases for future protocol-freeze work. The
+READINESS_ONLY validation passed across 20 cases with no GPT calls, no Qwen
+calls and no final ranking execution.
+
+v1.4 frozen pre-execution protocol package:
+
+- Frozen pre-execution protocol:
+  `docs/evaluation-protocol-v1.4.md`
+- Superseded draft protocol:
+  `docs/evaluation-protocol-v1.4-draft.md`
+- Protocol-freeze package:
+  `results/owasp-xss-v14-protocol-freeze/`
+- Package manifest:
+  `results/owasp-xss-v14-protocol-freeze/manifest.json`
+- Final corpus manifest:
+  `results/owasp-xss-v14-protocol-freeze/final-corpus-manifest.json`
+- Scenario manifest:
+  `results/owasp-xss-v14-protocol-freeze/scenario-manifest.json`
+- Model-facing candidate snapshots:
+  `results/owasp-xss-v14-protocol-freeze/model-facing/candidate-snapshots/`
+- Internal provenance:
+  `results/owasp-xss-v14-protocol-freeze/provenance/internal-provenance.json`
+- Execution specifications:
+  `results/owasp-xss-v14-protocol-freeze/execution/execution-specifications.json`
+- Ground-truth scoring data:
+  `results/owasp-xss-v14-protocol-freeze/ground-truth/scoring-data.json`
+- Decoy assignment manifest:
+  `results/owasp-xss-v14-protocol-freeze/ground-truth/decoy-assignment-manifest.json`
+- Arm configurations:
+  `results/owasp-xss-v14-protocol-freeze/arm-configurations.json`
+- Trial schedule:
+  `results/owasp-xss-v14-protocol-freeze/trial-schedule.json`
+- Metric/scoring specification:
+  `results/owasp-xss-v14-protocol-freeze/metric-scoring-specification.json`
+- Preflight validation:
+  `results/owasp-xss-v14-protocol-freeze/preflight-validation-report.json`
+- Checksums:
+  `results/owasp-xss-v14-protocol-freeze/checksums.sha256`
+
+Current v1.4 protocol-freeze status: the final pre-execution corpus contains
+388 `FINAL_CONFIRMATORY_ELIGIBLE` cases, organized into 236 positive ranking
+scenarios and 30 negative-only scenarios. Expected rows are 266 deterministic
+rows, 1330 GPT rows and 1330 Qwen rows. The package validates ground-truth
+separation and benchmark-identity sanitization. No final OWASP case execution,
+browser verification, GPT call or Qwen call has been performed.

@@ -1,0 +1,89 @@
+{
+  "arms": [
+    {
+      "arm_id": "deterministic_structural",
+      "arm_type": "deterministic",
+      "configuration": {
+        "input": "same sanitized candidate_input as LLM arms",
+        "model_output": "not_applicable",
+        "provider_cost": "not_applicable"
+      },
+      "ranking_ruleset_version": "deterministic-structural-v1",
+      "trial_count_per_scenario": 1
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "arm_type": "hosted_proprietary_llm",
+      "model_identifier": "gpt-5.6-luna",
+      "parser": "adstf.llm_ranking.parse_model_ranking",
+      "prompt_version": "llm-candidate-ranking-v1",
+      "provider": "OpenAI",
+      "settings": {
+        "OPENAI_RANKING_MODEL": "gpt-5.6-luna",
+        "OPENAI_SEND_TEMPERATURE": "unset_or_false",
+        "max_output_tokens": 1200,
+        "provider_default_temperature": "used",
+        "temperature_parameter": "omitted",
+        "timeout_seconds": 60
+      },
+      "structured_output_schema": "candidate_ranking_json_schema",
+      "trial_count_per_scenario": 5
+    },
+    {
+      "arm_id": "local_qwen",
+      "arm_type": "local_open_weights_llm",
+      "contingency_model_candidate_id": "gemma3_4b_it_gguf_q4_k_m",
+      "fallback_rule": {
+        "activation_requirement": "versioned protocol amendment and complete rerun of affected local-model experiment",
+        "gemma_activation_condition": "documented pre-execution technical failure preventing Qwen from participating",
+        "silent_qwen_to_gemma_substitution": false
+      },
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "model_metadata_source": "results/local-runtime-provisioning-v1.3/model-metadata/qwen2_5_7b_instruct_gguf_q4_k_m.json",
+      "parser": "llama-completion-transport-parser-v1.3 followed by adstf.llm_ranking.parse_model_ranking",
+      "primary_model_candidate_id": "qwen2_5_7b_instruct_gguf_q4_k_m",
+      "prompt_version": "llm-candidate-ranking-v1",
+      "provider": "local llama.cpp",
+      "settings": {
+        "context_size_tokens": 4096,
+        "max_output_tokens": 768,
+        "model_files": [
+          {
+            "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+            "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+          },
+          {
+            "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+            "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+          }
+        ],
+        "process_policy": "one scored command invocation per scheduled trial; non-scored warm-up must not use final snapshots",
+        "runtime": "llama.cpp",
+        "runtime_executable": "llama-completion.exe",
+        "runtime_executable_sha256": "2272eaaf8bb9477257790835d7b25aaf8fd22941e44ac3fcc9f2df389d1ef7b4",
+        "seed": 42,
+        "temperature": 0.0,
+        "threads": 8,
+        "timeout_seconds": 300,
+        "top_p": 1.0
+      },
+      "settings_source": "results/local-runtime-output-boundary-v1.3/transport-settings.json",
+      "structured_output_schema": "local-ranking-readiness-json-schema-v1.3 with scenario-specific candidate_id enum",
+      "trial_count_per_scenario": 5
+    }
+  ],
+  "artifact_status": "pre_execution_configuration_no_calls_performed",
+  "schema_version": "owasp-xss-v14-arm-configurations-v1",
+  "shared_contract": {
+    "candidate_representation": "model-facing/candidate-snapshots/*.json candidate_input",
+    "forbidden_authority": [
+      "candidate discovery",
+      "payload generation",
+      "browser or HTTP execution",
+      "ground-truth access",
+      "vulnerability verification"
+    ],
+    "prompt_version": "llm-candidate-ranking-v1",
+    "task": "rank existing structured candidate IDs; include each candidate exactly once with a brief rationale"
+  }
+}

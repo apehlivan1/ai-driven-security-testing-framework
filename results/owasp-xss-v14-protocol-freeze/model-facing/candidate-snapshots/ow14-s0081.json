@@ -1,0 +1,67 @@
+{
+  "artifact_status": "pre_execution_model_facing_input",
+  "candidate_count": 5,
+  "candidate_input": [
+    {
+      "action_path": "/external-v14/case-000125",
+      "candidate_id": "ox14-c000125",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000125",
+      "required_input_count": 0,
+      "source": "request_parameter"
+    },
+    {
+      "action_path": "/external-v14/case-000065",
+      "candidate_id": "ox14-c000065",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000065",
+      "required_input_count": 0,
+      "source": "request_parameter_map"
+    },
+    {
+      "action_path": "/external-v14/case-000435",
+      "candidate_id": "ox14-c000435",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000435",
+      "required_input_count": 0,
+      "source": "query_string"
+    },
+    {
+      "action_path": "/external-v14/case-000294",
+      "candidate_id": "ox14-c000294",
+      "editable_input_count": 1,
+      "input_type": "header",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "header_000294",
+      "required_input_count": 0,
+      "source": "request_header"
+    },
+    {
+      "action_path": "/external-v14/case-000204",
+      "candidate_id": "ox14-c000204",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000204",
+      "required_input_count": 0,
+      "source": "request_parameter_map"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "candidate_test_budget": 4,
+  "prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "ow14-s0081",
+  "schema_version": "ow14-candidate-snapshot-v1",
+  "top_k": 4
+}

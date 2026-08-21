@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "blocked_requests": [],
+    "execution_marker_observed": true,
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000325%27%3C%2Fscript%3E",
+    "html_artifact": "artifacts\\ox14-c000325-marker.html",
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000325%27%3C%2Fscript%3E",
+    "marker": "adstf_owasp_ox14_c000325",
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000325%27%3C%2Fscript%3E",
+    "screenshot_artifact": "artifacts\\ox14-c000325-marker.png"
+  },
+  "created_at": "2026-08-21T17:55:39.170525+00:00",
+  "data_ref": "artifacts\\ox14-c000325-marker.png",
+  "evidence_id": "evidence-ef476e424205",
+  "evidence_type": "browser_observation",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-563a68a062fd"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "source": "browser_executor",
+  "summary": "OWASP readiness marker observation.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000325%27%3C%2Fscript%3E"
+}

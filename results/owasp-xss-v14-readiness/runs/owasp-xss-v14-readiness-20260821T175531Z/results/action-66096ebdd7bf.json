@@ -1,0 +1,27 @@
+{
+  "action_id": "action-66096ebdd7bf",
+  "completed_at": "2026-08-21T17:55:41.351088+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-582ea83bc6eb"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02320?adstf_control_ox14_c000364=BenchmarkTest02320",
+    "html_artifact": "artifacts\\ox14-c000364-control.html",
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02320?adstf_control_ox14_c000364=BenchmarkTest02320",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02320?adstf_control_ox14_c000364=BenchmarkTest02320",
+    "screenshot_artifact": "artifacts\\ox14-c000364-control.png"
+  },
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "safety_notes": [],
+  "started_at": "2026-08-21T17:55:41.118844+00:00",
+  "status": "executed"
+}

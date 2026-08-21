@@ -1,0 +1,40 @@
+{
+  "completed_at": "2026-08-21T18:00:22.800830+00:00",
+  "control_cases": [
+    {
+      "evidence_id": "evidence-ab9f0cc6794b",
+      "passed": true,
+      "summary": "Benign readiness control did not set the browser execution marker."
+    }
+  ],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_browser_observation",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_browser_execution_signal"
+  ],
+  "criteria_missing": [],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_browser_observation",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_browser_execution_signal"
+  ],
+  "evidence_refs": [
+    "evidence-b522f0f38cf9",
+    "evidence-368e172426b9",
+    "evidence-5601a778eebb",
+    "evidence-9d2168f7f7ab",
+    "evidence-ab9f0cc6794b",
+    "evidence-86c3eef009c5"
+  ],
+  "finding_id": "finding-102ab54f04b1",
+  "limitations": [],
+  "module_id": "xss.reflected",
+  "outcome": "verified",
+  "rationale": "Required evidence and control cases satisfy the module criteria.",
+  "reproduction_status": "reproduced",
+  "verification_result_id": "verification-68626f5f25b0"
+}

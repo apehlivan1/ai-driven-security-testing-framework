@@ -1,0 +1,25 @@
+{
+  "attributes": {
+    "control_case_passed": true,
+    "control_marker": "adstf_control_ox14_c000375",
+    "control_observation_evidence": "evidence-fcc834f4740a",
+    "execution_marker_observed": false,
+    "ground_truth_used": false,
+    "html_artifact": "artifacts\\ox14-c000375-control.html",
+    "is_control_case": true,
+    "opaque_candidate_id": "ox14-c000375",
+    "screenshot_artifact": "artifacts\\ox14-c000375-control.png"
+  },
+  "created_at": "2026-08-21T18:01:26.193145+00:00",
+  "data_ref": "artifacts\\ox14-c000375-control.png",
+  "evidence_id": "evidence-e99d890dee77",
+  "evidence_type": "comparison_result",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-f470ae6a9d14"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T180116Z",
+  "source": "owasp_xss_v14_readiness",
+  "summary": "Benign readiness control did not set the browser execution marker.",
+  "target_ref": "/external-v14/case-000375"
+}

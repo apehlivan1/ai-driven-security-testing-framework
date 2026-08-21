@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "action_status": "executed",
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=adstf_control_ox14_c000325",
+    "ground_truth_used": false,
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=adstf_control_ox14_c000325",
+    "opaque_candidate_id": "ox14-c000325",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02127?BenchmarkTest02127=adstf_control_ox14_c000325",
+    "role": "control",
+    "transport": "parameter"
+  },
+  "created_at": "2026-08-21T17:55:39.399069+00:00",
+  "data_ref": "artifacts\\ox14-c000325-control.png",
+  "evidence_id": "evidence-8b9ce07645bf",
+  "evidence_type": "http_exchange",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-13abe2fed40e"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "source": "owasp_xss_v14_readiness",
+  "summary": "Browser main-document HTTP observation for OWASP readiness control request.",
+  "target_ref": "/external-v14/case-000325"
+}

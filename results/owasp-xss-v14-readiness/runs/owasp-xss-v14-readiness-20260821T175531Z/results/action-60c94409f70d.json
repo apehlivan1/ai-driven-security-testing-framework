@@ -1,0 +1,27 @@
+{
+  "action_id": "action-60c94409f70d",
+  "completed_at": "2026-08-21T17:55:38.783681+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-0e3f7dcf8279"
+  ],
+  "executor": "browser",
+  "normalized_observations": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01671?BenchmarkTest01671=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000280%27%3C%2Fscript%3E",
+    "html_artifact": "artifacts\\ox14-c000280-marker.html",
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01671?BenchmarkTest01671=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000280%27%3C%2Fscript%3E",
+    "marker": "adstf_owasp_ox14_c000280",
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-03/BenchmarkTest01671?BenchmarkTest01671=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000280%27%3C%2Fscript%3E",
+    "screenshot_artifact": "artifacts\\ox14-c000280-marker.png"
+  },
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "safety_notes": [],
+  "started_at": "2026-08-21T17:55:38.627858+00:00",
+  "status": "executed"
+}

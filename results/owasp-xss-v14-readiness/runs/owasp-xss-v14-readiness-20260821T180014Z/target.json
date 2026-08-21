@@ -1,0 +1,22 @@
+{
+  "allowed_hosts": [
+    "127.0.0.1"
+  ],
+  "allowed_ports": [
+    8443
+  ],
+  "allowed_schemes": [
+    "https"
+  ],
+  "base_url": "https://127.0.0.1:8443/benchmark",
+  "enabled_modules": [
+    "xss.reflected"
+  ],
+  "max_actions": 100,
+  "metadata": {
+    "evaluation": "owasp-xss-v14-readiness",
+    "local_only": true
+  },
+  "name": "OWASP Benchmark Java v1.4 XSS readiness",
+  "test_users": {}
+}

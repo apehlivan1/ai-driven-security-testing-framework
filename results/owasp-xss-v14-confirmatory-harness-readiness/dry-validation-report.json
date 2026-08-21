@@ -1,0 +1,112 @@
+{
+  "created_at": "2026-08-21T22:14:00.363802+00:00",
+  "duplicate_resume_validation": {
+    "errors": [],
+    "existing_completed_rows": 0,
+    "overwrite_policy": "existing completed scored artifacts are never silently regenerated",
+    "resume_next_missing_sequence": 1,
+    "valid": true
+  },
+  "external_calls": {
+    "gpt_calls": 0,
+    "owasp_or_browser_final_case_calls": 0,
+    "qwen_calls": 0,
+    "scored_observations": 0
+  },
+  "git_state": {
+    "branch": "main",
+    "commit": "def129bf4eedd73f8bec12dc12bc4ec81ef610ac",
+    "dirty": true,
+    "status_short": [
+      "M  .gitignore",
+      " M docs/thesis-evidence-index.md",
+      " M src/adstf/browser.py",
+      " M tests/test_browser_executor.py",
+      "?? docs/evaluation-protocol-v1.4-draft.md",
+      "?? docs/evaluation-protocol-v1.4.md",
+      "?? results/owasp-xss-v14-compatibility-audit/",
+      "?? results/owasp-xss-v14-protocol-freeze/",
+      "?? results/owasp-xss-v14-readiness/",
+      "?? scripts/",
+      "?? src/adstf/owasp_xss_v14.py",
+      "?? src/adstf/owasp_xss_v14_confirmatory.py",
+      "?? src/adstf/owasp_xss_v14_protocol_prep.py",
+      "?? tests/test_owasp_benchmark_xss_audit.py",
+      "?? tests/test_owasp_xss_v14.py",
+      "?? tests/test_owasp_xss_v14_confirmatory.py",
+      "?? tests/test_owasp_xss_v14_protocol_prep.py"
+    ]
+  },
+  "ground_truth_isolation": {
+    "ground_truth_loaded_during_dry_validation": false,
+    "model_facing_snapshot_leak_count": 0
+  },
+  "harness_version": "owasp-xss-v14-confirmatory-harness-v1",
+  "mode": "dry_validation",
+  "protocol_package": {
+    "errors": [],
+    "package_checksum_error_count": 0,
+    "package_checksum_errors": [],
+    "protocol_hash_matches": true,
+    "protocol_sha256": "172a583322cd73e6553ea05d9209a33bf216eed6b62d74f98653e893722e473a",
+    "protocol_sha256_expected": "172a583322cd73e6553ea05d9209a33bf216eed6b62d74f98653e893722e473a",
+    "valid": true
+  },
+  "runtime_preflight": {
+    "gpt": {
+      "api_key_present": true,
+      "errors": [
+        "OPENAI_RANKING_MODEL_not_frozen_value"
+      ],
+      "model_identifier": "missing",
+      "model_identifier_expected": "gpt-5.6-luna",
+      "secret_value_recorded": false,
+      "send_temperature_status": "unset_or_false",
+      "valid": false
+    },
+    "owasp_target": {
+      "base_url": "https://127.0.0.1:8443/benchmark",
+      "checked": false,
+      "status": "not_checked_in_dry_validation_mode",
+      "valid": false
+    },
+    "qwen": {
+      "errors": [],
+      "gemma_contingency_only": true,
+      "model_files": [
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+          "sha256_matches": true
+        },
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+          "sha256_matches": true
+        }
+      ],
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "runtime_exists": true,
+      "runtime_sha256_matches": true,
+      "valid": true
+    },
+    "schema_version": "owasp-xss-v14-confirmatory-runtime-preflight-v1",
+    "valid": false
+  },
+  "schedule_resolution": {
+    "errors": [],
+    "ground_truth_loaded": false,
+    "per_arm_counts": {
+      "deterministic_structural": 266,
+      "local_qwen": 1330,
+      "proprietary_gpt": 1330
+    },
+    "scenario_count": 266,
+    "snapshot_leak_count": 0,
+    "total_rows": 2926,
+    "unique_row_ids": 2926,
+    "valid": true
+  },
+  "schema_version": "owasp-xss-v14-confirmatory-dry-validation-v1",
+  "valid": true
+}

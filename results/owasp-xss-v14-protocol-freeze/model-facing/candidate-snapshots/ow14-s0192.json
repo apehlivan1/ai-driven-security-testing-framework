@@ -1,0 +1,67 @@
+{
+  "artifact_status": "pre_execution_model_facing_input",
+  "candidate_count": 5,
+  "candidate_input": [
+    {
+      "action_path": "/external-v14/case-000083",
+      "candidate_id": "ox14-c000083",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "input_000083",
+      "required_input_count": 1,
+      "source": "dynamic_parameter_name"
+    },
+    {
+      "action_path": "/external-v14/case-000426",
+      "candidate_id": "ox14-c000426",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000426",
+      "required_input_count": 0,
+      "source": "query_string"
+    },
+    {
+      "action_path": "/external-v14/case-000341",
+      "candidate_id": "ox14-c000341",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000341",
+      "required_input_count": 0,
+      "source": "request_parameter_map"
+    },
+    {
+      "action_path": "/external-v14/case-000088",
+      "candidate_id": "ox14-c000088",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 2,
+      "parameter_name": "input_000088",
+      "required_input_count": 1,
+      "source": "dynamic_parameter_name"
+    },
+    {
+      "action_path": "/external-v14/case-000209",
+      "candidate_id": "ox14-c000209",
+      "editable_input_count": 1,
+      "input_type": "text",
+      "method": "GET",
+      "parameter_count": 1,
+      "parameter_name": "input_000209",
+      "required_input_count": 0,
+      "source": "request_parameter_map"
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.candidate_input",
+  "candidate_test_budget": 4,
+  "prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "ow14-s0192",
+  "schema_version": "ow14-candidate-snapshot-v1",
+  "top_k": 4
+}

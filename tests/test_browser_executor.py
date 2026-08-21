@@ -18,6 +18,8 @@ class FakePage:
         self.marker_observed = marker_observed
         self.routes = []
         self.unrouted = False
+        self.extra_headers = None
+        self.goto_options = {}
 
     def route(self, pattern, handler) -> None:
         self.routes.append((pattern, handler))
@@ -28,9 +30,14 @@ class FakePage:
     def add_init_script(self, script: str) -> None:
         self.init_script = script
 
-    def goto(self, url: str, wait_until: str) -> None:
+    def set_extra_http_headers(self, headers: dict[str, str]) -> None:
+        self.extra_headers = headers
+
+    def goto(self, url: str, **options) -> None:
         self.requested_url = url
+        self.goto_options = options
         self.url = self.final_url
+        return FakeResponse(url, 200)
 
     def evaluate(self, expression: str) -> bool:
         self.expression = expression
@@ -44,6 +51,12 @@ class FakePage:
 
     def title(self) -> str:
         return "Fake Page"
+
+
+class FakeResponse:
+    def __init__(self, url: str, status: int) -> None:
+        self.url = url
+        self.status = status
 
 
 def action(url: str) -> ActionRequest:
@@ -93,8 +106,41 @@ class BrowserExecutorTests(unittest.TestCase):
             self.assertEqual(evidence.evidence_type, EvidenceType.BROWSER_OBSERVATION)
             self.assertTrue(evidence.attributes["execution_marker_observed"])
             self.assertEqual(evidence.attributes["final_url"], "http://lab.local/reflected")
+            self.assertEqual(evidence.attributes["main_response_status"], 200)
             self.assertTrue((store.run_dir / "artifacts" / "observation.png").exists())
             self.assertTrue((store.run_dir / "artifacts" / "observation.html").exists())
+
+    def test_observe_can_apply_action_scoped_headers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            store = RunArtifactStore(Path(tmp), "run-1")
+            store.initialize(self.target)
+            page = FakePage("http://lab.local/reflected", marker_observed=True)
+
+            result, evidence = BrowserExecutor(SafetyBoundary(self.target), store).observe(
+                header_action("http://lab.local/reflected"),
+                page,
+            )
+
+            self.assertEqual(result.status, ActionStatus.EXECUTED)
+            self.assertEqual(evidence.attributes["request_header_names"], ["X-Test-Input"])
+            self.assertEqual(page.extra_headers, {})
+            self.assertNotIn("referer", {key.lower() for key in page.goto_options})
+
+    def test_observe_passes_referer_header_through_navigation_options(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            store = RunArtifactStore(Path(tmp), "run-1")
+            store.initialize(self.target)
+            page = FakePage("http://lab.local/reflected", marker_observed=True)
+
+            result, evidence = BrowserExecutor(SafetyBoundary(self.target), store).observe(
+                header_action("http://lab.local/reflected", {"Referer": "marker"}),
+                page,
+            )
+
+            self.assertEqual(result.status, ActionStatus.EXECUTED)
+            self.assertEqual(evidence.attributes["request_header_names"], ["Referer"])
+            self.assertEqual(page.goto_options["referer"], "marker")
+            self.assertEqual(page.extra_headers, {})
 
     def test_observe_fails_when_final_url_leaves_scope(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -110,6 +156,26 @@ class BrowserExecutorTests(unittest.TestCase):
             self.assertEqual(result.status, ActionStatus.FAILED)
             self.assertEqual(evidence.evidence_type, EvidenceType.BLOCKED_ACTION)
             self.assertIn("not in the target allowlist", result.error or "")
+
+
+def header_action(url: str, headers: dict[str, str] | None = None) -> ActionRequest:
+    base = action(url)
+    parameters = dict(base.parameters)
+    parameters["headers"] = headers or {"X-Test-Input": "marker"}
+    return ActionRequest(
+        action_id=base.action_id,
+        run_id=base.run_id,
+        requested_by=base.requested_by,
+        module_id=base.module_id,
+        action_type=base.action_type,
+        target_ref=base.target_ref,
+        scope_context=base.scope_context,
+        parameters=parameters,
+        preconditions=base.preconditions,
+        safety_class=base.safety_class,
+        rationale=base.rationale,
+        expected_evidence=base.expected_evidence,
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,30 @@
+{
+  "action_id": "action-1f58ca907a08",
+  "action_type": "observe_browser",
+  "expected_evidence": [
+    "browser_observation"
+  ],
+  "module_id": "xss.reflected",
+  "parameters": {
+    "artifact_prefix": "ox14-c000436-marker",
+    "expected_marker": "adstf_owasp_ox14_c000436",
+    "headers": {},
+    "marker_variable": "__adstfXssMarker",
+    "summary": "OWASP readiness marker observation.",
+    "url": "https://127.0.0.1:8443/benchmark/xss-05/BenchmarkTest02609?BenchmarkTest02609=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000436%27%3C%2Fscript%3E+"
+  },
+  "preconditions": [
+    "owasp_benchmark_java_running_locally",
+    "readiness_only_case"
+  ],
+  "rationale": "Execute deterministic marker/control browser observation for OWASP XSS readiness.",
+  "requested_by": "owasp_xss_v14_readiness",
+  "run_id": "owasp-xss-v14-readiness-20260821T180014Z",
+  "safety_class": "low",
+  "scope_context": {
+    "evaluation_role": "READINESS_ONLY",
+    "ground_truth_loaded": false,
+    "opaque_candidate_id": "ox14-c000436"
+  },
+  "target_ref": "https://127.0.0.1:8443/benchmark/xss-05/BenchmarkTest02609?BenchmarkTest02609=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000436%27%3C%2Fscript%3E+"
+}

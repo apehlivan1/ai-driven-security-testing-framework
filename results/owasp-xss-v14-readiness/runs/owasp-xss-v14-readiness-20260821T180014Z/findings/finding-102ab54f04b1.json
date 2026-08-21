@@ -1,0 +1,31 @@
+{
+  "affected_target": "/external-v14/case-000360",
+  "category": "reflected_xss",
+  "confidence": "readiness_probe",
+  "created_by": "owasp_xss_v14_readiness",
+  "deduplication_key": null,
+  "finding_id": "finding-102ab54f04b1",
+  "hypothesis": "A metadata-constructed external reflected-XSS candidate may execute the supplied marker.",
+  "module_id": "xss.reflected",
+  "report_fields": {
+    "evaluation_role": "READINESS_ONLY",
+    "ground_truth_used": false,
+    "opaque_candidate_id": "ox14-c000360",
+    "transport": "parameter_name_enumeration",
+    "verification_completed_at": "2026-08-21T18:00:22.800830+00:00",
+    "verification_context": "runtime_readiness"
+  },
+  "run_id": "owasp-xss-v14-readiness-20260821T180014Z",
+  "severity": "medium",
+  "state": "verified",
+  "supporting_evidence_refs": [
+    "evidence-b522f0f38cf9",
+    "evidence-368e172426b9",
+    "evidence-5601a778eebb",
+    "evidence-9d2168f7f7ab",
+    "evidence-ab9f0cc6794b",
+    "evidence-86c3eef009c5"
+  ],
+  "title": "OWASP XSS readiness candidate ox14-c000360",
+  "verification_result_ref": "verification-68626f5f25b0"
+}

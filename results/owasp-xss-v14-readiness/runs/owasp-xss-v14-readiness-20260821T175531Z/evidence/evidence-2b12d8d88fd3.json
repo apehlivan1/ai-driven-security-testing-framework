@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "blocked_requests": [],
+    "execution_marker_observed": false,
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01254?BenchmarkTest01254=adstf_control_ox14_c000187",
+    "html_artifact": "artifacts\\ox14-c000187-control.html",
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01254?BenchmarkTest01254=adstf_control_ox14_c000187",
+    "marker": null,
+    "marker_variable": "__adstfXssMarker",
+    "page_title": "",
+    "request_header_names": [],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01254?BenchmarkTest01254=adstf_control_ox14_c000187",
+    "screenshot_artifact": "artifacts\\ox14-c000187-control.png"
+  },
+  "created_at": "2026-08-21T17:55:36.478593+00:00",
+  "data_ref": "artifacts\\ox14-c000187-control.png",
+  "evidence_id": "evidence-2b12d8d88fd3",
+  "evidence_type": "browser_observation",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-6e5f7c8932f2"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T175531Z",
+  "source": "browser_executor",
+  "summary": "OWASP readiness benign control observation.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01254?BenchmarkTest01254=adstf_control_ox14_c000187"
+}

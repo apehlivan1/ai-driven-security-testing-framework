@@ -1,0 +1,254 @@
+{
+  "adapter_supported_negative": 52,
+  "adapter_supported_vulnerable": 89,
+  "benchmark_provenance": {
+    "current_branch": "master",
+    "declared_benchmark_version": "1.2",
+    "expected_results_file": "expectedresults-1.2.csv",
+    "expected_results_sha256": "f0311c850dea7f15125113f7cfdbd7ad612d7f5951c7331584f6981b6ae2d630",
+    "official_remote": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+    "pinned_git_revision": "ba2e3f9a29fa3bde6a5c073d679393c9b94f025f",
+    "repository_status": "clean"
+  },
+  "candidate_representation_distribution": {
+    "current": 267,
+    "required_extension": 141,
+    "unnecessary": 47
+  },
+  "candidate_representation_gaps": {
+    "dynamic_parameter_name_and_value_transport": 54,
+    "header_name_transport": 87,
+    "input_source_header": 87
+  },
+  "category_distribution": {
+    "xss": 455
+  },
+  "compatibility_distribution": {
+    "ADAPTER_SUPPORTED": {
+      "negative": 52,
+      "total": 141,
+      "vulnerable": 89
+    },
+    "DERIVED_ADAPTED": {
+      "negative": 0,
+      "total": 0,
+      "vulnerable": 0
+    },
+    "DIRECT": {
+      "negative": 110,
+      "total": 267,
+      "vulnerable": 157
+    },
+    "EXCLUDED": {
+      "negative": 47,
+      "total": 47,
+      "vulnerable": 0
+    }
+  },
+  "currently_usable_original_cases": 267,
+  "cwe_distribution": {
+    "cwe-79": 455
+  },
+  "derived_negative": 0,
+  "derived_vulnerable": 0,
+  "direct_external_execution_case_count_after_adapters": 408,
+  "direct_external_execution_case_count_current": 267,
+  "direct_negative": 110,
+  "direct_vulnerable": 157,
+  "evaluation_role_distribution": {
+    "EXCLUDED": {
+      "negative": 47,
+      "total": 47,
+      "vulnerable": 0
+    },
+    "FINAL_CONFIRMATORY_ELIGIBLE": {
+      "negative": 152,
+      "total": 388,
+      "vulnerable": 236
+    },
+    "READINESS_ONLY": {
+      "negative": 10,
+      "total": 20,
+      "vulnerable": 10
+    }
+  },
+  "excluded_negative": 47,
+  "excluded_vulnerable": 0,
+  "final_confirmatory_eligible_count": 388,
+  "final_confirmatory_eligible_negative": 152,
+  "final_confirmatory_eligible_vulnerable": 236,
+  "final_confirmatory_ranking_scale_by_pack_size": {
+    "5": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1064,
+      "candidate_tests_per_llm_trial_set": 1064,
+      "core_external_ranking_scenarios": 266,
+      "maximum_negative_case_reuse_for_positive_scenarios": 7,
+      "mean_negative_case_reuse_for_positive_scenarios": 6.2105263157894735,
+      "negative_ranking_scenarios_disjoint": 30,
+      "pack_size": 5,
+      "positive_ranking_scenarios": 236,
+      "required_negative_decoy_assignments": 944,
+      "total_candidate_placements_core": 1330,
+      "unique_original_cases_represented": 388
+    },
+    "6": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1044,
+      "candidate_tests_per_llm_trial_set": 1044,
+      "core_external_ranking_scenarios": 261,
+      "maximum_negative_case_reuse_for_positive_scenarios": 8,
+      "mean_negative_case_reuse_for_positive_scenarios": 7.7631578947368425,
+      "negative_ranking_scenarios_disjoint": 25,
+      "pack_size": 6,
+      "positive_ranking_scenarios": 236,
+      "required_negative_decoy_assignments": 1180,
+      "total_candidate_placements_core": 1566,
+      "unique_original_cases_represented": 388
+    },
+    "8": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1020,
+      "candidate_tests_per_llm_trial_set": 1020,
+      "core_external_ranking_scenarios": 255,
+      "maximum_negative_case_reuse_for_positive_scenarios": 11,
+      "mean_negative_case_reuse_for_positive_scenarios": 10.868421052631579,
+      "negative_ranking_scenarios_disjoint": 19,
+      "pack_size": 8,
+      "positive_ranking_scenarios": 236,
+      "required_negative_decoy_assignments": 1652,
+      "total_candidate_placements_core": 2040,
+      "unique_original_cases_represented": 388
+    }
+  },
+  "http_method_distribution": {
+    "GET_delegates_to_POST": 455
+  },
+  "input_source_distribution": {
+    "header": 87,
+    "no_external_input": 47,
+    "parameter": 152,
+    "parameter_map": 55,
+    "parameter_name_enumeration": 54,
+    "query_string": 60
+  },
+  "negative_xss": 209,
+  "payload_support_distribution": {
+    "current_marker_control": 455
+  },
+  "projected_usable_negative_after_adapters": 162,
+  "projected_usable_original_cases_after_justified_adapters": 408,
+  "projected_usable_vulnerable_after_adapters": 246,
+  "ranking_scale_by_pack_size": {
+    "5": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1112,
+      "candidate_tests_per_llm_trial_set": 1112,
+      "core_external_ranking_scenarios": 278,
+      "maximum_negative_case_reuse_for_positive_scenarios": 7,
+      "mean_negative_case_reuse_for_positive_scenarios": 6.074074074074074,
+      "negative_ranking_scenarios_disjoint": 32,
+      "pack_size": 5,
+      "positive_ranking_scenarios": 246,
+      "required_negative_decoy_assignments": 984,
+      "total_candidate_placements_core": 1390,
+      "unique_original_cases_represented": 408
+    },
+    "6": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1092,
+      "candidate_tests_per_llm_trial_set": 1092,
+      "core_external_ranking_scenarios": 273,
+      "maximum_negative_case_reuse_for_positive_scenarios": 8,
+      "mean_negative_case_reuse_for_positive_scenarios": 7.592592592592593,
+      "negative_ranking_scenarios_disjoint": 27,
+      "pack_size": 6,
+      "positive_ranking_scenarios": 246,
+      "required_negative_decoy_assignments": 1230,
+      "total_candidate_placements_core": 1638,
+      "unique_original_cases_represented": 408
+    },
+    "8": {
+      "budget_k": 4,
+      "candidate_tests_per_deterministic_arm": 1064,
+      "candidate_tests_per_llm_trial_set": 1064,
+      "core_external_ranking_scenarios": 266,
+      "maximum_negative_case_reuse_for_positive_scenarios": 11,
+      "mean_negative_case_reuse_for_positive_scenarios": 10.62962962962963,
+      "negative_ranking_scenarios_disjoint": 20,
+      "pack_size": 8,
+      "positive_ranking_scenarios": 246,
+      "required_negative_decoy_assignments": 1722,
+      "total_candidate_placements_core": 2128,
+      "unique_original_cases_represented": 408
+    }
+  },
+  "readiness_only_count": 20,
+  "readiness_only_negative": 10,
+  "readiness_only_vulnerable": 10,
+  "recommended_k": 4,
+  "recommended_pack_size": 5,
+  "recommended_trial_count": 5,
+  "required_adapter_distribution": {
+    "header_input": 87,
+    "parameter_name_value_adapter": 54
+  },
+  "sanitization_required_count": 455,
+  "top_incompatibility_reasons": {
+    "current_candidate_transport_does_not_support_header": 87,
+    "current_candidate_transport_does_not_support_parameter_name_enumeration": 54,
+    "no_externally_controllable_input_source": 47
+  },
+  "total_xss": 455,
+  "trial_count_feasibility": {
+    "1": {
+      "candidate_tests_deterministic": 1112,
+      "candidate_tests_gpt": 1112,
+      "candidate_tests_qwen": 1112,
+      "deterministic_rows": 278,
+      "gpt_calls": 278,
+      "llm_trials_per_scenario": 1,
+      "projected_gpt_ranking_hours_reference": 0.347,
+      "projected_gpt_ranking_seconds_reference": 1251.0,
+      "projected_qwen_ranking_days_reference": 0.266,
+      "projected_qwen_ranking_hours_reference": 6.394,
+      "projected_qwen_ranking_seconds_reference": 23018.399999999998,
+      "qwen_calls": 278,
+      "total_ranking_rows": 834
+    },
+    "3": {
+      "candidate_tests_deterministic": 1112,
+      "candidate_tests_gpt": 3336,
+      "candidate_tests_qwen": 3336,
+      "deterministic_rows": 278,
+      "gpt_calls": 834,
+      "llm_trials_per_scenario": 3,
+      "projected_gpt_ranking_hours_reference": 1.042,
+      "projected_gpt_ranking_seconds_reference": 3753.0,
+      "projected_qwen_ranking_days_reference": 0.799,
+      "projected_qwen_ranking_hours_reference": 19.182,
+      "projected_qwen_ranking_seconds_reference": 69055.2,
+      "qwen_calls": 834,
+      "total_ranking_rows": 1946
+    },
+    "5": {
+      "candidate_tests_deterministic": 1112,
+      "candidate_tests_gpt": 5560,
+      "candidate_tests_qwen": 5560,
+      "deterministic_rows": 278,
+      "gpt_calls": 1390,
+      "llm_trials_per_scenario": 5,
+      "projected_gpt_ranking_hours_reference": 1.738,
+      "projected_gpt_ranking_seconds_reference": 6255.0,
+      "projected_qwen_ranking_days_reference": 1.332,
+      "projected_qwen_ranking_hours_reference": 31.97,
+      "projected_qwen_ranking_seconds_reference": 115092.0,
+      "qwen_calls": 1390,
+      "total_ranking_rows": 3058
+    }
+  },
+  "verifier_compatibility_distribution": {
+    "current_marker_control_likely_sufficient": 455
+  },
+  "vulnerable_xss": 246
+}

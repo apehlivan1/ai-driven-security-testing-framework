@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "action_status": "executed",
+    "final_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01053",
+    "ground_truth_used": false,
+    "main_response_status": 200,
+    "main_response_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01053",
+    "opaque_candidate_id": "ox14-c000166",
+    "request_header_names": [
+      "Referer"
+    ],
+    "requested_url": "https://127.0.0.1:8443/benchmark/xss-02/BenchmarkTest01053",
+    "role": "marker",
+    "transport": "header"
+  },
+  "created_at": "2026-08-21T18:01:20.016809+00:00",
+  "data_ref": "artifacts\\ox14-c000166-marker.png",
+  "evidence_id": "evidence-6c9628401ffc",
+  "evidence_type": "http_exchange",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-19dfd75d1d60"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T180116Z",
+  "source": "owasp_xss_v14_readiness",
+  "summary": "Browser main-document HTTP observation for OWASP readiness marker request.",
+  "target_ref": "/external-v14/case-000166"
+}

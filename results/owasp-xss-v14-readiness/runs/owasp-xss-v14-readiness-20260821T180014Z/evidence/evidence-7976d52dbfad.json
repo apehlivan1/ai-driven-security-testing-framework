@@ -1,0 +1,21 @@
+{
+  "attributes": {
+    "ground_truth_used": false,
+    "opaque_candidate_id": "ox14-c000338",
+    "payload_family": "safe_marker_assignment_inert_suffix",
+    "readiness_only": true
+  },
+  "created_at": "2026-08-21T18:00:21.833686+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-7976d52dbfad",
+  "evidence_type": "verification_note",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-2990c21a9173",
+    "action-36f2d9a27d8c"
+  ],
+  "run_id": "owasp-xss-v14-readiness-20260821T180014Z",
+  "source": "owasp_xss_v14_readiness",
+  "summary": "OWASP readiness verification used deterministic marker/control construction only.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/xss-04/BenchmarkTest02223?BenchmarkTest02223=%3Cscript%3Ewindow.__adstfXssMarker%3D%27adstf_owasp_ox14_c000338%27%3C%2Fscript%3E+"
+}

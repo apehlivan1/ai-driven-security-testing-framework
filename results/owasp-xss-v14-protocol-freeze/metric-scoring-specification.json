@@ -1,0 +1,51 @@
+{
+  "artifact_status": "pre_execution_metric_specification",
+  "efficiency_metrics": [
+    "ranking latency",
+    "token usage where available",
+    "cost availability",
+    "requests/actions to first verifier-confirmed finding when execution is later authorized",
+    "time to first verifier-confirmed finding when execution is later authorized"
+  ],
+  "failure_denominator_policy": {
+    "invalid_or_failed_model_output": "retained in reliability denominators; excluded from valid ranking-performance aggregates",
+    "no_silent_repair": true,
+    "no_silent_retry": true,
+    "repeated_trials": "nested under scenario and arm; not independent benchmark scenarios"
+  },
+  "negative_only_scenarios": {
+    "applicable_ranking_metrics": "contract validity, latency, candidate coverage and downstream no-finding behavior where execution is later authorized",
+    "correct_behavior": "no verifier-confirmed finding after testing candidates within budget in later execution phase",
+    "not_applicable": [
+      "vulnerable_candidate_rank",
+      "top_1_success",
+      "top_k_success",
+      "reciprocal_rank",
+      "mrr"
+    ]
+  },
+  "ranking_metrics_positive_scenarios": {
+    "candidate_coverage_under_budget": "whether focal vulnerable candidate is within the fixed candidate-test budget",
+    "mrr": "mean reciprocal rank over applicable valid positive ranking rows",
+    "reciprocal_rank": "1 / vulnerable_candidate_rank",
+    "top_1_success": "true when focal vulnerable candidate rank is 1",
+    "top_k_success": "true when focal vulnerable candidate rank <= 4",
+    "vulnerable_candidate_rank": "1-based rank of focal vulnerable candidate in a valid ranking"
+  },
+  "reliability_metrics": [
+    "scheduled calls",
+    "attempted calls",
+    "valid structured outputs",
+    "malformed outputs",
+    "provider failures",
+    "runtime failures",
+    "timeouts",
+    "retry count",
+    "contract-valid output rate"
+  ],
+  "schema_version": "owasp-xss-v14-metric-scoring-specification-v1",
+  "undefined_value_policy": {
+    "not_applicable": "metric does not apply to an arm/scenario type",
+    "not_available": "metric applies but required measurement is absent"
+  }
+}
