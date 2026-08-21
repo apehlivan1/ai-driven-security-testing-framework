@@ -6,9 +6,11 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+import adstf.owasp_xss_v14_confirmatory as confirmatory
 from adstf.llm_ranking import ModelCompletion, ModelProviderError
 from adstf.owasp_xss_v14_confirmatory import (
     EXPECTED_DENOMINATORS,
@@ -17,13 +19,16 @@ from adstf.owasp_xss_v14_confirmatory import (
     gpt_preflight,
     load_protocol_package,
     qwen_preflight,
+    resolve_dry_validation_output_dir,
     row_artifact_path,
     run_dry_validation,
     run_runtime_preflight,
     scheduled_row_id,
     validate_existing_row_artifact,
+    validate_duplicate_and_resume_state,
     validate_protocol_package,
     validate_schedule_resolution,
+    target_preflight,
 )
 
 
@@ -99,6 +104,16 @@ class OwaspXssV14ConfirmatoryHarnessTests(unittest.TestCase):
         self.assertFalse(report["runtime_preflight"]["owasp_target"]["valid"])
         self.assertFalse(report["runtime_preflight"]["owasp_target"]["final_confirmatory_case_executed"])
 
+    def test_target_preflight_requires_frozen_local_scope(self) -> None:
+        report = target_preflight(
+            base_url="https://example.invalid/benchmark",
+            target_probe=lambda url: {"reachable": True, "url": url},
+        )
+
+        self.assertFalse(report["valid"])
+        self.assertFalse(report["approved_local_scope"])
+        self.assertFalse(report["final_confirmatory_case_executed"])
+
     def test_gpt_preflight_rejects_missing_or_wrong_model(self) -> None:
         missing = gpt_preflight({"OPENAI_API_KEY": "secret"})
         wrong = gpt_preflight({"OPENAI_API_KEY": "secret", "OPENAI_RANKING_MODEL": "other-model"})
@@ -140,6 +155,27 @@ class OwaspXssV14ConfirmatoryHarnessTests(unittest.TestCase):
 
         with self.assertRaises(ConfirmatoryHarnessError):
             validate_existing_row_artifact(existing, row)
+
+    def test_duplicate_existing_row_id_is_rejected(self) -> None:
+        package = load_protocol_package(Path("results/owasp-xss-v14-protocol-freeze"))
+        row = package["schedule_rows"][0]
+        summary = {
+            "sequence": row["sequence"],
+            "scenario_id": row["scenario_id"],
+            "arm_id": row["arm_id"],
+            "trial_number": row["trial_number"],
+        }
+
+        with tempfile.TemporaryDirectory() as tmp:
+            row_dir = Path(tmp) / "raw" / "ranking-rows"
+            row_dir.mkdir(parents=True)
+            (row_dir / "sequence-0001-a.json").write_text(json.dumps({"summary": summary}), encoding="utf-8")
+            (row_dir / "sequence-0001-b.json").write_text(json.dumps({"summary": summary}), encoding="utf-8")
+
+            validation = validate_duplicate_and_resume_state(Path(tmp), package["schedule_rows"])
+
+            self.assertFalse(validation["valid"])
+            self.assertTrue(any("duplicate existing row artifact identity" in item for item in validation["errors"]))
 
     def test_resume_skips_existing_completed_row_without_overwrite(self) -> None:
         package = load_protocol_package(Path("results/owasp-xss-v14-protocol-freeze"))
@@ -186,6 +222,18 @@ class OwaspXssV14ConfirmatoryHarnessTests(unittest.TestCase):
         row = {"sequence": 1, "arm_id": "a", "scenario_id": "s", "trial_number": 2}
 
         self.assertEqual(scheduled_row_id(row), "1|a|s|2")
+
+    def test_default_dry_validation_output_is_not_silently_overwritten(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            requested = Path(tmp) / "readiness"
+            requested.mkdir()
+            (requested / "dry-validation-report.json").write_text("historical", encoding="utf-8")
+
+            with patch.object(confirmatory, "DEFAULT_READINESS_DIR", requested):
+                resolved = resolve_dry_validation_output_dir(requested)
+
+            self.assertEqual(resolved.parent, requested)
+            self.assertTrue(resolved.name.startswith("dry-validation-"))
 
 
 if __name__ == "__main__":

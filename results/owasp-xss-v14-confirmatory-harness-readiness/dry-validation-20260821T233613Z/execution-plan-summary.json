@@ -1,0 +1,15 @@
+{
+  "arm_order": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "per_arm_counts": {
+    "deterministic_structural": 266,
+    "local_qwen": 1330,
+    "proprietary_gpt": 1330
+  },
+  "scenario_count": 266,
+  "schema_version": "owasp-xss-v14-confirmatory-execution-plan-summary-v1",
+  "total_rows": 2926
+}

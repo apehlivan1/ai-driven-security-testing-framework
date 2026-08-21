@@ -397,11 +397,12 @@ def target_preflight(
     probe = target_probe or (lambda url: health_check(url))
     result = probe(base_url)
     reachable = bool(result.get("reachable"))
+    approved_local_scope = base_url == "https://127.0.0.1:8443/benchmark"
     return {
         "checked": True,
-        "valid": reachable,
+        "valid": reachable and approved_local_scope,
         "base_url": base_url,
-        "approved_local_scope": base_url == "https://127.0.0.1:8443/benchmark",
+        "approved_local_scope": approved_local_scope,
         "probe_result": result,
         "final_confirmatory_case_executed": False,
         "browser_verification_executed": False,
@@ -614,6 +615,7 @@ def validate_duplicate_and_resume_state(output_dir: Path, schedule_rows: list[di
         errors.append("duplicate scheduled row identities")
     existing_count = 0
     next_missing = None
+    existing_seen: set[str] = set()
     if row_dir.exists():
         for path in row_dir.glob("sequence-*.json"):
             data = load_json(path)
@@ -621,6 +623,9 @@ def validate_duplicate_and_resume_state(output_dir: Path, schedule_rows: list[di
             row_id = scheduled_row_id(summary)
             if row_id not in planned_ids:
                 errors.append(f"unexpected existing row artifact: {path.name}")
+            if row_id in existing_seen:
+                errors.append(f"duplicate existing row artifact identity: {row_id}")
+            existing_seen.add(row_id)
             existing_count += 1
     existing_ids = set()
     if row_dir.exists():
@@ -869,6 +874,12 @@ def ensure_not_overwriting_previous_results(path: Path) -> None:
         raise ConfirmatoryHarnessError(f"output directory already exists and is not empty: {path}")
 
 
+def resolve_dry_validation_output_dir(requested: Path) -> Path:
+    if requested.resolve() == DEFAULT_READINESS_DIR.resolve() and requested.exists() and any(requested.iterdir()):
+        return requested / f"dry-validation-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
+    return requested
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run or dry-validate the frozen OWASP XSS v1.4 confirmatory harness.")
     parser.add_argument("--mode", choices=("dry-run", "preflight", "execute"), default="dry-run")
@@ -880,13 +891,14 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.mode == "dry-run":
+        output_dir = resolve_dry_validation_output_dir(args.output_dir)
         report = run_dry_validation(
             protocol_package_dir=args.protocol_package,
-            output_dir=args.output_dir,
+            output_dir=output_dir,
             check_target=args.check_target,
         )
         print(f"OWASP XSS v1.4 confirmatory dry validation valid: {report['valid']}")
-        print(f"Dry-validation artifacts written to: {args.output_dir.resolve()}")
+        print(f"Dry-validation artifacts written to: {output_dir.resolve()}")
         return
 
     if args.mode == "preflight":
