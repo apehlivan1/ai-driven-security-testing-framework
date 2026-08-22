@@ -1,0 +1,34 @@
+{
+  "comparison_rows": [
+    {
+      "arm_id": "deterministic_structural",
+      "v13_mrr": 0.3854,
+      "v13_top1": 0.25,
+      "v13_topk": 0.6875,
+      "v14_mrr": 0.457274011299435,
+      "v14_top1": 0.2033898305084746,
+      "v14_topk": 0.788135593220339
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "v13_mrr": 0.406,
+      "v13_top1": 0.2179,
+      "v13_topk": 0.7179,
+      "v14_mrr": 0.4732258976533786,
+      "v14_top1": 0.23324851569126379,
+      "v14_topk": 0.7811704834605598
+    },
+    {
+      "arm_id": "local_qwen",
+      "v13_mrr": 0.4427,
+      "v13_top1": 0.3125,
+      "v13_topk": 0.6875,
+      "v14_mrr": 0.4925531914893617,
+      "v14_top1": 0.24680851063829787,
+      "v14_topk": 0.8297872340425532
+    }
+  ],
+  "interpretation": "descriptive_only_no_general_superiority_claim",
+  "policy": "v1.3.1 and v1.4 denominators are not pooled.",
+  "schema_version": "owasp-xss-v14-v13-separate-descriptive-comparison-v1"
+}

@@ -1,0 +1,66 @@
+{
+  "arms": {
+    "deterministic_structural": {
+      "cost": "not_applicable",
+      "latency_ms": {
+        "count": 266,
+        "max": 0,
+        "mean": 0,
+        "median": 0.0,
+        "min": 0,
+        "p95": 0
+      },
+      "requests_actions_candidates_tested": "not_applicable",
+      "time_to_first_verifier_confirmed_finding": "not_applicable",
+      "token_usage": {
+        "input_tokens": "not_available",
+        "output_tokens": "not_available",
+        "total_tokens": "not_available"
+      }
+    },
+    "local_qwen": {
+      "cost": {
+        "availability": "not_available",
+        "reason": "no frozen numeric pricing/cost artifact retained"
+      },
+      "latency_ms": {
+        "count": 1330,
+        "max": 143482,
+        "mean": 57567.44887218045,
+        "median": 55150.0,
+        "min": 41904,
+        "p95": 75872
+      },
+      "requests_actions_candidates_tested": "not_applicable",
+      "time_to_first_verifier_confirmed_finding": "not_applicable",
+      "token_usage": {
+        "input_tokens": "not_available",
+        "output_tokens": "not_available",
+        "total_tokens": "not_available"
+      }
+    },
+    "proprietary_gpt": {
+      "cost": {
+        "availability": "not_available",
+        "reason": "no frozen numeric pricing/cost artifact retained"
+      },
+      "latency_ms": {
+        "count": 1330,
+        "max": 60057,
+        "mean": 3989.8067669172933,
+        "median": 3630.0,
+        "min": 2386,
+        "p95": 6080
+      },
+      "requests_actions_candidates_tested": "not_applicable",
+      "time_to_first_verifier_confirmed_finding": "not_applicable",
+      "token_usage": {
+        "input_tokens": 783460,
+        "output_tokens": 403294,
+        "rows_with_numeric_usage": 1329,
+        "total_tokens": 1186754
+      }
+    }
+  },
+  "schema_version": "owasp-xss-v14-efficiency-aggregates-v1"
+}

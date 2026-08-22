@@ -1,0 +1,52 @@
+{
+  "arms": {
+    "deterministic_structural": {
+      "attempted_model_calls": 0,
+      "completed_raw_artifacts": 266,
+      "contract_invalid_outputs": 0,
+      "contract_valid_outputs": 266,
+      "contract_validity_rate": 1.0,
+      "malformed_outputs": 0,
+      "provider_or_runtime_failures": 0,
+      "retries": 0,
+      "scheduled_rows": 266,
+      "status_counts": {
+        "valid": 266
+      },
+      "timeouts": 0
+    },
+    "local_qwen": {
+      "attempted_model_calls": 1330,
+      "completed_raw_artifacts": 1330,
+      "contract_invalid_outputs": 5,
+      "contract_valid_outputs": 1325,
+      "contract_validity_rate": 0.9962406015037594,
+      "malformed_outputs": 5,
+      "provider_or_runtime_failures": 0,
+      "retries": 0,
+      "scheduled_rows": 1330,
+      "status_counts": {
+        "malformed": 5,
+        "valid": 1325
+      },
+      "timeouts": 0
+    },
+    "proprietary_gpt": {
+      "attempted_model_calls": 1330,
+      "completed_raw_artifacts": 1330,
+      "contract_invalid_outputs": 1,
+      "contract_valid_outputs": 1329,
+      "contract_validity_rate": 0.9992481203007518,
+      "malformed_outputs": 0,
+      "provider_or_runtime_failures": 1,
+      "retries": 0,
+      "scheduled_rows": 1330,
+      "status_counts": {
+        "provider_failed": 1,
+        "valid": 1329
+      },
+      "timeouts": 0
+    }
+  },
+  "schema_version": "owasp-xss-v14-reliability-aggregates-v1"
+}

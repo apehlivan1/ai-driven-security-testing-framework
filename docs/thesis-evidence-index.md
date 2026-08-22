@@ -2,8 +2,9 @@
 
 Status: living index for thesis evidence. evaluation-protocol-v1.2 artifacts
 remain frozen historical evidence. The final corrected v1.3.1 XSS ablation
-package is the current canonical evidence source for the expanded reflected-XSS
-ranking study.
+package remains the canonical evidence source for the controlled local
+reflected-XSS ranking study. The final v1.4 OWASP Benchmark XSS package is the
+canonical evidence source for the external confirmatory XSS ranking study.
 
 ## Frozen v1.2 Evidence
 
@@ -487,11 +488,12 @@ results/<study-id>/
   numeric USD cost field or a defensible external cost source is recorded before
   the experiment.
 
-## v1.4 OWASP Benchmark XSS External-Validation Preparation
+## v1.4 OWASP Benchmark XSS External-Validation Evidence
 
-The v1.4 OWASP Benchmark XSS line is a separate external-validation preparation
-track. It does not modify or supersede the frozen v1.3.1 XSS ablation evidence.
-No scored GPT, Qwen or final ranking experiment has been run for v1.4.
+The v1.4 OWASP Benchmark XSS line is a separate external-validation track. It
+does not modify or supersede the frozen v1.3.1 XSS ablation evidence. The
+readiness and protocol-freeze artifacts below document pre-execution stages;
+the final confirmatory ranking evidence is listed after them.
 
 Design and protocol-preparation documents:
 
@@ -540,13 +542,13 @@ Non-scored READINESS_ONLY validation artifacts:
 - Checksums:
   `results/owasp-xss-v14-readiness/checksums.json`
 
-Current v1.4 readiness status: the pinned OWASP Benchmark Java v1.2 XSS corpus
-contains 455 labelled XSS cases. The deterministic audit projects 408
+v1.4 readiness-stage status: the pinned OWASP Benchmark Java v1.2 XSS corpus
+contains 455 labelled XSS cases. The deterministic audit projected 408
 compatible cases after justified deterministic adapters and 47 excluded cases.
-Twenty compatible cases are reserved as `READINESS_ONLY`, leaving 388
-`FINAL_CONFIRMATORY_ELIGIBLE` cases for future protocol-freeze work. The
-READINESS_ONLY validation passed across 20 cases with no GPT calls, no Qwen
-calls and no final ranking execution.
+Twenty compatible cases were reserved as `READINESS_ONLY`, leaving 388
+`FINAL_CONFIRMATORY_ELIGIBLE` cases for protocol-freeze work. The READINESS_ONLY
+validation passed across 20 cases with no GPT calls, no Qwen calls and no final
+ranking execution.
 
 v1.4 frozen pre-execution protocol package:
 
@@ -583,9 +585,81 @@ v1.4 frozen pre-execution protocol package:
 - Checksums:
   `results/owasp-xss-v14-protocol-freeze/checksums.sha256`
 
-Current v1.4 protocol-freeze status: the final pre-execution corpus contains
-388 `FINAL_CONFIRMATORY_ELIGIBLE` cases, organized into 236 positive ranking
+v1.4 protocol-freeze status: the final pre-execution corpus contains 388
+`FINAL_CONFIRMATORY_ELIGIBLE` cases, organized into 236 positive ranking
 scenarios and 30 negative-only scenarios. Expected rows are 266 deterministic
 rows, 1330 GPT rows and 1330 Qwen rows. The package validates ground-truth
-separation and benchmark-identity sanitization. No final OWASP case execution,
-browser verification, GPT call or Qwen call has been performed.
+separation and benchmark-identity sanitization.
+
+Final v1.4 OWASP Benchmark XSS confirmatory ranking evidence:
+
+- Human-readable closure summary:
+  `docs/evaluation-v1.4-final-results.md`
+- Source run:
+  `results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/`
+- Canonical package:
+  `results/owasp-xss-v14-confirmatory-final/canonical/`
+- Manifest:
+  `results/owasp-xss-v14-confirmatory-final/canonical/manifest.json`
+- Execution integrity:
+  `results/owasp-xss-v14-confirmatory-final/canonical/execution-integrity-report.json`
+- Validation report:
+  `results/owasp-xss-v14-confirmatory-final/canonical/validation-report.json`
+- Checksum validation:
+  `results/owasp-xss-v14-confirmatory-final/canonical/checksum-validation-report.json`
+- Checksums:
+  `results/owasp-xss-v14-confirmatory-final/canonical/checksums.sha256`
+- Ranking effectiveness:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/ranking-aggregates.json`
+- Contract reliability:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/reliability-aggregates.json`
+- Latency/resources:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/efficiency-aggregates.json`
+- Negative-scenario accounting:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/negative-scenario-aggregates.json`
+- v1.3.1/v1.4 separate descriptive comparison:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/v13-comparison.json`
+- Per-row scored data:
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/scored-rows.json`
+  and
+  `results/owasp-xss-v14-confirmatory-final/canonical/normalized/scored-rows.csv`
+- Thesis-ready derived tables:
+  `results/owasp-xss-v14-confirmatory-final/canonical/thesis-tables.md`
+  and
+  `results/owasp-xss-v14-confirmatory-final/canonical/thesis-tables.tex`
+
+The v1.4 final execution completed all 2926 scheduled ranking rows: 266
+deterministic rows, 1330 GPT rows and 1330 Qwen rows. The GPT arm contains 1329
+contract-valid rows and one preserved provider failure. The Qwen arm contains
+1325 contract-valid rows and five malformed outputs, all on `ow14-s0232`,
+trials 1--5, due to duplicate/omitted candidate-ID contract violations. No
+retries were performed, no ground-truth leakage was detected, and no
+`READINESS_ONLY` or `EXCLUDED` cases entered the scored experiment.
+
+The v1.4 canonical ranking-effectiveness values on valid positive ranking rows
+are:
+
+- `deterministic_structural`: Top-1 0.2034, Top-4 0.7881, MRR 0.4573.
+- `proprietary_gpt`: Top-1 0.2332, Top-4 0.7812, MRR 0.4732.
+- `local_qwen`: Top-1 0.2468, Top-4 0.8298, MRR 0.4926.
+
+The v1.4 latency/resource summary records GPT median latency 3630 ms, GPT mean
+latency 3989.81 ms, GPT p95 latency 6080 ms and GPT total token usage
+1,186,754. It records Qwen median latency 55150 ms, Qwen mean latency 57567.45
+ms and Qwen p95 latency 75872 ms. These values are derived from
+`normalized/efficiency-aggregates.json`.
+
+Negative-only scenarios have no vulnerable focal candidate, so Top-1, Top-4
+and MRR are not applicable for those scenarios. The final v1.4 run is
+ranking-only: direct OWASP execution/browser verification and deterministic
+runtime vulnerability verification were not performed, so v1.4 should not be
+reported as verifier-confirmed finding evidence. Monetary cost remains
+`not_available`, and deterministic latency should be described only as the
+recorded instrumentation value of 0 ms rather than literal zero computational
+cost.
+
+The v1.4 canonical package should be cited for the external OWASP Benchmark XSS
+ranking confirmation. The raw source run is preserved separately and should
+remain local unless a deliberate raw-evidence archival decision is made. The
+v1.4 package does not modify or supersede v1.2 IDOR/SQLi/ZAP evidence or the
+v1.3.1 controlled local XSS ablation evidence.

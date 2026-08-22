@@ -1,0 +1,29 @@
+{
+  "arms": {
+    "deterministic_structural": {
+      "contract_valid_rows": 30,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_rows": 30,
+      "negative_scenarios": 30,
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    },
+    "local_qwen": {
+      "contract_valid_rows": 150,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_rows": 150,
+      "negative_scenarios": 30,
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    },
+    "proprietary_gpt": {
+      "contract_valid_rows": 150,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_rows": 150,
+      "negative_scenarios": 30,
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    }
+  },
+  "schema_version": "owasp-xss-v14-negative-scenario-aggregates-v1"
+}

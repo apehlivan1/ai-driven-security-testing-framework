@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "expected_scored_rows": 2926,
+  "schema_version": "owasp-xss-v14-canonical-validation-v1",
+  "scored_rows": 2926,
+  "valid": true
+}

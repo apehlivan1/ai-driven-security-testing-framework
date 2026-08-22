@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-08-22T23:02:48.993566+00:00",
+  "git_state": {
+    "branch": "main",
+    "dirty": true,
+    "head": "b9f98d42dba2df9a70de686209686ea84c50ac41",
+    "status_short": [
+      "?? results/owasp-xss-v14-confirmatory-final/",
+      "?? src/adstf/owasp_xss_v14_postrun.py"
+    ]
+  },
+  "gpt_calls_performed_by_canonicalization": 0,
+  "ground_truth_loaded_only_for_post_run_scoring": true,
+  "immutable_raw_artifacts_preserved": true,
+  "output_dir": "results/owasp-xss-v14-confirmatory-final/canonical",
+  "owasp_cases_executed_by_canonicalization": 0,
+  "protocol_package_dir": "results/owasp-xss-v14-protocol-freeze",
+  "protocol_sha256": "172a583322cd73e6553ea05d9209a33bf216eed6b62d74f98653e893722e473a",
+  "qwen_calls_performed_by_canonicalization": 0,
+  "raw_execution_dir": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z",
+  "schema_version": "owasp-xss-v14-canonical-analysis-manifest-v1",
+  "scored_execution_rerun": false,
+  "validation_valid": true
+}
