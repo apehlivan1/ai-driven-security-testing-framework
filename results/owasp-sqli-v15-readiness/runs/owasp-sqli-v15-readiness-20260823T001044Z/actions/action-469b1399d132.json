@@ -1,0 +1,33 @@
+{
+  "action_id": "action-469b1399d132",
+  "action_type": "replay_request",
+  "expected_evidence": [
+    "http_exchange"
+  ],
+  "module_id": "sqli.boolean",
+  "parameters": {
+    "body_text_limit": 4096,
+    "capture_body_text": true,
+    "headers": {
+      "Cookie": "BenchmarkTest00107=bar"
+    },
+    "method": "GET",
+    "url": "https://127.0.0.1:8443/benchmark/sqli-00/BenchmarkTest00107"
+  },
+  "preconditions": [
+    "owasp_benchmark_java_running_locally",
+    "readiness_only_case",
+    "non_destructive_boolean_probe"
+  ],
+  "rationale": "Execute deterministic OWASP SQLi readiness request.",
+  "requested_by": "owasp_sqli_v15_readiness",
+  "run_id": "owasp-sqli-v15-readiness-20260823T001044Z",
+  "safety_class": "low",
+  "scope_context": {
+    "evaluation_role": "READINESS_ONLY",
+    "ground_truth_loaded": false,
+    "opaque_candidate_id": "os15-c000022",
+    "phase": "baseline_2"
+  },
+  "target_ref": "https://127.0.0.1:8443/benchmark/sqli-00/BenchmarkTest00107"
+}

@@ -663,3 +663,92 @@ ranking confirmation. The raw source run is preserved separately and should
 remain local unless a deliberate raw-evidence archival decision is made. The
 v1.4 package does not modify or supersede v1.2 IDOR/SQLi/ZAP evidence or the
 v1.3.1 controlled local XSS ablation evidence.
+
+### v1.5 OWASP Benchmark SQLi Compatibility, Readiness and Protocol Freeze
+
+v1.5 extends the external-validation line to OWASP Benchmark Java SQL injection
+cases. It remains separate from the frozen v1.2, v1.3.1 and v1.4 evidence.
+
+v1.5 compatibility audit:
+
+- Audit package:
+  `results/owasp-sqli-v15-compatibility-audit/`
+- Case inventory:
+  `results/owasp-sqli-v15-compatibility-audit/case-audit.csv`
+- Summary:
+  `results/owasp-sqli-v15-compatibility-audit/summary.json`
+- Validation:
+  `results/owasp-sqli-v15-compatibility-audit/validation-report.json`
+- Checksums:
+  `results/owasp-sqli-v15-compatibility-audit/checksums.sha256`
+
+The audit identified 504 SQLi-labelled OWASP Benchmark cases: 272 vulnerable
+and 232 non-vulnerable. It classified 220 as adapter-supported, 127 as
+excluded and 157 as unresolved manual-review cases. No SQLi runtime execution,
+GPT call or Qwen call was performed by the static audit.
+
+v1.5 readiness evidence:
+
+- Readiness package:
+  `results/owasp-sqli-v15-readiness/`
+- Reconciled corpus summary:
+  `results/owasp-sqli-v15-readiness/reconciled-corpus-summary.json`
+- Updated compatibility inventory:
+  `results/owasp-sqli-v15-readiness/updated-compatibility-inventory.csv`
+- Readiness results:
+  `results/owasp-sqli-v15-readiness/readiness-results.csv`
+- Validation:
+  `results/owasp-sqli-v15-readiness/validation-report.json`
+- Checksums:
+  `results/owasp-sqli-v15-readiness/checksums.sha256`
+
+The readiness phase executed 20 READINESS_ONLY cases, 10 vulnerable and 10
+non-vulnerable, covering form, multi-form, multi-query, header and cookie
+adapter classes. It observed stable baselines for all 20 cases, reproducible
+boolean true/false differences for 6 cases, verifier-confirmed outcomes for 6
+cases, inconclusive outcomes for 14 cases and zero server errors. It did not
+execute any final-confirmatory case and made zero GPT or Qwen calls.
+
+v1.5 frozen pre-execution protocol package:
+
+- Frozen pre-execution protocol:
+  `docs/evaluation-protocol-v1.5.md`
+- Protocol-freeze package:
+  `results/owasp-sqli-v15-protocol-freeze/`
+- Package manifest:
+  `results/owasp-sqli-v15-protocol-freeze/manifest.json`
+- Final corpus manifest:
+  `results/owasp-sqli-v15-protocol-freeze/final-corpus-manifest.json`
+- Scenario manifest:
+  `results/owasp-sqli-v15-protocol-freeze/scenario-manifest.json`
+- Model-facing candidate snapshots:
+  `results/owasp-sqli-v15-protocol-freeze/model-facing/candidate-snapshots/`
+- Internal provenance:
+  `results/owasp-sqli-v15-protocol-freeze/provenance/internal-provenance.json`
+- Execution specifications:
+  `results/owasp-sqli-v15-protocol-freeze/execution/execution-specifications.json`
+- Ground-truth scoring data:
+  `results/owasp-sqli-v15-protocol-freeze/ground-truth/scoring-data.json`
+- Decoy assignment manifest:
+  `results/owasp-sqli-v15-protocol-freeze/ground-truth/decoy-assignment-manifest.json`
+- Arm configurations:
+  `results/owasp-sqli-v15-protocol-freeze/arm-configurations.json`
+- Trial schedule:
+  `results/owasp-sqli-v15-protocol-freeze/trial-schedule.json`
+- Direct-execution schedule:
+  `results/owasp-sqli-v15-protocol-freeze/direct-execution-schedule.json`
+- Metric/scoring specification:
+  `results/owasp-sqli-v15-protocol-freeze/metric-scoring-specification.json`
+- Preflight validation:
+  `results/owasp-sqli-v15-protocol-freeze/preflight-validation-report.json`
+- Checksums:
+  `results/owasp-sqli-v15-protocol-freeze/checksums.sha256`
+
+The v1.5 protocol-freeze package contains 200
+FINAL_CONFIRMATORY_ELIGIBLE cases, organized into 105 positive ranking
+scenarios and 19 negative-only scenarios. Expected rows are 124 deterministic
+rows, 620 GPT rows and 620 Qwen rows. The direct deterministic execution layer
+has a separately predeclared denominator of 200 cases. The protocol-freeze
+package validates ground-truth separation, benchmark-identity sanitization,
+checksum consistency and zero final SQLi execution, zero GPT calls and zero
+Qwen calls.

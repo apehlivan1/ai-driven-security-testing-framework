@@ -1,0 +1,1002 @@
+{
+  "artifact_status": "pre_execution_public_scenario_manifest",
+  "candidate_test_budget": 4,
+  "pack_size": 5,
+  "scenario_count": 124,
+  "scenarios": [
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "580d36e85a73f8e17c74f6e0c44ef7f430788d3d8a89c4a2b7e6572e767c691f",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0001",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0001.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "27b4692a4e70de23ff4b57179d3ab329f3532422a78c99cf86a2b7b633a949c5",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0002",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0002.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "70b34083f6d2d119b1a1ca753fb67efbd230375ef9d23e18e191f338c88d6a99",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0003",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0003.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "8ad43b1a07254c011e8819c8d254418bd78756eafc63a4906f6a8ccf4e69a702",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0004",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0004.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "b5bcb894eb746b445d171d2f37528660119983e70abfabde08de33c513ab90f6",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0005",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0005.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "5db03585ecd28388db983ed8d55dce9c7baf1cd0ed523e287bddf3e6394d6629",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0006",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0006.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "948900f67da8961b3f172e9ed98db0e007a937ddde199551a33c80f817fbb7d0",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0007",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0007.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "34e7483d1c5c0041a09c286fddf3c824c8adf21b5d69cd0716a0742a77751a7f",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0008",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0008.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "e52a1e72f85a95b0b395b54bafaf53b7e5b84e66444f5b438a49cd08dba26dd4",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0009",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0009.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "938e2449d768a65aab0536688a35480d331069abcb342100e9d78e932e91b910",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0010",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0010.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "fe1a01b23d800f177fda9e3bea688d6d83d783b4e259305cebc7bbd9052f2a5a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0011",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0011.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "26ff1342a65b7f306df51ceb1cc599176d92b4174b97947f11adcf662ad1f058",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0012",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0012.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "7d333357074bff47b6ed28b3ca48e6f7f51f8f72548d648d3cb172476d995f95",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0013",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0013.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "f000f0ffe2cdd9f2865e2c64050cbed9a62197c50958df863f5927514c134297",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0014",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0014.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ac603366a3fd3e8e0ff38af5fd9a941e5398ffa8e9745b14f391f773d401613a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0015",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0015.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "305167d30b962b8c162ecf5ec2fc6aac4884a2085d5d2544bb82c6827af89304",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0016",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0016.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "90d85dd38ccb7b12c6c53fd036f82c386cf89b7d8d2eca1a4c54ea3f7974b2a7",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0017",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0017.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "e4e1e21788462a9958be7f54f73a6c74db7a843014ce22a960dfdafd97f360d6",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0018",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0018.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "21bf30f8c1d204b110353f381c6bec02b63cac9b5cc888a4c90956e041a10a7c",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0019",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0019.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "954f887713d1444df831b7e21bb71b70ddcafb649f7d0cc71b69867e89477502",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0020",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0020.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "68d0d99de1e3d8f7a6d4944e5d1cf2c6aae8e4422eb904876adbd1671baa85fa",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0021",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0021.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "acf315c1944ab31895a62ac263541a04a0770e0f0e4a9ac1f9a4f3e9883c0928",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0022",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0022.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "d4993d15f308ca955011f95a4cb10248d5986470d93e12fe298d36d851dc54e9",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0023",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0023.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "982136d1c5c7b07127caeeb3adbe1d495e4ee0cf71fee824a4329d5505e6c179",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0024",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0024.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "3a27c28f6d756a76f6351d07c09bd0a333c66cd6d87bbe96c14f466e8a1cd327",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0025",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0025.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "643360f9527e34c6d90ae6228636089690d1db535dd9bfe6518c3780a6b17ad3",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0026",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0026.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "74d62da02e50c8a5244a7ceef4ef1ec548b36ba3623d0791bc4963c83ada6a1a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0027",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0027.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "22742bed20548687c3a53002c101a300efd0a9470475afa6e2955e4814152ffe",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0028",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0028.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "4d90f13c5b194a8b451da8e8c2e5bbaedc99f1300228532599d439a9756f3ddf",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0029",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0029.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "f3e68fbda7060e66219a84e734a5453527ec2d0907fdb22ffa3529fc3f3823d7",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0030",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0030.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2c2d8b9b117f5aff1ea5b1e5f3aa8fcf110c85c26a5883ee36862352bb2aeedd",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0031",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0031.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "eca4af2e78103c92b463c6188bfb99bb116f1469e9dfba6219bfa24ef04ee0f9",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0032",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0032.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "a40549a323e7edc8145a2c3513f81388f9036f67f1f6472bab051d895c13291e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0033",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0033.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "75a628f0a46f3da3f6b3151a1659680c047de46ff59618f155a76d5d3f25f654",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0034",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0034.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "5cf7f9ad9e9d6072f528d385bfdb21e154d1c553afcf8de89c2515feb506af78",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0035",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0035.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ca0800b7e5f4d300cec19fbad8922cf9f0870bf8dbf4f00e0b94298c58dc922f",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0036",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0036.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "32a08dec655d7bbd3a10c474198981d788a73bc2b2fd14604636fb4b565afa38",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0037",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0037.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "1ea9813ab85822408ef401dae0c164005d2cc84c247eacde286b5bb837e2d411",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0038",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0038.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "a13f5bfada2a38eb1debe7cac92ad70e9e5c70521072471e5290a237c066ca9e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0039",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0039.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ef8cc14b1002df8c98f65f1c2fe5f089215e03b528a7c36110a879d8f84c2b7a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0040",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0040.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "e61a99a092a33ce5846ef38daf86bd3823d2cb9153b9a12f1a472ac4f7856583",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0041",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0041.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "928501f3b4f0f86f9a9a0e167d54407772dae1db44050e31a273d9b9b865a71a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0042",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0042.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "5b03041297e333270999503c917a297d69f2a313f4dffcf4ee2759985cbad835",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0043",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0043.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "db5ab466863e6bc883134c6defaa330fe4b182888b644862873743b1d0bbdeaa",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0044",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0044.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "de8413cc32eef5a84cfaf08c90ba521c68621be382e361ec8e8dd229f6028ca7",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0045",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0045.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "79885f72d00a975502a44578a6991af86626be13c9761018d218429245805928",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0046",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0046.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "a84f1950a601c64e398ffa9e91ab27ca31ad7d67b4bb8865d44c64d2559ff81a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0047",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0047.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "385b044f80a6127bb57c6601fad2d28ef86d9d379013583cb07ab7f99ab6e0e6",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0048",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0048.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "8a8769289b262a989d9c348da06a5fdccde3d145d12a09121c61ce6501e72993",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0049",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0049.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "20c338a7b2c8f0bac4bfbe7bd85c8c161cf88e849cb8c599263e930b495fe407",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0050",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0050.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "126c9c0d971439fcb116848e225dbee5f262ecb07f03f6e66cf1f3a7f607da03",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0051",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0051.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "33a7f30bcafa3e4b94ba63fb7b42f898e7681d6e93470f8295777c27b8a3c53c",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0052",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0052.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "4bb6b00a89d32ca3647ac8fc427d261b7323d27074524c3329eb4b70c6e07303",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0053",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0053.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "aa0d08d3a18831e5a5a437d7e43d9458886ae9726a149153ebf1b06cef7bec13",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0054",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0054.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0921a36273e190e6c06e60edb7393d2a6f101d9aff287c7dc036a60dbde7a098",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0055",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0055.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "1e36f9fb2e6d290a2a0250128df43dd3096666fa36fc71f626889719073f82ab",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0056",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0056.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ad8fb56f3495ff32314014e7033259e64ab47ef51a197354684bef95dcdf5586",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0057",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0057.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "aaff364d42f081c119ae33b9452aca3ec47987ab544fea300d9e9e08964f4519",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0058",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0058.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "88aa739f6d8c8fc2ad154f68c368e1509254f80d0511ba03647710ae275d2d58",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0059",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0059.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "665bdd428f79b2ced27c794024cc27ec97864cae84eecfd5155ae3a6287730b8",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0060",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0060.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "20348a6f7d341a33eda98d64ac9795539e9c15b9507d8b65674e789f018e9d2c",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0061",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0061.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "df8101f4818272acb5cd31ac7150c4508ec38cb030fc0cfd112fe1b47c828f7e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0062",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0062.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "13d761c8ec5a3d74522252e993cdfcf01f3f8be87d0fa3f6206cbe1d336f2ca9",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0063",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0063.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "41c983c6ac1a56aabd316bbc072d68bac9d663c9d8385cc968fc3011c8a50f57",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0064",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0064.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "dea41cb04340f3805b028bdb3300347146edb6a333faf9272e395fc5ce0c1e23",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0065",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0065.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "a0a9355fe80ff806dd22bb119970b52f43480b8355c8e94e05a788283dd15be5",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0066",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0066.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "903dce11da777a12dfc0e9276de63d072b45e89ae237796b9df3590d4c14f289",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0067",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0067.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "26d6a0c4ec3a55bcc1c067ea5b2c49906f6d7f8a36a133a8f81798d3b8e22ff8",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0068",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0068.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "fafb8ce9cd386fdc5212c16d1fc898b439ef48e393d281b150c188fee8769b6d",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0069",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0069.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "8c20d4c452da5fec2c6a836c11c714a618a796b4cbe7dae5bb76ca489cc8ae87",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0070",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0070.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "6146f1a080543ca0fa992aec92d3ef917cd6a48fe605a49366d59356813c6358",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0071",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0071.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "fda01ba8a96883c57ab5d3a9d50997cd854f7618b5ba8c6f55f56ba09d5e29d1",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0072",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0072.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "5fc5c3c83324611d62b42d0768ac946b5058ec8c9f73ebfeb6bc98be78ada23f",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0073",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0073.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "111925f29d8e03e97145463d83c050f22abc08eb11faf1fc4513c0d7f2bce48c",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0074",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0074.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2665fe9a7977b5724c2d937e1e2168383907850e16396cfd770c97d6cf7c82d5",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0075",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0075.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "dac0e843fe350c74462f02720171ea6c774841fa360aa97730d0313adf34d242",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0076",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0076.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0f88937a1b5d3f76620b405388d07f6cfdb6e2ad5b09473cc5b069cc51097952",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0077",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0077.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "76267c68082d2b2658d6be4f7450cffde7a349e8370f5fe4456f50f78ded0648",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0078",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0078.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "1d67adbcf0309ea020f33ba0499d45bfe6d8e1a14ca872be37a1db0ee116449d",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0079",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0079.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "51d16cfaad3fe1a28b7b90a3cb514a295e24f07922356b4bd2fb3e62ebd2fb24",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0080",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0080.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "dc1226ad4eeb1c9660d50beb80618911d59bfbf5fb8357c49c46225ca2ae1226",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0081",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0081.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ca1f37a04136fcd68b1d63d224f36c66338b8b5bfefd13ee737cbea81109bfeb",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0082",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0082.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ef19b9a9c6881a3acb5ce74a1f91daf86ac7f66ce37460ea8e8056c594da7e96",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0083",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0083.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "61db4486ed805d162697ee91525df6c1869e2b36152e8b114222d50dd1b550f2",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0084",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0084.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "10ae2616429c770124cdcc37a6be5be57ef826157c329abd6eff5be00b262bb7",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0085",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0085.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "6044c5172e501fe8b062dca2feed9b85f5632c76f90c3a752edf4c78484fa657",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0086",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0086.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "b867b086ee45ec78087517c189c5002f292cbc95b6dc6daff8f200d341b1512e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0087",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0087.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "9cd6770698eede39f9b23906f87a38aaec776fd1ea2e3e48c1a3a5b18354d3b3",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0088",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0088.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "84f85124d07a50eafa78673ff419ed9bda42e2a4c9289c1fb6451136b8d1b110",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0089",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0089.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2fd0f8e428656d473b341c62c30c431766059de01614fbdfeafd2d17121a8d93",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0090",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0090.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "91e7523eafada9bad2a795c3d931d72ef461a7d876dc1817ace06e7b9480014c",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0091",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0091.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "b968bac084c62f3f839784d8ac807f888bada0d64a6925033d9be73d3b3135c0",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0092",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0092.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "204b4561e7989b3609aea2da219ff2421bb0c66a25b74cf4bbb19f6234bafa96",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0093",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0093.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0416e634671ea8b6169ef52d73061c318181e5cd796a47b65df8fd7e71298483",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0094",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0094.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "bd67672657e299b51d60d300443b7a8e390d21c552be0c5dd9fd4f564a788f24",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0095",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0095.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "977dd5de78845fa2e3be68f8670b5ae996f15f667e05e71998c4cce8e9990a4e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0096",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0096.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2aed4bdfc5001130e3dd38f58935a0a91120ff82db7ac3b037bbe5a5ac06e080",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0097",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0097.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ea1ed4da783beae73d3d51b73958f36a6c3b3f0829b56498a693d3dcb736a028",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0098",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0098.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "5dc80a70737f56e0ba623a0b93d1c5d9a7333e71fcb054e4ce26cac594edc28b",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0099",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0099.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2cd1d53928f7f47c4a2b309b7e7c7545d7c185bd7d4a7b59b37220eac1afe291",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0100",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0100.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "ca8ac2b873470c818febb395360fdd8773a82156d76575074157ffe9d171e992",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0101",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0101.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "e24e3076ad8c5c8a72512554eea480367b0f4f2d96484db5736fcffbe128d4d1",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0102",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0102.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "969fb75ed38709142e0711849e727682f67b59ae653322bb3f2c3b82c5a80d63",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0103",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0103.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2992016321d3703cfd31977228b3432a6a4a3ce409844d56b2ef964e0f3a334a",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0104",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0104.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "d425d4f704372f52cda50e90248e55db536707b8236cd9dfd26c9eb46b2850e3",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0105",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0105.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "188d9bc4695ed643fbd4eb6ee1db4c8595b7117844611317e38d298dac7b2dda",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0106",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0106.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0fda8f1515ecffdcb40e31a937e72e8033443ed1e7d4c92db744fba2bec6a823",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0107",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0107.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2266f5e232ba8a3129904b9e25b8d92e905b33cee483ceb5f68520db797d5117",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0108",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0108.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "f2505dd55d6330605a580fb926255d1a2651d2215237455956a4da4b64904ca0",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0109",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0109.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "7660f4d8fbeb659bc384f372869195426ac81512a9e482a9b8984e98a809e9ab",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0110",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0110.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "8259e1f3687f3bd2becc46a568c694e7aebe193179fb6cb71710d84ed0fa57b1",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0111",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0111.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "21fe00f7c4cf14e3f502130c52565089911ad12d18ab90f6d9af7003c39553da",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0112",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0112.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "873efd0100ff597afbb4f9638b66066be6e7d5c3eed37d195ebfb001db422775",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0113",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0113.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "098b27e13328e1519ce3ec1a899b77c90bc63d8c4e5bc9aa2c6d231c41e5458e",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0114",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0114.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "7fdaf5a0f2d8e27542c6c16af84c56f6b68029cfc7cef07cc27697311ae1b579",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0115",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0115.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "c24f71b67b88ead40c9933935b98e1b3c373d0dbd37a99723e3985a7d3eb6577",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0116",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0116.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0e8eafb0b096f5a84a67328d374aba1d26eb6bb7c0ca5ec4e3ae06cc78232822",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0117",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0117.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "2e207f9b52e8f45c59fab11c562be481ab10b0ba719466492ac6c55e531e14f8",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0118",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0118.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "24fc4af81b88a0f05e834f05c11f1781d5e672b836bbd35bb1c51d5be7221487",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0119",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0119.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "d206c08e4cccabf63679bb035857ce511da669ceb6324a41092365eb4502020d",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0120",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0120.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "510487b86f5556142aa489852e4a61573356373b8fd51d9c016ade14fd0f797f",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0121",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0121.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "18231cd4fb07a426a73967089ee9663f357cd47aadb7a23412e133c339424993",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0122",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0122.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "8cb22f3cfcf7064f920137d2f088e2bbdc1fd948618725eed6a1da0292a78c92",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0123",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0123.json",
+      "top_k": 4
+    },
+    {
+      "candidate_count": 5,
+      "candidate_input_sha256": "0d8ca768689d60c0fb00caeda882056b7f0fd5afbee961567f4e307126300a37",
+      "candidate_test_budget": 4,
+      "scenario_id": "os15-s0124",
+      "snapshot_path": "model-facing/candidate-snapshots/os15-s0124.json",
+      "top_k": 4
+    }
+  ],
+  "schema_version": "os15-scenario-manifest-v1",
+  "top_k_definition": "top_k = min(candidate_test_budget, candidate_count)"
+}

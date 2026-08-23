@@ -1,0 +1,4926 @@
+{
+  "artifact_status": "deterministic_execution_input_not_model_facing",
+  "records": [
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00024",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00024",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000003",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00024",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00026",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00026",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000005",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00026",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00033",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00033",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000008",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00033",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00037",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00037",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00037"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000010",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00100",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00100",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000015",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00100",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00101",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00101",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000016",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00101",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00105",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00105",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000020",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00105",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00106",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00106",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000021",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00106",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00108",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00108",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000023",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00108",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00109",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00109",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000024",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00109",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00110",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest00110",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000025",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest00110",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00193",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00193",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000034",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00193",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00331",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00331",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000051",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00331",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00332",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00332",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000052",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00332",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00333",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00333",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000053",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00333",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00334",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00334",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000054",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00334",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00335",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00335",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000055",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00335",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00339",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00339",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000059",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00339",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00342",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00342",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000062",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00342",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00343",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00343",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000063",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00343",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00344",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest00344",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000064",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest00344",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00428",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00428",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000065",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00428",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00429",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00429",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000066",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00429",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00430",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00430",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000067",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00430",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00435",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00435",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000072",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00435",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00436",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00436",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000073",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00436",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-00/BenchmarkTest00437",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00437",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000074",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00437",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00438",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00438",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000075",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00438",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-00/BenchmarkTest00439",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00439",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000076",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00439",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00512",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00512",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000082",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00512",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00513",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00513",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000083",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00513",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00514",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00514",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000084",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00514",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00515",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00515",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000085",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00515",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00516",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00516",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000086",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00516",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00517",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00517",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000087",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00517",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00591",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00591",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00591"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000092",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00592",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00592",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00592"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000093",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00593",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00593",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00593"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000094",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00594",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00594",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00594"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000095",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00595",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00595",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00595"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000096",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00602",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00602",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00602"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000103",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest00604",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00604",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest00604"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000105",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00673",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00673",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000109",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00673",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00674",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00674",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000110",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00674",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00675",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00675",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000111",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00675",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00676",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00676",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000112",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00676",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00680",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00680",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000116",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00680",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00681",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00681",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000117",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00681",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00763",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00763",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000122",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00763",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00770",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00770",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000129",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00770",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00771",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00771",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000130",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00771",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00772",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00772",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000131",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00772",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00838",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00838",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000135",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00838",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00839",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00839",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000136",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00839",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00845",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00845",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000142",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00845",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00848",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00848",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000145",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00848",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00849",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00849",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000146",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00849",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00850",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00850",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000147",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00850",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00925",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00925",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000150",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00925",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00926",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00926",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000151",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00926",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-01/BenchmarkTest00927",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00927",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000152",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00927",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00928",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00928",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000153",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00928",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-01/BenchmarkTest00929",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00929",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000154",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00929",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest00937",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest00937",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000162",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest00937",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest00938",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest00938",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000163",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest00938",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01001",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01001",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000171",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01001",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01004",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01004",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000174",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01004",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01008",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01008",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000178",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01008",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01009",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01009",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000179",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01009",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01011",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01011",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000181",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01011",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01083",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01083",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000183",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01083",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01084",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01084",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000184",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01084",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01090",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01090",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000190",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01090",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01091",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01091",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000191",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01091",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01092",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01092",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000192",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01092",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01093",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01093",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000193",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01093",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01094",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01094",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000194",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01094",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01095",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01095",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000195",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01095",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01209",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01209",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000200",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01209",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01210",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01210",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000201",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01210",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01211",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01211",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000202",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01211",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01212",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01212",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000203",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01212",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01216",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01216",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000207",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01216",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01218",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01218",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000209",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01218",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01219",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01219",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000210",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01219",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01303",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01303",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000216",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01303",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01304",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01304",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000217",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01304",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01305",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01305",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000218",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01305",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01306",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01306",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000219",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01306",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01307",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01307",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000220",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01307",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01310",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01310",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000223",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01310",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01311",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01311",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000224",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01311",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01312",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01312",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000225",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01312",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01381",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01381",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000232",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01381",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01382",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01382",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000233",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01382",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-02/BenchmarkTest01383",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01383",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000234",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01383",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01384",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01384",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000235",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01384",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-02/BenchmarkTest01385",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01385",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000236",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01385",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01391",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01391",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000242",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01391",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01392",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01392",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000243",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01392",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest01464",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01464",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest01464"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000253",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest01472",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01472",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest01472"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000261",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest01473",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01473",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest01473"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000262",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01552",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01552",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000267",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01552",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01557",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01557",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000272",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01557",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01558",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01558",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000273",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01558",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01559",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01559",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000274",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01559",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01626",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01626",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000282",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01626",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01627",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01627",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000283",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01627",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01628",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01628",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000284",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01628",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01715",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01715",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000291",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01715",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01716",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01716",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000292",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01716",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01717",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01717",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000293",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01717",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01719",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01719",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000295",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01719",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01726",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01726",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000302",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01726",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01728",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01728",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000304",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01728",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01729",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01729",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000305",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01729",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01730",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01730",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000306",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01730",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01731",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01731",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000307",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01731",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-03/BenchmarkTest01732",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01732",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000308",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01732",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01804",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01804",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000311",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01804",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-03/BenchmarkTest01805",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01805",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000312",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01805",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest01814",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01814",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000321",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01814",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01816",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest01816",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000323",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest01816",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest01817",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01817",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000324",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01817",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest01818",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest01818",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000325",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest01818",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01878",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01878",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000329",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01878",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01879",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01879",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000330",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01879",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01880",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01880",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000331",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01880",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01883",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01883",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000334",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01883",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01885",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01885",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000336",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01885",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "cookie",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01886",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "cookie",
+          "name": "BenchmarkTest01886",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000337",
+      "target_input_carrier": "cookie",
+      "target_input_name": "BenchmarkTest01886",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01961",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01961",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000343",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01961",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01969",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01969",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000351",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01969",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01970",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01970",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000352",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01970",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01971",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01971",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000353",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01971",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest01972",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest01972",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000354",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest01972",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02087",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02087",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000356",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02087",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02088",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02088",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000357",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02088",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02089",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02089",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000358",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02089",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02092",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02092",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000361",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02092",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02093",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02093",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000362",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02093",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02094",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02094",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000363",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02094",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02095",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02095",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000364",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02095",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02096",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02096",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000365",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02096",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02097",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02097",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000366",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02097",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "header",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02098",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "header",
+          "name": "BenchmarkTest02098",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000367",
+      "target_input_carrier": "header",
+      "target_input_name": "BenchmarkTest02098",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02171",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02171",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000371",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02171",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02172",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02172",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000372",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02172",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02173",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02173",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000373",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02173",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02184",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02184",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000384",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02184",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02186",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02186",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000386",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02186",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02187",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02187",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000387",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02187",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-04/BenchmarkTest02188",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02188",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000388",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02188",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02267",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02267",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000392",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02267",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02269",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02269",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000394",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02269",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02270",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02270",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000395",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02270",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-04/BenchmarkTest02271",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02271",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000396",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02271",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02283",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02283",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000408",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02283",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02284",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02284",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000409",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02284",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02285",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02285",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000410",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02285",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02353",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02353",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02353"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000414",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02354",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02354",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02354"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000415",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02362",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02362",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02362"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000423",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02364",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02364",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02364"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000425",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02365",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02365",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02365"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000426",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02366",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02366",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02366"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000427",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "BenchmarkTest02367",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02367",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "answer",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "bar",
+          "value": "BenchmarkTest02367"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000428",
+      "target_input_carrier": "formparam",
+      "target_input_name": "bar",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02450",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02450",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000432",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02450",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02454",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02454",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000436",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02454",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02532",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02532",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000443",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02532",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02533",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02533",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000444",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02533",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02534",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02534",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000445",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02534",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02535",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02535",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000446",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02535",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02539",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02539",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000450",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02539",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02541",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02541",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000452",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02541",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02542",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02542",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000453",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02542",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02543",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02543",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000454",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02543",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-05/BenchmarkTest02544",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02544",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000455",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02544",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02631",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02631",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000464",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02631",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02632",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02632",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000465",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02632",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02633",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02633",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000466",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02633",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02635",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02635",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000468",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02635",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02636",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02636",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000469",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02636",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02637",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02637",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000470",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02637",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02644",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02644",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000477",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02644",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02645",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02645",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000478",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02645",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-05/BenchmarkTest02647",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02647",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000480",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02647",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02648",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02648",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000481",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02648",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02649",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02649",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000482",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02649",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02650",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02650",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000483",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02650",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02651",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02651",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000484",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02651",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02652",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02652",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000485",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02652",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02653",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02653",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000486",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02653",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02727",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02727",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000491",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02727",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-06/BenchmarkTest02728",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02728",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000492",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02728",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-06/BenchmarkTest02729",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02729",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000493",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02729",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_query",
+      "baseline_value": "bar",
+      "content_type": "not_applicable",
+      "endpoint": "/sqli-06/BenchmarkTest02737",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "getparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "username",
+          "value": ""
+        },
+        {
+          "carrier": "getparam",
+          "name": "BenchmarkTest02737",
+          "value": "bar"
+        }
+      ],
+      "method": "GET",
+      "opaque_candidate_id": "os15-c000501",
+      "target_input_carrier": "getparam",
+      "target_input_name": "BenchmarkTest02737",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-06/BenchmarkTest02738",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "password",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "email",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02738",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000502",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02738",
+      "true_value": "missing' OR '1'='1' -- "
+    },
+    {
+      "adapter_class": "multi_form",
+      "baseline_value": "bar",
+      "content_type": "application/x-www-form-urlencoded",
+      "endpoint": "/sqli-06/BenchmarkTest02739",
+      "false_value": "missing' AND '1'='2' -- ",
+      "inputs": [
+        {
+          "carrier": "formparam",
+          "name": "productID",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "secure",
+          "value": ""
+        },
+        {
+          "carrier": "formparam",
+          "name": "foo",
+          "value": "foo"
+        },
+        {
+          "carrier": "formparam",
+          "name": "BenchmarkTest02739",
+          "value": "bar"
+        }
+      ],
+      "method": "POST",
+      "opaque_candidate_id": "os15-c000503",
+      "target_input_carrier": "formparam",
+      "target_input_name": "BenchmarkTest02739",
+      "true_value": "missing' OR '1'='1' -- "
+    }
+  ],
+  "schema_version": "owasp-sqli-v15-execution-specifications-v1"
+}

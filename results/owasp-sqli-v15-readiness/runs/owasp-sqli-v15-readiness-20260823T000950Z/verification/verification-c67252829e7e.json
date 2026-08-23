@@ -1,0 +1,41 @@
+{
+  "completed_at": "2026-08-23T00:09:54.403961+00:00",
+  "control_cases": [
+    {
+      "evidence_id": "evidence-9884a15a61b8",
+      "passed": true,
+      "summary": "Compared baseline, boolean-true, and boolean-false responses for os15-c000442."
+    }
+  ],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_missing": [],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "evidence_refs": [
+    "evidence-986b56179176",
+    "evidence-3110fe2fd0bd",
+    "evidence-8166bdc075dd",
+    "evidence-539c294b4b0c",
+    "evidence-1b8d3a48858d",
+    "evidence-90db46b4106e",
+    "evidence-9884a15a61b8"
+  ],
+  "finding_id": "finding-bd1ebe2b8e7e",
+  "limitations": [],
+  "module_id": "sqli.boolean",
+  "outcome": "verified",
+  "rationale": "Required evidence and control cases satisfy the module criteria.",
+  "reproduction_status": "reproduced",
+  "verification_result_id": "verification-c67252829e7e"
+}

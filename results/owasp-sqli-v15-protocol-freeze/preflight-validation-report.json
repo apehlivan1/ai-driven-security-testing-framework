@@ -1,0 +1,35 @@
+{
+  "artifact_status": "pre_execution_validation_no_final_cases_executed",
+  "counts": {
+    "adapter_supported_after_readiness": 220,
+    "excluded": 284,
+    "final_confirmatory_eligible": 200,
+    "final_confirmatory_eligible_non_vulnerable": 95,
+    "final_confirmatory_eligible_vulnerable": 105,
+    "original_sqli_cases": 504,
+    "readiness_only": 20
+  },
+  "created_at": "2026-08-23T00:26:58.905453+00:00",
+  "direct_execution_denominator": 200,
+  "errors": [],
+  "excluded_in_final_corpus": false,
+  "final_confirmatory_sqli_runtime_executions": 0,
+  "gpt_calls_executed": 0,
+  "ground_truth_exposed_to_ranker": false,
+  "model_facing_snapshot_leak_count": 0,
+  "protocol_path": "docs/evaluation-protocol-v1.5.md",
+  "protocol_sha256": "22f90d9794c796c20e27654662ee893d1fa533bfef16fb87912f18154dac8033",
+  "qwen_calls_executed": 0,
+  "readiness_only_in_final_corpus": false,
+  "scenario_count": 124,
+  "schema_version": "owasp-sqli-v15-preflight-validation-v1",
+  "scored_ranking_rows_executed": 0,
+  "trial_denominators": {
+    "deterministic_structural": 124,
+    "local_qwen": 620,
+    "proprietary_gpt": 620,
+    "total_ranking_rows": 1364
+  },
+  "valid": true,
+  "warnings": []
+}

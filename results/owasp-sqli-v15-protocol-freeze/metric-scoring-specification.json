@@ -1,0 +1,56 @@
+{
+  "artifact_status": "pre_execution_metric_specification",
+  "direct_execution_layer": {
+    "denominator": "all 200 FINAL_CONFIRMATORY_ELIGIBLE original OWASP SQLi cases",
+    "inconclusive_policy": "Inconclusive remains in the denominator and is not removed post hoc.",
+    "post_run_ground_truth_comparison": "OWASP labels are applied after verifier outcomes are stored.",
+    "runtime_observations": [
+      "baseline stability",
+      "true/false reproducibility",
+      "server-error observation",
+      "reflected-payload-only rejection",
+      "verifier state",
+      "runtime error state"
+    ]
+  },
+  "failure_denominator_policy": {
+    "invalid_or_failed_model_output": "retained in reliability denominators; excluded from valid ranking-performance aggregates",
+    "no_silent_repair": true,
+    "no_silent_retry": true,
+    "repeated_trials": "nested under scenario and arm; not independent benchmark scenarios"
+  },
+  "ranking_layer": {
+    "negative_only_not_applicable": [
+      "vulnerable_candidate_rank",
+      "top_1_success",
+      "top_k_success_at_k_4",
+      "reciprocal_rank",
+      "mrr"
+    ],
+    "positive_scenario_metrics": [
+      "vulnerable_candidate_rank",
+      "top_1_success",
+      "top_k_success_at_k_4",
+      "reciprocal_rank",
+      "mrr",
+      "candidate_coverage_under_budget"
+    ],
+    "reliability_metrics": [
+      "scheduled calls",
+      "attempted calls",
+      "valid structured outputs",
+      "malformed outputs",
+      "provider failures",
+      "runtime failures",
+      "timeouts",
+      "retry count",
+      "contract-valid output rate",
+      "latency"
+    ]
+  },
+  "schema_version": "owasp-sqli-v15-metric-scoring-specification-v1",
+  "undefined_value_policy": {
+    "not_applicable": "metric does not apply to an arm/scenario/layer",
+    "not_available": "metric applies but required measurement is absent"
+  }
+}

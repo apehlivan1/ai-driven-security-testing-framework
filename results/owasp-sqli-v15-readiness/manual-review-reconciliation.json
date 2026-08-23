@@ -1,0 +1,21 @@
+{
+  "distribution_by_input_carrier": {
+    "cookie": 10,
+    "formparam": 34,
+    "formparam+formparam": 21,
+    "formparam+formparam+formparam": 15,
+    "formparam+formparam+formparam+formparam": 12,
+    "getparam+getparam+getparam": 37,
+    "header": 28
+  },
+  "distribution_by_response_observability": {
+    "writer_output_detected": 157
+  },
+  "manual_review_after": 157,
+  "manual_review_before": 157,
+  "reason": "Manual-review cases remain unresolved because static source evidence shows writer output but not a sufficient deterministic boolean response oracle.",
+  "reclassified_cases": 0,
+  "review_method": "offline_static_only",
+  "runtime_executions": 0,
+  "schema_version": "owasp-sqli-v15-manual-review-reconciliation-v1"
+}

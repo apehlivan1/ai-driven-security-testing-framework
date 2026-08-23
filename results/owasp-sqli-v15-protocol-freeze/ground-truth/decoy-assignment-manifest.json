@@ -1,0 +1,2116 @@
+{
+  "artifact_status": "pre_execution_ground_truth_separated_assignment",
+  "assignment_seed": "owasp-sqli-v15-final-scenario-assignment-v1",
+  "candidate_order_seed": "owasp-sqli-v15-final-candidate-order-v1",
+  "candidate_position_distribution_for_focal_vulnerable": {
+    "1": 14,
+    "2": 20,
+    "3": 22,
+    "4": 30,
+    "5": 19
+  },
+  "negative_only_packs": [
+    {
+      "ordered_candidate_ids": [
+        "os15-c000293",
+        "os15-c000236",
+        "os15-c000112",
+        "os15-c000452",
+        "os15-c000152"
+      ],
+      "pack_index": 1,
+      "scenario_id": "os15-s0106"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000084",
+        "os15-c000203",
+        "os15-c000362",
+        "os15-c000481",
+        "os15-c000432"
+      ],
+      "pack_index": 2,
+      "scenario_id": "os15-s0107"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000162",
+        "os15-c000064",
+        "os15-c000020",
+        "os15-c000503",
+        "os15-c000153"
+      ],
+      "pack_index": 3,
+      "scenario_id": "os15-s0108"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000074",
+        "os15-c000111",
+        "os15-c000051",
+        "os15-c000093",
+        "os15-c000373"
+      ],
+      "pack_index": 4,
+      "scenario_id": "os15-s0109"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000083",
+        "os15-c000358",
+        "os15-c000466",
+        "os15-c000493",
+        "os15-c000329"
+      ],
+      "pack_index": 5,
+      "scenario_id": "os15-s0110"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000410",
+        "os15-c000087",
+        "os15-c000223",
+        "os15-c000372",
+        "os15-c000336"
+      ],
+      "pack_index": 6,
+      "scenario_id": "os15-s0111"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000192",
+        "os15-c000151",
+        "os15-c000337",
+        "os15-c000216",
+        "os15-c000455"
+      ],
+      "pack_index": 7,
+      "scenario_id": "os15-s0112"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000323",
+        "os15-c000388",
+        "os15-c000131",
+        "os15-c000154",
+        "os15-c000308"
+      ],
+      "pack_index": 8,
+      "scenario_id": "os15-s0113"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000427",
+        "os15-c000501",
+        "os15-c000469",
+        "os15-c000116",
+        "os15-c000073"
+      ],
+      "pack_index": 9,
+      "scenario_id": "os15-s0114"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000103",
+        "os15-c000243",
+        "os15-c000492",
+        "os15-c000067",
+        "os15-c000331"
+      ],
+      "pack_index": 10,
+      "scenario_id": "os15-s0115"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000396",
+        "os15-c000261",
+        "os15-c000464",
+        "os15-c000384",
+        "os15-c000305"
+      ],
+      "pack_index": 11,
+      "scenario_id": "os15-s0116"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000163",
+        "os15-c000195",
+        "os15-c000408",
+        "os15-c000485",
+        "os15-c000110"
+      ],
+      "pack_index": 12,
+      "scenario_id": "os15-s0117"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000351",
+        "os15-c000414",
+        "os15-c000284",
+        "os15-c000392",
+        "os15-c000325"
+      ],
+      "pack_index": 13,
+      "scenario_id": "os15-s0118"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000220",
+        "os15-c000210",
+        "os15-c000450",
+        "os15-c000122",
+        "os15-c000135"
+      ],
+      "pack_index": 14,
+      "scenario_id": "os15-s0119"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000312",
+        "os15-c000321",
+        "os15-c000470",
+        "os15-c000426",
+        "os15-c000311"
+      ],
+      "pack_index": 15,
+      "scenario_id": "os15-s0120"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000491",
+        "os15-c000063",
+        "os15-c000324",
+        "os15-c000364",
+        "os15-c000150"
+      ],
+      "pack_index": 16,
+      "scenario_id": "os15-s0121"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000295",
+        "os15-c000367",
+        "os15-c000218",
+        "os15-c000343",
+        "os15-c000025"
+      ],
+      "pack_index": 17,
+      "scenario_id": "os15-s0122"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000171",
+        "os15-c000209",
+        "os15-c000052",
+        "os15-c000366",
+        "os15-c000502"
+      ],
+      "pack_index": 18,
+      "scenario_id": "os15-s0123"
+    },
+    {
+      "ordered_candidate_ids": [
+        "os15-c000428",
+        "os15-c000054",
+        "os15-c000053",
+        "os15-c000330",
+        "os15-c000207"
+      ],
+      "pack_index": 19,
+      "scenario_id": "os15-s0124"
+    }
+  ],
+  "negative_only_policy": "Use the same sorted negative pool to form disjoint packs of five; leftover negatives are recorded and not used as partial scenarios.",
+  "negative_reuse_by_candidate": {
+    "os15-c000020": 5,
+    "os15-c000025": 4,
+    "os15-c000051": 5,
+    "os15-c000052": 4,
+    "os15-c000053": 4,
+    "os15-c000054": 4,
+    "os15-c000063": 4,
+    "os15-c000064": 5,
+    "os15-c000067": 4,
+    "os15-c000073": 4,
+    "os15-c000074": 5,
+    "os15-c000083": 5,
+    "os15-c000084": 5,
+    "os15-c000087": 5,
+    "os15-c000093": 5,
+    "os15-c000103": 4,
+    "os15-c000110": 4,
+    "os15-c000111": 5,
+    "os15-c000112": 5,
+    "os15-c000116": 4,
+    "os15-c000122": 4,
+    "os15-c000131": 5,
+    "os15-c000135": 4,
+    "os15-c000150": 4,
+    "os15-c000151": 5,
+    "os15-c000152": 5,
+    "os15-c000153": 5,
+    "os15-c000154": 5,
+    "os15-c000162": 5,
+    "os15-c000163": 4,
+    "os15-c000171": 4,
+    "os15-c000192": 5,
+    "os15-c000195": 4,
+    "os15-c000203": 5,
+    "os15-c000207": 4,
+    "os15-c000209": 4,
+    "os15-c000210": 4,
+    "os15-c000216": 5,
+    "os15-c000218": 4,
+    "os15-c000220": 4,
+    "os15-c000223": 5,
+    "os15-c000236": 5,
+    "os15-c000243": 4,
+    "os15-c000261": 4,
+    "os15-c000284": 4,
+    "os15-c000293": 5,
+    "os15-c000295": 4,
+    "os15-c000305": 4,
+    "os15-c000308": 5,
+    "os15-c000311": 4,
+    "os15-c000312": 4,
+    "os15-c000321": 4,
+    "os15-c000323": 5,
+    "os15-c000324": 4,
+    "os15-c000325": 4,
+    "os15-c000329": 5,
+    "os15-c000330": 4,
+    "os15-c000331": 4,
+    "os15-c000336": 5,
+    "os15-c000337": 5,
+    "os15-c000343": 4,
+    "os15-c000351": 4,
+    "os15-c000358": 5,
+    "os15-c000362": 5,
+    "os15-c000364": 4,
+    "os15-c000366": 4,
+    "os15-c000367": 4,
+    "os15-c000372": 5,
+    "os15-c000373": 5,
+    "os15-c000384": 4,
+    "os15-c000388": 5,
+    "os15-c000392": 4,
+    "os15-c000396": 4,
+    "os15-c000408": 4,
+    "os15-c000410": 5,
+    "os15-c000414": 4,
+    "os15-c000426": 4,
+    "os15-c000427": 4,
+    "os15-c000428": 4,
+    "os15-c000432": 5,
+    "os15-c000450": 4,
+    "os15-c000452": 5,
+    "os15-c000455": 5,
+    "os15-c000464": 4,
+    "os15-c000466": 5,
+    "os15-c000469": 4,
+    "os15-c000470": 4,
+    "os15-c000481": 5,
+    "os15-c000485": 4,
+    "os15-c000491": 4,
+    "os15-c000492": 4,
+    "os15-c000493": 5,
+    "os15-c000501": 4,
+    "os15-c000502": 4,
+    "os15-c000503": 5
+  },
+  "negative_reuse_distribution_for_positive_scenarios": {
+    "4": 55,
+    "5": 40
+  },
+  "position_bias_policy": "Candidate order within each pack is SHA-256 sorted by neutral scenario ID and candidate ID, not by label or original case identity.",
+  "positive_assignments": [
+    {
+      "focal_vulnerable_candidate_id": "os15-c000446",
+      "negative_decoy_candidate_ids": [
+        "os15-c000236",
+        "os15-c000293",
+        "os15-c000112",
+        "os15-c000452"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000236",
+        "os15-c000452",
+        "os15-c000446",
+        "os15-c000112",
+        "os15-c000293"
+      ],
+      "scenario_id": "os15-s0001"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000023",
+      "negative_decoy_candidate_ids": [
+        "os15-c000152",
+        "os15-c000362",
+        "os15-c000203",
+        "os15-c000084"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000203",
+        "os15-c000362",
+        "os15-c000084",
+        "os15-c000152",
+        "os15-c000023"
+      ],
+      "scenario_id": "os15-s0002"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000086",
+      "negative_decoy_candidate_ids": [
+        "os15-c000481",
+        "os15-c000432",
+        "os15-c000020",
+        "os15-c000064"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000020",
+        "os15-c000432",
+        "os15-c000086",
+        "os15-c000064",
+        "os15-c000481"
+      ],
+      "scenario_id": "os15-s0003"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000005",
+      "negative_decoy_candidate_ids": [
+        "os15-c000153",
+        "os15-c000503",
+        "os15-c000162",
+        "os15-c000373"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000162",
+        "os15-c000373",
+        "os15-c000005",
+        "os15-c000153",
+        "os15-c000503"
+      ],
+      "scenario_id": "os15-s0004"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000010",
+      "negative_decoy_candidate_ids": [
+        "os15-c000051",
+        "os15-c000111",
+        "os15-c000074",
+        "os15-c000093"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000093",
+        "os15-c000010",
+        "os15-c000111",
+        "os15-c000074",
+        "os15-c000051"
+      ],
+      "scenario_id": "os15-s0005"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000262",
+      "negative_decoy_candidate_ids": [
+        "os15-c000466",
+        "os15-c000358",
+        "os15-c000329",
+        "os15-c000083"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000329",
+        "os15-c000358",
+        "os15-c000262",
+        "os15-c000466",
+        "os15-c000083"
+      ],
+      "scenario_id": "os15-s0006"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000232",
+      "negative_decoy_candidate_ids": [
+        "os15-c000493",
+        "os15-c000372",
+        "os15-c000410",
+        "os15-c000223"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000223",
+        "os15-c000493",
+        "os15-c000372",
+        "os15-c000232",
+        "os15-c000410"
+      ],
+      "scenario_id": "os15-s0007"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000202",
+      "negative_decoy_candidate_ids": [
+        "os15-c000087",
+        "os15-c000336",
+        "os15-c000455",
+        "os15-c000192"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000336",
+        "os15-c000192",
+        "os15-c000087",
+        "os15-c000455",
+        "os15-c000202"
+      ],
+      "scenario_id": "os15-s0008"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000415",
+      "negative_decoy_candidate_ids": [
+        "os15-c000337",
+        "os15-c000151",
+        "os15-c000216",
+        "os15-c000323"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000415",
+        "os15-c000216",
+        "os15-c000323",
+        "os15-c000337",
+        "os15-c000151"
+      ],
+      "scenario_id": "os15-s0009"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000482",
+      "negative_decoy_candidate_ids": [
+        "os15-c000388",
+        "os15-c000131",
+        "os15-c000308",
+        "os15-c000154"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000308",
+        "os15-c000154",
+        "os15-c000388",
+        "os15-c000482",
+        "os15-c000131"
+      ],
+      "scenario_id": "os15-s0010"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000365",
+      "negative_decoy_candidate_ids": [
+        "os15-c000469",
+        "os15-c000501",
+        "os15-c000073",
+        "os15-c000116"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000501",
+        "os15-c000469",
+        "os15-c000073",
+        "os15-c000116",
+        "os15-c000365"
+      ],
+      "scenario_id": "os15-s0011"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000273",
+      "negative_decoy_candidate_ids": [
+        "os15-c000427",
+        "os15-c000492",
+        "os15-c000103",
+        "os15-c000243"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000273",
+        "os15-c000103",
+        "os15-c000427",
+        "os15-c000492",
+        "os15-c000243"
+      ],
+      "scenario_id": "os15-s0012"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000082",
+      "negative_decoy_candidate_ids": [
+        "os15-c000331",
+        "os15-c000067",
+        "os15-c000261",
+        "os15-c000305"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000305",
+        "os15-c000261",
+        "os15-c000067",
+        "os15-c000082",
+        "os15-c000331"
+      ],
+      "scenario_id": "os15-s0013"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000072",
+      "negative_decoy_candidate_ids": [
+        "os15-c000384",
+        "os15-c000464",
+        "os15-c000396",
+        "os15-c000408"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000072",
+        "os15-c000396",
+        "os15-c000384",
+        "os15-c000464",
+        "os15-c000408"
+      ],
+      "scenario_id": "os15-s0014"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000105",
+      "negative_decoy_candidate_ids": [
+        "os15-c000110",
+        "os15-c000195",
+        "os15-c000485",
+        "os15-c000163"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000485",
+        "os15-c000195",
+        "os15-c000105",
+        "os15-c000110",
+        "os15-c000163"
+      ],
+      "scenario_id": "os15-s0015"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000174",
+      "negative_decoy_candidate_ids": [
+        "os15-c000392",
+        "os15-c000325",
+        "os15-c000414",
+        "os15-c000351"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000392",
+        "os15-c000325",
+        "os15-c000414",
+        "os15-c000174",
+        "os15-c000351"
+      ],
+      "scenario_id": "os15-s0016"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000468",
+      "negative_decoy_candidate_ids": [
+        "os15-c000284",
+        "os15-c000450",
+        "os15-c000210",
+        "os15-c000135"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000210",
+        "os15-c000450",
+        "os15-c000284",
+        "os15-c000468",
+        "os15-c000135"
+      ],
+      "scenario_id": "os15-s0017"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000292",
+      "negative_decoy_candidate_ids": [
+        "os15-c000122",
+        "os15-c000220",
+        "os15-c000311",
+        "os15-c000426"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000311",
+        "os15-c000426",
+        "os15-c000122",
+        "os15-c000220",
+        "os15-c000292"
+      ],
+      "scenario_id": "os15-s0018"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000253",
+      "negative_decoy_candidate_ids": [
+        "os15-c000321",
+        "os15-c000470",
+        "os15-c000312",
+        "os15-c000063"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000312",
+        "os15-c000063",
+        "os15-c000253",
+        "os15-c000321",
+        "os15-c000470"
+      ],
+      "scenario_id": "os15-s0019"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000291",
+      "negative_decoy_candidate_ids": [
+        "os15-c000491",
+        "os15-c000324",
+        "os15-c000150",
+        "os15-c000364"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000150",
+        "os15-c000364",
+        "os15-c000491",
+        "os15-c000291",
+        "os15-c000324"
+      ],
+      "scenario_id": "os15-s0020"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000353",
+      "negative_decoy_candidate_ids": [
+        "os15-c000295",
+        "os15-c000025",
+        "os15-c000343",
+        "os15-c000367"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000025",
+        "os15-c000343",
+        "os15-c000353",
+        "os15-c000295",
+        "os15-c000367"
+      ],
+      "scenario_id": "os15-s0021"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000465",
+      "negative_decoy_candidate_ids": [
+        "os15-c000218",
+        "os15-c000209",
+        "os15-c000366",
+        "os15-c000171"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000209",
+        "os15-c000218",
+        "os15-c000171",
+        "os15-c000465",
+        "os15-c000366"
+      ],
+      "scenario_id": "os15-s0022"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000334",
+      "negative_decoy_candidate_ids": [
+        "os15-c000502",
+        "os15-c000052",
+        "os15-c000207",
+        "os15-c000054"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000052",
+        "os15-c000207",
+        "os15-c000054",
+        "os15-c000502",
+        "os15-c000334"
+      ],
+      "scenario_id": "os15-s0023"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000075",
+      "negative_decoy_candidate_ids": [
+        "os15-c000428",
+        "os15-c000053",
+        "os15-c000330",
+        "os15-c000236"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000236",
+        "os15-c000075",
+        "os15-c000428",
+        "os15-c000053",
+        "os15-c000330"
+      ],
+      "scenario_id": "os15-s0024"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000055",
+      "negative_decoy_candidate_ids": [
+        "os15-c000293",
+        "os15-c000112",
+        "os15-c000452",
+        "os15-c000152"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000452",
+        "os15-c000055",
+        "os15-c000112",
+        "os15-c000152",
+        "os15-c000293"
+      ],
+      "scenario_id": "os15-s0025"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000409",
+      "negative_decoy_candidate_ids": [
+        "os15-c000362",
+        "os15-c000203",
+        "os15-c000084",
+        "os15-c000481"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000409",
+        "os15-c000362",
+        "os15-c000481",
+        "os15-c000203",
+        "os15-c000084"
+      ],
+      "scenario_id": "os15-s0026"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000267",
+      "negative_decoy_candidate_ids": [
+        "os15-c000432",
+        "os15-c000020",
+        "os15-c000064",
+        "os15-c000153"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000432",
+        "os15-c000153",
+        "os15-c000064",
+        "os15-c000267",
+        "os15-c000020"
+      ],
+      "scenario_id": "os15-s0027"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000184",
+      "negative_decoy_candidate_ids": [
+        "os15-c000503",
+        "os15-c000162",
+        "os15-c000373",
+        "os15-c000051"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000051",
+        "os15-c000503",
+        "os15-c000162",
+        "os15-c000184",
+        "os15-c000373"
+      ],
+      "scenario_id": "os15-s0028"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000066",
+      "negative_decoy_candidate_ids": [
+        "os15-c000111",
+        "os15-c000074",
+        "os15-c000093",
+        "os15-c000466"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000066",
+        "os15-c000466",
+        "os15-c000111",
+        "os15-c000074",
+        "os15-c000093"
+      ],
+      "scenario_id": "os15-s0029"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000477",
+      "negative_decoy_candidate_ids": [
+        "os15-c000358",
+        "os15-c000329",
+        "os15-c000083",
+        "os15-c000493"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000477",
+        "os15-c000358",
+        "os15-c000329",
+        "os15-c000493",
+        "os15-c000083"
+      ],
+      "scenario_id": "os15-s0030"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000283",
+      "negative_decoy_candidate_ids": [
+        "os15-c000372",
+        "os15-c000410",
+        "os15-c000223",
+        "os15-c000087"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000223",
+        "os15-c000410",
+        "os15-c000372",
+        "os15-c000283",
+        "os15-c000087"
+      ],
+      "scenario_id": "os15-s0031"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000454",
+      "negative_decoy_candidate_ids": [
+        "os15-c000336",
+        "os15-c000455",
+        "os15-c000192",
+        "os15-c000337"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000337",
+        "os15-c000454",
+        "os15-c000455",
+        "os15-c000192",
+        "os15-c000336"
+      ],
+      "scenario_id": "os15-s0032"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000076",
+      "negative_decoy_candidate_ids": [
+        "os15-c000151",
+        "os15-c000216",
+        "os15-c000323",
+        "os15-c000388"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000216",
+        "os15-c000388",
+        "os15-c000151",
+        "os15-c000076",
+        "os15-c000323"
+      ],
+      "scenario_id": "os15-s0033"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000183",
+      "negative_decoy_candidate_ids": [
+        "os15-c000131",
+        "os15-c000308",
+        "os15-c000154",
+        "os15-c000469"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000308",
+        "os15-c000154",
+        "os15-c000183",
+        "os15-c000131",
+        "os15-c000469"
+      ],
+      "scenario_id": "os15-s0034"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000445",
+      "negative_decoy_candidate_ids": [
+        "os15-c000501",
+        "os15-c000073",
+        "os15-c000116",
+        "os15-c000427"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000427",
+        "os15-c000073",
+        "os15-c000445",
+        "os15-c000501",
+        "os15-c000116"
+      ],
+      "scenario_id": "os15-s0035"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000394",
+      "negative_decoy_candidate_ids": [
+        "os15-c000492",
+        "os15-c000103",
+        "os15-c000243",
+        "os15-c000331"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000394",
+        "os15-c000492",
+        "os15-c000331",
+        "os15-c000243",
+        "os15-c000103"
+      ],
+      "scenario_id": "os15-s0036"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000242",
+      "negative_decoy_candidate_ids": [
+        "os15-c000067",
+        "os15-c000261",
+        "os15-c000305",
+        "os15-c000384"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000261",
+        "os15-c000242",
+        "os15-c000384",
+        "os15-c000305",
+        "os15-c000067"
+      ],
+      "scenario_id": "os15-s0037"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000272",
+      "negative_decoy_candidate_ids": [
+        "os15-c000464",
+        "os15-c000396",
+        "os15-c000408",
+        "os15-c000110"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000110",
+        "os15-c000408",
+        "os15-c000396",
+        "os15-c000272",
+        "os15-c000464"
+      ],
+      "scenario_id": "os15-s0038"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000480",
+      "negative_decoy_candidate_ids": [
+        "os15-c000195",
+        "os15-c000485",
+        "os15-c000163",
+        "os15-c000392"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000163",
+        "os15-c000195",
+        "os15-c000485",
+        "os15-c000392",
+        "os15-c000480"
+      ],
+      "scenario_id": "os15-s0039"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000234",
+      "negative_decoy_candidate_ids": [
+        "os15-c000325",
+        "os15-c000414",
+        "os15-c000351",
+        "os15-c000284"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000325",
+        "os15-c000414",
+        "os15-c000234",
+        "os15-c000284",
+        "os15-c000351"
+      ],
+      "scenario_id": "os15-s0040"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000356",
+      "negative_decoy_candidate_ids": [
+        "os15-c000450",
+        "os15-c000210",
+        "os15-c000135",
+        "os15-c000122"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000135",
+        "os15-c000356",
+        "os15-c000210",
+        "os15-c000122",
+        "os15-c000450"
+      ],
+      "scenario_id": "os15-s0041"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000354",
+      "negative_decoy_candidate_ids": [
+        "os15-c000220",
+        "os15-c000311",
+        "os15-c000426",
+        "os15-c000321"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000220",
+        "os15-c000321",
+        "os15-c000311",
+        "os15-c000426",
+        "os15-c000354"
+      ],
+      "scenario_id": "os15-s0042"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000016",
+      "negative_decoy_candidate_ids": [
+        "os15-c000470",
+        "os15-c000312",
+        "os15-c000063",
+        "os15-c000491"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000470",
+        "os15-c000016",
+        "os15-c000063",
+        "os15-c000312",
+        "os15-c000491"
+      ],
+      "scenario_id": "os15-s0043"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000024",
+      "negative_decoy_candidate_ids": [
+        "os15-c000324",
+        "os15-c000150",
+        "os15-c000364",
+        "os15-c000295"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000150",
+        "os15-c000364",
+        "os15-c000024",
+        "os15-c000324",
+        "os15-c000295"
+      ],
+      "scenario_id": "os15-s0044"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000387",
+      "negative_decoy_candidate_ids": [
+        "os15-c000025",
+        "os15-c000343",
+        "os15-c000367",
+        "os15-c000218"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000367",
+        "os15-c000218",
+        "os15-c000387",
+        "os15-c000343",
+        "os15-c000025"
+      ],
+      "scenario_id": "os15-s0045"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000304",
+      "negative_decoy_candidate_ids": [
+        "os15-c000209",
+        "os15-c000366",
+        "os15-c000171",
+        "os15-c000502"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000209",
+        "os15-c000366",
+        "os15-c000304",
+        "os15-c000502",
+        "os15-c000171"
+      ],
+      "scenario_id": "os15-s0046"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000147",
+      "negative_decoy_candidate_ids": [
+        "os15-c000052",
+        "os15-c000207",
+        "os15-c000054",
+        "os15-c000428"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000428",
+        "os15-c000207",
+        "os15-c000054",
+        "os15-c000052",
+        "os15-c000147"
+      ],
+      "scenario_id": "os15-s0047"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000021",
+      "negative_decoy_candidate_ids": [
+        "os15-c000053",
+        "os15-c000330",
+        "os15-c000236",
+        "os15-c000293"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000330",
+        "os15-c000293",
+        "os15-c000021",
+        "os15-c000053",
+        "os15-c000236"
+      ],
+      "scenario_id": "os15-s0048"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000274",
+      "negative_decoy_candidate_ids": [
+        "os15-c000112",
+        "os15-c000452",
+        "os15-c000152",
+        "os15-c000362"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000112",
+        "os15-c000452",
+        "os15-c000362",
+        "os15-c000274",
+        "os15-c000152"
+      ],
+      "scenario_id": "os15-s0049"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000094",
+      "negative_decoy_candidate_ids": [
+        "os15-c000203",
+        "os15-c000084",
+        "os15-c000481",
+        "os15-c000432"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000203",
+        "os15-c000432",
+        "os15-c000084",
+        "os15-c000481",
+        "os15-c000094"
+      ],
+      "scenario_id": "os15-s0050"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000008",
+      "negative_decoy_candidate_ids": [
+        "os15-c000020",
+        "os15-c000064",
+        "os15-c000153",
+        "os15-c000503"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000064",
+        "os15-c000153",
+        "os15-c000503",
+        "os15-c000008",
+        "os15-c000020"
+      ],
+      "scenario_id": "os15-s0051"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000371",
+      "negative_decoy_candidate_ids": [
+        "os15-c000162",
+        "os15-c000373",
+        "os15-c000051",
+        "os15-c000111"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000051",
+        "os15-c000373",
+        "os15-c000111",
+        "os15-c000371",
+        "os15-c000162"
+      ],
+      "scenario_id": "os15-s0052"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000145",
+      "negative_decoy_candidate_ids": [
+        "os15-c000074",
+        "os15-c000093",
+        "os15-c000466",
+        "os15-c000358"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000358",
+        "os15-c000093",
+        "os15-c000466",
+        "os15-c000074",
+        "os15-c000145"
+      ],
+      "scenario_id": "os15-s0053"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000003",
+      "negative_decoy_candidate_ids": [
+        "os15-c000329",
+        "os15-c000083",
+        "os15-c000493",
+        "os15-c000372"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000372",
+        "os15-c000493",
+        "os15-c000003",
+        "os15-c000083",
+        "os15-c000329"
+      ],
+      "scenario_id": "os15-s0054"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000224",
+      "negative_decoy_candidate_ids": [
+        "os15-c000410",
+        "os15-c000223",
+        "os15-c000087",
+        "os15-c000336"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000410",
+        "os15-c000336",
+        "os15-c000087",
+        "os15-c000223",
+        "os15-c000224"
+      ],
+      "scenario_id": "os15-s0055"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000146",
+      "negative_decoy_candidate_ids": [
+        "os15-c000455",
+        "os15-c000192",
+        "os15-c000337",
+        "os15-c000151"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000146",
+        "os15-c000151",
+        "os15-c000192",
+        "os15-c000455",
+        "os15-c000337"
+      ],
+      "scenario_id": "os15-s0056"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000190",
+      "negative_decoy_candidate_ids": [
+        "os15-c000216",
+        "os15-c000323",
+        "os15-c000388",
+        "os15-c000131"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000323",
+        "os15-c000190",
+        "os15-c000216",
+        "os15-c000388",
+        "os15-c000131"
+      ],
+      "scenario_id": "os15-s0057"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000225",
+      "negative_decoy_candidate_ids": [
+        "os15-c000308",
+        "os15-c000154",
+        "os15-c000469",
+        "os15-c000501"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000501",
+        "os15-c000225",
+        "os15-c000154",
+        "os15-c000469",
+        "os15-c000308"
+      ],
+      "scenario_id": "os15-s0058"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000486",
+      "negative_decoy_candidate_ids": [
+        "os15-c000073",
+        "os15-c000116",
+        "os15-c000427",
+        "os15-c000492"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000492",
+        "os15-c000073",
+        "os15-c000427",
+        "os15-c000116",
+        "os15-c000486"
+      ],
+      "scenario_id": "os15-s0059"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000015",
+      "negative_decoy_candidate_ids": [
+        "os15-c000103",
+        "os15-c000243",
+        "os15-c000331",
+        "os15-c000067"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000067",
+        "os15-c000243",
+        "os15-c000331",
+        "os15-c000015",
+        "os15-c000103"
+      ],
+      "scenario_id": "os15-s0060"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000096",
+      "negative_decoy_candidate_ids": [
+        "os15-c000261",
+        "os15-c000305",
+        "os15-c000384",
+        "os15-c000464"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000384",
+        "os15-c000305",
+        "os15-c000464",
+        "os15-c000096",
+        "os15-c000261"
+      ],
+      "scenario_id": "os15-s0061"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000302",
+      "negative_decoy_candidate_ids": [
+        "os15-c000396",
+        "os15-c000408",
+        "os15-c000110",
+        "os15-c000195"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000396",
+        "os15-c000302",
+        "os15-c000408",
+        "os15-c000195",
+        "os15-c000110"
+      ],
+      "scenario_id": "os15-s0062"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000423",
+      "negative_decoy_candidate_ids": [
+        "os15-c000485",
+        "os15-c000163",
+        "os15-c000392",
+        "os15-c000325"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000325",
+        "os15-c000163",
+        "os15-c000485",
+        "os15-c000392",
+        "os15-c000423"
+      ],
+      "scenario_id": "os15-s0063"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000386",
+      "negative_decoy_candidate_ids": [
+        "os15-c000414",
+        "os15-c000351",
+        "os15-c000284",
+        "os15-c000450"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000414",
+        "os15-c000351",
+        "os15-c000284",
+        "os15-c000386",
+        "os15-c000450"
+      ],
+      "scenario_id": "os15-s0064"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000065",
+      "negative_decoy_candidate_ids": [
+        "os15-c000210",
+        "os15-c000135",
+        "os15-c000122",
+        "os15-c000220"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000210",
+        "os15-c000220",
+        "os15-c000122",
+        "os15-c000065",
+        "os15-c000135"
+      ],
+      "scenario_id": "os15-s0065"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000200",
+      "negative_decoy_candidate_ids": [
+        "os15-c000311",
+        "os15-c000426",
+        "os15-c000321",
+        "os15-c000470"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000311",
+        "os15-c000426",
+        "os15-c000200",
+        "os15-c000470",
+        "os15-c000321"
+      ],
+      "scenario_id": "os15-s0066"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000201",
+      "negative_decoy_candidate_ids": [
+        "os15-c000312",
+        "os15-c000063",
+        "os15-c000491",
+        "os15-c000324"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000312",
+        "os15-c000063",
+        "os15-c000491",
+        "os15-c000201",
+        "os15-c000324"
+      ],
+      "scenario_id": "os15-s0067"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000352",
+      "negative_decoy_candidate_ids": [
+        "os15-c000150",
+        "os15-c000364",
+        "os15-c000295",
+        "os15-c000025"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000352",
+        "os15-c000150",
+        "os15-c000295",
+        "os15-c000025",
+        "os15-c000364"
+      ],
+      "scenario_id": "os15-s0068"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000136",
+      "negative_decoy_candidate_ids": [
+        "os15-c000343",
+        "os15-c000367",
+        "os15-c000218",
+        "os15-c000209"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000209",
+        "os15-c000343",
+        "os15-c000136",
+        "os15-c000218",
+        "os15-c000367"
+      ],
+      "scenario_id": "os15-s0069"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000484",
+      "negative_decoy_candidate_ids": [
+        "os15-c000366",
+        "os15-c000171",
+        "os15-c000502",
+        "os15-c000052"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000052",
+        "os15-c000484",
+        "os15-c000171",
+        "os15-c000502",
+        "os15-c000366"
+      ],
+      "scenario_id": "os15-s0070"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000483",
+      "negative_decoy_candidate_ids": [
+        "os15-c000207",
+        "os15-c000054",
+        "os15-c000428",
+        "os15-c000053"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000053",
+        "os15-c000483",
+        "os15-c000207",
+        "os15-c000054",
+        "os15-c000428"
+      ],
+      "scenario_id": "os15-s0071"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000363",
+      "negative_decoy_candidate_ids": [
+        "os15-c000330",
+        "os15-c000236",
+        "os15-c000293",
+        "os15-c000112"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000112",
+        "os15-c000293",
+        "os15-c000363",
+        "os15-c000236",
+        "os15-c000330"
+      ],
+      "scenario_id": "os15-s0072"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000219",
+      "negative_decoy_candidate_ids": [
+        "os15-c000452",
+        "os15-c000152",
+        "os15-c000362",
+        "os15-c000203"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000362",
+        "os15-c000219",
+        "os15-c000452",
+        "os15-c000203",
+        "os15-c000152"
+      ],
+      "scenario_id": "os15-s0073"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000085",
+      "negative_decoy_candidate_ids": [
+        "os15-c000084",
+        "os15-c000481",
+        "os15-c000432",
+        "os15-c000020"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000084",
+        "os15-c000085",
+        "os15-c000481",
+        "os15-c000020",
+        "os15-c000432"
+      ],
+      "scenario_id": "os15-s0074"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000444",
+      "negative_decoy_candidate_ids": [
+        "os15-c000064",
+        "os15-c000153",
+        "os15-c000503",
+        "os15-c000162"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000444",
+        "os15-c000064",
+        "os15-c000153",
+        "os15-c000503",
+        "os15-c000162"
+      ],
+      "scenario_id": "os15-s0075"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000178",
+      "negative_decoy_candidate_ids": [
+        "os15-c000373",
+        "os15-c000051",
+        "os15-c000111",
+        "os15-c000074"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000051",
+        "os15-c000111",
+        "os15-c000373",
+        "os15-c000074",
+        "os15-c000178"
+      ],
+      "scenario_id": "os15-s0076"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000062",
+      "negative_decoy_candidate_ids": [
+        "os15-c000093",
+        "os15-c000466",
+        "os15-c000358",
+        "os15-c000329"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000358",
+        "os15-c000329",
+        "os15-c000466",
+        "os15-c000062",
+        "os15-c000093"
+      ],
+      "scenario_id": "os15-s0077"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000443",
+      "negative_decoy_candidate_ids": [
+        "os15-c000083",
+        "os15-c000493",
+        "os15-c000372",
+        "os15-c000410"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000493",
+        "os15-c000083",
+        "os15-c000443",
+        "os15-c000410",
+        "os15-c000372"
+      ],
+      "scenario_id": "os15-s0078"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000282",
+      "negative_decoy_candidate_ids": [
+        "os15-c000223",
+        "os15-c000087",
+        "os15-c000336",
+        "os15-c000455"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000336",
+        "os15-c000282",
+        "os15-c000223",
+        "os15-c000087",
+        "os15-c000455"
+      ],
+      "scenario_id": "os15-s0079"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000181",
+      "negative_decoy_candidate_ids": [
+        "os15-c000192",
+        "os15-c000337",
+        "os15-c000151",
+        "os15-c000216"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000151",
+        "os15-c000192",
+        "os15-c000337",
+        "os15-c000181",
+        "os15-c000216"
+      ],
+      "scenario_id": "os15-s0080"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000117",
+      "negative_decoy_candidate_ids": [
+        "os15-c000323",
+        "os15-c000388",
+        "os15-c000131",
+        "os15-c000308"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000308",
+        "os15-c000117",
+        "os15-c000323",
+        "os15-c000131",
+        "os15-c000388"
+      ],
+      "scenario_id": "os15-s0081"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000425",
+      "negative_decoy_candidate_ids": [
+        "os15-c000154",
+        "os15-c000469",
+        "os15-c000501",
+        "os15-c000073"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000501",
+        "os15-c000073",
+        "os15-c000469",
+        "os15-c000425",
+        "os15-c000154"
+      ],
+      "scenario_id": "os15-s0082"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000436",
+      "negative_decoy_candidate_ids": [
+        "os15-c000116",
+        "os15-c000427",
+        "os15-c000492",
+        "os15-c000103"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000116",
+        "os15-c000436",
+        "os15-c000427",
+        "os15-c000103",
+        "os15-c000492"
+      ],
+      "scenario_id": "os15-s0083"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000395",
+      "negative_decoy_candidate_ids": [
+        "os15-c000243",
+        "os15-c000331",
+        "os15-c000067",
+        "os15-c000261"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000261",
+        "os15-c000331",
+        "os15-c000067",
+        "os15-c000395",
+        "os15-c000243"
+      ],
+      "scenario_id": "os15-s0084"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000235",
+      "negative_decoy_candidate_ids": [
+        "os15-c000305",
+        "os15-c000384",
+        "os15-c000464",
+        "os15-c000396"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000396",
+        "os15-c000235",
+        "os15-c000384",
+        "os15-c000305",
+        "os15-c000464"
+      ],
+      "scenario_id": "os15-s0085"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000453",
+      "negative_decoy_candidate_ids": [
+        "os15-c000408",
+        "os15-c000110",
+        "os15-c000195",
+        "os15-c000485"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000408",
+        "os15-c000195",
+        "os15-c000110",
+        "os15-c000485",
+        "os15-c000453"
+      ],
+      "scenario_id": "os15-s0086"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000092",
+      "negative_decoy_candidate_ids": [
+        "os15-c000163",
+        "os15-c000392",
+        "os15-c000325",
+        "os15-c000414"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000325",
+        "os15-c000092",
+        "os15-c000414",
+        "os15-c000392",
+        "os15-c000163"
+      ],
+      "scenario_id": "os15-s0087"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000233",
+      "negative_decoy_candidate_ids": [
+        "os15-c000351",
+        "os15-c000284",
+        "os15-c000450",
+        "os15-c000210"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000233",
+        "os15-c000450",
+        "os15-c000284",
+        "os15-c000351",
+        "os15-c000210"
+      ],
+      "scenario_id": "os15-s0088"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000194",
+      "negative_decoy_candidate_ids": [
+        "os15-c000135",
+        "os15-c000122",
+        "os15-c000220",
+        "os15-c000311"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000122",
+        "os15-c000220",
+        "os15-c000135",
+        "os15-c000194",
+        "os15-c000311"
+      ],
+      "scenario_id": "os15-s0089"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000130",
+      "negative_decoy_candidate_ids": [
+        "os15-c000426",
+        "os15-c000321",
+        "os15-c000470",
+        "os15-c000312"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000426",
+        "os15-c000312",
+        "os15-c000470",
+        "os15-c000321",
+        "os15-c000130"
+      ],
+      "scenario_id": "os15-s0090"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000478",
+      "negative_decoy_candidate_ids": [
+        "os15-c000063",
+        "os15-c000491",
+        "os15-c000324",
+        "os15-c000150"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000491",
+        "os15-c000063",
+        "os15-c000150",
+        "os15-c000478",
+        "os15-c000324"
+      ],
+      "scenario_id": "os15-s0091"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000191",
+      "negative_decoy_candidate_ids": [
+        "os15-c000364",
+        "os15-c000295",
+        "os15-c000025",
+        "os15-c000343"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000191",
+        "os15-c000364",
+        "os15-c000295",
+        "os15-c000025",
+        "os15-c000343"
+      ],
+      "scenario_id": "os15-s0092"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000217",
+      "negative_decoy_candidate_ids": [
+        "os15-c000367",
+        "os15-c000218",
+        "os15-c000209",
+        "os15-c000366"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000218",
+        "os15-c000367",
+        "os15-c000209",
+        "os15-c000366",
+        "os15-c000217"
+      ],
+      "scenario_id": "os15-s0093"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000307",
+      "negative_decoy_candidate_ids": [
+        "os15-c000171",
+        "os15-c000502",
+        "os15-c000052",
+        "os15-c000207"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000207",
+        "os15-c000052",
+        "os15-c000502",
+        "os15-c000171",
+        "os15-c000307"
+      ],
+      "scenario_id": "os15-s0094"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000306",
+      "negative_decoy_candidate_ids": [
+        "os15-c000054",
+        "os15-c000428",
+        "os15-c000053",
+        "os15-c000330"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000054",
+        "os15-c000053",
+        "os15-c000428",
+        "os15-c000306",
+        "os15-c000330"
+      ],
+      "scenario_id": "os15-s0095"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000142",
+      "negative_decoy_candidate_ids": [
+        "os15-c000236",
+        "os15-c000293",
+        "os15-c000112",
+        "os15-c000452"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000142",
+        "os15-c000112",
+        "os15-c000236",
+        "os15-c000293",
+        "os15-c000452"
+      ],
+      "scenario_id": "os15-s0096"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000361",
+      "negative_decoy_candidate_ids": [
+        "os15-c000152",
+        "os15-c000362",
+        "os15-c000203",
+        "os15-c000084"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000084",
+        "os15-c000361",
+        "os15-c000362",
+        "os15-c000203",
+        "os15-c000152"
+      ],
+      "scenario_id": "os15-s0097"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000059",
+      "negative_decoy_candidate_ids": [
+        "os15-c000481",
+        "os15-c000432",
+        "os15-c000020",
+        "os15-c000064"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000481",
+        "os15-c000432",
+        "os15-c000020",
+        "os15-c000059",
+        "os15-c000064"
+      ],
+      "scenario_id": "os15-s0098"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000129",
+      "negative_decoy_candidate_ids": [
+        "os15-c000153",
+        "os15-c000503",
+        "os15-c000162",
+        "os15-c000373"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000503",
+        "os15-c000373",
+        "os15-c000129",
+        "os15-c000162",
+        "os15-c000153"
+      ],
+      "scenario_id": "os15-s0099"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000095",
+      "negative_decoy_candidate_ids": [
+        "os15-c000051",
+        "os15-c000111",
+        "os15-c000074",
+        "os15-c000093"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000095",
+        "os15-c000093",
+        "os15-c000074",
+        "os15-c000111",
+        "os15-c000051"
+      ],
+      "scenario_id": "os15-s0100"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000034",
+      "negative_decoy_candidate_ids": [
+        "os15-c000466",
+        "os15-c000358",
+        "os15-c000329",
+        "os15-c000083"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000329",
+        "os15-c000466",
+        "os15-c000358",
+        "os15-c000083",
+        "os15-c000034"
+      ],
+      "scenario_id": "os15-s0101"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000193",
+      "negative_decoy_candidate_ids": [
+        "os15-c000493",
+        "os15-c000372",
+        "os15-c000410",
+        "os15-c000223"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000493",
+        "os15-c000372",
+        "os15-c000193",
+        "os15-c000223",
+        "os15-c000410"
+      ],
+      "scenario_id": "os15-s0102"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000357",
+      "negative_decoy_candidate_ids": [
+        "os15-c000087",
+        "os15-c000336",
+        "os15-c000455",
+        "os15-c000192"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000192",
+        "os15-c000087",
+        "os15-c000357",
+        "os15-c000455",
+        "os15-c000336"
+      ],
+      "scenario_id": "os15-s0103"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000109",
+      "negative_decoy_candidate_ids": [
+        "os15-c000337",
+        "os15-c000151",
+        "os15-c000216",
+        "os15-c000323"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000216",
+        "os15-c000337",
+        "os15-c000323",
+        "os15-c000109",
+        "os15-c000151"
+      ],
+      "scenario_id": "os15-s0104"
+    },
+    {
+      "focal_vulnerable_candidate_id": "os15-c000179",
+      "negative_decoy_candidate_ids": [
+        "os15-c000388",
+        "os15-c000131",
+        "os15-c000308",
+        "os15-c000154"
+      ],
+      "ordered_candidate_ids": [
+        "os15-c000131",
+        "os15-c000154",
+        "os15-c000308",
+        "os15-c000179",
+        "os15-c000388"
+      ],
+      "scenario_id": "os15-s0105"
+    }
+  ],
+  "positive_decoy_policy": "Sort eligible negative candidates by SHA-256(seed|negative-pool|candidate_id|original_case_id), then assign four decoys to each positive scenario by contiguous round-robin positions.",
+  "schema_version": "owasp-sqli-v15-decoy-assignment-v1",
+  "unused_negative_only_candidates": []
+}

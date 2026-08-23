@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import hashlib
+import ssl
 from datetime import UTC, datetime
 from http.client import HTTPResponse
 from typing import TYPE_CHECKING
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin
-from urllib.request import HTTPRedirectHandler, Request, build_opener
+from urllib.request import HTTPRedirectHandler, HTTPSHandler, Request, build_opener
 
 from adstf.contracts import (
     ActionRequest,
@@ -77,10 +78,14 @@ class HttpExecutor:
         safety: SafetyBoundary,
         timeout_seconds: float = 5.0,
         session_registry: "SessionRegistry | None" = None,
+        verify_tls: bool = True,
     ) -> None:
         self._safety = safety
         self._timeout_seconds = timeout_seconds
-        self._opener = build_opener(NoRedirectHandler)
+        handlers = [NoRedirectHandler]
+        if not verify_tls:
+            handlers.append(HTTPSHandler(context=ssl._create_unverified_context()))
+        self._opener = build_opener(*handlers)
         self._session_registry = session_registry
 
     def execute(self, action: ActionRequest) -> tuple[ActionResult, list[EvidenceRecord]]:
@@ -171,10 +176,15 @@ class HttpExecutor:
         max_redirects = int(action.parameters.get("max_redirects", 3))
         capture_body_text = bool(action.parameters.get("capture_body_text", False))
         body_text_limit = int(action.parameters.get("body_text_limit", 4096))
+        body = action.parameters.get("body")
+        data = None
+        if body is not None:
+            encoding = str(action.parameters.get("body_encoding", "utf-8"))
+            data = str(body).encode(encoding)
         redirect_chain: list[dict] = []
 
         for _ in range(max_redirects + 1):
-            request = Request(url=url, method=method, headers=headers)
+            request = Request(url=url, data=data, method=method, headers=headers)
             try:
                 with self._opener.open(request, timeout=self._timeout_seconds) as response:
                     return self._normalize_response(

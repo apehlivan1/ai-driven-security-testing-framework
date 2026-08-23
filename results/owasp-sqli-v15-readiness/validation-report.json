@@ -1,0 +1,11 @@
+{
+  "errors": [],
+  "expected_readiness_count": 20,
+  "final_eligible_runtime_executions": 0,
+  "gpt_calls": 0,
+  "qwen_calls": 0,
+  "readiness_status": "PASS",
+  "schema_version": "owasp-sqli-v15-readiness-validation-v1",
+  "selected_readiness_count": 20,
+  "valid": true
+}

@@ -1,0 +1,17 @@
+{
+  "candidate_test_budget_k": 4,
+  "deterministic_rows": 124,
+  "maximum_negative_decoy_reuse": 5,
+  "negative_only_scenarios": 19,
+  "pack_size": 5,
+  "positive_scenarios": 105,
+  "projected_gpt_rows_at_five_trials": 620,
+  "projected_qwen_rows_at_five_trials": 620,
+  "readiness_cases_excluded_from_final": 20,
+  "required_negative_decoy_assignments": 420,
+  "schema_version": "owasp-sqli-v15-preliminary-final-ranking-scale-v1",
+  "status": "preliminary_not_frozen",
+  "total_core_ranking_scenarios": 124,
+  "total_projected_ranking_rows": 1364,
+  "unique_original_cases_represented": 200
+}

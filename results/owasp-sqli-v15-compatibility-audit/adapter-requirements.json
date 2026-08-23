@@ -1,0 +1,45 @@
+{
+  "carrier_distribution": {
+    "cookie": {
+      "non_vulnerable": 17,
+      "total": 48,
+      "vulnerable": 31
+    },
+    "formparam": {
+      "non_vulnerable": 121,
+      "total": 250,
+      "vulnerable": 129
+    },
+    "getparam": {
+      "non_vulnerable": 48,
+      "total": 113,
+      "vulnerable": 65
+    },
+    "header": {
+      "non_vulnerable": 46,
+      "total": 93,
+      "vulnerable": 47
+    }
+  },
+  "required_adapters": {
+    "cookies": {
+      "needed": true,
+      "requirement": "Set deterministic cookies while keeping original cookie names out of model-facing records."
+    },
+    "form_parameters": {
+      "needed": true,
+      "requirement": "Submit original form parameters with deterministic companion values and preserve original method shape."
+    },
+    "headers": {
+      "needed": true,
+      "requirement": "Set deterministic request headers while keeping original header names out of model-facing records."
+    },
+    "query_parameters": {
+      "needed": true,
+      "requirement": "Construct original query-parameter sets and mutate only the audited controllable value."
+    }
+  },
+  "schema_version": "owasp-sqli-v15-adapter-requirements-v1",
+  "status": "design_only_not_implemented",
+  "transport_compatibility_is_not_verifier_compatibility": true
+}

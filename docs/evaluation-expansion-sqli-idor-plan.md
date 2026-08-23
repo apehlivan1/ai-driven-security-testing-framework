@@ -98,6 +98,72 @@ Recommended compatibility categories:
 
 The next SQLi milestone should establish these categories before any ranking or vulnerability testing is run.
 
+### v1.5 Static Audit Result
+
+The v1.5 OWASP Benchmark SQLi compatibility audit was completed as a non-scored static audit. It produced reproducible artifacts under `results/owasp-sqli-v15-compatibility-audit/` and did not execute SQLi requests, call GPT, call Qwen, or generate scored rankings.
+
+The pinned OWASP Benchmark Java SQLi population remains:
+
+| Item | Count |
+| --- | ---: |
+| Total SQLi cases | 504 |
+| Vulnerable SQLi cases | 272 |
+| Non-vulnerable SQLi cases | 232 |
+
+The conservative compatibility classification is:
+
+| Class | Total | Vulnerable | Non-vulnerable |
+| --- | ---: | ---: | ---: |
+| `DIRECT` | 0 | 0 | 0 |
+| `ADAPTER_SUPPORTED` | 220 | 115 | 105 |
+| `DERIVED_ADAPTED` | 0 | 0 | 0 |
+| `EXCLUDED` | 127 | 73 | 54 |
+| `MANUAL_REVIEW` | 157 | 84 | 73 |
+
+The audit intentionally reports no `DIRECT` cases because every statically eligible original OWASP SQLi case requires at least deterministic transport adapter support, such as multi-parameter query handling, form-parameter submission, header handling, or cookie handling. This does not mean the corpus is unusable; it means the original cases should not be treated as directly executable by the current single-parameter SQLi development runner.
+
+The audit identifies 220 original OWASP SQLi cases as potentially usable for a later direct external validation layer after deterministic adapters are implemented and runtime readiness confirms stable boolean behavior. These 220 cases are also the current candidate pool for a later SQLi candidate-ranking layer. The 127 excluded cases are excluded because their static behavior conflicts with the non-destructive verifier philosophy: 70 are write/state-changing `INSERT`-style cases and 57 use stored-procedure behavior that cannot be assumed read-only from static evidence. The remaining 157 read-like cases require manual review because the static audit did not identify a sufficient response oracle for boolean true/false comparison.
+
+### v1.5 READINESS_ONLY Result
+
+The v1.5 deterministic adapter and READINESS_ONLY validation milestone was completed as a non-scored readiness exercise. It selected 20 cases before runtime execution using seed `owasp-sqli-v15-readiness-selection-v1`: two vulnerable and two non-vulnerable examples for each of `form`, `multi_form`, `multi_query`, `header`, and `cookie`. These 20 cases are permanently marked `READINESS_ONLY` for v1.5 and are excluded from later final confirmatory denominators.
+
+The implemented deterministic adapters are:
+
+- form parameter adapter;
+- multi-form parameter adapter;
+- multi-query parameter adapter;
+- header adapter;
+- cookie adapter.
+
+The readiness run executed only the selected READINESS_ONLY cases. It did not execute final-confirmatory cases, did not call GPT, did not call Qwen, and did not generate scored ranking results. Runtime request construction, evidence collection and verifier decisions did not use OWASP ground truth; expected labels were attached only in the post-execution readiness report.
+
+Readiness status: `PASS`.
+
+Reconciled v1.5 corpus after readiness:
+
+| Evaluation role | Total | Vulnerable | Non-vulnerable |
+| --- | ---: | ---: | ---: |
+| `READINESS_ONLY` | 20 | 10 | 10 |
+| `FINAL_CONFIRMATORY_ELIGIBLE` | 200 | 105 | 95 |
+| `EXCLUDED` | 284 | 157 | 127 |
+
+The unresolved `MANUAL_REVIEW` count remains 157 after additional offline/static review. These cases remain unresolved because static source evidence shows writer output but not a sufficient deterministic boolean response oracle. No runtime probing was used to reclassify them.
+
+Preliminary final SQLi ranking design after removing READINESS_ONLY cases:
+
+| Item | Count |
+| --- | ---: |
+| Pack size | 5 |
+| Candidate-test budget `k` | 4 |
+| Positive scenarios | 105 |
+| Negative-only scenarios | 19 |
+| Total core ranking scenarios | 124 |
+| Deterministic rows | 124 |
+| GPT rows at five trials | 620 |
+| Qwen rows at five trials | 620 |
+| Total projected ranking rows | 1364 |
+
 ## Recommended SQLi Expansion Design
 
 The SQLi expansion should be versioned separately, for example as `evaluation-protocol-v1.5` or `sqli-owasp-v1.5`, and should be explicitly distinct from the frozen XSS protocols.
@@ -313,3 +379,24 @@ However, the expanded studies must be reported separately from v1.2, v1.3.1 and 
 Proceed with a narrow `v1.5 OWASP Benchmark SQLi compatibility audit and protocol-design preparation` milestone.
 
 The milestone should inspect and classify the existing local OWASP Benchmark Java SQLi cases, define the SQLi candidate-ranking schema and adapter requirements, and produce dry-validation artifacts only. It should not run SQLi attacks, call GPT or Qwen, freeze a scored protocol, change verifier logic or alter any XSS evidence.
+
+## v1.5 Implementation Status
+
+The SQLi compatibility audit and deterministic readiness phase are complete.
+The audit identified 504 SQLi-labelled OWASP Benchmark cases and the readiness
+phase reserved 20 READINESS_ONLY cases outside the final corpus. The readiness
+run passed as an infrastructure/readiness check while preserving 14
+inconclusive readiness outcomes as a methodological observation.
+
+The frozen pre-execution protocol is now documented in
+`docs/evaluation-protocol-v1.5.md`. Its protocol-freeze package is
+`results/owasp-sqli-v15-protocol-freeze/`. The package contains 200
+FINAL_CONFIRMATORY_ELIGIBLE cases, 124 ranking scenarios, 1364 scheduled
+ranking rows and a separate 200-case direct-execution schedule. Package
+validation records zero final SQLi executions, zero scored ranking rows, zero
+GPT calls and zero Qwen calls.
+
+The next milestone, if authorized, is final v1.5 confirmatory execution under
+the frozen protocol. It should not reinterpret readiness as proof that all 200
+final cases are verifier-confirmable, and inconclusive final outcomes must
+remain in the direct-execution denominator.

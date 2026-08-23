@@ -1,0 +1,76 @@
+{
+  "attributes": {
+    "adapter_class": "cookie",
+    "all_status_ok": true,
+    "baseline_stable": true,
+    "candidate_id": "os15-c000182",
+    "control_case_passed": true,
+    "false_condition_stable": true,
+    "fingerprints": {
+      "baseline_1": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      },
+      "baseline_2": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      },
+      "false_1": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      },
+      "false_2": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      },
+      "true_1": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      },
+      "true_2": {
+        "body_length": 1098,
+        "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+        "status_code": 200
+      }
+    },
+    "ground_truth_used": false,
+    "is_control_case": true,
+    "payload_family": "bounded_boolean_condition",
+    "reflected_payload_only": false,
+    "rejects_hypothesis": false,
+    "server_error_observed": false,
+    "status_codes": {
+      "baseline_1": 200,
+      "baseline_2": 200,
+      "false_1": 200,
+      "false_2": 200,
+      "true_1": 200,
+      "true_2": 200
+    },
+    "true_condition_stable": true,
+    "true_false_difference": false,
+    "true_false_difference_reproducible": false
+  },
+  "created_at": "2026-08-23T00:10:45.137964+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-b4e64e48295a",
+  "evidence_type": "comparison_result",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-2ac08e2fe29e",
+    "action-d142dda0acef",
+    "action-c0463cf6ca6d",
+    "action-f926134efaf1",
+    "action-49125e9cd219",
+    "action-47f3762850ca"
+  ],
+  "run_id": "owasp-sqli-v15-readiness-20260823T001044Z",
+  "source": "owasp_sqli_v15_readiness",
+  "summary": "Compared baseline, boolean-true, and boolean-false responses for os15-c000182.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/sqli-02/BenchmarkTest01012"
+}

@@ -1,0 +1,314 @@
+{
+  "artifact_status": "non_scored_static_audit",
+  "benchmark_provenance": {
+    "crawler_xml_file": "data\\benchmark-crawler-http.xml",
+    "crawler_xml_sha256": "88fd972e3979f057fc9773b28bf2dbed412029bacb30d75e72f2e91e825973fb",
+    "current_branch": "master",
+    "declared_benchmark_version": "1.2",
+    "expected_results_file": "expectedresults-1.2.csv",
+    "expected_results_sha256": "f0311c850dea7f15125113f7cfdbd7ad612d7f5951c7331584f6981b6ae2d630",
+    "official_remote": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+    "pinned_git_revision": "ba2e3f9a29fa3bde6a5c073d679393c9b94f025f",
+    "repository_status": "clean",
+    "source_root": "src/main/java/org/owasp/benchmark/testcode"
+  },
+  "boolean_verifier_applicability_distribution": {
+    "manual_review_required": {
+      "non_vulnerable": 73,
+      "total": 157,
+      "vulnerable": 84
+    },
+    "not_applicable_non_destructive_conflict": {
+      "non_vulnerable": 28,
+      "total": 70,
+      "vulnerable": 42
+    },
+    "not_applicable_stored_procedure_ambiguous": {
+      "non_vulnerable": 26,
+      "total": 57,
+      "vulnerable": 31
+    },
+    "plausible_runtime_validation_required": {
+      "non_vulnerable": 105,
+      "total": 220,
+      "vulnerable": 115
+    }
+  },
+  "candidate_ranking_layer_recommended": true,
+  "compatibility_distribution": {
+    "ADAPTER_SUPPORTED": {
+      "non_vulnerable": 105,
+      "total": 220,
+      "vulnerable": 115
+    },
+    "DERIVED_ADAPTED": {
+      "non_vulnerable": 0,
+      "total": 0,
+      "vulnerable": 0
+    },
+    "DIRECT": {
+      "non_vulnerable": 0,
+      "total": 0,
+      "vulnerable": 0
+    },
+    "EXCLUDED": {
+      "non_vulnerable": 54,
+      "total": 127,
+      "vulnerable": 73
+    },
+    "MANUAL_REVIEW": {
+      "non_vulnerable": 73,
+      "total": 157,
+      "vulnerable": 84
+    }
+  },
+  "compatible_input_carrier_distribution": {
+    "cookie": {
+      "non_vulnerable": 10,
+      "total": 22,
+      "vulnerable": 12
+    },
+    "formparam": {
+      "non_vulnerable": 18,
+      "total": 36,
+      "vulnerable": 18
+    },
+    "formparam+formparam": {
+      "non_vulnerable": 8,
+      "total": 21,
+      "vulnerable": 13
+    },
+    "formparam+formparam+formparam": {
+      "non_vulnerable": 9,
+      "total": 21,
+      "vulnerable": 12
+    },
+    "formparam+formparam+formparam+formparam": {
+      "non_vulnerable": 14,
+      "total": 23,
+      "vulnerable": 9
+    },
+    "getparam+getparam+getparam": {
+      "non_vulnerable": 25,
+      "total": 53,
+      "vulnerable": 28
+    },
+    "header": {
+      "non_vulnerable": 21,
+      "total": 44,
+      "vulnerable": 23
+    }
+  },
+  "compatible_primary_input_carrier_distribution": {
+    "cookie": {
+      "non_vulnerable": 10,
+      "total": 22,
+      "vulnerable": 12
+    },
+    "formparam": {
+      "non_vulnerable": 49,
+      "total": 101,
+      "vulnerable": 52
+    },
+    "getparam": {
+      "non_vulnerable": 25,
+      "total": 53,
+      "vulnerable": 28
+    },
+    "header": {
+      "non_vulnerable": 21,
+      "total": 44,
+      "vulnerable": 23
+    }
+  },
+  "compatible_required_adapter_distribution": {
+    "cookie_adapter": 22,
+    "form_parameter_adapter": 101,
+    "header_adapter": 44,
+    "multi_form_parameter_adapter": 65,
+    "multi_query_parameter_adapter": 53
+  },
+  "direct_execution_layer_recommended": true,
+  "eligible_candidate_ranking": 220,
+  "eligible_original_external_evaluation": 220,
+  "eligible_original_external_evaluation_non_vulnerable": 105,
+  "eligible_original_external_evaluation_vulnerable": 115,
+  "input_carrier_distribution": {
+    "cookie": {
+      "non_vulnerable": 17,
+      "total": 48,
+      "vulnerable": 31
+    },
+    "formparam": {
+      "non_vulnerable": 50,
+      "total": 97,
+      "vulnerable": 47
+    },
+    "formparam+formparam": {
+      "non_vulnerable": 19,
+      "total": 57,
+      "vulnerable": 38
+    },
+    "formparam+formparam+formparam": {
+      "non_vulnerable": 20,
+      "total": 46,
+      "vulnerable": 26
+    },
+    "formparam+formparam+formparam+formparam": {
+      "non_vulnerable": 32,
+      "total": 50,
+      "vulnerable": 18
+    },
+    "getparam+getparam+getparam": {
+      "non_vulnerable": 48,
+      "total": 113,
+      "vulnerable": 65
+    },
+    "header": {
+      "non_vulnerable": 46,
+      "total": 93,
+      "vulnerable": 47
+    }
+  },
+  "major_incompatibility_reasons": {
+    "read-like SQL detected but static response oracle is insufficient": 157,
+    "stored procedure behavior cannot be assumed read-only by static audit": 57,
+    "write/state-changing SQL conflicts with non-destructive verifier philosophy": 70
+  },
+  "non_vulnerable_sqli": 232,
+  "primary_input_carrier_distribution": {
+    "cookie": {
+      "non_vulnerable": 17,
+      "total": 48,
+      "vulnerable": 31
+    },
+    "formparam": {
+      "non_vulnerable": 121,
+      "total": 250,
+      "vulnerable": 129
+    },
+    "getparam": {
+      "non_vulnerable": 48,
+      "total": 113,
+      "vulnerable": 65
+    },
+    "header": {
+      "non_vulnerable": 46,
+      "total": 93,
+      "vulnerable": 47
+    }
+  },
+  "ranking_scale_by_pack_size": {
+    "4": {
+      "candidate_placements": 564,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 564,
+      "core_ranking_scenarios": 141,
+      "maximum_negative_case_reuse_for_positive_scenarios": 4,
+      "mean_negative_case_reuse_for_positive_scenarios": 3.286,
+      "negative_only_scenarios_disjoint": 26,
+      "pack_size": 4,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 345
+    },
+    "5": {
+      "candidate_placements": 680,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 544,
+      "core_ranking_scenarios": 136,
+      "maximum_negative_case_reuse_for_positive_scenarios": 5,
+      "mean_negative_case_reuse_for_positive_scenarios": 4.381,
+      "negative_only_scenarios_disjoint": 21,
+      "pack_size": 5,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 460
+    },
+    "6": {
+      "candidate_placements": 792,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 528,
+      "core_ranking_scenarios": 132,
+      "maximum_negative_case_reuse_for_positive_scenarios": 6,
+      "mean_negative_case_reuse_for_positive_scenarios": 5.476,
+      "negative_only_scenarios_disjoint": 17,
+      "pack_size": 6,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 575
+    }
+  },
+  "read_write_distribution": {
+    "read_like": {
+      "non_vulnerable": 178,
+      "total": 377,
+      "vulnerable": 199
+    },
+    "stored_procedure_ambiguous": {
+      "non_vulnerable": 26,
+      "total": 57,
+      "vulnerable": 31
+    },
+    "write_or_state_changing": {
+      "non_vulnerable": 28,
+      "total": 70,
+      "vulnerable": 42
+    }
+  },
+  "recommended_candidate_test_budget_k": 4,
+  "recommended_pack_size": 5,
+  "recommended_trial_count_future_llm": 5,
+  "request_shape_distribution": {
+    "GET_query": {
+      "non_vulnerable": 48,
+      "total": 113,
+      "vulnerable": 65
+    },
+    "POST_form": {
+      "non_vulnerable": 121,
+      "total": 250,
+      "vulnerable": 129
+    },
+    "cookie": {
+      "non_vulnerable": 17,
+      "total": 48,
+      "vulnerable": 31
+    },
+    "header": {
+      "non_vulnerable": 46,
+      "total": 93,
+      "vulnerable": 47
+    }
+  },
+  "required_adapter_distribution": {
+    "cookie_adapter": 48,
+    "form_parameter_adapter": 250,
+    "header_adapter": 93,
+    "multi_form_parameter_adapter": 153,
+    "multi_query_parameter_adapter": 113
+  },
+  "runtime_execution_counts": {
+    "gpt_calls": 0,
+    "qwen_calls": 0,
+    "scored_rankings": 0,
+    "sqli_runtime_executions": 0
+  },
+  "schema_version": "owasp-sqli-v15-compatibility-audit-v1",
+  "sql_operation_distribution": {
+    "insert": {
+      "non_vulnerable": 28,
+      "total": 70,
+      "vulnerable": 42
+    },
+    "select_like": {
+      "non_vulnerable": 178,
+      "total": 377,
+      "vulnerable": 199
+    },
+    "stored_procedure": {
+      "non_vulnerable": 26,
+      "total": 57,
+      "vulnerable": 31
+    }
+  },
+  "total_sqli": 504,
+  "vulnerable_sqli": 272
+}

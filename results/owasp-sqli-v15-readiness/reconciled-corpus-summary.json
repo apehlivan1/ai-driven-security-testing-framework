@@ -1,0 +1,44 @@
+{
+  "compatibility_distribution": {
+    "ADAPTER_SUPPORTED": {
+      "non_vulnerable": 105,
+      "total": 220,
+      "vulnerable": 115
+    },
+    "EXCLUDED": {
+      "non_vulnerable": 54,
+      "total": 127,
+      "vulnerable": 73
+    },
+    "MANUAL_REVIEW": {
+      "non_vulnerable": 73,
+      "total": 157,
+      "vulnerable": 84
+    }
+  },
+  "evaluation_role_distribution": {
+    "EXCLUDED": {
+      "non_vulnerable": 127,
+      "total": 284,
+      "vulnerable": 157
+    },
+    "FINAL_CONFIRMATORY_ELIGIBLE": {
+      "non_vulnerable": 95,
+      "total": 200,
+      "vulnerable": 105
+    },
+    "READINESS_ONLY": {
+      "non_vulnerable": 10,
+      "total": 20,
+      "vulnerable": 10
+    }
+  },
+  "excluded_count": 284,
+  "final_confirmatory_eligible_count": 200,
+  "final_confirmatory_eligible_non_vulnerable": 95,
+  "final_confirmatory_eligible_vulnerable": 105,
+  "manual_review_count": 157,
+  "original_total": 504,
+  "readiness_only_count": 20,
+  "schema_version": "owasp-sqli-v15-reconciled-corpus-summary-v1"
+}

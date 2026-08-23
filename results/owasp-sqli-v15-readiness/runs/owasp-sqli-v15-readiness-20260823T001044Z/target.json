@@ -1,0 +1,22 @@
+{
+  "allowed_hosts": [
+    "127.0.0.1"
+  ],
+  "allowed_ports": [
+    8443
+  ],
+  "allowed_schemes": [
+    "https"
+  ],
+  "base_url": "https://127.0.0.1:8443/benchmark",
+  "enabled_modules": [
+    "sqli.boolean"
+  ],
+  "max_actions": 200,
+  "metadata": {
+    "evaluation": "owasp-sqli-v15-readiness",
+    "local_only": true
+  },
+  "name": "OWASP Benchmark Java SQLi v1.5 readiness",
+  "test_users": {}
+}

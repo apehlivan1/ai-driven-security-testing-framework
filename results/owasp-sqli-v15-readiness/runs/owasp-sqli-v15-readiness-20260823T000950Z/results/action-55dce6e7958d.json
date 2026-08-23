@@ -1,0 +1,28 @@
+{
+  "action_id": "action-55dce6e7958d",
+  "completed_at": "2026-08-23T00:09:52.461889+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-11855e6a1eb4"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 268,
+    "body_sha256": "717e2ec1f43e038462fa54e51e0a24120eff8cc4cc682fbe393435bb37ce31a7",
+    "body_text": "<!DOCTYPE html>\n<html>\n<body>\n<p>For query: SELECT &#x2a; from USERS where USERNAME&#x3d;&#x27;foo&#x27; and PASSWORD&#x3d;&#x27;This_should_always_happen&#x27;<br>The SQL query was processed successfully but the number of rows affected is unknown.</p>\n</body>\n</html>",
+    "body_text_truncated": false,
+    "content_type": "text/html;charset=UTF-8",
+    "final_url": "https://127.0.0.1:8443/benchmark/sqli-01/BenchmarkTest00601",
+    "headers": {
+      "Content-Type": "text/html;charset=UTF-8"
+    },
+    "method": "POST",
+    "reason": "",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "owasp-sqli-v15-readiness-20260823T000950Z",
+  "safety_notes": [],
+  "started_at": "2026-08-23T00:09:52.444078+00:00",
+  "status": "executed"
+}

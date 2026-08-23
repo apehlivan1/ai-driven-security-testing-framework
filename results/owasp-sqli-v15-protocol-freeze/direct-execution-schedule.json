@@ -1,0 +1,3221 @@
+{
+  "artifact_status": "pre_execution_direct_validation_schedule_no_cases_executed",
+  "case_denominator": 200,
+  "expected_http_request_count": 1200,
+  "ground_truth_policy": "OWASP expected results are loaded only after direct execution and verifier decisions are complete.",
+  "inconclusive_policy": "Inconclusive is a legitimate outcome and remains in the denominator.",
+  "outcome_categories": [
+    "baseline_stable",
+    "baseline_unstable",
+    "true_false_difference_reproducible",
+    "no_reproducible_difference",
+    "verified",
+    "rejected",
+    "inconclusive",
+    "runtime_error"
+  ],
+  "rows": [
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000003",
+      "execution_specification_ref": "os15-c000003",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 1
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000005",
+      "execution_specification_ref": "os15-c000005",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 2
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000008",
+      "execution_specification_ref": "os15-c000008",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 3
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000010",
+      "execution_specification_ref": "os15-c000010",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 4
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000015",
+      "execution_specification_ref": "os15-c000015",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 5
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000016",
+      "execution_specification_ref": "os15-c000016",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 6
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000020",
+      "execution_specification_ref": "os15-c000020",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 7
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000021",
+      "execution_specification_ref": "os15-c000021",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 8
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000023",
+      "execution_specification_ref": "os15-c000023",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 9
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000024",
+      "execution_specification_ref": "os15-c000024",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 10
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000025",
+      "execution_specification_ref": "os15-c000025",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 11
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000034",
+      "execution_specification_ref": "os15-c000034",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 12
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000051",
+      "execution_specification_ref": "os15-c000051",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 13
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000052",
+      "execution_specification_ref": "os15-c000052",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 14
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000053",
+      "execution_specification_ref": "os15-c000053",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 15
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000054",
+      "execution_specification_ref": "os15-c000054",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 16
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000055",
+      "execution_specification_ref": "os15-c000055",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 17
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000059",
+      "execution_specification_ref": "os15-c000059",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 18
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000062",
+      "execution_specification_ref": "os15-c000062",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 19
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000063",
+      "execution_specification_ref": "os15-c000063",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 20
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000064",
+      "execution_specification_ref": "os15-c000064",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 21
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000065",
+      "execution_specification_ref": "os15-c000065",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 22
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000066",
+      "execution_specification_ref": "os15-c000066",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 23
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000067",
+      "execution_specification_ref": "os15-c000067",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 24
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000072",
+      "execution_specification_ref": "os15-c000072",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 25
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000073",
+      "execution_specification_ref": "os15-c000073",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 26
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000074",
+      "execution_specification_ref": "os15-c000074",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 27
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000075",
+      "execution_specification_ref": "os15-c000075",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 28
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000076",
+      "execution_specification_ref": "os15-c000076",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 29
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000082",
+      "execution_specification_ref": "os15-c000082",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 30
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000083",
+      "execution_specification_ref": "os15-c000083",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 31
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000084",
+      "execution_specification_ref": "os15-c000084",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 32
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000085",
+      "execution_specification_ref": "os15-c000085",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 33
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000086",
+      "execution_specification_ref": "os15-c000086",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 34
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000087",
+      "execution_specification_ref": "os15-c000087",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 35
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000092",
+      "execution_specification_ref": "os15-c000092",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 36
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000093",
+      "execution_specification_ref": "os15-c000093",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 37
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000094",
+      "execution_specification_ref": "os15-c000094",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 38
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000095",
+      "execution_specification_ref": "os15-c000095",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 39
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000096",
+      "execution_specification_ref": "os15-c000096",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 40
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000103",
+      "execution_specification_ref": "os15-c000103",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 41
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000105",
+      "execution_specification_ref": "os15-c000105",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 42
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000109",
+      "execution_specification_ref": "os15-c000109",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 43
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000110",
+      "execution_specification_ref": "os15-c000110",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 44
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000111",
+      "execution_specification_ref": "os15-c000111",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 45
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000112",
+      "execution_specification_ref": "os15-c000112",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 46
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000116",
+      "execution_specification_ref": "os15-c000116",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 47
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000117",
+      "execution_specification_ref": "os15-c000117",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 48
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000122",
+      "execution_specification_ref": "os15-c000122",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 49
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000129",
+      "execution_specification_ref": "os15-c000129",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 50
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000130",
+      "execution_specification_ref": "os15-c000130",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 51
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000131",
+      "execution_specification_ref": "os15-c000131",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 52
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000135",
+      "execution_specification_ref": "os15-c000135",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 53
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000136",
+      "execution_specification_ref": "os15-c000136",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 54
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000142",
+      "execution_specification_ref": "os15-c000142",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 55
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000145",
+      "execution_specification_ref": "os15-c000145",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 56
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000146",
+      "execution_specification_ref": "os15-c000146",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 57
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000147",
+      "execution_specification_ref": "os15-c000147",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 58
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000150",
+      "execution_specification_ref": "os15-c000150",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 59
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000151",
+      "execution_specification_ref": "os15-c000151",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 60
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000152",
+      "execution_specification_ref": "os15-c000152",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 61
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000153",
+      "execution_specification_ref": "os15-c000153",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 62
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000154",
+      "execution_specification_ref": "os15-c000154",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 63
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000162",
+      "execution_specification_ref": "os15-c000162",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 64
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000163",
+      "execution_specification_ref": "os15-c000163",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 65
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000171",
+      "execution_specification_ref": "os15-c000171",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 66
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000174",
+      "execution_specification_ref": "os15-c000174",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 67
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000178",
+      "execution_specification_ref": "os15-c000178",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 68
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000179",
+      "execution_specification_ref": "os15-c000179",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 69
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000181",
+      "execution_specification_ref": "os15-c000181",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 70
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000183",
+      "execution_specification_ref": "os15-c000183",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 71
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000184",
+      "execution_specification_ref": "os15-c000184",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 72
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000190",
+      "execution_specification_ref": "os15-c000190",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 73
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000191",
+      "execution_specification_ref": "os15-c000191",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 74
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000192",
+      "execution_specification_ref": "os15-c000192",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 75
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000193",
+      "execution_specification_ref": "os15-c000193",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 76
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000194",
+      "execution_specification_ref": "os15-c000194",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 77
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000195",
+      "execution_specification_ref": "os15-c000195",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 78
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000200",
+      "execution_specification_ref": "os15-c000200",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 79
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000201",
+      "execution_specification_ref": "os15-c000201",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 80
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000202",
+      "execution_specification_ref": "os15-c000202",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 81
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000203",
+      "execution_specification_ref": "os15-c000203",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 82
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000207",
+      "execution_specification_ref": "os15-c000207",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 83
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000209",
+      "execution_specification_ref": "os15-c000209",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 84
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000210",
+      "execution_specification_ref": "os15-c000210",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 85
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000216",
+      "execution_specification_ref": "os15-c000216",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 86
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000217",
+      "execution_specification_ref": "os15-c000217",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 87
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000218",
+      "execution_specification_ref": "os15-c000218",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 88
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000219",
+      "execution_specification_ref": "os15-c000219",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 89
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000220",
+      "execution_specification_ref": "os15-c000220",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 90
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000223",
+      "execution_specification_ref": "os15-c000223",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 91
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000224",
+      "execution_specification_ref": "os15-c000224",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 92
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000225",
+      "execution_specification_ref": "os15-c000225",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 93
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000232",
+      "execution_specification_ref": "os15-c000232",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 94
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000233",
+      "execution_specification_ref": "os15-c000233",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 95
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000234",
+      "execution_specification_ref": "os15-c000234",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 96
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000235",
+      "execution_specification_ref": "os15-c000235",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 97
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000236",
+      "execution_specification_ref": "os15-c000236",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 98
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000242",
+      "execution_specification_ref": "os15-c000242",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 99
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000243",
+      "execution_specification_ref": "os15-c000243",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 100
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000253",
+      "execution_specification_ref": "os15-c000253",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 101
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000261",
+      "execution_specification_ref": "os15-c000261",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 102
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000262",
+      "execution_specification_ref": "os15-c000262",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 103
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000267",
+      "execution_specification_ref": "os15-c000267",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 104
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000272",
+      "execution_specification_ref": "os15-c000272",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 105
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000273",
+      "execution_specification_ref": "os15-c000273",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 106
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000274",
+      "execution_specification_ref": "os15-c000274",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 107
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000282",
+      "execution_specification_ref": "os15-c000282",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 108
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000283",
+      "execution_specification_ref": "os15-c000283",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 109
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000284",
+      "execution_specification_ref": "os15-c000284",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 110
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000291",
+      "execution_specification_ref": "os15-c000291",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 111
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000292",
+      "execution_specification_ref": "os15-c000292",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 112
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000293",
+      "execution_specification_ref": "os15-c000293",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 113
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000295",
+      "execution_specification_ref": "os15-c000295",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 114
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000302",
+      "execution_specification_ref": "os15-c000302",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 115
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000304",
+      "execution_specification_ref": "os15-c000304",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 116
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000305",
+      "execution_specification_ref": "os15-c000305",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 117
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000306",
+      "execution_specification_ref": "os15-c000306",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 118
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000307",
+      "execution_specification_ref": "os15-c000307",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 119
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000308",
+      "execution_specification_ref": "os15-c000308",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 120
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000311",
+      "execution_specification_ref": "os15-c000311",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 121
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000312",
+      "execution_specification_ref": "os15-c000312",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 122
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000321",
+      "execution_specification_ref": "os15-c000321",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 123
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000323",
+      "execution_specification_ref": "os15-c000323",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 124
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000324",
+      "execution_specification_ref": "os15-c000324",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 125
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000325",
+      "execution_specification_ref": "os15-c000325",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 126
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000329",
+      "execution_specification_ref": "os15-c000329",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 127
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000330",
+      "execution_specification_ref": "os15-c000330",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 128
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000331",
+      "execution_specification_ref": "os15-c000331",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 129
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000334",
+      "execution_specification_ref": "os15-c000334",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 130
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000336",
+      "execution_specification_ref": "os15-c000336",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 131
+    },
+    {
+      "adapter_class": "cookie",
+      "candidate_id": "os15-c000337",
+      "execution_specification_ref": "os15-c000337",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 132
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000343",
+      "execution_specification_ref": "os15-c000343",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 133
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000351",
+      "execution_specification_ref": "os15-c000351",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 134
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000352",
+      "execution_specification_ref": "os15-c000352",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 135
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000353",
+      "execution_specification_ref": "os15-c000353",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 136
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000354",
+      "execution_specification_ref": "os15-c000354",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 137
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000356",
+      "execution_specification_ref": "os15-c000356",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 138
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000357",
+      "execution_specification_ref": "os15-c000357",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 139
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000358",
+      "execution_specification_ref": "os15-c000358",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 140
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000361",
+      "execution_specification_ref": "os15-c000361",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 141
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000362",
+      "execution_specification_ref": "os15-c000362",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 142
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000363",
+      "execution_specification_ref": "os15-c000363",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 143
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000364",
+      "execution_specification_ref": "os15-c000364",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 144
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000365",
+      "execution_specification_ref": "os15-c000365",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 145
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000366",
+      "execution_specification_ref": "os15-c000366",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 146
+    },
+    {
+      "adapter_class": "header",
+      "candidate_id": "os15-c000367",
+      "execution_specification_ref": "os15-c000367",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 147
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000371",
+      "execution_specification_ref": "os15-c000371",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 148
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000372",
+      "execution_specification_ref": "os15-c000372",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 149
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000373",
+      "execution_specification_ref": "os15-c000373",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 150
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000384",
+      "execution_specification_ref": "os15-c000384",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 151
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000386",
+      "execution_specification_ref": "os15-c000386",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 152
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000387",
+      "execution_specification_ref": "os15-c000387",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 153
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000388",
+      "execution_specification_ref": "os15-c000388",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 154
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000392",
+      "execution_specification_ref": "os15-c000392",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 155
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000394",
+      "execution_specification_ref": "os15-c000394",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 156
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000395",
+      "execution_specification_ref": "os15-c000395",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 157
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000396",
+      "execution_specification_ref": "os15-c000396",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 158
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000408",
+      "execution_specification_ref": "os15-c000408",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 159
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000409",
+      "execution_specification_ref": "os15-c000409",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 160
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000410",
+      "execution_specification_ref": "os15-c000410",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 161
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000414",
+      "execution_specification_ref": "os15-c000414",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 162
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000415",
+      "execution_specification_ref": "os15-c000415",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 163
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000423",
+      "execution_specification_ref": "os15-c000423",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 164
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000425",
+      "execution_specification_ref": "os15-c000425",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 165
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000426",
+      "execution_specification_ref": "os15-c000426",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 166
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000427",
+      "execution_specification_ref": "os15-c000427",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 167
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000428",
+      "execution_specification_ref": "os15-c000428",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 168
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000432",
+      "execution_specification_ref": "os15-c000432",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 169
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000436",
+      "execution_specification_ref": "os15-c000436",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 170
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000443",
+      "execution_specification_ref": "os15-c000443",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 171
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000444",
+      "execution_specification_ref": "os15-c000444",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 172
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000445",
+      "execution_specification_ref": "os15-c000445",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 173
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000446",
+      "execution_specification_ref": "os15-c000446",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 174
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000450",
+      "execution_specification_ref": "os15-c000450",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 175
+    },
+    {
+      "adapter_class": "form",
+      "candidate_id": "os15-c000452",
+      "execution_specification_ref": "os15-c000452",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 176
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000453",
+      "execution_specification_ref": "os15-c000453",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 177
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000454",
+      "execution_specification_ref": "os15-c000454",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 178
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000455",
+      "execution_specification_ref": "os15-c000455",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 179
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000464",
+      "execution_specification_ref": "os15-c000464",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 180
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000465",
+      "execution_specification_ref": "os15-c000465",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 181
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000466",
+      "execution_specification_ref": "os15-c000466",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 182
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000468",
+      "execution_specification_ref": "os15-c000468",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 183
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000469",
+      "execution_specification_ref": "os15-c000469",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 184
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000470",
+      "execution_specification_ref": "os15-c000470",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 185
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000477",
+      "execution_specification_ref": "os15-c000477",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 186
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000478",
+      "execution_specification_ref": "os15-c000478",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 187
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000480",
+      "execution_specification_ref": "os15-c000480",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 188
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000481",
+      "execution_specification_ref": "os15-c000481",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 189
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000482",
+      "execution_specification_ref": "os15-c000482",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 190
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000483",
+      "execution_specification_ref": "os15-c000483",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 191
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000484",
+      "execution_specification_ref": "os15-c000484",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 192
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000485",
+      "execution_specification_ref": "os15-c000485",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 193
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000486",
+      "execution_specification_ref": "os15-c000486",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 194
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000491",
+      "execution_specification_ref": "os15-c000491",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 195
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000492",
+      "execution_specification_ref": "os15-c000492",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 196
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000493",
+      "execution_specification_ref": "os15-c000493",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 197
+    },
+    {
+      "adapter_class": "multi_query",
+      "candidate_id": "os15-c000501",
+      "execution_specification_ref": "os15-c000501",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 198
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000502",
+      "execution_specification_ref": "os15-c000502",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 199
+    },
+    {
+      "adapter_class": "multi_form",
+      "candidate_id": "os15-c000503",
+      "execution_specification_ref": "os15-c000503",
+      "expected_runtime_requests": 6,
+      "phases": [
+        "baseline_1",
+        "baseline_2",
+        "true_1",
+        "true_2",
+        "false_1",
+        "false_2"
+      ],
+      "scored": "true",
+      "sequence": 200
+    }
+  ],
+  "schedule_seed": "owasp-sqli-v15-direct-execution-schedule-v1",
+  "schema_version": "owasp-sqli-v15-direct-execution-schedule-v1"
+}

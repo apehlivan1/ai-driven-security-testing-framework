@@ -1,0 +1,14 @@
+{
+  "classes": {
+    "ADAPTER_SUPPORTED": "Original read-like case may remain semantically intact but requires deterministic transport adapter support before execution.",
+    "DERIVED_ADAPTED": "Original case is not directly usable without changing semantics; no such cases are selected by this first audit.",
+    "DIRECT": "Original read-like case appears usable without a new deterministic transport adapter and still requires runtime verifier validation.",
+    "EXCLUDED": "Original case conflicts with the non-destructive verifier philosophy or lacks controllable input.",
+    "MANUAL_REVIEW": "Static evidence is insufficient to decide compatibility."
+  },
+  "non_destructive_rule": "Write/state-changing operations and ambiguous stored procedures are excluded from original direct/adapter-supported eligibility.",
+  "schema_version": "owasp-sqli-v15-compatibility-rules-v1",
+  "status": "audit_rules_not_final_scored_protocol",
+  "transport_rule": "Transport compatibility does not imply SQL/verifier compatibility.",
+  "verifier_rule": "Read-like cases require later runtime validation of stable baseline behavior and reproducible true/false differences."
+}

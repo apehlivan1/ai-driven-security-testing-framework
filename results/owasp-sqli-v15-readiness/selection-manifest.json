@@ -1,0 +1,161 @@
+{
+  "adapter_class_distribution": {
+    "cookie": 4,
+    "form": 4,
+    "header": 4,
+    "multi_form": 4,
+    "multi_query": 4
+  },
+  "expected_result_distribution": {
+    "non_vulnerable": 10,
+    "vulnerable": 10
+  },
+  "final_confirmatory_exclusion_policy": "READINESS_ONLY cases must not enter future final confirmatory denominators.",
+  "notes": [],
+  "readiness_case_count": 20,
+  "schema_version": "owasp-sqli-v15-readiness-selection-v1",
+  "selected_cases": [
+    {
+      "adapter_class": "form",
+      "benchmark_case_id": "BenchmarkTest00034",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000009",
+      "selection_hash": "0265cbc12d3973ae57aea7e9761de0240674cebbfffa5205d7fc0ba710670853"
+    },
+    {
+      "adapter_class": "cookie",
+      "benchmark_case_id": "BenchmarkTest00107",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000022",
+      "selection_hash": "432ca79033d633e6c7a3e9c3b2a0679158ddb1992693ee0f91c2ab5416cacc13"
+    },
+    {
+      "adapter_class": "header",
+      "benchmark_case_id": "BenchmarkTest00192",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000033",
+      "selection_hash": "089aa561263f326e477269e1297bcd6a2707bcf15e0cfc17e41238f343433b39"
+    },
+    {
+      "adapter_class": "multi_form",
+      "benchmark_case_id": "BenchmarkTest00601",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000102",
+      "selection_hash": "00f850eb6ef3beca02808c5f234d146a563ae8e1c2da15a79f25b3128746bfa9"
+    },
+    {
+      "adapter_class": "multi_form",
+      "benchmark_case_id": "BenchmarkTest00603",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000104",
+      "selection_hash": "01fab2749d1ef57d16cbbbaf06cf6e6bb7a72fb7e4334e4d23c911b0bbe7f7f4"
+    },
+    {
+      "adapter_class": "multi_query",
+      "benchmark_case_id": "BenchmarkTest00847",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000144",
+      "selection_hash": "024654b6973a625ac988c6ea9a73214a2868dc52fc8e3742792e1f802ab2bba3"
+    },
+    {
+      "adapter_class": "cookie",
+      "benchmark_case_id": "BenchmarkTest01002",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000172",
+      "selection_hash": "08287b7231b596659f86948b94606307066792f5a6709ccbe73058bd37a00b2f"
+    },
+    {
+      "adapter_class": "cookie",
+      "benchmark_case_id": "BenchmarkTest01003",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000173",
+      "selection_hash": "08412f22d4caa168f87d740bea60bd5a46f69a01fe6831e6fe1f0ce3448320dc"
+    },
+    {
+      "adapter_class": "cookie",
+      "benchmark_case_id": "BenchmarkTest01012",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000182",
+      "selection_hash": "460985bfb1f6a9e82cd66322b6055dd96143398f91edf7192ffb4ae805faf236"
+    },
+    {
+      "adapter_class": "header",
+      "benchmark_case_id": "BenchmarkTest01213",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000204",
+      "selection_hash": "0328edfd767ab10ce5f03bbff1301e6599f833180933cc068faa1c94d971203d"
+    },
+    {
+      "adapter_class": "header",
+      "benchmark_case_id": "BenchmarkTest01217",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000208",
+      "selection_hash": "05aacf934f6abe8a07b682696fe8c57364792b4a5876a25fe07e9e578324f790"
+    },
+    {
+      "adapter_class": "multi_query",
+      "benchmark_case_id": "BenchmarkTest01718",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000294",
+      "selection_hash": "081518656260efbe9d591c402df4df01023939c2a04f54e27cd15041b56a0889"
+    },
+    {
+      "adapter_class": "form",
+      "benchmark_case_id": "BenchmarkTest01815",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000322",
+      "selection_hash": "0ace76cd60b25843034e5fa64275553277163d4af95c86f3cf9b08cbaccf9cfa"
+    },
+    {
+      "adapter_class": "header",
+      "benchmark_case_id": "BenchmarkTest01962",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000344",
+      "selection_hash": "115bdc757074f8286624649f8d94b280c2268a31f6e27e66ea288ff4a5129db8"
+    },
+    {
+      "adapter_class": "multi_form",
+      "benchmark_case_id": "BenchmarkTest02185",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000385",
+      "selection_hash": "0bddd34eb60029a357426b18a3298d015e8b2220bcc01178f89a57835c8eaafb"
+    },
+    {
+      "adapter_class": "multi_query",
+      "benchmark_case_id": "BenchmarkTest02268",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000393",
+      "selection_hash": "1eec066f1a980c3cd5efe98efef5aa97a41c260e8253e67e9af9537f4e93dabf"
+    },
+    {
+      "adapter_class": "multi_form",
+      "benchmark_case_id": "BenchmarkTest02355",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000416",
+      "selection_hash": "02972d81c033ffd4494a4c807b051e8e9360aa1126fd7166748c97f842ef3e52"
+    },
+    {
+      "adapter_class": "form",
+      "benchmark_case_id": "BenchmarkTest02531",
+      "expected_result": "vulnerable",
+      "opaque_candidate_id": "os15-c000442",
+      "selection_hash": "10f511b1ae2188d070dddeee3facfc308e26d1077432e77cd3094d2e32ba10c8"
+    },
+    {
+      "adapter_class": "multi_query",
+      "benchmark_case_id": "BenchmarkTest02634",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000467",
+      "selection_hash": "0c296a575ab4eb2bd41a6746ffa6866c4c491016dbac30feb03954fdf6d53df1"
+    },
+    {
+      "adapter_class": "form",
+      "benchmark_case_id": "BenchmarkTest02730",
+      "expected_result": "non_vulnerable",
+      "opaque_candidate_id": "os15-c000494",
+      "selection_hash": "17d440ebc99ac35586c52f5170ca826e5b923038321f9a6a0c8033b9f55a0048"
+    }
+  ],
+  "selection_policy": "2 cases per adapter class and expected-result label where available",
+  "selection_seed": "owasp-sqli-v15-readiness-selection-v1"
+}

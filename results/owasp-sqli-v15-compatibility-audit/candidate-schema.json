@@ -1,0 +1,80 @@
+{
+  "authority_boundary": "Rankers may order existing sanitized candidate IDs only. They do not receive payloads, SQL source, expected results, BenchmarkTest IDs, execution tools or verifier authority.",
+  "excluded_fields": [
+    "benchmark_case_id",
+    "expected_result",
+    "ground_truth",
+    "label",
+    "query_text",
+    "source_file",
+    "sql_operation_category",
+    "sql_statement",
+    "vulnerability_label"
+  ],
+  "excluded_fragments": [
+    "BenchmarkTest",
+    ".java",
+    "expected_result",
+    "ground_truth",
+    "non_vulnerable",
+    "vulnerable",
+    "sqli",
+    "select",
+    "insert",
+    "update",
+    "delete",
+    "call"
+  ],
+  "fields": [
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "candidate_id",
+      "purpose": "Opaque stable identifier used for ordering only."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "sanitized_action_path",
+      "purpose": "Neutral path-like placeholder so structural path depth can be represented without exposing OWASP routes."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "http_method",
+      "purpose": "Transport-level method category available before testing."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "input_carrier",
+      "purpose": "Structural carrier type such as query parameter, form parameter, header or cookie."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "input_count_category",
+      "purpose": "Coarse parameter-count category used for prioritization without exposing original names."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "editable_input_count",
+      "purpose": "Count of controllable inputs visible to the deterministic adapter."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "multiple_parameters",
+      "purpose": "Boolean structural signal for multi-input requests."
+    },
+    {
+      "allowed": true,
+      "ground_truth_risk": "low",
+      "name": "transport_adapter_category",
+      "purpose": "Coarse adapter class needed to construct the request deterministically."
+    }
+  ],
+  "schema_version": "owasp-sqli-v15-sanitized-candidate-schema-v1",
+  "status": "proposed_not_frozen"
+}

@@ -1,0 +1,67 @@
+{
+  "artifact_status": "pre_execution_model_facing_input",
+  "candidate_count": 5,
+  "candidate_input": [
+    {
+      "candidate_id": "os15-c000428",
+      "editable_input_count": 2,
+      "http_method": "POST",
+      "input_carrier": "form_parameter",
+      "input_count_category": "small_multi",
+      "multiple_parameters": true,
+      "request_shape": "form",
+      "sanitized_action_path": "/external-v15/case-000428",
+      "transport_adapter_category": "multi_form"
+    },
+    {
+      "candidate_id": "os15-c000207",
+      "editable_input_count": 1,
+      "http_method": "GET_with_request_metadata",
+      "input_carrier": "header",
+      "input_count_category": "single",
+      "multiple_parameters": false,
+      "request_shape": "header",
+      "sanitized_action_path": "/external-v15/case-000207",
+      "transport_adapter_category": "header"
+    },
+    {
+      "candidate_id": "os15-c000054",
+      "editable_input_count": 1,
+      "http_method": "GET_with_request_metadata",
+      "input_carrier": "header",
+      "input_count_category": "single",
+      "multiple_parameters": false,
+      "request_shape": "header",
+      "sanitized_action_path": "/external-v15/case-000054",
+      "transport_adapter_category": "header"
+    },
+    {
+      "candidate_id": "os15-c000052",
+      "editable_input_count": 1,
+      "http_method": "GET_with_request_metadata",
+      "input_carrier": "header",
+      "input_count_category": "single",
+      "multiple_parameters": false,
+      "request_shape": "header",
+      "sanitized_action_path": "/external-v15/case-000052",
+      "transport_adapter_category": "header"
+    },
+    {
+      "candidate_id": "os15-c000147",
+      "editable_input_count": 3,
+      "http_method": "GET",
+      "input_carrier": "query_parameter",
+      "input_count_category": "small_multi",
+      "multiple_parameters": true,
+      "request_shape": "query",
+      "sanitized_action_path": "/external-v15/case-000147",
+      "transport_adapter_category": "multi_query"
+    }
+  ],
+  "candidate_input_schema": "sql-candidate-ranking-v1.candidate_input",
+  "candidate_test_budget": 4,
+  "prompt_version": "llm-candidate-ranking-v1",
+  "scenario_id": "os15-s0047",
+  "schema_version": "os15-candidate-snapshot-v1",
+  "top_k": 4
+}

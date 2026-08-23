@@ -1,0 +1,76 @@
+{
+  "attributes": {
+    "adapter_class": "multi_query",
+    "all_status_ok": true,
+    "baseline_stable": true,
+    "candidate_id": "os15-c000294",
+    "control_case_passed": true,
+    "false_condition_stable": true,
+    "fingerprints": {
+      "baseline_1": {
+        "body_length": 264,
+        "body_sha256": "753fd8f4f9706655794c7bd71dcb53706c52bdaa32a51e8d42133977fb7de205",
+        "status_code": 200
+      },
+      "baseline_2": {
+        "body_length": 264,
+        "body_sha256": "753fd8f4f9706655794c7bd71dcb53706c52bdaa32a51e8d42133977fb7de205",
+        "status_code": 200
+      },
+      "false_1": {
+        "body_length": 246,
+        "body_sha256": "61e2ea576c9e506a24575511dd8fd6265c5038f7c0ee97d59a73f40368f04492",
+        "status_code": 200
+      },
+      "false_2": {
+        "body_length": 246,
+        "body_sha256": "61e2ea576c9e506a24575511dd8fd6265c5038f7c0ee97d59a73f40368f04492",
+        "status_code": 200
+      },
+      "true_1": {
+        "body_length": 345,
+        "body_sha256": "9f627145d0d1093a55f2f41606f0e4c459335ab8ca152d85fc5ec5e6c82f7d75",
+        "status_code": 200
+      },
+      "true_2": {
+        "body_length": 345,
+        "body_sha256": "9f627145d0d1093a55f2f41606f0e4c459335ab8ca152d85fc5ec5e6c82f7d75",
+        "status_code": 200
+      }
+    },
+    "ground_truth_used": false,
+    "is_control_case": true,
+    "payload_family": "bounded_boolean_condition",
+    "reflected_payload_only": false,
+    "rejects_hypothesis": false,
+    "server_error_observed": false,
+    "status_codes": {
+      "baseline_1": 200,
+      "baseline_2": 200,
+      "false_1": 200,
+      "false_2": 200,
+      "true_1": 200,
+      "true_2": 200
+    },
+    "true_condition_stable": true,
+    "true_false_difference": true,
+    "true_false_difference_reproducible": true
+  },
+  "created_at": "2026-08-23T00:09:53.685449+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-223e13fdd44b",
+  "evidence_type": "comparison_result",
+  "redaction_status": "redacted",
+  "related_action_ids": [
+    "action-7da844b967e8",
+    "action-fb1927f2b19b",
+    "action-4e940afbeed3",
+    "action-5e25d663c2fc",
+    "action-e8cb4985a1e3",
+    "action-857744df6262"
+  ],
+  "run_id": "owasp-sqli-v15-readiness-20260823T000950Z",
+  "source": "owasp_sqli_v15_readiness",
+  "summary": "Compared baseline, boolean-true, and boolean-false responses for os15-c000294.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/sqli-03/BenchmarkTest01718?password=&username=&BenchmarkTest01718=missing%27+OR+%271%27%3D%271%27+--+"
+}

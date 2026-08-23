@@ -1,0 +1,222 @@
+[
+  {
+    "candidate_id": "os15-c000009",
+    "editable_input_count": 1,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000009",
+    "transport_adapter_category": "form"
+  },
+  {
+    "candidate_id": "os15-c000022",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "cookie",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "cookie",
+    "sanitized_action_path": "/external-v15/case-000022",
+    "transport_adapter_category": "cookie"
+  },
+  {
+    "candidate_id": "os15-c000033",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "header",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "header",
+    "sanitized_action_path": "/external-v15/case-000033",
+    "transport_adapter_category": "header"
+  },
+  {
+    "candidate_id": "os15-c000102",
+    "editable_input_count": 2,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000102",
+    "transport_adapter_category": "multi_form"
+  },
+  {
+    "candidate_id": "os15-c000104",
+    "editable_input_count": 2,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000104",
+    "transport_adapter_category": "multi_form"
+  },
+  {
+    "candidate_id": "os15-c000144",
+    "editable_input_count": 3,
+    "http_method": "GET",
+    "input_carrier": "query_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "query",
+    "sanitized_action_path": "/external-v15/case-000144",
+    "transport_adapter_category": "multi_query"
+  },
+  {
+    "candidate_id": "os15-c000172",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "cookie",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "cookie",
+    "sanitized_action_path": "/external-v15/case-000172",
+    "transport_adapter_category": "cookie"
+  },
+  {
+    "candidate_id": "os15-c000173",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "cookie",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "cookie",
+    "sanitized_action_path": "/external-v15/case-000173",
+    "transport_adapter_category": "cookie"
+  },
+  {
+    "candidate_id": "os15-c000182",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "cookie",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "cookie",
+    "sanitized_action_path": "/external-v15/case-000182",
+    "transport_adapter_category": "cookie"
+  },
+  {
+    "candidate_id": "os15-c000204",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "header",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "header",
+    "sanitized_action_path": "/external-v15/case-000204",
+    "transport_adapter_category": "header"
+  },
+  {
+    "candidate_id": "os15-c000208",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "header",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "header",
+    "sanitized_action_path": "/external-v15/case-000208",
+    "transport_adapter_category": "header"
+  },
+  {
+    "candidate_id": "os15-c000294",
+    "editable_input_count": 3,
+    "http_method": "GET",
+    "input_carrier": "query_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "query",
+    "sanitized_action_path": "/external-v15/case-000294",
+    "transport_adapter_category": "multi_query"
+  },
+  {
+    "candidate_id": "os15-c000322",
+    "editable_input_count": 1,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000322",
+    "transport_adapter_category": "form"
+  },
+  {
+    "candidate_id": "os15-c000344",
+    "editable_input_count": 1,
+    "http_method": "GET_with_request_metadata",
+    "input_carrier": "header",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "header",
+    "sanitized_action_path": "/external-v15/case-000344",
+    "transport_adapter_category": "header"
+  },
+  {
+    "candidate_id": "os15-c000385",
+    "editable_input_count": 4,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "larger_multi",
+    "multiple_parameters": true,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000385",
+    "transport_adapter_category": "multi_form"
+  },
+  {
+    "candidate_id": "os15-c000393",
+    "editable_input_count": 3,
+    "http_method": "GET",
+    "input_carrier": "query_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "query",
+    "sanitized_action_path": "/external-v15/case-000393",
+    "transport_adapter_category": "multi_query"
+  },
+  {
+    "candidate_id": "os15-c000416",
+    "editable_input_count": 2,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000416",
+    "transport_adapter_category": "multi_form"
+  },
+  {
+    "candidate_id": "os15-c000442",
+    "editable_input_count": 1,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000442",
+    "transport_adapter_category": "form"
+  },
+  {
+    "candidate_id": "os15-c000467",
+    "editable_input_count": 3,
+    "http_method": "GET",
+    "input_carrier": "query_parameter",
+    "input_count_category": "small_multi",
+    "multiple_parameters": true,
+    "request_shape": "query",
+    "sanitized_action_path": "/external-v15/case-000467",
+    "transport_adapter_category": "multi_query"
+  },
+  {
+    "candidate_id": "os15-c000494",
+    "editable_input_count": 1,
+    "http_method": "POST",
+    "input_carrier": "form_parameter",
+    "input_count_category": "single",
+    "multiple_parameters": false,
+    "request_shape": "form",
+    "sanitized_action_path": "/external-v15/case-000494",
+    "transport_adapter_category": "form"
+  }
+]

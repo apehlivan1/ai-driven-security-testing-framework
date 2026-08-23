@@ -1,0 +1,32 @@
+{
+  "affected_target": "https://127.0.0.1:8443/benchmark",
+  "category": "boolean_sqli",
+  "confidence": "readiness_only_deterministic_verifier",
+  "created_by": "owasp_sqli_v15_readiness",
+  "deduplication_key": null,
+  "finding_id": "finding-ef96c784f561",
+  "hypothesis": "A request input may alter database query logic through deterministic boolean conditions.",
+  "module_id": "sqli.boolean",
+  "report_fields": {
+    "baseline": "[original crawler value]",
+    "candidate_id": "os15-c000467",
+    "false_condition": "[bounded boolean false condition]",
+    "input_carrier": "query_parameter",
+    "true_condition": "[bounded boolean true condition]",
+    "verification_completed_at": "2026-08-23T00:09:54.513936+00:00"
+  },
+  "run_id": "owasp-sqli-v15-readiness-20260823T000950Z",
+  "severity": "medium",
+  "state": "inconclusive",
+  "supporting_evidence_refs": [
+    "evidence-43aa6d268c8e",
+    "evidence-97b775f9d2fc",
+    "evidence-87fd5079d514",
+    "evidence-3aeab0ecccef",
+    "evidence-159dc4af2906",
+    "evidence-b4a27c9ae61c",
+    "evidence-aa6a17e587c8"
+  ],
+  "title": "Boolean SQL injection readiness candidate os15-c000467",
+  "verification_result_ref": "verification-fe54e275a77a"
+}

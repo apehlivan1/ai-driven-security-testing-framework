@@ -1,0 +1,58 @@
+{
+  "candidate_counts": {
+    "compatible_non_vulnerable": 105,
+    "compatible_total": 220,
+    "compatible_vulnerable": 115
+  },
+  "candidate_pack_size": 5,
+  "candidate_test_budget_k": 4,
+  "decoy_assignment_strategy": "deterministic stratified assignment by carrier/request shape where possible; reuse negatives only by predeclared balanced rule",
+  "direct_execution_layer_proves": "whether deterministic execution and verifier criteria can confirm or reject compatible original OWASP cases",
+  "independent_scenario_unit": "candidate pack derived from original OWASP SQLi cases after compatibility filtering",
+  "negative_only_scenario_construction": "compatible non-vulnerable candidates only; vulnerable-candidate ranking metrics not applicable",
+  "negative_reuse_recommendation": "allowed for positive decoy placement if recorded, balanced, and separated from negative-only scenario denominators",
+  "positive_scenario_construction": "one compatible vulnerable focal candidate plus structurally varied compatible non-vulnerable decoys",
+  "ranking_layer_proves": "whether rankers prioritize sanitized compatible SQLi candidates under a fixed budget",
+  "scale_options": {
+    "4": {
+      "candidate_placements": 564,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 564,
+      "core_ranking_scenarios": 141,
+      "maximum_negative_case_reuse_for_positive_scenarios": 4,
+      "mean_negative_case_reuse_for_positive_scenarios": 3.286,
+      "negative_only_scenarios_disjoint": 26,
+      "pack_size": 4,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 345
+    },
+    "5": {
+      "candidate_placements": 680,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 544,
+      "core_ranking_scenarios": 136,
+      "maximum_negative_case_reuse_for_positive_scenarios": 5,
+      "mean_negative_case_reuse_for_positive_scenarios": 4.381,
+      "negative_only_scenarios_disjoint": 21,
+      "pack_size": 5,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 460
+    },
+    "6": {
+      "candidate_placements": 792,
+      "candidate_test_budget_k": 4,
+      "candidate_tests_per_arm_or_trial_set": 528,
+      "core_ranking_scenarios": 132,
+      "maximum_negative_case_reuse_for_positive_scenarios": 6,
+      "mean_negative_case_reuse_for_positive_scenarios": 5.476,
+      "negative_only_scenarios_disjoint": 17,
+      "pack_size": 6,
+      "positive_scenarios": 115,
+      "required_negative_decoy_assignments": 575
+    }
+  },
+  "schema_version": "owasp-sqli-v15-preliminary-ranking-design-v1",
+  "separate_layers_required": true,
+  "status": "recommendation_not_frozen",
+  "top_k_definition": "min(candidate_test_budget_k, candidate_count)"
+}

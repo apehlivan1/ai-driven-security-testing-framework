@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "body_length": 345,
+    "body_sha256": "9f627145d0d1093a55f2f41606f0e4c459335ab8ca152d85fc5ec5e6c82f7d75",
+    "body_text": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n<p>\nYour results are:<br>\n0,  User01,  P455w0rd<br>\n1,  User02,  B3nchM3rk<br>\n2,  User03,  a&#x24;c11<br>\n3,  foo,  bar<br>\n</p>\n</body>\n</html>",
+    "body_text_truncated": false,
+    "content_type": "text/html;charset=UTF-8",
+    "final_url": "https://127.0.0.1:8443/benchmark/sqli-00/BenchmarkTest00192",
+    "headers": {
+      "Content-Type": "text/html;charset=UTF-8"
+    },
+    "method": "GET",
+    "reason": "",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "created_at": "2026-08-23T00:09:52.375420+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-ffef6a58bb27",
+  "evidence_type": "http_exchange",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-03b314152a36"
+  ],
+  "run_id": "owasp-sqli-v15-readiness-20260823T000950Z",
+  "source": "http_executor",
+  "summary": "HTTP GET https://127.0.0.1:8443/benchmark/sqli-00/BenchmarkTest00192 returned 200.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/sqli-00/BenchmarkTest00192"
+}

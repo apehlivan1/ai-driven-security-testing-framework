@@ -1,0 +1,28 @@
+{
+  "action_id": "action-734a17f372c5",
+  "completed_at": "2026-08-23T00:10:46.215741+00:00",
+  "error": null,
+  "evidence_refs": [
+    "evidence-2477d19ded5d"
+  ],
+  "executor": "http",
+  "normalized_observations": {
+    "body_length": 246,
+    "body_sha256": "61e2ea576c9e506a24575511dd8fd6265c5038f7c0ee97d59a73f40368f04492",
+    "body_text": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n<p>\nYour results are:<br>\n</p>\n</body>\n</html>",
+    "body_text_truncated": false,
+    "content_type": "text/html;charset=UTF-8",
+    "final_url": "https://127.0.0.1:8443/benchmark/sqli-06/BenchmarkTest02730",
+    "headers": {
+      "Content-Type": "text/html;charset=UTF-8"
+    },
+    "method": "POST",
+    "reason": "",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "run_id": "owasp-sqli-v15-readiness-20260823T001044Z",
+  "safety_notes": [],
+  "started_at": "2026-08-23T00:10:46.203511+00:00",
+  "status": "executed"
+}

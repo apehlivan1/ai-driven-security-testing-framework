@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "body_length": 1098,
+    "body_sha256": "77f0a93b6f649e55d194f3b14c5f0f8f949410dd3047f44a0207d1164c29185b",
+    "body_text": "<!DOCTYPE html>\r\n<html lang=\"en-US\">\r\n<head>\r\n<meta charset=\"utf-8\">\r\n<script src=\"/benchmark/js/jquery.min.js\" type=\"text/javascript\"></script>\r\n<script type=\"text/javascript\" src=\"/benchmark/js/js.cookie.js\"></script>\r\n<script src=\"/benchmark/js/testsuiteutils.js\" type=\"text/javascript\"></script>\r\n<link rel=\"icon\" type=\"image/png\" href=\"/benchmark/favicon.ico\">\r\n<title>BenchmarkTest01012</title>\r\n</head>\r\n<body>\r\n    <form action=\"/benchmark/sqli-02/BenchmarkTest01012\" method=\"POST\" id=\"FormBenchmarkTest01012\" autocomplete=\"off\">\r\n        <div>\r\n            <p>Here is the image you are looking for: &nbsp;</p>\r\n        </div>\r\n        <div>\r\n            <img src=\"/benchmark/img/500px-Banner_stand.png\" class=\"img-responsive\" alt=\"Responsive image\">\r\n        </div>\r\n        <div>\r\n            <p>The server automatically generated the cookie \"BenchmarkTest01012\" for this test case. Press the \"Test it!\" button to send this cookie back to the server.</p>\r\n        </div>\r\n        <div>\r\n            <input type=\"submit\" value=\"Test it!\" />\r\n        </div>\r\n    </form>\r\n</body>\r\n</html>\r\n",
+    "body_text_truncated": false,
+    "content_type": "text/html;charset=UTF-8",
+    "final_url": "https://127.0.0.1:8443/benchmark/sqli-02/BenchmarkTest01012",
+    "headers": {
+      "Content-Type": "text/html;charset=UTF-8"
+    },
+    "method": "GET",
+    "reason": "",
+    "redirect_chain": [],
+    "status_code": 200
+  },
+  "created_at": "2026-08-23T00:10:45.124296+00:00",
+  "data_ref": null,
+  "evidence_id": "evidence-2f791d36f7f2",
+  "evidence_type": "http_exchange",
+  "redaction_status": "absent",
+  "related_action_ids": [
+    "action-49125e9cd219"
+  ],
+  "run_id": "owasp-sqli-v15-readiness-20260823T001044Z",
+  "source": "http_executor",
+  "summary": "HTTP GET https://127.0.0.1:8443/benchmark/sqli-02/BenchmarkTest01012 returned 200.",
+  "target_ref": "https://127.0.0.1:8443/benchmark/sqli-02/BenchmarkTest01012"
+}

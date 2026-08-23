@@ -1,0 +1,38 @@
+{
+  "completed_at": "2026-08-23T00:09:53.341846+00:00",
+  "control_cases": [],
+  "criteria_checked": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior",
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_missing": [
+    "has_reproducible_boolean_difference"
+  ],
+  "criteria_satisfied": [
+    "has_http_exchange",
+    "has_comparison_result",
+    "has_passing_control_case",
+    "has_stable_baseline_behavior"
+  ],
+  "evidence_refs": [
+    "evidence-2a07afc77385",
+    "evidence-dd1aebc3ade0",
+    "evidence-045d1d2e1cb0",
+    "evidence-f23418941e7b",
+    "evidence-2f5ee462c907",
+    "evidence-2cac0a724d31",
+    "evidence-93fe22771841"
+  ],
+  "finding_id": "finding-fca6720df04c",
+  "limitations": [
+    "missing or insufficient evidence"
+  ],
+  "module_id": "sqli.boolean",
+  "outcome": "inconclusive",
+  "rationale": "Verification criteria were not fully satisfied.",
+  "reproduction_status": "not_determined",
+  "verification_result_id": "verification-45dddd275005"
+}

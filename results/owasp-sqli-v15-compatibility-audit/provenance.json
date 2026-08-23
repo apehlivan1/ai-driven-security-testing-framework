@@ -1,0 +1,12 @@
+{
+  "crawler_xml_file": "data\\benchmark-crawler-http.xml",
+  "crawler_xml_sha256": "88fd972e3979f057fc9773b28bf2dbed412029bacb30d75e72f2e91e825973fb",
+  "current_branch": "master",
+  "declared_benchmark_version": "1.2",
+  "expected_results_file": "expectedresults-1.2.csv",
+  "expected_results_sha256": "f0311c850dea7f15125113f7cfdbd7ad612d7f5951c7331584f6981b6ae2d630",
+  "official_remote": "https://github.com/OWASP-Benchmark/BenchmarkJava",
+  "pinned_git_revision": "ba2e3f9a29fa3bde6a5c073d679393c9b94f025f",
+  "repository_status": "clean",
+  "source_root": "src/main/java/org/owasp/benchmark/testcode"
+}

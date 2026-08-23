@@ -13,6 +13,9 @@ from adstf.sessions import SessionRegistry
 
 
 class SmokeHandler(BaseHTTPRequestHandler):
+    last_post_body = ""
+    last_post_content_type = ""
+
     def do_GET(self) -> None:
         if self.path == "/cookie":
             if self.headers.get("Cookie") != "adstf_session=secret-token":
@@ -38,6 +41,15 @@ class SmokeHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "text/plain")
         self.end_headers()
         self.wfile.write(b"ok")
+
+    def do_POST(self) -> None:
+        length = int(self.headers.get("Content-Length", "0"))
+        SmokeHandler.last_post_body = self.rfile.read(length).decode("utf-8")
+        SmokeHandler.last_post_content_type = self.headers.get("Content-Type", "")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"posted")
 
     def log_message(self, format: str, *args) -> None:
         return
@@ -138,6 +150,21 @@ class HttpExecutorTests(unittest.TestCase):
         self.assertEqual(evidence[0].attributes["status_code"], 200)
         self.assertIn("private", evidence[0].attributes["body_text"])
         self.assertNotIn("secret-token", str(action))
+
+    def test_executes_post_body_with_deterministic_headers(self) -> None:
+        action = self.action(f"http://127.0.0.1:{self.port}/post")
+        action.parameters["method"] = "POST"
+        action.parameters["headers"] = {"Content-Type": "application/x-www-form-urlencoded"}
+        action.parameters["body"] = "alpha=one&beta=two"
+        action.parameters["capture_body_text"] = True
+
+        result, evidence = self.executor.execute(action)
+
+        self.assertEqual(result.status, ActionStatus.EXECUTED)
+        self.assertEqual(evidence[0].attributes["status_code"], 200)
+        self.assertEqual(evidence[0].attributes["body_text"], "posted")
+        self.assertEqual(SmokeHandler.last_post_body, "alpha=one&beta=two")
+        self.assertEqual(SmokeHandler.last_post_content_type, "application/x-www-form-urlencoded")
 
 
 if __name__ == "__main__":
