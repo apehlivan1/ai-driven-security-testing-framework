@@ -1,0 +1,26 @@
+{
+  "direct_denominator": 200,
+  "expected_inputs": {
+    "direct_case_artifacts": 200,
+    "ground_truth_source": "ground-truth/scoring-data.json loaded only after raw execution closes",
+    "ranking_row_artifacts": 1364
+  },
+  "expected_outputs": [
+    "execution-integrity-report.json",
+    "normalized/ranking-aggregates.json",
+    "normalized/reliability-aggregates.json",
+    "normalized/efficiency-aggregates.json",
+    "normalized/direct-execution-aggregates.json",
+    "normalized/scored-ranking-rows.json",
+    "normalized/scored-direct-rows.json",
+    "manifest.json",
+    "checksums.sha256"
+  ],
+  "protocol_denominators": {
+    "deterministic_structural": 124,
+    "local_qwen": 620,
+    "proprietary_gpt": 620,
+    "total_ranking_rows": 1364
+  },
+  "schema_version": "owasp-sqli-v15-canonicalization-readiness-v1"
+}

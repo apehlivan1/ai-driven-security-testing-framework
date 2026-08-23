@@ -1,0 +1,197 @@
+{
+  "canonicalization_readiness": {
+    "direct_denominator": 200,
+    "expected_inputs": {
+      "direct_case_artifacts": 200,
+      "ground_truth_source": "ground-truth/scoring-data.json loaded only after raw execution closes",
+      "ranking_row_artifacts": 1364
+    },
+    "expected_outputs": [
+      "execution-integrity-report.json",
+      "normalized/ranking-aggregates.json",
+      "normalized/reliability-aggregates.json",
+      "normalized/efficiency-aggregates.json",
+      "normalized/direct-execution-aggregates.json",
+      "normalized/scored-ranking-rows.json",
+      "normalized/scored-direct-rows.json",
+      "manifest.json",
+      "checksums.sha256"
+    ],
+    "protocol_denominators": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620,
+      "total_ranking_rows": 1364
+    },
+    "schema_version": "owasp-sqli-v15-canonicalization-readiness-v1"
+  },
+  "created_at": "2026-08-23T13:02:15.013174+00:00",
+  "direct_resume_validation": {
+    "errors": [],
+    "existing_completed_cases": 0,
+    "overwrite_policy": "existing completed direct artifacts are never silently regenerated",
+    "resume_next_missing_sequence": 1,
+    "valid": true
+  },
+  "direct_schedule_resolution": {
+    "direct_execution_cases": 200,
+    "errors": [],
+    "expected_http_requests": 1200,
+    "ground_truth_loaded": false,
+    "readiness_or_excluded_case_count": 0,
+    "valid": true
+  },
+  "duplicate_resume_validation": {
+    "errors": [],
+    "existing_completed_rows": 0,
+    "overwrite_policy": "existing completed scored ranking artifacts are never silently regenerated",
+    "resume_next_missing_sequence": 1,
+    "valid": true
+  },
+  "external_calls": {
+    "direct_http_requests": 0,
+    "final_sqli_runtime_executions": 0,
+    "gpt_calls": 0,
+    "qwen_calls": 0,
+    "scored_observations": 0
+  },
+  "future_v151_output_separation": {
+    "aborted_v15_output_root": "results/owasp-sqli-v15-confirmatory-final",
+    "errors": [],
+    "fresh_run_required": true,
+    "future_v151_canonical_dir": "results/owasp-sqli-v15-1-confirmatory-final/canonical",
+    "future_v151_output_root": "results/owasp-sqli-v15-1-confirmatory-final",
+    "resume_from_aborted_v15_permitted": false,
+    "valid": true
+  },
+  "git_state": {
+    "branch": "main",
+    "commit": "c9434a1022c54ea0b21f5562368297ad73bf58af",
+    "dirty": true,
+    "status_short": [
+      "M docs/evaluation-expansion-sqli-idor-plan.md",
+      " M docs/experiment-history.md",
+      " M docs/thesis-evidence-index.md",
+      " M src/adstf/owasp_sqli_v15_confirmatory.py",
+      " M tests/test_owasp_sqli_v15_confirmatory.py",
+      "?? docs/evaluation-protocol-v1.5.1.md",
+      "?? results/owasp-sqli-v15-1-amendment-readiness/"
+    ]
+  },
+  "ground_truth_isolation": {
+    "direct_execution_ground_truth_loaded": false,
+    "ground_truth_loaded_during_dry_validation": false,
+    "model_facing_snapshot_leak_count": 0
+  },
+  "harness_version": "owasp-sqli-v15-confirmatory-harness-v1",
+  "interrupted_v15_run": {
+    "direct_artifact_count": 0,
+    "may_be_modified": false,
+    "may_be_resumed": false,
+    "path": "results/owasp-sqli-v15-confirmatory-final/owasp-sqli-v15-confirmatory-20260823T122428Z",
+    "ranking_artifact_count": 748,
+    "ranking_counts_by_arm": {
+      "deterministic_structural": 124,
+      "local_qwen": 4,
+      "proprietary_gpt": 620
+    },
+    "ranking_status_counts": {
+      "provider_failed": 620,
+      "valid": 128
+    },
+    "status": "present_and_preserved",
+    "used_as_final_v151_evidence": false,
+    "valid": true,
+    "winerror_10013_artifact_count": 620
+  },
+  "mode": "dry_validation",
+  "prompt_validation": {
+    "base_prompt_version_superseded_for_sqli": true,
+    "errors": [],
+    "exact_prompt_text": "You rank structured SQL injection candidate records for authorized local security-testing evaluation.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not construct HTTP requests, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"candidate_id\": \"synthetic-connectivity-candidate\",\n    \"editable_input_count\": 1,\n    \"http_method\": \"GET\",\n    \"input_carrier\": \"query_parameter\",\n    \"input_count_category\": \"single\",\n    \"multiple_parameters\": false,\n    \"request_shape\": \"query\",\n    \"sanitized_action_path\": \"/synthetic/connectivity\",\n    \"transport_adapter_category\": \"synthetic\"\n  }\n]",
+    "prompt_version": "llm-sqli-candidate-ranking-v1",
+    "valid": true
+  },
+  "protocol_amendment": {
+    "amendment_version": "v1.5.1",
+    "base_protocol": "evaluation-protocol-v1.5",
+    "errors": [],
+    "path": "docs/evaluation-protocol-v1.5.1.md",
+    "scored_experiment_executed_by_amendment_preparation": false,
+    "sha256": "74085e88c3e57c8cab025dad69698b3b15587fde721eefa3df6cc2d3160dbb10",
+    "valid": true
+  },
+  "protocol_package": {
+    "errors": [],
+    "package_checksum_error_count": 0,
+    "package_checksum_errors": [],
+    "protocol_hash_matches": true,
+    "protocol_sha256": "22f90d9794c796c20e27654662ee893d1fa533bfef16fb87912f18154dac8033",
+    "protocol_sha256_expected": "22f90d9794c796c20e27654662ee893d1fa533bfef16fb87912f18154dac8033",
+    "valid": true
+  },
+  "ranking_schedule_resolution": {
+    "errors": [],
+    "ground_truth_loaded": false,
+    "per_arm_counts": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620
+    },
+    "scenario_count": 124,
+    "snapshot_leak_count": 0,
+    "total_rows": 1364,
+    "unique_row_ids": 1364,
+    "valid": true
+  },
+  "runtime_preflight": {
+    "gpt": {
+      "api_key_present": true,
+      "errors": [],
+      "model_identifier": "gpt-5.6-luna",
+      "model_identifier_expected": "gpt-5.6-luna",
+      "secret_value_recorded": false,
+      "send_temperature_status": "unset_or_false",
+      "valid": true
+    },
+    "gpt_connectivity": {
+      "checked": false,
+      "final_confirmatory_case_used": false,
+      "live_provider_call_executed": false,
+      "provider_failed": false,
+      "scored_observation_created": false,
+      "status": "not_checked_in_dry_validation_mode",
+      "valid": true
+    },
+    "owasp_target": {
+      "base_url": "https://127.0.0.1:8443/benchmark",
+      "checked": false,
+      "status": "not_checked_in_dry_validation_mode",
+      "valid": false
+    },
+    "qwen": {
+      "errors": [],
+      "gemma_contingency_only": true,
+      "model_files": [
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+          "sha256_matches": true
+        },
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+          "sha256_matches": true
+        }
+      ],
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "runtime_exists": true,
+      "runtime_sha256_matches": true,
+      "valid": true
+    },
+    "schema_version": "owasp-sqli-v15-confirmatory-runtime-preflight-v1",
+    "valid": true
+  },
+  "schema_version": "owasp-sqli-v15-confirmatory-dry-validation-v1",
+  "valid": true
+}

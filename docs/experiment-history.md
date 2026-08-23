@@ -78,3 +78,30 @@ activated.
 The v1.3.1 canonical package is the preferred evidence source for the final XSS
 ablation discussion. The earlier v1.3 run should be cited only when explaining
 the infrastructure recovery history.
+
+## v1.5 OWASP SQLi Protocol And Interrupted Execution
+
+`evaluation-protocol-v1.5` froze the OWASP Benchmark SQL injection external
+validation design. It defined 200 final eligible OWASP SQLi cases, 124 ranking
+scenarios, 124 deterministic ranking rows, 620 GPT ranking rows, 620 Qwen
+ranking rows and a separate 200-case direct SQLi execution layer.
+
+The first v1.5 scored execution attempt was manually interrupted. It completed
+the deterministic arm, recorded 620 local GPT provider failures with
+`WinError 10013`, and produced four valid Qwen observations before
+interruption. The direct SQLi execution layer did not start. This run is
+preserved only as failed/aborted execution evidence and must not be resumed or
+used as final SQLi thesis evidence.
+
+## v1.5.1 SQLi Recovery Amendment
+
+`evaluation-protocol-v1.5.1` is a narrow recovery amendment to v1.5. It
+corrects only the missing real non-scored GPT provider-connectivity preflight
+and the reflected-input wording inherited by the SQLi ranking prompt. The
+amended prompt version is `llm-sqli-candidate-ranking-v1`.
+
+The v1.5.1 recovery path preserves the v1.5 corpus, snapshots, scenario packs,
+decoy assignment, model identifiers, decoding settings, trial counts,
+candidate-test budget, SQLi probes, adapters, verifier criteria, metrics and
+scoring rules. The corrected final SQLi study must be a complete fresh v1.5.1
+run in a separate result namespace, not a resume of the interrupted v1.5 run.

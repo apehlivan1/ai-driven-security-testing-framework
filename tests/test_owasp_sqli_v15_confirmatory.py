@@ -16,10 +16,12 @@ from adstf.owasp_sqli_v15_confirmatory import (  # noqa: E402
     EXPECTED_DIRECT_CASES,
     EXPECTED_DIRECT_REQUESTS,
     SqliConfirmatoryHarnessError,
+    build_sqli_ranking_prompt,
     build_canonical_package,
     direct_case_artifact_path,
     execute_direct_schedule,
     execute_ranking_schedule_rows,
+    gpt_connectivity_readiness,
     gpt_preflight,
     load_protocol_package,
     ranking_row_artifact_path,
@@ -60,7 +62,106 @@ class FakeModelClient:
         )
 
 
+class CapturingModelClient(FakeModelClient):
+    def __init__(self) -> None:
+        super().__init__()
+        self.prompts: list[str] = []
+        self.candidate_inputs: list[list[dict]] = []
+
+    def complete(self, prompt: str, candidate_input: list[dict], settings: dict) -> ModelCompletion:
+        self.prompts.append(prompt)
+        self.candidate_inputs.append(candidate_input)
+        return super().complete(prompt, candidate_input, settings)
+
+
 class OwaspSqliV15ConfirmatoryHarnessTests(unittest.TestCase):
+    def test_v151_sqli_prompt_is_not_reflected_input_specific(self) -> None:
+        candidate_input = [
+            {
+                "candidate_id": "synthetic-connectivity-candidate",
+                "sanitized_action_path": "/synthetic/connectivity",
+                "http_method": "GET",
+                "input_carrier": "query_parameter",
+                "input_count_category": "single",
+                "editable_input_count": 1,
+                "multiple_parameters": False,
+                "transport_adapter_category": "synthetic",
+                "request_shape": "query",
+            }
+        ]
+
+        prompt = build_sqli_ranking_prompt(candidate_input)
+
+        self.assertIn("structured SQL injection candidate", prompt)
+        self.assertIn("You may only choose from the supplied candidate_id values", prompt)
+        self.assertIn("Do not create payloads", prompt)
+        self.assertIn("do not request execution", prompt)
+        self.assertIn("do not verify findings", prompt)
+        self.assertIn("do not use ground truth", prompt)
+        self.assertNotIn("reflected-input", prompt)
+
+    def test_non_scored_gpt_connectivity_uses_synthetic_input_only(self) -> None:
+        client = CapturingModelClient()
+
+        result = gpt_connectivity_readiness(client)
+
+        self.assertTrue(result["valid"], result)
+        self.assertTrue(result["live_provider_call_executed"])
+        self.assertFalse(result["scored_observation_created"])
+        self.assertFalse(result["final_confirmatory_case_used"])
+        self.assertEqual(client.calls, 1)
+        self.assertEqual(len(client.candidate_inputs), 1)
+        self.assertEqual(client.candidate_inputs[0][0]["candidate_id"], "synthetic-connectivity-candidate")
+        self.assertNotIn("os15-", json.dumps(client.candidate_inputs[0]))
+        self.assertNotIn("BenchmarkTest", json.dumps(client.candidate_inputs[0]))
+        self.assertNotIn("reflected-input", client.prompts[0])
+
+    def test_failed_gpt_connectivity_is_non_scored_readiness_failure(self) -> None:
+        client = CapturingModelClient()
+        client.fail = True
+
+        result = gpt_connectivity_readiness(client)
+
+        self.assertFalse(result["valid"])
+        self.assertTrue(result["provider_failed"])
+        self.assertFalse(result["live_provider_call_executed"])
+        self.assertFalse(result["scored_observation_created"])
+        self.assertFalse(result["final_confirmatory_case_used"])
+        self.assertEqual(result["prompt_version"], "llm-sqli-candidate-ranking-v1")
+        self.assertEqual(client.calls, 1)
+
+    def test_v151_dry_validation_records_amendment_and_no_scored_activity(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            report = run_dry_validation(
+                output_dir=Path(tmp),
+                env={"OPENAI_API_KEY": "secret", "OPENAI_RANKING_MODEL": "gpt-5.6-luna"},
+            )
+
+            self.assertEqual(report["protocol_amendment"]["amendment_version"], "v1.5.1")
+            self.assertTrue(report["protocol_amendment"]["valid"])
+            self.assertEqual(report["external_calls"]["gpt_calls"], 0)
+            self.assertEqual(report["external_calls"]["qwen_calls"], 0)
+            self.assertEqual(report["external_calls"]["final_sqli_runtime_executions"], 0)
+            self.assertEqual(report["external_calls"]["scored_observations"], 0)
+            self.assertEqual(report["ranking_schedule_resolution"]["per_arm_counts"]["proprietary_gpt"], 620)
+            self.assertEqual(report["ranking_schedule_resolution"]["per_arm_counts"]["local_qwen"], 620)
+
+    def test_v151_model_ranking_rows_use_sqli_prompt_version(self) -> None:
+        package = load_protocol_package(Path("results/owasp-sqli-v15-protocol-freeze"))
+        gpt_row = next(row for row in package["schedule_rows"] if row["arm_id"] == "proprietary_gpt")
+        package = {**package, "schedule_rows": [gpt_row]}
+
+        with tempfile.TemporaryDirectory() as tmp:
+            client = CapturingModelClient()
+            execute_ranking_schedule_rows(run_dir=Path(tmp), package=package, gpt_client=client, max_rows=1)
+            artifact = json.loads(next((Path(tmp) / "raw" / "ranking-rows").glob("*.json")).read_text(encoding="utf-8"))
+
+        self.assertEqual(artifact["summary"]["prompt_version"], "llm-sqli-candidate-ranking-v1")
+        self.assertEqual(artifact["ranking_result"]["prompt_version"], "llm-sqli-candidate-ranking-v1")
+        self.assertIn("structured SQL injection candidate", artifact["ranking_result"]["prompt"])
+        self.assertNotIn("reflected-input", artifact["ranking_result"]["prompt"])
+        self.assertEqual(len(client.candidate_inputs), 1)
+
     def test_resolves_frozen_ranking_and_direct_denominators(self) -> None:
         package = load_protocol_package(Path("results/owasp-sqli-v15-protocol-freeze"))
 
@@ -304,6 +405,12 @@ class OwaspSqliV15ConfirmatoryHarnessTests(unittest.TestCase):
 
         with self.assertRaises(SqliConfirmatoryHarnessError):
             validate_resume_run_directory(Path("results/owasp-sqli-v15-protocol-freeze"), Path("results"))
+
+        with self.assertRaises(SqliConfirmatoryHarnessError):
+            validate_resume_run_directory(
+                Path("results/owasp-sqli-v15-confirmatory-final/owasp-sqli-v15-confirmatory-20260823T122428Z"),
+                confirmatory.DEFAULT_V151_FINAL_ROOT,
+            )
 
     def test_canonicalization_scores_full_synthetic_run_without_rerunning_execution(self) -> None:
         package = load_protocol_package(Path("results/owasp-sqli-v15-protocol-freeze"))

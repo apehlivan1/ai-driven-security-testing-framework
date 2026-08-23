@@ -19,12 +19,10 @@ from adstf.contracts import TargetConfig
 from adstf.execution import HttpExecutor
 from adstf.llm_ranking import (
     CommandModelClient,
-    LLM_RANKING_PROMPT_VERSION,
     LLMRankingResult,
     ModelClient,
     ModelProviderError,
     ModelTimeoutError,
-    build_ranking_prompt,
     parse_model_ranking,
     ranking_result_artifact,
 )
@@ -59,15 +57,32 @@ from adstf.storage import RunArtifactStore
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROTOCOL_PATH = REPO_ROOT / "docs" / "evaluation-protocol-v1.5.md"
+AMENDMENT_PATH = REPO_ROOT / "docs" / "evaluation-protocol-v1.5.1.md"
 PROTOCOL_PACKAGE_DIR = REPO_ROOT / "results" / "owasp-sqli-v15-protocol-freeze"
 DEFAULT_READINESS_DIR = REPO_ROOT / "results" / "owasp-sqli-v15-confirmatory-harness-readiness"
+DEFAULT_V151_READINESS_DIR = REPO_ROOT / "results" / "owasp-sqli-v15-1-amendment-readiness"
 DEFAULT_FINAL_ROOT = REPO_ROOT / "results" / "owasp-sqli-v15-confirmatory-final"
+DEFAULT_V151_FINAL_ROOT = REPO_ROOT / "results" / "owasp-sqli-v15-1-confirmatory-final"
 DEFAULT_CANONICAL_DIR = DEFAULT_FINAL_ROOT / "canonical"
+DEFAULT_V151_CANONICAL_DIR = DEFAULT_V151_FINAL_ROOT / "canonical"
 HARNESS_VERSION = "owasp-sqli-v15-confirmatory-harness-v1"
 DRY_VALIDATION_VERSION = "owasp-sqli-v15-confirmatory-dry-validation-v1"
 RUNTIME_PREFLIGHT_VERSION = "owasp-sqli-v15-confirmatory-runtime-preflight-v1"
 RANKING_ROW_VERSION = "owasp-sqli-v15-ranking-row-v1"
 DIRECT_ROW_VERSION = "owasp-sqli-v15-direct-execution-row-v1"
+LLM_SQLI_RANKING_PROMPT_VERSION = "llm-sqli-candidate-ranking-v1"
+ABORTED_V15_RUN_DIR = DEFAULT_FINAL_ROOT / "owasp-sqli-v15-confirmatory-20260823T122428Z"
+SYNTHETIC_CONNECTIVITY_CANDIDATE = {
+    "candidate_id": "synthetic-connectivity-candidate",
+    "sanitized_action_path": "/synthetic/connectivity",
+    "http_method": "GET",
+    "input_carrier": "query_parameter",
+    "input_count_category": "single",
+    "editable_input_count": 1,
+    "multiple_parameters": False,
+    "transport_adapter_category": "synthetic",
+    "request_shape": "query",
+}
 
 EXPECTED_DENOMINATORS = {
     "deterministic_structural": 124,
@@ -82,6 +97,7 @@ GPT_SETTINGS = {
     "provider_default_temperature_used": True,
     "max_output_tokens": 1200,
     "timeout_seconds": 60,
+    "prompt_version": LLM_SQLI_RANKING_PROMPT_VERSION,
 }
 QWEN_RUNTIME_SHA256 = "2272eaaf8bb9477257790835d7b25aaf8fd22941e44ac3fcc9f2df389d1ef7b4"
 QWEN_MODEL_HASHES = {
@@ -97,20 +113,43 @@ class SqliConfirmatoryHarnessError(RuntimeError):
     pass
 
 
+def build_sqli_ranking_prompt(candidate_input: list[dict]) -> str:
+    return (
+        "You rank structured SQL injection candidate records for authorized local security-testing evaluation.\n"
+        "You may only choose from the supplied candidate_id values. Do not create payloads, "
+        "do not construct HTTP requests, do not request execution, do not verify findings, "
+        "and do not use ground truth.\n"
+        "Return strict JSON in this exact shape: "
+        '{"ranking":[{"candidate_id":"...","rationale":"brief reason"}]}.\n'
+        "Include every candidate exactly once.\n"
+        "Candidates:\n"
+        + json.dumps(candidate_input, indent=2, sort_keys=True)
+    )
+
+
 def run_dry_validation(
     *,
     protocol_package_dir: Path = PROTOCOL_PACKAGE_DIR,
-    output_dir: Path = DEFAULT_READINESS_DIR,
+    output_dir: Path = DEFAULT_V151_READINESS_DIR,
     env: Mapping[str, str | None] | None = None,
     check_target: bool = False,
     target_probe: Callable[[str], dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     package = load_protocol_package(protocol_package_dir)
+    amendment_validation = validate_protocol_amendment()
+    prompt_check = prompt_validation()
+    aborted_run = interrupted_v15_run_preservation()
+    output_separation = future_v151_output_is_separate()
     package_validation = validate_protocol_package(package)
     schedule_validation = validate_schedule_resolution(package)
     direct_validation = validate_direct_schedule(package)
-    runtime_preflight = runtime_preflight_status(env=env, check_target=check_target, target_probe=target_probe)
+    runtime_preflight = runtime_preflight_status(
+        env=env,
+        check_target=check_target,
+        target_probe=target_probe,
+        check_gpt_connectivity=False,
+    )
     duplicate_resume = validate_duplicate_and_resume_state(output_dir, package["schedule_rows"])
     direct_resume = validate_direct_resume_state(output_dir, package["direct_rows"])
     report = {
@@ -119,12 +158,20 @@ def run_dry_validation(
         "created_at": now_utc(),
         "mode": "dry_validation",
         "valid": (
-            package_validation["valid"]
+            amendment_validation["valid"]
+            and prompt_check["valid"]
+            and aborted_run["valid"]
+            and output_separation["valid"]
+            and package_validation["valid"]
             and schedule_validation["valid"]
             and direct_validation["valid"]
             and duplicate_resume["valid"]
             and direct_resume["valid"]
         ),
+        "protocol_amendment": amendment_validation,
+        "prompt_validation": prompt_check,
+        "interrupted_v15_run": aborted_run,
+        "future_v151_output_separation": output_separation,
         "protocol_package": package_validation,
         "ranking_schedule_resolution": schedule_validation,
         "direct_schedule_resolution": direct_validation,
@@ -155,16 +202,33 @@ def run_runtime_preflight(
     env: Mapping[str, str | None] | None = None,
     target_probe: Callable[[str], dict[str, Any]] | None = None,
     protocol_package_dir: Path = PROTOCOL_PACKAGE_DIR,
+    check_gpt_connectivity: bool = True,
+    gpt_connectivity_client: ModelClient | None = None,
 ) -> dict[str, Any]:
     package = load_protocol_package(protocol_package_dir)
     package_validation = validate_protocol_package(package)
     schedule_validation = validate_schedule_resolution(package)
     direct_validation = validate_direct_schedule(package)
-    runtime = runtime_preflight_status(env=env, check_target=True, target_probe=target_probe)
+    runtime = runtime_preflight_status(
+        env=env,
+        check_target=True,
+        target_probe=target_probe,
+        check_gpt_connectivity=check_gpt_connectivity,
+        gpt_connectivity_client=gpt_connectivity_client,
+    )
     return {
         "schema_version": RUNTIME_PREFLIGHT_VERSION,
         "created_at": now_utc(),
-        "valid": package_validation["valid"] and schedule_validation["valid"] and direct_validation["valid"] and runtime["valid"],
+        "valid": (
+            validate_protocol_amendment()["valid"]
+            and prompt_validation()["valid"]
+            and package_validation["valid"]
+            and schedule_validation["valid"]
+            and direct_validation["valid"]
+            and runtime["valid"]
+        ),
+        "protocol_amendment": validate_protocol_amendment(),
+        "prompt_validation": prompt_validation(),
         "protocol_package": package_validation,
         "ranking_schedule_resolution": schedule_validation,
         "direct_schedule_resolution": direct_validation,
@@ -174,7 +238,7 @@ def run_runtime_preflight(
 
 def execute_final_confirmatory(
     *,
-    output_root: Path = DEFAULT_FINAL_ROOT,
+    output_root: Path = DEFAULT_V151_FINAL_ROOT,
     resume_run_dir: Path | None = None,
     protocol_package_dir: Path = PROTOCOL_PACKAGE_DIR,
     env: Mapping[str, str | None] | None = None,
@@ -184,7 +248,7 @@ def execute_final_confirmatory(
     execute_final_confirmatory_flag: bool = False,
 ) -> Path:
     if not execute_final_confirmatory_flag:
-        raise SqliConfirmatoryHarnessError("final v1.5 execution requires explicit execute_final_confirmatory_flag=True")
+        raise SqliConfirmatoryHarnessError("final v1.5.1 execution requires explicit execute_final_confirmatory_flag=True")
     preflight = run_runtime_preflight(env=env, target_probe=target_probe, protocol_package_dir=protocol_package_dir)
     if not preflight["valid"]:
         raise SqliConfirmatoryHarnessError("runtime preflight failed; refusing scored execution")
@@ -200,7 +264,7 @@ def execute_final_confirmatory(
             raise SqliConfirmatoryHarnessError("resume validation failed; refusing scored execution")
     else:
         ensure_not_overwriting_previous_results(output_root)
-        run_dir = output_root / f"owasp-sqli-v15-confirmatory-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
+        run_dir = output_root / f"owasp-sqli-v15-1-confirmatory-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
         run_dir.mkdir(parents=True)
     write_json_atomic(run_dir / "runtime-preflight.json", preflight)
     write_json_atomic(run_dir / "execution-manifest.json", execution_manifest(run_dir, package))
@@ -296,7 +360,7 @@ def build_canonical_package(
     *,
     run_dir: Path,
     protocol_package_dir: Path = PROTOCOL_PACKAGE_DIR,
-    output_dir: Path = DEFAULT_CANONICAL_DIR,
+    output_dir: Path = DEFAULT_V151_CANONICAL_DIR,
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     protocol = load_protocol_package(protocol_package_dir)
@@ -505,9 +569,33 @@ def runtime_preflight_status(
     env: Mapping[str, str | None] | None = None,
     check_target: bool,
     target_probe: Callable[[str], dict[str, Any]] | None = None,
+    check_gpt_connectivity: bool = False,
+    gpt_connectivity_client: ModelClient | None = None,
 ) -> dict[str, Any]:
     env = os.environ if env is None else env
     gpt = gpt_preflight(env)
+    if check_gpt_connectivity and gpt["valid"]:
+        gpt_connectivity = gpt_connectivity_readiness(gpt_connectivity_client)
+    elif check_gpt_connectivity:
+        gpt_connectivity = {
+            "valid": False,
+            "checked": False,
+            "live_provider_call_executed": False,
+            "provider_failed": True,
+            "errors": ["gpt_configuration_invalid"],
+            "scored_observation_created": False,
+            "final_confirmatory_case_used": False,
+        }
+    else:
+        gpt_connectivity = {
+            "valid": True,
+            "checked": False,
+            "live_provider_call_executed": False,
+            "provider_failed": False,
+            "status": "not_checked_in_dry_validation_mode",
+            "scored_observation_created": False,
+            "final_confirmatory_case_used": False,
+        }
     qwen = qwen_preflight()
     target = target_preflight(target_probe=target_probe) if check_target else {
         "checked": False,
@@ -517,8 +605,9 @@ def runtime_preflight_status(
     }
     return {
         "schema_version": RUNTIME_PREFLIGHT_VERSION,
-        "valid": gpt["valid"] and qwen["valid"] and (target["valid"] if check_target else True),
+        "valid": gpt["valid"] and gpt_connectivity["valid"] and qwen["valid"] and (target["valid"] if check_target else True),
         "gpt": gpt,
+        "gpt_connectivity": gpt_connectivity,
         "qwen": qwen,
         "owasp_target": target,
     }
@@ -544,6 +633,181 @@ def gpt_preflight(env: Mapping[str, str | None]) -> dict[str, Any]:
         "model_identifier_expected": PROPRIETARY_MODEL_IDENTIFIER,
         "send_temperature_status": "unset_or_false" if temp_ok else "enabled",
         "secret_value_recorded": False,
+    }
+
+
+def gpt_connectivity_readiness(model_client: ModelClient | None = None) -> dict[str, Any]:
+    candidate_input = [dict(SYNTHETIC_CONNECTIVITY_CANDIDATE)]
+    prompt = build_sqli_ranking_prompt(candidate_input)
+    candidate_ids = [candidate_input[0]["candidate_id"]]
+    client = model_client or create_proprietary_gpt_client()
+    started = time.perf_counter()
+    try:
+        completion = client.complete(prompt, candidate_input, GPT_SETTINGS)
+        latency_ms = completion.latency_ms if completion.latency_ms is not None else int((time.perf_counter() - started) * 1000)
+        ordered_ids, _rationales, validation_errors = parse_model_ranking(completion.raw_response, candidate_ids)
+        valid = not validation_errors and ordered_ids == candidate_ids
+        return {
+            "schema_version": "owasp-sqli-v15-1-gpt-connectivity-readiness-v1",
+            "valid": valid,
+            "checked": True,
+            "live_provider_call_executed": True,
+            "provider_failed": False,
+            "errors": validation_errors,
+            "model_identifier": completion.model_identifier,
+            "model_identifier_expected": PROPRIETARY_MODEL_IDENTIFIER,
+            "provider": completion.provider,
+            "prompt_version": LLM_SQLI_RANKING_PROMPT_VERSION,
+            "candidate_count": len(candidate_input),
+            "synthetic_candidate_id": candidate_ids[0],
+            "final_confirmatory_case_used": False,
+            "held_out_or_final_snapshot_used": False,
+            "scored_observation_created": False,
+            "api_key_value_recorded": False,
+            "usage_metadata_present": completion.usage is not None,
+            "usage": completion.usage,
+            "cost": completion.cost if completion.cost is not None else {"availability": NOT_AVAILABLE},
+            "latency_ms": latency_ms,
+            "provider_metadata": completion.metadata,
+            "raw_response": completion.raw_response,
+        }
+    except ModelTimeoutError as exc:
+        error_type = "timeout"
+        message = str(exc)
+    except ModelProviderError as exc:
+        error_type = "provider_failure"
+        message = str(exc)
+    return {
+        "schema_version": "owasp-sqli-v15-1-gpt-connectivity-readiness-v1",
+        "valid": False,
+        "checked": True,
+        "live_provider_call_executed": False,
+        "provider_failed": True,
+        "error_type": error_type,
+        "errors": [message],
+        "model_identifier": getattr(client, "model_identifier", PROPRIETARY_MODEL_IDENTIFIER),
+        "model_identifier_expected": PROPRIETARY_MODEL_IDENTIFIER,
+        "provider": None,
+        "prompt_version": LLM_SQLI_RANKING_PROMPT_VERSION,
+        "candidate_count": len(candidate_input),
+        "synthetic_candidate_id": candidate_ids[0],
+        "final_confirmatory_case_used": False,
+        "held_out_or_final_snapshot_used": False,
+        "scored_observation_created": False,
+        "api_key_value_recorded": False,
+        "usage_metadata_present": False,
+        "usage": None,
+        "cost": {"availability": NOT_AVAILABLE},
+        "latency_ms": int((time.perf_counter() - started) * 1000),
+        "provider_metadata": None,
+        "raw_response": None,
+    }
+
+
+def validate_protocol_amendment() -> dict[str, Any]:
+    errors: list[str] = []
+    text = AMENDMENT_PATH.read_text(encoding="utf-8") if AMENDMENT_PATH.exists() else ""
+    if not text:
+        errors.append("evaluation_protocol_v1_5_1_missing")
+    required_fragments = [
+        "evaluation-protocol-v1.5.1",
+        "WinError 10013",
+        "llm-sqli-candidate-ranking-v1",
+        "complete fresh v1.5.1 run",
+        "must not be resumed",
+        "124 deterministic",
+        "620 GPT",
+        "620 Qwen",
+        "200 direct",
+    ]
+    for fragment in required_fragments:
+        if fragment not in text:
+            errors.append(f"amendment_missing_fragment:{fragment}")
+    return {
+        "valid": not errors,
+        "errors": errors,
+        "amendment_version": "v1.5.1",
+        "path": display_path(AMENDMENT_PATH),
+        "sha256": sha256_file(AMENDMENT_PATH) if AMENDMENT_PATH.exists() else "missing",
+        "base_protocol": "evaluation-protocol-v1.5",
+        "scored_experiment_executed_by_amendment_preparation": False,
+    }
+
+
+def prompt_validation() -> dict[str, Any]:
+    prompt = build_sqli_ranking_prompt([dict(SYNTHETIC_CONNECTIVITY_CANDIDATE)])
+    errors: list[str] = []
+    required_fragments = [
+        "structured SQL injection candidate",
+        "You may only choose from the supplied candidate_id values",
+        "Do not create payloads",
+        "do not construct HTTP requests",
+        "do not request execution",
+        "do not verify findings",
+        "do not use ground truth",
+    ]
+    for fragment in required_fragments:
+        if fragment not in prompt:
+            errors.append(f"prompt_missing_fragment:{fragment}")
+    for fragment in ("reflected-input", "reflected XSS", "browser execution"):
+        if fragment in prompt:
+            errors.append(f"prompt_forbidden_fragment:{fragment}")
+    return {
+        "valid": not errors,
+        "errors": errors,
+        "prompt_version": LLM_SQLI_RANKING_PROMPT_VERSION,
+        "base_prompt_version_superseded_for_sqli": LLM_SQLI_RANKING_PROMPT_VERSION != "llm-candidate-ranking-v1",
+        "exact_prompt_text": prompt,
+    }
+
+
+def interrupted_v15_run_preservation() -> dict[str, Any]:
+    exists = ABORTED_V15_RUN_DIR.exists()
+    ranking_dir = ABORTED_V15_RUN_DIR / "raw" / "ranking-rows"
+    direct_dir = ABORTED_V15_RUN_DIR / "raw" / "direct-sqli-cases"
+    ranking_paths = sorted(ranking_dir.glob("sequence-*.json")) if ranking_dir.exists() else []
+    direct_paths = sorted(direct_dir.glob("candidate-*.json")) if direct_dir.exists() else []
+    status_counts: Counter[str] = Counter()
+    arm_counts: Counter[str] = Counter()
+    winerror_10013_count = 0
+    for path in ranking_paths:
+        row = load_json(path)
+        summary = row.get("summary", {})
+        arm_counts[str(summary.get("arm_id", "missing"))] += 1
+        status_counts[str(summary.get("status", "missing"))] += 1
+        if "WinError 10013" in json.dumps(row):
+            winerror_10013_count += 1
+    return {
+        "valid": True,
+        "status": "present_and_preserved" if exists else "not_present_in_workspace",
+        "path": display_path(ABORTED_V15_RUN_DIR),
+        "used_as_final_v151_evidence": False,
+        "may_be_resumed": False,
+        "may_be_modified": False,
+        "ranking_artifact_count": len(ranking_paths),
+        "direct_artifact_count": len(direct_paths),
+        "ranking_counts_by_arm": dict(arm_counts),
+        "ranking_status_counts": dict(status_counts),
+        "winerror_10013_artifact_count": winerror_10013_count,
+    }
+
+
+def future_v151_output_is_separate() -> dict[str, Any]:
+    errors: list[str] = []
+    if DEFAULT_V151_FINAL_ROOT == DEFAULT_FINAL_ROOT:
+        errors.append("v151_final_root_matches_aborted_v15_root")
+    if DEFAULT_FINAL_ROOT.resolve() in DEFAULT_V151_FINAL_ROOT.resolve().parents:
+        errors.append("v151_final_root_nested_inside_v15_final_root")
+    if DEFAULT_V151_FINAL_ROOT.resolve() in DEFAULT_FINAL_ROOT.resolve().parents:
+        errors.append("v15_final_root_nested_inside_v151_final_root")
+    return {
+        "valid": not errors,
+        "errors": errors,
+        "aborted_v15_output_root": display_path(DEFAULT_FINAL_ROOT),
+        "future_v151_output_root": display_path(DEFAULT_V151_FINAL_ROOT),
+        "future_v151_canonical_dir": display_path(DEFAULT_V151_CANONICAL_DIR),
+        "fresh_run_required": True,
+        "resume_from_aborted_v15_permitted": False,
     }
 
 
@@ -663,7 +927,7 @@ def model_ranking_artifact(
     started: float,
 ) -> dict[str, Any]:
     candidate_input = snapshot["candidate_input"]
-    prompt = build_ranking_prompt(candidate_input)
+    prompt = build_sqli_ranking_prompt(candidate_input)
     candidate_ids = [item["candidate_id"] for item in candidate_input]
     try:
         completion = model_client.complete(prompt, candidate_input, settings)
@@ -735,7 +999,7 @@ def ranking_row_artifact(
         validation_errors=validation_errors,
         raw_response=raw_response,
         model_identifier=model_identifier,
-        prompt_version=LLM_RANKING_PROMPT_VERSION,
+        prompt_version=LLM_SQLI_RANKING_PROMPT_VERSION,
         model_settings=model_settings,
         candidate_input=snapshot["candidate_input"],
         prompt=prompt or "not_applicable",
@@ -766,6 +1030,7 @@ def ranking_row_artifact(
         "latency_ms": latency_ms,
         "model_identifier": model_identifier,
         "provider": provider,
+        "prompt_version": LLM_SQLI_RANKING_PROMPT_VERSION,
     }
     return {
         "schema_version": RANKING_ROW_VERSION,
@@ -1018,6 +1283,12 @@ def execution_manifest(
         "created_at": now_utc(),
         "run_dir": display_path(run_dir),
         "protocol": {"path": display_path(PROTOCOL_PATH), "sha256": sha256_file(PROTOCOL_PATH)},
+        "recovery_amendment": {
+            "path": display_path(AMENDMENT_PATH),
+            "sha256": sha256_file(AMENDMENT_PATH) if AMENDMENT_PATH.exists() else "missing",
+            "version": "evaluation-protocol-v1.5.1",
+            "fresh_run_required": True,
+        },
         "protocol_package": display_path(package["root"]),
         "expected_ranking_denominators": EXPECTED_DENOMINATORS,
         "expected_direct_cases": EXPECTED_DIRECT_CASES,
@@ -1081,10 +1352,15 @@ def render_dry_report(report: dict[str, Any]) -> str:
     runtime = report["runtime_preflight"]
     return "\n".join(
         [
-            "# OWASP SQLi v1.5 Confirmatory Harness Dry Validation",
+            "# OWASP SQLi v1.5.1 Confirmatory Harness Dry Validation",
             "",
             "Status: dry validation only. No scored ranking observations, model calls or final SQLi executions were created.",
+            "Recovery amendment: v1.5.1 preparation for a complete fresh future scored run; the aborted v1.5 run is preserved as failed execution evidence only.",
             "",
+            f"- Amendment valid: `{report['protocol_amendment']['valid']}`",
+            f"- Prompt version: `{report['prompt_validation']['prompt_version']}`",
+            f"- Aborted v1.5 run status: `{report['interrupted_v15_run']['status']}`",
+            f"- Future v1.5.1 output root: `{report['future_v151_output_separation']['future_v151_output_root']}`",
             f"- Protocol hash matches: `{report['protocol_package']['protocol_hash_matches']}`",
             f"- Package checksum errors: `{report['protocol_package']['package_checksum_error_count']}`",
             f"- Ranking scenarios resolved: `{ranking['scenario_count']}`",
@@ -1494,6 +1770,11 @@ def canonical_manifest(output_dir: Path, run_dir: Path, protocol_package_dir: Pa
         "output_dir": display_path(output_dir),
         "raw_execution_dir": display_path(run_dir),
         "protocol_package_dir": display_path(protocol_package_dir),
+        "recovery_amendment": {
+            "path": display_path(AMENDMENT_PATH),
+            "sha256": sha256_file(AMENDMENT_PATH) if AMENDMENT_PATH.exists() else "missing",
+            "version": "evaluation-protocol-v1.5.1",
+        },
         "validation_valid": validation["valid"],
         "immutable_raw_artifacts_preserved": True,
         "ground_truth_loaded_only_for_post_run_scoring": True,
@@ -1793,6 +2074,7 @@ def ensure_not_overwriting_previous_results(path: Path) -> None:
         "owasp-xss-v14-confirmatory-final",
         "owasp-sqli-v15-protocol-freeze",
         "owasp-sqli-v15-readiness",
+        "owasp-sqli-v15-confirmatory-final",
     }
     if any(part in resolved.parts for part in protected_parts):
         raise SqliConfirmatoryHarnessError(f"refusing to write inside protected result path: {path}")
@@ -1810,6 +2092,7 @@ def validate_resume_run_directory(run_dir: Path, output_root: Path) -> None:
         "owasp-xss-v14-confirmatory-final",
         "owasp-sqli-v15-protocol-freeze",
         "owasp-sqli-v15-readiness",
+        "owasp-sqli-v15-confirmatory-final",
     }
     if any(part in resolved_run.parts for part in protected_parts):
         raise SqliConfirmatoryHarnessError(f"refusing to resume inside protected result path: {run_dir}")
@@ -1823,20 +2106,21 @@ def validate_resume_run_directory(run_dir: Path, output_root: Path) -> None:
 
 
 def resolve_dry_validation_output_dir(requested: Path) -> Path:
-    if requested.resolve() == DEFAULT_READINESS_DIR.resolve() and requested.exists() and any(requested.iterdir()):
+    default_readiness_roots = {DEFAULT_READINESS_DIR.resolve(), DEFAULT_V151_READINESS_DIR.resolve()}
+    if requested.resolve() in default_readiness_roots and requested.exists() and any(requested.iterdir()):
         return requested / f"dry-validation-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
     return requested
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run or dry-validate the frozen OWASP SQLi v1.5 confirmatory harness.")
+    parser = argparse.ArgumentParser(description="Run or dry-validate the amended OWASP SQLi v1.5.1 confirmatory harness.")
     parser.add_argument("--mode", choices=("dry-run", "preflight", "execute", "canonicalize"), default="dry-run")
     parser.add_argument("--protocol-package", type=Path, default=PROTOCOL_PACKAGE_DIR)
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_READINESS_DIR)
-    parser.add_argument("--output-root", type=Path, default=DEFAULT_FINAL_ROOT)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_V151_READINESS_DIR)
+    parser.add_argument("--output-root", type=Path, default=DEFAULT_V151_FINAL_ROOT)
     parser.add_argument("--run-dir", type=Path)
     parser.add_argument("--resume-run-dir", type=Path)
-    parser.add_argument("--canonical-dir", type=Path, default=DEFAULT_CANONICAL_DIR)
+    parser.add_argument("--canonical-dir", type=Path, default=DEFAULT_V151_CANONICAL_DIR)
     parser.add_argument("--check-target", action="store_true", help="Include the non-scored OWASP target health check in dry-run mode.")
     parser.add_argument("--execute-final-confirmatory", action="store_true", help="Required with --mode execute.")
     args = parser.parse_args()
@@ -1844,7 +2128,7 @@ def main() -> None:
     if args.mode == "dry-run":
         output_dir = resolve_dry_validation_output_dir(args.output_dir)
         report = run_dry_validation(protocol_package_dir=args.protocol_package, output_dir=output_dir, check_target=args.check_target)
-        print(f"OWASP SQLi v1.5 confirmatory dry validation valid: {report['valid']}")
+        print(f"OWASP SQLi v1.5.1 confirmatory dry validation valid: {report['valid']}")
         print(f"Dry-validation artifacts written to: {output_dir.resolve()}")
         return
 
@@ -1859,7 +2143,7 @@ def main() -> None:
         if args.run_dir is None:
             raise SystemExit("--mode canonicalize requires --run-dir")
         package = build_canonical_package(run_dir=args.run_dir, protocol_package_dir=args.protocol_package, output_dir=args.canonical_dir)
-        print(f"OWASP SQLi v1.5 canonical analysis valid: {package['validation']['valid']}")
+        print(f"OWASP SQLi v1.5.1 canonical analysis valid: {package['validation']['valid']}")
         print(f"Canonical artifacts written to: {args.canonical_dir.resolve()}")
         return
 
@@ -1869,7 +2153,7 @@ def main() -> None:
         protocol_package_dir=args.protocol_package,
         execute_final_confirmatory_flag=args.execute_final_confirmatory,
     )
-    print(f"OWASP SQLi v1.5 confirmatory execution artifacts written to: {run_dir}")
+    print(f"OWASP SQLi v1.5.1 confirmatory execution artifacts written to: {run_dir}")
 
 
 if __name__ == "__main__":

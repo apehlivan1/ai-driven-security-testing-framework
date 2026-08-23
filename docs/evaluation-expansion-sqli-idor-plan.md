@@ -410,8 +410,24 @@ frozen denominators, validates resume/duplicate-artifact handling, validates
 ground-truth separation, and records zero final SQLi runtime executions, zero
 GPT calls, zero Qwen calls and zero scored observations.
 
-The repository is ready for live v1.5 preflight once the external local OWASP
-Benchmark target is running and `OPENAI_RANKING_MODEL` is set to the frozen
-`gpt-5.6-luna` value. The dry-validation report currently records Qwen
-runtime/model hashes as valid and records the GPT model environment variable as
-missing.
+The original v1.5 harness-readiness package is now historical readiness
+evidence. The later v1.5 scored attempt exposed recovery issues that are
+addressed by the v1.5.1 amendment below.
+
+### v1.5 Interrupted Execution And v1.5.1 Recovery Amendment
+
+The first v1.5 scored execution attempt was manually interrupted and is
+preserved only as failed/aborted execution evidence. It must not be resumed or
+used as final thesis evidence. The audit identified two narrow defects: the
+live preflight validated GPT configuration but did not perform an actual
+non-scored OpenAI connectivity request, and the shared ranking prompt contained
+reflected-input wording inherited from the XSS study.
+
+The recovery path is `evaluation-protocol-v1.5.1`. It preserves the v1.5
+corpus, snapshots, scenario packs, decoy assignment, model choices, budgets,
+SQLi probes, adapters, verifier criteria, metrics and scoring rules. The
+amendment introduces a SQLi-appropriate ranking prompt version,
+`llm-sqli-candidate-ranking-v1`, and a real non-scored GPT connectivity
+preflight using a synthetic non-final candidate. The corrected final SQLi study
+must be a complete fresh v1.5.1 execution in a separate result namespace, not a
+resume of the aborted v1.5 run.

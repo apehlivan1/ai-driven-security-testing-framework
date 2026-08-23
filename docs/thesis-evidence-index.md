@@ -776,3 +776,40 @@ zero Qwen calls and zero scored observations. The readiness package is not
 final scored evidence; it validates that the repository can now perform live
 v1.5 preflight and later final execution if the external target and environment
 requirements are satisfied.
+
+v1.5 interrupted scored execution evidence:
+
+- Interrupted source run:
+  `results/owasp-sqli-v15-confirmatory-final/owasp-sqli-v15-confirmatory-20260823T122428Z/`
+
+The interrupted v1.5 scored run is preserved as failed/aborted execution
+evidence only. It completed 124 deterministic ranking rows, 620 GPT rows that
+failed locally with `WinError 10013`, and four local Qwen rows before manual
+interruption. It did not start the direct 200-case SQLi execution layer. The
+GPT failures occurred before provider responses or token usage were obtained
+and must not be interpreted as GPT model-performance evidence. The interrupted
+run must not be resumed, modified, repaired, overwritten or used as the final
+thesis result.
+
+v1.5.1 recovery amendment and dry-validation evidence:
+
+- Recovery amendment:
+  `docs/evaluation-protocol-v1.5.1.md`
+- Amendment-readiness package:
+  `results/owasp-sqli-v15-1-amendment-readiness/`
+- Dry-validation report:
+  `results/owasp-sqli-v15-1-amendment-readiness/dry-validation-report.json`
+- Execution-plan summary:
+  `results/owasp-sqli-v15-1-amendment-readiness/execution-plan-summary.json`
+- Canonicalization-plan summary:
+  `results/owasp-sqli-v15-1-amendment-readiness/canonicalization-plan-summary.json`
+- Checksum validation:
+  `results/owasp-sqli-v15-1-amendment-readiness/checksum-validation-report.json`
+
+The v1.5.1 amendment corrects only the GPT provider-connectivity preflight and
+the SQLi ranking prompt wording. It preserves the v1.5 corpus, snapshots,
+scenario packs, candidate ordering, decoy assignment, models, decoding
+settings, trial counts, candidate-test budget, SQLi probes, adapters, verifier
+criteria, metrics and scoring rules. The corrected final study must be a
+complete fresh v1.5.1 run in `results/owasp-sqli-v15-1-confirmatory-final/`;
+it must not resume or reuse observations from the interrupted v1.5 run.
