@@ -1,0 +1,143 @@
+{
+  "canonicalization_readiness": {
+    "direct_denominator": 200,
+    "expected_inputs": {
+      "direct_case_artifacts": 200,
+      "ground_truth_source": "ground-truth/scoring-data.json loaded only after raw execution closes",
+      "ranking_row_artifacts": 1364
+    },
+    "expected_outputs": [
+      "execution-integrity-report.json",
+      "normalized/ranking-aggregates.json",
+      "normalized/reliability-aggregates.json",
+      "normalized/efficiency-aggregates.json",
+      "normalized/direct-execution-aggregates.json",
+      "normalized/scored-ranking-rows.json",
+      "normalized/scored-direct-rows.json",
+      "manifest.json",
+      "checksums.sha256"
+    ],
+    "protocol_denominators": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620,
+      "total_ranking_rows": 1364
+    },
+    "schema_version": "owasp-sqli-v15-canonicalization-readiness-v1"
+  },
+  "created_at": "2026-08-23T12:04:10.010247+00:00",
+  "direct_resume_validation": {
+    "errors": [],
+    "existing_completed_cases": 0,
+    "overwrite_policy": "existing completed direct artifacts are never silently regenerated",
+    "resume_next_missing_sequence": 1,
+    "valid": true
+  },
+  "direct_schedule_resolution": {
+    "direct_execution_cases": 200,
+    "errors": [],
+    "expected_http_requests": 1200,
+    "ground_truth_loaded": false,
+    "readiness_or_excluded_case_count": 0,
+    "valid": true
+  },
+  "duplicate_resume_validation": {
+    "errors": [],
+    "existing_completed_rows": 0,
+    "overwrite_policy": "existing completed scored ranking artifacts are never silently regenerated",
+    "resume_next_missing_sequence": 1,
+    "valid": true
+  },
+  "external_calls": {
+    "direct_http_requests": 0,
+    "final_sqli_runtime_executions": 0,
+    "gpt_calls": 0,
+    "qwen_calls": 0,
+    "scored_observations": 0
+  },
+  "git_state": {
+    "branch": "main",
+    "commit": "e6501fc85bdb7e789048d659bf5f1a8d7139719c",
+    "dirty": true,
+    "status_short": [
+      "M docs/evaluation-expansion-sqli-idor-plan.md",
+      " M docs/thesis-evidence-index.md",
+      "?? results/owasp-sqli-v15-confirmatory-harness-readiness/",
+      "?? src/adstf/owasp_sqli_v15_confirmatory.py",
+      "?? tests/test_owasp_sqli_v15_confirmatory.py"
+    ]
+  },
+  "ground_truth_isolation": {
+    "direct_execution_ground_truth_loaded": false,
+    "ground_truth_loaded_during_dry_validation": false,
+    "model_facing_snapshot_leak_count": 0
+  },
+  "harness_version": "owasp-sqli-v15-confirmatory-harness-v1",
+  "mode": "dry_validation",
+  "protocol_package": {
+    "errors": [],
+    "package_checksum_error_count": 0,
+    "package_checksum_errors": [],
+    "protocol_hash_matches": true,
+    "protocol_sha256": "22f90d9794c796c20e27654662ee893d1fa533bfef16fb87912f18154dac8033",
+    "protocol_sha256_expected": "22f90d9794c796c20e27654662ee893d1fa533bfef16fb87912f18154dac8033",
+    "valid": true
+  },
+  "ranking_schedule_resolution": {
+    "errors": [],
+    "ground_truth_loaded": false,
+    "per_arm_counts": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620
+    },
+    "scenario_count": 124,
+    "snapshot_leak_count": 0,
+    "total_rows": 1364,
+    "unique_row_ids": 1364,
+    "valid": true
+  },
+  "runtime_preflight": {
+    "gpt": {
+      "api_key_present": true,
+      "errors": [
+        "OPENAI_RANKING_MODEL_not_frozen_value"
+      ],
+      "model_identifier": "missing",
+      "model_identifier_expected": "gpt-5.6-luna",
+      "secret_value_recorded": false,
+      "send_temperature_status": "unset_or_false",
+      "valid": false
+    },
+    "owasp_target": {
+      "base_url": "https://127.0.0.1:8443/benchmark",
+      "checked": false,
+      "status": "not_checked_in_dry_validation_mode",
+      "valid": false
+    },
+    "qwen": {
+      "errors": [],
+      "gemma_contingency_only": true,
+      "model_files": [
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+          "sha256_matches": true
+        },
+        {
+          "exists": true,
+          "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+          "sha256_matches": true
+        }
+      ],
+      "model_identifier": "Qwen/Qwen2.5-7B-Instruct-GGUF:Q4_K_M",
+      "runtime_exists": true,
+      "runtime_sha256_matches": true,
+      "valid": true
+    },
+    "schema_version": "owasp-sqli-v15-confirmatory-runtime-preflight-v1",
+    "valid": false
+  },
+  "schema_version": "owasp-sqli-v15-confirmatory-dry-validation-v1",
+  "valid": true
+}

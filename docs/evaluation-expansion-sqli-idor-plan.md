@@ -400,3 +400,18 @@ The next milestone, if authorized, is final v1.5 confirmatory execution under
 the frozen protocol. It should not reinterpret readiness as proof that all 200
 final cases are verifier-confirmable, and inconclusive final outcomes must
 remain in the direct-execution denominator.
+
+### v1.5 Confirmatory Harness Readiness Result
+
+The missing v1.5 confirmatory execution and canonicalization harness has been
+implemented as infrastructure only. The dry-validation package is
+`results/owasp-sqli-v15-confirmatory-harness-readiness/`. It reproduces the
+frozen denominators, validates resume/duplicate-artifact handling, validates
+ground-truth separation, and records zero final SQLi runtime executions, zero
+GPT calls, zero Qwen calls and zero scored observations.
+
+The repository is ready for live v1.5 preflight once the external local OWASP
+Benchmark target is running and `OPENAI_RANKING_MODEL` is set to the frozen
+`gpt-5.6-luna` value. The dry-validation report currently records Qwen
+runtime/model hashes as valid and records the GPT model environment variable as
+missing.

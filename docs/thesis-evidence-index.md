@@ -752,3 +752,27 @@ has a separately predeclared denominator of 200 cases. The protocol-freeze
 package validates ground-truth separation, benchmark-identity sanitization,
 checksum consistency and zero final SQLi execution, zero GPT calls and zero
 Qwen calls.
+
+v1.5 confirmatory execution-harness readiness:
+
+- Harness module:
+  `src/adstf/owasp_sqli_v15_confirmatory.py`
+- Dry-validation package:
+  `results/owasp-sqli-v15-confirmatory-harness-readiness/`
+- Dry-validation report:
+  `results/owasp-sqli-v15-confirmatory-harness-readiness/dry-validation-report.json`
+- Execution-plan summary:
+  `results/owasp-sqli-v15-confirmatory-harness-readiness/execution-plan-summary.json`
+- Canonicalization-plan summary:
+  `results/owasp-sqli-v15-confirmatory-harness-readiness/canonicalization-plan-summary.json`
+- Checksum validation:
+  `results/owasp-sqli-v15-confirmatory-harness-readiness/checksum-validation-report.json`
+
+The v1.5 confirmatory harness dry validation reproduces the frozen
+denominators: 124 deterministic ranking rows, 620 GPT rows, 620 Qwen rows,
+1364 total ranking rows, 200 direct execution cases and 1200 expected direct
+HTTP requests. It records zero final SQLi runtime executions, zero GPT calls,
+zero Qwen calls and zero scored observations. The readiness package is not
+final scored evidence; it validates that the repository can now perform live
+v1.5 preflight and later final execution if the external target and environment
+requirements are satisfied.

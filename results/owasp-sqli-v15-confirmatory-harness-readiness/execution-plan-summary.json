@@ -1,0 +1,17 @@
+{
+  "arm_order": [
+    "deterministic_structural",
+    "proprietary_gpt",
+    "local_qwen"
+  ],
+  "direct_execution_cases": 200,
+  "expected_direct_http_requests": 1200,
+  "per_arm_counts": {
+    "deterministic_structural": 124,
+    "local_qwen": 620,
+    "proprietary_gpt": 620
+  },
+  "scenario_count": 124,
+  "schema_version": "owasp-sqli-v15-confirmatory-execution-plan-summary-v1",
+  "total_ranking_rows": 1364
+}
