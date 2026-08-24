@@ -664,6 +664,41 @@ remain local unless a deliberate raw-evidence archival decision is made. The
 v1.4 package does not modify or supersede v1.2 IDOR/SQLi/ZAP evidence or the
 v1.3.1 controlled local XSS ablation evidence.
 
+
+### v1.4.1 OWASP XSS Context-Enrichment Ablation Protocol Freeze
+
+v1.4.1 is a separate explanatory follow-up to the frozen v1.4 OWASP XSS
+external-validation result. It does not replace or modify the canonical v1.4
+result package.
+
+- Frozen pre-execution protocol:
+  `docs/evaluation-protocol-v1.4.1.md`
+- Protocol-freeze package:
+  `results/owasp-xss-v14-1-protocol-freeze/`
+- Corrected context observation package:
+  `results/owasp-xss-v14-1-context-corrected-observations/owasp-xss-v14-1-context-collection-20260824T120106Z-corrected-20260824T122934Z/`
+- Model-facing minimal snapshots:
+  `results/owasp-xss-v14-1-protocol-freeze/model-facing/minimal-candidate-snapshots/`
+- Model-facing enriched snapshots:
+  `results/owasp-xss-v14-1-protocol-freeze/model-facing/enriched-candidate-snapshots/`
+- Trial schedule:
+  `results/owasp-xss-v14-1-protocol-freeze/trial-schedule.json`
+- Validation report:
+  `results/owasp-xss-v14-1-protocol-freeze/validation-report.json`
+- Checksums:
+  `results/owasp-xss-v14-1-protocol-freeze/checksums.sha256`
+
+The v1.4.1 package freezes six ranking arms over the same 266 v1.4 OWASP XSS
+ranking scenarios: deterministic/GPT/Qwen under minimal and enriched candidate
+representations. Expected denominators are 532 deterministic rows, 2660 GPT
+rows, 2660 Qwen rows and 5852 total ranking rows. The enriched representation
+uses corrected benign marker context observations. No scored ranking, GPT call,
+Qwen call, local inference, HTTP benchmark request, browser verification or
+post-run scoring was performed by the protocol-freeze package.
+
+The timestamped raw benign context collection run remains local raw evidence
+unless a separate raw-evidence archival decision is made.
+
 ### v1.5 OWASP Benchmark SQLi Compatibility, Readiness and Protocol Freeze
 
 v1.5 extends the external-validation line to OWASP Benchmark Java SQL injection

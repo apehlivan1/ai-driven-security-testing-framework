@@ -1,0 +1,8 @@
+{
+  "changed_candidate_count": 24,
+  "corrected_observation_package": "results/owasp-xss-v14-1-context-corrected-observations/owasp-xss-v14-1-context-collection-20260824T120106Z-corrected-20260824T122934Z",
+  "raw_collection_committed": false,
+  "schema_version": "owasp-xss-v14-1-corrected-observation-lineage-v1",
+  "semantic_correction_commit": "039de7b0114162b92288f50371c171955b245957",
+  "source_raw_collection_run": "results/owasp-xss-v14-1-context-collection/owasp-xss-v14-1-context-collection-20260824T120106Z"
+}

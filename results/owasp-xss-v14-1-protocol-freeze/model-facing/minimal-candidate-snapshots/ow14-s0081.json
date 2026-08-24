@@ -1,0 +1,66 @@
+{
+  "artifact_status": "frozen_pre_execution_v14_1_abstracted_minimal_ranker_input",
+  "candidate_count": 5,
+  "candidate_input": [
+    {
+      "candidate_id": "ox14-c000125",
+      "editable_input_count": 1,
+      "http_method": "GET",
+      "input_carrier_category": "query_parameter",
+      "input_type_category": "text",
+      "multiple_parameters": false,
+      "parameter_count": 1,
+      "request_shape_category": "single_query_parameter",
+      "required_input_count": 0
+    },
+    {
+      "candidate_id": "ox14-c000065",
+      "editable_input_count": 1,
+      "http_method": "GET",
+      "input_carrier_category": "query_parameter_map",
+      "input_type_category": "text",
+      "multiple_parameters": false,
+      "parameter_count": 1,
+      "request_shape_category": "single_query_parameter",
+      "required_input_count": 0
+    },
+    {
+      "candidate_id": "ox14-c000435",
+      "editable_input_count": 1,
+      "http_method": "GET",
+      "input_carrier_category": "query_string",
+      "input_type_category": "text",
+      "multiple_parameters": false,
+      "parameter_count": 1,
+      "request_shape_category": "whole_query_string",
+      "required_input_count": 0
+    },
+    {
+      "candidate_id": "ox14-c000294",
+      "editable_input_count": 1,
+      "http_method": "GET",
+      "input_carrier_category": "header",
+      "input_type_category": "header",
+      "multiple_parameters": false,
+      "parameter_count": 1,
+      "request_shape_category": "header_value",
+      "required_input_count": 0
+    },
+    {
+      "candidate_id": "ox14-c000204",
+      "editable_input_count": 1,
+      "http_method": "GET",
+      "input_carrier_category": "query_parameter_map",
+      "input_type_category": "text",
+      "multiple_parameters": false,
+      "parameter_count": 1,
+      "request_shape_category": "single_query_parameter",
+      "required_input_count": 0
+    }
+  ],
+  "candidate_input_schema": "llm-candidate-ranking-v1.4.1.abstracted_candidate_input",
+  "candidate_test_budget": 4,
+  "scenario_id": "ow14-s0081",
+  "schema_version": "ow14-1-minimal-candidate-snapshot-v1",
+  "top_k": 4
+}

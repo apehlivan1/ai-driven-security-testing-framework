@@ -1,0 +1,15 @@
+{
+  "executable_syntax": false,
+  "forbidden_characters": [
+    "<",
+    ">",
+    "'",
+    "\"",
+    "control_characters"
+  ],
+  "marker": "ADSTF_CTX_V141/SAFE",
+  "marker_policy": "fixed_inert_non_executing_marker",
+  "payload_status": "not_an_xss_payload",
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.marker-policy",
+  "slash_delimiter_policy": "The slash is intentional: it is non-executable and safely encodable, allowing deterministic observation of transport or encoding transformations."
+}

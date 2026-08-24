@@ -1,0 +1,5143 @@
+{
+  "artifact_status": "post_run_scoring_only_not_model_facing",
+  "candidate_ground_truth": [
+    {
+      "candidate_id": "ox14-c000001",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00013"
+    },
+    {
+      "candidate_id": "ox14-c000002",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00014"
+    },
+    {
+      "candidate_id": "ox14-c000003",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00030"
+    },
+    {
+      "candidate_id": "ox14-c000004",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00036"
+    },
+    {
+      "candidate_id": "ox14-c000005",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00041"
+    },
+    {
+      "candidate_id": "ox14-c000006",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00047"
+    },
+    {
+      "candidate_id": "ox14-c000007",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00048"
+    },
+    {
+      "candidate_id": "ox14-c000008",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00049"
+    },
+    {
+      "candidate_id": "ox14-c000009",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00144"
+    },
+    {
+      "candidate_id": "ox14-c000010",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00145"
+    },
+    {
+      "candidate_id": "ox14-c000011",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00146"
+    },
+    {
+      "candidate_id": "ox14-c000012",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00147"
+    },
+    {
+      "candidate_id": "ox14-c000013",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00148"
+    },
+    {
+      "candidate_id": "ox14-c000014",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00149"
+    },
+    {
+      "candidate_id": "ox14-c000015",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00150"
+    },
+    {
+      "candidate_id": "ox14-c000016",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00151"
+    },
+    {
+      "candidate_id": "ox14-c000017",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00152"
+    },
+    {
+      "candidate_id": "ox14-c000018",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00153"
+    },
+    {
+      "candidate_id": "ox14-c000019",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00154"
+    },
+    {
+      "candidate_id": "ox14-c000020",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00155"
+    },
+    {
+      "candidate_id": "ox14-c000021",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00156"
+    },
+    {
+      "candidate_id": "ox14-c000022",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00157"
+    },
+    {
+      "candidate_id": "ox14-c000023",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00275"
+    },
+    {
+      "candidate_id": "ox14-c000024",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00276"
+    },
+    {
+      "candidate_id": "ox14-c000025",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00277"
+    },
+    {
+      "candidate_id": "ox14-c000026",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00278"
+    },
+    {
+      "candidate_id": "ox14-c000027",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00279"
+    },
+    {
+      "candidate_id": "ox14-c000029",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00281"
+    },
+    {
+      "candidate_id": "ox14-c000030",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00282"
+    },
+    {
+      "candidate_id": "ox14-c000031",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00283"
+    },
+    {
+      "candidate_id": "ox14-c000032",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00284"
+    },
+    {
+      "candidate_id": "ox14-c000033",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00285"
+    },
+    {
+      "candidate_id": "ox14-c000034",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00286"
+    },
+    {
+      "candidate_id": "ox14-c000035",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00287"
+    },
+    {
+      "candidate_id": "ox14-c000036",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00288"
+    },
+    {
+      "candidate_id": "ox14-c000037",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00289"
+    },
+    {
+      "candidate_id": "ox14-c000038",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00290"
+    },
+    {
+      "candidate_id": "ox14-c000039",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00291"
+    },
+    {
+      "candidate_id": "ox14-c000040",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00292"
+    },
+    {
+      "candidate_id": "ox14-c000041",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00301"
+    },
+    {
+      "candidate_id": "ox14-c000042",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00375"
+    },
+    {
+      "candidate_id": "ox14-c000043",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00376"
+    },
+    {
+      "candidate_id": "ox14-c000044",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00377"
+    },
+    {
+      "candidate_id": "ox14-c000045",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00378"
+    },
+    {
+      "candidate_id": "ox14-c000046",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00379"
+    },
+    {
+      "candidate_id": "ox14-c000047",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00380"
+    },
+    {
+      "candidate_id": "ox14-c000048",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00381"
+    },
+    {
+      "candidate_id": "ox14-c000049",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00382"
+    },
+    {
+      "candidate_id": "ox14-c000050",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00383"
+    },
+    {
+      "candidate_id": "ox14-c000051",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00384"
+    },
+    {
+      "candidate_id": "ox14-c000052",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00385"
+    },
+    {
+      "candidate_id": "ox14-c000053",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00386"
+    },
+    {
+      "candidate_id": "ox14-c000054",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00387"
+    },
+    {
+      "candidate_id": "ox14-c000055",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00388"
+    },
+    {
+      "candidate_id": "ox14-c000056",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00389"
+    },
+    {
+      "candidate_id": "ox14-c000057",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00390"
+    },
+    {
+      "candidate_id": "ox14-c000058",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00391"
+    },
+    {
+      "candidate_id": "ox14-c000059",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00392"
+    },
+    {
+      "candidate_id": "ox14-c000060",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00393"
+    },
+    {
+      "candidate_id": "ox14-c000061",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00394"
+    },
+    {
+      "candidate_id": "ox14-c000062",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00395"
+    },
+    {
+      "candidate_id": "ox14-c000063",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00467"
+    },
+    {
+      "candidate_id": "ox14-c000064",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00468"
+    },
+    {
+      "candidate_id": "ox14-c000065",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00469"
+    },
+    {
+      "candidate_id": "ox14-c000066",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00470"
+    },
+    {
+      "candidate_id": "ox14-c000067",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00471"
+    },
+    {
+      "candidate_id": "ox14-c000068",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00472"
+    },
+    {
+      "candidate_id": "ox14-c000069",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00473"
+    },
+    {
+      "candidate_id": "ox14-c000070",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00474"
+    },
+    {
+      "candidate_id": "ox14-c000071",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00475"
+    },
+    {
+      "candidate_id": "ox14-c000072",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00476"
+    },
+    {
+      "candidate_id": "ox14-c000073",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00477"
+    },
+    {
+      "candidate_id": "ox14-c000074",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00478"
+    },
+    {
+      "candidate_id": "ox14-c000075",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00479"
+    },
+    {
+      "candidate_id": "ox14-c000076",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00492"
+    },
+    {
+      "candidate_id": "ox14-c000077",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00493"
+    },
+    {
+      "candidate_id": "ox14-c000078",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00541"
+    },
+    {
+      "candidate_id": "ox14-c000079",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00542"
+    },
+    {
+      "candidate_id": "ox14-c000081",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00544"
+    },
+    {
+      "candidate_id": "ox14-c000082",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00545"
+    },
+    {
+      "candidate_id": "ox14-c000083",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00546"
+    },
+    {
+      "candidate_id": "ox14-c000084",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00547"
+    },
+    {
+      "candidate_id": "ox14-c000085",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00548"
+    },
+    {
+      "candidate_id": "ox14-c000086",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00549"
+    },
+    {
+      "candidate_id": "ox14-c000087",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00550"
+    },
+    {
+      "candidate_id": "ox14-c000088",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00551"
+    },
+    {
+      "candidate_id": "ox14-c000089",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00552"
+    },
+    {
+      "candidate_id": "ox14-c000090",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00553"
+    },
+    {
+      "candidate_id": "ox14-c000091",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00554"
+    },
+    {
+      "candidate_id": "ox14-c000092",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00555"
+    },
+    {
+      "candidate_id": "ox14-c000093",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00556"
+    },
+    {
+      "candidate_id": "ox14-c000094",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00557"
+    },
+    {
+      "candidate_id": "ox14-c000095",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00642"
+    },
+    {
+      "candidate_id": "ox14-c000096",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00643"
+    },
+    {
+      "candidate_id": "ox14-c000097",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00644"
+    },
+    {
+      "candidate_id": "ox14-c000098",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00645"
+    },
+    {
+      "candidate_id": "ox14-c000099",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00646"
+    },
+    {
+      "candidate_id": "ox14-c000100",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00647"
+    },
+    {
+      "candidate_id": "ox14-c000101",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00648"
+    },
+    {
+      "candidate_id": "ox14-c000102",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00649"
+    },
+    {
+      "candidate_id": "ox14-c000103",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00650"
+    },
+    {
+      "candidate_id": "ox14-c000104",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00651"
+    },
+    {
+      "candidate_id": "ox14-c000105",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00656"
+    },
+    {
+      "candidate_id": "ox14-c000106",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00711"
+    },
+    {
+      "candidate_id": "ox14-c000107",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00712"
+    },
+    {
+      "candidate_id": "ox14-c000108",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00713"
+    },
+    {
+      "candidate_id": "ox14-c000109",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00714"
+    },
+    {
+      "candidate_id": "ox14-c000110",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00715"
+    },
+    {
+      "candidate_id": "ox14-c000111",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00716"
+    },
+    {
+      "candidate_id": "ox14-c000112",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00717"
+    },
+    {
+      "candidate_id": "ox14-c000113",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00718"
+    },
+    {
+      "candidate_id": "ox14-c000114",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00719"
+    },
+    {
+      "candidate_id": "ox14-c000115",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00720"
+    },
+    {
+      "candidate_id": "ox14-c000116",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00721"
+    },
+    {
+      "candidate_id": "ox14-c000117",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00722"
+    },
+    {
+      "candidate_id": "ox14-c000118",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00723"
+    },
+    {
+      "candidate_id": "ox14-c000119",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00724"
+    },
+    {
+      "candidate_id": "ox14-c000120",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00725"
+    },
+    {
+      "candidate_id": "ox14-c000121",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00726"
+    },
+    {
+      "candidate_id": "ox14-c000122",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00727"
+    },
+    {
+      "candidate_id": "ox14-c000123",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00728"
+    },
+    {
+      "candidate_id": "ox14-c000124",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00729"
+    },
+    {
+      "candidate_id": "ox14-c000125",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00730"
+    },
+    {
+      "candidate_id": "ox14-c000126",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00737"
+    },
+    {
+      "candidate_id": "ox14-c000127",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00799"
+    },
+    {
+      "candidate_id": "ox14-c000128",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00800"
+    },
+    {
+      "candidate_id": "ox14-c000129",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00801"
+    },
+    {
+      "candidate_id": "ox14-c000130",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00802"
+    },
+    {
+      "candidate_id": "ox14-c000131",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00803"
+    },
+    {
+      "candidate_id": "ox14-c000132",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00804"
+    },
+    {
+      "candidate_id": "ox14-c000133",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00805"
+    },
+    {
+      "candidate_id": "ox14-c000134",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00806"
+    },
+    {
+      "candidate_id": "ox14-c000135",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00807"
+    },
+    {
+      "candidate_id": "ox14-c000136",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00808"
+    },
+    {
+      "candidate_id": "ox14-c000137",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00809"
+    },
+    {
+      "candidate_id": "ox14-c000138",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00810"
+    },
+    {
+      "candidate_id": "ox14-c000139",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00811"
+    },
+    {
+      "candidate_id": "ox14-c000140",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00812"
+    },
+    {
+      "candidate_id": "ox14-c000141",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest00813"
+    },
+    {
+      "candidate_id": "ox14-c000142",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest00822"
+    },
+    {
+      "candidate_id": "ox14-c000159",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01046"
+    },
+    {
+      "candidate_id": "ox14-c000160",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01047"
+    },
+    {
+      "candidate_id": "ox14-c000161",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01048"
+    },
+    {
+      "candidate_id": "ox14-c000162",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01049"
+    },
+    {
+      "candidate_id": "ox14-c000163",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01050"
+    },
+    {
+      "candidate_id": "ox14-c000164",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01051"
+    },
+    {
+      "candidate_id": "ox14-c000165",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01052"
+    },
+    {
+      "candidate_id": "ox14-c000167",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01054"
+    },
+    {
+      "candidate_id": "ox14-c000168",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01055"
+    },
+    {
+      "candidate_id": "ox14-c000169",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01056"
+    },
+    {
+      "candidate_id": "ox14-c000170",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01057"
+    },
+    {
+      "candidate_id": "ox14-c000171",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01063"
+    },
+    {
+      "candidate_id": "ox14-c000172",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01171"
+    },
+    {
+      "candidate_id": "ox14-c000173",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01172"
+    },
+    {
+      "candidate_id": "ox14-c000174",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01173"
+    },
+    {
+      "candidate_id": "ox14-c000175",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01174"
+    },
+    {
+      "candidate_id": "ox14-c000177",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01176"
+    },
+    {
+      "candidate_id": "ox14-c000178",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01177"
+    },
+    {
+      "candidate_id": "ox14-c000179",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01178"
+    },
+    {
+      "candidate_id": "ox14-c000181",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01180"
+    },
+    {
+      "candidate_id": "ox14-c000182",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01181"
+    },
+    {
+      "candidate_id": "ox14-c000183",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01188"
+    },
+    {
+      "candidate_id": "ox14-c000184",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01251"
+    },
+    {
+      "candidate_id": "ox14-c000185",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01252"
+    },
+    {
+      "candidate_id": "ox14-c000186",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01253"
+    },
+    {
+      "candidate_id": "ox14-c000188",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01255"
+    },
+    {
+      "candidate_id": "ox14-c000189",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01256"
+    },
+    {
+      "candidate_id": "ox14-c000190",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01257"
+    },
+    {
+      "candidate_id": "ox14-c000191",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01258"
+    },
+    {
+      "candidate_id": "ox14-c000192",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01259"
+    },
+    {
+      "candidate_id": "ox14-c000193",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01260"
+    },
+    {
+      "candidate_id": "ox14-c000194",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01261"
+    },
+    {
+      "candidate_id": "ox14-c000195",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01262"
+    },
+    {
+      "candidate_id": "ox14-c000196",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01263"
+    },
+    {
+      "candidate_id": "ox14-c000197",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01264"
+    },
+    {
+      "candidate_id": "ox14-c000198",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01265"
+    },
+    {
+      "candidate_id": "ox14-c000199",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01266"
+    },
+    {
+      "candidate_id": "ox14-c000200",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01267"
+    },
+    {
+      "candidate_id": "ox14-c000201",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01268"
+    },
+    {
+      "candidate_id": "ox14-c000202",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01284"
+    },
+    {
+      "candidate_id": "ox14-c000203",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01335"
+    },
+    {
+      "candidate_id": "ox14-c000204",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01336"
+    },
+    {
+      "candidate_id": "ox14-c000205",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01337"
+    },
+    {
+      "candidate_id": "ox14-c000207",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01339"
+    },
+    {
+      "candidate_id": "ox14-c000208",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01340"
+    },
+    {
+      "candidate_id": "ox14-c000209",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01341"
+    },
+    {
+      "candidate_id": "ox14-c000210",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01342"
+    },
+    {
+      "candidate_id": "ox14-c000211",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01343"
+    },
+    {
+      "candidate_id": "ox14-c000212",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01344"
+    },
+    {
+      "candidate_id": "ox14-c000214",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01346"
+    },
+    {
+      "candidate_id": "ox14-c000215",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01347"
+    },
+    {
+      "candidate_id": "ox14-c000216",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01348"
+    },
+    {
+      "candidate_id": "ox14-c000217",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01349"
+    },
+    {
+      "candidate_id": "ox14-c000218",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01350"
+    },
+    {
+      "candidate_id": "ox14-c000219",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01351"
+    },
+    {
+      "candidate_id": "ox14-c000220",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01352"
+    },
+    {
+      "candidate_id": "ox14-c000221",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01417"
+    },
+    {
+      "candidate_id": "ox14-c000222",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01418"
+    },
+    {
+      "candidate_id": "ox14-c000223",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01419"
+    },
+    {
+      "candidate_id": "ox14-c000224",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01420"
+    },
+    {
+      "candidate_id": "ox14-c000225",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01421"
+    },
+    {
+      "candidate_id": "ox14-c000226",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01422"
+    },
+    {
+      "candidate_id": "ox14-c000227",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01423"
+    },
+    {
+      "candidate_id": "ox14-c000228",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01424"
+    },
+    {
+      "candidate_id": "ox14-c000229",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01425"
+    },
+    {
+      "candidate_id": "ox14-c000230",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01426"
+    },
+    {
+      "candidate_id": "ox14-c000231",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01427"
+    },
+    {
+      "candidate_id": "ox14-c000232",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01428"
+    },
+    {
+      "candidate_id": "ox14-c000233",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01429"
+    },
+    {
+      "candidate_id": "ox14-c000234",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01437"
+    },
+    {
+      "candidate_id": "ox14-c000235",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01438"
+    },
+    {
+      "candidate_id": "ox14-c000236",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01439"
+    },
+    {
+      "candidate_id": "ox14-c000237",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01505"
+    },
+    {
+      "candidate_id": "ox14-c000238",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01506"
+    },
+    {
+      "candidate_id": "ox14-c000239",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01507"
+    },
+    {
+      "candidate_id": "ox14-c000241",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01509"
+    },
+    {
+      "candidate_id": "ox14-c000242",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01510"
+    },
+    {
+      "candidate_id": "ox14-c000243",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01511"
+    },
+    {
+      "candidate_id": "ox14-c000244",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01512"
+    },
+    {
+      "candidate_id": "ox14-c000245",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01513"
+    },
+    {
+      "candidate_id": "ox14-c000246",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01514"
+    },
+    {
+      "candidate_id": "ox14-c000247",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01515"
+    },
+    {
+      "candidate_id": "ox14-c000248",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01525"
+    },
+    {
+      "candidate_id": "ox14-c000249",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01583"
+    },
+    {
+      "candidate_id": "ox14-c000250",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01584"
+    },
+    {
+      "candidate_id": "ox14-c000251",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01585"
+    },
+    {
+      "candidate_id": "ox14-c000252",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01586"
+    },
+    {
+      "candidate_id": "ox14-c000253",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01587"
+    },
+    {
+      "candidate_id": "ox14-c000254",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01588"
+    },
+    {
+      "candidate_id": "ox14-c000255",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01589"
+    },
+    {
+      "candidate_id": "ox14-c000256",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01590"
+    },
+    {
+      "candidate_id": "ox14-c000258",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01592"
+    },
+    {
+      "candidate_id": "ox14-c000259",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01593"
+    },
+    {
+      "candidate_id": "ox14-c000260",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01594"
+    },
+    {
+      "candidate_id": "ox14-c000261",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01595"
+    },
+    {
+      "candidate_id": "ox14-c000262",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01596"
+    },
+    {
+      "candidate_id": "ox14-c000263",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01597"
+    },
+    {
+      "candidate_id": "ox14-c000264",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01598"
+    },
+    {
+      "candidate_id": "ox14-c000265",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01599"
+    },
+    {
+      "candidate_id": "ox14-c000266",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01657"
+    },
+    {
+      "candidate_id": "ox14-c000267",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01658"
+    },
+    {
+      "candidate_id": "ox14-c000268",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01659"
+    },
+    {
+      "candidate_id": "ox14-c000269",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01660"
+    },
+    {
+      "candidate_id": "ox14-c000270",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01661"
+    },
+    {
+      "candidate_id": "ox14-c000271",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01662"
+    },
+    {
+      "candidate_id": "ox14-c000272",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01663"
+    },
+    {
+      "candidate_id": "ox14-c000273",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01664"
+    },
+    {
+      "candidate_id": "ox14-c000274",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01665"
+    },
+    {
+      "candidate_id": "ox14-c000275",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01666"
+    },
+    {
+      "candidate_id": "ox14-c000277",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01668"
+    },
+    {
+      "candidate_id": "ox14-c000278",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01669"
+    },
+    {
+      "candidate_id": "ox14-c000293",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01914"
+    },
+    {
+      "candidate_id": "ox14-c000294",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01915"
+    },
+    {
+      "candidate_id": "ox14-c000295",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01916"
+    },
+    {
+      "candidate_id": "ox14-c000296",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01917"
+    },
+    {
+      "candidate_id": "ox14-c000297",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01918"
+    },
+    {
+      "candidate_id": "ox14-c000298",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01919"
+    },
+    {
+      "candidate_id": "ox14-c000299",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01920"
+    },
+    {
+      "candidate_id": "ox14-c000300",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01921"
+    },
+    {
+      "candidate_id": "ox14-c000301",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01922"
+    },
+    {
+      "candidate_id": "ox14-c000302",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01923"
+    },
+    {
+      "candidate_id": "ox14-c000303",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest01924"
+    },
+    {
+      "candidate_id": "ox14-c000304",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01925"
+    },
+    {
+      "candidate_id": "ox14-c000305",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01926"
+    },
+    {
+      "candidate_id": "ox14-c000306",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest01927"
+    },
+    {
+      "candidate_id": "ox14-c000307",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02045"
+    },
+    {
+      "candidate_id": "ox14-c000308",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02046"
+    },
+    {
+      "candidate_id": "ox14-c000309",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02047"
+    },
+    {
+      "candidate_id": "ox14-c000310",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02048"
+    },
+    {
+      "candidate_id": "ox14-c000311",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02049"
+    },
+    {
+      "candidate_id": "ox14-c000312",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02050"
+    },
+    {
+      "candidate_id": "ox14-c000313",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02051"
+    },
+    {
+      "candidate_id": "ox14-c000314",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02052"
+    },
+    {
+      "candidate_id": "ox14-c000315",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02053"
+    },
+    {
+      "candidate_id": "ox14-c000316",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02054"
+    },
+    {
+      "candidate_id": "ox14-c000317",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02055"
+    },
+    {
+      "candidate_id": "ox14-c000318",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02056"
+    },
+    {
+      "candidate_id": "ox14-c000319",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02057"
+    },
+    {
+      "candidate_id": "ox14-c000320",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02122"
+    },
+    {
+      "candidate_id": "ox14-c000321",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02123"
+    },
+    {
+      "candidate_id": "ox14-c000322",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02124"
+    },
+    {
+      "candidate_id": "ox14-c000323",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02125"
+    },
+    {
+      "candidate_id": "ox14-c000324",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02126"
+    },
+    {
+      "candidate_id": "ox14-c000326",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02128"
+    },
+    {
+      "candidate_id": "ox14-c000327",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02129"
+    },
+    {
+      "candidate_id": "ox14-c000328",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02130"
+    },
+    {
+      "candidate_id": "ox14-c000329",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02131"
+    },
+    {
+      "candidate_id": "ox14-c000330",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02132"
+    },
+    {
+      "candidate_id": "ox14-c000331",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02133"
+    },
+    {
+      "candidate_id": "ox14-c000332",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02134"
+    },
+    {
+      "candidate_id": "ox14-c000333",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02135"
+    },
+    {
+      "candidate_id": "ox14-c000334",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02136"
+    },
+    {
+      "candidate_id": "ox14-c000335",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02145"
+    },
+    {
+      "candidate_id": "ox14-c000336",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02221"
+    },
+    {
+      "candidate_id": "ox14-c000337",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02222"
+    },
+    {
+      "candidate_id": "ox14-c000339",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02224"
+    },
+    {
+      "candidate_id": "ox14-c000340",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02225"
+    },
+    {
+      "candidate_id": "ox14-c000341",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02226"
+    },
+    {
+      "candidate_id": "ox14-c000342",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02227"
+    },
+    {
+      "candidate_id": "ox14-c000343",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02228"
+    },
+    {
+      "candidate_id": "ox14-c000344",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02229"
+    },
+    {
+      "candidate_id": "ox14-c000346",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02231"
+    },
+    {
+      "candidate_id": "ox14-c000347",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02232"
+    },
+    {
+      "candidate_id": "ox14-c000348",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02233"
+    },
+    {
+      "candidate_id": "ox14-c000349",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02234"
+    },
+    {
+      "candidate_id": "ox14-c000350",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02235"
+    },
+    {
+      "candidate_id": "ox14-c000351",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02236"
+    },
+    {
+      "candidate_id": "ox14-c000352",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02237"
+    },
+    {
+      "candidate_id": "ox14-c000353",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02238"
+    },
+    {
+      "candidate_id": "ox14-c000354",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02239"
+    },
+    {
+      "candidate_id": "ox14-c000355",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02240"
+    },
+    {
+      "candidate_id": "ox14-c000356",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02241"
+    },
+    {
+      "candidate_id": "ox14-c000357",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02313"
+    },
+    {
+      "candidate_id": "ox14-c000358",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02314"
+    },
+    {
+      "candidate_id": "ox14-c000359",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02315"
+    },
+    {
+      "candidate_id": "ox14-c000361",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02317"
+    },
+    {
+      "candidate_id": "ox14-c000362",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02318"
+    },
+    {
+      "candidate_id": "ox14-c000363",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02319"
+    },
+    {
+      "candidate_id": "ox14-c000365",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02321"
+    },
+    {
+      "candidate_id": "ox14-c000366",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02322"
+    },
+    {
+      "candidate_id": "ox14-c000367",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02323"
+    },
+    {
+      "candidate_id": "ox14-c000368",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02324"
+    },
+    {
+      "candidate_id": "ox14-c000369",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02325"
+    },
+    {
+      "candidate_id": "ox14-c000370",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02326"
+    },
+    {
+      "candidate_id": "ox14-c000371",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02327"
+    },
+    {
+      "candidate_id": "ox14-c000372",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02328"
+    },
+    {
+      "candidate_id": "ox14-c000373",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02329"
+    },
+    {
+      "candidate_id": "ox14-c000374",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02330"
+    },
+    {
+      "candidate_id": "ox14-c000376",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02332"
+    },
+    {
+      "candidate_id": "ox14-c000377",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02394"
+    },
+    {
+      "candidate_id": "ox14-c000378",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02395"
+    },
+    {
+      "candidate_id": "ox14-c000379",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02396"
+    },
+    {
+      "candidate_id": "ox14-c000380",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02397"
+    },
+    {
+      "candidate_id": "ox14-c000381",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02398"
+    },
+    {
+      "candidate_id": "ox14-c000382",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02399"
+    },
+    {
+      "candidate_id": "ox14-c000383",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02400"
+    },
+    {
+      "candidate_id": "ox14-c000384",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02401"
+    },
+    {
+      "candidate_id": "ox14-c000385",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02402"
+    },
+    {
+      "candidate_id": "ox14-c000386",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02403"
+    },
+    {
+      "candidate_id": "ox14-c000387",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02404"
+    },
+    {
+      "candidate_id": "ox14-c000388",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02405"
+    },
+    {
+      "candidate_id": "ox14-c000389",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02406"
+    },
+    {
+      "candidate_id": "ox14-c000390",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02407"
+    },
+    {
+      "candidate_id": "ox14-c000391",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02408"
+    },
+    {
+      "candidate_id": "ox14-c000392",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02409"
+    },
+    {
+      "candidate_id": "ox14-c000393",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02410"
+    },
+    {
+      "candidate_id": "ox14-c000394",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02480"
+    },
+    {
+      "candidate_id": "ox14-c000395",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02481"
+    },
+    {
+      "candidate_id": "ox14-c000396",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02482"
+    },
+    {
+      "candidate_id": "ox14-c000397",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02483"
+    },
+    {
+      "candidate_id": "ox14-c000398",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02484"
+    },
+    {
+      "candidate_id": "ox14-c000399",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02485"
+    },
+    {
+      "candidate_id": "ox14-c000400",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02486"
+    },
+    {
+      "candidate_id": "ox14-c000401",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02487"
+    },
+    {
+      "candidate_id": "ox14-c000402",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02488"
+    },
+    {
+      "candidate_id": "ox14-c000403",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02489"
+    },
+    {
+      "candidate_id": "ox14-c000404",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02490"
+    },
+    {
+      "candidate_id": "ox14-c000405",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02491"
+    },
+    {
+      "candidate_id": "ox14-c000406",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02492"
+    },
+    {
+      "candidate_id": "ox14-c000407",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02493"
+    },
+    {
+      "candidate_id": "ox14-c000408",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02494"
+    },
+    {
+      "candidate_id": "ox14-c000409",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02495"
+    },
+    {
+      "candidate_id": "ox14-c000410",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02509"
+    },
+    {
+      "candidate_id": "ox14-c000411",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02578"
+    },
+    {
+      "candidate_id": "ox14-c000412",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02579"
+    },
+    {
+      "candidate_id": "ox14-c000413",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02580"
+    },
+    {
+      "candidate_id": "ox14-c000414",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02581"
+    },
+    {
+      "candidate_id": "ox14-c000415",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02582"
+    },
+    {
+      "candidate_id": "ox14-c000416",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02583"
+    },
+    {
+      "candidate_id": "ox14-c000417",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02584"
+    },
+    {
+      "candidate_id": "ox14-c000418",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02585"
+    },
+    {
+      "candidate_id": "ox14-c000419",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02586"
+    },
+    {
+      "candidate_id": "ox14-c000420",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02587"
+    },
+    {
+      "candidate_id": "ox14-c000421",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02588"
+    },
+    {
+      "candidate_id": "ox14-c000422",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02589"
+    },
+    {
+      "candidate_id": "ox14-c000423",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02590"
+    },
+    {
+      "candidate_id": "ox14-c000424",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02591"
+    },
+    {
+      "candidate_id": "ox14-c000425",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02592"
+    },
+    {
+      "candidate_id": "ox14-c000426",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02593"
+    },
+    {
+      "candidate_id": "ox14-c000427",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02594"
+    },
+    {
+      "candidate_id": "ox14-c000428",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02595"
+    },
+    {
+      "candidate_id": "ox14-c000429",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02596"
+    },
+    {
+      "candidate_id": "ox14-c000430",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02597"
+    },
+    {
+      "candidate_id": "ox14-c000431",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02598"
+    },
+    {
+      "candidate_id": "ox14-c000432",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02599"
+    },
+    {
+      "candidate_id": "ox14-c000433",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02600"
+    },
+    {
+      "candidate_id": "ox14-c000434",
+      "expected_result": "non_vulnerable",
+      "original_case_id": "BenchmarkTest02601"
+    },
+    {
+      "candidate_id": "ox14-c000435",
+      "expected_result": "vulnerable",
+      "original_case_id": "BenchmarkTest02608"
+    }
+  ],
+  "load_policy": "May be loaded only after scored execution is complete.",
+  "negative_only_scenarios": 30,
+  "positive_scenarios": 236,
+  "scenarios": [
+    {
+      "candidate_ids": [
+        "ox14-c000348",
+        "ox14-c000227",
+        "ox14-c000189",
+        "ox14-c000236",
+        "ox14-c000030"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000227",
+      "scenario_id": "ow14-s0001",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000426",
+        "ox14-c000083",
+        "ox14-c000222",
+        "ox14-c000209",
+        "ox14-c000341"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000222",
+      "scenario_id": "ow14-s0002",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000259",
+        "ox14-c000326",
+        "ox14-c000184",
+        "ox14-c000333",
+        "ox14-c000254"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000326",
+      "scenario_id": "ow14-s0003",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000055",
+        "ox14-c000229",
+        "ox14-c000355",
+        "ox14-c000278",
+        "ox14-c000031"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000055",
+      "scenario_id": "ow14-s0004",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000294",
+        "ox14-c000204",
+        "ox14-c000065",
+        "ox14-c000125",
+        "ox14-c000098"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000098",
+      "scenario_id": "ow14-s0005",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000164",
+        "ox14-c000044",
+        "ox14-c000334",
+        "ox14-c000066",
+        "ox14-c000409"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000334",
+      "scenario_id": "ow14-s0006",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000208",
+        "ox14-c000112",
+        "ox14-c000261",
+        "ox14-c000432",
+        "ox14-c000255"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000255",
+      "scenario_id": "ow14-s0007",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000362",
+        "ox14-c000310",
+        "ox14-c000414",
+        "ox14-c000224",
+        "ox14-c000173"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000173",
+      "scenario_id": "ow14-s0008",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000402",
+        "ox14-c000210",
+        "ox14-c000063",
+        "ox14-c000391",
+        "ox14-c000036"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000063",
+      "scenario_id": "ow14-s0009",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000225",
+        "ox14-c000320",
+        "ox14-c000252",
+        "ox14-c000349",
+        "ox14-c000067"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000349",
+      "scenario_id": "ow14-s0010",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000329",
+        "ox14-c000369",
+        "ox14-c000165",
+        "ox14-c000140",
+        "ox14-c000090"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000329",
+      "scenario_id": "ow14-s0011",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000244",
+        "ox14-c000072",
+        "ox14-c000265",
+        "ox14-c000081",
+        "ox14-c000389"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000244",
+      "scenario_id": "ow14-s0012",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000323",
+        "ox14-c000246",
+        "ox14-c000380",
+        "ox14-c000211",
+        "ox14-c000046"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000380",
+      "scenario_id": "ow14-s0013",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000025",
+        "ox14-c000108",
+        "ox14-c000181",
+        "ox14-c000068",
+        "ox14-c000121"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000068",
+      "scenario_id": "ow14-s0014",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000197",
+        "ox14-c000012",
+        "ox14-c000415",
+        "ox14-c000058",
+        "ox14-c000037"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000415",
+      "scenario_id": "ow14-s0015",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000110",
+        "ox14-c000245",
+        "ox14-c000354",
+        "ox14-c000270",
+        "ox14-c000374"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000110",
+      "scenario_id": "ow14-s0016",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000087",
+        "ox14-c000075",
+        "ox14-c000322",
+        "ox14-c000127",
+        "ox14-c000033"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000322",
+      "scenario_id": "ow14-s0017",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000406",
+        "ox14-c000352",
+        "ox14-c000277",
+        "ox14-c000262",
+        "ox14-c000297"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000262",
+      "scenario_id": "ow14-s0018",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000357",
+        "ox14-c000183",
+        "ox14-c000193",
+        "ox14-c000113",
+        "ox14-c000060"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000193",
+      "scenario_id": "ow14-s0019",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000097",
+        "ox14-c000103",
+        "ox14-c000398",
+        "ox14-c000381",
+        "ox14-c000293"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000097",
+      "scenario_id": "ow14-s0020",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000373",
+        "ox14-c000422",
+        "ox14-c000400",
+        "ox14-c000093",
+        "ox14-c000107"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000400",
+      "scenario_id": "ow14-s0021",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000237",
+        "ox14-c000337",
+        "ox14-c000053",
+        "ox14-c000350",
+        "ox14-c000427"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000237",
+      "scenario_id": "ow14-s0022",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000016",
+        "ox14-c000344",
+        "ox14-c000384",
+        "ox14-c000216",
+        "ox14-c000122"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000122",
+      "scenario_id": "ow14-s0023",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000207",
+        "ox14-c000268",
+        "ox14-c000356",
+        "ox14-c000220",
+        "ox14-c000177"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000356",
+      "scenario_id": "ow14-s0024",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000026",
+        "ox14-c000061",
+        "ox14-c000434",
+        "ox14-c000314",
+        "ox14-c000309"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000309",
+      "scenario_id": "ow14-s0025",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000109",
+        "ox14-c000219",
+        "ox14-c000273",
+        "ox14-c000242",
+        "ox14-c000034"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000242",
+      "scenario_id": "ow14-s0026",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000405",
+        "ox14-c000303",
+        "ox14-c000101",
+        "ox14-c000363",
+        "ox14-c000241"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000241",
+      "scenario_id": "ow14-s0027",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000091",
+        "ox14-c000100",
+        "ox14-c000226",
+        "ox14-c000111",
+        "ox14-c000064"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000091",
+      "scenario_id": "ow14-s0028",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000212",
+        "ox14-c000387",
+        "ox14-c000048",
+        "ox14-c000141",
+        "ox14-c000057"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000057",
+      "scenario_id": "ow14-s0029",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000082",
+        "ox14-c000423",
+        "ox14-c000399",
+        "ox14-c000251",
+        "ox14-c000049"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000049",
+      "scenario_id": "ow14-s0030",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000410",
+        "ox14-c000085",
+        "ox14-c000296",
+        "ox14-c000069",
+        "ox14-c000077"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000069",
+      "scenario_id": "ow14-s0031",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000132",
+        "ox14-c000118",
+        "ox14-c000395",
+        "ox14-c000353",
+        "ox14-c000223"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000132",
+      "scenario_id": "ow14-s0032",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000311",
+        "ox14-c000394",
+        "ox14-c000315",
+        "ox14-c000307",
+        "ox14-c000188"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000394",
+      "scenario_id": "ow14-s0033",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000161",
+        "ox14-c000167",
+        "ox14-c000027",
+        "ox14-c000404",
+        "ox14-c000351"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000027",
+      "scenario_id": "ow14-s0034",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000029",
+        "ox14-c000272",
+        "ox14-c000429",
+        "ox14-c000117",
+        "ox14-c000217"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000217",
+      "scenario_id": "ow14-s0035",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000377",
+        "ox14-c000089",
+        "ox14-c000346",
+        "ox14-c000185",
+        "ox14-c000136"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000089",
+      "scenario_id": "ow14-s0036",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000247",
+        "ox14-c000070",
+        "ox14-c000198",
+        "ox14-c000190",
+        "ox14-c000396"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000190",
+      "scenario_id": "ow14-s0037",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000099",
+        "ox14-c000056",
+        "ox14-c000023",
+        "ox14-c000171",
+        "ox14-c000102"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000171",
+      "scenario_id": "ow14-s0038",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000348",
+        "ox14-c000030",
+        "ox14-c000236",
+        "ox14-c000305",
+        "ox14-c000189"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000305",
+      "scenario_id": "ow14-s0039",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000341",
+        "ox14-c000324",
+        "ox14-c000209",
+        "ox14-c000426",
+        "ox14-c000083"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000324",
+      "scenario_id": "ow14-s0040",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000184",
+        "ox14-c000327",
+        "ox14-c000254",
+        "ox14-c000259",
+        "ox14-c000333"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000327",
+      "scenario_id": "ow14-s0041",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000328",
+        "ox14-c000229",
+        "ox14-c000031",
+        "ox14-c000355",
+        "ox14-c000278"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000328",
+      "scenario_id": "ow14-s0042",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000125",
+        "ox14-c000204",
+        "ox14-c000065",
+        "ox14-c000200",
+        "ox14-c000294"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000200",
+      "scenario_id": "ow14-s0043",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000397",
+        "ox14-c000164",
+        "ox14-c000409",
+        "ox14-c000044",
+        "ox14-c000066"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000397",
+      "scenario_id": "ow14-s0044",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000174",
+        "ox14-c000432",
+        "ox14-c000112",
+        "ox14-c000208",
+        "ox14-c000261"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000174",
+      "scenario_id": "ow14-s0045",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000310",
+        "ox14-c000408",
+        "ox14-c000414",
+        "ox14-c000224",
+        "ox14-c000362"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000408",
+      "scenario_id": "ow14-s0046",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000036",
+        "ox14-c000210",
+        "ox14-c000134",
+        "ox14-c000402",
+        "ox14-c000391"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000134",
+      "scenario_id": "ow14-s0047",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000032",
+        "ox14-c000067",
+        "ox14-c000252",
+        "ox14-c000225",
+        "ox14-c000320"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000032",
+      "scenario_id": "ow14-s0048",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000140",
+        "ox14-c000165",
+        "ox14-c000090",
+        "ox14-c000186",
+        "ox14-c000369"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000186",
+      "scenario_id": "ow14-s0049",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000072",
+        "ox14-c000081",
+        "ox14-c000368",
+        "ox14-c000389",
+        "ox14-c000265"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000368",
+      "scenario_id": "ow14-s0050",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000246",
+        "ox14-c000046",
+        "ox14-c000234",
+        "ox14-c000323",
+        "ox14-c000211"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000234",
+      "scenario_id": "ow14-s0051",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000025",
+        "ox14-c000181",
+        "ox14-c000231",
+        "ox14-c000108",
+        "ox14-c000121"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000231",
+      "scenario_id": "ow14-s0052",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000012",
+        "ox14-c000037",
+        "ox14-c000042",
+        "ox14-c000197",
+        "ox14-c000058"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000042",
+      "scenario_id": "ow14-s0053",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000245",
+        "ox14-c000086",
+        "ox14-c000374",
+        "ox14-c000354",
+        "ox14-c000270"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000086",
+      "scenario_id": "ow14-s0054",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000127",
+        "ox14-c000228",
+        "ox14-c000087",
+        "ox14-c000033",
+        "ox14-c000075"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000228",
+      "scenario_id": "ow14-s0055",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000277",
+        "ox14-c000406",
+        "ox14-c000352",
+        "ox14-c000297",
+        "ox14-c000412"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000412",
+      "scenario_id": "ow14-s0056",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000113",
+        "ox14-c000060",
+        "ox14-c000357",
+        "ox14-c000092",
+        "ox14-c000183"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000092",
+      "scenario_id": "ow14-s0057",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000425",
+        "ox14-c000293",
+        "ox14-c000381",
+        "ox14-c000103",
+        "ox14-c000398"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000425",
+      "scenario_id": "ow14-s0058",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000093",
+        "ox14-c000373",
+        "ox14-c000422",
+        "ox14-c000107",
+        "ox14-c000129"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000129",
+      "scenario_id": "ow14-s0059",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000427",
+        "ox14-c000084",
+        "ox14-c000337",
+        "ox14-c000053",
+        "ox14-c000350"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000084",
+      "scenario_id": "ow14-s0060",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000384",
+        "ox14-c000016",
+        "ox14-c000344",
+        "ox14-c000002",
+        "ox14-c000216"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000002",
+      "scenario_id": "ow14-s0061",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000220",
+        "ox14-c000177",
+        "ox14-c000079",
+        "ox14-c000207",
+        "ox14-c000268"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000079",
+      "scenario_id": "ow14-s0062",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000314",
+        "ox14-c000026",
+        "ox14-c000417",
+        "ox14-c000061",
+        "ox14-c000434"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000417",
+      "scenario_id": "ow14-s0063",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000034",
+        "ox14-c000273",
+        "ox14-c000019",
+        "ox14-c000219",
+        "ox14-c000109"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000019",
+      "scenario_id": "ow14-s0064",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000405",
+        "ox14-c000101",
+        "ox14-c000363",
+        "ox14-c000347",
+        "ox14-c000303"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000347",
+      "scenario_id": "ow14-s0065",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000100",
+        "ox14-c000226",
+        "ox14-c000039",
+        "ox14-c000064",
+        "ox14-c000111"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000039",
+      "scenario_id": "ow14-s0066",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000212",
+        "ox14-c000385",
+        "ox14-c000048",
+        "ox14-c000141",
+        "ox14-c000387"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000385",
+      "scenario_id": "ow14-s0067",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000248",
+        "ox14-c000399",
+        "ox14-c000082",
+        "ox14-c000251",
+        "ox14-c000423"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000248",
+      "scenario_id": "ow14-s0068",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000296",
+        "ox14-c000410",
+        "ox14-c000077",
+        "ox14-c000179",
+        "ox14-c000085"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000179",
+      "scenario_id": "ow14-s0069",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000343",
+        "ox14-c000395",
+        "ox14-c000223",
+        "ox14-c000118",
+        "ox14-c000353"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000343",
+      "scenario_id": "ow14-s0070",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000311",
+        "ox14-c000116",
+        "ox14-c000307",
+        "ox14-c000315",
+        "ox14-c000188"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000116",
+      "scenario_id": "ow14-s0071",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000404",
+        "ox14-c000167",
+        "ox14-c000271",
+        "ox14-c000351",
+        "ox14-c000161"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000271",
+      "scenario_id": "ow14-s0072",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000304",
+        "ox14-c000272",
+        "ox14-c000429",
+        "ox14-c000029",
+        "ox14-c000117"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000304",
+      "scenario_id": "ow14-s0073",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000185",
+        "ox14-c000335",
+        "ox14-c000346",
+        "ox14-c000136",
+        "ox14-c000377"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000335",
+      "scenario_id": "ow14-s0074",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000198",
+        "ox14-c000070",
+        "ox14-c000104",
+        "ox14-c000396",
+        "ox14-c000247"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000104",
+      "scenario_id": "ow14-s0075",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000023",
+        "ox14-c000163",
+        "ox14-c000056",
+        "ox14-c000099",
+        "ox14-c000102"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000163",
+      "scenario_id": "ow14-s0076",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000030",
+        "ox14-c000189",
+        "ox14-c000054",
+        "ox14-c000236",
+        "ox14-c000348"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000054",
+      "scenario_id": "ow14-s0077",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000341",
+        "ox14-c000083",
+        "ox14-c000209",
+        "ox14-c000342",
+        "ox14-c000426"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000342",
+      "scenario_id": "ow14-s0078",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000254",
+        "ox14-c000340",
+        "ox14-c000259",
+        "ox14-c000184",
+        "ox14-c000333"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000340",
+      "scenario_id": "ow14-s0079",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000383",
+        "ox14-c000278",
+        "ox14-c000355",
+        "ox14-c000031",
+        "ox14-c000229"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000383",
+      "scenario_id": "ow14-s0080",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000125",
+        "ox14-c000065",
+        "ox14-c000435",
+        "ox14-c000294",
+        "ox14-c000204"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000435",
+      "scenario_id": "ow14-s0081",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000044",
+        "ox14-c000066",
+        "ox14-c000131",
+        "ox14-c000164",
+        "ox14-c000409"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000131",
+      "scenario_id": "ow14-s0082",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000208",
+        "ox14-c000432",
+        "ox14-c000301",
+        "ox14-c000261",
+        "ox14-c000112"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000301",
+      "scenario_id": "ow14-s0083",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000224",
+        "ox14-c000332",
+        "ox14-c000362",
+        "ox14-c000310",
+        "ox14-c000414"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000332",
+      "scenario_id": "ow14-s0084",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000402",
+        "ox14-c000036",
+        "ox14-c000210",
+        "ox14-c000391",
+        "ox14-c000264"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000264",
+      "scenario_id": "ow14-s0085",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000067",
+        "ox14-c000320",
+        "ox14-c000421",
+        "ox14-c000225",
+        "ox14-c000252"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000421",
+      "scenario_id": "ow14-s0086",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000165",
+        "ox14-c000090",
+        "ox14-c000319",
+        "ox14-c000140",
+        "ox14-c000369"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000319",
+      "scenario_id": "ow14-s0087",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000072",
+        "ox14-c000312",
+        "ox14-c000265",
+        "ox14-c000389",
+        "ox14-c000081"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000312",
+      "scenario_id": "ow14-s0088",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000323",
+        "ox14-c000046",
+        "ox14-c000367",
+        "ox14-c000211",
+        "ox14-c000246"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000367",
+      "scenario_id": "ow14-s0089",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000121",
+        "ox14-c000181",
+        "ox14-c000025",
+        "ox14-c000266",
+        "ox14-c000108"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000266",
+      "scenario_id": "ow14-s0090",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000040",
+        "ox14-c000058",
+        "ox14-c000012",
+        "ox14-c000197",
+        "ox14-c000037"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000040",
+      "scenario_id": "ow14-s0091",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000374",
+        "ox14-c000159",
+        "ox14-c000270",
+        "ox14-c000245",
+        "ox14-c000354"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000159",
+      "scenario_id": "ow14-s0092",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000033",
+        "ox14-c000075",
+        "ox14-c000336",
+        "ox14-c000087",
+        "ox14-c000127"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000336",
+      "scenario_id": "ow14-s0093",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000277",
+        "ox14-c000352",
+        "ox14-c000370",
+        "ox14-c000297",
+        "ox14-c000406"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000370",
+      "scenario_id": "ow14-s0094",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000357",
+        "ox14-c000183",
+        "ox14-c000113",
+        "ox14-c000060",
+        "ox14-c000133"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000133",
+      "scenario_id": "ow14-s0095",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000004",
+        "ox14-c000398",
+        "ox14-c000103",
+        "ox14-c000293",
+        "ox14-c000381"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000004",
+      "scenario_id": "ow14-s0096",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000074",
+        "ox14-c000093",
+        "ox14-c000373",
+        "ox14-c000422",
+        "ox14-c000107"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000074",
+      "scenario_id": "ow14-s0097",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000427",
+        "ox14-c000053",
+        "ox14-c000275",
+        "ox14-c000350",
+        "ox14-c000337"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000275",
+      "scenario_id": "ow14-s0098",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000344",
+        "ox14-c000384",
+        "ox14-c000428",
+        "ox14-c000016",
+        "ox14-c000216"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000428",
+      "scenario_id": "ow14-s0099",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000207",
+        "ox14-c000220",
+        "ox14-c000177",
+        "ox14-c000306",
+        "ox14-c000268"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000306",
+      "scenario_id": "ow14-s0100",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000314",
+        "ox14-c000434",
+        "ox14-c000026",
+        "ox14-c000061",
+        "ox14-c000007"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000007",
+      "scenario_id": "ow14-s0101",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000273",
+        "ox14-c000109",
+        "ox14-c000219",
+        "ox14-c000034",
+        "ox14-c000359"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000359",
+      "scenario_id": "ow14-s0102",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000405",
+        "ox14-c000269",
+        "ox14-c000101",
+        "ox14-c000363",
+        "ox14-c000303"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000269",
+      "scenario_id": "ow14-s0103",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000111",
+        "ox14-c000064",
+        "ox14-c000403",
+        "ox14-c000100",
+        "ox14-c000226"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000403",
+      "scenario_id": "ow14-s0104",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000212",
+        "ox14-c000003",
+        "ox14-c000387",
+        "ox14-c000048",
+        "ox14-c000141"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000003",
+      "scenario_id": "ow14-s0105",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000202",
+        "ox14-c000399",
+        "ox14-c000082",
+        "ox14-c000251",
+        "ox14-c000423"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000202",
+      "scenario_id": "ow14-s0106",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000410",
+        "ox14-c000085",
+        "ox14-c000430",
+        "ox14-c000077",
+        "ox14-c000296"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000430",
+      "scenario_id": "ow14-s0107",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000118",
+        "ox14-c000395",
+        "ox14-c000223",
+        "ox14-c000353",
+        "ox14-c000018"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000018",
+      "scenario_id": "ow14-s0108",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000307",
+        "ox14-c000020",
+        "ox14-c000315",
+        "ox14-c000311",
+        "ox14-c000188"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000020",
+      "scenario_id": "ow14-s0109",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000351",
+        "ox14-c000167",
+        "ox14-c000161",
+        "ox14-c000404",
+        "ox14-c000232"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000232",
+      "scenario_id": "ow14-s0110",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000029",
+        "ox14-c000117",
+        "ox14-c000429",
+        "ox14-c000119",
+        "ox14-c000272"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000119",
+      "scenario_id": "ow14-s0111",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000378",
+        "ox14-c000136",
+        "ox14-c000346",
+        "ox14-c000185",
+        "ox14-c000377"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000378",
+      "scenario_id": "ow14-s0112",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000094",
+        "ox14-c000396",
+        "ox14-c000198",
+        "ox14-c000070",
+        "ox14-c000247"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000094",
+      "scenario_id": "ow14-s0113",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000102",
+        "ox14-c000099",
+        "ox14-c000139",
+        "ox14-c000023",
+        "ox14-c000056"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000139",
+      "scenario_id": "ow14-s0114",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000189",
+        "ox14-c000006",
+        "ox14-c000348",
+        "ox14-c000236",
+        "ox14-c000030"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000006",
+      "scenario_id": "ow14-s0115",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000083",
+        "ox14-c000426",
+        "ox14-c000120",
+        "ox14-c000341",
+        "ox14-c000209"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000120",
+      "scenario_id": "ow14-s0116",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000333",
+        "ox14-c000184",
+        "ox14-c000259",
+        "ox14-c000221",
+        "ox14-c000254"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000221",
+      "scenario_id": "ow14-s0117",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000031",
+        "ox14-c000355",
+        "ox14-c000010",
+        "ox14-c000229",
+        "ox14-c000278"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000010",
+      "scenario_id": "ow14-s0118",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000294",
+        "ox14-c000204",
+        "ox14-c000125",
+        "ox14-c000169",
+        "ox14-c000065"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000169",
+      "scenario_id": "ow14-s0119",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000409",
+        "ox14-c000164",
+        "ox14-c000050",
+        "ox14-c000044",
+        "ox14-c000066"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000050",
+      "scenario_id": "ow14-s0120",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000208",
+        "ox14-c000112",
+        "ox14-c000261",
+        "ox14-c000214",
+        "ox14-c000432"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000214",
+      "scenario_id": "ow14-s0121",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000224",
+        "ox14-c000414",
+        "ox14-c000362",
+        "ox14-c000256",
+        "ox14-c000310"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000256",
+      "scenario_id": "ow14-s0122",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000391",
+        "ox14-c000036",
+        "ox14-c000402",
+        "ox14-c000210",
+        "ox14-c000199"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000199",
+      "scenario_id": "ow14-s0123",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000225",
+        "ox14-c000067",
+        "ox14-c000252",
+        "ox14-c000160",
+        "ox14-c000320"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000160",
+      "scenario_id": "ow14-s0124",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000393",
+        "ox14-c000369",
+        "ox14-c000140",
+        "ox14-c000090",
+        "ox14-c000165"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000393",
+      "scenario_id": "ow14-s0125",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000081",
+        "ox14-c000072",
+        "ox14-c000265",
+        "ox14-c000366",
+        "ox14-c000389"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000366",
+      "scenario_id": "ow14-s0126",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000246",
+        "ox14-c000211",
+        "ox14-c000323",
+        "ox14-c000114",
+        "ox14-c000046"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000114",
+      "scenario_id": "ow14-s0127",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000025",
+        "ox14-c000418",
+        "ox14-c000108",
+        "ox14-c000181",
+        "ox14-c000121"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000418",
+      "scenario_id": "ow14-s0128",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000058",
+        "ox14-c000012",
+        "ox14-c000037",
+        "ox14-c000197",
+        "ox14-c000124"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000124",
+      "scenario_id": "ow14-s0129",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000270",
+        "ox14-c000245",
+        "ox14-c000354",
+        "ox14-c000339",
+        "ox14-c000374"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000339",
+      "scenario_id": "ow14-s0130",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000045",
+        "ox14-c000033",
+        "ox14-c000127",
+        "ox14-c000087",
+        "ox14-c000075"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000045",
+      "scenario_id": "ow14-s0131",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000382",
+        "ox14-c000352",
+        "ox14-c000406",
+        "ox14-c000297",
+        "ox14-c000277"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000382",
+      "scenario_id": "ow14-s0132",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000357",
+        "ox14-c000192",
+        "ox14-c000060",
+        "ox14-c000113",
+        "ox14-c000183"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000192",
+      "scenario_id": "ow14-s0133",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000358",
+        "ox14-c000103",
+        "ox14-c000381",
+        "ox14-c000293",
+        "ox14-c000398"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000358",
+      "scenario_id": "ow14-s0134",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000093",
+        "ox14-c000201",
+        "ox14-c000373",
+        "ox14-c000422",
+        "ox14-c000107"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000201",
+      "scenario_id": "ow14-s0135",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000300",
+        "ox14-c000427",
+        "ox14-c000337",
+        "ox14-c000350",
+        "ox14-c000053"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000300",
+      "scenario_id": "ow14-s0136",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000216",
+        "ox14-c000016",
+        "ox14-c000205",
+        "ox14-c000384",
+        "ox14-c000344"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000205",
+      "scenario_id": "ow14-s0137",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000321",
+        "ox14-c000220",
+        "ox14-c000177",
+        "ox14-c000268",
+        "ox14-c000207"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000321",
+      "scenario_id": "ow14-s0138",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000175",
+        "ox14-c000026",
+        "ox14-c000061",
+        "ox14-c000434",
+        "ox14-c000314"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000175",
+      "scenario_id": "ow14-s0139",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000109",
+        "ox14-c000273",
+        "ox14-c000137",
+        "ox14-c000034",
+        "ox14-c000219"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000137",
+      "scenario_id": "ow14-s0140",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000021",
+        "ox14-c000363",
+        "ox14-c000405",
+        "ox14-c000303",
+        "ox14-c000101"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000021",
+      "scenario_id": "ow14-s0141",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000226",
+        "ox14-c000064",
+        "ox14-c000100",
+        "ox14-c000111",
+        "ox14-c000170"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000170",
+      "scenario_id": "ow14-s0142",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000212",
+        "ox14-c000141",
+        "ox14-c000387",
+        "ox14-c000318",
+        "ox14-c000048"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000318",
+      "scenario_id": "ow14-s0143",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000251",
+        "ox14-c000423",
+        "ox14-c000399",
+        "ox14-c000194",
+        "ox14-c000082"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000194",
+      "scenario_id": "ow14-s0144",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000077",
+        "ox14-c000135",
+        "ox14-c000085",
+        "ox14-c000410",
+        "ox14-c000296"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000135",
+      "scenario_id": "ow14-s0145",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000353",
+        "ox14-c000223",
+        "ox14-c000118",
+        "ox14-c000052",
+        "ox14-c000395"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000052",
+      "scenario_id": "ow14-s0146",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000311",
+        "ox14-c000433",
+        "ox14-c000315",
+        "ox14-c000307",
+        "ox14-c000188"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000433",
+      "scenario_id": "ow14-s0147",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000167",
+        "ox14-c000161",
+        "ox14-c000243",
+        "ox14-c000404",
+        "ox14-c000351"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000243",
+      "scenario_id": "ow14-s0148",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000272",
+        "ox14-c000117",
+        "ox14-c000029",
+        "ox14-c000429",
+        "ox14-c000372"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000372",
+      "scenario_id": "ow14-s0149",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000377",
+        "ox14-c000346",
+        "ox14-c000136",
+        "ox14-c000267",
+        "ox14-c000185"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000267",
+      "scenario_id": "ow14-s0150",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000022",
+        "ox14-c000247",
+        "ox14-c000396",
+        "ox14-c000198",
+        "ox14-c000070"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000022",
+      "scenario_id": "ow14-s0151",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000099",
+        "ox14-c000056",
+        "ox14-c000102",
+        "ox14-c000017",
+        "ox14-c000023"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000017",
+      "scenario_id": "ow14-s0152",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000388",
+        "ox14-c000348",
+        "ox14-c000236",
+        "ox14-c000189",
+        "ox14-c000030"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000388",
+      "scenario_id": "ow14-s0153",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000341",
+        "ox14-c000209",
+        "ox14-c000073",
+        "ox14-c000426",
+        "ox14-c000083"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000073",
+      "scenario_id": "ow14-s0154",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000254",
+        "ox14-c000184",
+        "ox14-c000259",
+        "ox14-c000095",
+        "ox14-c000333"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000095",
+      "scenario_id": "ow14-s0155",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000047",
+        "ox14-c000229",
+        "ox14-c000355",
+        "ox14-c000278",
+        "ox14-c000031"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000047",
+      "scenario_id": "ow14-s0156",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000294",
+        "ox14-c000065",
+        "ox14-c000204",
+        "ox14-c000125",
+        "ox14-c000230"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000230",
+      "scenario_id": "ow14-s0157",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000164",
+        "ox14-c000066",
+        "ox14-c000043",
+        "ox14-c000044",
+        "ox14-c000409"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000043",
+      "scenario_id": "ow14-s0158",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000208",
+        "ox14-c000112",
+        "ox14-c000261",
+        "ox14-c000416",
+        "ox14-c000432"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000416",
+      "scenario_id": "ow14-s0159",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000414",
+        "ox14-c000310",
+        "ox14-c000224",
+        "ox14-c000362",
+        "ox14-c000196"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000196",
+      "scenario_id": "ow14-s0160",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000210",
+        "ox14-c000096",
+        "ox14-c000402",
+        "ox14-c000391",
+        "ox14-c000036"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000096",
+      "scenario_id": "ow14-s0161",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000320",
+        "ox14-c000225",
+        "ox14-c000413",
+        "ox14-c000067",
+        "ox14-c000252"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000413",
+      "scenario_id": "ow14-s0162",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000369",
+        "ox14-c000090",
+        "ox14-c000165",
+        "ox14-c000411",
+        "ox14-c000140"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000411",
+      "scenario_id": "ow14-s0163",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000081",
+        "ox14-c000389",
+        "ox14-c000072",
+        "ox14-c000265",
+        "ox14-c000386"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000386",
+      "scenario_id": "ow14-s0164",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000168",
+        "ox14-c000211",
+        "ox14-c000246",
+        "ox14-c000323",
+        "ox14-c000046"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000168",
+      "scenario_id": "ow14-s0165",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000181",
+        "ox14-c000025",
+        "ox14-c000108",
+        "ox14-c000071",
+        "ox14-c000121"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000071",
+      "scenario_id": "ow14-s0166",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000197",
+        "ox14-c000260",
+        "ox14-c000037",
+        "ox14-c000012",
+        "ox14-c000058"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000260",
+      "scenario_id": "ow14-s0167",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000270",
+        "ox14-c000374",
+        "ox14-c000354",
+        "ox14-c000215",
+        "ox14-c000245"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000215",
+      "scenario_id": "ow14-s0168",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000087",
+        "ox14-c000033",
+        "ox14-c000106",
+        "ox14-c000075",
+        "ox14-c000127"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000106",
+      "scenario_id": "ow14-s0169",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000406",
+        "ox14-c000297",
+        "ox14-c000420",
+        "ox14-c000277",
+        "ox14-c000352"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000420",
+      "scenario_id": "ow14-s0170",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000060",
+        "ox14-c000183",
+        "ox14-c000113",
+        "ox14-c000302",
+        "ox14-c000357"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000302",
+      "scenario_id": "ow14-s0171",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000013",
+        "ox14-c000398",
+        "ox14-c000381",
+        "ox14-c000103",
+        "ox14-c000293"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000013",
+      "scenario_id": "ow14-s0172",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000142",
+        "ox14-c000373",
+        "ox14-c000093",
+        "ox14-c000422",
+        "ox14-c000107"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000142",
+      "scenario_id": "ow14-s0173",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000337",
+        "ox14-c000053",
+        "ox14-c000350",
+        "ox14-c000427",
+        "ox14-c000128"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000128",
+      "scenario_id": "ow14-s0174",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000344",
+        "ox14-c000384",
+        "ox14-c000011",
+        "ox14-c000016",
+        "ox14-c000216"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000011",
+      "scenario_id": "ow14-s0175",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000313",
+        "ox14-c000220",
+        "ox14-c000268",
+        "ox14-c000207",
+        "ox14-c000177"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000313",
+      "scenario_id": "ow14-s0176",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000434",
+        "ox14-c000061",
+        "ox14-c000026",
+        "ox14-c000314",
+        "ox14-c000076"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000076",
+      "scenario_id": "ow14-s0177",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000034",
+        "ox14-c000273",
+        "ox14-c000219",
+        "ox14-c000361",
+        "ox14-c000109"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000361",
+      "scenario_id": "ow14-s0178",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000303",
+        "ox14-c000405",
+        "ox14-c000172",
+        "ox14-c000363",
+        "ox14-c000101"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000172",
+      "scenario_id": "ow14-s0179",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000064",
+        "ox14-c000100",
+        "ox14-c000407",
+        "ox14-c000111",
+        "ox14-c000226"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000407",
+      "scenario_id": "ow14-s0180",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000141",
+        "ox14-c000387",
+        "ox14-c000048",
+        "ox14-c000298",
+        "ox14-c000212"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000298",
+      "scenario_id": "ow14-s0181",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000251",
+        "ox14-c000178",
+        "ox14-c000399",
+        "ox14-c000082",
+        "ox14-c000423"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000178",
+      "scenario_id": "ow14-s0182",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000077",
+        "ox14-c000296",
+        "ox14-c000410",
+        "ox14-c000085",
+        "ox14-c000115"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000115",
+      "scenario_id": "ow14-s0183",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000353",
+        "ox14-c000118",
+        "ox14-c000395",
+        "ox14-c000223",
+        "ox14-c000005"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000005",
+      "scenario_id": "ow14-s0184",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000307",
+        "ox14-c000188",
+        "ox14-c000015",
+        "ox14-c000315",
+        "ox14-c000311"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000015",
+      "scenario_id": "ow14-s0185",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000167",
+        "ox14-c000351",
+        "ox14-c000161",
+        "ox14-c000404",
+        "ox14-c000182"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000182",
+      "scenario_id": "ow14-s0186",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000117",
+        "ox14-c000029",
+        "ox14-c000272",
+        "ox14-c000038",
+        "ox14-c000429"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000038",
+      "scenario_id": "ow14-s0187",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000185",
+        "ox14-c000059",
+        "ox14-c000136",
+        "ox14-c000346",
+        "ox14-c000377"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000059",
+      "scenario_id": "ow14-s0188",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000198",
+        "ox14-c000070",
+        "ox14-c000191",
+        "ox14-c000396",
+        "ox14-c000247"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000191",
+      "scenario_id": "ow14-s0189",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000099",
+        "ox14-c000014",
+        "ox14-c000056",
+        "ox14-c000023",
+        "ox14-c000102"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000014",
+      "scenario_id": "ow14-s0190",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000189",
+        "ox14-c000348",
+        "ox14-c000236",
+        "ox14-c000024",
+        "ox14-c000030"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000024",
+      "scenario_id": "ow14-s0191",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000083",
+        "ox14-c000426",
+        "ox14-c000341",
+        "ox14-c000088",
+        "ox14-c000209"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000088",
+      "scenario_id": "ow14-s0192",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000184",
+        "ox14-c000371",
+        "ox14-c000333",
+        "ox14-c000259",
+        "ox14-c000254"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000371",
+      "scenario_id": "ow14-s0193",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000278",
+        "ox14-c000229",
+        "ox14-c000355",
+        "ox14-c000195",
+        "ox14-c000031"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000195",
+      "scenario_id": "ow14-s0194",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000294",
+        "ox14-c000065",
+        "ox14-c000125",
+        "ox14-c000204",
+        "ox14-c000274"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000274",
+      "scenario_id": "ow14-s0195",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000044",
+        "ox14-c000066",
+        "ox14-c000164",
+        "ox14-c000409",
+        "ox14-c000316"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000316",
+      "scenario_id": "ow14-s0196",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000432",
+        "ox14-c000317",
+        "ox14-c000261",
+        "ox14-c000208",
+        "ox14-c000112"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000317",
+      "scenario_id": "ow14-s0197",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000362",
+        "ox14-c000126",
+        "ox14-c000310",
+        "ox14-c000224",
+        "ox14-c000414"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000126",
+      "scenario_id": "ow14-s0198",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000391",
+        "ox14-c000402",
+        "ox14-c000210",
+        "ox14-c000036",
+        "ox14-c000253"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000253",
+      "scenario_id": "ow14-s0199",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000067",
+        "ox14-c000062",
+        "ox14-c000225",
+        "ox14-c000320",
+        "ox14-c000252"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000062",
+      "scenario_id": "ow14-s0200",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000090",
+        "ox14-c000235",
+        "ox14-c000140",
+        "ox14-c000165",
+        "ox14-c000369"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000235",
+      "scenario_id": "ow14-s0201",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000389",
+        "ox14-c000265",
+        "ox14-c000258",
+        "ox14-c000081",
+        "ox14-c000072"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000258",
+      "scenario_id": "ow14-s0202",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000211",
+        "ox14-c000046",
+        "ox14-c000130",
+        "ox14-c000246",
+        "ox14-c000323"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000130",
+      "scenario_id": "ow14-s0203",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000181",
+        "ox14-c000419",
+        "ox14-c000121",
+        "ox14-c000108",
+        "ox14-c000025"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000419",
+      "scenario_id": "ow14-s0204",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000365",
+        "ox14-c000037",
+        "ox14-c000197",
+        "ox14-c000012",
+        "ox14-c000058"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000365",
+      "scenario_id": "ow14-s0205",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000270",
+        "ox14-c000374",
+        "ox14-c000001",
+        "ox14-c000245",
+        "ox14-c000354"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000001",
+      "scenario_id": "ow14-s0206",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000075",
+        "ox14-c000127",
+        "ox14-c000033",
+        "ox14-c000087",
+        "ox14-c000008"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000008",
+      "scenario_id": "ow14-s0207",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000352",
+        "ox14-c000297",
+        "ox14-c000406",
+        "ox14-c000233",
+        "ox14-c000277"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000233",
+      "scenario_id": "ow14-s0208",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000035",
+        "ox14-c000357",
+        "ox14-c000113",
+        "ox14-c000183",
+        "ox14-c000060"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000035",
+      "scenario_id": "ow14-s0209",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000263",
+        "ox14-c000398",
+        "ox14-c000103",
+        "ox14-c000381",
+        "ox14-c000293"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000263",
+      "scenario_id": "ow14-s0210",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000373",
+        "ox14-c000107",
+        "ox14-c000162",
+        "ox14-c000422",
+        "ox14-c000093"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000162",
+      "scenario_id": "ow14-s0211",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000337",
+        "ox14-c000053",
+        "ox14-c000350",
+        "ox14-c000041",
+        "ox14-c000427"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000041",
+      "scenario_id": "ow14-s0212",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000384",
+        "ox14-c000016",
+        "ox14-c000218",
+        "ox14-c000344",
+        "ox14-c000216"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000218",
+      "scenario_id": "ow14-s0213",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000220",
+        "ox14-c000268",
+        "ox14-c000207",
+        "ox14-c000177",
+        "ox14-c000308"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000308",
+      "scenario_id": "ow14-s0214",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000026",
+        "ox14-c000138",
+        "ox14-c000314",
+        "ox14-c000434",
+        "ox14-c000061"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000138",
+      "scenario_id": "ow14-s0215",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000109",
+        "ox14-c000273",
+        "ox14-c000219",
+        "ox14-c000009",
+        "ox14-c000034"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000009",
+      "scenario_id": "ow14-s0216",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000303",
+        "ox14-c000101",
+        "ox14-c000051",
+        "ox14-c000363",
+        "ox14-c000405"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000051",
+      "scenario_id": "ow14-s0217",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000379",
+        "ox14-c000226",
+        "ox14-c000100",
+        "ox14-c000064",
+        "ox14-c000111"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000379",
+      "scenario_id": "ow14-s0218",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000212",
+        "ox14-c000387",
+        "ox14-c000048",
+        "ox14-c000250",
+        "ox14-c000141"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000250",
+      "scenario_id": "ow14-s0219",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000251",
+        "ox14-c000431",
+        "ox14-c000399",
+        "ox14-c000423",
+        "ox14-c000082"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000431",
+      "scenario_id": "ow14-s0220",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000085",
+        "ox14-c000299",
+        "ox14-c000077",
+        "ox14-c000410",
+        "ox14-c000296"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000299",
+      "scenario_id": "ow14-s0221",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000223",
+        "ox14-c000424",
+        "ox14-c000395",
+        "ox14-c000118",
+        "ox14-c000353"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000424",
+      "scenario_id": "ow14-s0222",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000315",
+        "ox14-c000307",
+        "ox14-c000390",
+        "ox14-c000188",
+        "ox14-c000311"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000390",
+      "scenario_id": "ow14-s0223",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000161",
+        "ox14-c000351",
+        "ox14-c000167",
+        "ox14-c000295",
+        "ox14-c000404"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000295",
+      "scenario_id": "ow14-s0224",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000117",
+        "ox14-c000272",
+        "ox14-c000029",
+        "ox14-c000105",
+        "ox14-c000429"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000105",
+      "scenario_id": "ow14-s0225",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000136",
+        "ox14-c000377",
+        "ox14-c000185",
+        "ox14-c000203",
+        "ox14-c000346"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000203",
+      "scenario_id": "ow14-s0226",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000396",
+        "ox14-c000401",
+        "ox14-c000198",
+        "ox14-c000070",
+        "ox14-c000247"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000401",
+      "scenario_id": "ow14-s0227",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000099",
+        "ox14-c000392",
+        "ox14-c000102",
+        "ox14-c000056",
+        "ox14-c000023"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000392",
+      "scenario_id": "ow14-s0228",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000030",
+        "ox14-c000348",
+        "ox14-c000123",
+        "ox14-c000189",
+        "ox14-c000236"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000123",
+      "scenario_id": "ow14-s0229",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000083",
+        "ox14-c000209",
+        "ox14-c000341",
+        "ox14-c000249",
+        "ox14-c000426"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000249",
+      "scenario_id": "ow14-s0230",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000254",
+        "ox14-c000333",
+        "ox14-c000238",
+        "ox14-c000259",
+        "ox14-c000184"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000238",
+      "scenario_id": "ow14-s0231",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000031",
+        "ox14-c000229",
+        "ox14-c000355",
+        "ox14-c000278",
+        "ox14-c000331"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000331",
+      "scenario_id": "ow14-s0232",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000204",
+        "ox14-c000125",
+        "ox14-c000078",
+        "ox14-c000294",
+        "ox14-c000065"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000078",
+      "scenario_id": "ow14-s0233",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000409",
+        "ox14-c000044",
+        "ox14-c000239",
+        "ox14-c000066",
+        "ox14-c000164"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000239",
+      "scenario_id": "ow14-s0234",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000376",
+        "ox14-c000261",
+        "ox14-c000208",
+        "ox14-c000432",
+        "ox14-c000112"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000376",
+      "scenario_id": "ow14-s0235",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000330",
+        "ox14-c000310",
+        "ox14-c000414",
+        "ox14-c000224",
+        "ox14-c000362"
+      ],
+      "focal_vulnerable_candidate_id": "ox14-c000330",
+      "scenario_id": "ow14-s0236",
+      "scenario_type": "positive"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000189",
+        "ox14-c000209",
+        "ox14-c000236",
+        "ox14-c000030",
+        "ox14-c000348"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0237",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000341",
+        "ox14-c000426",
+        "ox14-c000333",
+        "ox14-c000184",
+        "ox14-c000083"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0238",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000229",
+        "ox14-c000278",
+        "ox14-c000259",
+        "ox14-c000355",
+        "ox14-c000254"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0239",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000031",
+        "ox14-c000065",
+        "ox14-c000125",
+        "ox14-c000294",
+        "ox14-c000204"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0240",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000044",
+        "ox14-c000409",
+        "ox14-c000066",
+        "ox14-c000164",
+        "ox14-c000261"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0241",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000414",
+        "ox14-c000208",
+        "ox14-c000112",
+        "ox14-c000224",
+        "ox14-c000432"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0242",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000362",
+        "ox14-c000391",
+        "ox14-c000402",
+        "ox14-c000310",
+        "ox14-c000210"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0243",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000036",
+        "ox14-c000225",
+        "ox14-c000067",
+        "ox14-c000320",
+        "ox14-c000252"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0244",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000072",
+        "ox14-c000090",
+        "ox14-c000165",
+        "ox14-c000140",
+        "ox14-c000369"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0245",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000246",
+        "ox14-c000389",
+        "ox14-c000046",
+        "ox14-c000265",
+        "ox14-c000081"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0246",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000108",
+        "ox14-c000025",
+        "ox14-c000323",
+        "ox14-c000121",
+        "ox14-c000211"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0247",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000037",
+        "ox14-c000058",
+        "ox14-c000181",
+        "ox14-c000012",
+        "ox14-c000197"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0248",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000270",
+        "ox14-c000354",
+        "ox14-c000245",
+        "ox14-c000374",
+        "ox14-c000087"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0249",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000127",
+        "ox14-c000033",
+        "ox14-c000075",
+        "ox14-c000406",
+        "ox14-c000297"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0250",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000357",
+        "ox14-c000060",
+        "ox14-c000183",
+        "ox14-c000277",
+        "ox14-c000352"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0251",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000381",
+        "ox14-c000293",
+        "ox14-c000103",
+        "ox14-c000113",
+        "ox14-c000398"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0252",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000427",
+        "ox14-c000093",
+        "ox14-c000422",
+        "ox14-c000373",
+        "ox14-c000107"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0253",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000053",
+        "ox14-c000337",
+        "ox14-c000384",
+        "ox14-c000350",
+        "ox14-c000216"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0254",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000207",
+        "ox14-c000177",
+        "ox14-c000016",
+        "ox14-c000220",
+        "ox14-c000344"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0255",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000434",
+        "ox14-c000268",
+        "ox14-c000061",
+        "ox14-c000026",
+        "ox14-c000314"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0256",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000273",
+        "ox14-c000219",
+        "ox14-c000363",
+        "ox14-c000034",
+        "ox14-c000109"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0257",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000405",
+        "ox14-c000303",
+        "ox14-c000100",
+        "ox14-c000101",
+        "ox14-c000226"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0258",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000048",
+        "ox14-c000111",
+        "ox14-c000387",
+        "ox14-c000064",
+        "ox14-c000212"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0259",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000423",
+        "ox14-c000399",
+        "ox14-c000251",
+        "ox14-c000141",
+        "ox14-c000082"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0260",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000296",
+        "ox14-c000395",
+        "ox14-c000077",
+        "ox14-c000085",
+        "ox14-c000410"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0261",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000118",
+        "ox14-c000223",
+        "ox14-c000353",
+        "ox14-c000307",
+        "ox14-c000188"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0262",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000404",
+        "ox14-c000351",
+        "ox14-c000167",
+        "ox14-c000311",
+        "ox14-c000315"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0263",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000272",
+        "ox14-c000117",
+        "ox14-c000161",
+        "ox14-c000029",
+        "ox14-c000429"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0264",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000377",
+        "ox14-c000396",
+        "ox14-c000136",
+        "ox14-c000185",
+        "ox14-c000346"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0265",
+      "scenario_type": "negative_only"
+    },
+    {
+      "candidate_ids": [
+        "ox14-c000023",
+        "ox14-c000247",
+        "ox14-c000099",
+        "ox14-c000070",
+        "ox14-c000198"
+      ],
+      "focal_vulnerable_candidate_id": null,
+      "scenario_id": "ow14-s0266",
+      "scenario_type": "negative_only"
+    }
+  ],
+  "schema_version": "owasp-xss-v14-ground-truth-scoring-data-v1"
+}

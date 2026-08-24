@@ -1,0 +1,14 @@
+{
+  "deterministic_enriched": 266,
+  "deterministic_minimal": 266,
+  "deterministic_total": 532,
+  "gpt_enriched": 1330,
+  "gpt_minimal": 1330,
+  "gpt_total": 2660,
+  "qwen_enriched": 1330,
+  "qwen_minimal": 1330,
+  "qwen_total": 2660,
+  "schema_version": "owasp-xss-v14-1-denominator-validation-v1",
+  "total_ranking_rows": 5852,
+  "valid": true
+}

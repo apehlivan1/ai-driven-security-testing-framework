@@ -1,0 +1,7 @@
+{
+  "errors": [],
+  "ground_truth_loaded_for_model_facing_snapshot_construction": false,
+  "model_facing_only": true,
+  "schema_version": "owasp-xss-v14-1-leakage-validation-v1",
+  "valid": true
+}

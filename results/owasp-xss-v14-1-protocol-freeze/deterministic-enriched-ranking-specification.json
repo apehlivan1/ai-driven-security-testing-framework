@@ -1,0 +1,73 @@
+{
+  "label_independent": true,
+  "lexicographic_priority": [
+    {
+      "feature": "reflection_detected",
+      "order": [
+        true,
+        false
+      ]
+    },
+    {
+      "feature": "reflection_context_category",
+      "order": [
+        "script_like",
+        "html_attribute",
+        "url_like",
+        "html_text",
+        "other",
+        "none"
+      ]
+    },
+    {
+      "feature": "marker_preservation_category",
+      "order": [
+        "unchanged",
+        "encoded",
+        "transformed",
+        "stripped",
+        "not_reflected"
+      ]
+    },
+    {
+      "feature": "reflection_count_category",
+      "order": [
+        "3_or_more",
+        "2",
+        "1",
+        "0"
+      ]
+    },
+    {
+      "feature": "response_content_type_category",
+      "order": [
+        "html",
+        "text",
+        "json",
+        "redirect",
+        "other",
+        "not_available"
+      ]
+    },
+    {
+      "feature": "abstract_structural_fallback",
+      "order": [
+        "GET before non-GET",
+        "text/header-like categories before other",
+        "single editable input before many",
+        "fewer required inputs",
+        "fewer parameters",
+        "single-parameter request shape before multi-parameter"
+      ]
+    }
+  ],
+  "policy": "lexicographic_ordinal",
+  "rationale": "The rule uses generic reflected-XSS context signals observed with a benign marker and does not inspect benchmark labels or verifier outcomes. The original deterministic structural ranker depends on URL and parameter-name fields that v1.4.1 deliberately removes from ranker-facing records, so the final fallback uses only the permitted abstract structural fields that correspond to the same generic structural signals.",
+  "ruleset_version": "deterministic-enriched-context-v1",
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.deterministic-enriched-ranking-specification",
+  "status": "pre_scored_execution_generic_rule",
+  "tie_breaking": [
+    "lexicographic priority tuple",
+    "ascending candidate_id"
+  ]
+}

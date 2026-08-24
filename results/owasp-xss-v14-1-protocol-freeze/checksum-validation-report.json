@@ -1,0 +1,8 @@
+{
+  "bad": 0,
+  "checked": 560,
+  "errors": [],
+  "missing": 0,
+  "schema_version": "owasp-xss-v14-1-checksum-validation-v1",
+  "valid": true
+}

@@ -1,0 +1,19 @@
+{
+  "artifact_status": "frozen_pre_execution_analysis_plan",
+  "cost_policy": "cost is reported only from provider metadata or a frozen numeric pricing basis captured before execution; otherwise not_available",
+  "inference_methods": [
+    "scenario-level paired bootstrap confidence intervals",
+    "paired permutation tests where methodologically valid"
+  ],
+  "inferential_unit": "scenario",
+  "llm_trial_handling": "repeated trials are nested under scenario and arm; they are not independent benchmark scenarios",
+  "multiple_comparison_policy": "Holm correction across the four primary paired MRR comparisons; secondary analyses are descriptive unless explicitly corrected",
+  "primary_outcome": "scenario-level MRR on positive scenarios",
+  "primary_paired_comparisons": [
+    "gpt_enriched versus gpt_minimal",
+    "qwen_enriched versus qwen_minimal",
+    "gpt_enriched versus deterministic_enriched",
+    "qwen_enriched versus deterministic_enriched"
+  ],
+  "schema_version": "owasp-xss-v14-1-statistical-analysis-plan-v1"
+}

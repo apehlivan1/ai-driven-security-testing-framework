@@ -1,0 +1,7 @@
+{
+  "ground_truth_directory_present_for_post_run_scoring": true,
+  "ground_truth_loaded_for_ranking_snapshot_construction": false,
+  "ranker_facing_snapshots_contain_ground_truth": false,
+  "schema_version": "owasp-xss-v14-1-ground-truth-separation-v1",
+  "valid": true
+}

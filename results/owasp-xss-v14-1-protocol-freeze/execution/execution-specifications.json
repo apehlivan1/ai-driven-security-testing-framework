@@ -1,0 +1,3494 @@
+[
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00013",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000001",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00014",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000002",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00030",
+    "input_name": "BenchmarkTest00030",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000003",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00036",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000004",
+    "parameter_name_value": "BenchmarkTest00036",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00041",
+    "input_name": "BenchmarkTest00041",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000005",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00047",
+    "input_name": "BenchmarkTest00047",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000006",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00048",
+    "input_name": "BenchmarkTest00048",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000007",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00049",
+    "input_name": "BenchmarkTest00049",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000008",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00144",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000009",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00145",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000010",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00146",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000011",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00147",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000012",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00148",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000013",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00149",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000014",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00150",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000015",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00151",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000016",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00152",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000017",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00153",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000018",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00154",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000019",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00155",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000020",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00156",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000021",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00157",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000022",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00275",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000023",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00276",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000024",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00277",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000025",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00278",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000026",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00279",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000027",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00281",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000029",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00282",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000030",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00283",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000031",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00284",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000032",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00285",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000033",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00286",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000034",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00287",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000035",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00288",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000036",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00289",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000037",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00290",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000038",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00291",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000039",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00292",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000040",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00301",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000041",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00375",
+    "input_name": "BenchmarkTest00375",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000042",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00376",
+    "input_name": "BenchmarkTest00376",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000043",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00377",
+    "input_name": "BenchmarkTest00377",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000044",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00378",
+    "input_name": "BenchmarkTest00378",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000045",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00379",
+    "input_name": "BenchmarkTest00379",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000046",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00380",
+    "input_name": "BenchmarkTest00380",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000047",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00381",
+    "input_name": "BenchmarkTest00381",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000048",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00382",
+    "input_name": "BenchmarkTest00382",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000049",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00383",
+    "input_name": "BenchmarkTest00383",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000050",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00384",
+    "input_name": "BenchmarkTest00384",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000051",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00385",
+    "input_name": "BenchmarkTest00385",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000052",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00386",
+    "input_name": "BenchmarkTest00386",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000053",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00387",
+    "input_name": "BenchmarkTest00387",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000054",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00388",
+    "input_name": "BenchmarkTest00388",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000055",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00389",
+    "input_name": "BenchmarkTest00389",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000056",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00390",
+    "input_name": "BenchmarkTest00390",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000057",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00391",
+    "input_name": "BenchmarkTest00391",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000058",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00392",
+    "input_name": "BenchmarkTest00392",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000059",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00393",
+    "input_name": "BenchmarkTest00393",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000060",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00394",
+    "input_name": "BenchmarkTest00394",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000061",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00395",
+    "input_name": "BenchmarkTest00395",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000062",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00467",
+    "input_name": "BenchmarkTest00467",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000063",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00468",
+    "input_name": "BenchmarkTest00468",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000064",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00469",
+    "input_name": "BenchmarkTest00469",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000065",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00470",
+    "input_name": "BenchmarkTest00470",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000066",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00471",
+    "input_name": "BenchmarkTest00471",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000067",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00472",
+    "input_name": "BenchmarkTest00472",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000068",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00473",
+    "input_name": "BenchmarkTest00473",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000069",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00474",
+    "input_name": "BenchmarkTest00474",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000070",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00475",
+    "input_name": "BenchmarkTest00475",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000071",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00476",
+    "input_name": "BenchmarkTest00476",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000072",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00477",
+    "input_name": "BenchmarkTest00477",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000073",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00478",
+    "input_name": "BenchmarkTest00478",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000074",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00479",
+    "input_name": "BenchmarkTest00479",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000075",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00492",
+    "input_name": "BenchmarkTest00492",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000076",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00493",
+    "input_name": "BenchmarkTest00493",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000077",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00541",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000078",
+    "parameter_name_value": "BenchmarkTest00541",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-00/BenchmarkTest00542",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000079",
+    "parameter_name_value": "BenchmarkTest00542",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00544",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000081",
+    "parameter_name_value": "BenchmarkTest00544",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00545",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000082",
+    "parameter_name_value": "BenchmarkTest00545",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00546",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000083",
+    "parameter_name_value": "BenchmarkTest00546",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00547",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000084",
+    "parameter_name_value": "BenchmarkTest00547",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00548",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000085",
+    "parameter_name_value": "BenchmarkTest00548",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00549",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000086",
+    "parameter_name_value": "BenchmarkTest00549",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00550",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000087",
+    "parameter_name_value": "BenchmarkTest00550",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00551",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000088",
+    "parameter_name_value": "BenchmarkTest00551",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00552",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000089",
+    "parameter_name_value": "BenchmarkTest00552",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00553",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000090",
+    "parameter_name_value": "BenchmarkTest00553",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00554",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000091",
+    "parameter_name_value": "BenchmarkTest00554",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00555",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000092",
+    "parameter_name_value": "BenchmarkTest00555",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00556",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000093",
+    "parameter_name_value": "BenchmarkTest00556",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00557",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000094",
+    "parameter_name_value": "BenchmarkTest00557",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00642",
+    "input_name": "BenchmarkTest00642",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000095",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00643",
+    "input_name": "BenchmarkTest00643",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000096",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00644",
+    "input_name": "BenchmarkTest00644",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000097",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00645",
+    "input_name": "BenchmarkTest00645",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000098",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00646",
+    "input_name": "BenchmarkTest00646",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000099",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00647",
+    "input_name": "BenchmarkTest00647",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000100",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00648",
+    "input_name": "BenchmarkTest00648",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000101",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00649",
+    "input_name": "BenchmarkTest00649",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000102",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00650",
+    "input_name": "BenchmarkTest00650",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000103",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00651",
+    "input_name": "BenchmarkTest00651",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000104",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00656",
+    "input_name": "BenchmarkTest00656",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000105",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00711",
+    "input_name": "BenchmarkTest00711",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000106",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00712",
+    "input_name": "BenchmarkTest00712",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000107",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00713",
+    "input_name": "BenchmarkTest00713",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000108",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00714",
+    "input_name": "BenchmarkTest00714",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000109",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00715",
+    "input_name": "BenchmarkTest00715",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000110",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00716",
+    "input_name": "BenchmarkTest00716",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000111",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00717",
+    "input_name": "BenchmarkTest00717",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000112",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00718",
+    "input_name": "BenchmarkTest00718",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000113",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00719",
+    "input_name": "BenchmarkTest00719",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000114",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00720",
+    "input_name": "BenchmarkTest00720",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000115",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00721",
+    "input_name": "BenchmarkTest00721",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000116",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00722",
+    "input_name": "BenchmarkTest00722",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000117",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00723",
+    "input_name": "BenchmarkTest00723",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000118",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00724",
+    "input_name": "BenchmarkTest00724",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000119",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00725",
+    "input_name": "BenchmarkTest00725",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000120",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00726",
+    "input_name": "BenchmarkTest00726",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000121",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00727",
+    "input_name": "BenchmarkTest00727",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000122",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00728",
+    "input_name": "BenchmarkTest00728",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000123",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00729",
+    "input_name": "BenchmarkTest00729",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000124",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00730",
+    "input_name": "BenchmarkTest00730",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000125",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00737",
+    "input_name": "BenchmarkTest00737",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000126",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00799",
+    "input_name": "BenchmarkTest00799",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000127",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00800",
+    "input_name": "BenchmarkTest00800",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000128",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00801",
+    "input_name": "BenchmarkTest00801",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000129",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00802",
+    "input_name": "BenchmarkTest00802",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000130",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00803",
+    "input_name": "BenchmarkTest00803",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000131",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00804",
+    "input_name": "BenchmarkTest00804",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000132",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00805",
+    "input_name": "BenchmarkTest00805",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000133",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00806",
+    "input_name": "BenchmarkTest00806",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000134",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00807",
+    "input_name": "BenchmarkTest00807",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000135",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00808",
+    "input_name": "BenchmarkTest00808",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000136",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00809",
+    "input_name": "BenchmarkTest00809",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000137",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00810",
+    "input_name": "BenchmarkTest00810",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000138",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00811",
+    "input_name": "BenchmarkTest00811",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000139",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00812",
+    "input_name": "BenchmarkTest00812",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000140",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00813",
+    "input_name": "BenchmarkTest00813",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000141",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest00822",
+    "input_name": "BenchmarkTest00822",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000142",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest01046",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000159",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-01/BenchmarkTest01047",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000160",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01048",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000161",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01049",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000162",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01050",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000163",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01051",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000164",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01052",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000165",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01054",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000167",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01055",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000168",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01056",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000169",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01057",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000170",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01063",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000171",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01171",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000172",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01172",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000173",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01173",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000174",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01174",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000175",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01176",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000177",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01177",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000178",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01178",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000179",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01180",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000181",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01181",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000182",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01188",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000183",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01251",
+    "input_name": "BenchmarkTest01251",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000184",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01252",
+    "input_name": "BenchmarkTest01252",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000185",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01253",
+    "input_name": "BenchmarkTest01253",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000186",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01255",
+    "input_name": "BenchmarkTest01255",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000188",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01256",
+    "input_name": "BenchmarkTest01256",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000189",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01257",
+    "input_name": "BenchmarkTest01257",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000190",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01258",
+    "input_name": "BenchmarkTest01258",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000191",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01259",
+    "input_name": "BenchmarkTest01259",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000192",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01260",
+    "input_name": "BenchmarkTest01260",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000193",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01261",
+    "input_name": "BenchmarkTest01261",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000194",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01262",
+    "input_name": "BenchmarkTest01262",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000195",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01263",
+    "input_name": "BenchmarkTest01263",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000196",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01264",
+    "input_name": "BenchmarkTest01264",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000197",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01265",
+    "input_name": "BenchmarkTest01265",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000198",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01266",
+    "input_name": "BenchmarkTest01266",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000199",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01267",
+    "input_name": "BenchmarkTest01267",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000200",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01268",
+    "input_name": "BenchmarkTest01268",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000201",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01284",
+    "input_name": "BenchmarkTest01284",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000202",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01335",
+    "input_name": "BenchmarkTest01335",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000203",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01336",
+    "input_name": "BenchmarkTest01336",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000204",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01337",
+    "input_name": "BenchmarkTest01337",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000205",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01339",
+    "input_name": "BenchmarkTest01339",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000207",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01340",
+    "input_name": "BenchmarkTest01340",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000208",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01341",
+    "input_name": "BenchmarkTest01341",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000209",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01342",
+    "input_name": "BenchmarkTest01342",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000210",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01343",
+    "input_name": "BenchmarkTest01343",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000211",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01344",
+    "input_name": "BenchmarkTest01344",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000212",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01346",
+    "input_name": "BenchmarkTest01346",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000214",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01347",
+    "input_name": "BenchmarkTest01347",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000215",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01348",
+    "input_name": "BenchmarkTest01348",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000216",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01349",
+    "input_name": "BenchmarkTest01349",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000217",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01350",
+    "input_name": "BenchmarkTest01350",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000218",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01351",
+    "input_name": "BenchmarkTest01351",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000219",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01352",
+    "input_name": "BenchmarkTest01352",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000220",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01417",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000221",
+    "parameter_name_value": "BenchmarkTest01417",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01418",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000222",
+    "parameter_name_value": "BenchmarkTest01418",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01419",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000223",
+    "parameter_name_value": "BenchmarkTest01419",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01420",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000224",
+    "parameter_name_value": "BenchmarkTest01420",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01421",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000225",
+    "parameter_name_value": "BenchmarkTest01421",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01422",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000226",
+    "parameter_name_value": "BenchmarkTest01422",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01423",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000227",
+    "parameter_name_value": "BenchmarkTest01423",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01424",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000228",
+    "parameter_name_value": "BenchmarkTest01424",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01425",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000229",
+    "parameter_name_value": "BenchmarkTest01425",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01426",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000230",
+    "parameter_name_value": "BenchmarkTest01426",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01427",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000231",
+    "parameter_name_value": "BenchmarkTest01427",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01428",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000232",
+    "parameter_name_value": "BenchmarkTest01428",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01429",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000233",
+    "parameter_name_value": "BenchmarkTest01429",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01437",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000234",
+    "parameter_name_value": "BenchmarkTest01437",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01438",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000235",
+    "parameter_name_value": "BenchmarkTest01438",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01439",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000236",
+    "parameter_name_value": "BenchmarkTest01439",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01505",
+    "input_name": "BenchmarkTest01505",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000237",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01506",
+    "input_name": "BenchmarkTest01506",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000238",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-02/BenchmarkTest01507",
+    "input_name": "BenchmarkTest01507",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000239",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01509",
+    "input_name": "BenchmarkTest01509",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000241",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01510",
+    "input_name": "BenchmarkTest01510",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000242",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01511",
+    "input_name": "BenchmarkTest01511",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000243",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01512",
+    "input_name": "BenchmarkTest01512",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000244",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01513",
+    "input_name": "BenchmarkTest01513",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000245",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01514",
+    "input_name": "BenchmarkTest01514",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000246",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01515",
+    "input_name": "BenchmarkTest01515",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000247",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01525",
+    "input_name": "BenchmarkTest01525",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000248",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01583",
+    "input_name": "BenchmarkTest01583",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000249",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01584",
+    "input_name": "BenchmarkTest01584",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000250",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01585",
+    "input_name": "BenchmarkTest01585",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000251",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01586",
+    "input_name": "BenchmarkTest01586",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000252",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01587",
+    "input_name": "BenchmarkTest01587",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000253",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01588",
+    "input_name": "BenchmarkTest01588",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000254",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01589",
+    "input_name": "BenchmarkTest01589",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000255",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01590",
+    "input_name": "BenchmarkTest01590",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000256",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01592",
+    "input_name": "BenchmarkTest01592",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000258",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01593",
+    "input_name": "BenchmarkTest01593",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000259",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01594",
+    "input_name": "BenchmarkTest01594",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000260",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01595",
+    "input_name": "BenchmarkTest01595",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000261",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01596",
+    "input_name": "BenchmarkTest01596",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000262",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01597",
+    "input_name": "BenchmarkTest01597",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000263",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01598",
+    "input_name": "BenchmarkTest01598",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000264",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01599",
+    "input_name": "BenchmarkTest01599",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000265",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01657",
+    "input_name": "BenchmarkTest01657",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000266",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01658",
+    "input_name": "BenchmarkTest01658",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000267",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01659",
+    "input_name": "BenchmarkTest01659",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000268",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01660",
+    "input_name": "BenchmarkTest01660",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000269",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01661",
+    "input_name": "BenchmarkTest01661",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000270",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01662",
+    "input_name": "BenchmarkTest01662",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000271",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01663",
+    "input_name": "BenchmarkTest01663",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000272",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01664",
+    "input_name": "BenchmarkTest01664",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000273",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01665",
+    "input_name": "BenchmarkTest01665",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000274",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01666",
+    "input_name": "BenchmarkTest01666",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000275",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01668",
+    "input_name": "BenchmarkTest01668",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000277",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01669",
+    "input_name": "BenchmarkTest01669",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000278",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01914",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000293",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01915",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000294",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01916",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000295",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01917",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000296",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01918",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000297",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01919",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000298",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01920",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000299",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01921",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000300",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01922",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000301",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01923",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000302",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01924",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000303",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01925",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000304",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01926",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000305",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest01927",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000306",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02045",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000307",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02046",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000308",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02047",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000309",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02048",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000310",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02049",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000311",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02050",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000312",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02051",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000313",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02052",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000314",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02053",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000315",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02054",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000316",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02055",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000317",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02056",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000318",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02057",
+    "input_name": "Referer",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000319",
+    "parameter_name_value": null,
+    "transport": "header"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-03/BenchmarkTest02122",
+    "input_name": "BenchmarkTest02122",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000320",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02123",
+    "input_name": "BenchmarkTest02123",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000321",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02124",
+    "input_name": "BenchmarkTest02124",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000322",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02125",
+    "input_name": "BenchmarkTest02125",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000323",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02126",
+    "input_name": "BenchmarkTest02126",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000324",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02128",
+    "input_name": "BenchmarkTest02128",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000326",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02129",
+    "input_name": "BenchmarkTest02129",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000327",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02130",
+    "input_name": "BenchmarkTest02130",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000328",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02131",
+    "input_name": "BenchmarkTest02131",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000329",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02132",
+    "input_name": "BenchmarkTest02132",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000330",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02133",
+    "input_name": "BenchmarkTest02133",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000331",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02134",
+    "input_name": "BenchmarkTest02134",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000332",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02135",
+    "input_name": "BenchmarkTest02135",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000333",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02136",
+    "input_name": "BenchmarkTest02136",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000334",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02145",
+    "input_name": "BenchmarkTest02145",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000335",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02221",
+    "input_name": "BenchmarkTest02221",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000336",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02222",
+    "input_name": "BenchmarkTest02222",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000337",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02224",
+    "input_name": "BenchmarkTest02224",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000339",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02225",
+    "input_name": "BenchmarkTest02225",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000340",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02226",
+    "input_name": "BenchmarkTest02226",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000341",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02227",
+    "input_name": "BenchmarkTest02227",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000342",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02228",
+    "input_name": "BenchmarkTest02228",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000343",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02229",
+    "input_name": "BenchmarkTest02229",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000344",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02231",
+    "input_name": "BenchmarkTest02231",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000346",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02232",
+    "input_name": "BenchmarkTest02232",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000347",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02233",
+    "input_name": "BenchmarkTest02233",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000348",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02234",
+    "input_name": "BenchmarkTest02234",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000349",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02235",
+    "input_name": "BenchmarkTest02235",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000350",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02236",
+    "input_name": "BenchmarkTest02236",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000351",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02237",
+    "input_name": "BenchmarkTest02237",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000352",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02238",
+    "input_name": "BenchmarkTest02238",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000353",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02239",
+    "input_name": "BenchmarkTest02239",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000354",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02240",
+    "input_name": "BenchmarkTest02240",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000355",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02241",
+    "input_name": "BenchmarkTest02241",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000356",
+    "parameter_name_value": null,
+    "transport": "parameter_map"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02313",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000357",
+    "parameter_name_value": "BenchmarkTest02313",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02314",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000358",
+    "parameter_name_value": "BenchmarkTest02314",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02315",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000359",
+    "parameter_name_value": "BenchmarkTest02315",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02317",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000361",
+    "parameter_name_value": "BenchmarkTest02317",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02318",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000362",
+    "parameter_name_value": "BenchmarkTest02318",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02319",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000363",
+    "parameter_name_value": "BenchmarkTest02319",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02321",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000365",
+    "parameter_name_value": "BenchmarkTest02321",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02322",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000366",
+    "parameter_name_value": "BenchmarkTest02322",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02323",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000367",
+    "parameter_name_value": "BenchmarkTest02323",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02324",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000368",
+    "parameter_name_value": "BenchmarkTest02324",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02325",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000369",
+    "parameter_name_value": "BenchmarkTest02325",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02326",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000370",
+    "parameter_name_value": "BenchmarkTest02326",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02327",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000371",
+    "parameter_name_value": "BenchmarkTest02327",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02328",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000372",
+    "parameter_name_value": "BenchmarkTest02328",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02329",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000373",
+    "parameter_name_value": "BenchmarkTest02329",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02330",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000374",
+    "parameter_name_value": "BenchmarkTest02330",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02332",
+    "input_name": "dynamic_parameter_name",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000376",
+    "parameter_name_value": "BenchmarkTest02332",
+    "transport": "parameter_name_enumeration"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02394",
+    "input_name": "BenchmarkTest02394",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000377",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02395",
+    "input_name": "BenchmarkTest02395",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000378",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02396",
+    "input_name": "BenchmarkTest02396",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000379",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02397",
+    "input_name": "BenchmarkTest02397",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000380",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02398",
+    "input_name": "BenchmarkTest02398",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000381",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02399",
+    "input_name": "BenchmarkTest02399",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000382",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02400",
+    "input_name": "BenchmarkTest02400",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000383",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02401",
+    "input_name": "BenchmarkTest02401",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000384",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02402",
+    "input_name": "BenchmarkTest02402",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000385",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02403",
+    "input_name": "BenchmarkTest02403",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000386",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02404",
+    "input_name": "BenchmarkTest02404",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000387",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02405",
+    "input_name": "BenchmarkTest02405",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000388",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02406",
+    "input_name": "BenchmarkTest02406",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000389",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02407",
+    "input_name": "BenchmarkTest02407",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000390",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02408",
+    "input_name": "BenchmarkTest02408",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000391",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02409",
+    "input_name": "BenchmarkTest02409",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000392",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02410",
+    "input_name": "BenchmarkTest02410",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000393",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02480",
+    "input_name": "BenchmarkTest02480",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000394",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02481",
+    "input_name": "BenchmarkTest02481",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000395",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02482",
+    "input_name": "BenchmarkTest02482",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000396",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02483",
+    "input_name": "BenchmarkTest02483",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000397",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02484",
+    "input_name": "BenchmarkTest02484",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000398",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02485",
+    "input_name": "BenchmarkTest02485",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000399",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-04/BenchmarkTest02486",
+    "input_name": "BenchmarkTest02486",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000400",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02487",
+    "input_name": "BenchmarkTest02487",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000401",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02488",
+    "input_name": "BenchmarkTest02488",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000402",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02489",
+    "input_name": "BenchmarkTest02489",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000403",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02490",
+    "input_name": "BenchmarkTest02490",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000404",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02491",
+    "input_name": "BenchmarkTest02491",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000405",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02492",
+    "input_name": "BenchmarkTest02492",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000406",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02493",
+    "input_name": "BenchmarkTest02493",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000407",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02494",
+    "input_name": "BenchmarkTest02494",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000408",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02495",
+    "input_name": "BenchmarkTest02495",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000409",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02509",
+    "input_name": "BenchmarkTest02509",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000410",
+    "parameter_name_value": null,
+    "transport": "parameter"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02578",
+    "input_name": "BenchmarkTest02578",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000411",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02579",
+    "input_name": "BenchmarkTest02579",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000412",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02580",
+    "input_name": "BenchmarkTest02580",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000413",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02581",
+    "input_name": "BenchmarkTest02581",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000414",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02582",
+    "input_name": "BenchmarkTest02582",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000415",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02583",
+    "input_name": "BenchmarkTest02583",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000416",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02584",
+    "input_name": "BenchmarkTest02584",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000417",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02585",
+    "input_name": "BenchmarkTest02585",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000418",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02586",
+    "input_name": "BenchmarkTest02586",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000419",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02587",
+    "input_name": "BenchmarkTest02587",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000420",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02588",
+    "input_name": "BenchmarkTest02588",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000421",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02589",
+    "input_name": "BenchmarkTest02589",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000422",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02590",
+    "input_name": "BenchmarkTest02590",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000423",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02591",
+    "input_name": "BenchmarkTest02591",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000424",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02592",
+    "input_name": "BenchmarkTest02592",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000425",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02593",
+    "input_name": "BenchmarkTest02593",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000426",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02594",
+    "input_name": "BenchmarkTest02594",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000427",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02595",
+    "input_name": "BenchmarkTest02595",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000428",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02596",
+    "input_name": "BenchmarkTest02596",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000429",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02597",
+    "input_name": "BenchmarkTest02597",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000430",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02598",
+    "input_name": "BenchmarkTest02598",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000431",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02599",
+    "input_name": "BenchmarkTest02599",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000432",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02600",
+    "input_name": "BenchmarkTest02600",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000433",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02601",
+    "input_name": "BenchmarkTest02601",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000434",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  },
+  {
+    "content_type": "text/html;charset=UTF-8",
+    "endpoint": "/xss-05/BenchmarkTest02608",
+    "input_name": "BenchmarkTest02608",
+    "method": "GET",
+    "opaque_candidate_id": "ox14-c000435",
+    "parameter_name_value": null,
+    "transport": "query_string"
+  }
+]
