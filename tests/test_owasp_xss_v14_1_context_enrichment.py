@@ -18,6 +18,7 @@ from adstf.owasp_xss_v14_1_context_enrichment import (  # noqa: E402
     categorize_reflection_count,
     classify_marker_preservation,
     classify_reflection_context,
+    derive_corrected_observations_from_raw_collection,
     enrich_snapshot,
     enriched_rankings,
     marker_policy,
@@ -100,6 +101,60 @@ class OwaspXssV141ContextEnrichmentTests(unittest.TestCase):
         self.assertEqual(observation["reflection_count_category"], "1")
         self.assertEqual(observation["marker_preservation_category"], "transformed")
         self.assertEqual(observation["reflection_context_category"], "other")
+
+    def test_observation_from_response_reports_html_entity_encoded_marker(self) -> None:
+        marker = CONTEXT_ENRICHMENT_MARKER
+        body = "ADSTF_CTX_V141&#x2f;SAFE"
+
+        observation = observation_from_http_response(body, "text/html", marker=marker)
+
+        self.assertTrue(observation["reflection_detected"])
+        self.assertEqual(observation["reflection_count_category"], "1")
+        self.assertEqual(observation["marker_preservation_category"], "encoded")
+        self.assertEqual(observation["reflection_context_category"], "other")
+
+    def test_entity_encoded_marker_contexts_use_original_response_structure(self) -> None:
+        marker = CONTEXT_ENRICHMENT_MARKER
+
+        text_observation = observation_from_http_response(f"<p>ADSTF_CTX_V141&#x2f;SAFE</p>", "text/html", marker=marker)
+        attr_observation = observation_from_http_response(
+            f"<input value=\"ADSTF_CTX_V141&#x2f;SAFE\">",
+            "text/html",
+            marker=marker,
+        )
+
+        self.assertEqual(text_observation["reflection_context_category"], "html_text")
+        self.assertEqual(text_observation["marker_preservation_category"], "encoded")
+        self.assertEqual(attr_observation["reflection_context_category"], "html_attribute")
+        self.assertEqual(attr_observation["marker_preservation_category"], "encoded")
+
+    def test_multiple_recognized_marker_representations_are_counted_without_double_counting(self) -> None:
+        marker = CONTEXT_ENRICHMENT_MARKER
+        body = f"{marker} ADSTF_CTX_V141%2FSAFE ADSTF_CTX_V141&#x2f;SAFE"
+
+        observation = observation_from_http_response(body, "text/plain", marker=marker)
+
+        self.assertTrue(observation["reflection_detected"])
+        self.assertEqual(observation["reflection_count_category"], "3_or_more")
+        self.assertEqual(observation["marker_preservation_category"], "unchanged")
+        self.assertEqual(observation["reflection_context_category"], "other")
+
+    def test_existing_marker_representation_behaviors_remain_stable(self) -> None:
+        marker = CONTEXT_ENRICHMENT_MARKER
+
+        unchanged = observation_from_http_response(marker, "text/plain", marker=marker)
+        url_encoded = observation_from_http_response("ADSTF_CTX_V141%2FSAFE", "text/plain", marker=marker)
+        transformed = observation_from_http_response("ADSTF CTX V141 SAFE", "text/plain", marker=marker)
+        absent = observation_from_http_response("nothing related", "text/plain", marker=marker)
+
+        self.assertEqual(unchanged["marker_preservation_category"], "unchanged")
+        self.assertTrue(unchanged["reflection_detected"])
+        self.assertEqual(url_encoded["marker_preservation_category"], "encoded")
+        self.assertTrue(url_encoded["reflection_detected"])
+        self.assertEqual(transformed["marker_preservation_category"], "transformed")
+        self.assertTrue(transformed["reflection_detected"])
+        self.assertEqual(absent["marker_preservation_category"], "not_reflected")
+        self.assertFalse(absent["reflection_detected"])
 
     def test_content_type_categorization(self) -> None:
         self.assertEqual(categorize_content_type("text/html; charset=utf-8"), "html")
@@ -427,6 +482,34 @@ class OwaspXssV141ContextEnrichmentTests(unittest.TestCase):
         self.assertEqual(first["reflection_detected"], "not_available")
         self.assertEqual(first["reflection_context_category"], "not_available")
         self.assertEqual(first["failure_state"], "planned failure")
+
+    def test_corrected_derivation_from_raw_collection_preserves_lineage_and_changes_only_entity_cases(self) -> None:
+        raw_run = Path("results/owasp-xss-v14-1-context-collection/owasp-xss-v14-1-context-collection-20260824T120106Z")
+        if not raw_run.exists():
+            self.skipTest("v1.4.1 raw context collection is not present")
+        with tempfile.TemporaryDirectory() as tmp:
+            derived_dir = derive_corrected_observations_from_raw_collection(
+                raw_run_dir=raw_run,
+                output_root=Path(tmp),
+            )
+            manifest = json.loads((derived_dir / "correction-manifest.json").read_text(encoding="utf-8"))
+            diff = json.loads((derived_dir / "semantic-diff-report.json").read_text(encoding="utf-8"))
+            invariants = json.loads((derived_dir / "semantic-invariant-validation.json").read_text(encoding="utf-8"))
+            audit = json.loads((derived_dir / "post-correction-audit.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(manifest["source_raw_run_id"], "owasp-xss-v14-1-context-collection-20260824T120106Z")
+        self.assertEqual(manifest["source_raw_collection_commit_sha"], "52496231afd1f3be524e1a5fa51c18ee00dcc498")
+        self.assertEqual(manifest["external_activity"]["http_requests"], 0)
+        self.assertEqual(manifest["external_activity"]["gpt_calls"], 0)
+        self.assertEqual(manifest["external_activity"]["qwen_calls"], 0)
+        self.assertEqual(manifest["external_activity"]["verification_runs"], 0)
+        self.assertEqual(manifest["external_activity"]["scored_ranking_rows"], 0)
+        self.assertEqual(manifest["ground_truth_loaded"], False)
+        self.assertEqual(diff["changed_candidate_count"], 24)
+        self.assertEqual(diff["unchanged_candidate_count"], 364)
+        self.assertTrue(invariants["valid"], invariants)
+        self.assertTrue(audit["draft_enriched_snapshot_validation"]["valid"], audit)
+        self.assertTrue(audit["structural_equality_validation"]["valid"], audit)
 
 
 if __name__ == "__main__":

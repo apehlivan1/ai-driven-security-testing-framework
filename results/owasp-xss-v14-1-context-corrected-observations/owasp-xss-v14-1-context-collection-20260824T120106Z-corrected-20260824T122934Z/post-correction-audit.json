@@ -1,0 +1,180 @@
+{
+  "corrected_collection_accounting": {
+    "actual_candidate_http_requests": 0,
+    "actual_http_exchanges_including_redirects": 0,
+    "attempted_requests": 388,
+    "context_distribution": {
+      "collection_status": {
+        "success": 388
+      },
+      "marker_preservation_category": {
+        "encoded": 24,
+        "not_reflected": 126,
+        "unchanged": 238
+      },
+      "reflection_context_category": {
+        "html_text": 8,
+        "none": 126,
+        "other": 254
+      },
+      "reflection_count_category": {
+        "0": 126,
+        "1": 262
+      },
+      "reflection_detected": {
+        "False": 126,
+        "True": 262
+      },
+      "response_content_type_category": {
+        "html": 388
+      }
+    },
+    "duplicate_attempts": 0,
+    "failures_or_timeouts": 0,
+    "missing_candidate_ids": [],
+    "successful_responses": 388,
+    "unexpected_candidate_ids": []
+  },
+  "draft_enriched_snapshot_validation": {
+    "artifact_status": "draft_pre_freeze",
+    "candidate_order_preserved": true,
+    "candidate_references": 1330,
+    "errors": [],
+    "ground_truth_loaded": false,
+    "schema_version": "owasp-xss-v14-1-context-enrichment-v1.draft-enriched-snapshot-validation",
+    "snapshot_count": 266,
+    "valid": true
+  },
+  "external_activity": {
+    "gpt_calls": 0,
+    "http_requests": 0,
+    "qwen_calls": 0,
+    "scored_ranking_rows": 0,
+    "verification_runs": 0
+  },
+  "ground_truth_separation_validation": {
+    "ground_truth_loaded_in_correction_path": false,
+    "observation_index_ground_truth_loaded": false
+  },
+  "raw_checksum_validation": {
+    "checked_files": 1435,
+    "checksum_file_sha256": "20468ea1b46f8f01616d00ac79c23bb90eb951202797c30b7aa890857a148c6a",
+    "errors": [],
+    "valid": true
+  },
+  "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.post-correction-audit",
+  "semantic_diff_summary": {
+    "changed_candidate_count": 24,
+    "changed_candidate_ids": [
+      "ox14-c000030",
+      "ox14-c000031",
+      "ox14-c000033",
+      "ox14-c000037",
+      "ox14-c000048",
+      "ox14-c000058",
+      "ox14-c000075",
+      "ox14-c000100",
+      "ox14-c000101",
+      "ox14-c000102",
+      "ox14-c000109",
+      "ox14-c000111",
+      "ox14-c000183",
+      "ox14-c000184",
+      "ox14-c000197",
+      "ox14-c000224",
+      "ox14-c000273",
+      "ox14-c000278",
+      "ox14-c000296",
+      "ox14-c000323",
+      "ox14-c000352",
+      "ox14-c000377",
+      "ox14-c000406",
+      "ox14-c000429"
+    ],
+    "unchanged_candidate_count": 364,
+    "unexpected_changed_candidate_ids": []
+  },
+  "semantic_invariant_validation_after": {
+    "candidate_count": 388,
+    "ground_truth_loaded": false,
+    "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.semantic-invariant-validation",
+    "valid": true,
+    "violations": {}
+  },
+  "semantic_invariant_validation_before": {
+    "candidate_count": 388,
+    "ground_truth_loaded": false,
+    "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.semantic-invariant-validation",
+    "valid": false,
+    "violations": {
+      "recognized_encoded_implies_reflection_true": [
+        "ox14-c000030",
+        "ox14-c000031",
+        "ox14-c000033",
+        "ox14-c000037",
+        "ox14-c000048",
+        "ox14-c000058",
+        "ox14-c000075",
+        "ox14-c000100",
+        "ox14-c000101",
+        "ox14-c000102",
+        "ox14-c000109",
+        "ox14-c000111",
+        "ox14-c000183",
+        "ox14-c000184",
+        "ox14-c000197",
+        "ox14-c000224",
+        "ox14-c000273",
+        "ox14-c000278",
+        "ox14-c000296",
+        "ox14-c000323",
+        "ox14-c000352",
+        "ox14-c000377",
+        "ox14-c000406",
+        "ox14-c000429"
+      ],
+      "recognized_reflection_context_not_none": [
+        "ox14-c000030",
+        "ox14-c000031",
+        "ox14-c000033",
+        "ox14-c000037",
+        "ox14-c000048",
+        "ox14-c000058",
+        "ox14-c000075",
+        "ox14-c000100",
+        "ox14-c000101",
+        "ox14-c000102",
+        "ox14-c000109",
+        "ox14-c000111",
+        "ox14-c000183",
+        "ox14-c000184",
+        "ox14-c000197",
+        "ox14-c000224",
+        "ox14-c000273",
+        "ox14-c000278",
+        "ox14-c000296",
+        "ox14-c000323",
+        "ox14-c000352",
+        "ox14-c000377",
+        "ox14-c000406",
+        "ox14-c000429"
+      ]
+    }
+  },
+  "source_raw_collection_commit_sha": "52496231afd1f3be524e1a5fa51c18ee00dcc498",
+  "source_raw_run_id": "owasp-xss-v14-1-context-collection-20260824T120106Z",
+  "structural_equality_validation": {
+    "candidate_count_distribution": {
+      "5": 266
+    },
+    "candidate_reference_count": 1330,
+    "errors": [],
+    "ground_truth_used_for_snapshot_construction": false,
+    "scenario_count": 266,
+    "scenario_membership_and_order_preserved": true,
+    "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.structural-equality-validation",
+    "unique_candidate_count": 388,
+    "valid": true
+  },
+  "valid": true
+}

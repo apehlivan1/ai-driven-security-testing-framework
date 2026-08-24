@@ -1,0 +1,91 @@
+{
+  "actual_candidate_http_requests": 388,
+  "actual_http_exchanges_including_redirects": 388,
+  "attempted_requests": 388,
+  "base_url": "https://127.0.0.1:8443/benchmark",
+  "completed_at": "2026-08-24T12:01:24.598804+00:00",
+  "context_distribution": {
+    "collection_status": {
+      "success": 388
+    },
+    "marker_preservation_category": {
+      "encoded": 24,
+      "not_reflected": 126,
+      "unchanged": 238
+    },
+    "reflection_context_category": {
+      "html_text": 7,
+      "none": 150,
+      "other": 231
+    },
+    "reflection_count_category": {
+      "0": 150,
+      "1": 238
+    },
+    "reflection_detected": {
+      "False": 150,
+      "True": 238
+    },
+    "response_content_type_category": {
+      "html": 388
+    }
+  },
+  "created_at": "2026-08-24T12:01:15.341705+00:00",
+  "duplicate_attempts": 0,
+  "failure_policy": {
+    "failure_representation": "explicit not_available fields; transport failure is not treated as not reflected",
+    "scheduled_attempts_per_candidate": 1,
+    "silent_retry": false
+  },
+  "failures_or_timeouts": 0,
+  "gpt_calls": 0,
+  "ground_truth_scoring_data_loaded": false,
+  "marker_policy": {
+    "executable_syntax": false,
+    "forbidden_characters": [
+      "<",
+      ">",
+      "'",
+      "\"",
+      "control_characters"
+    ],
+    "marker": "ADSTF_CTX_V141/SAFE",
+    "marker_policy": "fixed_inert_non_executing_marker",
+    "payload_status": "not_an_xss_payload",
+    "schema_version": "owasp-xss-v14-1-context-enrichment-v1.marker-policy",
+    "slash_delimiter_policy": "The slash is intentional: it is non-executable and safely encodable, allowing deterministic observation of transport or encoding transformations."
+  },
+  "missing_candidate_ids": [],
+  "pre_run_commit_sha": "52496231afd1f3be524e1a5fa51c18ee00dcc498",
+  "qwen_calls": 0,
+  "raw_body_retention_policy": "raw body text may exist only inside raw executor artifacts; sanitized observations and draft snapshots contain normalized fields only",
+  "run_id": "owasp-xss-v14-1-context-collection-20260824T120106Z",
+  "scheduled_candidates": 388,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.collection-manifest",
+  "scored_ranking_rows": 0,
+  "successful_responses": 388,
+  "target": {
+    "allowed_hosts": [
+      "127.0.0.1"
+    ],
+    "allowed_ports": [
+      8443
+    ],
+    "allowed_schemes": [
+      "https"
+    ],
+    "base_url": "https://127.0.0.1:8443/benchmark",
+    "enabled_modules": [
+      "xss.reflected"
+    ],
+    "max_actions": 100,
+    "metadata": {
+      "evaluation": "owasp-xss-v14-readiness",
+      "local_only": true
+    },
+    "name": "OWASP Benchmark Java v1.4 XSS readiness",
+    "test_users": {}
+  },
+  "unexpected_candidate_ids": [],
+  "verification_runs": 0
+}

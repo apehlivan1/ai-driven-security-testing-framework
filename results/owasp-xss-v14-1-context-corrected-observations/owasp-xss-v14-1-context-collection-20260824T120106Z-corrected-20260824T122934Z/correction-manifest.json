@@ -1,0 +1,29 @@
+{
+  "artifact_status": "offline_corrected_observation_derivation",
+  "candidate_schema_unchanged": true,
+  "categories_unchanged": true,
+  "corrected_observation_parser_version": "owasp-xss-v14-1-context-observation-derivation-v1.1",
+  "correction_code_commit_sha": "52496231afd1f3be524e1a5fa51c18ee00dcc498",
+  "correction_code_working_tree_dirty": true,
+  "correction_reason": "The original preservation classifier detected HTML entity encoded marker reflections, but reflection/count/context derivation did not recognize that physical marker representation.",
+  "created_at": "2026-08-24T12:29:45.096717+00:00",
+  "derived_at": "2026-08-24T12:29:45.174139+00:00",
+  "external_activity": {
+    "gpt_calls": 0,
+    "http_requests": 0,
+    "qwen_calls": 0,
+    "scored_ranking_rows": 0,
+    "verification_runs": 0
+  },
+  "ground_truth_loaded": false,
+  "raw_checksum_validation": {
+    "checked_files": 1435,
+    "checksum_file_sha256": "20468ea1b46f8f01616d00ac79c23bb90eb951202797c30b7aa890857a148c6a",
+    "errors": [],
+    "valid": true
+  },
+  "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.correction-manifest",
+  "source_raw_collection_commit_sha": "52496231afd1f3be524e1a5fa51c18ee00dcc498",
+  "source_raw_run_id": "owasp-xss-v14-1-context-collection-20260824T120106Z",
+  "source_raw_run_path": "results\\owasp-xss-v14-1-context-collection\\owasp-xss-v14-1-context-collection-20260824T120106Z"
+}

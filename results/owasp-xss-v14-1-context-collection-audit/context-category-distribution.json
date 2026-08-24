@@ -1,0 +1,26 @@
+{
+  "collection_status": {
+    "success": 388
+  },
+  "marker_preservation_category": {
+    "encoded": 24,
+    "not_reflected": 126,
+    "unchanged": 238
+  },
+  "reflection_context_category": {
+    "html_text": 7,
+    "none": 150,
+    "other": 231
+  },
+  "reflection_count_category": {
+    "0": 150,
+    "1": 238
+  },
+  "reflection_detected": {
+    "False": 150,
+    "True": 238
+  },
+  "response_content_type_category": {
+    "html": 388
+  }
+}

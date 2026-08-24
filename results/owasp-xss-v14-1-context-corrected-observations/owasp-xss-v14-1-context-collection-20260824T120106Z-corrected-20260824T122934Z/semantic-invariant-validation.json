@@ -1,0 +1,7 @@
+{
+  "candidate_count": 388,
+  "ground_truth_loaded": false,
+  "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.semantic-invariant-validation",
+  "valid": true,
+  "violations": {}
+}

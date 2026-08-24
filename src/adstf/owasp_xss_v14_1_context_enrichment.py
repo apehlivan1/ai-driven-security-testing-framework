@@ -8,6 +8,7 @@ import argparse
 from collections import Counter
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
+from html.entities import codepoint2name
 from html import unescape
 from pathlib import Path
 from typing import Any
@@ -26,8 +27,10 @@ V14_PROTOCOL_PACKAGE_DIR = REPO_ROOT / "results" / "owasp-xss-v14-protocol-freez
 DEFAULT_READINESS_DIR = REPO_ROOT / "results" / "owasp-xss-v14-1-context-enrichment-readiness"
 DEFAULT_COLLECTION_ROOT = REPO_ROOT / "results" / "owasp-xss-v14-1-context-collection"
 DEFAULT_COLLECTION_AUDIT_DIR = REPO_ROOT / "results" / "owasp-xss-v14-1-context-collection-audit"
+DEFAULT_CORRECTED_OBSERVATION_ROOT = REPO_ROOT / "results" / "owasp-xss-v14-1-context-corrected-observations"
 
 CONTEXT_ENRICHMENT_VERSION = "owasp-xss-v14-1-context-enrichment-v1"
+CORRECTED_OBSERVATION_DERIVATION_VERSION = "owasp-xss-v14-1-context-observation-derivation-v1.1"
 MINIMAL_SNAPSHOT_SCHEMA = "ow14-1-minimal-candidate-snapshot-v1"
 ENRICHED_SNAPSHOT_SCHEMA = "ow14-1-enriched-candidate-snapshot-v1"
 ENRICHED_RANKING_RULESET_VERSION = "deterministic-enriched-context-v1"
@@ -182,7 +185,7 @@ def classify_marker_preservation(body: str, marker: str = CONTEXT_ENRICHMENT_MAR
         return "unchanged"
     if encoded != marker and encoded in body:
         return "encoded"
-    if unescape(body) != body and marker in unescape(body):
+    if _html_entity_encoded_marker_occurrences(body, marker):
         return "encoded"
     if _marker_tokens_present(body, marker):
         return "transformed"
@@ -224,10 +227,8 @@ def observation_from_http_response(
     marker: str = CONTEXT_ENRICHMENT_MARKER,
     status_code: int | None = None,
 ) -> dict[str, Any]:
-    encoded = quote(marker, safe="")
-    exact_count = body.count(marker)
-    encoded_count = 0 if encoded == marker else body.count(encoded)
-    reflection_count = exact_count + encoded_count
+    recognized_occurrences = _recognized_reflection_occurrences(body, marker)
+    reflection_count = len(recognized_occurrences)
     reflected = reflection_count > 0
     preservation = classify_marker_preservation(body, marker, reflected=reflected)
     if not reflected and preservation == "transformed":
@@ -904,6 +905,317 @@ def _write_collection_audit_package(audit_dir: Path, run_dir: Path, manifest: di
     _write_text(audit_dir / "checksums.sha256", _render_checksums(audit_dir))
 
 
+def derive_corrected_observations_from_raw_collection(
+    *,
+    raw_run_dir: Path,
+    output_root: Path = DEFAULT_CORRECTED_OBSERVATION_ROOT,
+    protocol_package_dir: Path = V14_PROTOCOL_PACKAGE_DIR,
+) -> Path:
+    raw_manifest = _load_json(raw_run_dir / "collection-manifest.json")
+    original_index = _load_json(raw_run_dir / "sanitized-observations" / "candidate-observations.json")
+    original_observations = original_index["observations"]
+    raw_checksum_validation = _validate_checksum_manifest(raw_run_dir)
+    run_id = f"{raw_manifest['run_id']}-corrected-{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}"
+    derived_dir = output_root / run_id
+    if derived_dir.exists():
+        raise RuntimeError(f"corrected observation directory already exists: {derived_dir}")
+    for subdir in ["sanitized-observations", "draft-snapshots"]:
+        (derived_dir / subdir).mkdir(parents=True, exist_ok=True)
+
+    corrected_observations = [_correct_observation_from_raw(raw_run_dir, observation) for observation in original_observations]
+    corrected_index = {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.candidate-observations",
+        "artifact_status": "corrected_sanitized_candidate_level_context_observations",
+        "source_raw_run_id": raw_manifest["run_id"],
+        "source_raw_collection_commit_sha": raw_manifest.get("pre_run_commit_sha"),
+        "source_raw_run_path": _display_path(raw_run_dir),
+        "marker": CONTEXT_ENRICHMENT_MARKER,
+        "ground_truth_loaded": False,
+        "correction_reason": "HTML-entity-encoded marker representation is recognized as reflected for reflection/count/context derivation.",
+        "observations": corrected_observations,
+    }
+    _write_json(derived_dir / "sanitized-observations" / "candidate-observations.json", corrected_index)
+    draft_validation = _write_draft_enriched_snapshots(derived_dir, protocol_package_dir, corrected_observations)
+    diff = _semantic_diff_report(original_observations, corrected_observations)
+    before_invariants = _semantic_invariant_validation(original_observations)
+    after_invariants = _semantic_invariant_validation(corrected_observations)
+    corrected_accounting = _collection_accounting(
+        _collection_schedule(protocol_package_dir, raw_manifest.get("base_url", DEFAULT_BASE_URL)),
+        corrected_observations,
+        0,
+        0,
+    )
+    draft_structural = _validate_corrected_draft_snapshots(derived_dir, protocol_package_dir)
+    audit = {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.post-correction-audit",
+        "valid": (
+            raw_checksum_validation["valid"]
+            and diff["unexpected_changed_candidate_ids"] == []
+            and after_invariants["valid"]
+            and draft_validation["valid"]
+            and draft_structural["valid"]
+        ),
+        "source_raw_run_id": raw_manifest["run_id"],
+        "source_raw_collection_commit_sha": raw_manifest.get("pre_run_commit_sha"),
+        "raw_checksum_validation": raw_checksum_validation,
+        "semantic_diff_summary": {
+            "unchanged_candidate_count": diff["unchanged_candidate_count"],
+            "changed_candidate_count": diff["changed_candidate_count"],
+            "changed_candidate_ids": diff["changed_candidate_ids"],
+            "unexpected_changed_candidate_ids": diff["unexpected_changed_candidate_ids"],
+        },
+        "semantic_invariant_validation_before": before_invariants,
+        "semantic_invariant_validation_after": after_invariants,
+        "corrected_collection_accounting": corrected_accounting,
+        "draft_enriched_snapshot_validation": draft_validation,
+        "structural_equality_validation": draft_structural,
+        "ground_truth_separation_validation": {
+            "ground_truth_loaded_in_correction_path": False,
+            "observation_index_ground_truth_loaded": corrected_index["ground_truth_loaded"],
+        },
+        "external_activity": {
+            "http_requests": 0,
+            "gpt_calls": 0,
+            "qwen_calls": 0,
+            "verification_runs": 0,
+            "scored_ranking_rows": 0,
+        },
+    }
+    manifest = {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.correction-manifest",
+        "artifact_status": "offline_corrected_observation_derivation",
+        "created_at": datetime.now(UTC).isoformat(),
+        "source_raw_run_id": raw_manifest["run_id"],
+        "source_raw_run_path": _display_path(raw_run_dir),
+        "source_raw_collection_commit_sha": raw_manifest.get("pre_run_commit_sha"),
+        "correction_code_commit_sha": _git_head(),
+        "correction_code_working_tree_dirty": _git_working_tree_dirty(),
+        "raw_checksum_validation": raw_checksum_validation,
+        "corrected_observation_parser_version": CORRECTED_OBSERVATION_DERIVATION_VERSION,
+        "candidate_schema_unchanged": True,
+        "categories_unchanged": True,
+        "correction_reason": "The original preservation classifier detected HTML entity encoded marker reflections, but reflection/count/context derivation did not recognize that physical marker representation.",
+        "derived_at": datetime.now(UTC).isoformat(),
+        "ground_truth_loaded": False,
+        "external_activity": audit["external_activity"],
+    }
+    _write_json(derived_dir / "correction-manifest.json", manifest)
+    _write_json(derived_dir / "semantic-diff-report.json", diff)
+    _write_json(derived_dir / "semantic-invariant-validation-before.json", before_invariants)
+    _write_json(derived_dir / "semantic-invariant-validation.json", after_invariants)
+    _write_json(derived_dir / "corrected-context-category-distribution.json", corrected_accounting["context_distribution"])
+    _write_json(derived_dir / "post-correction-audit.json", audit)
+    _write_text(derived_dir / "README.md", _corrected_observation_readme(manifest, diff, audit))
+    _write_text(derived_dir / "checksums.sha256", _render_checksums(derived_dir))
+    return derived_dir
+
+
+def _correct_observation_from_raw(raw_run_dir: Path, original: dict[str, Any]) -> dict[str, Any]:
+    result = _load_json(raw_run_dir / original["raw_result_ref"])
+    corrected = _observation_from_execution_result(original["candidate_id"], result)
+    return {
+        **original,
+        **_ranker_observation_fields(corrected),
+        "collection_status": corrected["collection_status"],
+        "failure_state": corrected["failure_state"],
+        "correction_status": "rederived_from_raw_evidence",
+        "corrected_observation_parser_version": CORRECTED_OBSERVATION_DERIVATION_VERSION,
+    }
+
+
+def _semantic_diff_report(original_observations: list[dict[str, Any]], corrected_observations: list[dict[str, Any]]) -> dict[str, Any]:
+    original_by_id = {item["candidate_id"]: item for item in original_observations}
+    corrected_by_id = {item["candidate_id"]: item for item in corrected_observations}
+    fields = [
+        "reflection_detected",
+        "reflection_count_category",
+        "reflection_context_category",
+        "marker_preservation_category",
+        "response_content_type_category",
+        "collection_status",
+        "failure_state",
+    ]
+    changed: list[dict[str, Any]] = []
+    for candidate_id in sorted(set(original_by_id) | set(corrected_by_id)):
+        before = original_by_id.get(candidate_id, {})
+        after = corrected_by_id.get(candidate_id, {})
+        field_changes = {
+            field: {"before": before.get(field), "after": after.get(field)}
+            for field in fields
+            if before.get(field) != after.get(field)
+        }
+        if field_changes:
+            changed.append({"candidate_id": candidate_id, "fields_changed": field_changes})
+    changed_ids = [item["candidate_id"] for item in changed]
+    expected_entity_ids = sorted(
+        item["candidate_id"]
+        for item in original_observations
+        if item.get("marker_preservation_category") == "encoded"
+        and item.get("reflection_detected") is False
+        and item.get("reflection_count_category") == "0"
+    )
+    return {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.semantic-diff-report",
+        "candidate_count": len(corrected_observations),
+        "unchanged_candidate_count": len(corrected_observations) - len(changed),
+        "changed_candidate_count": len(changed),
+        "changed_candidate_ids": changed_ids,
+        "expected_html_entity_encoded_candidate_ids": expected_entity_ids,
+        "unexpected_changed_candidate_ids": sorted(set(changed_ids) - set(expected_entity_ids)),
+        "changes": changed,
+        "before_distribution": _observation_distribution(original_observations),
+        "after_distribution": _observation_distribution(corrected_observations),
+        "ground_truth_loaded": False,
+    }
+
+
+def _semantic_invariant_validation(observations: list[dict[str, Any]]) -> dict[str, Any]:
+    violations: dict[str, list[str]] = {
+        "not_reflected_implies_reflection_false": [],
+        "unchanged_implies_reflection_true": [],
+        "recognized_encoded_implies_reflection_true": [],
+        "reflection_false_implies_count_0": [],
+        "reflection_true_implies_nonzero_count": [],
+        "recognized_reflection_context_not_none": [],
+    }
+    for item in observations:
+        candidate_id = item["candidate_id"]
+        preservation = item.get("marker_preservation_category")
+        reflected = item.get("reflection_detected")
+        count = item.get("reflection_count_category")
+        context = item.get("reflection_context_category")
+        if preservation == "not_reflected" and reflected is not False:
+            violations["not_reflected_implies_reflection_false"].append(candidate_id)
+        if preservation == "unchanged" and reflected is not True:
+            violations["unchanged_implies_reflection_true"].append(candidate_id)
+        if preservation == "encoded" and reflected is not True:
+            violations["recognized_encoded_implies_reflection_true"].append(candidate_id)
+        if reflected is False and count != "0":
+            violations["reflection_false_implies_count_0"].append(candidate_id)
+        if reflected is True and count == "0":
+            violations["reflection_true_implies_nonzero_count"].append(candidate_id)
+        if (reflected is True or preservation in {"unchanged", "encoded", "transformed"}) and context == "none":
+            violations["recognized_reflection_context_not_none"].append(candidate_id)
+    non_empty = {key: value for key, value in violations.items() if value}
+    return {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.semantic-invariant-validation",
+        "valid": not non_empty,
+        "candidate_count": len(observations),
+        "violations": non_empty,
+        "ground_truth_loaded": False,
+    }
+
+
+def _observation_distribution(observations: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
+    return {
+        "reflection_detected": dict(Counter(str(item["reflection_detected"]) for item in observations)),
+        "marker_preservation_category": dict(Counter(str(item["marker_preservation_category"]) for item in observations)),
+        "reflection_count_category": dict(Counter(str(item["reflection_count_category"]) for item in observations)),
+        "reflection_context_category": dict(Counter(str(item["reflection_context_category"]) for item in observations)),
+        "response_content_type_category": dict(Counter(str(item["response_content_type_category"]) for item in observations)),
+        "collection_status": dict(Counter(str(item["collection_status"]) for item in observations)),
+    }
+
+
+def _validate_corrected_draft_snapshots(derived_dir: Path, protocol_package_dir: Path) -> dict[str, Any]:
+    snapshot_index = _load_json(protocol_package_dir / "model-facing" / "candidate-snapshot-index.json")
+    errors: list[str] = []
+    candidate_reference_count = 0
+    unique_ids: set[str] = set()
+    count_distribution: Counter[str] = Counter()
+    for item in snapshot_index["snapshot_paths"]:
+        original = _load_json(protocol_package_dir / item["path"])
+        derived_path = derived_dir / "draft-snapshots" / f"{original['scenario_id']}.json"
+        if not derived_path.exists():
+            errors.append(f"missing derived snapshot: {original['scenario_id']}")
+            continue
+        derived = _load_json(derived_path)
+        original_ids = [candidate["candidate_id"] for candidate in original["candidate_input"]]
+        derived_ids = [candidate["candidate_id"] for candidate in derived["candidate_input"]]
+        if original_ids != derived_ids:
+            errors.append(f"candidate order mismatch: {original['scenario_id']}")
+        try:
+            validate_ranker_facing_snapshot(derived)
+        except EnrichmentLeakageError as exc:
+            errors.append(f"{original['scenario_id']}: {exc}")
+        candidate_reference_count += len(derived_ids)
+        unique_ids.update(derived_ids)
+        count_distribution[str(len(derived_ids))] += 1
+    return {
+        "schema_version": f"{CORRECTED_OBSERVATION_DERIVATION_VERSION}.structural-equality-validation",
+        "valid": not errors and len(snapshot_index["snapshot_paths"]) == 266 and candidate_reference_count == 1330 and len(unique_ids) == 388,
+        "errors": errors,
+        "scenario_count": len(snapshot_index["snapshot_paths"]),
+        "candidate_reference_count": candidate_reference_count,
+        "unique_candidate_count": len(unique_ids),
+        "candidate_count_distribution": dict(count_distribution),
+        "scenario_membership_and_order_preserved": not errors,
+        "ground_truth_used_for_snapshot_construction": False,
+    }
+
+
+def _validate_checksum_manifest(root: Path) -> dict[str, Any]:
+    checksum_file = root / "checksums.sha256"
+    errors: list[str] = []
+    checked = 0
+    if not checksum_file.exists():
+        return {"valid": False, "checked_files": 0, "errors": [f"missing checksum file: {_display_path(checksum_file)}"]}
+    for line in checksum_file.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        match = re.match(r"^([0-9a-fA-F]{64})\s+\*?(.+)$", line)
+        if not match:
+            errors.append(f"malformed checksum line: {line}")
+            continue
+        expected, relative = match.groups()
+        path = root / relative.strip()
+        if not path.exists():
+            errors.append(f"missing artifact: {relative}")
+            continue
+        actual = _sha256_file(path)
+        if actual.lower() != expected.lower():
+            errors.append(f"checksum mismatch: {relative}")
+        checked += 1
+    return {
+        "valid": not errors,
+        "checked_files": checked,
+        "checksum_file_sha256": _sha256_file(checksum_file),
+        "errors": errors,
+    }
+
+
+def _git_working_tree_dirty() -> bool | str:
+    try:
+        status = subprocess.check_output(["git", "status", "--short"], cwd=REPO_ROOT, text=True).strip()
+        return bool(status)
+    except Exception:
+        return "not_available"
+
+
+def _corrected_observation_readme(manifest: dict[str, Any], diff: dict[str, Any], audit: dict[str, Any]) -> str:
+    return "\n".join(
+        [
+            "# v1.4.1 Corrected Context Observation Derivation",
+            "",
+            "Status: deterministic offline derivation from immutable raw benign collection evidence.",
+            "",
+            f"Source raw run: `{manifest['source_raw_run_id']}`",
+            f"Source raw collection commit: `{manifest['source_raw_collection_commit_sha']}`",
+            f"Corrected observation parser version: `{manifest['corrected_observation_parser_version']}`",
+            "",
+            "No new HTTP requests, GPT calls, Qwen calls, local inference, browser verification, vulnerability verification, ground-truth loading, ranking metrics or effectiveness scoring were performed.",
+            "",
+            f"Changed candidates: `{diff['changed_candidate_count']}`",
+            f"Unchanged candidates: `{diff['unchanged_candidate_count']}`",
+            f"Semantic invariants valid after correction: `{audit['semantic_invariant_validation_after']['valid']}`",
+            f"Draft snapshots valid: `{audit['draft_enriched_snapshot_validation']['valid']}`",
+            "",
+            "These draft snapshots remain pre-freeze artifacts and must not be represented as final protocol artifacts until separately reviewed and frozen.",
+            "",
+        ]
+    )
+
+
 def _carrier_category(source: str) -> str:
     return {
         "request_parameter": "query_parameter",
@@ -1029,11 +1341,53 @@ def _marker_tokens_present(body: str, marker: str) -> bool:
 
 
 def _recognized_reflection_occurrences(body: str, marker: str) -> list[tuple[int, str]]:
-    occurrences = [(position, marker) for position in _find_all(body, marker)]
+    occurrences: list[tuple[int, int, str]] = [(position, position + len(marker), marker) for position in _find_all(body, marker)]
     encoded = quote(marker, safe="")
     if encoded != marker:
-        occurrences.extend((position, encoded) for position in _find_all(body, encoded))
-    return sorted(occurrences, key=lambda item: item[0])
+        occurrences.extend((position, position + len(encoded), encoded) for position in _find_all(body, encoded))
+    occurrences.extend(_html_entity_encoded_marker_occurrences(body, marker))
+    return [(position, observed) for position, _end, observed in _deduplicate_occurrences(occurrences)]
+
+
+def _html_entity_encoded_marker_occurrences(body: str, marker: str) -> list[tuple[int, int, str]]:
+    pattern = _html_entity_marker_pattern(marker)
+    matches: list[tuple[int, int, str]] = []
+    excluded = {marker, quote(marker, safe="")}
+    for match in pattern.finditer(body):
+        observed = match.group(0)
+        if observed in excluded:
+            continue
+        if unescape(observed) == marker:
+            matches.append((match.start(), match.end(), observed))
+    return matches
+
+
+def _html_entity_marker_pattern(marker: str) -> re.Pattern[str]:
+    return re.compile("".join(_html_entity_char_pattern(char) for char in marker), re.IGNORECASE)
+
+
+def _html_entity_char_pattern(char: str) -> str:
+    codepoint = ord(char)
+    variants = {
+        re.escape(char),
+        f"&#{codepoint};",
+        f"&#x{codepoint:x};",
+    }
+    name = codepoint2name.get(codepoint)
+    if name:
+        variants.add(f"&{name};")
+    return "(?:" + "|".join(sorted(variants, key=len, reverse=True)) + ")"
+
+
+def _deduplicate_occurrences(occurrences: list[tuple[int, int, str]]) -> list[tuple[int, int, str]]:
+    ordered = sorted(occurrences, key=lambda item: (item[0], -(item[1] - item[0])))
+    selected: list[tuple[int, int, str]] = []
+    for occurrence in ordered:
+        start, end, _observed = occurrence
+        if any(start < existing_end and end > existing_start for existing_start, existing_end, _existing in selected):
+            continue
+        selected.append(occurrence)
+    return sorted(selected, key=lambda item: item[0])
 
 
 def _find_all(body: str, needle: str) -> list[int]:
@@ -1151,6 +1505,13 @@ def main() -> None:
     collect.add_argument("--output-root", type=Path, default=DEFAULT_COLLECTION_ROOT)
     collect.add_argument("--audit-dir", type=Path, default=DEFAULT_COLLECTION_AUDIT_DIR)
     collect.add_argument("--timeout-seconds", type=float, default=8.0)
+    derive = subparsers.add_parser("derive-corrected", help="Derive corrected observations from an existing raw collection package")
+    derive.add_argument(
+        "--raw-run-dir",
+        type=Path,
+        default=DEFAULT_COLLECTION_ROOT / "owasp-xss-v14-1-context-collection-20260824T120106Z",
+    )
+    derive.add_argument("--output-root", type=Path, default=DEFAULT_CORRECTED_OBSERVATION_ROOT)
     args = parser.parse_args()
 
     if args.command == "readiness":
@@ -1165,6 +1526,12 @@ def main() -> None:
             timeout_seconds=args.timeout_seconds,
         )
         print(f"v1.4.1 benign context collection written to: {run_dir}")
+    elif args.command == "derive-corrected":
+        derived_dir = derive_corrected_observations_from_raw_collection(
+            raw_run_dir=args.raw_run_dir,
+            output_root=args.output_root,
+        )
+        print(f"v1.4.1 corrected context observations written to: {derived_dir}")
 
 
 if __name__ == "__main__":

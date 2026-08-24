@@ -1,0 +1,522 @@
+{
+  "after_distribution": {
+    "collection_status": {
+      "success": 388
+    },
+    "marker_preservation_category": {
+      "encoded": 24,
+      "not_reflected": 126,
+      "unchanged": 238
+    },
+    "reflection_context_category": {
+      "html_text": 8,
+      "none": 126,
+      "other": 254
+    },
+    "reflection_count_category": {
+      "0": 126,
+      "1": 262
+    },
+    "reflection_detected": {
+      "False": 126,
+      "True": 262
+    },
+    "response_content_type_category": {
+      "html": 388
+    }
+  },
+  "before_distribution": {
+    "collection_status": {
+      "success": 388
+    },
+    "marker_preservation_category": {
+      "encoded": 24,
+      "not_reflected": 126,
+      "unchanged": 238
+    },
+    "reflection_context_category": {
+      "html_text": 7,
+      "none": 150,
+      "other": 231
+    },
+    "reflection_count_category": {
+      "0": 150,
+      "1": 238
+    },
+    "reflection_detected": {
+      "False": 150,
+      "True": 238
+    },
+    "response_content_type_category": {
+      "html": 388
+    }
+  },
+  "candidate_count": 388,
+  "changed_candidate_count": 24,
+  "changed_candidate_ids": [
+    "ox14-c000030",
+    "ox14-c000031",
+    "ox14-c000033",
+    "ox14-c000037",
+    "ox14-c000048",
+    "ox14-c000058",
+    "ox14-c000075",
+    "ox14-c000100",
+    "ox14-c000101",
+    "ox14-c000102",
+    "ox14-c000109",
+    "ox14-c000111",
+    "ox14-c000183",
+    "ox14-c000184",
+    "ox14-c000197",
+    "ox14-c000224",
+    "ox14-c000273",
+    "ox14-c000278",
+    "ox14-c000296",
+    "ox14-c000323",
+    "ox14-c000352",
+    "ox14-c000377",
+    "ox14-c000406",
+    "ox14-c000429"
+  ],
+  "changes": [
+    {
+      "candidate_id": "ox14-c000030",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000031",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000033",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000037",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000048",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000058",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000075",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000100",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000101",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000102",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000109",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000111",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000183",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000184",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "html_text",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000197",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000224",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000273",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000278",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000296",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000323",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000352",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000377",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000406",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    },
+    {
+      "candidate_id": "ox14-c000429",
+      "fields_changed": {
+        "reflection_context_category": {
+          "after": "other",
+          "before": "none"
+        },
+        "reflection_count_category": {
+          "after": "1",
+          "before": "0"
+        },
+        "reflection_detected": {
+          "after": true,
+          "before": false
+        }
+      }
+    }
+  ],
+  "expected_html_entity_encoded_candidate_ids": [
+    "ox14-c000030",
+    "ox14-c000031",
+    "ox14-c000033",
+    "ox14-c000037",
+    "ox14-c000048",
+    "ox14-c000058",
+    "ox14-c000075",
+    "ox14-c000100",
+    "ox14-c000101",
+    "ox14-c000102",
+    "ox14-c000109",
+    "ox14-c000111",
+    "ox14-c000183",
+    "ox14-c000184",
+    "ox14-c000197",
+    "ox14-c000224",
+    "ox14-c000273",
+    "ox14-c000278",
+    "ox14-c000296",
+    "ox14-c000323",
+    "ox14-c000352",
+    "ox14-c000377",
+    "ox14-c000406",
+    "ox14-c000429"
+  ],
+  "ground_truth_loaded": false,
+  "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.semantic-diff-report",
+  "unchanged_candidate_count": 364,
+  "unexpected_changed_candidate_ids": []
+}

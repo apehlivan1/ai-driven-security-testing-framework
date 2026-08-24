@@ -1,0 +1,78 @@
+{
+  "collection_denominator_report": {
+    "actual_candidate_http_requests": 388,
+    "actual_http_exchanges_including_redirects": 388,
+    "attempted_requests": 388,
+    "context_distribution": {
+      "collection_status": {
+        "success": 388
+      },
+      "marker_preservation_category": {
+        "encoded": 24,
+        "not_reflected": 126,
+        "unchanged": 238
+      },
+      "reflection_context_category": {
+        "html_text": 7,
+        "none": 150,
+        "other": 231
+      },
+      "reflection_count_category": {
+        "0": 150,
+        "1": 238
+      },
+      "reflection_detected": {
+        "False": 150,
+        "True": 238
+      },
+      "response_content_type_category": {
+        "html": 388
+      }
+    },
+    "duplicate_attempts": 0,
+    "failures_or_timeouts": 0,
+    "missing_candidate_ids": [],
+    "successful_responses": 388,
+    "unexpected_candidate_ids": []
+  },
+  "draft_enriched_snapshot_validation": {
+    "artifact_status": "draft_pre_freeze",
+    "candidate_order_preserved": true,
+    "candidate_references": 1330,
+    "errors": [],
+    "ground_truth_loaded": false,
+    "schema_version": "owasp-xss-v14-1-context-enrichment-v1.draft-enriched-snapshot-validation",
+    "snapshot_count": 266,
+    "valid": true
+  },
+  "gpt_calls": 0,
+  "ground_truth_separation_validation": {
+    "ground_truth_loaded_in_collector_path": false,
+    "observation_index_ground_truth_loaded": false
+  },
+  "leakage_validation": {
+    "errors": [],
+    "valid": true
+  },
+  "qwen_calls": 0,
+  "raw_evidence_checksum_validation": "available_after_checksums_written",
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.post-collection-audit",
+  "scored_ranking_rows": 0,
+  "structural_equality_validation": {
+    "candidate_count_distribution": {
+      "5": 266
+    },
+    "candidate_reference_count": 1330,
+    "errors": [],
+    "ground_truth_used_for_snapshot_construction": false,
+    "negative_only_scenario_count": 30,
+    "positive_scenario_count": 236,
+    "scenario_count": 266,
+    "scenario_membership_and_order_preserved": true,
+    "schema_version": "owasp-xss-v14-1-context-enrichment-v1.structural-equality-validation",
+    "unique_candidate_count": 388,
+    "valid": true
+  },
+  "valid": true,
+  "verification_runs": 0
+}

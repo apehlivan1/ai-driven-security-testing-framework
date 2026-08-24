@@ -1,0 +1,10 @@
+{
+  "artifact_status": "draft_pre_freeze",
+  "candidate_order_preserved": true,
+  "candidate_references": 1330,
+  "errors": [],
+  "ground_truth_loaded": false,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.draft-enriched-snapshot-validation",
+  "snapshot_count": 266,
+  "valid": true
+}
