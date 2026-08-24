@@ -813,3 +813,24 @@ settings, trial counts, candidate-test budget, SQLi probes, adapters, verifier
 criteria, metrics and scoring rules. The corrected final study must be a
 complete fresh v1.5.1 run in `results/owasp-sqli-v15-1-confirmatory-final/`;
 it must not resume or reuse observations from the interrupted v1.5 run.
+
+v1.5.1 completed post-run SQLi audit evidence:
+
+- Authoritative raw/normalized run:
+  `results/owasp-sqli-v15-1-confirmatory-final/owasp-sqli-v15-1-confirmatory-20260823T131208Z/`
+- Post-run audit document:
+  `docs/evaluation-v1.5.1-post-run-audit.md`
+- Recovery amendment:
+  `docs/evaluation-protocol-v1.5.1.md`
+- Frozen v1.5 protocol package:
+  `results/owasp-sqli-v15-protocol-freeze/`
+
+The v1.5.1 post-run integrity audit passed. It verified 124 deterministic
+ranking rows, 620 GPT rows, 620 Qwen rows, 1364 total ranking rows, 200 direct
+SQLi cases, 1200 direct HTTP requests, zero duplicate or missing ranking
+sequences, zero duplicate direct cases, zero ground-truth runtime leakage, zero
+aborted-v1.5 contamination and checksum validation with 5898 checked files, 0
+bad and 0 missing. Direct SQLi runtime verification produced 84 verified and
+116 inconclusive outcomes over the 200-case frozen corpus. Canonical artifacts
+have not yet been generated; canonicalization remains a separate offline
+milestone.
