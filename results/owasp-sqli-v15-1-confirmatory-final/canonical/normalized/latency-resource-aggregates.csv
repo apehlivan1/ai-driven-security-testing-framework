@@ -1,0 +1,4 @@
+arm_id,latency_observation_count,min_latency_ms,median_latency_ms,mean_latency_ms,max_latency_ms,input_tokens,output_tokens,total_tokens,usage_records,provider_response_ids,cost
+deterministic_structural,124,0,0.0,0,0,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable
+proprietary_gpt,620,92,4400.5,4811.36,60037,380101,178496,558597,617,617,not_available
+local_qwen,620,52301,70107.0,75515.216,166628,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable,not_applicable

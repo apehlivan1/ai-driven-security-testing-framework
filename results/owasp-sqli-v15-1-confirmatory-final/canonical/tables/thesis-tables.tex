@@ -1,0 +1,28 @@
+% Thesis-ready tables for v1.5.1 OWASP SQLi final results.
+% Generated from canonical normalized artifacts; do not edit raw results.
+\begin{table}[ht]
+\centering
+\caption{v1.5.1 SQLi ranking effectiveness on valid positive-scenario observations}
+\begin{tabular}{lrrrr}
+\hline
+Arm & n & Top-1 & Top-4 & MRR \\
+\hline
+Deterministic Structural & 105 & 20/105 (19.05\%) & 91/105 (86.67\%) & 0.4552 \\
+Gpt & 522 & 99/522 (18.97\%) & 411/522 (78.74\%) & 0.4447 \\
+Qwen & 520 & 75/520 (14.42\%) & 415/520 (79.81\%) & 0.4274 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{v1.5.1 direct SQLi verification outcomes}
+\begin{tabular}{lrrrr}
+\hline
+Ground truth & Verified & Inconclusive & Rejected & Total \\
+\hline
+vulnerable & 84 & 21 & 0 & 105 \\
+non vulnerable & 0 & 95 & 0 & 95 \\
+\hline
+\end{tabular}
+\end{table}

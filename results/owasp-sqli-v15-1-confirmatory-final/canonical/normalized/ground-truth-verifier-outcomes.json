@@ -1,0 +1,16 @@
+[
+  {
+    "ground_truth": "vulnerable",
+    "inconclusive": 21,
+    "rejected": 0,
+    "total": 105,
+    "verified": 84
+  },
+  {
+    "ground_truth": "non_vulnerable",
+    "inconclusive": 95,
+    "rejected": 0,
+    "total": 95,
+    "verified": 0
+  }
+]

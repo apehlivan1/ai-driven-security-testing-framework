@@ -1,0 +1,62 @@
+[
+  {
+    "arm_id": "deterministic_structural",
+    "invalid_negative_observations": 0,
+    "invalid_positive_observations": 0,
+    "mrr": 0.455238,
+    "negative_scenario_ranking_metrics": "not_applicable",
+    "rank_distribution": {
+      "1": 20,
+      "2": 22,
+      "3": 21,
+      "4": 28,
+      "5": 14
+    },
+    "top_1_rate": 0.190476,
+    "top_1_success_count": 20,
+    "top_4_rate": 0.866667,
+    "top_4_success_count": 91,
+    "valid_negative_observations": 19,
+    "valid_positive_observations": 105
+  },
+  {
+    "arm_id": "proprietary_gpt",
+    "invalid_negative_observations": 0,
+    "invalid_positive_observations": 3,
+    "mrr": 0.444668,
+    "negative_scenario_ranking_metrics": "not_applicable",
+    "rank_distribution": {
+      "1": 99,
+      "2": 97,
+      "3": 104,
+      "4": 111,
+      "5": 111
+    },
+    "top_1_rate": 0.189655,
+    "top_1_success_count": 99,
+    "top_4_rate": 0.787356,
+    "top_4_success_count": 411,
+    "valid_negative_observations": 95,
+    "valid_positive_observations": 522
+  },
+  {
+    "arm_id": "local_qwen",
+    "invalid_negative_observations": 0,
+    "invalid_positive_observations": 5,
+    "mrr": 0.427404,
+    "negative_scenario_ranking_metrics": "not_applicable",
+    "rank_distribution": {
+      "1": 75,
+      "2": 130,
+      "3": 105,
+      "4": 105,
+      "5": 105
+    },
+    "top_1_rate": 0.144231,
+    "top_1_success_count": 75,
+    "top_4_rate": 0.798077,
+    "top_4_success_count": 415,
+    "valid_negative_observations": 95,
+    "valid_positive_observations": 520
+  }
+]

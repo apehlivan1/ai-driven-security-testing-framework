@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "direct_case_count": 200,
+    "direct_request_count": 1200,
+    "direct_tp_fp_fn_tn": {
+      "fn": 21,
+      "fp": 0,
+      "tn": 95,
+      "tp": 84
+    },
+    "ranking_arm_counts": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620
+    },
+    "raw_run_checksum_status": {
+      "actual_direct_cases": 200,
+      "actual_ranking_denominators": {
+        "deterministic_structural": 124,
+        "local_qwen": 620,
+        "proprietary_gpt": 620
+      },
+      "expected_direct_cases": 200,
+      "expected_ranking_denominators": {
+        "deterministic_structural": 124,
+        "local_qwen": 620,
+        "proprietary_gpt": 620,
+        "total_ranking_rows": 1364
+      },
+      "schema_version": "owasp-sqli-v15-confirmatory-execution-validation-v1",
+      "valid": true
+    },
+    "scenario_counts": {
+      "negative_only": 19,
+      "positive": 105
+    },
+    "total_ranking_rows": 1364
+  },
+  "created_at": "2026-08-24T09:06:10.004997+00:00",
+  "errors": [],
+  "schema_version": "owasp-sqli-v15-1-canonical-validation-v1",
+  "status": "PASS"
+}

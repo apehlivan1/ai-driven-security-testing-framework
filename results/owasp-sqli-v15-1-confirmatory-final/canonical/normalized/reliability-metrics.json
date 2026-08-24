@@ -1,0 +1,44 @@
+[
+  {
+    "arm_id": "deterministic_structural",
+    "attempted_rows": 124,
+    "contract_valid_rate": 1.0,
+    "contract_valid_rows": 124,
+    "malformed_rate": 0.0,
+    "malformed_rows": 0,
+    "provider_failed_rows": 0,
+    "provider_failure_rate": 0.0,
+    "retry_count": 0,
+    "scheduled_rows": 124,
+    "timeout_rows": 0,
+    "valid_rows": 124
+  },
+  {
+    "arm_id": "proprietary_gpt",
+    "attempted_rows": 620,
+    "contract_valid_rate": 0.995161,
+    "contract_valid_rows": 617,
+    "malformed_rate": 0.0,
+    "malformed_rows": 0,
+    "provider_failed_rows": 3,
+    "provider_failure_rate": 0.004839,
+    "retry_count": 0,
+    "scheduled_rows": 620,
+    "timeout_rows": 1,
+    "valid_rows": 617
+  },
+  {
+    "arm_id": "local_qwen",
+    "attempted_rows": 620,
+    "contract_valid_rate": 0.991935,
+    "contract_valid_rows": 615,
+    "malformed_rate": 0.008065,
+    "malformed_rows": 5,
+    "provider_failed_rows": 0,
+    "provider_failure_rate": 0.0,
+    "retry_count": 0,
+    "scheduled_rows": 620,
+    "timeout_rows": 0,
+    "valid_rows": 615
+  }
+]

@@ -831,6 +831,46 @@ SQLi cases, 1200 direct HTTP requests, zero duplicate or missing ranking
 sequences, zero duplicate direct cases, zero ground-truth runtime leakage, zero
 aborted-v1.5 contamination and checksum validation with 5898 checked files, 0
 bad and 0 missing. Direct SQLi runtime verification produced 84 verified and
-116 inconclusive outcomes over the 200-case frozen corpus. Canonical artifacts
-have not yet been generated; canonicalization remains a separate offline
-milestone.
+116 inconclusive outcomes over the 200-case frozen corpus.
+
+v1.5.1 final canonical SQLi evidence:
+
+- Final results document:
+  `docs/evaluation-v1.5.1-final-results.md`
+- Canonical package:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/`
+- Manifest:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/manifest.json`
+- Validation report:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/validation-report.json`
+- Checksums:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/checksums.sha256`
+- Ranking observations:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/ranking-observations.csv`
+- Ranked observations with post-run scoring:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/ranked-observations-with-scores.csv`
+- Arm-level ranking metrics:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/arm-ranking-metrics.csv`
+- Reliability metrics:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/reliability-metrics.csv`
+- Direct SQLi cases with post-run classification:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/direct-sqli-cases-scored.csv`
+- Ground-truth versus verifier outcomes:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/ground-truth-verifier-outcomes.csv`
+- Adapter aggregates:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/adapter-aggregates.csv`
+- Latency/resource aggregates:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/latency-resource-aggregates.csv`
+- Thesis tables:
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/tables/thesis-tables.md`
+  and
+  `results/owasp-sqli-v15-1-confirmatory-final/canonical/tables/thesis-tables.tex`
+
+The v1.5.1 canonical package is the final SQLi confirmatory evidence package.
+It reports 124 deterministic, 620 GPT and 620 Qwen ranking rows; 617 valid GPT
+outputs with 3 provider-failed rows; 615 valid Qwen outputs with 5 malformed
+rows; and 200 direct SQLi cases with TP 84, FP 0, FN 21 and TN 95 under the
+frozen post-run scoring rules. Cost remains `not_available` because no frozen
+numeric pricing basis was defined. The raw source run is preserved separately
+and should remain local unless a deliberate raw-evidence archival decision is
+made.

@@ -1,0 +1,37 @@
+[
+  {
+    "adapter_class": "cookie",
+    "inconclusive": 18,
+    "rejected": 0,
+    "total": 18,
+    "verified": 0
+  },
+  {
+    "adapter_class": "form",
+    "inconclusive": 16,
+    "rejected": 0,
+    "total": 32,
+    "verified": 16
+  },
+  {
+    "adapter_class": "header",
+    "inconclusive": 19,
+    "rejected": 0,
+    "total": 40,
+    "verified": 21
+  },
+  {
+    "adapter_class": "multi_form",
+    "inconclusive": 40,
+    "rejected": 0,
+    "total": 61,
+    "verified": 21
+  },
+  {
+    "adapter_class": "multi_query",
+    "inconclusive": 23,
+    "rejected": 0,
+    "total": 49,
+    "verified": 26
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "arm_id": "deterministic_structural",
+    "cost": "not_applicable",
+    "input_tokens": "not_applicable",
+    "latency_observation_count": 124,
+    "max_latency_ms": 0,
+    "mean_latency_ms": 0,
+    "median_latency_ms": 0.0,
+    "min_latency_ms": 0,
+    "output_tokens": "not_applicable",
+    "provider_response_ids": "not_applicable",
+    "total_tokens": "not_applicable",
+    "usage_records": "not_applicable"
+  },
+  {
+    "arm_id": "proprietary_gpt",
+    "cost": "not_available",
+    "input_tokens": 380101,
+    "latency_observation_count": 620,
+    "max_latency_ms": 60037,
+    "mean_latency_ms": 4811.36,
+    "median_latency_ms": 4400.5,
+    "min_latency_ms": 92,
+    "output_tokens": 178496,
+    "provider_response_ids": 617,
+    "total_tokens": 558597,
+    "usage_records": 617
+  },
+  {
+    "arm_id": "local_qwen",
+    "cost": "not_applicable",
+    "input_tokens": "not_applicable",
+    "latency_observation_count": 620,
+    "max_latency_ms": 166628,
+    "mean_latency_ms": 75515.216,
+    "median_latency_ms": 70107.0,
+    "min_latency_ms": 52301,
+    "output_tokens": "not_applicable",
+    "provider_response_ids": "not_applicable",
+    "total_tokens": "not_applicable",
+    "usage_records": "not_applicable"
+  }
+]

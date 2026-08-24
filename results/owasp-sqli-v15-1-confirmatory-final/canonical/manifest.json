@@ -1,0 +1,33 @@
+{
+  "canonical_package": "results/owasp-sqli-v15-1-confirmatory-final/canonical",
+  "created_at": "2026-08-24T09:06:10.003678+00:00",
+  "denominators": {
+    "direct_cases": 200,
+    "direct_requests": 1200,
+    "negative_only_scenarios": 19,
+    "positive_scenarios": 105,
+    "ranking_rows": {
+      "deterministic_structural": 124,
+      "local_qwen": 620,
+      "proprietary_gpt": 620
+    },
+    "total_ranking_rows": 1364
+  },
+  "direct_metrics_source": "normalized/direct-sqli-cases-scored.csv",
+  "execution_commit_observed_in_post_run_audit": "5905981f54da023faaf80c4bff12fc9e9e671e38",
+  "execution_tag": "evaluation-protocol-v1.5.1-ready",
+  "frozen_protocol_package": "results/owasp-sqli-v15-protocol-freeze",
+  "ground_truth_source": "results/owasp-sqli-v15-protocol-freeze/ground-truth/scoring-data.json",
+  "notes": [
+    "Ground truth was applied only during post-run scoring.",
+    "Failed or malformed model outputs are preserved as reliability evidence.",
+    "Cost remains not_available because no frozen numeric pricing basis exists."
+  ],
+  "protocol": "evaluation-protocol-v1.5.1",
+  "protocol_document": "docs/evaluation-protocol-v1.5.1.md",
+  "ranking_metrics_source": "normalized/ranked-observations-with-scores.csv",
+  "raw_run": "results/owasp-sqli-v15-1-confirmatory-final/owasp-sqli-v15-1-confirmatory-20260823T131208Z",
+  "raw_run_manifest": "results/owasp-sqli-v15-1-confirmatory-final/owasp-sqli-v15-1-confirmatory-20260823T131208Z/manifest.json",
+  "schema_version": "owasp-sqli-v15-1-canonical-package-v1",
+  "study_id": "owasp-sqli-v15-1-confirmatory-final"
+}

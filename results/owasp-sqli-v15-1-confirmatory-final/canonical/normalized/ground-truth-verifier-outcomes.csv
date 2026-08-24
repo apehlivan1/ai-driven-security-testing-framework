@@ -1,0 +1,3 @@
+ground_truth,verified,inconclusive,rejected,total
+vulnerable,84,21,0,105
+non_vulnerable,0,95,0,95

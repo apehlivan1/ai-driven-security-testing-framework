@@ -1,0 +1,19 @@
+{
+  "false_verified_rate_on_non_vulnerable": 0.0,
+  "fn": 21,
+  "fp": 0,
+  "inconclusive": 116,
+  "inconclusive_rate": 0.58,
+  "non_vulnerable_cases": 95,
+  "non_vulnerable_not_verified_rate": 1.0,
+  "rejected": 0,
+  "request_count": 1200,
+  "tn": 95,
+  "total_cases": 200,
+  "tp": 84,
+  "verified": 84,
+  "verified_correct_over_all_cases": 0.42,
+  "verified_finding_rate_over_all_cases": 0.42,
+  "vulnerable_cases": 105,
+  "vulnerable_detection_rate": 0.8
+}

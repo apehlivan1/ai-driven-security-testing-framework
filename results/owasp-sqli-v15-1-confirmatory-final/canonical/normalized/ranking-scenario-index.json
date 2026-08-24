@@ -1,0 +1,994 @@
+[
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000446",
+    "scenario_id": "os15-s0001",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000023",
+    "scenario_id": "os15-s0002",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000086",
+    "scenario_id": "os15-s0003",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000005",
+    "scenario_id": "os15-s0004",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000010",
+    "scenario_id": "os15-s0005",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000262",
+    "scenario_id": "os15-s0006",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000232",
+    "scenario_id": "os15-s0007",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000202",
+    "scenario_id": "os15-s0008",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000415",
+    "scenario_id": "os15-s0009",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000482",
+    "scenario_id": "os15-s0010",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000365",
+    "scenario_id": "os15-s0011",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000273",
+    "scenario_id": "os15-s0012",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000082",
+    "scenario_id": "os15-s0013",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000072",
+    "scenario_id": "os15-s0014",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000105",
+    "scenario_id": "os15-s0015",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000174",
+    "scenario_id": "os15-s0016",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000468",
+    "scenario_id": "os15-s0017",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000292",
+    "scenario_id": "os15-s0018",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000253",
+    "scenario_id": "os15-s0019",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000291",
+    "scenario_id": "os15-s0020",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000353",
+    "scenario_id": "os15-s0021",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000465",
+    "scenario_id": "os15-s0022",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000334",
+    "scenario_id": "os15-s0023",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000075",
+    "scenario_id": "os15-s0024",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000055",
+    "scenario_id": "os15-s0025",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000409",
+    "scenario_id": "os15-s0026",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000267",
+    "scenario_id": "os15-s0027",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000184",
+    "scenario_id": "os15-s0028",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000066",
+    "scenario_id": "os15-s0029",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000477",
+    "scenario_id": "os15-s0030",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000283",
+    "scenario_id": "os15-s0031",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000454",
+    "scenario_id": "os15-s0032",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000076",
+    "scenario_id": "os15-s0033",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000183",
+    "scenario_id": "os15-s0034",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000445",
+    "scenario_id": "os15-s0035",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000394",
+    "scenario_id": "os15-s0036",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000242",
+    "scenario_id": "os15-s0037",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000272",
+    "scenario_id": "os15-s0038",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000480",
+    "scenario_id": "os15-s0039",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000234",
+    "scenario_id": "os15-s0040",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000356",
+    "scenario_id": "os15-s0041",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000354",
+    "scenario_id": "os15-s0042",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000016",
+    "scenario_id": "os15-s0043",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000024",
+    "scenario_id": "os15-s0044",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000387",
+    "scenario_id": "os15-s0045",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000304",
+    "scenario_id": "os15-s0046",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000147",
+    "scenario_id": "os15-s0047",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000021",
+    "scenario_id": "os15-s0048",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000274",
+    "scenario_id": "os15-s0049",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000094",
+    "scenario_id": "os15-s0050",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000008",
+    "scenario_id": "os15-s0051",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000371",
+    "scenario_id": "os15-s0052",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000145",
+    "scenario_id": "os15-s0053",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000003",
+    "scenario_id": "os15-s0054",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000224",
+    "scenario_id": "os15-s0055",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000146",
+    "scenario_id": "os15-s0056",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000190",
+    "scenario_id": "os15-s0057",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000225",
+    "scenario_id": "os15-s0058",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000486",
+    "scenario_id": "os15-s0059",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000015",
+    "scenario_id": "os15-s0060",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000096",
+    "scenario_id": "os15-s0061",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000302",
+    "scenario_id": "os15-s0062",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000423",
+    "scenario_id": "os15-s0063",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000386",
+    "scenario_id": "os15-s0064",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000065",
+    "scenario_id": "os15-s0065",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000200",
+    "scenario_id": "os15-s0066",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000201",
+    "scenario_id": "os15-s0067",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000352",
+    "scenario_id": "os15-s0068",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000136",
+    "scenario_id": "os15-s0069",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000484",
+    "scenario_id": "os15-s0070",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000483",
+    "scenario_id": "os15-s0071",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000363",
+    "scenario_id": "os15-s0072",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000219",
+    "scenario_id": "os15-s0073",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000085",
+    "scenario_id": "os15-s0074",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000444",
+    "scenario_id": "os15-s0075",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000178",
+    "scenario_id": "os15-s0076",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000062",
+    "scenario_id": "os15-s0077",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000443",
+    "scenario_id": "os15-s0078",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000282",
+    "scenario_id": "os15-s0079",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000181",
+    "scenario_id": "os15-s0080",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000117",
+    "scenario_id": "os15-s0081",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000425",
+    "scenario_id": "os15-s0082",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000436",
+    "scenario_id": "os15-s0083",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000395",
+    "scenario_id": "os15-s0084",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000235",
+    "scenario_id": "os15-s0085",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000453",
+    "scenario_id": "os15-s0086",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000092",
+    "scenario_id": "os15-s0087",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000233",
+    "scenario_id": "os15-s0088",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000194",
+    "scenario_id": "os15-s0089",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000130",
+    "scenario_id": "os15-s0090",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000478",
+    "scenario_id": "os15-s0091",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000191",
+    "scenario_id": "os15-s0092",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000217",
+    "scenario_id": "os15-s0093",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000307",
+    "scenario_id": "os15-s0094",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000306",
+    "scenario_id": "os15-s0095",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000142",
+    "scenario_id": "os15-s0096",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000361",
+    "scenario_id": "os15-s0097",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000059",
+    "scenario_id": "os15-s0098",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000129",
+    "scenario_id": "os15-s0099",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000095",
+    "scenario_id": "os15-s0100",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000034",
+    "scenario_id": "os15-s0101",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000193",
+    "scenario_id": "os15-s0102",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000357",
+    "scenario_id": "os15-s0103",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000109",
+    "scenario_id": "os15-s0104",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "os15-c000179",
+    "scenario_id": "os15-s0105",
+    "scenario_type": "positive",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0106",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0107",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0108",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0109",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0110",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0111",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0112",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0113",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0114",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0115",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0116",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0117",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0118",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0119",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0120",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0121",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0122",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0123",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  },
+  {
+    "candidate_count": 5,
+    "candidate_test_budget": 4,
+    "focal_vulnerable_candidate_id": "not_applicable",
+    "scenario_id": "os15-s0124",
+    "scenario_type": "negative_only",
+    "top_k": 4
+  }
+]

@@ -1,0 +1,4 @@
+arm_id,valid_positive_observations,valid_negative_observations,invalid_positive_observations,invalid_negative_observations,top_1_success_count,top_1_rate,top_4_success_count,top_4_rate,mrr,rank_distribution,negative_scenario_ranking_metrics
+deterministic_structural,105,19,0,0,20,0.190476,91,0.866667,0.455238,"{1: 20, 2: 22, 3: 21, 4: 28, 5: 14}",not_applicable
+proprietary_gpt,522,95,3,0,99,0.189655,411,0.787356,0.444668,"{1: 99, 2: 97, 3: 104, 4: 111, 5: 111}",not_applicable
+local_qwen,520,95,5,0,75,0.144231,415,0.798077,0.427404,"{1: 75, 2: 130, 3: 105, 4: 105, 5: 105}",not_applicable

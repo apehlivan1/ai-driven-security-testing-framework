@@ -1,0 +1,4 @@
+arm_id,scheduled_rows,attempted_rows,valid_rows,malformed_rows,provider_failed_rows,timeout_rows,contract_valid_rows,contract_valid_rate,provider_failure_rate,malformed_rate,retry_count
+deterministic_structural,124,124,124,0,0,0,124,1.0,0.0,0.0,0
+proprietary_gpt,620,620,617,0,3,1,617,0.995161,0.004839,0.0,0
+local_qwen,620,620,615,5,0,0,615,0.991935,0.0,0.008065,0
