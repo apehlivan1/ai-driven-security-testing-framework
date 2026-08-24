@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-08-24T13:42:43.724008+00:00",
+  "fake_non_experimental": true,
+  "ground_truth_included": false,
+  "ranking_result": {
+    "ordered_candidate_ids": [],
+    "raw_response": null,
+    "schema_version": "fake-non-experimental-ranking-result",
+    "validation_errors": []
+  },
+  "schema_version": "owasp-xss-v14-1-ranking-row-v1",
+  "summary": {
+    "arm_family": "deterministic",
+    "arm_id": "deterministic_minimal",
+    "candidate_input_sha256": "ba23cfd79b149a021bd76e41204fe06b5ca706b07c9688762f44ebbcf137cd2b",
+    "candidate_test_budget": 4,
+    "contract_valid": true,
+    "latency_ms": 0,
+    "model_identifier": "not_applicable",
+    "prompt_version": "not_applicable",
+    "provider": "deterministic",
+    "provider_failed": false,
+    "representation_condition": "minimal",
+    "row_id": "ow14-1-r00003",
+    "scenario_id": "ow14-s0003",
+    "schema_version": "owasp-xss-v14-1-ranking-row-v1",
+    "sequence": 3,
+    "snapshot_path": "model-facing/minimal-candidate-snapshots/ow14-s0003.json",
+    "status": "valid",
+    "top_k": 4,
+    "trial_number": 1,
+    "validation_errors": []
+  },
+  "terminal_state": "completed_valid"
+}

@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-08-24T13:42:43.794448+00:00",
+  "fake_non_experimental": true,
+  "ground_truth_included": false,
+  "ranking_result": {
+    "ordered_candidate_ids": [],
+    "raw_response": null,
+    "schema_version": "fake-non-experimental-ranking-result",
+    "validation_errors": [
+      "fake completed_contract_invalid"
+    ]
+  },
+  "schema_version": "owasp-xss-v14-1-ranking-row-v1",
+  "summary": {
+    "arm_family": "deterministic",
+    "arm_id": "deterministic_minimal",
+    "candidate_input_sha256": "09fac81b9829b5b49e40d47ddacb26f22332ebed8e9b32844df61d7a800e47d1",
+    "candidate_test_budget": 4,
+    "contract_valid": false,
+    "latency_ms": 0,
+    "model_identifier": "not_applicable",
+    "prompt_version": "not_applicable",
+    "provider": "deterministic",
+    "provider_failed": false,
+    "representation_condition": "minimal",
+    "row_id": "ow14-1-r00004",
+    "scenario_id": "ow14-s0004",
+    "schema_version": "owasp-xss-v14-1-ranking-row-v1",
+    "sequence": 4,
+    "snapshot_path": "model-facing/minimal-candidate-snapshots/ow14-s0004.json",
+    "status": "malformed",
+    "top_k": 4,
+    "trial_number": 1,
+    "validation_errors": [
+      "fake completed_contract_invalid"
+    ]
+  },
+  "terminal_state": "completed_contract_invalid"
+}

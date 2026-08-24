@@ -699,6 +699,27 @@ post-run scoring was performed by the protocol-freeze package.
 The timestamped raw benign context collection run remains local raw evidence
 unless a separate raw-evidence archival decision is made.
 
+v1.4.1 resumable execution-readiness evidence:
+
+- Runner/readiness note:
+  `docs/evaluation-v1.4.1-resumable-runner-readiness.md`
+- Resumable runner module:
+  `src/adstf/owasp_xss_v14_1_resumable_runner.py`
+- Readiness package:
+  `results/owasp-xss-v14-1-resumable-runner-readiness/`
+- Frozen execution schedule:
+  `results/owasp-xss-v14-1-resumable-runner-readiness/frozen-execution-schedule.json`
+- Resume-validation report:
+  `results/owasp-xss-v14-1-resumable-runner-readiness/resume-validation-report.json`
+- Checksum validation:
+  `results/owasp-xss-v14-1-resumable-runner-readiness/checksum-validation-report.json`
+
+The resumable runner readiness package is non-scored evidence only. It derives
+an immutable execution schedule from the frozen v1.4.1 protocol package and
+validates interruption/resume behavior with fake fixtures. It records zero GPT
+calls, zero Qwen calls, zero HTTP benchmark requests and zero scored ranking
+rows.
+
 ### v1.5 OWASP Benchmark SQLi Compatibility, Readiness and Protocol Freeze
 
 v1.5 extends the external-validation line to OWASP Benchmark Java SQL injection

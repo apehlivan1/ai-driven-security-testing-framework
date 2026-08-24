@@ -1,0 +1,13 @@
+{
+  "completed_by_terminal_state": {
+    "completed_contract_invalid": 1,
+    "completed_valid": 3
+  },
+  "completed_count": 4,
+  "corrupt_or_incomplete_artifacts": [],
+  "duplicate_sequences": [],
+  "next_sequence": 5,
+  "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-state",
+  "unscheduled_results": [],
+  "valid": true
+}

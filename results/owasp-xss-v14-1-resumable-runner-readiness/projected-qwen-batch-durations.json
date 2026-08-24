@@ -1,0 +1,37 @@
+{
+  "assumed_seconds_per_qwen_call": 55,
+  "basis": "planning estimate from prior observed Qwen latency around 55 seconds per call; not a scored result",
+  "batch_examples": {
+    "1_hour": {
+      "approx_hours": 0.99,
+      "approx_minutes": 59.6,
+      "approx_seconds": 3575,
+      "scheduled_calls": 65
+    },
+    "2_hours": {
+      "approx_hours": 1.99,
+      "approx_minutes": 119.2,
+      "approx_seconds": 7150,
+      "scheduled_calls": 130
+    },
+    "30_min": {
+      "approx_hours": 0.49,
+      "approx_minutes": 29.3,
+      "approx_seconds": 1760,
+      "scheduled_calls": 32
+    },
+    "overnight_conservative": {
+      "approx_hours": 7.64,
+      "approx_minutes": 458.3,
+      "approx_seconds": 27500,
+      "scheduled_calls": 500
+    },
+    "overnight_upper": {
+      "approx_hours": 9.93,
+      "approx_minutes": 595.8,
+      "approx_seconds": 35750,
+      "scheduled_calls": 650
+    }
+  },
+  "schema_version": "owasp-xss-v14-1-resumable-runner-v1.qwen-duration-projection"
+}

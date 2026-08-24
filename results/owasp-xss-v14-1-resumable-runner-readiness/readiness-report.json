@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-08-24T13:42:43.877492+00:00",
+  "external_calls": {
+    "gpt_calls": 0,
+    "http_requests": 0,
+    "qwen_calls": 0,
+    "scored_rows": 0
+  },
+  "fake_interruption_test": {
+    "corrupt_artifact_stops_for_audit": true,
+    "first_batch": {
+      "executed_sequences": [
+        1,
+        2,
+        3
+      ],
+      "executed_this_batch": 3,
+      "external_calls": {
+        "gpt_calls": 0,
+        "qwen_calls": 0,
+        "scored_rows": 0
+      },
+      "next_sequence": 4,
+      "schema_version": "owasp-xss-v14-1-resumable-runner-v1.fake-batch-result"
+    },
+    "resume_batch": {
+      "executed_sequences": [
+        4
+      ],
+      "executed_this_batch": 1,
+      "external_calls": {
+        "gpt_calls": 0,
+        "qwen_calls": 0,
+        "scored_rows": 0
+      },
+      "next_sequence": 5,
+      "schema_version": "owasp-xss-v14-1-resumable-runner-v1.fake-batch-result"
+    },
+    "state_after_fresh_restart": {
+      "completed_by_terminal_state": {
+        "completed_valid": 3
+      },
+      "completed_count": 3,
+      "corrupt_or_incomplete_artifacts": [],
+      "duplicate_sequences": [],
+      "next_sequence": 4,
+      "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-state",
+      "unscheduled_results": [],
+      "valid": true
+    },
+    "state_after_malformed_terminal": {
+      "completed_by_terminal_state": {
+        "completed_contract_invalid": 1,
+        "completed_valid": 3
+      },
+      "completed_count": 4,
+      "corrupt_or_incomplete_artifacts": [],
+      "duplicate_sequences": [],
+      "next_sequence": 5,
+      "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-state",
+      "unscheduled_results": [],
+      "valid": true
+    }
+  },
+  "git_state": {
+    "branch": "main",
+    "commit": "08e72f32c9de7e0fb80f3ccfd64c85b6fe99ddb3",
+    "descends_from_protocol_tag": true,
+    "dirty": true,
+    "status_short": [
+      "M docs/thesis-evidence-index.md",
+      "?? docs/evaluation-v1.4.1-resumable-runner-readiness.md",
+      "?? results/owasp-xss-v14-1-context-collection/",
+      "?? results/owasp-xss-v14-1-resumable-runner-readiness/",
+      "?? src/adstf/owasp_xss_v14_1_resumable_runner.py",
+      "?? tests/test_owasp_xss_v14_1_resumable_runner.py"
+    ]
+  },
+  "ground_truth_loaded": false,
+  "projected_qwen_batch_durations": {
+    "assumed_seconds_per_qwen_call": 55,
+    "basis": "planning estimate from prior observed Qwen latency around 55 seconds per call; not a scored result",
+    "batch_examples": {
+      "1_hour": {
+        "approx_hours": 0.99,
+        "approx_minutes": 59.6,
+        "approx_seconds": 3575,
+        "scheduled_calls": 65
+      },
+      "2_hours": {
+        "approx_hours": 1.99,
+        "approx_minutes": 119.2,
+        "approx_seconds": 7150,
+        "scheduled_calls": 130
+      },
+      "30_min": {
+        "approx_hours": 0.49,
+        "approx_minutes": 29.3,
+        "approx_seconds": 1760,
+        "scheduled_calls": 32
+      },
+      "overnight_conservative": {
+        "approx_hours": 7.64,
+        "approx_minutes": 458.3,
+        "approx_seconds": 27500,
+        "scheduled_calls": 500
+      },
+      "overnight_upper": {
+        "approx_hours": 9.93,
+        "approx_minutes": 595.8,
+        "approx_seconds": 35750,
+        "scheduled_calls": 650
+      }
+    },
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.qwen-duration-projection"
+  },
+  "protocol": {
+    "commit": "08e72f32c9de7e0fb80f3ccfd64c85b6fe99ddb3",
+    "document": "docs/evaluation-protocol-v1.4.1.md",
+    "package": "results/owasp-xss-v14-1-protocol-freeze",
+    "tag": "evaluation-protocol-v1.4.1-ready"
+  },
+  "readiness_decision": "READY_FOR_LIVE_SCORED_EXECUTION_AFTER_USER_AUTHORIZATION",
+  "resume_policy": {
+    "atomic_artifact_write": "Each call writes a temporary JSON file and atomically replaces it with the final sequence artifact.",
+    "corrupt_artifact_policy": "Temporary, unreadable, duplicate, unscheduled or checksum-inconsistent artifacts stop execution for audit.",
+    "journal_policy": "After the terminal artifact exists, one journal line records its sequence, terminal state and checksum.",
+    "next_sequence_policy": "Resume starts at the lowest scheduled sequence whose terminal artifact is absent.",
+    "resume_source": "Resume derives completed work from persisted artifacts and journal consistency only.",
+    "retry_policy": "No silent retries. Valid, malformed, provider-failed, runtime-failed and timed-out terminal artifacts are complete observations.",
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-policy"
+  },
+  "runner_version": "owasp-xss-v14-1-resumable-runner-v1",
+  "schedule_validation": {
+    "errors": [],
+    "per_arm_counts": {
+      "deterministic_enriched": 266,
+      "deterministic_minimal": 266,
+      "gpt_enriched": 1330,
+      "gpt_minimal": 1330,
+      "qwen_enriched": 1330,
+      "qwen_minimal": 1330
+    },
+    "per_family_counts": {
+      "deterministic": 532,
+      "gpt": 2660,
+      "qwen": 2660
+    },
+    "schedule_sha256": "c567fcc0faa616969c02334dcb7ce861873d9fde36eb9bb21ed0077e5d114cac",
+    "total_rows": 5852,
+    "valid": true
+  },
+  "schema_version": "owasp-xss-v14-1-resumable-runner-readiness-v1",
+  "terminal_states": [
+    "completed_contract_invalid",
+    "completed_provider_failure",
+    "completed_runtime_failure",
+    "completed_timeout",
+    "completed_valid"
+  ],
+  "valid": true
+}

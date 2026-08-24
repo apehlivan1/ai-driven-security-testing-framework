@@ -1,0 +1,56 @@
+{
+  "corrupt_artifact_stops_for_audit": true,
+  "first_batch": {
+    "executed_sequences": [
+      1,
+      2,
+      3
+    ],
+    "executed_this_batch": 3,
+    "external_calls": {
+      "gpt_calls": 0,
+      "qwen_calls": 0,
+      "scored_rows": 0
+    },
+    "next_sequence": 4,
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.fake-batch-result"
+  },
+  "resume_batch": {
+    "executed_sequences": [
+      4
+    ],
+    "executed_this_batch": 1,
+    "external_calls": {
+      "gpt_calls": 0,
+      "qwen_calls": 0,
+      "scored_rows": 0
+    },
+    "next_sequence": 5,
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.fake-batch-result"
+  },
+  "state_after_fresh_restart": {
+    "completed_by_terminal_state": {
+      "completed_valid": 3
+    },
+    "completed_count": 3,
+    "corrupt_or_incomplete_artifacts": [],
+    "duplicate_sequences": [],
+    "next_sequence": 4,
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-state",
+    "unscheduled_results": [],
+    "valid": true
+  },
+  "state_after_malformed_terminal": {
+    "completed_by_terminal_state": {
+      "completed_contract_invalid": 1,
+      "completed_valid": 3
+    },
+    "completed_count": 4,
+    "corrupt_or_incomplete_artifacts": [],
+    "duplicate_sequences": [],
+    "next_sequence": 5,
+    "schema_version": "owasp-xss-v14-1-resumable-runner-v1.resume-state",
+    "unscheduled_results": [],
+    "valid": true
+  }
+}

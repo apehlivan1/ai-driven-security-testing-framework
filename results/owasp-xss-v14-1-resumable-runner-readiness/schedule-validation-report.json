@@ -1,0 +1,19 @@
+{
+  "errors": [],
+  "per_arm_counts": {
+    "deterministic_enriched": 266,
+    "deterministic_minimal": 266,
+    "gpt_enriched": 1330,
+    "gpt_minimal": 1330,
+    "qwen_enriched": 1330,
+    "qwen_minimal": 1330
+  },
+  "per_family_counts": {
+    "deterministic": 532,
+    "gpt": 2660,
+    "qwen": 2660
+  },
+  "schedule_sha256": "c567fcc0faa616969c02334dcb7ce861873d9fde36eb9bb21ed0077e5d114cac",
+  "total_rows": 5852,
+  "valid": true
+}
