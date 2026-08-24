@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-08-24T10:24:24.185381+00:00",
+  "included_files": [
+    "README.md",
+    "feasibility-report.md",
+    "feature-feasibility-matrix.csv",
+    "feature-feasibility-matrix.json",
+    "proposed-enriched-schema.json",
+    "arm-definitions.json",
+    "leakage-risk-analysis.json",
+    "budget-projection.json",
+    "statistical-plan.json",
+    "recommendation.json",
+    "validation-report.json",
+    "checksums.sha256"
+  ],
+  "observed_v14_denominators": {
+    "candidate_references": 1330,
+    "input_types": {
+      "header": 262,
+      "text": 1068
+    },
+    "methods": {
+      "GET": 1330
+    },
+    "scenarios": 266,
+    "sources": {
+      "dynamic_parameter_name": 169,
+      "query_string": 168,
+      "request_header": 262,
+      "request_parameter": 498,
+      "request_parameter_map": 233
+    },
+    "unique_candidates": 388
+  },
+  "repository_head_observed": {
+    "branch": "main",
+    "dirty": true,
+    "head": "ba63d356bcb21888d505e2bba7fe26bebc4ed01e",
+    "status_short": [
+      "?? docs/evaluation-v1.4.1-context-enrichment-design.md",
+      "?? results/owasp-xss-v14-1-context-enrichment-feasibility/"
+    ]
+  },
+  "schema_version": "owasp-xss-v14-1-context-enrichment-feasibility-manifest-v1",
+  "source_evidence": {
+    "v14_canonical_package": "results/owasp-xss-v14-confirmatory-final/canonical/",
+    "v14_protocol": "docs/evaluation-protocol-v1.4.md",
+    "v14_protocol_freeze_package": "results/owasp-xss-v14-protocol-freeze/",
+    "v15_1_sql_evidence_policy": "not modified and not used as source data for this XSS design except for project status separation"
+  },
+  "status": "design_and_feasibility_only_no_execution"
+}

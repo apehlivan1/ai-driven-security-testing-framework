@@ -1,0 +1,113 @@
+{
+  "features": [
+    {
+      "feature": "carrier_category",
+      "leakage_risk": "low",
+      "notes": "Use abstract source categories; do not expose original endpoint names.",
+      "proposed_status": "include",
+      "ranker_facing_value": "categorical transport/carrier only",
+      "requires_benign_request": "false",
+      "source": "existing snapshot source/input_type fields"
+    },
+    {
+      "feature": "method",
+      "leakage_risk": "low",
+      "notes": "Current v1.4 candidate references are all GET.",
+      "proposed_status": "include",
+      "ranker_facing_value": "HTTP method category",
+      "requires_benign_request": "false",
+      "source": "existing snapshot method field"
+    },
+    {
+      "feature": "parameter_count",
+      "leakage_risk": "low",
+      "notes": "Structural only and already ranker-facing in v1.4.",
+      "proposed_status": "include",
+      "ranker_facing_value": "integer count",
+      "requires_benign_request": "false",
+      "source": "existing snapshot parameter_count field"
+    },
+    {
+      "feature": "required_input_count",
+      "leakage_risk": "low",
+      "notes": "Structural only and already ranker-facing in v1.4.",
+      "proposed_status": "include",
+      "ranker_facing_value": "integer count or required flag",
+      "requires_benign_request": "false",
+      "source": "existing snapshot required_input_count field"
+    },
+    {
+      "feature": "reflection_detected",
+      "leakage_risk": "medium",
+      "notes": "Legitimate observable context if collected before ground truth and before vulnerability verification.",
+      "proposed_status": "include_with_caveat",
+      "ranker_facing_value": "boolean",
+      "requires_benign_request": "true",
+      "source": "one deterministic benign marker request per unique candidate"
+    },
+    {
+      "feature": "reflection_count_capped",
+      "leakage_risk": "medium",
+      "notes": "Cap to avoid leaking raw response structure or large content detail.",
+      "proposed_status": "include_with_caveat",
+      "ranker_facing_value": "small capped integer bucket",
+      "requires_benign_request": "true",
+      "source": "benign marker response analysis"
+    },
+    {
+      "feature": "reflection_context_category",
+      "leakage_risk": "medium",
+      "notes": "Must be computed without exploit execution, verifier outcome, source code or labels.",
+      "proposed_status": "include_with_caveat",
+      "ranker_facing_value": "enum: none/html_text/html_attribute/script_like/url_like/other",
+      "requires_benign_request": "true",
+      "source": "deterministic parsing of benign marker response"
+    },
+    {
+      "feature": "marker_preservation_category",
+      "leakage_risk": "medium",
+      "notes": "Raw body retained internally only; ranker receives categorical state.",
+      "proposed_status": "include_with_caveat",
+      "ranker_facing_value": "enum: not_reflected/unchanged/encoded/transformed/stripped",
+      "requires_benign_request": "true",
+      "source": "benign marker response analysis"
+    },
+    {
+      "feature": "response_content_type_category",
+      "leakage_risk": "low_to_medium",
+      "notes": "No raw headers should be sent to rankers.",
+      "proposed_status": "include_with_caveat",
+      "ranker_facing_value": "coarse content type category",
+      "requires_benign_request": "true",
+      "source": "HTTP response metadata from benign marker request"
+    },
+    {
+      "feature": "raw_action_path",
+      "leakage_risk": "high",
+      "notes": "Existing values contain numeric case-derived tokens such as case-000348.",
+      "proposed_status": "exclude_or_abstract",
+      "ranker_facing_value": "do not expose full path; use route_shape category if needed",
+      "requires_benign_request": "false",
+      "source": "existing v1.4 snapshot action_path"
+    },
+    {
+      "feature": "raw_parameter_name",
+      "leakage_risk": "high",
+      "notes": "Existing values contain numeric candidate-derived tokens such as input_000348.",
+      "proposed_status": "exclude_or_abstract",
+      "ranker_facing_value": "do not expose full parameter name; use generic name_shape category if needed",
+      "requires_benign_request": "false",
+      "source": "existing v1.4 snapshot parameter_name"
+    },
+    {
+      "feature": "html_constraint_attributes",
+      "leakage_risk": "unknown",
+      "notes": "Do not invent constraints for generated OWASP adapter cases.",
+      "proposed_status": "defer",
+      "ranker_facing_value": "not included unless discoverable without source or labels",
+      "requires_benign_request": "maybe",
+      "source": "not present in frozen v1.4 snapshots"
+    }
+  ],
+  "schema_version": "owasp-xss-v14-1-feature-feasibility-matrix-v1"
+}

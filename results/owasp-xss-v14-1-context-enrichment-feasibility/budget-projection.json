@@ -1,0 +1,27 @@
+{
+  "benign_marker_requests_projected": 388,
+  "candidate_references": 1330,
+  "cost_policy": "cost remains not_available unless numeric pricing source and pricing date are frozen before execution",
+  "historical_latency_observations_from_v14": {
+    "gpt_mean_ms": 3989.8067669172933,
+    "gpt_median_ms": 3630.0,
+    "qwen_mean_ms": 57567.44887218045,
+    "qwen_median_ms": 55150.0
+  },
+  "negative_only_scenarios": 30,
+  "positive_scenarios": 236,
+  "ranking_rows_if_minimal_and_enriched_rerun": {
+    "deterministic_rows": 532,
+    "gpt_rows": 2660,
+    "qwen_rows": 2660,
+    "total_rows": 5852
+  },
+  "rough_sequential_runtime_projection_seconds": {
+    "gpt_2660_calls_at_v14_median": 9655.8,
+    "qwen_2660_calls_at_v14_median": 146699.0
+  },
+  "scenario_count": 266,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-budget-projection-v1",
+  "status": "projection_only_no_execution",
+  "unique_candidates": 388
+}

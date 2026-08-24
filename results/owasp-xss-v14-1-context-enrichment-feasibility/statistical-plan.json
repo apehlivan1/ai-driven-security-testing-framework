@@ -1,0 +1,26 @@
+{
+  "inferential_unit": "scenario",
+  "llm_trial_policy": "repeated LLM trials are nested under scenario and arm, not independent benchmark scenarios",
+  "multiple_comparison_policy": "declare correction family before protocol freeze; Holm adjustment recommended for primary paired MRR comparisons",
+  "negative_scenario_policy": "ranking metrics requiring a vulnerable candidate are not_applicable; use negative scenarios for reliability and no-finding behavior",
+  "primary_metric": "scenario_level_mrr_on_positive_scenarios",
+  "primary_paired_comparisons": [
+    "gpt_enriched_vs_gpt_minimal",
+    "qwen_enriched_vs_qwen_minimal",
+    "gpt_enriched_vs_deterministic_enriched",
+    "qwen_enriched_vs_deterministic_enriched"
+  ],
+  "schema_version": "owasp-xss-v14-1-context-enrichment-statistical-plan-v1",
+  "secondary_metrics": [
+    "top1",
+    "top2",
+    "top4",
+    "vulnerable_candidate_rank",
+    "ranking_stability",
+    "malformed_output_rate",
+    "latency",
+    "token_usage",
+    "cost_availability"
+  ],
+  "status": "proposed_not_frozen"
+}

@@ -1,0 +1,13 @@
+feature,proposed_status,source,ranker_facing_value,requires_benign_request,leakage_risk,notes
+carrier_category,include,existing snapshot source/input_type fields,categorical transport/carrier only,false,low,Use abstract source categories; do not expose original endpoint names.
+method,include,existing snapshot method field,HTTP method category,false,low,Current v1.4 candidate references are all GET.
+parameter_count,include,existing snapshot parameter_count field,integer count,false,low,Structural only and already ranker-facing in v1.4.
+required_input_count,include,existing snapshot required_input_count field,integer count or required flag,false,low,Structural only and already ranker-facing in v1.4.
+reflection_detected,include_with_caveat,one deterministic benign marker request per unique candidate,boolean,true,medium,Legitimate observable context if collected before ground truth and before vulnerability verification.
+reflection_count_capped,include_with_caveat,benign marker response analysis,small capped integer bucket,true,medium,Cap to avoid leaking raw response structure or large content detail.
+reflection_context_category,include_with_caveat,deterministic parsing of benign marker response,enum: none/html_text/html_attribute/script_like/url_like/other,true,medium,"Must be computed without exploit execution, verifier outcome, source code or labels."
+marker_preservation_category,include_with_caveat,benign marker response analysis,enum: not_reflected/unchanged/encoded/transformed/stripped,true,medium,Raw body retained internally only; ranker receives categorical state.
+response_content_type_category,include_with_caveat,HTTP response metadata from benign marker request,coarse content type category,true,low_to_medium,No raw headers should be sent to rankers.
+raw_action_path,exclude_or_abstract,existing v1.4 snapshot action_path,do not expose full path; use route_shape category if needed,false,high,Existing values contain numeric case-derived tokens such as case-000348.
+raw_parameter_name,exclude_or_abstract,existing v1.4 snapshot parameter_name,do not expose full parameter name; use generic name_shape category if needed,false,high,Existing values contain numeric candidate-derived tokens such as input_000348.
+html_constraint_attributes,defer,not present in frozen v1.4 snapshots,not included unless discoverable without source or labels,maybe,unknown,Do not invent constraints for generated OWASP adapter cases.

@@ -1,0 +1,69 @@
+{
+  "ambiguous_context_precedence": [
+    "script_like",
+    "url_like",
+    "html_attribute",
+    "html_text",
+    "other",
+    "none"
+  ],
+  "marker_preservation_categories": [
+    "not_reflected",
+    "unchanged",
+    "encoded",
+    "transformed",
+    "stripped"
+  ],
+  "ranking_content_type_order": [
+    "html",
+    "text",
+    "json",
+    "redirect",
+    "other",
+    "not_available"
+  ],
+  "ranking_context_order": [
+    "script_like",
+    "html_attribute",
+    "url_like",
+    "html_text",
+    "other",
+    "none"
+  ],
+  "ranking_count_order": [
+    "3_or_more",
+    "2",
+    "1",
+    "0"
+  ],
+  "ranking_preservation_order": [
+    "unchanged",
+    "encoded",
+    "transformed",
+    "stripped",
+    "not_reflected"
+  ],
+  "reflection_context_categories": [
+    "none",
+    "html_text",
+    "html_attribute",
+    "script_like",
+    "url_like",
+    "other"
+  ],
+  "reflection_count_categories": [
+    "0",
+    "1",
+    "2",
+    "3_or_more"
+  ],
+  "response_content_type_categories": [
+    "html",
+    "json",
+    "text",
+    "redirect",
+    "other",
+    "not_available"
+  ],
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.category-definitions"
+}

@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "feature_matrix_has_leakage_analysis": true,
+    "ground_truth_policy_documented": true,
+    "no_experiments_executed_by_package_creation": true,
+    "no_final_benchmark_cases_executed_by_package_creation": true,
+    "no_model_calls_executed_by_package_creation": true,
+    "proposed_schema_marks_raw_paths_and_parameter_names_for_abstraction": true,
+    "v14_denominator_observation": {
+      "candidate_refs": 1330,
+      "scenario_count": 266,
+      "unique_candidates": 388
+    }
+  },
+  "errors": [],
+  "schema_version": "owasp-xss-v14-1-context-enrichment-feasibility-validation-v1",
+  "valid": true
+}

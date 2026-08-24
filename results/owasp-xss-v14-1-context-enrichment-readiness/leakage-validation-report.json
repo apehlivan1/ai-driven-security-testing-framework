@@ -1,0 +1,48 @@
+{
+  "case_derived_patterns_rejected": [
+    "/external-v14/case-\\d+",
+    "\\bcase-\\d+\\b",
+    "\\binput_\\d+\\b",
+    "\\bheader_\\d+\\b"
+  ],
+  "forbidden_fragments": [
+    "BenchmarkTest",
+    ".java",
+    "ground_truth",
+    "expected_result",
+    "vulnerable",
+    "non_vulnerable",
+    "verified",
+    "inconclusive",
+    "rejected",
+    "<html",
+    "<body"
+  ],
+  "forbidden_keys": [
+    "action_path",
+    "body",
+    "endpoint",
+    "expected",
+    "expected_result",
+    "finding_state",
+    "ground_truth",
+    "html",
+    "label",
+    "parameter_name",
+    "payload",
+    "raw_body",
+    "raw_html",
+    "servlet",
+    "servlet_identity",
+    "source_file",
+    "source_path",
+    "tp_fp_fn_tn",
+    "verification_payload",
+    "verifier_outcome",
+    "verifier_state"
+  ],
+  "ground_truth_loaded_for_collection_plan_preparation": false,
+  "ground_truth_loaded_for_ranker_facing_snapshot_construction": false,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.leakage-validation",
+  "valid": true
+}

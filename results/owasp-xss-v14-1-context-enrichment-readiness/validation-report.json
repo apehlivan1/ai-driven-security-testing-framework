@@ -1,0 +1,11 @@
+{
+  "collection_plan_prepared_without_ground_truth": true,
+  "errors": [],
+  "no_gpt_calls": true,
+  "no_ground_truth_loaded_for_snapshot_construction": true,
+  "no_http_benchmark_requests": true,
+  "no_qwen_calls": true,
+  "no_scored_ranking_rows": true,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.readiness-validation",
+  "valid": true
+}

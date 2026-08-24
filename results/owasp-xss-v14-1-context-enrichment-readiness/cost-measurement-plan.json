@@ -1,0 +1,9 @@
+{
+  "billing_evidence_policy": "retain provider usage metadata per call and separately retain dated billing/pricing evidence if available before protocol freeze",
+  "per_call_cost_policy": "use provider-reported cost only if directly available; otherwise derive only from frozen numeric pricing evidence captured before execution",
+  "provider_model_identifier": "gpt-5.6-luna",
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.cost-measurement-plan",
+  "status": "prospective_plan_only",
+  "timezone_policy": "record UTC timestamps for calls and billing evidence capture",
+  "unavailable_policy": "if monetary cost cannot be isolated reliably, report not_available rather than zero"
+}

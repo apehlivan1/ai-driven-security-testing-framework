@@ -1,0 +1,15 @@
+{
+  "blockers": [
+    "Enriched ranker-facing path/name abstraction must be implemented before protocol freeze.",
+    "Benign marker context parser and leakage checks must be fixture-tested before any scored run.",
+    "Deterministic enriched baseline weights must be frozen before results exist.",
+    "GPT real connectivity check should be retained from the v1.5.1 recovery lesson before scored GPT calls."
+  ],
+  "next_milestone": "Implement and dry-validate v1.4.1 context-enrichment collector and enriched snapshot preparation without ranking calls or vulnerability execution.",
+  "non_blockers": [
+    "Historical v1.4 results remain valid evidence but should not be used as the paired minimal condition for GPT.",
+    "Qwen runtime duration is long but operationally feasible with resume and denominator validation."
+  ],
+  "schema_version": "owasp-xss-v14-1-context-enrichment-recommendation-v1",
+  "verdict": "READY WITH METHODOLOGICAL CAVEATS"
+}

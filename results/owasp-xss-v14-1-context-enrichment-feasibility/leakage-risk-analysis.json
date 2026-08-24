@@ -1,0 +1,29 @@
+{
+  "allowed_observable_treatment": "benign marker reflection features collected before ground truth and before vulnerability verification",
+  "existing_v14_snapshot_issue": "sanitized action_path and parameter_name include numeric case-derived tokens; acceptable historically for v1.4 but should be abstracted for v1.4.1 enrichment",
+  "forbidden_sources": [
+    "ground_truth",
+    "expected_result",
+    "vulnerable",
+    "non_vulnerable",
+    "BenchmarkTest",
+    ".java",
+    "original endpoint paths",
+    "complete raw action paths with case numbers",
+    "complete parameter names with candidate numbers",
+    "raw HTML bodies",
+    "verification payloads",
+    "verifier outcomes",
+    "post-run labels"
+  ],
+  "required_tests_before_protocol_freeze": [
+    "ranker-facing snapshots contain no expected-result labels",
+    "ranker-facing snapshots contain no original benchmark case IDs",
+    "ranker-facing snapshots contain no Java source names or source paths",
+    "ranker-facing snapshots contain no raw response body or HTML snippets",
+    "enriched snapshots preserve scenario candidate IDs and ordering exactly",
+    "ground truth is loaded only by post-run scoring"
+  ],
+  "schema_version": "owasp-xss-v14-1-context-enrichment-leakage-risk-v1",
+  "status": "design_audit_only"
+}

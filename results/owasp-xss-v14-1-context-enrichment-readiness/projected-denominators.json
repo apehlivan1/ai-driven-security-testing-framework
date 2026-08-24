@@ -1,0 +1,22 @@
+{
+  "benign_marker_request_denominator": 388,
+  "candidate_references": 1330,
+  "model_call_denominator": {
+    "gpt_calls": 2660,
+    "qwen_calls": 2660
+  },
+  "negative_only_scenarios": 30,
+  "positive_scenarios": 236,
+  "ranking_rows": {
+    "deterministic_enriched": 266,
+    "deterministic_minimal": 266,
+    "gpt_enriched": 1330,
+    "gpt_minimal": 1330,
+    "qwen_enriched": 1330,
+    "qwen_minimal": 1330,
+    "total": 5852
+  },
+  "scenario_count": 266,
+  "schema_version": "owasp-xss-v14-1-context-enrichment-v1.projected-denominators",
+  "unique_candidates": 388
+}

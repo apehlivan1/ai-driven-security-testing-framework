@@ -1,0 +1,44 @@
+{
+  "arms": [
+    {
+      "arm_id": "deterministic_minimal",
+      "ranker": "deterministic_structural",
+      "representation": "minimal_v1.4",
+      "trials_per_scenario": 1
+    },
+    {
+      "arm_id": "gpt_minimal",
+      "ranker": "proprietary_gpt",
+      "representation": "minimal_v1.4",
+      "trials_per_scenario": 5
+    },
+    {
+      "arm_id": "qwen_minimal",
+      "ranker": "local_qwen",
+      "representation": "minimal_v1.4",
+      "trials_per_scenario": 5
+    },
+    {
+      "arm_id": "deterministic_enriched",
+      "ranker": "deterministic_enriched_context",
+      "representation": "enriched_v1.4.1",
+      "trials_per_scenario": 1
+    },
+    {
+      "arm_id": "gpt_enriched",
+      "ranker": "proprietary_gpt",
+      "representation": "enriched_v1.4.1",
+      "trials_per_scenario": 5
+    },
+    {
+      "arm_id": "qwen_enriched",
+      "ranker": "local_qwen",
+      "representation": "enriched_v1.4.1",
+      "trials_per_scenario": 5
+    }
+  ],
+  "historical_v14_results_policy": "contextual evidence only; do not substitute for contemporaneous minimal rerun in the clean v1.4.1 ablation",
+  "paired_design": "minimal and enriched conditions use identical scenario IDs, candidate IDs, candidate order, pack size, k and top_k",
+  "schema_version": "owasp-xss-v14-1-context-enrichment-arm-design-v1",
+  "status": "proposed_not_frozen"
+}
