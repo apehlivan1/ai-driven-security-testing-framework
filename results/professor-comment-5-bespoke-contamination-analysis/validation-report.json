@@ -66,13 +66,38 @@
       "passed": true
     },
     {
+      "check": "deterministic_structural_scenario_mrr_matches_canonical_when_trial_counts_equal",
+      "details": {
+        "canonical_valid_row_mrr": 0.385417,
+        "scenario_mean_mrr": 0.3854166666666667
+      },
+      "passed": true
+    },
+    {
+      "check": "local_qwen_scenario_mrr_matches_canonical_when_trial_counts_equal",
+      "details": {
+        "canonical_valid_row_mrr": 0.442708,
+        "scenario_mean_mrr": 0.4427083333333333
+      },
+      "passed": true
+    },
+    {
+      "check": "gpt_scenario_mrr_differs_from_canonical_only_by_scenario_weighting",
+      "details": {
+        "canonical_valid_row_mrr": 0.405983,
+        "scenario_mean_budget_censored_mrr": 0.4106770833333333,
+        "scenario_mean_full_order_mrr": 0.4603645833333333
+      },
+      "passed": true
+    },
+    {
       "check": "zero_experimental_calls",
       "details": {},
       "passed": true
     }
   ],
   "errors": [],
-  "schema_version": "professor-comment-5-validation-v1",
+  "schema_version": "professor-comment-5-validation-v2",
   "valid": true,
-  "validated_at": "2026-08-27T14:12:20.456167Z"
+  "validated_at": "2026-08-27T20:32:04.936336Z"
 }

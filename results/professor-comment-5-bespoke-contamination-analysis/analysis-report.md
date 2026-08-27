@@ -15,25 +15,28 @@ This package is a derived post-run evidence synthesis. It performs zero GPT, Qwe
 - Arms: `deterministic_structural`, `proprietary_gpt`, `local_qwen`
 - Trials: deterministic has one ranking per scenario; GPT and Qwen have five trials per scenario.
 - Ranking evidence and runtime verifier evidence are retained separately; ground truth is applied only in post-run scoring.
+- Ranking MRR in this report follows the canonical budget-censored v1.3.1 semantics: reciprocal-rank credit is assigned only if the vulnerable candidate is within `top_k = min(test_budget, candidate_count)`. Full-order reciprocal rank is retained only as diagnostic provenance and is not used as the thesis-facing v1.3.1 ranking metric.
 
 ## Scenario-Specific Random Reference
 
-| Scope | Scenarios | Random Top-1 | Random Top-2 | Random Top-4 | Random MRR |
+| Scope | Scenarios | Random Top-1 | Random Top-2 | Random Top-4 | Random budget-censored MRR |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| All eligible positive bespoke scenarios | 16 | 0.1757 | 0.3515 | 0.7030 | 0.4188 |
+| All eligible positive bespoke scenarios | 16 | 0.1757 | 0.3515 | 0.7030 | 0.3661 |
 | n=4 | 2 | 0.2500 | 0.5000 | 1.0000 | 0.5208 |
-| n=5 | 4 | 0.2000 | 0.4000 | 0.8000 | 0.4567 |
-| n=6 | 5 | 0.1667 | 0.3333 | 0.6667 | 0.4083 |
-| n=7 | 3 | 0.1429 | 0.2857 | 0.5714 | 0.3704 |
-| n=8 | 2 | 0.1250 | 0.2500 | 0.5000 | 0.3397 |
+| n=5 | 4 | 0.2000 | 0.4000 | 0.8000 | 0.4167 |
+| n=6 | 5 | 0.1667 | 0.3333 | 0.6667 | 0.3472 |
+| n=7 | 3 | 0.1429 | 0.2857 | 0.5714 | 0.2976 |
+| n=8 | 2 | 0.1250 | 0.2500 | 0.5000 | 0.2604 |
 
 Scenarios with exactly four candidates have random Top-4 = 1.0000 by definition under budget k=4. Observed Top-4 on those scenarios cannot demonstrate prioritization advantage, so the candidate-count >4 subset is reported separately.
 
-| Arm | Valid positive scenario n | Top-1 | Delta vs random | Top-2 | Delta vs random | Top-4 | Delta vs random | MRR | Delta vs random |
+| Arm | Valid positive scenario n | Top-1 | Delta vs random | Top-2 | Delta vs random | Top-4 | Delta vs random | Budget-censored MRR | Delta vs random |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| deterministic_structural | 16 | 0.2500 | 0.0743 | 0.3125 | -0.0390 | 0.6875 | -0.0155 | 0.3854 | -0.0334 |
-| proprietary_gpt | 16 | 0.2250 | 0.0493 | 0.4500 | 0.0985 | 0.7219 | 0.0189 | 0.4604 | 0.0416 |
-| local_qwen | 16 | 0.3125 | 0.1368 | 0.3750 | 0.0235 | 0.6875 | -0.0155 | 0.4958 | 0.0770 |
+| deterministic_structural | 16 | 0.2500 | 0.0743 | 0.3125 | -0.0390 | 0.6875 | -0.0155 | 0.3854 | 0.0193 |
+| proprietary_gpt | 16 | 0.2250 | 0.0493 | 0.4500 | 0.0985 | 0.7219 | 0.0189 | 0.4107 | 0.0445 |
+| local_qwen | 16 | 0.3125 | 0.1368 | 0.3750 | 0.0235 | 0.6875 | -0.0155 | 0.4427 | 0.0766 |
+
+The corresponding canonical valid-row metrics from `normalized/arm-level-metrics.json` remain the authoritative v1.3.1 historical results: deterministic Top-1 0.2500, Top-4 0.6875 and MRR 0.3854; GPT Top-1 0.2179, Top-4 0.7179 and MRR 0.4060; Qwen Top-1 0.3125, Top-4 0.6875 and MRR 0.4427. The scenario-level table above gives each positive scenario equal weight; for GPT it differs slightly from the canonical valid-row table because two positive scenarios have four valid trials rather than five. Earlier derived full-order MRR values of 0.4604 for GPT and 0.4958 for Qwen credited vulnerable candidates below the fixed budget and are retained only in `bespoke-metric-reconciliation.json` as diagnostic provenance.
 
 ### Top-4 on Positive Scenarios with Candidate Count >4
 
@@ -45,16 +48,16 @@ Scenarios with exactly four candidates have random Top-4 = 1.0000 by definition 
 
 ## OWASP Versus Bespoke Comparison
 
-| Dataset | Arm | n | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| public_owasp_xss_v14 | deterministic_structural | 236 | 0.2034 | 0.2000 | 0.0006 | 0.4573 | 0.4567 |
-| public_owasp_xss_v14 | proprietary_gpt | 1179 | 0.2332 | 0.2000 | 0.0166 | 0.4732 | 0.4567 |
-| public_owasp_xss_v14 | local_qwen | 1175 | 0.2468 | 0.2000 | 0.0359 | 0.4926 | 0.4567 |
-| bespoke_xss_v13_1_heldout | deterministic_structural | 16 | 0.2500 | 0.1757 | -0.0334 | 0.3854 | 0.4188 |
-| bespoke_xss_v13_1_heldout | proprietary_gpt | 16 | 0.2250 | 0.1757 | 0.0416 | 0.4604 | 0.4188 |
-| bespoke_xss_v13_1_heldout | local_qwen | 16 | 0.3125 | 0.1757 | 0.0770 | 0.4958 | 0.4188 |
+| Dataset | Arm | Positive scenarios | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |
+| --- | --- | ---: | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| public_owasp_xss_v14 | deterministic_structural | 236 | 236 | valid_trial_row_mean | full_order_reciprocal_rank | 0.2034 | 0.2000 | 0.0006 | 0.4573 | 0.4567 |
+| public_owasp_xss_v14 | proprietary_gpt | 236 | 1179 | valid_trial_row_mean | full_order_reciprocal_rank | 0.2332 | 0.2000 | 0.0166 | 0.4732 | 0.4567 |
+| public_owasp_xss_v14 | local_qwen | 235 | 1175 | valid_trial_row_mean | full_order_reciprocal_rank | 0.2468 | 0.2000 | 0.0359 | 0.4926 | 0.4567 |
+| bespoke_xss_v13_1_heldout | deterministic_structural | 16 | 16 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.2500 | 0.1757 | 0.0193 | 0.3854 | 0.3661 |
+| bespoke_xss_v13_1_heldout | proprietary_gpt | 16 | 78 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.2250 | 0.1757 | 0.0445 | 0.4107 | 0.3661 |
+| bespoke_xss_v13_1_heldout | local_qwen | 16 | 80 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.3125 | 0.1757 | 0.0766 | 0.4427 | 0.3661 |
 
-The public OWASP v1.4 and bespoke v1.3.1 metrics should not be compared by raw Top-k values alone because their candidate-set sizes differ. Observed-minus-random values are more interpretable across the two datasets.
+The public OWASP v1.4 and bespoke v1.3.1 metrics should not be compared by raw Top-k values alone because their candidate-set sizes differ. Observed-minus-random values are more interpretable within each dataset. MRR deltas should still be read with care across the two protocols because original v1.4 uses full-order reciprocal-rank semantics, while v1.3.1 uses budget-censored reciprocal rank.
 
 ## Contamination-Risk Interpretation
 
@@ -68,10 +71,10 @@ OWASP Benchmark v1.2 is a public benchmark corpus used as an external validation
 
 ## Direct Answers
 
-1. The model-backed trends from public OWASP data appear partially on the bespoke set: Qwen remains descriptively strongest on MRR and both model-backed arms exceed the deterministic arm on MRR, but the small bespoke scenario count and mixed Top-k deltas require cautious interpretation.
-2. The best descriptive bespoke arm by scenario-level MRR is `local_qwen`.
-3. Exceeding random by metric: `{'deterministic_structural': {'top1': True, 'top2': False, 'top4': False, 'mrr': False}, 'proprietary_gpt': {'top1': True, 'top2': True, 'top4': True, 'mrr': True}, 'local_qwen': {'top1': True, 'top2': True, 'top4': False, 'mrr': True}}`.
-4. Relative to OWASP, bespoke effects are mixed: Qwen remains above random by MRR (0.0770), GPT is also above random by MRR (0.0416) but by a smaller margin than Qwen, and deterministic is below random by MRR (-0.0334).
+1. The model-backed trends from public OWASP data appear partially on the bespoke set: under metric-compatible budget-censored random MRR, all three arms are above the bespoke random MRR reference, Qwen remains descriptively strongest, and the small bespoke scenario count and mixed Top-k deltas require cautious interpretation.
+2. The best descriptive bespoke arm by scenario-level budget-censored MRR is `local_qwen`.
+3. Exceeding random by metric: `{'deterministic_structural': {'top1': True, 'top2': False, 'top4': False, 'mrr': True}, 'proprietary_gpt': {'top1': True, 'top2': True, 'top4': True, 'mrr': True}, 'local_qwen': {'top1': True, 'top2': True, 'top4': False, 'mrr': True}}`.
+4. Relative to OWASP, bespoke effects are mixed: all three bespoke arms are above random by budget-censored MRR, with deltas of 0.0193 for deterministic, 0.0445 for GPT and 0.0766 for Qwen. Cross-dataset MRR deltas remain only approximate because v1.4 uses full-order reciprocal-rank semantics and v1.3.1 uses budget-censored MRR.
 5. The bespoke evidence strengthens the thesis by adding lower-contamination-risk held-out evidence, but it also qualifies the central claim: bounded model-backed ranking can improve prioritization in some settings, yet the effect is model- and dataset-dependent and uncertain with only 24 bespoke scenarios.
 
 ## Validation

@@ -1,6 +1,7 @@
 {
   "by_candidate_count": {
     "4": {
+      "diagnostic_full_order_mrr": 0.5208333333333334,
       "mrr": 0.5208333333333334,
       "scenario_count": 2,
       "top1": 0.25,
@@ -8,28 +9,32 @@
       "top4": 1.0
     },
     "5": {
-      "mrr": 0.45666666666666667,
+      "diagnostic_full_order_mrr": 0.45666666666666667,
+      "mrr": 0.4166666666666667,
       "scenario_count": 4,
       "top1": 0.2,
       "top2": 0.4,
       "top4": 0.8
     },
     "6": {
-      "mrr": 0.4083333333333334,
+      "diagnostic_full_order_mrr": 0.4083333333333334,
+      "mrr": 0.34722222222222227,
       "scenario_count": 5,
       "top1": 0.16666666666666666,
       "top2": 0.3333333333333333,
       "top4": 0.6666666666666666
     },
     "7": {
-      "mrr": 0.3704081632653062,
+      "diagnostic_full_order_mrr": 0.3704081632653062,
+      "mrr": 0.2976190476190476,
       "scenario_count": 3,
       "top1": 0.14285714285714285,
       "top2": 0.2857142857142857,
       "top4": 0.5714285714285714
     },
     "8": {
-      "mrr": 0.33973214285714287,
+      "diagnostic_full_order_mrr": 0.33973214285714287,
+      "mrr": 0.2604166666666667,
       "scenario_count": 2,
       "top1": 0.125,
       "top2": 0.25,
@@ -50,16 +55,19 @@
     "7": 3,
     "8": 2
   },
+  "diagnostic_full_order_mrr_semantics": "non-thesis-facing full-order random MRR retained only for reconciliation provenance",
+  "diagnostic_full_order_overall_mrr": 0.41879304846938775,
   "eligible_positive_scenarios": 16,
+  "mrr_semantics": "budget-censored random MRR matching v1.3.1 canonical MRR: (1/n) * sum(1/r for r=1..min(4,n))",
   "negative_scenarios": 8,
   "overall": {
-    "mrr": 0.41879304846938775,
+    "mrr": 0.36613343253968256,
     "top1": 0.1757440476190476,
     "top2": 0.3514880952380952,
     "top4": 0.7029761904761904
   },
   "scenario_averaging": "each eligible positive scenario receives equal weight",
-  "schema_version": "professor-comment-5-bespoke-random-baseline-summary-v1",
+  "schema_version": "professor-comment-5-bespoke-random-baseline-summary-v2",
   "top4_candidate_count_gt4_subset": {
     "note": "Scenarios with candidate_count=4 have random Top-4 = 1.0000 by definition under budget k=4 and are isolated from this subset.",
     "random_top4": 0.6605442176870747,

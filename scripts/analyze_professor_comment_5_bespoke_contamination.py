@@ -28,6 +28,7 @@ def main() -> None:
     scenario_structure = build_bespoke_scenario_structure()
     random_by_scenario, random_summary = build_random_references(scenario_structure)
     bespoke_ranking = build_bespoke_ranking_summary(scenario_structure, random_summary)
+    metric_reconciliation = build_metric_reconciliation(bespoke_ranking, random_summary)
     comparison = build_owasp_vs_bespoke_comparison(bespoke_ranking, random_summary)
     reproducibility = build_reproducibility_summary()
     validation = build_validation_report(evidence, scenario_structure, random_summary, bespoke_ranking)
@@ -37,6 +38,7 @@ def main() -> None:
     write_csv(OUTPUT_DIR / "bespoke-random-baseline-by-scenario.csv", random_by_scenario)
     write_json(OUTPUT_DIR / "bespoke-random-baseline-summary.json", random_summary)
     write_json(OUTPUT_DIR / "bespoke-ranking-summary.json", bespoke_ranking)
+    write_json(OUTPUT_DIR / "bespoke-metric-reconciliation.json", metric_reconciliation)
     write_csv(OUTPUT_DIR / "owasp-vs-bespoke-comparison.csv", comparison)
     write_text(OUTPUT_DIR / "contamination-risk-note.md", render_contamination_note())
     write_json(OUTPUT_DIR / "reproducibility-summary.json", reproducibility)
@@ -233,15 +235,18 @@ def build_random_references(scenarios: list[dict[str, Any]]) -> tuple[list[dict[
                     "random_top2": "not_applicable",
                     "random_top4": "not_applicable",
                     "random_mrr": "not_applicable",
+                    "diagnostic_full_order_random_mrr": "not_applicable",
                 }
             )
             continue
         n = scenario["candidate_count"]
+        top_k = min(4, n)
         values = {
             "top1": 1 / n,
             "top2": min(2 / n, 1.0),
             "top4": min(4 / n, 1.0),
-            "mrr": sum(1 / rank for rank in range(1, n + 1)) / n,
+            "mrr": sum(1 / rank for rank in range(1, top_k + 1)) / n,
+            "full_order_mrr": sum(1 / rank for rank in range(1, n + 1)) / n,
         }
         rows.append(
             {
@@ -252,19 +257,30 @@ def build_random_references(scenarios: list[dict[str, Any]]) -> tuple[list[dict[
                 "random_top2": values["top2"],
                 "random_top4": values["top4"],
                 "random_mrr": values["mrr"],
+                "diagnostic_full_order_random_mrr": values["full_order_mrr"],
             }
         )
         eligible.append(values)
         strata[n].append(values)
     summary = {
-        "schema_version": "professor-comment-5-bespoke-random-baseline-summary-v1",
+        "schema_version": "professor-comment-5-bespoke-random-baseline-summary-v2",
         "scenario_averaging": "each eligible positive scenario receives equal weight",
+        "mrr_semantics": "budget-censored random MRR matching v1.3.1 canonical MRR: (1/n) * sum(1/r for r=1..min(4,n))",
+        "diagnostic_full_order_mrr_semantics": "non-thesis-facing full-order random MRR retained only for reconciliation provenance",
         "eligible_positive_scenarios": len(eligible),
         "negative_scenarios": sum(1 for scenario in scenarios if scenario["scenario_type"] == "negative"),
         "candidate_count_distribution_all": dict(sorted(Counter(s["candidate_count"] for s in scenarios).items())),
         "candidate_count_distribution_positive": dict(sorted(Counter(s["candidate_count"] for s in scenarios if s["scenario_type"] == "positive").items())),
         "overall": average_metrics(eligible),
-        "by_candidate_count": {str(n): {"scenario_count": len(values), **average_metrics(values)} for n, values in sorted(strata.items())},
+        "diagnostic_full_order_overall_mrr": mean([item["full_order_mrr"] for item in eligible]),
+        "by_candidate_count": {
+            str(n): {
+                "scenario_count": len(values),
+                **average_metrics(values),
+                "diagnostic_full_order_mrr": mean([item["full_order_mrr"] for item in values]),
+            }
+            for n, values in sorted(strata.items())
+        },
         "top4_candidate_count_gt4_subset": {
             "scenario_count": sum(len(v) for n, v in strata.items() if n > 4),
             "random_top4": mean([item["top4"] for n, v in strata.items() if n > 4 for item in v]),
@@ -277,6 +293,11 @@ def build_random_references(scenarios: list[dict[str, Any]]) -> tuple[list[dict[
 def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summary: dict[str, Any]) -> dict[str, Any]:
     ranked = load_csv(BESPOKE_CANONICAL / "normalized" / "ranked-candidates.csv")
     ranking_trials = load_csv(BESPOKE_CANONICAL / "normalized" / "ranking-trials.csv")
+    canonical_valid_metrics = {
+        row["arm_id"]: row
+        for row in load_json(BESPOKE_CANONICAL / "normalized" / "arm-level-metrics.json")["rows"]
+        if row["aggregate_scope"] == "valid_rankings_only"
+    }
     reliability = {row["arm_id"]: row for row in load_json(BESPOKE_CANONICAL / "normalized" / "reliability-summary.json")["rows"]}
     provider_metrics = {row["arm_id"]: row for row in load_json(BESPOKE_CANONICAL / "normalized" / "provider-metrics.json")["rows"]}
     candidate_to_vulnerable = build_bespoke_candidate_vulnerability_map()
@@ -300,17 +321,21 @@ def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summar
         vulnerable_ranks = sorted(vulnerable_ranks_by_trial.get((arm, scenario_id, trial), []))
         rank = vulnerable_ranks[0] if len(vulnerable_ranks) == 1 else None
         n = scenario_by_id[scenario_id]["candidate_count"]
+        top_k = min(4, n)
+        budget_visible_rank = rank if rank is not None and rank <= top_k else None
         trial_metrics.append(
             {
                 "arm_id": arm,
                 "scenario_id": scenario_id,
                 "trial_number": trial,
                 "candidate_count": n,
-                "vulnerable_rank": rank,
+                "vulnerable_rank": budget_visible_rank,
+                "full_order_vulnerable_rank": rank,
                 "top1": 1.0 if rank is not None and rank <= 1 else 0.0,
                 "top2": 1.0 if rank is not None and rank <= 2 else 0.0,
-                "top4": 1.0 if rank is not None and rank <= min(4, n) else 0.0,
-                "mrr": 1.0 / rank if rank is not None else 0.0,
+                "top4": 1.0 if budget_visible_rank is not None else 0.0,
+                "mrr": 1.0 / budget_visible_rank if budget_visible_rank is not None else 0.0,
+                "full_order_mrr": 1.0 / rank if rank is not None else 0.0,
             }
         )
     summary_rows = []
@@ -333,15 +358,19 @@ def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summar
                     "top2": mean([item["top2"] for item in items]),
                     "top4": mean([item["top4"] for item in items]),
                     "mrr": mean([item["mrr"] for item in items]),
+                    "full_order_mrr": mean([item["full_order_mrr"] for item in items]),
                 }
             )
         scenario_mean_rows.extend(scenario_means)
         scenario_level = average_metrics(scenario_means)
         trial_level = average_metrics(arm_trials)
+        scenario_level_full_order_mrr = mean([row["full_order_mrr"] for row in scenario_means])
+        trial_level_full_order_mrr = mean([row["full_order_mrr"] for row in arm_trials])
         random_overall = random_summary["overall"]
         summary_rows.append(
             {
                 "arm_id": arm,
+                "canonical_valid_row_metrics": canonical_valid_metrics[arm],
                 "positive_scenarios_with_valid_ranking": len(scenario_means),
                 "valid_positive_trial_rows": len(arm_trials),
                 "expected_positive_trial_rows": 16 if arm == "deterministic_structural" else 80,
@@ -353,6 +382,8 @@ def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summar
                 "trial_row_top2": trial_level["top2"],
                 "trial_row_top4": trial_level["top4"],
                 "trial_row_mrr": trial_level["mrr"],
+                "scenario_mean_full_order_mrr": scenario_level_full_order_mrr,
+                "trial_row_full_order_mrr": trial_level_full_order_mrr,
                 "random_top1": random_overall["top1"],
                 "observed_minus_random_top1": scenario_level["top1"] - random_overall["top1"],
                 "random_top2": random_overall["top2"],
@@ -361,7 +392,9 @@ def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summar
                 "observed_minus_random_top4": scenario_level["top4"] - random_overall["top4"],
                 "random_mrr": random_overall["mrr"],
                 "observed_minus_random_mrr": scenario_level["mrr"] - random_overall["mrr"],
+                "observed_minus_random_full_order_mrr": scenario_level_full_order_mrr - random_summary["diagnostic_full_order_overall_mrr"],
                 "rank_distribution": dict(sorted(Counter(str(item["vulnerable_rank"]) if item["vulnerable_rank"] is not None else "missing" for item in arm_trials).items())),
+                "full_order_rank_distribution": dict(sorted(Counter(str(item["full_order_vulnerable_rank"]) if item["full_order_vulnerable_rank"] is not None else "missing" for item in arm_trials).items())),
                 "reliability": reliability[arm],
                 "provider_metrics": provider_metrics[arm],
             }
@@ -379,7 +412,8 @@ def build_bespoke_ranking_summary(scenarios: list[dict[str, Any]], random_summar
             }
         )
     return {
-        "schema_version": "professor-comment-5-bespoke-ranking-summary-v1",
+        "schema_version": "professor-comment-5-bespoke-ranking-summary-v2",
+        "mrr_semantics": "Budget-censored MRR: reciprocal-rank credit is assigned only when the vulnerable candidate is within top_k = min(test_budget, candidate_count); otherwise reciprocal rank is 0. Full-order MRR is retained only as diagnostic provenance.",
         "scenario_level_metrics": summary_rows,
         "top4_candidate_count_gt4_subset": subset_rows,
         "scenario_mean_rows": scenario_mean_rows,
@@ -404,6 +438,48 @@ def build_bespoke_candidate_vulnerability_map() -> dict[tuple[str, str], bool]:
     return result
 
 
+def build_metric_reconciliation(bespoke: dict[str, Any], random_summary: dict[str, Any]) -> dict[str, Any]:
+    rows = []
+    for row in bespoke["scenario_level_metrics"]:
+        canonical = row["canonical_valid_row_metrics"]
+        rows.append(
+            {
+                "arm_id": row["arm_id"],
+                "canonical_valid_trial_row": {
+                    "formula": "mean over valid positive ranking rows of reciprocal_rank, with reciprocal_rank = 1/rank only when the vulnerable candidate is within top_k; otherwise 0",
+                    "positive_trial_row_denominator": canonical["vulnerable_ranking_rows"],
+                    "top1": canonical["top1_accuracy"],
+                    "top4": canonical["topk_recall"],
+                    "mrr": canonical["mrr"],
+                },
+                "random_reference": {
+                    "budget_censored_mrr": row["random_mrr"],
+                    "diagnostic_full_order_mrr": random_summary["diagnostic_full_order_overall_mrr"],
+                },
+                "derived_equal_weight_scenario_budget_censored": {
+                    "formula": "mean over positive scenarios of the mean valid-trial Top-k and budget-censored reciprocal rank for that scenario",
+                    "positive_scenario_denominator": row["positive_scenarios_with_valid_ranking"],
+                    "valid_positive_trial_rows": row["valid_positive_trial_rows"],
+                    "top1": row["scenario_mean_top1"],
+                    "top2": row["scenario_mean_top2"],
+                    "top4": row["scenario_mean_top4"],
+                    "mrr": row["scenario_mean_mrr"],
+                },
+                "diagnostic_full_order_not_thesis_metric": {
+                    "formula": "mean reciprocal rank over the full returned candidate ordering, including vulnerable-candidate ranks below top_k; retained only to explain the earlier derived-report discrepancy",
+                    "scenario_mean_full_order_mrr": row["scenario_mean_full_order_mrr"],
+                    "trial_row_full_order_mrr": row["trial_row_full_order_mrr"],
+                },
+            }
+        )
+    return {
+        "schema_version": "professor-comment-5-bespoke-metric-reconciliation-v1",
+        "authoritative_canonical_metric_source": display_path(BESPOKE_CANONICAL / "normalized" / "arm-level-metrics.json"),
+        "decision": "Canonical valid-row metrics remain authoritative. Derived scenario-level metrics are retained only when explicitly labelled and use the same budget-censored reciprocal-rank semantics.",
+        "rows": rows,
+    }
+
+
 def build_owasp_vs_bespoke_comparison(bespoke: dict[str, Any], random_summary: dict[str, Any]) -> list[dict[str, Any]]:
     owasp_rows = load_csv(OWASP_CANONICAL / "normalized" / "scored-rows.csv")
     output: list[dict[str, Any]] = []
@@ -419,7 +495,19 @@ def build_owasp_vs_bespoke_comparison(bespoke: dict[str, Any], random_summary: d
             "top4": mean([1.0 if parse_bool(row["topk"]) else 0.0 for row in rows]),
             "mrr": mean([float(row["reciprocal_rank"]) for row in rows]),
         }
-        output.append(comparison_row("public_owasp_xss_v14", arm, "fixed_5", len(rows), values, owasp_random))
+        output.append(
+            comparison_row(
+                "public_owasp_xss_v14",
+                arm,
+                "fixed_5",
+                len({row["scenario_id"] for row in rows}),
+                len(rows),
+                "valid_trial_row_mean",
+                "full_order_reciprocal_rank",
+                values,
+                owasp_random,
+            )
+        )
     for row in bespoke["scenario_level_metrics"]:
         values = {
             "top1": row["scenario_mean_top1"],
@@ -428,16 +516,41 @@ def build_owasp_vs_bespoke_comparison(bespoke: dict[str, Any], random_summary: d
             "mrr": row["scenario_mean_mrr"],
         }
         random_values = random_summary["overall"]
-        output.append(comparison_row("bespoke_xss_v13_1_heldout", row["arm_id"], str(random_summary["candidate_count_distribution_all"]), row["positive_scenarios_with_valid_ranking"], values, random_values))
+        output.append(
+            comparison_row(
+                "bespoke_xss_v13_1_heldout",
+                row["arm_id"],
+                str(random_summary["candidate_count_distribution_all"]),
+                row["positive_scenarios_with_valid_ranking"],
+                row["valid_positive_trial_rows"],
+                "equal_weight_scenario_mean",
+                "budget_censored_reciprocal_rank",
+                values,
+                random_values,
+            )
+        )
     return output
 
 
-def comparison_row(dataset: str, arm: str, candidate_count: str, denominator: int, values: dict[str, float], random_values: dict[str, float]) -> dict[str, Any]:
+def comparison_row(
+    dataset: str,
+    arm: str,
+    candidate_count: str,
+    positive_scenarios: int,
+    valid_positive_ranking_rows: int,
+    metric_aggregation: str,
+    mrr_semantics: str,
+    values: dict[str, float],
+    random_values: dict[str, float],
+) -> dict[str, Any]:
     row: dict[str, Any] = {
         "dataset": dataset,
         "arm_id": arm,
         "candidate_count": candidate_count,
-        "positive_valid_denominator": denominator,
+        "positive_scenarios": positive_scenarios,
+        "valid_positive_ranking_rows": valid_positive_ranking_rows,
+        "metric_aggregation": metric_aggregation,
+        "mrr_semantics": mrr_semantics,
     }
     for metric in ["top1", "top2", "top4", "mrr"]:
         row[f"observed_{metric}"] = values[metric]
@@ -540,9 +653,28 @@ def build_validation_report(evidence: dict[str, Any], scenarios: list[dict[str, 
         },
     )
     check("rank_verifier_separation_recorded", bespoke["ranking_and_verifier_evidence_separate"])
+    for row in bespoke["scenario_level_metrics"]:
+        canonical = row["canonical_valid_row_metrics"]
+        if row["arm_id"] in {"deterministic_structural", "local_qwen"}:
+            check(
+                f"{row['arm_id']}_scenario_mrr_matches_canonical_when_trial_counts_equal",
+                round(float(row["scenario_mean_mrr"]), 6) == round(float(canonical["mrr"]), 6),
+                {"scenario_mean_mrr": row["scenario_mean_mrr"], "canonical_valid_row_mrr": canonical["mrr"]},
+            )
+    gpt = next(row for row in bespoke["scenario_level_metrics"] if row["arm_id"] == "proprietary_gpt")
+    check(
+        "gpt_scenario_mrr_differs_from_canonical_only_by_scenario_weighting",
+        round(float(gpt["scenario_mean_mrr"]), 6) != round(float(gpt["scenario_mean_full_order_mrr"]), 6)
+        and round(float(gpt["trial_row_mrr"]), 6) == round(float(gpt["canonical_valid_row_metrics"]["mrr"]), 6),
+        {
+            "scenario_mean_budget_censored_mrr": gpt["scenario_mean_mrr"],
+            "scenario_mean_full_order_mrr": gpt["scenario_mean_full_order_mrr"],
+            "canonical_valid_row_mrr": gpt["canonical_valid_row_metrics"]["mrr"],
+        },
+    )
     check("zero_experimental_calls", evidence["activity_boundaries"]["new_model_calls"] == 0 and evidence["activity_boundaries"]["new_http_requests"] == 0)
     return {
-        "schema_version": "professor-comment-5-validation-v1",
+        "schema_version": "professor-comment-5-validation-v2",
         "valid": not errors,
         "errors": errors,
         "checks": checks,
@@ -576,6 +708,7 @@ def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], ran
             "- Arms: `deterministic_structural`, `proprietary_gpt`, `local_qwen`",
             "- Trials: deterministic has one ranking per scenario; GPT and Qwen have five trials per scenario.",
             "- Ranking evidence and runtime verifier evidence are retained separately; ground truth is applied only in post-run scoring.",
+            "- Ranking MRR in this report follows the canonical budget-censored v1.3.1 semantics: reciprocal-rank credit is assigned only if the vulnerable candidate is within `top_k = min(test_budget, candidate_count)`. Full-order reciprocal rank is retained only as diagnostic provenance and is not used as the thesis-facing v1.3.1 ranking metric.",
             "",
             "## Scenario-Specific Random Reference",
             "",
@@ -585,13 +718,15 @@ def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], ran
             "",
             render_bespoke_table(bespoke),
             "",
+            "The corresponding canonical valid-row metrics from `normalized/arm-level-metrics.json` remain the authoritative v1.3.1 historical results: deterministic Top-1 0.2500, Top-4 0.6875 and MRR 0.3854; GPT Top-1 0.2179, Top-4 0.7179 and MRR 0.4060; Qwen Top-1 0.3125, Top-4 0.6875 and MRR 0.4427. The scenario-level table above gives each positive scenario equal weight; for GPT it differs slightly from the canonical valid-row table because two positive scenarios have four valid trials rather than five. Earlier derived full-order MRR values of 0.4604 for GPT and 0.4958 for Qwen credited vulnerable candidates below the fixed budget and are retained only in `bespoke-metric-reconciliation.json` as diagnostic provenance.",
+            "",
             render_top4_gt4_table(bespoke),
             "",
             "## OWASP Versus Bespoke Comparison",
             "",
             render_comparison_table(comparison),
             "",
-            "The public OWASP v1.4 and bespoke v1.3.1 metrics should not be compared by raw Top-k values alone because their candidate-set sizes differ. Observed-minus-random values are more interpretable across the two datasets.",
+            "The public OWASP v1.4 and bespoke v1.3.1 metrics should not be compared by raw Top-k values alone because their candidate-set sizes differ. Observed-minus-random values are more interpretable within each dataset. MRR deltas should still be read with care across the two protocols because original v1.4 uses full-order reciprocal-rank semantics, while v1.3.1 uses budget-censored reciprocal rank.",
             "",
             "## Contamination-Risk Interpretation",
             "",
@@ -618,7 +753,7 @@ def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], ran
 
 def render_random_summary_table(summary: dict[str, Any]) -> str:
     rows = [
-        "| Scope | Scenarios | Random Top-1 | Random Top-2 | Random Top-4 | Random MRR |",
+        "| Scope | Scenarios | Random Top-1 | Random Top-2 | Random Top-4 | Random budget-censored MRR |",
         "| --- | ---: | ---: | ---: | ---: | ---: |",
         f"| All eligible positive bespoke scenarios | {summary['eligible_positive_scenarios']} | {fmt(summary['overall']['top1'])} | {fmt(summary['overall']['top2'])} | {fmt(summary['overall']['top4'])} | {fmt(summary['overall']['mrr'])} |",
     ]
@@ -629,7 +764,7 @@ def render_random_summary_table(summary: dict[str, Any]) -> str:
 
 def render_bespoke_table(bespoke: dict[str, Any]) -> str:
     rows = [
-        "| Arm | Valid positive scenario n | Top-1 | Delta vs random | Top-2 | Delta vs random | Top-4 | Delta vs random | MRR | Delta vs random |",
+        "| Arm | Valid positive scenario n | Top-1 | Delta vs random | Top-2 | Delta vs random | Top-4 | Delta vs random | Budget-censored MRR | Delta vs random |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in bespoke["scenario_level_metrics"]:
@@ -653,12 +788,12 @@ def render_top4_gt4_table(bespoke: dict[str, Any]) -> str:
 
 def render_comparison_table(rows_in: list[dict[str, Any]]) -> str:
     rows = [
-        "| Dataset | Arm | n | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| Dataset | Arm | Positive scenarios | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |",
+        "| --- | --- | ---: | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in rows_in:
         rows.append(
-            f"| {row['dataset']} | {row['arm_id']} | {row['positive_valid_denominator']} | {fmt(row['observed_top1'])} | {fmt(row['random_top1'])} | {fmt(row['observed_minus_random_mrr'])} | {fmt(row['observed_mrr'])} | {fmt(row['random_mrr'])} |"
+            f"| {row['dataset']} | {row['arm_id']} | {row['positive_scenarios']} | {row['valid_positive_ranking_rows']} | {row['metric_aggregation']} | {row['mrr_semantics']} | {fmt(row['observed_top1'])} | {fmt(row['random_top1'])} | {fmt(row['observed_minus_random_mrr'])} | {fmt(row['observed_mrr'])} | {fmt(row['random_mrr'])} |"
         )
     return "\n".join(rows)
 
@@ -677,10 +812,10 @@ def direct_answers(bespoke: dict[str, Any], random_summary: dict[str, Any], comp
     gpt_delta = bespoke_rows["proprietary_gpt"]["observed_minus_random_mrr"]
     det_delta = bespoke_rows["deterministic_structural"]["observed_minus_random_mrr"]
     lines = [
-        "1. The model-backed trends from public OWASP data appear partially on the bespoke set: Qwen remains descriptively strongest on MRR and both model-backed arms exceed the deterministic arm on MRR, but the small bespoke scenario count and mixed Top-k deltas require cautious interpretation.",
-        f"2. The best descriptive bespoke arm by scenario-level MRR is `{best}`.",
+        "1. The model-backed trends from public OWASP data appear partially on the bespoke set: under metric-compatible budget-censored random MRR, all three arms are above the bespoke random MRR reference, Qwen remains descriptively strongest, and the small bespoke scenario count and mixed Top-k deltas require cautious interpretation.",
+        f"2. The best descriptive bespoke arm by scenario-level budget-censored MRR is `{best}`.",
         f"3. Exceeding random by metric: `{exceed}`.",
-        f"4. Relative to OWASP, bespoke effects are mixed: Qwen remains above random by MRR ({fmt(qwen_delta)}), GPT is also above random by MRR ({fmt(gpt_delta)}) but by a smaller margin than Qwen, and deterministic is below random by MRR ({fmt(det_delta)}).",
+        f"4. Relative to OWASP, bespoke effects are mixed: all three bespoke arms are above random by budget-censored MRR, with deltas of {fmt(det_delta)} for deterministic, {fmt(gpt_delta)} for GPT and {fmt(qwen_delta)} for Qwen. Cross-dataset MRR deltas remain only approximate because v1.4 uses full-order reciprocal-rank semantics and v1.3.1 uses budget-censored MRR.",
         "5. The bespoke evidence strengthens the thesis by adding lower-contamination-risk held-out evidence, but it also qualifies the central claim: bounded model-backed ranking can improve prioritization in some settings, yet the effect is model- and dataset-dependent and uncertain with only 24 bespoke scenarios.",
     ]
     return "\n".join(lines)
@@ -721,7 +856,7 @@ def render_thesis_tables_tex(random_summary: dict[str, Any], bespoke: dict[str, 
         "% Professor Comment 5 thesis-ready tables.",
         "\\begin{table}[htbp]",
         "\\centering",
-        "\\caption{Bespoke v1.3.1 scenario-level observed-minus-random ranking metrics}",
+        "\\caption{Bespoke v1.3.1 scenario-level observed-minus-random budget-censored ranking metrics}",
         "\\begin{tabular}{lrrrr}",
         "\\hline",
         "Arm & Top-1 $\\Delta$ & Top-2 $\\Delta$ & Top-4 $\\Delta$ & MRR $\\Delta$ \\\\",

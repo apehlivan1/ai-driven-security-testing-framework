@@ -12,7 +12,7 @@
   "authoritative_bespoke_package": "results/xss-v13-ablation-v1.3.1-final/canonical",
   "authoritative_bespoke_protocol": "evaluation-protocol-v1.3.1",
   "authoritative_bespoke_tag": "evaluation-protocol-v1.3.1",
-  "created_at": "2026-08-27T14:12:20.411710Z",
+  "created_at": "2026-08-27T20:32:04.860327Z",
   "schema_version": "professor-comment-5-evidence-inventory-v1",
   "sources": [
     {

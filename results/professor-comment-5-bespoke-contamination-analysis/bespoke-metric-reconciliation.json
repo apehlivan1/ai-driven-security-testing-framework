@@ -1,0 +1,91 @@
+{
+  "authoritative_canonical_metric_source": "results/xss-v13-ablation-v1.3.1-final/canonical/normalized/arm-level-metrics.json",
+  "decision": "Canonical valid-row metrics remain authoritative. Derived scenario-level metrics are retained only when explicitly labelled and use the same budget-censored reciprocal-rank semantics.",
+  "rows": [
+    {
+      "arm_id": "deterministic_structural",
+      "canonical_valid_trial_row": {
+        "formula": "mean over valid positive ranking rows of reciprocal_rank, with reciprocal_rank = 1/rank only when the vulnerable candidate is within top_k; otherwise 0",
+        "mrr": 0.385417,
+        "positive_trial_row_denominator": 16,
+        "top1": 0.25,
+        "top4": 0.6875
+      },
+      "derived_equal_weight_scenario_budget_censored": {
+        "formula": "mean over positive scenarios of the mean valid-trial Top-k and budget-censored reciprocal rank for that scenario",
+        "mrr": 0.3854166666666667,
+        "positive_scenario_denominator": 16,
+        "top1": 0.25,
+        "top2": 0.3125,
+        "top4": 0.6875,
+        "valid_positive_trial_rows": 16
+      },
+      "diagnostic_full_order_not_thesis_metric": {
+        "formula": "mean reciprocal rank over the full returned candidate ordering, including vulnerable-candidate ranks below top_k; retained only to explain the earlier derived-report discrepancy",
+        "scenario_mean_full_order_mrr": 0.3854166666666667,
+        "trial_row_full_order_mrr": 0.3854166666666667
+      },
+      "random_reference": {
+        "budget_censored_mrr": 0.36613343253968256,
+        "diagnostic_full_order_mrr": 0.41879304846938775
+      }
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "canonical_valid_trial_row": {
+        "formula": "mean over valid positive ranking rows of reciprocal_rank, with reciprocal_rank = 1/rank only when the vulnerable candidate is within top_k; otherwise 0",
+        "mrr": 0.405983,
+        "positive_trial_row_denominator": 78,
+        "top1": 0.217949,
+        "top4": 0.717949
+      },
+      "derived_equal_weight_scenario_budget_censored": {
+        "formula": "mean over positive scenarios of the mean valid-trial Top-k and budget-censored reciprocal rank for that scenario",
+        "mrr": 0.4106770833333333,
+        "positive_scenario_denominator": 16,
+        "top1": 0.225,
+        "top2": 0.45,
+        "top4": 0.721875,
+        "valid_positive_trial_rows": 78
+      },
+      "diagnostic_full_order_not_thesis_metric": {
+        "formula": "mean reciprocal rank over the full returned candidate ordering, including vulnerable-candidate ranks below top_k; retained only to explain the earlier derived-report discrepancy",
+        "scenario_mean_full_order_mrr": 0.4603645833333333,
+        "trial_row_full_order_mrr": 0.45630341880341885
+      },
+      "random_reference": {
+        "budget_censored_mrr": 0.36613343253968256,
+        "diagnostic_full_order_mrr": 0.41879304846938775
+      }
+    },
+    {
+      "arm_id": "local_qwen",
+      "canonical_valid_trial_row": {
+        "formula": "mean over valid positive ranking rows of reciprocal_rank, with reciprocal_rank = 1/rank only when the vulnerable candidate is within top_k; otherwise 0",
+        "mrr": 0.442708,
+        "positive_trial_row_denominator": 80,
+        "top1": 0.3125,
+        "top4": 0.6875
+      },
+      "derived_equal_weight_scenario_budget_censored": {
+        "formula": "mean over positive scenarios of the mean valid-trial Top-k and budget-censored reciprocal rank for that scenario",
+        "mrr": 0.4427083333333333,
+        "positive_scenario_denominator": 16,
+        "top1": 0.3125,
+        "top2": 0.375,
+        "top4": 0.6875,
+        "valid_positive_trial_rows": 80
+      },
+      "diagnostic_full_order_not_thesis_metric": {
+        "formula": "mean reciprocal rank over the full returned candidate ordering, including vulnerable-candidate ranks below top_k; retained only to explain the earlier derived-report discrepancy",
+        "scenario_mean_full_order_mrr": 0.49583333333333335,
+        "trial_row_full_order_mrr": 0.4958333333333333
+      },
+      "random_reference": {
+        "budget_censored_mrr": 0.36613343253968256,
+        "diagnostic_full_order_mrr": 0.41879304846938775
+      }
+    }
+  ],
+  "schema_version": "professor-comment-5-bespoke-metric-reconciliation-v1"
+}
