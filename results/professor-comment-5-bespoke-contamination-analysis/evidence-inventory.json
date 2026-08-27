@@ -1,0 +1,117 @@
+{
+  "activity_boundaries": {
+    "ground_truth_use": "post-run derived analysis only",
+    "new_browser_tests": 0,
+    "new_discovery_calls": 0,
+    "new_http_requests": 0,
+    "new_model_calls": 0,
+    "new_scored_experiments": 0,
+    "new_verifier_calls": 0
+  },
+  "all_required_sources_valid": true,
+  "authoritative_bespoke_package": "results/xss-v13-ablation-v1.3.1-final/canonical",
+  "authoritative_bespoke_protocol": "evaluation-protocol-v1.3.1",
+  "authoritative_bespoke_tag": "evaluation-protocol-v1.3.1",
+  "created_at": "2026-08-27T14:12:20.411710Z",
+  "schema_version": "professor-comment-5-evidence-inventory-v1",
+  "sources": [
+    {
+      "checksum_validation": {
+        "checked_file": "results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256",
+        "errors": [],
+        "selected_files": [
+          "manifest.json",
+          "normalized/arm-level-metrics.csv",
+          "normalized/arm-level-metrics.json",
+          "normalized/ranked-candidates.csv",
+          "normalized/ranking-trials.csv",
+          "normalized/reliability-summary.json",
+          "normalized/provider-metrics.json",
+          "validation-report.json"
+        ],
+        "valid": true
+      },
+      "evidence_type": "runtime verifier and post-run ranking/classification evidence",
+      "full_package_checksum_validation": {
+        "checked_file": "results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256",
+        "errors": [
+          "hash mismatch results/xss-v13-ablation-v1.3.1-final/canonical/analysis-report.md",
+          "hash mismatch results/xss-v13-ablation-v1.3.1-final/canonical/figures/ranking-metrics-valid-only.pdf"
+        ],
+        "valid": false
+      },
+      "full_package_note": "The selected numerical inputs validate; the legacy v1.3.1 package has known presentation-artifact checksum mismatches unrelated to this analysis.",
+      "id": "bespoke_v13_1_canonical",
+      "path": "results/xss-v13-ablation-v1.3.1-final/canonical",
+      "role": "final canonical 24-scenario bespoke held-out XSS v1.3.1 package"
+    },
+    {
+      "checksum_validation": {
+        "checked_file": "results/xss-v13-protocol-prep/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "ground-truth-free candidate snapshot provenance",
+      "id": "bespoke_v13_protocol_prep",
+      "path": "results/xss-v13-protocol-prep",
+      "role": "frozen v1.3 candidate snapshots and arm-input ledger"
+    },
+    {
+      "checksum_validation": {
+        "checked_file": "results/xss-v13-structural-validation/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "scenario-design and ground-truth provenance",
+      "id": "bespoke_v13_structural_validation",
+      "path": "results/xss-v13-structural-validation",
+      "role": "v1.3 structural validation package, including benchmark manifest and ground truth checksum coverage"
+    },
+    {
+      "checksum_validation": {
+        "checked_file": "results/owasp-xss-v14-confirmatory-final/canonical/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "public-benchmark ranking evidence",
+      "id": "owasp_xss_v14_canonical",
+      "path": "results/owasp-xss-v14-confirmatory-final/canonical",
+      "role": "public OWASP Benchmark v1.2 XSS v1.4 canonical ranking package"
+    },
+    {
+      "checksum_validation": {
+        "checked_file": "results/local-runtime-provisioning-v1.3/checksums.sha256",
+        "errors": [],
+        "selected_files": [
+          "hardware-report.json",
+          "model-metadata/qwen2_5_7b_instruct_gguf_q4_k_m.json",
+          "runtime-metadata.json"
+        ],
+        "valid": true
+      },
+      "evidence_type": "Qwen reproducibility metadata",
+      "full_package_checksum_validation": {
+        "checked_file": "results/local-runtime-provisioning-v1.3/checksums.sha256",
+        "errors": [
+          "hash mismatch download-and-licence-ledger.csv"
+        ],
+        "valid": false
+      },
+      "full_package_note": "The selected reproducibility metadata validate; the retained provisioning package has a legacy ledger checksum mismatch that is disclosed but not used for numerical findings.",
+      "id": "local_runtime_provisioning",
+      "path": "results/local-runtime-provisioning-v1.3",
+      "role": "local model artifact and runtime provisioning metadata"
+    },
+    {
+      "checksum_validation": {
+        "checked_file": "results/local-runtime-output-boundary-v1.3/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "Qwen execution transport metadata",
+      "id": "local_runtime_output_boundary",
+      "path": "results/local-runtime-output-boundary-v1.3",
+      "role": "local llama.cpp output-boundary/readiness metadata"
+    }
+  ]
+}

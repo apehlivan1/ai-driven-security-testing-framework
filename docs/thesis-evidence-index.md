@@ -1075,3 +1075,45 @@ It records that false-positive rate and specificity are not meaningful for
 ranking-only XSS negative packs, while SQLi direct post-run classification
 supports TP 84, FP 0, FN 21 and TN 95 with denominator-valid classification
 metrics.
+
+Professor Comment 5 closure evidence:
+
+- Derived bespoke-contamination and public-vs-bespoke synthesis package:
+  `results/professor-comment-5-bespoke-contamination-analysis/`
+- Analysis report:
+  `results/professor-comment-5-bespoke-contamination-analysis/analysis-report.md`
+- Evidence inventory:
+  `results/professor-comment-5-bespoke-contamination-analysis/evidence-inventory.json`
+- Bespoke scenario structure:
+  `results/professor-comment-5-bespoke-contamination-analysis/bespoke-scenario-structure.csv`
+- Bespoke scenario-specific random baseline:
+  `results/professor-comment-5-bespoke-contamination-analysis/bespoke-random-baseline-summary.json`
+  and
+  `results/professor-comment-5-bespoke-contamination-analysis/bespoke-random-baseline-by-scenario.csv`
+- Bespoke ranking summary:
+  `results/professor-comment-5-bespoke-contamination-analysis/bespoke-ranking-summary.json`
+- Public OWASP versus bespoke comparison:
+  `results/professor-comment-5-bespoke-contamination-analysis/owasp-vs-bespoke-comparison.csv`
+- Contamination-risk note:
+  `results/professor-comment-5-bespoke-contamination-analysis/contamination-risk-note.md`
+- Reproducibility summary:
+  `results/professor-comment-5-bespoke-contamination-analysis/reproducibility-summary.json`
+- Thesis tables:
+  `results/professor-comment-5-bespoke-contamination-analysis/thesis-ready-tables.md`
+  and
+  `results/professor-comment-5-bespoke-contamination-analysis/thesis-ready-tables.tex`
+- Validation and checksums:
+  `results/professor-comment-5-bespoke-contamination-analysis/validation-report.json`
+  and
+  `results/professor-comment-5-bespoke-contamination-analysis/checksums.sha256`
+- Reproducible derived-analysis script:
+  `scripts/analyze_professor_comment_5_bespoke_contamination.py`
+
+The Comment 5 package is derived-only evidence. It documents the public OWASP
+Benchmark contamination-risk caveat, identifies the v1.3.1 24-scenario bespoke
+XSS package as lower-contamination-risk held-out evidence, computes
+scenario-specific random references for the bespoke candidate-count
+distribution, and compares public OWASP v1.4 and bespoke v1.3.1 XSS results
+using observed-minus-random values. It records zero new experimental calls and
+retains repeated LLM trials as trial-level observations rather than independent
+benchmark scenarios.

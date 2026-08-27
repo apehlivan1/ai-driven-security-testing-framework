@@ -1,0 +1,71 @@
+{
+  "gpt": {
+    "cost_availability": "not_available (120)",
+    "model_identifier": "gpt-5.6-luna (120)",
+    "note": "Historical frozen provider metadata only; no current provider configuration is introduced.",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "provider": "openai (120)",
+    "temperature": "omitted/provider default"
+  },
+  "qwen": {
+    "backend": "cpu",
+    "context_size_tokens": 4096,
+    "files": [
+      {
+        "exists": true,
+        "filename": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+        "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\qwen2_5_7b_instruct_gguf_q4_k_m\\qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+        "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db",
+        "size_bytes": 3993201344
+      },
+      {
+        "exists": true,
+        "filename": "qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+        "path": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.adstf-models\\local-runtime-provisioning-v1.3\\qwen2_5_7b_instruct_gguf_q4_k_m\\qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+        "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a",
+        "size_bytes": 689872288
+      }
+    ],
+    "hardware": {
+      "available_ram_bytes": "not_available",
+      "captured_at": "2026-07-29T19:41:52.265878+00:00",
+      "cuda_detected": false,
+      "disk_free_bytes_repo_drive": 283755597824,
+      "gpu": [],
+      "llama_cpp_runtime": "not_available",
+      "lm_studio_runtime": "not_available",
+      "logical_processors": 8,
+      "machine": "AMD64",
+      "ollama_runtime": "not_available",
+      "operating_system": "Windows-10-10.0.19045-SP0",
+      "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+      "python_version": "3.14.0",
+      "release": "10",
+      "schema_version": "local-runtime-hardware-report-v1.3",
+      "system": "Windows",
+      "total_ram_bytes": "not_available",
+      "version": "10.0.19045"
+    },
+    "json_schema_version": "local-ranking-readiness-json-schema-v1.3",
+    "latency_interpretation": "Observed under the recorded CPU-only local runtime and hardware configuration; not an inherent property of local inference in general.",
+    "license": "apache-2.0",
+    "max_output_tokens": 768,
+    "model": "Qwen2.5 7B Instruct GGUF Q4_K_M",
+    "observed_latency_ms_mean": 85342.558333,
+    "observed_latency_ms_median": 82839.0,
+    "quantization": "Q4_K_M",
+    "repository": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+    "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+    "runtime": "llama.cpp-b9637-win-cpu-x64-llama-completion",
+    "runtime_executable_sha256": "2272eaaf8bb9477257790835d7b25aaf8fd22941e44ac3fcc9f2df389d1ef7b4",
+    "runtime_release": "b9637",
+    "seed": 42,
+    "temperature": 0.0,
+    "threads": 8,
+    "timeout_seconds": 300,
+    "top_p": 1.0,
+    "transport_parser_rule_version": "llama-completion-transport-parser-v1.3",
+    "transport_settings_version": "llama-completion-transport-boundary-v1.3"
+  },
+  "schema_version": "professor-comment-5-reproducibility-summary-v1"
+}

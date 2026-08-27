@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "check": "required_source_integrity_valid",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "authoritative_bespoke_scenario_count_24",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "bespoke_positive_negative_16_8",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "candidate_counts_between_4_and_8",
+      "details": {
+        "distribution": {
+          "4": 4,
+          "5": 5,
+          "6": 8,
+          "7": 4,
+          "8": 3
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "all_positive_scenarios_have_one_vulnerable_candidate",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "expected_bespoke_ranking_rows_264",
+      "details": {
+        "actual_by_arm": {
+          "deterministic_structural": 24,
+          "local_qwen": 120,
+          "proprietary_gpt": 120
+        },
+        "actual_total": 264,
+        "manifest_by_arm": {
+          "deterministic_structural": 24,
+          "local_qwen": 120,
+          "proprietary_gpt": 120
+        },
+        "manifest_total": 264
+      },
+      "passed": true
+    },
+    {
+      "check": "calibration_development_exclusion_recorded",
+      "details": {
+        "artifact_status": "dry_validation_only_no_scored_trials_no_vulnerability_testing",
+        "canonical_scenario_count": 24,
+        "protocol_prep_scenario_count": 24
+      },
+      "passed": true
+    },
+    {
+      "check": "rank_verifier_separation_recorded",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "zero_experimental_calls",
+      "details": {},
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "schema_version": "professor-comment-5-validation-v1",
+  "valid": true,
+  "validated_at": "2026-08-27T14:12:20.456167Z"
+}
