@@ -1,0 +1,16 @@
+{
+  "errors": [],
+  "inferential_statistics_calculated": false,
+  "schema_version": "owasp-xss-v14-statistical-plan-validation-v1",
+  "valid": true,
+  "zero_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  }
+}

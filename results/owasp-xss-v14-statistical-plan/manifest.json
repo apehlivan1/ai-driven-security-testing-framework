@@ -1,0 +1,19 @@
+{
+  "artifact_status": "post_run_statistical_plan_only",
+  "frozen_artifacts_modified": false,
+  "output_dir": "results/owasp-xss-v14-statistical-plan",
+  "schema_version": "owasp-xss-v14-statistical-plan-manifest-v1",
+  "source_plan": "docs/evaluation-v1.4-postrun-statistical-plan.md",
+  "source_plan_sha256": "e42d3162d005fc301e0889e471a81df2ffe445fe30cccd254454aa9875e01f36",
+  "analysis_plan_sha256": "1909a744039a608657f9a24676ce70a381207bbedb90109fb31082df40e93e9a",
+  "zero_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  }
+}

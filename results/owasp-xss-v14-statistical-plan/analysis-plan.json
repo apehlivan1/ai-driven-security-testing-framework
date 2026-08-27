@@ -1,0 +1,136 @@
+{
+  "analysis_status": "frozen_post_run_statistical_analysis_plan",
+  "artifact_status": "plan_only_no_inferential_results",
+  "bootstrap": {
+    "confidence_interval": "percentile_95",
+    "resample_count": 20000,
+    "resampling_unit": "paired_positive_scenario",
+    "seed": 20260827
+  },
+  "created_after": [
+    "descriptive_v1.4_results",
+    "professor_comment_1_random_baseline_audit",
+    "professor_comment_2_repeated_trial_stability_audit"
+  ],
+  "created_before": [
+    "professor_comment_3_inferential_tests"
+  ],
+  "disclaimer": "This is not a prospective preregistration and must not be represented as one.",
+  "failure_handling": {
+    "gpt_scenario_level_mean_rr": {
+      "available_positive_scenarios": 236,
+      "note": "one scenario has four valid trials but still has a scenario-level mean RR"
+    },
+    "invalid_or_failed_terminal_outputs": "retained in reliability denominators and excluded from valid ranking-performance values",
+    "no_imputation": true,
+    "no_repair": true,
+    "no_retry": true,
+    "qwen_scenario_level_mean_rr": {
+      "available_positive_scenarios": 235,
+      "missing_positive_scenarios": 1,
+      "missing_reason": "five malformed terminal outputs and no valid Qwen ranking"
+    }
+  },
+  "independent_experimental_unit": "positive_scenario",
+  "input_artifacts": {
+    "canonical_reliability_aggregates": "results/owasp-xss-v14-confirmatory-final/canonical/normalized/reliability-aggregates.json",
+    "canonical_scored_rows": "results/owasp-xss-v14-confirmatory-final/canonical/normalized/scored-rows.json",
+    "comment_2_scenario_level_stability": "results/owasp-xss-v14-trial-stability-analysis/scenario-level-stability.csv",
+    "comment_2_scenario_mean_rr": "results/owasp-xss-v14-trial-stability-analysis/scenario-mean-rr.csv",
+    "comment_2_source_integrity": "results/owasp-xss-v14-trial-stability-analysis/source-integrity-report.json",
+    "metric_specification": "results/owasp-xss-v14-protocol-freeze/metric-scoring-specification.json",
+    "protocol": "docs/evaluation-protocol-v1.4.md",
+    "protocol_package": "results/owasp-xss-v14-protocol-freeze"
+  },
+  "multiplicity": {
+    "exploratory_family": [
+      "local_qwen_vs_proprietary_gpt_mrr",
+      "proprietary_gpt_vs_deterministic_structural_mrr",
+      "proprietary_gpt_vs_deterministic_structural_top1",
+      "local_qwen_vs_deterministic_structural_top1",
+      "local_qwen_vs_proprietary_gpt_top1",
+      "proprietary_gpt_vs_deterministic_structural_top2",
+      "local_qwen_vs_deterministic_structural_top2",
+      "local_qwen_vs_proprietary_gpt_top2",
+      "proprietary_gpt_vs_deterministic_structural_top4",
+      "local_qwen_vs_deterministic_structural_top4",
+      "local_qwen_vs_proprietary_gpt_top4"
+    ],
+    "exploratory_family_size": 11,
+    "exploratory_p_value_adjustment": "Holm",
+    "primary_test_adjustment": "unadjusted"
+  },
+  "planned_outputs": [
+    "scenario-level statistical input table",
+    "primary MRR paired-comparison result",
+    "exploratory MRR and threshold comparison table",
+    "bootstrap confidence interval metadata",
+    "Wilcoxon implementation metadata",
+    "reliability and denominator note",
+    "random-reference descriptive context",
+    "thesis-ready Markdown and LaTeX tables",
+    "validation report",
+    "checksums",
+    "analysis report"
+  ],
+  "primary_comparison": {
+    "alpha": 0.05,
+    "arm_a": "local_qwen",
+    "arm_b": "deterministic_structural",
+    "effect_estimate": "mean(local_qwen scenario-level RR - deterministic_structural scenario RR)",
+    "hypothesis": "Model-backed ranking using the preselected local Qwen arm changes scenario-level ranking effectiveness relative to the original deterministic structural baseline, with the substantive research expectation that Qwen prioritizes vulnerable candidates more effectively.",
+    "metric": "scenario_level_mean_reciprocal_rank",
+    "paired_denominator": 235,
+    "test": {
+      "alternative": "two-sided",
+      "implementation": "scipy.stats.wilcoxon",
+      "method": "auto_or_documented_available_equivalent",
+      "type": "paired_scenario_level_wilcoxon_signed_rank",
+      "zero_method": "pratt"
+    }
+  },
+  "primary_metric": "scenario_level_mean_reciprocal_rank",
+  "random_reference_policy": "descriptive context only; no unplanned random-baseline inferential test in Professor Comment 3",
+  "repeated_trials": {
+    "gpt_trials_per_scenario": 5,
+    "qwen_trials_per_scenario": 5,
+    "rule": "aggregate valid repeated trials within scenario before inferential comparison",
+    "trial_rows_are_independent_observations": false
+  },
+  "scenario_population": {
+    "negative_only_scenarios": 30,
+    "positive_scenarios": 236,
+    "total_scenarios": 266
+  },
+  "secondary_exploratory_comparisons": {
+    "mrr": [
+      {
+        "comparison": "local_qwen_vs_proprietary_gpt",
+        "paired_denominator": 235
+      },
+      {
+        "comparison": "proprietary_gpt_vs_deterministic_structural",
+        "paired_denominator": 236
+      }
+    ],
+    "threshold_metrics": [
+      "top1",
+      "top2",
+      "top4"
+    ],
+    "threshold_value_rule": "LLM scenario value is the proportion of valid trials meeting the threshold; deterministic scenario value is binary 0/1"
+  },
+  "validation_rules": {
+    "deterministic_positive_rr_count": 236,
+    "fail_closed": true,
+    "gpt_positive_mean_rr_count": 236,
+    "gpt_vs_deterministic_paired_n": 236,
+    "no_experimental_calls": true,
+    "positive_scenarios": 236,
+    "qwen_missing_scenario_reason": "five malformed terminal outputs",
+    "qwen_positive_mean_rr_count": 235,
+    "qwen_vs_deterministic_paired_n": 235,
+    "qwen_vs_gpt_paired_n": 235,
+    "source_checksums_must_validate": true
+  }
+}

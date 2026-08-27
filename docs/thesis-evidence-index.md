@@ -715,6 +715,24 @@ for the original v1.4 GPT and Qwen arms while preserving scenario as the
 independent experimental unit. Invalid/provider-failed/malformed terminal
 outcomes remain in reliability denominators and are not repaired or retried.
 
+Professor-feedback Comment 3 post-run statistical-analysis plan:
+
+- Plan document:
+  `docs/evaluation-v1.4-postrun-statistical-plan.md`
+- Machine-readable plan package:
+  `results/owasp-xss-v14-statistical-plan/`
+- Analysis plan:
+  `results/owasp-xss-v14-statistical-plan/analysis-plan.json`
+- Validation report:
+  `results/owasp-xss-v14-statistical-plan/validation-report.json`
+- Checksums:
+  `results/owasp-xss-v14-statistical-plan/checksums.sha256`
+
+This is a post-run statistical analysis plan, not a prospective
+preregistration and not an inferential result package. It freezes the
+Professor Comment 3 analysis before p-values, confidence intervals, bootstrap
+results or model-comparison significance results are calculated.
+
 
 ### v1.4.1 OWASP XSS Context-Enrichment Ablation Protocol Freeze
 
