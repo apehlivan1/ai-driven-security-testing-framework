@@ -29,7 +29,7 @@
 
 ## Public OWASP v1.4 versus Bespoke v1.3.1
 
-| Dataset | Arm | Positive scenarios | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |
+| Dataset | Arm | Positive scenarios with valid ranking metric | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | public_owasp_xss_v14 | deterministic_structural | 236 | 236 | valid_trial_row_mean | full_order_reciprocal_rank | 0.2034 | 0.2000 | 0.0006 | 0.4573 | 0.4567 |
 | public_owasp_xss_v14 | proprietary_gpt | 236 | 1179 | valid_trial_row_mean | full_order_reciprocal_rank | 0.2332 | 0.2000 | 0.0166 | 0.4732 | 0.4567 |
@@ -37,3 +37,5 @@
 | bespoke_xss_v13_1_heldout | deterministic_structural | 16 | 16 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.2500 | 0.1757 | 0.0193 | 0.3854 | 0.3661 |
 | bespoke_xss_v13_1_heldout | proprietary_gpt | 16 | 78 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.2250 | 0.1757 | 0.0445 | 0.4107 | 0.3661 |
 | bespoke_xss_v13_1_heldout | local_qwen | 16 | 80 | equal_weight_scenario_mean | budget_censored_reciprocal_rank | 0.3125 | 0.1757 | 0.0766 | 0.4427 | 0.3661 |
+
+Note: OWASP v1.4 contains 236 positive scenarios in total. Qwen has valid ranking-performance values for 235/236 positive scenarios; the excluded scenario is retained in reliability reporting through its five malformed terminal outputs.

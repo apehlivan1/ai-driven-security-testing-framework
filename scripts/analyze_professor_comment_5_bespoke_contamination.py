@@ -689,6 +689,9 @@ def average_metrics(rows: list[dict[str, Any]]) -> dict[str, float]:
 
 
 def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], random_summary: dict[str, Any], bespoke: dict[str, Any], comparison: list[dict[str, Any]], reproducibility: dict[str, Any], validation: dict[str, Any]) -> str:
+    gpt_model = strip_count_suffix(str(reproducibility["gpt"]["model_identifier"]))
+    gpt_provider = strip_count_suffix(str(reproducibility["gpt"]["provider"]))
+    gpt_cost = strip_count_suffix(str(reproducibility["gpt"]["cost_availability"]))
     return "\n".join(
         [
             "# Professor Comment 5 Closure Analysis: OWASP Contamination Caveat and Bespoke Held-Out XSS Evidence",
@@ -726,6 +729,8 @@ def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], ran
             "",
             render_comparison_table(comparison),
             "",
+            "The OWASP v1.4 benchmark contains 236 positive scenarios in total. Qwen contributes valid ranking-performance values for 235/236 positive scenarios; the excluded scenario remains represented in reliability reporting through its five malformed terminal outputs.",
+            "",
             "The public OWASP v1.4 and bespoke v1.3.1 metrics should not be compared by raw Top-k values alone because their candidate-set sizes differ. Observed-minus-random values are more interpretable within each dataset. MRR deltas should still be read with care across the two protocols because original v1.4 uses full-order reciprocal-rank semantics, while v1.3.1 uses budget-censored reciprocal rank.",
             "",
             "## Contamination-Risk Interpretation",
@@ -734,7 +739,7 @@ def render_report(evidence: dict[str, Any], scenarios: list[dict[str, Any]], ran
             "",
             "## Reproducibility Metadata",
             "",
-            f"- GPT model identifier: `{reproducibility['gpt']['model_identifier']}`; provider `{reproducibility['gpt']['provider']}`; prompt version `llm-candidate-ranking-v1`; temperature parameter omitted/provider default; cost `{reproducibility['gpt']['cost_availability']}`.",
+            f"- GPT model identifier: `{gpt_model}`; provider `{gpt_provider}`; prompt version `llm-candidate-ranking-v1`; temperature parameter omitted/provider default; cost `{gpt_cost}`.",
             f"- Qwen model: `{reproducibility['qwen']['model']}`; repository `{reproducibility['qwen']['repository']}`; revision `{reproducibility['qwen']['revision']}`; quantization `{reproducibility['qwen']['quantization']}`; runtime `{reproducibility['qwen']['runtime']}`; backend `{reproducibility['qwen']['backend']}`; seed `{reproducibility['qwen']['seed']}`; temperature `{reproducibility['qwen']['temperature']}`; top-p `{reproducibility['qwen']['top_p']}`; context `{reproducibility['qwen']['context_size_tokens']}`; output limit `{reproducibility['qwen']['max_output_tokens']}`; timeout `{reproducibility['qwen']['timeout_seconds']}` seconds; threads `{reproducibility['qwen']['threads']}`.",
             "- Qwen latency is an experimental-system measurement under the recorded CPU-only runtime and hardware configuration, not an inherent property of local inference.",
             "",
@@ -788,7 +793,7 @@ def render_top4_gt4_table(bespoke: dict[str, Any]) -> str:
 
 def render_comparison_table(rows_in: list[dict[str, Any]]) -> str:
     rows = [
-        "| Dataset | Arm | Positive scenarios | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |",
+        "| Dataset | Arm | Positive scenarios with valid ranking metric | Valid positive ranking rows | Metric aggregation | MRR semantics | Observed Top-1 | Random Top-1 | Delta MRR | Observed MRR | Random MRR |",
         "| --- | --- | ---: | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in rows_in:
@@ -847,6 +852,7 @@ def render_thesis_tables(random_summary: dict[str, Any], bespoke: dict[str, Any]
             render_top4_gt4_table(bespoke),
             "## Public OWASP v1.4 versus Bespoke v1.3.1",
             render_comparison_table(comparison),
+            "Note: OWASP v1.4 contains 236 positive scenarios in total. Qwen has valid ranking-performance values for 235/236 positive scenarios; the excluded scenario is retained in reliability reporting through its five malformed terminal outputs.",
         ]
     ) + "\n"
 
@@ -1010,6 +1016,14 @@ def label(arm: str) -> str:
         "proprietary_gpt": "GPT",
         "local_qwen": "Qwen",
     }.get(arm, arm)
+
+
+def strip_count_suffix(value: str) -> str:
+    if value.endswith(")") and " (" in value:
+        prefix, suffix = value.rsplit(" (", 1)
+        if suffix[:-1].isdigit():
+            return prefix
+    return value
 
 
 def sha256(path: Path) -> str:
