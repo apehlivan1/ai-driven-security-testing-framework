@@ -1,0 +1,35 @@
+{
+  "artifact_status": "derived_post_run_inferential_analysis",
+  "created_at": "2026-08-27T13:26:14.958554+00:00",
+  "frozen_artifacts_modified": false,
+  "git_state": {
+    "branch": "main",
+    "commit": "a3785c710e5865edb4ae289bb2906b07afa52406",
+    "dirty": true,
+    "status_short": [
+      "?? .analysis-deps/",
+      "?? results/owasp-xss-v14-scenario-statistical-analysis/",
+      "?? scripts/audit_owasp_xss_v14_scenario_statistics.py"
+    ]
+  },
+  "new_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  },
+  "output_dir": "results/owasp-xss-v14-scenario-statistical-analysis",
+  "schema_version": "owasp-xss-v14-scenario-statistical-analysis-manifest-v1",
+  "source_canonical_package": "results/owasp-xss-v14-confirmatory-final/canonical",
+  "source_comment_2_package": "results/owasp-xss-v14-trial-stability-analysis",
+  "source_machine_plan": "results/owasp-xss-v14-statistical-plan/analysis-plan.json",
+  "source_plan": "docs/evaluation-v1.4-postrun-statistical-plan.md",
+  "source_protocol": "docs/evaluation-protocol-v1.4.md",
+  "source_protocol_package": "results/owasp-xss-v14-protocol-freeze",
+  "source_raw_run": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z",
+  "validation_valid": true
+}

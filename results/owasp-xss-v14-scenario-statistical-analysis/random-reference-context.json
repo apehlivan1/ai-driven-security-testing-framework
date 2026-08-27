@@ -1,0 +1,11 @@
+{
+  "basis": "positive scenarios contain five candidates and one vulnerable candidate",
+  "policy": "descriptive_context_only_no_new_random_baseline_hypothesis_test",
+  "schema_version": "owasp-xss-v14-random-reference-context-v1",
+  "values": {
+    "mrr": 0.4566666667,
+    "top1": 0.2,
+    "top2": 0.4,
+    "top4": 0.8
+  }
+}

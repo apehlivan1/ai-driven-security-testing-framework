@@ -1,0 +1,117 @@
+{
+  "comparisons": {
+    "local_qwen_vs_deterministic_structural_top1": {
+      "ci_95_percentile": [
+        -0.03404255319148936,
+        0.11914893617021277
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_deterministic_structural_top2": {
+      "ci_95_percentile": [
+        -0.05531914893617021,
+        0.12340425531914893
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_deterministic_structural_top4": {
+      "ci_95_percentile": [
+        -0.029787234042553193,
+        0.1148936170212766
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_proprietary_gpt_mrr": {
+      "ci_95_percentile": [
+        -0.02918492907801418,
+        0.0660326241134751
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_proprietary_gpt_top1": {
+      "ci_95_percentile": [
+        -0.052340425531914904,
+        0.07744680851063832
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_proprietary_gpt_top2": {
+      "ci_95_percentile": [
+        -0.04127659574468085,
+        0.11128191489361658
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "local_qwen_vs_proprietary_gpt_top4": {
+      "ci_95_percentile": [
+        -0.013617021276595746,
+        0.11148936170212766
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "primary_local_qwen_vs_deterministic_structural_mrr": {
+      "ci_95_percentile": [
+        -0.020709219858156026,
+        0.09220035460992894
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "proprietary_gpt_vs_deterministic_structural_mrr": {
+      "ci_95_percentile": [
+        -0.032317796610169494,
+        0.06377153954802257
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "proprietary_gpt_vs_deterministic_structural_top1": {
+      "ci_95_percentile": [
+        -0.03961864406779661,
+        0.09745762711864407
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "proprietary_gpt_vs_deterministic_structural_top2": {
+      "ci_95_percentile": [
+        -0.08305084745762713,
+        0.07330508474576271
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    },
+    "proprietary_gpt_vs_deterministic_structural_top4": {
+      "ci_95_percentile": [
+        -0.05084745762711865,
+        0.03813559322033899
+      ],
+      "resample_count": 20000,
+      "resampling_unit": "paired_positive_scenario",
+      "seed": 20260827
+    }
+  },
+  "confidence_interval": "percentile_95",
+  "resample_count": 20000,
+  "resampling_unit": "paired_positive_scenario",
+  "schema_version": "owasp-xss-v14-scenario-statistical-bootstrap-v1",
+  "seed": 20260827
+}

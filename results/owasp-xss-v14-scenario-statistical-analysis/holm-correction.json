@@ -1,0 +1,92 @@
+{
+  "adjusted_p_values": {
+    "local_qwen_vs_deterministic_structural_top1": 1.0,
+    "local_qwen_vs_deterministic_structural_top2": 1.0,
+    "local_qwen_vs_deterministic_structural_top4": 1.0,
+    "local_qwen_vs_proprietary_gpt_mrr": 1.0,
+    "local_qwen_vs_proprietary_gpt_top1": 1.0,
+    "local_qwen_vs_proprietary_gpt_top2": 1.0,
+    "local_qwen_vs_proprietary_gpt_top4": 0.22317564812998253,
+    "proprietary_gpt_vs_deterministic_structural_mrr": 1.0,
+    "proprietary_gpt_vs_deterministic_structural_top1": 1.0,
+    "proprietary_gpt_vs_deterministic_structural_top2": 1.0,
+    "proprietary_gpt_vs_deterministic_structural_top4": 1.0
+  },
+  "alpha": 0.05,
+  "expected_p_value_count": 11,
+  "family": "exploratory_model_comparisons",
+  "ordered_raw_p_values": [
+    {
+      "comparison_id": "local_qwen_vs_proprietary_gpt_top4",
+      "raw_p_value": 0.020288695284543867
+    },
+    {
+      "comparison_id": "proprietary_gpt_vs_deterministic_structural_top1",
+      "raw_p_value": 0.10078654647539512
+    },
+    {
+      "comparison_id": "local_qwen_vs_deterministic_structural_top4",
+      "raw_p_value": 0.2450420106323863
+    },
+    {
+      "comparison_id": "local_qwen_vs_deterministic_structural_top1",
+      "raw_p_value": 0.29184054514378843
+    },
+    {
+      "comparison_id": "proprietary_gpt_vs_deterministic_structural_top4",
+      "raw_p_value": 0.3883460689994943
+    },
+    {
+      "comparison_id": "local_qwen_vs_proprietary_gpt_top2",
+      "raw_p_value": 0.4356731218020651
+    },
+    {
+      "comparison_id": "local_qwen_vs_deterministic_structural_top2",
+      "raw_p_value": 0.4576140668763148
+    },
+    {
+      "comparison_id": "proprietary_gpt_vs_deterministic_structural_mrr",
+      "raw_p_value": 0.5477654963057299
+    },
+    {
+      "comparison_id": "local_qwen_vs_proprietary_gpt_mrr",
+      "raw_p_value": 0.8510716185890432
+    },
+    {
+      "comparison_id": "local_qwen_vs_proprietary_gpt_top1",
+      "raw_p_value": 0.856999226014981
+    },
+    {
+      "comparison_id": "proprietary_gpt_vs_deterministic_structural_top2",
+      "raw_p_value": 0.8950999540711426
+    }
+  ],
+  "p_value_count": 11,
+  "raw_p_values": {
+    "local_qwen_vs_deterministic_structural_top1": 0.29184054514378843,
+    "local_qwen_vs_deterministic_structural_top2": 0.4576140668763148,
+    "local_qwen_vs_deterministic_structural_top4": 0.2450420106323863,
+    "local_qwen_vs_proprietary_gpt_mrr": 0.8510716185890432,
+    "local_qwen_vs_proprietary_gpt_top1": 0.856999226014981,
+    "local_qwen_vs_proprietary_gpt_top2": 0.4356731218020651,
+    "local_qwen_vs_proprietary_gpt_top4": 0.020288695284543867,
+    "proprietary_gpt_vs_deterministic_structural_mrr": 0.5477654963057299,
+    "proprietary_gpt_vs_deterministic_structural_top1": 0.10078654647539512,
+    "proprietary_gpt_vs_deterministic_structural_top2": 0.8950999540711426,
+    "proprietary_gpt_vs_deterministic_structural_top4": 0.3883460689994943
+  },
+  "schema_version": "owasp-xss-v14-holm-correction-v1",
+  "significant_after_holm": {
+    "local_qwen_vs_deterministic_structural_top1": false,
+    "local_qwen_vs_deterministic_structural_top2": false,
+    "local_qwen_vs_deterministic_structural_top4": false,
+    "local_qwen_vs_proprietary_gpt_mrr": false,
+    "local_qwen_vs_proprietary_gpt_top1": false,
+    "local_qwen_vs_proprietary_gpt_top2": false,
+    "local_qwen_vs_proprietary_gpt_top4": false,
+    "proprietary_gpt_vs_deterministic_structural_mrr": false,
+    "proprietary_gpt_vs_deterministic_structural_top1": false,
+    "proprietary_gpt_vs_deterministic_structural_top2": false,
+    "proprietary_gpt_vs_deterministic_structural_top4": false
+  }
+}

@@ -733,6 +733,49 @@ preregistration and not an inferential result package. It freezes the
 Professor Comment 3 analysis before p-values, confidence intervals, bootstrap
 results or model-comparison significance results are calculated.
 
+Professor-feedback Comment 3 scenario-level inferential analysis:
+
+- Thesis-support document:
+  `docs/professor-feedback-closure.md`
+- Derived inferential package:
+  `results/owasp-xss-v14-scenario-statistical-analysis/`
+- Reproducible analysis script:
+  `scripts/audit_owasp_xss_v14_scenario_statistics.py`
+- Human-readable analysis:
+  `results/owasp-xss-v14-scenario-statistical-analysis/analysis-report.md`
+- Scenario-level statistical input:
+  `results/owasp-xss-v14-scenario-statistical-analysis/scenario-level-statistical-input.csv`
+- Primary comparison:
+  `results/owasp-xss-v14-scenario-statistical-analysis/primary-comparison.json`
+- Exploratory comparisons:
+  `results/owasp-xss-v14-scenario-statistical-analysis/all-comparisons.csv`
+- Holm correction:
+  `results/owasp-xss-v14-scenario-statistical-analysis/holm-correction.json`
+- Bootstrap results:
+  `results/owasp-xss-v14-scenario-statistical-analysis/bootstrap-results.json`
+- Implementation metadata:
+  `results/owasp-xss-v14-scenario-statistical-analysis/implementation-metadata.json`
+- Thesis-ready tables:
+  `results/owasp-xss-v14-scenario-statistical-analysis/thesis-ready-table.md`
+  and
+  `results/owasp-xss-v14-scenario-statistical-analysis/thesis-ready-table.tex`
+- Validation and checksums:
+  `results/owasp-xss-v14-scenario-statistical-analysis/validation-report.json`
+  and
+  `results/owasp-xss-v14-scenario-statistical-analysis/checksums.sha256`
+
+This is a derived post-run inferential analysis of the original frozen OWASP
+XSS v1.4 ranking-only evaluation. It follows the frozen post-run statistical
+analysis plan, treats positive scenario as the independent unit, aggregates
+repeated GPT/Qwen trials within scenario, preserves invalid and failed
+terminal outcomes in reliability denominators, and performs zero new model,
+HTTP, browser, discovery, verifier or scored experimental calls. The primary
+Qwen-versus-deterministic scenario-level MRR comparison was not statistically
+supported at alpha 0.05, and none of the 11 exploratory comparisons remained
+supported after Holm correction. This package should be cited for Professor
+Comment 3 closure and for cautious thesis interpretation of the v1.4 ranking
+comparison.
+
 
 ### v1.4.1 OWASP XSS Context-Enrichment Ablation Protocol Freeze
 

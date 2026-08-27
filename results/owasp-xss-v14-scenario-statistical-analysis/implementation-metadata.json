@@ -1,0 +1,55 @@
+{
+  "analysis_pythonpath": [
+    "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\.analysis-deps\\scipy-v14-stat-20260827-1518"
+  ],
+  "analysis_status": "derived_post_run_inferential_analysis",
+  "bootstrap": {
+    "confidence_interval": "percentile_95",
+    "numpy_percentile": "np.percentile([2.5, 97.5])",
+    "numpy_rng": "numpy.random.default_rng",
+    "resamples": 20000,
+    "resampling_unit": "paired_positive_scenario",
+    "seed": 20260827
+  },
+  "machine_plan_source": "results/owasp-xss-v14-statistical-plan/analysis-plan.json",
+  "plan_primary_comparison": {
+    "alpha": 0.05,
+    "arm_a": "local_qwen",
+    "arm_b": "deterministic_structural",
+    "effect_estimate": "mean(local_qwen scenario-level RR - deterministic_structural scenario RR)",
+    "hypothesis": "Model-backed ranking using the preselected local Qwen arm changes scenario-level ranking effectiveness relative to the original deterministic structural baseline, with the substantive research expectation that Qwen prioritizes vulnerable candidates more effectively.",
+    "metric": "scenario_level_mean_reciprocal_rank",
+    "paired_denominator": 235,
+    "test": {
+      "alternative": "two-sided",
+      "implementation": "scipy.stats.wilcoxon",
+      "method": "auto_or_documented_available_equivalent",
+      "type": "paired_scenario_level_wilcoxon_signed_rank",
+      "zero_method": "pratt"
+    }
+  },
+  "plan_source": "docs/evaluation-v1.4-postrun-statistical-plan.md",
+  "python_executable": "C:\\Users\\SELUAPNS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "python_version": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "rank_biserial_formula": "(positive_rank_sum - negative_rank_sum) / (positive_rank_sum + negative_rank_sum), with zero-difference ranks excluded from the denominator after Pratt ranking",
+  "schema_version": "owasp-xss-v14-statistical-implementation-metadata-v1",
+  "scipy_computation_notes": [
+    "method_auto_documented_as_asymptotic_for_this_input_size_or_zero_tie_structure"
+  ],
+  "scipy_version": "1.15.3",
+  "scipy_wilcoxon_parameters": {
+    "alternative": "two-sided",
+    "method": "auto",
+    "zero_method": "pratt"
+  },
+  "zero_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  }
+}
