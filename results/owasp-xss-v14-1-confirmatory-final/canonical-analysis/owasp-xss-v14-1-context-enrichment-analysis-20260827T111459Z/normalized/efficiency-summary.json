@@ -1,0 +1,146 @@
+{
+  "deterministic_enriched": {
+    "cost": "not_applicable",
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 266,
+      "max": 0,
+      "mean": 0,
+      "median": 0.0,
+      "min": 0,
+      "p95": 0.0
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "not_available",
+      "input_tokens": "not_available",
+      "output_tokens": "not_available",
+      "rows_with_usage": 0,
+      "total_tokens": "not_available"
+    }
+  },
+  "deterministic_minimal": {
+    "cost": "not_applicable",
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 266,
+      "max": 2,
+      "mean": 0.011278195488721804,
+      "median": 0.0,
+      "min": 0,
+      "p95": 0.0
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "not_available",
+      "input_tokens": "not_available",
+      "output_tokens": "not_available",
+      "rows_with_usage": 0,
+      "total_tokens": "not_available"
+    }
+  },
+  "gpt_enriched": {
+    "cost": {
+      "availability": "not_available",
+      "reason": "no frozen numeric pricing/cost artifact retained"
+    },
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 1330,
+      "max": 18824,
+      "mean": 4319.384962406015,
+      "median": 4055.5,
+      "min": 2584,
+      "p95": 6442.549999999999
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "available",
+      "input_tokens": 1076965,
+      "output_tokens": 345780,
+      "rows_with_usage": 1330,
+      "total_tokens": 1422745
+    }
+  },
+  "gpt_minimal": {
+    "cost": {
+      "availability": "not_available",
+      "reason": "no frozen numeric pricing/cost artifact retained"
+    },
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 1330,
+      "max": 34324,
+      "mean": 4969.2052631578945,
+      "median": 4716.5,
+      "min": 2313,
+      "p95": 7048.999999999999
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "available",
+      "input_tokens": 761480,
+      "output_tokens": 416475,
+      "rows_with_usage": 1330,
+      "total_tokens": 1177955
+    }
+  },
+  "qwen_enriched": {
+    "cost": {
+      "availability": "not_available",
+      "reason": "no frozen numeric pricing/cost artifact retained"
+    },
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 1330,
+      "max": 172810,
+      "mean": 71167.37368421053,
+      "median": 65094.0,
+      "min": 50447,
+      "p95": 101939.04999999999
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "not_available",
+      "input_tokens": "not_available",
+      "output_tokens": "not_available",
+      "rows_with_usage": 0,
+      "total_tokens": "not_available"
+    }
+  },
+  "qwen_minimal": {
+    "cost": {
+      "availability": "not_available",
+      "reason": "no frozen numeric pricing/cost artifact retained"
+    },
+    "cost_per_finding": "not_available",
+    "cost_per_finding_reason": "no frozen numeric pricing basis exists for this evaluation",
+    "latency_ms": {
+      "count": 1330,
+      "max": 170766,
+      "mean": 58403.52180451128,
+      "median": 54043.0,
+      "min": 39967,
+      "p95": 85771.15
+    },
+    "requests_to_first_verified_finding": "not_applicable",
+    "time_to_first_verified_finding": "not_applicable",
+    "token_usage": {
+      "availability": "not_available",
+      "input_tokens": "not_available",
+      "output_tokens": "not_available",
+      "rows_with_usage": 0,
+      "total_tokens": "not_available"
+    }
+  }
+}

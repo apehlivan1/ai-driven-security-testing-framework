@@ -1,0 +1,7 @@
+applicable,arm_id,mean_unique_rankings_per_scenario,mean_unique_top1_per_scenario,median_unique_rankings_per_scenario,reason,scenario_count_with_valid_trials,scenarios_with_unanimous_top1_and_all_trials_valid
+False,deterministic_minimal,,,,single deterministic trial per scenario,,
+False,deterministic_enriched,,,,single deterministic trial per scenario,,
+True,gpt_minimal,1.906015037593985,1.5413533834586466,2.0,,266,141
+True,gpt_enriched,1.7518796992481203,1.112781954887218,2.0,,266,228
+True,qwen_minimal,1.0,1.0,1.0,,264,264
+True,qwen_enriched,1.0,1.0,1.0,,266,266

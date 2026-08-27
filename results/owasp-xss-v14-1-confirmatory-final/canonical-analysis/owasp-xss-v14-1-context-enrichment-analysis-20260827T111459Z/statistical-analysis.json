@@ -1,0 +1,80 @@
+{
+  "bootstrap_iterations": 10000,
+  "inferential_unit": "scenario",
+  "llm_trial_handling": "repeated trials are nested under scenario and arm; they are not independent benchmark scenarios",
+  "multiple_comparison_policy": "Holm correction across the four primary paired MRR comparisons",
+  "permutation_iterations": 10000,
+  "primary_mrr_comparisons": [
+    {
+      "bootstrap_ci_95": [
+        0.28336158192090394,
+        0.37387217514124294
+      ],
+      "comparison": "gpt_enriched vs gpt_minimal",
+      "control_arm": "gpt_minimal",
+      "effect": "scenario_level_mrr_difference_treatment_minus_control",
+      "holm_adjusted_p_value": 0.00039996000399960006,
+      "holm_family_size": 4,
+      "method": "scenario-level paired bootstrap CI and paired sign-flip permutation test",
+      "observed_difference": 0.3281779661016949,
+      "paired_scenarios": 236,
+      "raw_p_value": 9.999000099990002e-05,
+      "statistical_evidence_alpha_0_05_after_holm": true,
+      "treatment_arm": "gpt_enriched"
+    },
+    {
+      "bootstrap_ci_95": [
+        0.100997150997151,
+        0.2049145299145299
+      ],
+      "comparison": "qwen_enriched vs qwen_minimal",
+      "control_arm": "qwen_minimal",
+      "effect": "scenario_level_mrr_difference_treatment_minus_control",
+      "holm_adjusted_p_value": 0.00039996000399960006,
+      "holm_family_size": 4,
+      "method": "scenario-level paired bootstrap CI and paired sign-flip permutation test",
+      "observed_difference": 0.15313390313390313,
+      "paired_scenarios": 234,
+      "raw_p_value": 9.999000099990002e-05,
+      "statistical_evidence_alpha_0_05_after_holm": true,
+      "treatment_arm": "qwen_enriched"
+    },
+    {
+      "bootstrap_ci_95": [
+        -0.0479816384180791,
+        0.01805120056497175
+      ],
+      "comparison": "gpt_enriched vs deterministic_enriched",
+      "control_arm": "deterministic_enriched",
+      "effect": "scenario_level_mrr_difference_treatment_minus_control",
+      "holm_adjusted_p_value": 0.38246175382461756,
+      "holm_family_size": 4,
+      "method": "scenario-level paired bootstrap CI and paired sign-flip permutation test",
+      "observed_difference": -0.014915254237288136,
+      "paired_scenarios": 236,
+      "raw_p_value": 0.38246175382461756,
+      "statistical_evidence_alpha_0_05_after_holm": false,
+      "treatment_arm": "gpt_enriched"
+    },
+    {
+      "bootstrap_ci_95": [
+        -0.19406779661016949,
+        -0.0990819209039548
+      ],
+      "comparison": "qwen_enriched vs deterministic_enriched",
+      "control_arm": "deterministic_enriched",
+      "effect": "scenario_level_mrr_difference_treatment_minus_control",
+      "holm_adjusted_p_value": 0.00039996000399960006,
+      "holm_family_size": 4,
+      "method": "scenario-level paired bootstrap CI and paired sign-flip permutation test",
+      "observed_difference": -0.14540960451977403,
+      "paired_scenarios": 236,
+      "raw_p_value": 9.999000099990002e-05,
+      "statistical_evidence_alpha_0_05_after_holm": true,
+      "treatment_arm": "qwen_enriched"
+    }
+  ],
+  "primary_outcome": "scenario-level MRR on positive scenarios",
+  "schema_version": "owasp-xss-v14-1-statistical-analysis-v1",
+  "seed": 14101
+}

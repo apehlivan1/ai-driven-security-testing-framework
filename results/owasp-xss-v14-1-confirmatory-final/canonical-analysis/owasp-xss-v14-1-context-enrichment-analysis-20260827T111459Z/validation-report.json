@@ -1,0 +1,25 @@
+{
+  "actual_total_rows": 5852,
+  "errors": [],
+  "expected_negative_scenarios_per_arm": 30,
+  "expected_positive_scenarios_per_arm": 236,
+  "expected_total_rows": 5852,
+  "ground_truth_loaded_only_after_pre_scoring_integrity": true,
+  "new_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0
+  },
+  "positive_scenarios_per_arm": {
+    "deterministic_enriched": 236,
+    "deterministic_minimal": 236,
+    "gpt_enriched": 236,
+    "gpt_minimal": 236,
+    "qwen_enriched": 236,
+    "qwen_minimal": 236
+  },
+  "schema_version": "owasp-xss-v14-1-analysis-validation-v1",
+  "valid": true
+}

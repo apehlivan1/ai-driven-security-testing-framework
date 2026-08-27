@@ -1,0 +1,33 @@
+% Generated from v1.4.1 canonical post-run analysis artifacts.
+\begin{table}[ht]
+\centering
+\caption{v1.4.1 OWASP XSS candidate-ranking effectiveness.}
+\begin{tabular}{llrrrrr}
+\hline
+Family & Representation & Valid/expected positive trials & Top-1 & Top-2 & Top-4 & MRR \\
+\hline
+deterministic & minimal & 236/236 & 0.2119 & 0.4364 & 0.7797 & 0.4681 \\
+deterministic & enriched & 236/236 & 0.6356 & 0.8136 & 0.9576 & 0.7768 \\
+gpt & minimal & 1180/1180 & 0.1814 & 0.3517 & 0.7525 & 0.4337 \\
+gpt & enriched & 1171/1180 & 0.6042 & 0.8076 & 0.9771 & 0.7619 \\
+qwen & minimal & 1170/1180 & 0.2308 & 0.4145 & 0.8590 & 0.4808 \\
+qwen & enriched & 1180/1180 & 0.4110 & 0.6610 & 0.9237 & 0.6314 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Primary paired MRR comparisons for v1.4.1 OWASP XSS.}
+\begin{tabular}{lrrrrr}
+\hline
+Comparison & Scenarios & Difference & 95\% CI & Raw $p$ & Holm $p$ \\
+\hline
+gpt\_enriched vs gpt\_minimal & 236 & 0.3282 & [0.2834, 0.3739] & 0.0001 & 0.0004 \\
+qwen\_enriched vs qwen\_minimal & 234 & 0.1531 & [0.1010, 0.2049] & 0.0001 & 0.0004 \\
+gpt\_enriched vs deterministic\_enriched & 236 & -0.0149 & [-0.0480, 0.0181] & 0.3825 & 0.3825 \\
+qwen\_enriched vs deterministic\_enriched & 236 & -0.1454 & [-0.1941, -0.0991] & 0.0001 & 0.0004 \\
+\hline
+\end{tabular}
+\end{table}
+

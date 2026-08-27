@@ -1,0 +1,7 @@
+arm_id,cost_availability,cost_per_finding,input_tokens,latency_count,latency_max,latency_mean,latency_median,latency_min,latency_p95,output_tokens,total_tokens
+deterministic_minimal,not_applicable,not_available,not_available,266,2,0.011278195488721804,0.0,0,0.0,not_available,not_available
+deterministic_enriched,not_applicable,not_available,not_available,266,0,0,0.0,0,0.0,not_available,not_available
+gpt_minimal,not_available,not_available,761480,1330,34324,4969.2052631578945,4716.5,2313,7048.999999999999,416475,1177955
+gpt_enriched,not_available,not_available,1076965,1330,18824,4319.384962406015,4055.5,2584,6442.549999999999,345780,1422745
+qwen_minimal,not_available,not_available,not_available,1330,170766,58403.52180451128,54043.0,39967,85771.15,not_available,not_available
+qwen_enriched,not_available,not_available,not_available,1330,172810,71167.37368421053,65094.0,50447,101939.04999999999,not_available,not_available

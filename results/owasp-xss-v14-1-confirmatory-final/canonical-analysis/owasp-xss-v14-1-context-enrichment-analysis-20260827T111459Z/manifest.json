@@ -1,0 +1,46 @@
+{
+  "artifact_status": "derived_post_run_ground_truth_scoring_and_statistical_analysis",
+  "checksum_validation_valid": true,
+  "created_at": "2026-08-27T11:17:42.661409+00:00",
+  "denominators": {
+    "deterministic_enriched": 266,
+    "deterministic_minimal": 266,
+    "deterministic_total": 532,
+    "gpt_enriched": 1330,
+    "gpt_minimal": 1330,
+    "gpt_total": 2660,
+    "qwen_enriched": 1330,
+    "qwen_minimal": 1330,
+    "qwen_total": 2660,
+    "total_ranking_rows": 5852
+  },
+  "git_state": {
+    "branch": "main",
+    "commit": "e122ba4952bf53530e31d1d3005c80b1568e359c",
+    "dirty": true,
+    "status_short": [
+      "?? results/owasp-xss-v14-1-confirmatory-final/",
+      "?? src/adstf/owasp_xss_v14_1_postrun.py",
+      "?? tests/test_owasp_xss_v14_1_postrun.py"
+    ]
+  },
+  "ground_truth_available_during_ranking": false,
+  "ground_truth_loaded_for_post_run_scoring": true,
+  "new_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0
+  },
+  "output_dir": "results/owasp-xss-v14-1-confirmatory-final/canonical-analysis/owasp-xss-v14-1-context-enrichment-analysis-20260827T111459Z",
+  "protocol_commit": "08e72f32c9de7e0fb80f3ccfd64c85b6fe99ddb3",
+  "protocol_document": "docs/evaluation-protocol-v1.4.1.md",
+  "protocol_package": "results/owasp-xss-v14-1-protocol-freeze",
+  "protocol_sha256": "b5e6a57513797893a2b91fdf938ca3c45f50bf5aca5acd62033729dee2dbd717",
+  "protocol_tag": "evaluation-protocol-v1.4.1-ready",
+  "raw_artifacts_modified": false,
+  "raw_execution_root": "results/owasp-xss-v14-1-confirmatory-final",
+  "schema_version": "owasp-xss-v14-1-analysis-manifest-v1",
+  "validation_valid": true
+}

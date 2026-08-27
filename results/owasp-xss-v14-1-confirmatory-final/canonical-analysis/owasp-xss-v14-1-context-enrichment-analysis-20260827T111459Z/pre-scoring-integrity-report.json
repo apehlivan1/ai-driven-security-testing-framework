@@ -1,0 +1,65 @@
+{
+  "candidate_snapshot_checksum_error_count": 0,
+  "deterministic_resume_incident": {
+    "completed_sequence_rerun_detected": false,
+    "first_attempt_terminal_rows": "1-131",
+    "incident": "Windows replace of completion-index.json failed during deterministic execution",
+    "operator_action": "removed stale completion-index.json.tmp only",
+    "resume_start_sequence": 132,
+    "validity_effect": "operational_provenance_only"
+  },
+  "duplicate_row_id_count": 0,
+  "duplicate_row_ids": [],
+  "duplicate_sequence_count": 0,
+  "duplicate_sequences": [],
+  "empty_or_nonfinal_run_dirs": [
+    "results/owasp-xss-v14-1-confirmatory-final/canonical-analysis",
+    "results/owasp-xss-v14-1-confirmatory-final/owasp-xss-v14-1-confirmatory-qwen-batch-20260824T1350Z",
+    "results/owasp-xss-v14-1-confirmatory-final/owasp-xss-v14-1-confirmatory-qwen-batch-20260824T1355Z",
+    "results/owasp-xss-v14-1-confirmatory-final/owasp-xss-v14-1-confirmatory-qwen-batch-20260824T1400Z"
+  ],
+  "errors": [],
+  "expected_per_arm_counts": {
+    "deterministic_enriched": 266,
+    "deterministic_minimal": 266,
+    "gpt_enriched": 1330,
+    "gpt_minimal": 1330,
+    "qwen_enriched": 1330,
+    "qwen_minimal": 1330
+  },
+  "expected_total_rows": 5852,
+  "git_state": {
+    "branch": "main",
+    "commit": "e122ba4952bf53530e31d1d3005c80b1568e359c",
+    "dirty": true,
+    "status_short": [
+      "?? results/owasp-xss-v14-1-confirmatory-final/",
+      "?? src/adstf/owasp_xss_v14_1_postrun.py",
+      "?? tests/test_owasp_xss_v14_1_postrun.py"
+    ]
+  },
+  "ground_truth_leak_count": 0,
+  "missing_sequence_count": 0,
+  "missing_sequences": [],
+  "per_arm_counts": {
+    "deterministic_enriched": 266,
+    "deterministic_minimal": 266,
+    "gpt_enriched": 1330,
+    "gpt_minimal": 1330,
+    "qwen_enriched": 1330,
+    "qwen_minimal": 1330
+  },
+  "protocol_commit": "08e72f32c9de7e0fb80f3ccfd64c85b6fe99ddb3",
+  "protocol_package_checksum_error_count": 0,
+  "protocol_package_checksum_errors": [],
+  "protocol_sha256": "b5e6a57513797893a2b91fdf938ca3c45f50bf5aca5acd62033729dee2dbd717",
+  "protocol_tag": "evaluation-protocol-v1.4.1-ready",
+  "schema_version": "owasp-xss-v14-1-pre-scoring-integrity-v1",
+  "status_counts": {
+    "malformed": 22,
+    "valid": 5830
+  },
+  "total_rows": 5852,
+  "valid": true,
+  "warnings": []
+}

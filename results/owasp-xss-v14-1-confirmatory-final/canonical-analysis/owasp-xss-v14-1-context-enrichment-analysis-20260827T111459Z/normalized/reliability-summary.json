@@ -1,0 +1,100 @@
+{
+  "deterministic_enriched": {
+    "completed_artifacts": 266,
+    "contract_invalid": 0,
+    "contract_validity_rate": 1.0,
+    "malformed": 0,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 266,
+    "status_counts": {
+      "valid": 266
+    },
+    "timeout": 0,
+    "valid": 266
+  },
+  "deterministic_minimal": {
+    "completed_artifacts": 266,
+    "contract_invalid": 0,
+    "contract_validity_rate": 1.0,
+    "malformed": 0,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 266,
+    "status_counts": {
+      "valid": 266
+    },
+    "timeout": 0,
+    "valid": 266
+  },
+  "gpt_enriched": {
+    "completed_artifacts": 1330,
+    "contract_invalid": 12,
+    "contract_validity_rate": 0.9909774436090225,
+    "malformed": 12,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 1330,
+    "status_counts": {
+      "malformed": 12,
+      "valid": 1318
+    },
+    "timeout": 0,
+    "valid": 1318
+  },
+  "gpt_minimal": {
+    "completed_artifacts": 1330,
+    "contract_invalid": 0,
+    "contract_validity_rate": 1.0,
+    "malformed": 0,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 1330,
+    "status_counts": {
+      "valid": 1330
+    },
+    "timeout": 0,
+    "valid": 1330
+  },
+  "qwen_enriched": {
+    "completed_artifacts": 1330,
+    "contract_invalid": 0,
+    "contract_validity_rate": 1.0,
+    "malformed": 0,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 1330,
+    "status_counts": {
+      "valid": 1330
+    },
+    "timeout": 0,
+    "valid": 1330
+  },
+  "qwen_minimal": {
+    "completed_artifacts": 1330,
+    "contract_invalid": 10,
+    "contract_validity_rate": 0.9924812030075187,
+    "malformed": 10,
+    "other_terminal": 0,
+    "provider_failed": 0,
+    "retry_count": 0,
+    "runtime_failed": 0,
+    "scheduled_rows": 1330,
+    "status_counts": {
+      "malformed": 10,
+      "valid": 1320
+    },
+    "timeout": 0,
+    "valid": 1320
+  }
+}

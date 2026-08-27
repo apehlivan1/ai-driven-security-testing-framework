@@ -1,0 +1,17 @@
+{
+  "deterministic_enrichment_mrr_delta": 0.3086864406779661,
+  "future_sensitivity_analysis": "methodologically_warranted_if_the_thesis_wants_to_isolate_model_reasoning_from_reflection_proxy_features",
+  "gpt_enriched_minus_deterministic_enriched_mrr": -0.014915254237288136,
+  "gpt_enrichment_mrr_delta": 0.3281779661016949,
+  "interpretation_rules": [
+    "Primary analysis is unchanged by this post-run caution.",
+    "If deterministic enrichment improves over deterministic minimal, the added context itself carries ranking-relevant signal.",
+    "If enriched LLM arms do not improve substantially beyond deterministic enriched, the evidence should not be interpreted as model-specific reasoning beyond the enriched features.",
+    "Claims that reflection-derived enrichment independently demonstrates LLM reasoning would be unsafe without an additional restricted-context sensitivity analysis."
+  ],
+  "qwen_enriched_minus_deterministic_enriched_mrr": -0.14540960451977403,
+  "qwen_enrichment_mrr_delta": 0.15058609783186055,
+  "schema_version": "owasp-xss-v14-1-proxy-risk-interpretation-v1",
+  "summary": "The proxy-risk interpretation should compare the deterministic enriched gain (0.3087) with the GPT enriched gain (0.3282) and Qwen enriched gain (0.1506), then interpret any additional LLM effect relative to deterministic_enriched rather than treating enrichment alone as model-specific reasoning.",
+  "supervisor_concern": "reflection-derived enriched variables may be close proxies for reflected-XSS susceptibility"
+}

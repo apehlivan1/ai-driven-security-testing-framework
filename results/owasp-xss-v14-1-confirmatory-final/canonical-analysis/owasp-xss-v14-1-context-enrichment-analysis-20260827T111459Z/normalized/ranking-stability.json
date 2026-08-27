@@ -1,0 +1,42 @@
+{
+  "deterministic_enriched": {
+    "applicable": false,
+    "reason": "single deterministic trial per scenario"
+  },
+  "deterministic_minimal": {
+    "applicable": false,
+    "reason": "single deterministic trial per scenario"
+  },
+  "gpt_enriched": {
+    "applicable": true,
+    "mean_unique_rankings_per_scenario": 1.7518796992481203,
+    "mean_unique_top1_per_scenario": 1.112781954887218,
+    "median_unique_rankings_per_scenario": 2.0,
+    "scenario_count_with_valid_trials": 266,
+    "scenarios_with_unanimous_top1_and_all_trials_valid": 228
+  },
+  "gpt_minimal": {
+    "applicable": true,
+    "mean_unique_rankings_per_scenario": 1.906015037593985,
+    "mean_unique_top1_per_scenario": 1.5413533834586466,
+    "median_unique_rankings_per_scenario": 2.0,
+    "scenario_count_with_valid_trials": 266,
+    "scenarios_with_unanimous_top1_and_all_trials_valid": 141
+  },
+  "qwen_enriched": {
+    "applicable": true,
+    "mean_unique_rankings_per_scenario": 1.0,
+    "mean_unique_top1_per_scenario": 1.0,
+    "median_unique_rankings_per_scenario": 1.0,
+    "scenario_count_with_valid_trials": 266,
+    "scenarios_with_unanimous_top1_and_all_trials_valid": 266
+  },
+  "qwen_minimal": {
+    "applicable": true,
+    "mean_unique_rankings_per_scenario": 1.0,
+    "mean_unique_top1_per_scenario": 1.0,
+    "median_unique_rankings_per_scenario": 1.0,
+    "scenario_count_with_valid_trials": 264,
+    "scenarios_with_unanimous_top1_and_all_trials_valid": 264
+  }
+}

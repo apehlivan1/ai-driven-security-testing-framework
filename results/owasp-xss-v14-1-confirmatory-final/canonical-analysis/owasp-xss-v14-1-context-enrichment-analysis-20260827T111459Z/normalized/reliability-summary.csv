@@ -1,0 +1,7 @@
+arm_id,completed_artifacts,contract_invalid,contract_validity_rate,malformed,other_terminal,provider_failed,retry_count,runtime_failed,scheduled_rows,status_counts,timeout,valid
+deterministic_minimal,266,0,1.0,0,0,0,0,0,266,"{""valid"": 266}",0,266
+deterministic_enriched,266,0,1.0,0,0,0,0,0,266,"{""valid"": 266}",0,266
+gpt_minimal,1330,0,1.0,0,0,0,0,0,1330,"{""valid"": 1330}",0,1330
+gpt_enriched,1330,12,0.9909774436090225,12,0,0,0,0,1330,"{""malformed"": 12, ""valid"": 1318}",0,1318
+qwen_minimal,1330,10,0.9924812030075187,10,0,0,0,0,1330,"{""malformed"": 10, ""valid"": 1320}",0,1320
+qwen_enriched,1330,0,1.0,0,0,0,0,0,1330,"{""valid"": 1330}",0,1330

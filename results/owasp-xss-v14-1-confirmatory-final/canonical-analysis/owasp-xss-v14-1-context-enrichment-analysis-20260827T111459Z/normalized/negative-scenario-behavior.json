@@ -1,0 +1,124 @@
+{
+  "arms": {
+    "deterministic_enriched": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 30,
+      "top1_marker_preservation_counts": {
+        "encoded": 10,
+        "not_reflected": 3,
+        "unchanged": 17
+      },
+      "top1_reflection_context_counts": {
+        "html_text": 1,
+        "none": 3,
+        "other": 26
+      },
+      "top1_reflection_detected_counts": {
+        "False": 3,
+        "True": 27
+      },
+      "valid_negative_rows": 30
+    },
+    "deterministic_minimal": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 30,
+      "top1_marker_preservation_counts": {
+        "encoded": 6,
+        "not_reflected": 20,
+        "unchanged": 4
+      },
+      "top1_reflection_context_counts": {
+        "html_text": 1,
+        "none": 20,
+        "other": 9
+      },
+      "top1_reflection_detected_counts": {
+        "False": 20,
+        "True": 10
+      },
+      "valid_negative_rows": 30
+    },
+    "gpt_enriched": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 150,
+      "top1_marker_preservation_counts": {
+        "encoded": 50,
+        "not_reflected": 15,
+        "unchanged": 82
+      },
+      "top1_reflection_context_counts": {
+        "html_text": 5,
+        "none": 15,
+        "other": 127
+      },
+      "top1_reflection_detected_counts": {
+        "False": 15,
+        "True": 132
+      },
+      "valid_negative_rows": 147
+    },
+    "gpt_minimal": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 150,
+      "top1_marker_preservation_counts": {
+        "encoded": 20,
+        "not_reflected": 113,
+        "unchanged": 17
+      },
+      "top1_reflection_context_counts": {
+        "none": 113,
+        "other": 37
+      },
+      "top1_reflection_detected_counts": {
+        "False": 113,
+        "True": 37
+      },
+      "valid_negative_rows": 150
+    },
+    "qwen_enriched": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 150,
+      "top1_marker_preservation_counts": {
+        "encoded": 55,
+        "not_reflected": 30,
+        "unchanged": 65
+      },
+      "top1_reflection_context_counts": {
+        "html_text": 5,
+        "none": 30,
+        "other": 115
+      },
+      "top1_reflection_detected_counts": {
+        "False": 30,
+        "True": 120
+      },
+      "valid_negative_rows": 150
+    },
+    "qwen_minimal": {
+      "negative_scenarios": 30,
+      "ranking_metrics": "not_applicable",
+      "scheduled_negative_rows": 150,
+      "top1_marker_preservation_counts": {
+        "encoded": 35,
+        "not_reflected": 100,
+        "unchanged": 15
+      },
+      "top1_reflection_context_counts": {
+        "none": 100,
+        "other": 50
+      },
+      "top1_reflection_detected_counts": {
+        "False": 100,
+        "True": 50
+      },
+      "valid_negative_rows": 150
+    }
+  },
+  "policy": "negative-only scenarios have no vulnerable-candidate rank, Top-k, reciprocal-rank or MRR denominator",
+  "schema_version": "owasp-xss-v14-1-negative-scenario-behavior-v1"
+}
