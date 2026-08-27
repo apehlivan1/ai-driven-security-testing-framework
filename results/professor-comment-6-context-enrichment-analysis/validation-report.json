@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "check": "source_integrity_valid",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "canonical_validation_valid",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "canonical_rows_5852",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "six_arm_set",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "expected_denominators",
+      "details": {
+        "schedule_counts": {
+          "deterministic_enriched": 266,
+          "deterministic_minimal": 266,
+          "gpt_enriched": 1330,
+          "gpt_minimal": 1330,
+          "qwen_enriched": 1330,
+          "qwen_minimal": 1330
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "positive_scenarios_236_all_arms",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "minimal_enriched_snapshot_counts_match",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "minimal_enriched_snapshot_identity_and_order_match",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "deterministic_one_trial_per_scenario",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "llm_five_trials_per_scenario",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "ground_truth_absent_from_ranking",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "enriched_fields_available_to_all_enriched_arms",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "canonical_comparison_count_four",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "zero_experimental_calls",
+      "details": {},
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "schema_version": "professor-comment-6-validation-v1",
+  "valid": true,
+  "validated_at": "2026-08-27T19:23:57.832154Z"
+}

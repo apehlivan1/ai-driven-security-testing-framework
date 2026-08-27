@@ -1,0 +1,310 @@
+{
+  "negative_policy": "negative-only scenarios have no vulnerable-candidate rank, Top-k, reciprocal-rank or MRR denominator",
+  "negative_scenario_behavior": {
+    "arms": {
+      "deterministic_enriched": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 30,
+        "top1_marker_preservation_counts": {
+          "encoded": 10,
+          "not_reflected": 3,
+          "unchanged": 17
+        },
+        "top1_reflection_context_counts": {
+          "html_text": 1,
+          "none": 3,
+          "other": 26
+        },
+        "top1_reflection_detected_counts": {
+          "False": 3,
+          "True": 27
+        },
+        "valid_negative_rows": 30
+      },
+      "deterministic_minimal": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 30,
+        "top1_marker_preservation_counts": {
+          "encoded": 6,
+          "not_reflected": 20,
+          "unchanged": 4
+        },
+        "top1_reflection_context_counts": {
+          "html_text": 1,
+          "none": 20,
+          "other": 9
+        },
+        "top1_reflection_detected_counts": {
+          "False": 20,
+          "True": 10
+        },
+        "valid_negative_rows": 30
+      },
+      "gpt_enriched": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 150,
+        "top1_marker_preservation_counts": {
+          "encoded": 50,
+          "not_reflected": 15,
+          "unchanged": 82
+        },
+        "top1_reflection_context_counts": {
+          "html_text": 5,
+          "none": 15,
+          "other": 127
+        },
+        "top1_reflection_detected_counts": {
+          "False": 15,
+          "True": 132
+        },
+        "valid_negative_rows": 147
+      },
+      "gpt_minimal": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 150,
+        "top1_marker_preservation_counts": {
+          "encoded": 20,
+          "not_reflected": 113,
+          "unchanged": 17
+        },
+        "top1_reflection_context_counts": {
+          "none": 113,
+          "other": 37
+        },
+        "top1_reflection_detected_counts": {
+          "False": 113,
+          "True": 37
+        },
+        "valid_negative_rows": 150
+      },
+      "qwen_enriched": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 150,
+        "top1_marker_preservation_counts": {
+          "encoded": 55,
+          "not_reflected": 30,
+          "unchanged": 65
+        },
+        "top1_reflection_context_counts": {
+          "html_text": 5,
+          "none": 30,
+          "other": 115
+        },
+        "top1_reflection_detected_counts": {
+          "False": 30,
+          "True": 120
+        },
+        "valid_negative_rows": 150
+      },
+      "qwen_minimal": {
+        "negative_scenarios": 30,
+        "ranking_metrics": "not_applicable",
+        "scheduled_negative_rows": 150,
+        "top1_marker_preservation_counts": {
+          "encoded": 35,
+          "not_reflected": 100,
+          "unchanged": 15
+        },
+        "top1_reflection_context_counts": {
+          "none": 100,
+          "other": 50
+        },
+        "top1_reflection_detected_counts": {
+          "False": 100,
+          "True": 50
+        },
+        "valid_negative_rows": 150
+      }
+    },
+    "policy": "negative-only scenarios have no vulnerable-candidate rank, Top-k, reciprocal-rank or MRR denominator",
+    "schema_version": "owasp-xss-v14-1-negative-scenario-behavior-v1"
+  },
+  "rows": [
+    {
+      "arm_id": "deterministic_minimal",
+      "arm_label": "det_minimal",
+      "completed_artifacts": 266,
+      "contract_invalid": 0,
+      "contract_validity_rate": 1.0,
+      "cost_availability": "not_applicable",
+      "input_tokens": "not_available",
+      "latency_mean_ms": 0.011278195488721804,
+      "latency_median_ms": 0,
+      "malformed": 0,
+      "output_tokens": "not_available",
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 266,
+      "stability": {
+        "applicable": "False",
+        "arm_id": "deterministic_minimal",
+        "mean_unique_rankings_per_scenario": "",
+        "mean_unique_top1_per_scenario": "",
+        "median_unique_rankings_per_scenario": "",
+        "reason": "single deterministic trial per scenario",
+        "scenario_count_with_valid_trials": "",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": ""
+      },
+      "timeout": 0,
+      "total_tokens": "not_available",
+      "valid": 266
+    },
+    {
+      "arm_id": "deterministic_enriched",
+      "arm_label": "det_enriched",
+      "completed_artifacts": 266,
+      "contract_invalid": 0,
+      "contract_validity_rate": 1.0,
+      "cost_availability": "not_applicable",
+      "input_tokens": "not_available",
+      "latency_mean_ms": 0,
+      "latency_median_ms": 0,
+      "malformed": 0,
+      "output_tokens": "not_available",
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 266,
+      "stability": {
+        "applicable": "False",
+        "arm_id": "deterministic_enriched",
+        "mean_unique_rankings_per_scenario": "",
+        "mean_unique_top1_per_scenario": "",
+        "median_unique_rankings_per_scenario": "",
+        "reason": "single deterministic trial per scenario",
+        "scenario_count_with_valid_trials": "",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": ""
+      },
+      "timeout": 0,
+      "total_tokens": "not_available",
+      "valid": 266
+    },
+    {
+      "arm_id": "gpt_minimal",
+      "arm_label": "gpt_minimal",
+      "completed_artifacts": 1330,
+      "contract_invalid": 0,
+      "contract_validity_rate": 1.0,
+      "cost_availability": "not_available",
+      "input_tokens": 761480,
+      "latency_mean_ms": 4969.2052631578945,
+      "latency_median_ms": 4716.5,
+      "malformed": 0,
+      "output_tokens": 416475,
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 1330,
+      "stability": {
+        "applicable": "True",
+        "arm_id": "gpt_minimal",
+        "mean_unique_rankings_per_scenario": "1.906015037593985",
+        "mean_unique_top1_per_scenario": "1.5413533834586466",
+        "median_unique_rankings_per_scenario": "2.0",
+        "reason": "",
+        "scenario_count_with_valid_trials": "266",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": "141"
+      },
+      "timeout": 0,
+      "total_tokens": 1177955,
+      "valid": 1330
+    },
+    {
+      "arm_id": "gpt_enriched",
+      "arm_label": "gpt_enriched",
+      "completed_artifacts": 1330,
+      "contract_invalid": 12,
+      "contract_validity_rate": 0.9909774436090225,
+      "cost_availability": "not_available",
+      "input_tokens": 1076965,
+      "latency_mean_ms": 4319.384962406015,
+      "latency_median_ms": 4055.5,
+      "malformed": 12,
+      "output_tokens": 345780,
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 1330,
+      "stability": {
+        "applicable": "True",
+        "arm_id": "gpt_enriched",
+        "mean_unique_rankings_per_scenario": "1.7518796992481203",
+        "mean_unique_top1_per_scenario": "1.112781954887218",
+        "median_unique_rankings_per_scenario": "2.0",
+        "reason": "",
+        "scenario_count_with_valid_trials": "266",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": "228"
+      },
+      "timeout": 0,
+      "total_tokens": 1422745,
+      "valid": 1318
+    },
+    {
+      "arm_id": "qwen_minimal",
+      "arm_label": "qwen_minimal",
+      "completed_artifacts": 1330,
+      "contract_invalid": 10,
+      "contract_validity_rate": 0.9924812030075187,
+      "cost_availability": "not_available",
+      "input_tokens": "not_available",
+      "latency_mean_ms": 58403.52180451128,
+      "latency_median_ms": 54043,
+      "malformed": 10,
+      "output_tokens": "not_available",
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 1330,
+      "stability": {
+        "applicable": "True",
+        "arm_id": "qwen_minimal",
+        "mean_unique_rankings_per_scenario": "1.0",
+        "mean_unique_top1_per_scenario": "1.0",
+        "median_unique_rankings_per_scenario": "1.0",
+        "reason": "",
+        "scenario_count_with_valid_trials": "264",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": "264"
+      },
+      "timeout": 0,
+      "total_tokens": "not_available",
+      "valid": 1320
+    },
+    {
+      "arm_id": "qwen_enriched",
+      "arm_label": "qwen_enriched",
+      "completed_artifacts": 1330,
+      "contract_invalid": 0,
+      "contract_validity_rate": 1.0,
+      "cost_availability": "not_available",
+      "input_tokens": "not_available",
+      "latency_mean_ms": 71167.37368421053,
+      "latency_median_ms": 65094,
+      "malformed": 0,
+      "output_tokens": "not_available",
+      "provider_failed": 0,
+      "retry_count": 0,
+      "runtime_failed": 0,
+      "scheduled_rows": 1330,
+      "stability": {
+        "applicable": "True",
+        "arm_id": "qwen_enriched",
+        "mean_unique_rankings_per_scenario": "1.0",
+        "mean_unique_top1_per_scenario": "1.0",
+        "median_unique_rankings_per_scenario": "1.0",
+        "reason": "",
+        "scenario_count_with_valid_trials": "266",
+        "scenarios_with_unanimous_top1_and_all_trials_valid": "266"
+      },
+      "timeout": 0,
+      "total_tokens": "not_available",
+      "valid": 1330
+    }
+  ],
+  "schema_version": "professor-comment-6-reliability-summary-v1"
+}

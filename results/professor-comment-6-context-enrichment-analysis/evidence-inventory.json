@@ -1,0 +1,66 @@
+{
+  "authoritative_canonical_analysis": "results/owasp-xss-v14-1-confirmatory-final/canonical-analysis/owasp-xss-v14-1-context-enrichment-analysis-20260827T111459Z",
+  "authoritative_protocol_document": "docs/evaluation-protocol-v1.4.1.md",
+  "authoritative_protocol_package": "results/owasp-xss-v14-1-protocol-freeze",
+  "canonical_checksum_validation": {
+    "checked_file": "results/owasp-xss-v14-1-confirmatory-final/canonical-analysis/owasp-xss-v14-1-context-enrichment-analysis-20260827T111459Z/checksums.sha256",
+    "errors": [],
+    "selected_files": [
+      "manifest.json",
+      "analysis-report.md",
+      "proxy-risk-interpretation.json",
+      "statistical-analysis.json",
+      "statistical-comparisons.csv",
+      "validation-report.json",
+      "normalized/arm-ranking-summary.csv",
+      "normalized/minimal-vs-enriched-decomposition.csv",
+      "normalized/reliability-summary.csv",
+      "normalized/negative-scenario-behavior.json",
+      "normalized/ranking-stability.csv",
+      "normalized/efficiency-summary.csv"
+    ],
+    "valid": true
+  },
+  "corrected_observation_checksum_validation": {
+    "checked_file": "results/owasp-xss-v14-1-context-corrected-observations/owasp-xss-v14-1-context-collection-20260824T120106Z-corrected-20260824T122934Z/checksums.sha256",
+    "errors": [],
+    "selected_files": [
+      "correction-manifest.json",
+      "semantic-invariant-validation.json",
+      "post-correction-audit.json",
+      "sanitized-observations/candidate-observations.json"
+    ],
+    "valid": true
+  },
+  "corrected_observation_package": "results/owasp-xss-v14-1-context-corrected-observations/owasp-xss-v14-1-context-collection-20260824T120106Z-corrected-20260824T122934Z",
+  "created_at": "2026-08-27T19:23:50.690595Z",
+  "new_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scoring": 0,
+    "statistical_tests": 0,
+    "verifier": 0
+  },
+  "protocol_package_checksum_validation": {
+    "checked_file": "results/owasp-xss-v14-1-protocol-freeze/checksums.sha256",
+    "errors": [],
+    "selected_files": [
+      "manifest.json",
+      "arm-configurations.json",
+      "deterministic-enriched-ranking-specification.json",
+      "ground-truth-separation-validation.json",
+      "metric-scoring-specification.json",
+      "scenario-manifest.json",
+      "statistical-analysis-plan.json",
+      "model-facing/minimal-candidate-snapshot-index.json",
+      "model-facing/enriched-candidate-snapshot-index.json"
+    ],
+    "valid": true
+  },
+  "schema_version": "professor-comment-6-evidence-inventory-v1",
+  "source_integrity_valid": true
+}

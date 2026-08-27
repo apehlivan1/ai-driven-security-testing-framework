@@ -1,0 +1,177 @@
+{
+  "positive_scenario_results": [
+    {
+      "arm_id": "deterministic_minimal",
+      "arm_label": "det_minimal",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 236,
+      "positive_valid_trials": 236,
+      "rank_distribution": {
+        "1": 50,
+        "2": 53,
+        "3": 40,
+        "4": 41,
+        "5": 52
+      },
+      "scenario_level_mrr": 0.4681497175141243,
+      "top1": 0.211864406779661,
+      "top2": 0.4364406779661017,
+      "top4": 0.7796610169491526
+    },
+    {
+      "arm_id": "deterministic_enriched",
+      "arm_label": "det_enriched",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 236,
+      "positive_valid_trials": 236,
+      "rank_distribution": {
+        "1": 150,
+        "2": 42,
+        "3": 22,
+        "4": 12,
+        "5": 10
+      },
+      "scenario_level_mrr": 0.7768361581920904,
+      "top1": 0.635593220338983,
+      "top2": 0.8135593220338984,
+      "top4": 0.9576271186440678
+    },
+    {
+      "arm_id": "gpt_minimal",
+      "arm_label": "gpt_minimal",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 1180,
+      "positive_valid_trials": 1180,
+      "rank_distribution": {
+        "1": 214,
+        "2": 201,
+        "3": 248,
+        "4": 225,
+        "5": 292
+      },
+      "scenario_level_mrr": 0.43374293785310736,
+      "top1": 0.18135593220338983,
+      "top2": 0.3516949152542373,
+      "top4": 0.752542372881356
+    },
+    {
+      "arm_id": "gpt_enriched",
+      "arm_label": "gpt_enriched",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 1180,
+      "positive_valid_trials": 1171,
+      "rank_distribution": {
+        "1": 706,
+        "2": 240,
+        "3": 126,
+        "4": 72,
+        "5": 27
+      },
+      "scenario_level_mrr": 0.7619209039548023,
+      "top1": 0.6042372881355932,
+      "top2": 0.8076271186440678,
+      "top4": 0.9771186440677966
+    },
+    {
+      "arm_id": "qwen_minimal",
+      "arm_label": "qwen_minimal",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 1180,
+      "positive_valid_trials": 1170,
+      "rank_distribution": {
+        "1": 270,
+        "2": 215,
+        "3": 265,
+        "4": 255,
+        "5": 165
+      },
+      "scenario_level_mrr": 0.4808404558404558,
+      "top1": 0.23076923076923078,
+      "top2": 0.41452991452991456,
+      "top4": 0.8589743589743589
+    },
+    {
+      "arm_id": "qwen_enriched",
+      "arm_label": "qwen_enriched",
+      "eligible_positive_scenarios": 236,
+      "positive_expected_trials": 1180,
+      "positive_valid_trials": 1180,
+      "rank_distribution": {
+        "1": 485,
+        "2": 295,
+        "3": 205,
+        "4": 105,
+        "5": 90
+      },
+      "scenario_level_mrr": 0.6314265536723164,
+      "top1": 0.4110169491525424,
+      "top2": 0.6610169491525424,
+      "top4": 0.923728813559322
+    }
+  ],
+  "proxy_risk_interpretation_source": {
+    "deterministic_enrichment_mrr_delta": 0.3086864406779661,
+    "future_sensitivity_analysis": "methodologically_warranted_if_the_thesis_wants_to_isolate_model_reasoning_from_reflection_proxy_features",
+    "gpt_enriched_minus_deterministic_enriched_mrr": -0.014915254237288136,
+    "gpt_enrichment_mrr_delta": 0.3281779661016949,
+    "interpretation_rules": [
+      "Primary analysis is unchanged by this post-run caution.",
+      "If deterministic enrichment improves over deterministic minimal, the added context itself carries ranking-relevant signal.",
+      "If enriched LLM arms do not improve substantially beyond deterministic enriched, the evidence should not be interpreted as model-specific reasoning beyond the enriched features.",
+      "Claims that reflection-derived enrichment independently demonstrates LLM reasoning would be unsafe without an additional restricted-context sensitivity analysis."
+    ],
+    "qwen_enriched_minus_deterministic_enriched_mrr": -0.14540960451977403,
+    "qwen_enrichment_mrr_delta": 0.15058609783186055,
+    "schema_version": "owasp-xss-v14-1-proxy-risk-interpretation-v1",
+    "summary": "The proxy-risk interpretation should compare the deterministic enriched gain (0.3087) with the GPT enriched gain (0.3282) and Qwen enriched gain (0.1506), then interpret any additional LLM effect relative to deterministic_enriched rather than treating enrichment alone as model-specific reasoning.",
+    "supervisor_concern": "reflection-derived enriched variables may be close proxies for reflected-XSS susceptibility"
+  },
+  "schema_version": "professor-comment-6-minimal-enriched-summary-v1",
+  "within_family_deltas": [
+    {
+      "delta_mrr": 0.3086864406779661,
+      "delta_top1": 0.423728813559322,
+      "delta_top2": 0.37711864406779666,
+      "delta_top4": 0.17796610169491522,
+      "enriched_mrr": 0.7768361581920904,
+      "enriched_top1": 0.635593220338983,
+      "enriched_top2": 0.8135593220338984,
+      "enriched_top4": 0.9576271186440678,
+      "family": "deterministic",
+      "minimal_mrr": 0.4681497175141243,
+      "minimal_top1": 0.211864406779661,
+      "minimal_top2": 0.4364406779661017,
+      "minimal_top4": 0.7796610169491526
+    },
+    {
+      "delta_mrr": 0.3281779661016949,
+      "delta_top1": 0.42288135593220333,
+      "delta_top2": 0.4559322033898305,
+      "delta_top4": 0.22457627118644063,
+      "enriched_mrr": 0.7619209039548023,
+      "enriched_top1": 0.6042372881355932,
+      "enriched_top2": 0.8076271186440678,
+      "enriched_top4": 0.9771186440677966,
+      "family": "gpt",
+      "minimal_mrr": 0.43374293785310736,
+      "minimal_top1": 0.18135593220338983,
+      "minimal_top2": 0.3516949152542373,
+      "minimal_top4": 0.752542372881356
+    },
+    {
+      "delta_mrr": 0.15058609783186055,
+      "delta_top1": 0.1802477183833116,
+      "delta_top2": 0.24648703462262783,
+      "delta_top4": 0.0647544545849631,
+      "enriched_mrr": 0.6314265536723164,
+      "enriched_top1": 0.4110169491525424,
+      "enriched_top2": 0.6610169491525424,
+      "enriched_top4": 0.923728813559322,
+      "family": "qwen",
+      "minimal_mrr": 0.4808404558404558,
+      "minimal_top1": 0.23076923076923078,
+      "minimal_top2": 0.41452991452991456,
+      "minimal_top4": 0.8589743589743589
+    }
+  ]
+}

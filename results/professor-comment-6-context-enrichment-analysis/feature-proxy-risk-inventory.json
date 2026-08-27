@@ -1,0 +1,206 @@
+{
+  "candidate_order_preserved_in_corrected_snapshots": true,
+  "corrected_observation_parser_version": "owasp-xss-v14-1-context-observation-derivation-v1.1",
+  "deterministic_enriched_policy": {
+    "label_independent": true,
+    "lexicographic_priority": [
+      {
+        "feature": "reflection_detected",
+        "order": [
+          true,
+          false
+        ]
+      },
+      {
+        "feature": "reflection_context_category",
+        "order": [
+          "script_like",
+          "html_attribute",
+          "url_like",
+          "html_text",
+          "other",
+          "none"
+        ]
+      },
+      {
+        "feature": "marker_preservation_category",
+        "order": [
+          "unchanged",
+          "encoded",
+          "transformed",
+          "stripped",
+          "not_reflected"
+        ]
+      },
+      {
+        "feature": "reflection_count_category",
+        "order": [
+          "3_or_more",
+          "2",
+          "1",
+          "0"
+        ]
+      },
+      {
+        "feature": "response_content_type_category",
+        "order": [
+          "html",
+          "text",
+          "json",
+          "redirect",
+          "other",
+          "not_available"
+        ]
+      },
+      {
+        "feature": "abstract_structural_fallback",
+        "order": [
+          "GET before non-GET",
+          "text/header-like categories before other",
+          "single editable input before many",
+          "fewer required inputs",
+          "fewer parameters",
+          "single-parameter request shape before multi-parameter"
+        ]
+      }
+    ],
+    "policy": "lexicographic_ordinal",
+    "rationale": "The rule uses generic reflected-XSS context signals observed with a benign marker and does not inspect benchmark labels or verifier outcomes. The original deterministic structural ranker depends on URL and parameter-name fields that v1.4.1 deliberately removes from ranker-facing records, so the final fallback uses only the permitted abstract structural fields that correspond to the same generic structural signals.",
+    "ruleset_version": "deterministic-enriched-context-v1",
+    "schema_version": "owasp-xss-v14-1-context-enrichment-v1.deterministic-enriched-ranking-specification",
+    "status": "pre_scored_execution_generic_rule",
+    "tie_breaking": [
+      "lexicographic priority tuple",
+      "ascending candidate_id"
+    ]
+  },
+  "enriched_candidate_fields": [
+    "candidate_id",
+    "editable_input_count",
+    "http_method",
+    "input_carrier_category",
+    "input_type_category",
+    "marker_preservation_category",
+    "multiple_parameters",
+    "parameter_count",
+    "reflection_context_category",
+    "reflection_count_category",
+    "reflection_detected",
+    "request_shape_category",
+    "required_input_count",
+    "response_content_type_category"
+  ],
+  "enriched_only_fields": [
+    {
+      "available_to_deterministic_enriched": true,
+      "available_to_gpt_enriched": true,
+      "available_to_qwen_enriched": true,
+      "derivation": "Category derived from deterministic comparison of the benign marker with exact, encoded, transformed, stripped or absent response representations.",
+      "derived_deterministically": true,
+      "field": "marker_preservation_category",
+      "present_in_enriched": true,
+      "present_in_minimal": false,
+      "proxy_risk": "strong susceptibility proxy",
+      "role": "Especially when unchanged, captures whether attacker-controlled input is preserved in a form close to submission; it is a strong proxy risk but not ground truth.",
+      "uses_ground_truth": false
+    },
+    {
+      "available_to_deterministic_enriched": true,
+      "available_to_gpt_enriched": true,
+      "available_to_qwen_enriched": true,
+      "derivation": "Category derived from deterministic inspection of where recognized marker occurrences appear in the response representation.",
+      "derived_deterministically": true,
+      "field": "reflection_context_category",
+      "present_in_enriched": true,
+      "present_in_minimal": false,
+      "proxy_risk": "contextual/suggestive",
+      "role": "Provides context for observed reflection; useful for prioritization but less direct than preservation itself.",
+      "uses_ground_truth": false
+    },
+    {
+      "available_to_deterministic_enriched": true,
+      "available_to_gpt_enriched": true,
+      "available_to_qwen_enriched": true,
+      "derivation": "Ordinal category derived from the count of recognized benign marker occurrences in the response.",
+      "derived_deterministically": true,
+      "field": "reflection_count_category",
+      "present_in_enriched": true,
+      "present_in_minimal": false,
+      "proxy_risk": "strong susceptibility proxy",
+      "role": "Captures how many reflected marker occurrences were observed; it is suggestive for prioritization but does not encode exploitability or ground truth.",
+      "uses_ground_truth": false
+    },
+    {
+      "available_to_deterministic_enriched": true,
+      "available_to_gpt_enriched": true,
+      "available_to_qwen_enriched": true,
+      "derivation": "Boolean derived from whether the fixed inert marker is recognized in the retained HTTP response representation.",
+      "derived_deterministically": true,
+      "field": "reflection_detected",
+      "present_in_enriched": true,
+      "present_in_minimal": false,
+      "proxy_risk": "strong susceptibility proxy",
+      "role": "Indicates observable reflection of benign input, which is directly relevant to reflected-XSS prioritization but is not a vulnerability label.",
+      "uses_ground_truth": false
+    },
+    {
+      "available_to_deterministic_enriched": true,
+      "available_to_gpt_enriched": true,
+      "available_to_qwen_enriched": true,
+      "derivation": "Category derived from the retained response content type for the benign marker request.",
+      "derived_deterministically": true,
+      "field": "response_content_type_category",
+      "present_in_enriched": true,
+      "present_in_minimal": false,
+      "proxy_risk": "neither/ambiguous",
+      "role": "Provides coarse response-type context; by itself it is not a direct reflected-XSS susceptibility signal.",
+      "uses_ground_truth": false
+    }
+  ],
+  "fairness_verdict": "enrichment was available equally to deterministic_enriched, gpt_enriched and qwen_enriched through the same enriched candidate snapshots",
+  "ground_truth_loaded_for_observation_derivation": false,
+  "minimal_candidate_fields": [
+    "candidate_id",
+    "editable_input_count",
+    "http_method",
+    "input_carrier_category",
+    "input_type_category",
+    "multiple_parameters",
+    "parameter_count",
+    "request_shape_category",
+    "required_input_count"
+  ],
+  "proxy_risk_interpretation": "Reflection-derived variables are not ground truth labels, but reflection_detected, reflection_count_category and marker_preservation_category can act as strong susceptibility proxies for reflected-XSS prioritization.",
+  "schema_version": "professor-comment-6-feature-proxy-risk-inventory-v1",
+  "semantic_invariant_validation": {
+    "candidate_count": 388,
+    "ground_truth_loaded": false,
+    "schema_version": "owasp-xss-v14-1-context-observation-derivation-v1.1.semantic-invariant-validation",
+    "valid": true,
+    "violations": {}
+  },
+  "shared_contract": {
+    "enriched_representation": "model-facing/enriched-candidate-snapshots/*.json candidate_input",
+    "forbidden_authority": [
+      "candidate discovery",
+      "payload generation",
+      "browser or HTTP execution",
+      "ground-truth access",
+      "vulnerability verification"
+    ],
+    "ground_truth_available_to_rankers": false,
+    "minimal_representation": "model-facing/minimal-candidate-snapshots/*.json candidate_input",
+    "prompt_version": "llm-candidate-ranking-v1",
+    "task": "rank existing structured candidate IDs; include each candidate exactly once with a brief rationale"
+  },
+  "snapshot_level_fields": [
+    "artifact_status",
+    "candidate_count",
+    "candidate_input",
+    "candidate_input_schema",
+    "candidate_test_budget",
+    "scenario_id",
+    "schema_version",
+    "top_k"
+  ]
+}
