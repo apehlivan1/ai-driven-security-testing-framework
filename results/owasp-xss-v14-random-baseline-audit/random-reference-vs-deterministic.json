@@ -1,0 +1,46 @@
+{
+  "inference_policy": "No new inferential hypothesis test was performed because this random-reference comparison was not part of the original frozen v1.4 statistical plan.",
+  "metrics": [
+    {
+      "difference_observed_minus_random": 0.0033898305084745783,
+      "metric": "Top-1",
+      "observed_deterministic": 0.2033898305084746,
+      "random_reference": 0.2
+    },
+    {
+      "difference_observed_minus_random": 0.015254237288135575,
+      "metric": "Top-2",
+      "observed_deterministic": 0.4152542372881356,
+      "random_reference": 0.4
+    },
+    {
+      "difference_observed_minus_random": -0.011864406779661052,
+      "metric": "Top-4",
+      "observed_deterministic": 0.788135593220339,
+      "random_reference": 0.8
+    },
+    {
+      "difference_observed_minus_random": 0.0006073446327683474,
+      "metric": "MRR",
+      "observed_deterministic": 0.457274011299435,
+      "random_reference": 0.45666666666666667
+    }
+  ],
+  "observed_rank_distribution": {
+    "1": 48,
+    "2": 50,
+    "3": 35,
+    "4": 53,
+    "5": 50
+  },
+  "random_reference_basis": {
+    "candidate_pack_size": 5,
+    "exactly_one_vulnerable_candidate_per_positive_scenario": true,
+    "expected_mrr_formula": "mean(1/rank) for ranks 1..5 under uniform random ranking",
+    "positive_pack_size_distribution": {
+      "5": 236
+    },
+    "positive_scenarios": 236
+  },
+  "schema_version": "owasp-xss-v14-random-reference-vs-deterministic-v1"
+}

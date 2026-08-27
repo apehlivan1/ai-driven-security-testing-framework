@@ -664,6 +664,29 @@ remain local unless a deliberate raw-evidence archival decision is made. The
 v1.4 package does not modify or supersede v1.2 IDOR/SQLi/ZAP evidence or the
 v1.3.1 controlled local XSS ablation evidence.
 
+Professor-feedback closure audit for original v1.4 random-reference reading:
+
+- Thesis-support document:
+  `docs/professor-feedback-closure.md`
+- Derived audit package:
+  `results/owasp-xss-v14-random-baseline-audit/`
+- Audit script:
+  `scripts/audit_owasp_xss_v14_random_baseline.py`
+- Random-reference table:
+  `results/owasp-xss-v14-random-baseline-audit/random-reference-vs-deterministic.md`
+- Pre-tiebreak discrimination table:
+  `results/owasp-xss-v14-random-baseline-audit/distinct-score-tie-frequency-table.md`
+- Vulnerable-score alignment table:
+  `results/owasp-xss-v14-random-baseline-audit/vulnerable-score-alignment-table.md`
+- Source-provenance audit:
+  `results/owasp-xss-v14-random-baseline-audit/raw-deterministic-source-provenance.json`
+
+This is a derived post-run audit only. It does not rerun v1.4 ranking,
+collection, verification or model calls, and it does not modify the frozen
+v1.4 canonical result. It documents that the original deterministic baseline is
+effectively at the analytic random-ranking reference while still not being a
+pure all-tie random ranker.
+
 
 ### v1.4.1 OWASP XSS Context-Enrichment Ablation Protocol Freeze
 

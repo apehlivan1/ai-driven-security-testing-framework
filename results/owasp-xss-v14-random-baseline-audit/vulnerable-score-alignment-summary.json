@@ -1,0 +1,4592 @@
+{
+  "distractors_sharing_vulnerable_score_distribution": {
+    "0": {
+      "count": 40,
+      "percentage": 16.94915254237288
+    },
+    "1": {
+      "count": 50,
+      "percentage": 21.1864406779661
+    },
+    "2": {
+      "count": 53,
+      "percentage": 22.45762711864407
+    },
+    "3": {
+      "count": 66,
+      "percentage": 27.966101694915253
+    },
+    "4": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    }
+  },
+  "exclusive_alignment_bucket_counts": {
+    "all_candidates_tied_for_highest_and_lowest": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "neither_highest_nor_lowest_middle": {
+      "count": 13,
+      "percentage": 5.508474576271186
+    },
+    "strictly_highest": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "strictly_lowest": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "tied_for_highest": {
+      "count": 124,
+      "percentage": 52.54237288135594
+    },
+    "tied_for_lowest": {
+      "count": 41,
+      "percentage": 17.372881355932204
+    },
+    "tied_in_middle_score_class": {
+      "count": 4,
+      "percentage": 1.694915254237288
+    }
+  },
+  "interpretation": "The original deterministic scoring frequently creates structural score differences, but it never assigns the vulnerable candidate a strictly highest score over all four distractors. Many best-score-class placements are shared ties, and worst-score-class placement is also substantial. This indicates weak alignment between the original structural score and OWASP XSS vulnerability status.",
+  "positive_scenarios": 236,
+  "pre_tiebreak_scoring_places_vulnerable_in_best_score_class": {
+    "count": 151,
+    "percentage": 63.983050847457626
+  },
+  "pre_tiebreak_scoring_places_vulnerable_in_worst_score_class": {
+    "count": 95,
+    "percentage": 40.25423728813559
+  },
+  "requested_alignment_flag_counts": {
+    "neither_highest_nor_lowest_middle": {
+      "count": 13,
+      "percentage": 5.508474576271186
+    },
+    "strictly_highest": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "strictly_lowest": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "tied_for_highest": {
+      "count": 151,
+      "percentage": 63.983050847457626
+    },
+    "tied_for_lowest": {
+      "count": 68,
+      "percentage": 28.8135593220339
+    },
+    "tied_in_middle_score_class": {
+      "count": 4,
+      "percentage": 1.694915254237288
+    }
+  },
+  "requested_alignment_flags_note": "These requested flags are not mutually exclusive for all-five-tied scenarios: the vulnerable candidate is both tied for highest and tied for lowest.",
+  "scenario_rows": [
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0001",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_in_middle_score_class",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0002",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0003",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0004",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0005",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0006",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0007",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0008",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        127,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0009",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0010",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0011",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0012",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0013",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0014",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0015",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0016",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0017",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0018",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0019",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0020",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0021",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0022",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0023",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0024",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0025",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0026",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0027",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0028",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0029",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0030",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0031",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0032",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0033",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0034",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0035",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0036",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0037",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0038",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0039",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0040",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0041",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0042",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0043",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0044",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0045",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0046",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0047",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0048",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0049",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0050",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0051",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0052",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0053",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0054",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0055",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_in_middle_score_class",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0056",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0057",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_in_middle_score_class",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0058",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0059",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0060",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0061",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0062",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0063",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0064",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0065",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0066",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0067",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0068",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0069",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0070",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0071",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0072",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0073",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0074",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0075",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0076",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0077",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0078",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0079",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0080",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0081",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0082",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0083",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0084",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0085",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0086",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0087",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        127,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0088",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0089",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0090",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0091",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0092",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0093",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0094",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0095",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0096",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0097",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0098",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0099",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0100",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0101",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0102",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0103",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0104",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0105",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0106",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0107",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0108",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0109",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        117,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0110",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0111",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0112",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0113",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0114",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0115",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0116",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0117",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0118",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0119",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0120",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0121",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0122",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0123",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0124",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0125",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0126",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0127",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0128",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0129",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0130",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0131",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0132",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0133",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0134",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0135",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0136",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0137",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0138",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0139",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0140",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0141",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0142",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0143",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0144",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0145",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0146",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0147",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0148",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0149",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0150",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0151",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0152",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0153",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0154",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0155",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0156",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0157",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0158",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0159",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0160",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0161",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0162",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0163",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0164",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0165",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0166",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0167",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0168",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0169",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0170",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0171",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0172",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0173",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0174",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0175",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0176",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0177",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0178",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0179",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0180",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0181",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0182",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0183",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0184",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0185",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        117,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0186",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0187",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0188",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0189",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0190",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0191",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0192",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0193",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0194",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0195",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0196",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0197",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0198",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0199",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0200",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0201",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        127,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_in_middle_score_class",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0202",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0203",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0204",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0205",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0206",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0207",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0208",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0209",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0210",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0211",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0212",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0213",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0214",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0215",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0216",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0217",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0218",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0219",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0220",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0221",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 3
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0222",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0223",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0224",
+      "score_equivalence_pattern": "3-2",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        117,
+        117,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 117,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0225",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0226",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0227",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0228",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0229",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0230",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 1,
+      "scenario_id": "ow14-s0231",
+      "score_equivalence_pattern": "5",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vulnerable_alignment_bucket": "all_candidates_tied_for_highest_and_lowest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 4,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0232",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 2,
+      "vulnerable_distractors_sharing_score": 2,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0233",
+      "score_equivalence_pattern": "3-1-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "neither_highest_nor_lowest_middle",
+      "vulnerable_candidate_rank": 4,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0234",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 3,
+      "vulnerable_distractors_sharing_score": 3,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    },
+    {
+      "distinct_pre_tiebreak_scores": 2,
+      "scenario_id": "ow14-s0235",
+      "score_equivalence_pattern": "4-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        132,
+        132,
+        127
+      ],
+      "vulnerable_alignment_bucket": "strictly_lowest",
+      "vulnerable_candidate_rank": 5,
+      "vulnerable_distractors_sharing_score": 0,
+      "vulnerable_in_best_score_class": false,
+      "vulnerable_in_worst_score_class": true,
+      "vulnerable_pre_tiebreak_score": 127,
+      "vulnerable_score_class_rank": 2
+    },
+    {
+      "distinct_pre_tiebreak_scores": 3,
+      "scenario_id": "ow14-s0236",
+      "score_equivalence_pattern": "2-2-1",
+      "score_vector_in_final_order": [
+        132,
+        132,
+        127,
+        127,
+        117
+      ],
+      "vulnerable_alignment_bucket": "tied_for_highest",
+      "vulnerable_candidate_rank": 1,
+      "vulnerable_distractors_sharing_score": 1,
+      "vulnerable_in_best_score_class": true,
+      "vulnerable_in_worst_score_class": false,
+      "vulnerable_pre_tiebreak_score": 132,
+      "vulnerable_score_class_rank": 1
+    }
+  ],
+  "schema_version": "owasp-xss-v14-vulnerable-score-alignment-summary-v1",
+  "vulnerable_score_class_rank_distribution": {
+    "1": {
+      "count": 151,
+      "percentage": 63.983050847457626
+    },
+    "2": {
+      "count": 64,
+      "percentage": 27.11864406779661
+    },
+    "3": {
+      "count": 21,
+      "percentage": 8.898305084745763
+    }
+  }
+}

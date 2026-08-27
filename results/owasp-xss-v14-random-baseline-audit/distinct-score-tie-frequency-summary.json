@@ -1,0 +1,188 @@
+{
+  "negative_only_scenarios": {
+    "all_five_tied_scenarios": {
+      "count": 3,
+      "percentage": 10.0
+    },
+    "exactly_1_distinct_score": {
+      "count": 3,
+      "percentage": 10.0
+    },
+    "exactly_2_distinct_scores": {
+      "count": 18,
+      "percentage": 60.0
+    },
+    "exactly_3_distinct_scores": {
+      "count": 9,
+      "percentage": 30.0
+    },
+    "exactly_4_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "exactly_5_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "final_order_partly_determined_by_stable_tiebreak": {
+      "count": 30,
+      "percentage": 100.0
+    },
+    "final_order_wholly_determined_by_stable_tiebreak": {
+      "count": 3,
+      "percentage": 10.0
+    },
+    "largest_tie_group_distribution": {
+      "2": {
+        "count": 1,
+        "percentage": 3.3333333333333335
+      },
+      "3": {
+        "count": 17,
+        "percentage": 56.666666666666664
+      },
+      "4": {
+        "count": 9,
+        "percentage": 30.0
+      },
+      "5": {
+        "count": 3,
+        "percentage": 10.0
+      }
+    },
+    "scenario_count": 30
+  },
+  "overall": {
+    "all_five_tied_scenarios": {
+      "count": 30,
+      "percentage": 11.278195488721805
+    },
+    "exactly_1_distinct_score": {
+      "count": 30,
+      "percentage": 11.278195488721805
+    },
+    "exactly_2_distinct_scores": {
+      "count": 153,
+      "percentage": 57.5187969924812
+    },
+    "exactly_3_distinct_scores": {
+      "count": 83,
+      "percentage": 31.203007518796994
+    },
+    "exactly_4_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "exactly_5_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "final_order_partly_determined_by_stable_tiebreak": {
+      "count": 266,
+      "percentage": 100.0
+    },
+    "final_order_wholly_determined_by_stable_tiebreak": {
+      "count": 30,
+      "percentage": 11.278195488721805
+    },
+    "largest_tie_group_distribution": {
+      "2": {
+        "count": 29,
+        "percentage": 10.902255639097744
+      },
+      "3": {
+        "count": 115,
+        "percentage": 43.233082706766915
+      },
+      "4": {
+        "count": 92,
+        "percentage": 34.58646616541353
+      },
+      "5": {
+        "count": 30,
+        "percentage": 11.278195488721805
+      }
+    },
+    "scenario_count": 266
+  },
+  "positive_scenarios": {
+    "all_five_tied_scenarios": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "exactly_1_distinct_score": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "exactly_2_distinct_scores": {
+      "count": 135,
+      "percentage": 57.20338983050848
+    },
+    "exactly_3_distinct_scores": {
+      "count": 74,
+      "percentage": 31.35593220338983
+    },
+    "exactly_4_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "exactly_5_distinct_scores": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "final_order_partly_determined_by_stable_tiebreak": {
+      "count": 236,
+      "percentage": 100.0
+    },
+    "final_order_wholly_determined_by_stable_tiebreak": {
+      "count": 27,
+      "percentage": 11.440677966101696
+    },
+    "largest_tie_group_distribution": {
+      "2": {
+        "count": 28,
+        "percentage": 11.864406779661017
+      },
+      "3": {
+        "count": 98,
+        "percentage": 41.52542372881356
+      },
+      "4": {
+        "count": 83,
+        "percentage": 35.16949152542373
+      },
+      "5": {
+        "count": 27,
+        "percentage": 11.440677966101696
+      }
+    },
+    "scenario_count": 236
+  },
+  "positive_vulnerable_candidate_no_pre_tiebreak_discrimination_from_distractors": {
+    "count": 27,
+    "percentage": 11.440677966101696
+  },
+  "schema_version": "owasp-xss-v14-deterministic-discrimination-summary-v1",
+  "score_equivalence_pattern_distribution": {
+    "2-2-1": 29,
+    "3-1-1": 54,
+    "3-2": 61,
+    "4-1": 92,
+    "5": 30
+  },
+  "score_vector_distribution": {
+    "132>117>117>117>117": 2,
+    "132>127>127>117>117": 2,
+    "132>127>127>127>117": 1,
+    "132>132>117>117>117": 12,
+    "132>132>127>117>117": 12,
+    "132>132>127>127>117": 15,
+    "132>132>132>117>117": 36,
+    "132>132>132>127>117": 53,
+    "132>132>132>127>127": 13,
+    "132>132>132>132>117": 49,
+    "132>132>132>132>127": 41,
+    "132>132>132>132>132": 30
+  },
+  "verdict": "The original v1.4 deterministic ranker discriminates among many OWASP candidates before its final stable tiebreak."
+}

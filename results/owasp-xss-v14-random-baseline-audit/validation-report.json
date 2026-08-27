@@ -1,0 +1,17 @@
+{
+  "errors": [],
+  "schema_version": "owasp-xss-v14-random-baseline-audit-validation-v1",
+  "source_checksum_error_count": 0,
+  "source_checksum_errors": [],
+  "valid": true,
+  "zero_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  }
+}

@@ -1,0 +1,1056 @@
+{
+  "candidate_set_construction_tiebreak_influence": "Candidate pack input order is SHA-256 randomized and is not used by the deterministic ranker once it re-sorts candidates. However, when deterministic scores tie, final ordering is mechanically determined by normalized action URL, parameter name, source and candidate ID; the OWASP external candidate paths and neutralized parameter names therefore can determine ranks whenever pre-tiebreak scores are identical.",
+  "construction_source": {
+    "assignment_seed": "owasp-xss-v14-final-scenario-assignment-v1",
+    "candidate_order_seed": "owasp-xss-v14-final-candidate-order-v1",
+    "implementation": "src/adstf/owasp_xss_v14_protocol_prep.py build_scenarios",
+    "negative_only_policy": "Use the same sorted negative pool to form disjoint packs of five; leftover negatives are recorded and not used as partial scenarios.",
+    "positive_decoy_policy": "Sort eligible negative candidates by SHA-256(seed|negative-pool|candidate_id|original_case_id), then assign four decoys to each positive scenario by contiguous round-robin positions.",
+    "protocol": "docs/evaluation-protocol-v1.4.md Candidate-Pack Construction"
+  },
+  "denominators": {
+    "eligible_unique_candidates": 388,
+    "negative_only_placements": 150,
+    "negative_only_scenarios": 30,
+    "non_vulnerable_unique_candidates": 152,
+    "pack_size": 5,
+    "positive_scenario_distractor_placements": 944,
+    "positive_scenarios": 236,
+    "total_non_vulnerable_candidate_placements_across_all_packs": 1094,
+    "unique_non_vulnerable_candidates_used": 152,
+    "unused_non_vulnerable_candidates": 0,
+    "vulnerable_unique_candidates": 236
+  },
+  "most_frequently_reused_distractors_total": [
+    {
+      "candidate_id": "ox14-c000030",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000031",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000044",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000065",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000066",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000083",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000112",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000125",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000164",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000184",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000189",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000204",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000208",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000209",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000224",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    }
+  ],
+  "positive_reuse_count_distribution": {
+    "6": 120,
+    "7": 32
+  },
+  "positive_reuse_counts": {
+    "count": 152,
+    "max": 7,
+    "mean": 6.2105263157894735,
+    "median": 6.0,
+    "min": 6
+  },
+  "reuse_balance_interpretation": "positive decoy reuse is deterministic and balanced by round-robin; total reuse differs by one negative-only placement for 150 of 152 non-vulnerable candidates",
+  "reuse_by_candidate": [
+    {
+      "candidate_id": "ox14-c000012",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000016",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000023",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000025",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000026",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000029",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000030",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000031",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000033",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000034",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000036",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000037",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000044",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000046",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000048",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000053",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000056",
+      "negative_only_placements": 0,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 6
+    },
+    {
+      "candidate_id": "ox14-c000058",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000060",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000061",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000064",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000065",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000066",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000067",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000070",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000072",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000075",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000077",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000081",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000082",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000083",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000085",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000087",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000090",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000093",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000099",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000100",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000101",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000102",
+      "negative_only_placements": 0,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 6
+    },
+    {
+      "candidate_id": "ox14-c000103",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000107",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000108",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000109",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000111",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000112",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000113",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000117",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000118",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000121",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000125",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000127",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000136",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000140",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000141",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000161",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000164",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000165",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000167",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000177",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000181",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000183",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000184",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000185",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000188",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000189",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000197",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000198",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000204",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000207",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000208",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000209",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000210",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000211",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000212",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000216",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000219",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000220",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000223",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000224",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000225",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000226",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000229",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000236",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000245",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000246",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000247",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000251",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000252",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000254",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000259",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000261",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000265",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000268",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000270",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000272",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000273",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000277",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000278",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000293",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000294",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000296",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000297",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000303",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000307",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000310",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000311",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000314",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000315",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000320",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000323",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000333",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000337",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000341",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000344",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000346",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000348",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000350",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000351",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000352",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000353",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000354",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000355",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000357",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000362",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000363",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000369",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000373",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000374",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000377",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000381",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000384",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000387",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000389",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000391",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000395",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000396",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000398",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000399",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000402",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000404",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000405",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000406",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000409",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000410",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000414",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000422",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000423",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000426",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000427",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000429",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    },
+    {
+      "candidate_id": "ox14-c000432",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 7,
+      "total_non_vulnerable_pack_placements": 8
+    },
+    {
+      "candidate_id": "ox14-c000434",
+      "negative_only_placements": 1,
+      "positive_decoy_placements": 6,
+      "total_non_vulnerable_pack_placements": 7
+    }
+  ],
+  "schema_version": "owasp-xss-v14-distractor-reuse-summary-v1",
+  "total_reuse_count_distribution": {
+    "6": 2,
+    "7": 118,
+    "8": 32
+  },
+  "total_reuse_counts": {
+    "count": 152,
+    "max": 8,
+    "mean": 7.197368421052632,
+    "median": 7.0,
+    "min": 6
+  },
+  "unused_non_vulnerable_candidate_ids": []
+}
