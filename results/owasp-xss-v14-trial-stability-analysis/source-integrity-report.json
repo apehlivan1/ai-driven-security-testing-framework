@@ -1,0 +1,22 @@
+{
+  "canonical_checksum_error_count": 0,
+  "canonical_checksum_errors": [],
+  "canonical_checksum_source": "results/owasp-xss-v14-confirmatory-final/canonical/checksums.sha256",
+  "canonical_scored_rows_source": "results/owasp-xss-v14-confirmatory-final/canonical/normalized/scored-rows.json",
+  "checksum_mismatches": [],
+  "duplicate_row_ids": [],
+  "duplicate_sequences": [],
+  "missing_checksum_entries": [],
+  "missing_files": [],
+  "missing_sequences": [],
+  "ranking_rows_checked": 2660,
+  "ranking_rows_covered_by_raw_checksum": 2660,
+  "raw_checksum_error_count": 0,
+  "raw_checksum_errors": [],
+  "raw_checksum_source": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/checksums.sha256",
+  "raw_checksum_total_entries": 3199,
+  "raw_run_dir": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z",
+  "schema_version": "owasp-xss-v14-trial-stability-source-integrity-v1",
+  "source_integrity_verified": true,
+  "verdict": "verified_source_integrity"
+}

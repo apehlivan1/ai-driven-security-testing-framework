@@ -1,0 +1,21 @@
+{
+  "arms": {
+    "deterministic_structural": {
+      "mrr": 0.457274011299435,
+      "top1": 0.2033898305084746,
+      "top4": 0.788135593220339
+    },
+    "local_qwen": {
+      "mrr": 0.4925531914893617,
+      "top1": 0.24680851063829787,
+      "top4": 0.8297872340425532
+    },
+    "proprietary_gpt": {
+      "mrr": 0.4732258976533786,
+      "top1": 0.23324851569126379,
+      "top4": 0.7811704834605598
+    }
+  },
+  "note": "Descriptive context only; no model-superiority test is performed by this stability audit.",
+  "schema_version": "owasp-xss-v14-headline-ranking-context-v1"
+}

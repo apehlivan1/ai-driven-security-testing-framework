@@ -1,0 +1,294 @@
+{
+  "local_qwen": {
+    "all": {
+      "all_five_complete_rankings_identical": {
+        "count": 265,
+        "percentage": 99.62406015037594
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "expected_trials": 1330,
+      "invalid_or_failed_trials": 5,
+      "scenario_count": 266,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 265,
+        "percentage": 99.62406015037594
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 1,
+        "percentage": 0.37593984962406013
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 1,
+          "percentage": 0.37593984962406013
+        },
+        "1": {
+          "count": 265,
+          "percentage": 99.62406015037594
+        },
+        "2": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "3": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "4": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "valid_complete_ranking_trials": 1325
+    },
+    "negative_only": {
+      "all_five_complete_rankings_identical": {
+        "count": 30,
+        "percentage": 100.0
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "expected_trials": 150,
+      "invalid_or_failed_trials": 0,
+      "scenario_count": 30,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 30,
+        "percentage": 100.0
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 30,
+          "percentage": 100.0
+        },
+        "2": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "3": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "4": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "valid_complete_ranking_trials": 150
+    },
+    "positive": {
+      "all_five_complete_rankings_identical": {
+        "count": 235,
+        "percentage": 99.57627118644068
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "expected_trials": 1180,
+      "invalid_or_failed_trials": 5,
+      "scenario_count": 236,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 235,
+        "percentage": 99.57627118644068
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 1,
+        "percentage": 0.423728813559322
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 1,
+          "percentage": 0.423728813559322
+        },
+        "1": {
+          "count": 235,
+          "percentage": 99.57627118644068
+        },
+        "2": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "3": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "4": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "valid_complete_ranking_trials": 1175
+    }
+  },
+  "proprietary_gpt": {
+    "all": {
+      "all_five_complete_rankings_identical": {
+        "count": 91,
+        "percentage": 34.21052631578947
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 175,
+        "percentage": 65.78947368421053
+      },
+      "expected_trials": 1330,
+      "invalid_or_failed_trials": 1,
+      "scenario_count": 266,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 265,
+        "percentage": 99.62406015037594
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 1,
+        "percentage": 0.37593984962406013
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 91,
+          "percentage": 34.21052631578947
+        },
+        "2": {
+          "count": 99,
+          "percentage": 37.21804511278196
+        },
+        "3": {
+          "count": 55,
+          "percentage": 20.676691729323306
+        },
+        "4": {
+          "count": 20,
+          "percentage": 7.518796992481203
+        },
+        "5": {
+          "count": 1,
+          "percentage": 0.37593984962406013
+        }
+      },
+      "valid_complete_ranking_trials": 1329
+    },
+    "negative_only": {
+      "all_five_complete_rankings_identical": {
+        "count": 11,
+        "percentage": 36.666666666666664
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 19,
+        "percentage": 63.33333333333333
+      },
+      "expected_trials": 150,
+      "invalid_or_failed_trials": 0,
+      "scenario_count": 30,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 30,
+        "percentage": 100.0
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 11,
+          "percentage": 36.666666666666664
+        },
+        "2": {
+          "count": 11,
+          "percentage": 36.666666666666664
+        },
+        "3": {
+          "count": 5,
+          "percentage": 16.666666666666664
+        },
+        "4": {
+          "count": 3,
+          "percentage": 10.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "valid_complete_ranking_trials": 150
+    },
+    "positive": {
+      "all_five_complete_rankings_identical": {
+        "count": 80,
+        "percentage": 33.89830508474576
+      },
+      "at_least_one_valid_complete_ranking_differs": {
+        "count": 156,
+        "percentage": 66.10169491525424
+      },
+      "expected_trials": 1180,
+      "invalid_or_failed_trials": 1,
+      "scenario_count": 236,
+      "scenarios_with_all_five_valid_rankings": {
+        "count": 235,
+        "percentage": 99.57627118644068
+      },
+      "scenarios_with_invalid_or_failed_trial": {
+        "count": 1,
+        "percentage": 0.423728813559322
+      },
+      "unique_complete_ranking_count_distribution": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 80,
+          "percentage": 33.89830508474576
+        },
+        "2": {
+          "count": 88,
+          "percentage": 37.28813559322034
+        },
+        "3": {
+          "count": 50,
+          "percentage": 21.1864406779661
+        },
+        "4": {
+          "count": 17,
+          "percentage": 7.203389830508475
+        },
+        "5": {
+          "count": 1,
+          "percentage": 0.423728813559322
+        }
+      },
+      "valid_complete_ranking_trials": 1179
+    }
+  }
+}

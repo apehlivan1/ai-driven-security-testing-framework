@@ -687,6 +687,34 @@ v1.4 canonical result. It documents that the original deterministic baseline is
 effectively at the analytic random-ranking reference while still not being a
 pure all-tie random ranker.
 
+Professor-feedback closure audit for original v1.4 repeated-trial stability:
+
+- Thesis-support document:
+  `docs/professor-feedback-closure.md`
+- Derived stability package:
+  `results/owasp-xss-v14-trial-stability-analysis/`
+- Stability audit script:
+  `scripts/audit_owasp_xss_v14_trial_stability.py`
+- Human-readable analysis:
+  `results/owasp-xss-v14-trial-stability-analysis/analysis-report.md`
+- Scenario-level stability data:
+  `results/owasp-xss-v14-trial-stability-analysis/scenario-level-stability.csv`
+- Exact-ranking stability:
+  `results/owasp-xss-v14-trial-stability-analysis/exact-ranking-stability-summary.json`
+- Vulnerable-rank stability:
+  `results/owasp-xss-v14-trial-stability-analysis/vulnerable-rank-stability-summary.json`
+- Pairwise agreement:
+  `results/owasp-xss-v14-trial-stability-analysis/pairwise-agreement-summary.json`
+- Scenario-level mean reciprocal rank:
+  `results/owasp-xss-v14-trial-stability-analysis/scenario-mean-rr.csv`
+- Source-integrity report:
+  `results/owasp-xss-v14-trial-stability-analysis/source-integrity-report.json`
+
+This is a derived post-run audit only. It documents repeated-trial stability
+for the original v1.4 GPT and Qwen arms while preserving scenario as the
+independent experimental unit. Invalid/provider-failed/malformed terminal
+outcomes remain in reliability denominators and are not repaired or retried.
+
 
 ### v1.4.1 OWASP XSS Context-Enrichment Ablation Protocol Freeze
 

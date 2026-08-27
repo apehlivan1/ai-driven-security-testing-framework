@@ -1,0 +1,56 @@
+{
+  "local_qwen": {
+    "positive_scenarios": 236,
+    "positive_scenarios_with_no_valid_rr": 1,
+    "positive_scenarios_with_valid_rr": 235,
+    "scenario_mean_rr_summary": {
+      "count": 235,
+      "max": 1.0,
+      "mean": 0.4925531914893617,
+      "median": 0.3333333333333333,
+      "min": 0.2
+    },
+    "scenario_rows_source": "scenario-mean-rr.csv",
+    "within_scenario_rr_population_stdev_summary": {
+      "count": 235,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    },
+    "within_scenario_rr_range_summary": {
+      "count": 235,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    }
+  },
+  "proprietary_gpt": {
+    "positive_scenarios": 236,
+    "positive_scenarios_with_no_valid_rr": 0,
+    "positive_scenarios_with_valid_rr": 236,
+    "scenario_mean_rr_summary": {
+      "count": 236,
+      "max": 1.0,
+      "mean": 0.4733015536723164,
+      "median": 0.36666666666666664,
+      "min": 0.2
+    },
+    "scenario_rows_source": "scenario-mean-rr.csv",
+    "within_scenario_rr_population_stdev_summary": {
+      "count": 236,
+      "max": 0.3919183588453085,
+      "mean": 0.08693551605013189,
+      "median": 0.019999999999999997,
+      "min": 0.0
+    },
+    "within_scenario_rr_range_summary": {
+      "count": 236,
+      "max": 0.8,
+      "mean": 0.20501412429378532,
+      "median": 0.04999999999999999,
+      "min": 0.0
+    }
+  }
+}

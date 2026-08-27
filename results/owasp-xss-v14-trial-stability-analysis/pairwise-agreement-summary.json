@@ -1,0 +1,202 @@
+{
+  "local_qwen": {
+    "all": {
+      "exact_complete_ranking_agreement_pairs": 2650,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 1.0,
+      "expected_pair_count": 2660,
+      "scenario_count": 266,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 265,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 265,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 265,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "valid_pair_count": 2650
+    },
+    "negative_only": {
+      "exact_complete_ranking_agreement_pairs": 300,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 1.0,
+      "expected_pair_count": 300,
+      "scenario_count": 30,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "valid_pair_count": 300
+    },
+    "positive": {
+      "exact_complete_ranking_agreement_pairs": 2350,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 1.0,
+      "expected_pair_count": 2360,
+      "scenario_count": 236,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 235,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 235,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 235,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "valid_pair_count": 2350
+    },
+    "positive_vulnerable_rank_agreement": {
+      "expected_pair_count": 2360,
+      "positive_scenarios": 236,
+      "scenario_level_vulnerable_rank_agreement_rate_summary": {
+        "count": 235,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0
+      },
+      "valid_pair_count": 2350,
+      "vulnerable_rank_agreement_pairs": 2350,
+      "vulnerable_rank_agreement_rate_valid_pairs": 1.0
+    }
+  },
+  "proprietary_gpt": {
+    "all": {
+      "exact_complete_ranking_agreement_pairs": 1595,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 0.6005271084337349,
+      "expected_pair_count": 2660,
+      "scenario_count": 266,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 266,
+        "max": 1.0,
+        "mean": 0.599874686716792,
+        "median": 0.6,
+        "min": 0.0
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 266,
+        "max": 1.0,
+        "mean": 0.7343609022556391,
+        "median": 0.84,
+        "min": 0.03999999999999999
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 266,
+        "max": 1.0,
+        "mean": 0.7401879699248121,
+        "median": 0.88,
+        "min": -0.08000000000000003
+      },
+      "valid_pair_count": 2656
+    },
+    "negative_only": {
+      "exact_complete_ranking_agreement_pairs": 186,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 0.62,
+      "expected_pair_count": 300,
+      "scenario_count": 30,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 0.62,
+        "median": 0.6,
+        "min": 0.1
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 0.748,
+        "median": 0.84,
+        "min": 0.16
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 30,
+        "max": 1.0,
+        "mean": 0.7473333333333333,
+        "median": 0.88,
+        "min": 0.11999999999999995
+      },
+      "valid_pair_count": 300
+    },
+    "positive": {
+      "exact_complete_ranking_agreement_pairs": 1409,
+      "exact_complete_ranking_agreement_rate_valid_pairs": 0.5980475382003395,
+      "expected_pair_count": 2360,
+      "scenario_count": 236,
+      "scenario_level_exact_agreement_rate_summary": {
+        "count": 236,
+        "max": 1.0,
+        "mean": 0.5973163841807909,
+        "median": 0.6,
+        "min": 0.0
+      },
+      "scenario_level_kendall_tau_mean_summary": {
+        "count": 236,
+        "max": 1.0,
+        "mean": 0.7326271186440678,
+        "median": 0.78,
+        "min": 0.03999999999999999
+      },
+      "scenario_level_spearman_mean_summary": {
+        "count": 236,
+        "max": 1.0,
+        "mean": 0.7392796610169492,
+        "median": 0.855,
+        "min": -0.08000000000000003
+      },
+      "valid_pair_count": 2356
+    },
+    "positive_vulnerable_rank_agreement": {
+      "expected_pair_count": 2360,
+      "positive_scenarios": 236,
+      "scenario_level_vulnerable_rank_agreement_rate_summary": {
+        "count": 236,
+        "max": 1.0,
+        "mean": 0.709180790960452,
+        "median": 0.6,
+        "min": 0.1
+      },
+      "valid_pair_count": 2356,
+      "vulnerable_rank_agreement_pairs": 1673,
+      "vulnerable_rank_agreement_rate_valid_pairs": 0.7101018675721562
+    }
+  }
+}

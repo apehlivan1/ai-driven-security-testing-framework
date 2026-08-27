@@ -1,0 +1,31 @@
+{
+  "artifact_status": "derived_post_run_stability_audit",
+  "created_at": "2026-08-27T12:25:41.093841+00:00",
+  "frozen_artifacts_modified": false,
+  "git_state": {
+    "branch": "main",
+    "commit": "5f4f9bdfce2716a5ef47732424a7940a89b4455b",
+    "dirty": true,
+    "status_short": [
+      "?? results/owasp-xss-v14-trial-stability-analysis/",
+      "?? scripts/audit_owasp_xss_v14_trial_stability.py"
+    ]
+  },
+  "new_experimental_calls": {
+    "browser": 0,
+    "deterministic_ranking": 0,
+    "discovery": 0,
+    "gpt": 0,
+    "http": 0,
+    "qwen": 0,
+    "scored_calls": 0,
+    "verifier": 0
+  },
+  "output_dir": "results/owasp-xss-v14-trial-stability-analysis",
+  "schema_version": "owasp-xss-v14-trial-stability-analysis-manifest-v1",
+  "source_canonical_package": "results/owasp-xss-v14-confirmatory-final/canonical",
+  "source_protocol": "docs/evaluation-protocol-v1.4.md",
+  "source_protocol_package": "results/owasp-xss-v14-protocol-freeze",
+  "source_raw_run": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z",
+  "validation_valid": true
+}

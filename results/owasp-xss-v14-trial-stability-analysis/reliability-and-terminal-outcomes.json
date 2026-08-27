@@ -1,0 +1,64 @@
+{
+  "local_qwen": {
+    "actual_rows": 1330,
+    "canonical_reliability_source": {
+      "attempted_model_calls": 1330,
+      "completed_raw_artifacts": 1330,
+      "contract_invalid_outputs": 5,
+      "contract_valid_outputs": 1325,
+      "contract_validity_rate": 0.9962406015037594,
+      "malformed_outputs": 5,
+      "provider_or_runtime_failures": 0,
+      "retries": 0,
+      "scheduled_rows": 1330,
+      "status_counts": {
+        "malformed": 5,
+        "valid": 1325
+      },
+      "timeouts": 0
+    },
+    "contract_invalid_count": 5,
+    "contract_valid_count": 1325,
+    "expected_rows": 1330,
+    "invalid_trial_stability_policy": "Invalid or failed terminal outcomes are retained in reliability denominators and are not repaired or retried. They do not contribute a valid complete ranking to exact-ranking, rank, threshold or reciprocal-rank stability denominators.",
+    "malformed_count": 5,
+    "provider_failed_count": 0,
+    "retried_terminal_rows": 0,
+    "status_counts_from_scored_rows": {
+      "malformed": 5,
+      "valid": 1325
+    },
+    "timeout_count": 0
+  },
+  "proprietary_gpt": {
+    "actual_rows": 1330,
+    "canonical_reliability_source": {
+      "attempted_model_calls": 1330,
+      "completed_raw_artifacts": 1330,
+      "contract_invalid_outputs": 1,
+      "contract_valid_outputs": 1329,
+      "contract_validity_rate": 0.9992481203007518,
+      "malformed_outputs": 0,
+      "provider_or_runtime_failures": 1,
+      "retries": 0,
+      "scheduled_rows": 1330,
+      "status_counts": {
+        "provider_failed": 1,
+        "valid": 1329
+      },
+      "timeouts": 0
+    },
+    "contract_invalid_count": 1,
+    "contract_valid_count": 1329,
+    "expected_rows": 1330,
+    "invalid_trial_stability_policy": "Invalid or failed terminal outcomes are retained in reliability denominators and are not repaired or retried. They do not contribute a valid complete ranking to exact-ranking, rank, threshold or reciprocal-rank stability denominators.",
+    "malformed_count": 0,
+    "provider_failed_count": 1,
+    "retried_terminal_rows": 0,
+    "status_counts_from_scored_rows": {
+      "provider_failed": 1,
+      "valid": 1329
+    },
+    "timeout_count": 0
+  }
+}
