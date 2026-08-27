@@ -1,0 +1,48 @@
+% Professor Comment 4 thesis-ready tables.
+% Derived from frozen v1.4 XSS, v1.3.1 XSS control and v1.5.1 SQLi evidence.
+\begin{table}[htbp]
+\centering
+\caption{SQL injection ranking results in the frozen v1.5.1 evaluation}
+\begin{tabular}{lrrrr}
+\hline
+Arm & Valid positive $n$ & Top-1 & Top-4 & MRR \\
+\hline
+Deterministic & 105 & 19.05\% & 86.67\% & 0.4552 \\
+GPT & 522 & 18.97\% & 78.74\% & 0.4447 \\
+Qwen & 520 & 14.42\% & 79.81\% & 0.4274 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Direct SQL injection verifier outcomes and post-run classification}
+\begin{tabular}{lrrrr}
+\hline
+Ground truth & Verified & Inconclusive & Rejected & Classification \\
+\hline
+Vulnerable & 84 & 21 & 0 & TP=84, FN=21 \\
+Non-vulnerable & 0 & 95 & 0 & FP=0, TN=95 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Direct SQL injection classification metrics}
+\begin{tabular}{lrrr}
+\hline
+Metric & Numerator & Denominator & Value \\
+\hline
+sensitivity recall & 84 & 105 & 0.8000 \\
+specificity & 95 & 95 & 1.0000 \\
+false positive rate & 0 & 95 & 0.0000 \\
+false negative rate & 21 & 105 & 0.2000 \\
+precision ppv & 84 & 84 & 1.0000 \\
+negative predictive value & 95 & 116 & 0.8190 \\
+accuracy & 179 & 200 & 0.8950 \\
+f1 score & 168 & 189 & 0.8889 \\
+balanced accuracy & mean(sensitivity,specificity) & not_applicable & 0.9000 \\
+\hline
+\end{tabular}
+\end{table}

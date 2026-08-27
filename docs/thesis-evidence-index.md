@@ -1042,3 +1042,36 @@ frozen post-run scoring rules. Cost remains `not_available` because no frozen
 numeric pricing basis was defined. The raw source run is preserved separately
 and should remain local unless a deliberate raw-evidence archival decision is
 made.
+
+Professor Comment 4 closure evidence:
+
+- Derived negative/control and SQLi synthesis package:
+  `results/professor-comment-4-negative-sqli-analysis/`
+- Analysis report:
+  `results/professor-comment-4-negative-sqli-analysis/analysis-report.md`
+- Evidence inventory:
+  `results/professor-comment-4-negative-sqli-analysis/evidence-inventory.json`
+- XSS negative/control summary:
+  `results/professor-comment-4-negative-sqli-analysis/xss-negative-control-summary.json`
+- SQLi ranking summary:
+  `results/professor-comment-4-negative-sqli-analysis/sqli-ranking-summary.json`
+- SQLi direct classification summary:
+  `results/professor-comment-4-negative-sqli-analysis/sqli-classification-summary.json`
+- Thesis tables:
+  `results/professor-comment-4-negative-sqli-analysis/thesis-tables.md`
+  and
+  `results/professor-comment-4-negative-sqli-analysis/thesis-tables.tex`
+- Validation and checksums:
+  `results/professor-comment-4-negative-sqli-analysis/validation-report.json`
+  and
+  `results/professor-comment-4-negative-sqli-analysis/checksums.sha256`
+- Reproducible derived-analysis script:
+  `scripts/analyze_professor_comment_4_negative_sqli.py`
+
+The Comment 4 package is derived-only evidence. It distinguishes original
+OWASP XSS v1.4 negative-only ranking scenarios from verifier-backed XSS
+controls and from SQLi v1.5.1 direct verifier/post-run classification evidence.
+It records that false-positive rate and specificity are not meaningful for
+ranking-only XSS negative packs, while SQLi direct post-run classification
+supports TP 84, FP 0, FN 21 and TN 95 with denominator-valid classification
+metrics.

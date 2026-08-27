@@ -1,0 +1,4 @@
+arm_id,valid_positive_observations,invalid_positive_observations,valid_negative_observations,top1_success_count,top1_rate,top4_success_count,top4_rate,mrr,rank_distribution,scheduled_rows,valid_rows,contract_valid_rows,malformed_rows,provider_failed_rows,timeout_rows,retry_count,mean_latency_ms,median_latency_ms,input_tokens,output_tokens,total_tokens,cost
+deterministic_structural,105,0,19,20,0.190476,91,0.866667,0.455238,"{""1"": 20, ""2"": 22, ""3"": 21, ""4"": 28, ""5"": 14}",124,124,124,0,0,0,0,0,0.0,not_applicable,not_applicable,not_applicable,not_applicable
+proprietary_gpt,522,3,95,99,0.189655,411,0.787356,0.444668,"{""1"": 99, ""2"": 97, ""3"": 104, ""4"": 111, ""5"": 111}",620,617,617,0,3,1,0,4811.36,4400.5,380101,178496,558597,not_available
+local_qwen,520,5,95,75,0.144231,415,0.798077,0.427404,"{""1"": 75, ""2"": 130, ""3"": 105, ""4"": 105, ""5"": 105}",620,615,615,5,0,0,0,75515.216,70107.0,not_applicable,not_applicable,not_applicable,not_applicable

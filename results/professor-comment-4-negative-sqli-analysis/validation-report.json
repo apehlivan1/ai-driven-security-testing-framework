@@ -1,0 +1,152 @@
+{
+  "checks": [
+    {
+      "check": "all_source_checksums_valid",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "xss_v14_negative_scenarios_30",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "xss_v14_unique_non_vulnerable_candidates_152",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "xss_v13_1_negative_controls_8",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "sqli_ranking_arm_count_3",
+      "details": {},
+      "passed": true
+    },
+    {
+      "check": "sqli_expected_ranking_values_deterministic_structural",
+      "details": {
+        "arm_id": "deterministic_structural",
+        "contract_valid_rows": 124,
+        "cost": "not_applicable",
+        "input_tokens": "not_applicable",
+        "invalid_positive_observations": 0,
+        "malformed_rows": 0,
+        "mean_latency_ms": 0,
+        "median_latency_ms": 0.0,
+        "mrr": 0.455238,
+        "output_tokens": "not_applicable",
+        "provider_failed_rows": 0,
+        "rank_distribution": "{\"1\": 20, \"2\": 22, \"3\": 21, \"4\": 28, \"5\": 14}",
+        "retry_count": 0,
+        "scheduled_rows": 124,
+        "timeout_rows": 0,
+        "top1_rate": 0.190476,
+        "top1_success_count": 20,
+        "top4_rate": 0.866667,
+        "top4_success_count": 91,
+        "total_tokens": "not_applicable",
+        "valid_negative_observations": 19,
+        "valid_positive_observations": 105,
+        "valid_rows": 124
+      },
+      "passed": true
+    },
+    {
+      "check": "sqli_expected_ranking_values_proprietary_gpt",
+      "details": {
+        "arm_id": "proprietary_gpt",
+        "contract_valid_rows": 617,
+        "cost": "not_available",
+        "input_tokens": 380101,
+        "invalid_positive_observations": 3,
+        "malformed_rows": 0,
+        "mean_latency_ms": 4811.36,
+        "median_latency_ms": 4400.5,
+        "mrr": 0.444668,
+        "output_tokens": 178496,
+        "provider_failed_rows": 3,
+        "rank_distribution": "{\"1\": 99, \"2\": 97, \"3\": 104, \"4\": 111, \"5\": 111}",
+        "retry_count": 0,
+        "scheduled_rows": 620,
+        "timeout_rows": 1,
+        "top1_rate": 0.189655,
+        "top1_success_count": 99,
+        "top4_rate": 0.787356,
+        "top4_success_count": 411,
+        "total_tokens": 558597,
+        "valid_negative_observations": 95,
+        "valid_positive_observations": 522,
+        "valid_rows": 617
+      },
+      "passed": true
+    },
+    {
+      "check": "sqli_expected_ranking_values_local_qwen",
+      "details": {
+        "arm_id": "local_qwen",
+        "contract_valid_rows": 615,
+        "cost": "not_applicable",
+        "input_tokens": "not_applicable",
+        "invalid_positive_observations": 5,
+        "malformed_rows": 5,
+        "mean_latency_ms": 75515.216,
+        "median_latency_ms": 70107.0,
+        "mrr": 0.427404,
+        "output_tokens": "not_applicable",
+        "provider_failed_rows": 0,
+        "rank_distribution": "{\"1\": 75, \"2\": 130, \"3\": 105, \"4\": 105, \"5\": 105}",
+        "retry_count": 0,
+        "scheduled_rows": 620,
+        "timeout_rows": 0,
+        "top1_rate": 0.144231,
+        "top1_success_count": 75,
+        "top4_rate": 0.798077,
+        "top4_success_count": 415,
+        "total_tokens": "not_applicable",
+        "valid_negative_observations": 95,
+        "valid_positive_observations": 520,
+        "valid_rows": 615
+      },
+      "passed": true
+    },
+    {
+      "check": "sqli_direct_confusion_matrix_84_0_21_95",
+      "details": {
+        "fn": 21,
+        "fp": 0,
+        "post_run_mapping_note": "Under the frozen v1.5.1 post-run scoring, verified vulnerable cases are TP, inconclusive vulnerable cases are FN, verified non-vulnerable cases are FP and non-verified non-vulnerable cases are TN.",
+        "runtime_verifier_outcomes_by_ground_truth": [
+          {
+            "ground_truth": "vulnerable",
+            "inconclusive": 21,
+            "rejected": 0,
+            "total": 105,
+            "verified": 84
+          },
+          {
+            "ground_truth": "non_vulnerable",
+            "inconclusive": 95,
+            "rejected": 0,
+            "total": 95,
+            "verified": 0
+          }
+        ],
+        "tn": 95,
+        "tp": 84
+      },
+      "passed": true
+    },
+    {
+      "check": "zero_experimental_calls",
+      "details": {},
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "schema_version": "professor-comment-4-validation-v1",
+  "valid": true,
+  "validated_at": "2026-08-27T13:50:07.994779Z"
+}

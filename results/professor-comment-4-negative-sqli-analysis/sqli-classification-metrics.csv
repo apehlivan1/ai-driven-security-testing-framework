@@ -1,0 +1,10 @@
+metric,numerator,denominator,value
+sensitivity_recall,84,105,0.8
+specificity,95,95,1.0
+false_positive_rate,0,95,0.0
+false_negative_rate,21,105,0.2
+precision_ppv,84,84,1.0
+negative_predictive_value,95,116,0.8189655172413793
+accuracy,179,200,0.895
+f1_score,168,189,0.8888888888888888
+balanced_accuracy,"mean(sensitivity,specificity)",not_applicable,0.9

@@ -1,0 +1,102 @@
+{
+  "activity_boundaries": {
+    "ground_truth_used_only_for_post_run_derived_classification": true,
+    "new_browser_tests": 0,
+    "new_http_requests": 0,
+    "new_model_calls": 0,
+    "new_ranking_calls": 0,
+    "new_verifier_calls": 0
+  },
+  "all_checksum_sources_valid": true,
+  "created_at": "2026-08-27T13:50:07.991482Z",
+  "schema_version": "professor-comment-4-evidence-inventory-v1",
+  "sources": [
+    {
+      "checksum_source": "results/owasp-xss-v14-confirmatory-final/canonical/checksums.sha256",
+      "checksum_validation": {
+        "checked_file": "results/owasp-xss-v14-confirmatory-final/canonical/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "ranking-only evidence",
+      "id": "owasp_xss_v14_canonical",
+      "path": "results/owasp-xss-v14-confirmatory-final/canonical",
+      "role": "original OWASP XSS v1.4 confirmatory ranking results, including 30 negative-only ranking scenarios"
+    },
+    {
+      "checksum_source": "results/owasp-xss-v14-random-baseline-audit/checksums.sha256",
+      "checksum_validation": {
+        "checked_file": "results/owasp-xss-v14-random-baseline-audit/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "derived candidate-construction and random-baseline audit",
+      "id": "owasp_xss_v14_random_baseline_audit",
+      "path": "results/owasp-xss-v14-random-baseline-audit",
+      "role": "non-vulnerable candidate coverage, pack construction and deterministic-ranker discrimination evidence"
+    },
+    {
+      "checksum_source": "results/owasp-xss-v14-trial-stability-analysis/checksums.sha256",
+      "checksum_validation": {
+        "checked_file": "results/owasp-xss-v14-trial-stability-analysis/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "derived ranking-only repeated-trial stability evidence",
+      "id": "owasp_xss_v14_trial_stability",
+      "path": "results/owasp-xss-v14-trial-stability-analysis",
+      "role": "valid/invalid and stability behavior on positive and negative-only v1.4 ranking scenarios"
+    },
+    {
+      "checksum_source": "results/owasp-xss-v14-readiness/checksums.json",
+      "checksum_validation": {
+        "checked_file": "results/owasp-xss-v14-readiness/checksums.json",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "runtime verifier evidence, readiness-only",
+      "id": "owasp_xss_v14_readiness",
+      "path": "results/owasp-xss-v14-readiness",
+      "role": "OWASP XSS transport/verifier readiness controls; not final confirmatory ranking evidence"
+    },
+    {
+      "checksum_source": "results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256",
+      "checksum_validation": {
+        "checked_file": "results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256",
+        "errors": [],
+        "selected_files": [
+          "normalized/arm-level-metrics.csv",
+          "normalized/arm-level-metrics.json",
+          "validation-report.json",
+          "manifest.json"
+        ],
+        "valid": true
+      },
+      "evidence_type": "runtime verifier and post-run ground-truth classification evidence",
+      "full_package_checksum_validation": {
+        "checked_file": "results/xss-v13-ablation-v1.3.1-final/canonical/checksums.sha256",
+        "errors": [
+          "hash mismatch results/xss-v13-ablation-v1.3.1-final/canonical/analysis-report.md",
+          "hash mismatch results/xss-v13-ablation-v1.3.1-final/canonical/figures/ranking-metrics-valid-only.pdf"
+        ],
+        "valid": false
+      },
+      "full_package_note": "The Comment 4 audit uses checksum-valid normalized/control files. The full v1.3.1 canonical package currently reports mismatches in non-input presentation artifacts and is therefore not treated as wholly checksum-clean here.",
+      "id": "xss_v13_1_canonical",
+      "path": "results/xss-v13-ablation-v1.3.1-final/canonical",
+      "role": "frozen 24-scenario XSS ablation with eight negative/control scenarios"
+    },
+    {
+      "checksum_source": "results/owasp-sqli-v15-1-confirmatory-final/canonical/checksums.sha256",
+      "checksum_validation": {
+        "checked_file": "results/owasp-sqli-v15-1-confirmatory-final/canonical/checksums.sha256",
+        "errors": [],
+        "valid": true
+      },
+      "evidence_type": "ranking-only evidence, runtime verifier evidence and post-run ground-truth classification evidence",
+      "id": "sqli_v15_1_canonical",
+      "path": "results/owasp-sqli-v15-1-confirmatory-final/canonical",
+      "role": "final OWASP SQLi v1.5.1 ranking and direct verifier/classification evidence"
+    }
+  ]
+}

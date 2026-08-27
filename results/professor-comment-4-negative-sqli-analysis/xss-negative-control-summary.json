@@ -1,0 +1,346 @@
+{
+  "arm_table": [
+    {
+      "arm_id": "deterministic_structural",
+      "contract_invalid_outputs_all_scenarios": 0,
+      "contract_valid_rows": 30,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_only_scenarios": 30,
+      "negative_ranking_rows": 30,
+      "negative_scenarios_with_differing_repeated_rankings": "not_applicable",
+      "negative_unique_complete_ranking_patterns": "not_applicable",
+      "provider_or_runtime_failures_all_scenarios": 0,
+      "scheduled_rows_all_scenarios": 266,
+      "source": "owasp_xss_v14_negative_only_ranking",
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "contract_invalid_outputs_all_scenarios": 1,
+      "contract_valid_rows": 150,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_only_scenarios": 30,
+      "negative_ranking_rows": 150,
+      "negative_scenarios_with_differing_repeated_rankings": {
+        "count": 19,
+        "percentage": 63.33333333333333
+      },
+      "negative_unique_complete_ranking_patterns": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 11,
+          "percentage": 36.666666666666664
+        },
+        "2": {
+          "count": 11,
+          "percentage": 36.666666666666664
+        },
+        "3": {
+          "count": 5,
+          "percentage": 16.666666666666664
+        },
+        "4": {
+          "count": 3,
+          "percentage": 10.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "provider_or_runtime_failures_all_scenarios": 1,
+      "scheduled_rows_all_scenarios": 1330,
+      "source": "owasp_xss_v14_negative_only_ranking",
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    },
+    {
+      "arm_id": "local_qwen",
+      "contract_invalid_outputs_all_scenarios": 5,
+      "contract_valid_rows": 150,
+      "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+      "negative_only_scenarios": 30,
+      "negative_ranking_rows": 150,
+      "negative_scenarios_with_differing_repeated_rankings": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "negative_unique_complete_ranking_patterns": {
+        "0": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "1": {
+          "count": 30,
+          "percentage": 100.0
+        },
+        "2": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "3": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "4": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "5": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "provider_or_runtime_failures_all_scenarios": 0,
+      "scheduled_rows_all_scenarios": 1330,
+      "source": "owasp_xss_v14_negative_only_ranking",
+      "top1_topk_mrr": "not_applicable",
+      "verifier_false_positive_evidence": "not_applicable"
+    },
+    {
+      "arm_id": "deterministic_structural",
+      "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+      "false_positive_rate": 0.0,
+      "negative_control_scenarios": 8,
+      "negative_retained_trials": 8,
+      "negative_unverified_rows": 8,
+      "negative_verified_rows": 0,
+      "source": "xss_v13_1_eight_negative_controls",
+      "specificity": 1.0
+    },
+    {
+      "arm_id": "proprietary_gpt",
+      "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+      "false_positive_rate": 0.0,
+      "negative_control_scenarios": 8,
+      "negative_retained_trials": 40,
+      "negative_unverified_rows": 40,
+      "negative_verified_rows": 0,
+      "source": "xss_v13_1_eight_negative_controls",
+      "specificity": 1.0
+    },
+    {
+      "arm_id": "local_qwen",
+      "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+      "false_positive_rate": 0.0,
+      "negative_control_scenarios": 8,
+      "negative_retained_trials": 40,
+      "negative_unverified_rows": 40,
+      "negative_verified_rows": 0,
+      "source": "xss_v13_1_eight_negative_controls",
+      "specificity": 1.0
+    }
+  ],
+  "non_vulnerable_candidate_coverage": {
+    "negative_only_placements": 150,
+    "negative_only_scenarios": 30,
+    "positive_scenario_distractor_placements": 944,
+    "reuse_balance_interpretation": "positive decoy reuse is deterministic and balanced by round-robin; total reuse differs by one negative-only placement for 150 of 152 non-vulnerable candidates",
+    "reuse_count_distribution": {
+      "6": 2,
+      "7": 118,
+      "8": 32
+    },
+    "reuse_counts": {
+      "count": 152,
+      "max": 8,
+      "mean": 7.197368421052632,
+      "median": 7.0,
+      "min": 6
+    },
+    "total_non_vulnerable_candidate_placements_across_all_packs": 1094,
+    "unique_non_vulnerable_candidates": 152,
+    "unique_non_vulnerable_candidates_used": 152,
+    "unused_non_vulnerable_candidates": 0
+  },
+  "owasp_v14_negative_only": {
+    "arm_rows": [
+      {
+        "arm_id": "deterministic_structural",
+        "contract_invalid_outputs_all_scenarios": 0,
+        "contract_valid_rows": 30,
+        "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+        "negative_only_scenarios": 30,
+        "negative_ranking_rows": 30,
+        "negative_scenarios_with_differing_repeated_rankings": "not_applicable",
+        "negative_unique_complete_ranking_patterns": "not_applicable",
+        "provider_or_runtime_failures_all_scenarios": 0,
+        "scheduled_rows_all_scenarios": 266,
+        "source": "owasp_xss_v14_negative_only_ranking",
+        "top1_topk_mrr": "not_applicable",
+        "verifier_false_positive_evidence": "not_applicable"
+      },
+      {
+        "arm_id": "proprietary_gpt",
+        "contract_invalid_outputs_all_scenarios": 1,
+        "contract_valid_rows": 150,
+        "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+        "negative_only_scenarios": 30,
+        "negative_ranking_rows": 150,
+        "negative_scenarios_with_differing_repeated_rankings": {
+          "count": 19,
+          "percentage": 63.33333333333333
+        },
+        "negative_unique_complete_ranking_patterns": {
+          "0": {
+            "count": 0,
+            "percentage": 0.0
+          },
+          "1": {
+            "count": 11,
+            "percentage": 36.666666666666664
+          },
+          "2": {
+            "count": 11,
+            "percentage": 36.666666666666664
+          },
+          "3": {
+            "count": 5,
+            "percentage": 16.666666666666664
+          },
+          "4": {
+            "count": 3,
+            "percentage": 10.0
+          },
+          "5": {
+            "count": 0,
+            "percentage": 0.0
+          }
+        },
+        "provider_or_runtime_failures_all_scenarios": 1,
+        "scheduled_rows_all_scenarios": 1330,
+        "source": "owasp_xss_v14_negative_only_ranking",
+        "top1_topk_mrr": "not_applicable",
+        "verifier_false_positive_evidence": "not_applicable"
+      },
+      {
+        "arm_id": "local_qwen",
+        "contract_invalid_outputs_all_scenarios": 5,
+        "contract_valid_rows": 150,
+        "direct_execution_layer": "not_executed_in_v1.4_confirmatory_ranking_run",
+        "negative_only_scenarios": 30,
+        "negative_ranking_rows": 150,
+        "negative_scenarios_with_differing_repeated_rankings": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "negative_unique_complete_ranking_patterns": {
+          "0": {
+            "count": 0,
+            "percentage": 0.0
+          },
+          "1": {
+            "count": 30,
+            "percentage": 100.0
+          },
+          "2": {
+            "count": 0,
+            "percentage": 0.0
+          },
+          "3": {
+            "count": 0,
+            "percentage": 0.0
+          },
+          "4": {
+            "count": 0,
+            "percentage": 0.0
+          },
+          "5": {
+            "count": 0,
+            "percentage": 0.0
+          }
+        },
+        "provider_or_runtime_failures_all_scenarios": 0,
+        "scheduled_rows_all_scenarios": 1330,
+        "source": "owasp_xss_v14_negative_only_ranking",
+        "top1_topk_mrr": "not_applicable",
+        "verifier_false_positive_evidence": "not_applicable"
+      }
+    ],
+    "false_positive_specificity_status": "not_meaningful_for_ranking_only_outputs",
+    "positive_context": {
+      "deterministic_structural": {
+        "mrr": 0.457274011299435,
+        "positive_rows": 236,
+        "top1": 0.2033898305084746,
+        "top4": 0.788135593220339
+      },
+      "local_qwen": {
+        "mrr": 0.4925531914893617,
+        "positive_rows": 1180,
+        "top1": 0.24680851063829787,
+        "top4": 0.8297872340425532
+      },
+      "proprietary_gpt": {
+        "mrr": 0.4732258976533786,
+        "positive_rows": 1180,
+        "top1": 0.23324851569126379,
+        "top4": 0.7811704834605598
+      }
+    },
+    "ranking_contract_interpretation": "Rankers return an ordering of supplied candidate IDs; negative-only scenarios therefore exercise candidate-selection behavior and reliability, but do not create true-positive, false-positive, false-negative or true-negative vulnerability-classification observations.",
+    "ranking_contract_supports_abstention": false,
+    "scenario_count": 30
+  },
+  "owasp_v14_readiness_controls": {
+    "expected_counts": {
+      "non_vulnerable": 10,
+      "vulnerable": 10
+    },
+    "matches_readiness_ground_truth": 20,
+    "non_vulnerable_controls": 10,
+    "non_vulnerable_verified": 0,
+    "note": "READINESS_ONLY evidence; it verifies transport/verifier behavior and is not part of the final v1.4 ranking denominator.",
+    "selected_case_count": 20,
+    "source": "owasp_xss_v14_readiness_only_controls",
+    "verifier_outcomes": {
+      "inconclusive": 10,
+      "verified": 10
+    }
+  },
+  "schema_version": "professor-comment-4-xss-negative-control-summary-v1",
+  "xss_v13_1_eight_controls": {
+    "evidence_semantics": "runtime verifier plus post-run ground-truth classification evidence",
+    "interpretation": "No verifier-confirmed false positives were observed in the eight negative XSS scenarios for any arm. This supports scoped negative-control reporting, but it is not OWASP v1.4 evidence and does not turn v1.4 ranking-only rows into classifier specificity observations.",
+    "rows": [
+      {
+        "arm_id": "deterministic_structural",
+        "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+        "false_positive_rate": 0.0,
+        "negative_control_scenarios": 8,
+        "negative_retained_trials": 8,
+        "negative_unverified_rows": 8,
+        "negative_verified_rows": 0,
+        "source": "xss_v13_1_eight_negative_controls",
+        "specificity": 1.0
+      },
+      {
+        "arm_id": "proprietary_gpt",
+        "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+        "false_positive_rate": 0.0,
+        "negative_control_scenarios": 8,
+        "negative_retained_trials": 40,
+        "negative_unverified_rows": 40,
+        "negative_verified_rows": 0,
+        "source": "xss_v13_1_eight_negative_controls",
+        "specificity": 1.0
+      },
+      {
+        "arm_id": "local_qwen",
+        "calculation_scope": "retained arm/trial rows; eight scenarios remain the independent control cases",
+        "false_positive_rate": 0.0,
+        "negative_control_scenarios": 8,
+        "negative_retained_trials": 40,
+        "negative_unverified_rows": 40,
+        "negative_verified_rows": 0,
+        "source": "xss_v13_1_eight_negative_controls",
+        "specificity": 1.0
+      }
+    ],
+    "scenario_count": 8
+  }
+}

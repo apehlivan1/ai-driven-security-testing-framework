@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-08-27T13:50:08.001835Z",
+  "experimental_calls_executed": 0,
+  "generated_files": [
+    "results/professor-comment-4-negative-sqli-analysis/analysis-report.md",
+    "results/professor-comment-4-negative-sqli-analysis/checksum-validation-report.json",
+    "results/professor-comment-4-negative-sqli-analysis/checksums.sha256",
+    "results/professor-comment-4-negative-sqli-analysis/confusion-matrix.json",
+    "results/professor-comment-4-negative-sqli-analysis/evidence-inventory.json",
+    "results/professor-comment-4-negative-sqli-analysis/manifest.json",
+    "results/professor-comment-4-negative-sqli-analysis/methodology-provenance-note.md",
+    "results/professor-comment-4-negative-sqli-analysis/sqli-classification-metrics.csv",
+    "results/professor-comment-4-negative-sqli-analysis/sqli-classification-summary.json",
+    "results/professor-comment-4-negative-sqli-analysis/sqli-confusion-matrix.csv",
+    "results/professor-comment-4-negative-sqli-analysis/sqli-ranking-summary.csv",
+    "results/professor-comment-4-negative-sqli-analysis/sqli-ranking-summary.json",
+    "results/professor-comment-4-negative-sqli-analysis/thesis-tables.md",
+    "results/professor-comment-4-negative-sqli-analysis/thesis-tables.tex",
+    "results/professor-comment-4-negative-sqli-analysis/validation-report.json",
+    "results/professor-comment-4-negative-sqli-analysis/xss-negative-control-summary.csv",
+    "results/professor-comment-4-negative-sqli-analysis/xss-negative-control-summary.json"
+  ],
+  "package_dir": "results/professor-comment-4-negative-sqli-analysis",
+  "schema_version": "professor-comment-4-negative-sqli-analysis-manifest-v1",
+  "source_artifacts": [
+    "results/owasp-xss-v14-confirmatory-final/canonical",
+    "results/owasp-xss-v14-random-baseline-audit",
+    "results/owasp-xss-v14-trial-stability-analysis",
+    "results/owasp-xss-v14-readiness",
+    "results/xss-v13-ablation-v1.3.1-final/canonical",
+    "results/owasp-sqli-v15-1-confirmatory-final/canonical"
+  ],
+  "validation_valid": true
+}

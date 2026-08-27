@@ -1,0 +1,108 @@
+{
+  "confusion_matrix": {
+    "fn": 21,
+    "fp": 0,
+    "post_run_mapping_note": "Under the frozen v1.5.1 post-run scoring, verified vulnerable cases are TP, inconclusive vulnerable cases are FN, verified non-vulnerable cases are FP and non-verified non-vulnerable cases are TN.",
+    "runtime_verifier_outcomes_by_ground_truth": [
+      {
+        "ground_truth": "vulnerable",
+        "inconclusive": 21,
+        "rejected": 0,
+        "total": 105,
+        "verified": 84
+      },
+      {
+        "ground_truth": "non_vulnerable",
+        "inconclusive": 95,
+        "rejected": 0,
+        "total": 95,
+        "verified": 0
+      }
+    ],
+    "tn": 95,
+    "tp": 84
+  },
+  "confusion_matrix_table": [
+    {
+      "classification": "TP=84, FN=21",
+      "ground_truth": "vulnerable",
+      "inconclusive": 21,
+      "rejected": 0,
+      "verified": 84
+    },
+    {
+      "classification": "FP=0, TN=95",
+      "ground_truth": "non_vulnerable",
+      "inconclusive": 95,
+      "rejected": 0,
+      "verified": 0
+    }
+  ],
+  "direct_execution": {
+    "cases": 200,
+    "inconclusive": 116,
+    "non_vulnerable_cases": 95,
+    "rejected": 0,
+    "requests": 1200,
+    "verified": 84,
+    "vulnerable_cases": 105
+  },
+  "metrics_table": [
+    {
+      "denominator": 105,
+      "metric": "sensitivity_recall",
+      "numerator": 84,
+      "value": 0.8
+    },
+    {
+      "denominator": 95,
+      "metric": "specificity",
+      "numerator": 95,
+      "value": 1.0
+    },
+    {
+      "denominator": 95,
+      "metric": "false_positive_rate",
+      "numerator": 0,
+      "value": 0.0
+    },
+    {
+      "denominator": 105,
+      "metric": "false_negative_rate",
+      "numerator": 21,
+      "value": 0.2
+    },
+    {
+      "denominator": 84,
+      "metric": "precision_ppv",
+      "numerator": 84,
+      "value": 1.0
+    },
+    {
+      "denominator": 116,
+      "metric": "negative_predictive_value",
+      "numerator": 95,
+      "value": 0.8189655172413793
+    },
+    {
+      "denominator": 200,
+      "metric": "accuracy",
+      "numerator": 179,
+      "value": 0.895
+    },
+    {
+      "denominator": 189,
+      "metric": "f1_score",
+      "numerator": 168,
+      "value": 0.8888888888888888
+    },
+    {
+      "denominator": "not_applicable",
+      "metric": "balanced_accuracy",
+      "numerator": "mean(sensitivity,specificity)",
+      "value": 0.9
+    }
+  ],
+  "schema_version": "professor-comment-4-sqli-classification-summary-v1",
+  "source": "results/owasp-sqli-v15-1-confirmatory-final/canonical/normalized/direct-sqli-summary.json"
+}
