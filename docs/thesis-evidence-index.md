@@ -1092,6 +1092,8 @@ Professor Comment 5 closure evidence:
   `results/professor-comment-5-bespoke-contamination-analysis/bespoke-random-baseline-by-scenario.csv`
 - Bespoke ranking summary:
   `results/professor-comment-5-bespoke-contamination-analysis/bespoke-ranking-summary.json`
+- Bespoke metric reconciliation:
+  `results/professor-comment-5-bespoke-contamination-analysis/bespoke-metric-reconciliation.json`
 - Public OWASP versus bespoke comparison:
   `results/professor-comment-5-bespoke-contamination-analysis/owasp-vs-bespoke-comparison.csv`
 - Contamination-risk note:
@@ -1114,9 +1116,15 @@ Benchmark contamination-risk caveat, identifies the v1.3.1 24-scenario bespoke
 XSS package as lower-contamination-risk held-out evidence, computes
 scenario-specific random references for the bespoke candidate-count
 distribution, and compares public OWASP v1.4 and bespoke v1.3.1 XSS results
-using observed-minus-random values. It records zero new experimental calls and
-retains repeated LLM trials as trial-level observations rather than independent
-benchmark scenarios.
+using observed-minus-random values. The thesis-facing v1.3.1 MRR values and
+random MRR references use the canonical budget-censored semantics; full-order
+reciprocal-rank values are retained only as diagnostic provenance in the
+metric-reconciliation artifact. The original v1.4 OWASP XSS MRR remains under
+its frozen full-order reciprocal-rank semantics, so v1.4 and v1.3.1 MRR deltas
+should be interpreted within their protocol definitions rather than as perfectly
+harmonized cross-dataset effect sizes. It records zero new experimental calls
+and retains repeated LLM trials as trial-level observations rather than
+independent benchmark scenarios.
 
 Professor Comment 6 closure evidence:
 
@@ -1155,3 +1163,16 @@ evidence by itself of independent LLM reasoning because reflection and marker
 preservation fields can function as strong reflected-XSS susceptibility
 proxies. No new experimental calls, scoring runs or inferential tests were
 performed for this closure package.
+
+Final evaluation synthesis for thesis writing:
+
+- Consolidated thesis-writing bridge:
+  `docs/evaluation-synthesis-for-thesis.md`
+
+This synthesis document uses only already validated frozen/canonical evidence
+and Professor Comment 1-6 closure packages. It maps completed evidence to the
+Methodology, Implementation/Framework Architecture, Evaluation Setup, Results,
+Discussion, Threats to Validity and Conclusion chapters, and distinguishes
+supported findings, descriptive trends and unsupported/general claims. It is a
+documentation synthesis only and does not run new experiments, model calls,
+scoring, verifier calls, bootstrap procedures or statistical tests.
