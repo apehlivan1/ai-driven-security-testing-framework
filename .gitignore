@@ -228,6 +228,8 @@ __marimo__/
 results/xss-v13-ablation-v1.3/xss-v13-ablation-*/
 # Raw v1.3.1 XSS execution evidence - retained locally, not versioned
 results/xss-v13-ablation-v1.3.1-final/xss-v13-ablation-*/
+# Framework ZAP raw runs
+/results/framework-zap-common-scope-v1.3/runs/
 
 # references used for thesis writing
 thesis/
