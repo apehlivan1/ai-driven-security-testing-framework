@@ -1,0 +1,39 @@
+{
+  "case_denominator": 50,
+  "evaluators": {
+    "framework": {
+      "FN": 0,
+      "FP": 0,
+      "TN": 20,
+      "TP": 30,
+      "accuracy": 1.0,
+      "cases": 50,
+      "false_positive_rate": 0.0,
+      "sensitivity": 1.0,
+      "specificity": 1.0
+    },
+    "zap_active": {
+      "FN": 1,
+      "FP": 0,
+      "TN": 20,
+      "TP": 29,
+      "accuracy": 0.98,
+      "cases": 50,
+      "false_positive_rate": 0.0,
+      "sensitivity": 0.9667,
+      "specificity": 1.0
+    },
+    "zap_passive": {
+      "FN": 30,
+      "FP": 0,
+      "TN": 20,
+      "TP": 0,
+      "accuracy": 0.4,
+      "cases": 50,
+      "false_positive_rate": 0.0,
+      "sensitivity": 0.0,
+      "specificity": 1.0
+    }
+  },
+  "schema_version": "framework-zap-common-scope-v1.3-summary-v1"
+}

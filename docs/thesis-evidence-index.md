@@ -1176,3 +1176,82 @@ Discussion, Threats to Validity and Conclusion chapters, and distinguishes
 supported findings, descriptive trends and unsupported/general claims. It is a
 documentation synthesis only and does not run new experiments, model calls,
 scoring, verifier calls, bootstrap procedures or statistical tests.
+
+## Public Code and Artifact Availability Support
+
+The public repository availability statement is supported by the implementation
+code, frozen protocols, canonical evidence packages and derived documentation
+packages tracked in this repository. Large raw execution directories, local
+model/runtime binaries and third-party literature PDFs remain local-only or
+restricted unless a separate archival decision is made.
+
+Framework/ZAP 50-case common-scope comparison:
+
+- Package:
+  `results/framework-zap-common-scope-v1.3/`
+- Protocol:
+  `results/framework-zap-common-scope-v1.3/protocol.md`
+- Frozen selected cases:
+  `results/framework-zap-common-scope-v1.3/selected-cases.json`
+- Manifest and validation:
+  `results/framework-zap-common-scope-v1.3/manifest.json`,
+  `results/framework-zap-common-scope-v1.3/validation-report.json` and
+  `results/framework-zap-common-scope-v1.3/checksums.sha256`
+- Execution specifications:
+  `results/framework-zap-common-scope-v1.3/execution/`
+- Separated post-run scoring data:
+  `results/framework-zap-common-scope-v1.3/ground-truth/scoring-data.json`
+- Canonical results:
+  `results/framework-zap-common-scope-v1.3/canonical/`
+- Implementation and tests:
+  `src/adstf/framework_zap_common_scope_v13.py` and
+  `tests/test_framework_zap_common_scope_v13.py`
+- Local-only excluded material:
+  `results/framework-zap-common-scope-v1.3/runs/` and
+  `results/framework-zap-common-scope-v1.3/target-startup*/`
+
+OWASP XSS v1.4 input-order dependence audit:
+
+- Package:
+  `results/owasp-xss-v14-input-order-audit/`
+- Report:
+  `results/owasp-xss-v14-input-order-audit/audit-report.md`
+- Machine-readable summary:
+  `results/owasp-xss-v14-input-order-audit/audit-summary.json`
+- Correlation data:
+  `results/owasp-xss-v14-input-order-audit/input-output-correlation.csv`
+- Vulnerable initial-position data:
+  `results/owasp-xss-v14-input-order-audit/initial-vulnerable-position.csv`
+- Qwen input-order match data:
+  `results/owasp-xss-v14-input-order-audit/qwen-input-order-matches.csv`
+- Manifest, checksums and validation:
+  `results/owasp-xss-v14-input-order-audit/manifest.json`,
+  `results/owasp-xss-v14-input-order-audit/checksums.sha256` and
+  `results/owasp-xss-v14-input-order-audit/validation-report.json`
+
+Prompt reproducibility appendix support:
+
+- Package:
+  `results/thesis-prompt-reproducibility-appendix/`
+- Source report:
+  `results/thesis-prompt-reproducibility-appendix/appendix-source-report.md`
+- Exact XSS prompt example:
+  `results/thesis-prompt-reproducibility-appendix/exact-prompt-v14.txt`
+- Exact SQLi v1.5.1 prompt example:
+  `results/thesis-prompt-reproducibility-appendix/exact-prompt-v15.1-sqli.txt`
+- Candidate-pack examples:
+  `results/thesis-prompt-reproducibility-appendix/example-candidate-pack-v14.json`
+  and
+  `results/thesis-prompt-reproducibility-appendix/example-candidate-pack-v15.1-sqli.json`
+- Retained model-output examples:
+  `results/thesis-prompt-reproducibility-appendix/example-model-output-v14.json`
+  and
+  `results/thesis-prompt-reproducibility-appendix/example-model-output-v15.1-sqli.json`
+- Response-schema and version comparison:
+  `results/thesis-prompt-reproducibility-appendix/response-schema-v14.json`
+  and
+  `results/thesis-prompt-reproducibility-appendix/prompt-version-comparison.md`
+- Manifest, checksums and validation:
+  `results/thesis-prompt-reproducibility-appendix/manifest.json`,
+  `results/thesis-prompt-reproducibility-appendix/checksums.sha256` and
+  `results/thesis-prompt-reproducibility-appendix/validation-report.json`

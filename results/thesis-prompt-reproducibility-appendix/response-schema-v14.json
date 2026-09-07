@@ -1,0 +1,107 @@
+{
+  "common_application_side_contract": {
+    "duplicate_candidate_id_invalid": true,
+    "known_candidate_id_required": true,
+    "omitted_candidate_ids_invalid_and_appended_for_safe_continuation": true,
+    "ranking_item_forms_accepted": [
+      "object_with_candidate_id_and_rationale",
+      "string_candidate_id"
+    ],
+    "raw_response_must_parse_as_json": true,
+    "safe_continuation_note": "When model output is invalid, omitted IDs may be appended or original candidate order may be used for continuation, but this is not valid model-ranking evidence.",
+    "source": "src/adstf/llm_ranking.py parse_model_ranking",
+    "top_level_must_be_object_with_ranking_list": true,
+    "unknown_candidate_id_invalid": true,
+    "valid_ranking_evidence_requires_no_validation_errors": true
+  },
+  "hosted_gpt_provider_schema": {
+    "provider_specific_wrapper": "OpenAI Responses API text.format json_schema",
+    "source": "src/adstf/openai_ranking_wrapper.py build_request_payload",
+    "text": {
+      "format": {
+        "name": "candidate_ranking",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "ranking": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "candidate_id": {
+                    "type": "string"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "candidate_id",
+                  "rationale"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "ranking"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      }
+    }
+  },
+  "local_qwen_scenario_schema_example": {
+    "scenario_id": "ow14-s0001",
+    "schema": {
+      "$id": "local-ranking-readiness-json-schema-v1.3-ow14-s0001",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "properties": {
+        "ranking": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "candidate_id": {
+                "enum": [
+                  "ox14-c000348",
+                  "ox14-c000227",
+                  "ox14-c000189",
+                  "ox14-c000236",
+                  "ox14-c000030"
+                ],
+                "type": "string"
+              },
+              "rationale": {
+                "maxLength": 96,
+                "type": "string"
+              }
+            },
+            "required": [
+              "candidate_id",
+              "rationale"
+            ],
+            "type": "object"
+          },
+          "maxItems": 5,
+          "minItems": 5,
+          "type": "array"
+        }
+      },
+      "required": [
+        "ranking"
+      ],
+      "title": "ADSTF local candidate-ranking readiness response",
+      "type": "object"
+    },
+    "source_path": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/runtime/local-qwen-schemas/ow14-s0001.schema.json"
+  },
+  "prompt_version": "llm-candidate-ranking-v1",
+  "provider_application_difference": [
+    "The OpenAI provider-side JSON schema constrains object shape but does not enumerate candidate IDs or enforce ranking length; candidate-ID validity, uniqueness and completeness are enforced by the application parser.",
+    "The local Qwen llama.cpp schema is scenario-specific, includes candidate_id enum values, and fixes ranking minItems/maxItems to the supplied candidate count; the application parser still validates the normalized response."
+  ],
+  "schema_version": "thesis-reproducibility-response-schema-v14"
+}

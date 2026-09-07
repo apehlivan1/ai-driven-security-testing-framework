@@ -1,0 +1,10 @@
+{
+  "artifact_status": "derived_post_run_audit_no_experimental_execution",
+  "checked_files": 6,
+  "checksum_errors": [],
+  "ground_truth_use": "Only used after-the-fact to identify the vulnerable candidate initial position in positive scenarios; input order came from frozen candidate-ordering.csv and model-facing snapshots.",
+  "schema_version": "owasp-xss-v14-input-order-audit-validation-v1",
+  "source_validation_status": "PASS",
+  "valid": true,
+  "zero_experimental_calls": true
+}

@@ -1,0 +1,99 @@
+{
+  "candidate_input": [
+    {
+      "candidate_id": "os15-c000236",
+      "editable_input_count": 4,
+      "http_method": "POST",
+      "input_carrier": "form_parameter",
+      "input_count_category": "larger_multi",
+      "multiple_parameters": true,
+      "request_shape": "form",
+      "sanitized_action_path": "/external-v15/case-000236",
+      "transport_adapter_category": "multi_form"
+    },
+    {
+      "candidate_id": "os15-c000452",
+      "editable_input_count": 1,
+      "http_method": "POST",
+      "input_carrier": "form_parameter",
+      "input_count_category": "single",
+      "multiple_parameters": false,
+      "request_shape": "form",
+      "sanitized_action_path": "/external-v15/case-000452",
+      "transport_adapter_category": "form"
+    },
+    {
+      "candidate_id": "os15-c000446",
+      "editable_input_count": 1,
+      "http_method": "POST",
+      "input_carrier": "form_parameter",
+      "input_count_category": "single",
+      "multiple_parameters": false,
+      "request_shape": "form",
+      "sanitized_action_path": "/external-v15/case-000446",
+      "transport_adapter_category": "form"
+    },
+    {
+      "candidate_id": "os15-c000112",
+      "editable_input_count": 4,
+      "http_method": "POST",
+      "input_carrier": "form_parameter",
+      "input_count_category": "larger_multi",
+      "multiple_parameters": true,
+      "request_shape": "form",
+      "sanitized_action_path": "/external-v15/case-000112",
+      "transport_adapter_category": "multi_form"
+    },
+    {
+      "candidate_id": "os15-c000293",
+      "editable_input_count": 3,
+      "http_method": "GET",
+      "input_carrier": "query_parameter",
+      "input_count_category": "small_multi",
+      "multiple_parameters": true,
+      "request_shape": "query",
+      "sanitized_action_path": "/external-v15/case-000293",
+      "transport_adapter_category": "multi_query"
+    }
+  ],
+  "candidate_input_sha256": "580d36e85a73f8e17c74f6e0c44ef7f430788d3d8a89c4a2b7e6572e767c691f",
+  "contract_valid": null,
+  "contract_valid_derived_from_parser": true,
+  "contract_valid_raw_field_present": false,
+  "ground_truth_absence_derived_from_prompt_and_candidate_input": true,
+  "ground_truth_included": null,
+  "ground_truth_included_raw_field_present": false,
+  "latency_ms": 3737,
+  "model_identifier": "gpt-5.6-luna",
+  "parsed_ranking": [
+    "os15-c000236",
+    "os15-c000112",
+    "os15-c000293",
+    "os15-c000452",
+    "os15-c000446"
+  ],
+  "prompt": "You rank structured SQL injection candidate records for authorized local security-testing evaluation.\nYou may only choose from the supplied candidate_id values. Do not create payloads, do not construct HTTP requests, do not request execution, do not verify findings, and do not use ground truth.\nReturn strict JSON in this exact shape: {\"ranking\":[{\"candidate_id\":\"...\",\"rationale\":\"brief reason\"}]}.\nInclude every candidate exactly once.\nCandidates:\n[\n  {\n    \"candidate_id\": \"os15-c000236\",\n    \"editable_input_count\": 4,\n    \"http_method\": \"POST\",\n    \"input_carrier\": \"form_parameter\",\n    \"input_count_category\": \"larger_multi\",\n    \"multiple_parameters\": true,\n    \"request_shape\": \"form\",\n    \"sanitized_action_path\": \"/external-v15/case-000236\",\n    \"transport_adapter_category\": \"multi_form\"\n  },\n  {\n    \"candidate_id\": \"os15-c000452\",\n    \"editable_input_count\": 1,\n    \"http_method\": \"POST\",\n    \"input_carrier\": \"form_parameter\",\n    \"input_count_category\": \"single\",\n    \"multiple_parameters\": false,\n    \"request_shape\": \"form\",\n    \"sanitized_action_path\": \"/external-v15/case-000452\",\n    \"transport_adapter_category\": \"form\"\n  },\n  {\n    \"candidate_id\": \"os15-c000446\",\n    \"editable_input_count\": 1,\n    \"http_method\": \"POST\",\n    \"input_carrier\": \"form_parameter\",\n    \"input_count_category\": \"single\",\n    \"multiple_parameters\": false,\n    \"request_shape\": \"form\",\n    \"sanitized_action_path\": \"/external-v15/case-000446\",\n    \"transport_adapter_category\": \"form\"\n  },\n  {\n    \"candidate_id\": \"os15-c000112\",\n    \"editable_input_count\": 4,\n    \"http_method\": \"POST\",\n    \"input_carrier\": \"form_parameter\",\n    \"input_count_category\": \"larger_multi\",\n    \"multiple_parameters\": true,\n    \"request_shape\": \"form\",\n    \"sanitized_action_path\": \"/external-v15/case-000112\",\n    \"transport_adapter_category\": \"multi_form\"\n  },\n  {\n    \"candidate_id\": \"os15-c000293\",\n    \"editable_input_count\": 3,\n    \"http_method\": \"GET\",\n    \"input_carrier\": \"query_parameter\",\n    \"input_count_category\": \"small_multi\",\n    \"multiple_parameters\": true,\n    \"request_shape\": \"query\",\n    \"sanitized_action_path\": \"/external-v15/case-000293\",\n    \"transport_adapter_category\": \"multi_query\"\n  }\n]",
+  "prompt_matches_source_serialization": true,
+  "prompt_version": "llm-sqli-candidate-ranking-v1",
+  "provider": "openai",
+  "provider_failed": false,
+  "raw_response": "{\"ranking\":[{\"candidate_id\":\"os15-c000236\",\"rationale\":\"Highest-priority structure: POST form submission with four editable inputs and multiple-parameter coverage.\"},{\"candidate_id\":\"os15-c000112\",\"rationale\":\"Similarly strong multi-parameter POST form candidate with four editable inputs.\"},{\"candidate_id\":\"os15-c000293\",\"rationale\":\"Moderate coverage from three editable query parameters, though GET/query transport is less favorable than multi-input POST forms.\"},{\"candidate_id\":\"os15-c000452\",\"rationale\":\"Single editable parameter in a POST form provides narrower evaluation coverage.\"},{\"candidate_id\":\"os15-c000446\",\"rationale\":\"Single editable parameter in a POST form provides narrower evaluation coverage.\"}]}",
+  "scenario_id": "os15-s0001",
+  "schema_version": "owasp-sqli-v15-ranking-row-v1",
+  "source_raw_row": "results/owasp-sqli-v15-1-confirmatory-final/owasp-sqli-v15-1-confirmatory-20260823T131208Z/raw/ranking-rows/sequence-0125__proprietary_gpt__os15-s0001__trial-1.json",
+  "source_raw_row_sha256": "fa50f6ae5f42c5ca133985ab17662c1d96e226074625e61af9345a7721a5794c",
+  "trial_number": 1,
+  "usage": {
+    "input_tokens": 615,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 258,
+    "output_tokens_details": {
+      "reasoning_tokens": 100
+    },
+    "total_tokens": 873
+  },
+  "validation_errors": []
+}

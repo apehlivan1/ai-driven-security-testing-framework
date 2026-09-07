@@ -1,0 +1,177 @@
+% Derived thesis appendix draft. Do not edit frozen protocol or result artifacts through this file.
+\chapter{Prompt and Response Contract Reproducibility Appendix}
+
+This appendix documents the model-facing prompt, JSON response contract, example candidate pack and retained model outputs used by the model-backed ranking evaluations. The material is extracted from retained repository artifacts and is intended to support reproducibility of the bounded ranking component. The appendix does not include benchmark ground truth, vulnerability labels, API keys, authorization headers or private environment values.
+
+\section{OWASP XSS v1.4 Ranking Prompt}
+
+The main OWASP XSS v1.4 ranking evaluation used prompt version \texttt{llm-candidate-ranking-v1}. The exact retained assembled prompt for scenario \texttt{ow14-s0001} is shown below. The same assembled prompt text was retained in both the hosted GPT and local Qwen artifacts for this scenario.
+
+\begin{verbatim}
+You rank reflected-input candidates for authorized local security testing.
+You may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.
+Return strict JSON in this exact shape: {"ranking":[{"candidate_id":"...","rationale":"brief reason"}]}.
+Include every candidate exactly once.
+Candidates:
+[
+  {
+    "action_path": "/external-v14/case-000348",
+    "candidate_id": "ox14-c000348",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000348",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000227",
+    "candidate_id": "ox14-c000227",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000227",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000189",
+    "candidate_id": "ox14-c000189",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000189",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000236",
+    "candidate_id": "ox14-c000236",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000236",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000030",
+    "candidate_id": "ox14-c000030",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000030",
+    "required_input_count": 0,
+    "source": "request_header"
+  }
+]
+\end{verbatim}
+
+The prompt is constructed by appending the JSON-serialized \texttt{candidate\_input} to the fixed ranking instruction. The model is instructed to rank only supplied \texttt{candidate\_id} values, to avoid payload generation and execution requests, not to verify findings, and not to use ground truth.
+
+
+\section{OWASP SQL Injection v1.5.1 Ranking Prompt}
+
+The final OWASP SQL injection confirmatory evaluation used prompt version \texttt{llm-sqli-candidate-ranking-v1}. The exact retained assembled prompt for scenario \texttt{os15-s0001}, trial 1, is stored in \texttt{results/thesis-prompt-reproducibility-appendix/exact-prompt-v15.1-sqli.txt}. The corresponding candidate pack and retained model output are stored in \texttt{example-candidate-pack-v15.1-sqli.json} and \texttt{example-model-output-v15.1-sqli.json}. The prompt preserves the same bounded authority model as the XSS studies, but uses SQL-injection-specific candidate terminology and explicitly states that the model must not construct HTTP requests.
+
+\begin{verbatim}
+You rank structured SQL injection candidate records for authorized local security-testing evaluation.
+You may only choose from the supplied candidate_id values. Do not create payloads, do not construct HTTP requests, do not request execution, do not verify findings, and do not use ground truth.
+Return strict JSON in this exact shape: {"ranking":[{"candidate_id":"...","rationale":"brief reason"}]}.
+Include every candidate exactly once.
+Candidates:
+<JSON-serialized candidate_input, sorted by key and indented>
+\end{verbatim}
+
+\section{JSON Response Contract}
+
+The expected response has the following common shape:
+
+\begin{verbatim}
+{"ranking":[{"candidate_id":"...","rationale":"brief reason"}]}
+\end{verbatim}
+
+For the hosted GPT arm, the OpenAI Responses API request used a strict \texttt{json\_schema} wrapper named \texttt{candidate\_ranking}. For the local Qwen arm, llama.cpp used a scenario-specific JSON schema with the supplied candidate IDs as an enum and with the ranking length fixed to the number of supplied candidates. In both arms, the application parser then validated known candidate IDs, uniqueness and completeness. Invalid, malformed, duplicate, unknown-ID or omitted-ID outputs were retained as invalid or failed observations rather than silently repaired.
+
+\section{Example Candidate Pack}
+
+The example candidate pack is scenario \texttt{ow14-s0001} from the frozen v1.4 protocol package. The pack contains five model-facing candidates, a candidate-test budget of four and no ground-truth label. The complete machine-readable candidate pack is retained in \texttt{results/thesis-prompt-reproducibility-appendix/example-candidate-pack-v14.json}.
+
+\begin{verbatim}
+[
+  {
+    "action_path": "/external-v14/case-000348",
+    "candidate_id": "ox14-c000348",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000348",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000227",
+    "candidate_id": "ox14-c000227",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000227",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000189",
+    "candidate_id": "ox14-c000189",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000189",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000236",
+    "candidate_id": "ox14-c000236",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000236",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000030",
+    "candidate_id": "ox14-c000030",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000030",
+    "required_input_count": 0,
+    "source": "request_header"
+  }
+]
+\end{verbatim}
+
+\section{Example Retained Model Output}
+
+The following is one retained valid hosted GPT response for the same candidate pack. The parsed ranking used by the evaluator is also retained in \texttt{results/thesis-prompt-reproducibility-appendix/example-model-output-v14.json}.
+
+\begin{verbatim}
+{"ranking":[{"candidate_id":"ox14-c000227","rationale":"Dynamic parameter name with an additional parameter and one required input increases reflection-handling complexity."},{"candidate_id":"ox14-c000236","rationale":"Dynamic parameter name with an additional parameter and one required input increases reflection-handling complexity."},{"candidate_id":"ox14-c000348","rationale":"Single editable GET text parameter sourced from the request parameter map offers a straightforward reflection target."},{"candidate_id":"ox14-c000189","rationale":"Single editable GET text parameter is a simple request-parameter reflection candidate."},{"candidate_id":"ox14-c000030","rationale":"Header-based input is generally less directly representative of reflected page input than query text parameters."}]}
+\end{verbatim}
+
+For the same candidate pack, a retained valid local Qwen response is also included in the derived appendix package. The Qwen raw response and parsed ranking are preserved in the source artifact and copied into \texttt{example-model-output-v14.json}.
+
+\section{Version-Specific Differences}
+
+The v1.4.1 XSS context-enrichment study reused prompt version \texttt{llm-candidate-ranking-v1} and the same ranking response shape, but changed the candidate representation by comparing minimal and enriched model-facing snapshots. The v1.5.1 SQL injection study used prompt version \texttt{llm-sqli-candidate-ranking-v1}; its response shape remained the same, but the opening instruction was changed to refer to structured SQL injection candidate records and to prohibit HTTP request construction explicitly. These differences are documented in \texttt{results/thesis-prompt-reproducibility-appendix/prompt-version-comparison.md}.

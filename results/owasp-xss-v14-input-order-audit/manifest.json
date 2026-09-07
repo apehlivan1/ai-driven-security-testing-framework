@@ -1,0 +1,77 @@
+{
+  "artifact_status": "derived_post_run_audit_no_experimental_execution",
+  "created_at": "2026-09-07T22:11:21.218236+00:00",
+  "created_from_existing_artifacts_only": true,
+  "generated_files": [
+    {
+      "path": "audit-report.md",
+      "sha256": "f2103985c248299cff2db1b3138304c5a9348b34545a6739d925b2cb93e3c18d"
+    },
+    {
+      "path": "audit-summary.json",
+      "sha256": "a4f37dd4785e5132677b72d7f3b13911cb0c79c2b5e82a2c71a4b03fe6dcdece"
+    },
+    {
+      "path": "initial-vulnerable-position.csv",
+      "sha256": "db9ac641a6a3ebd422fb1c796135814a97e8c5e23afd28dfdfedddd789cad190"
+    },
+    {
+      "path": "input-output-correlation.csv",
+      "sha256": "484a0463d4c64809c4a1adfb276d368fc270f7f42e3300cc87cb4467f997c5ee"
+    },
+    {
+      "path": "qwen-input-order-matches.csv",
+      "sha256": "9a6f1f7df9ae0787a3ee8713745071e556af018da5707746f85a3e19e8b34fd0"
+    }
+  ],
+  "output_directory": "results/owasp-xss-v14-input-order-audit",
+  "schema_version": "owasp-xss-v14-input-order-audit-manifest-v1",
+  "source_files": [
+    "results\\owasp-xss-v14-protocol-freeze\\candidate-ordering.csv",
+    "results\\owasp-xss-v14-protocol-freeze\\model-facing\\candidate-snapshot-index.json",
+    "results\\owasp-xss-v14-protocol-freeze\\ground-truth\\scoring-data.json",
+    "results\\owasp-xss-v14-confirmatory-final\\canonical\\normalized\\scored-rows.json",
+    "results\\owasp-xss-v14-confirmatory-final\\canonical\\normalized\\reliability-aggregates.json"
+  ],
+  "validation_summary": {
+    "candidate_count_per_scenario": 5,
+    "ground_truth_use": "Only used after-the-fact to identify the vulnerable candidate initial position in positive scenarios; input order came from frozen candidate-ordering.csv and model-facing snapshots.",
+    "negative_only_scenario_count": 30,
+    "positive_scenario_count": 236,
+    "scenario_count_total": 266,
+    "source_files": [
+      "results\\owasp-xss-v14-protocol-freeze\\candidate-ordering.csv",
+      "results\\owasp-xss-v14-protocol-freeze\\model-facing\\candidate-snapshot-index.json",
+      "results\\owasp-xss-v14-protocol-freeze\\ground-truth\\scoring-data.json",
+      "results\\owasp-xss-v14-confirmatory-final\\canonical\\normalized\\scored-rows.json",
+      "results\\owasp-xss-v14-confirmatory-final\\canonical\\normalized\\reliability-aggregates.json"
+    ],
+    "spearman_unit_checks": {
+      "identical_order_rho": 1.0,
+      "reversed_order_rho": -1.0
+    },
+    "status": "PASS",
+    "valid_invalid_counts_by_arm": {
+      "deterministic_structural": {
+        "invalid": 0,
+        "invalid_status_counts": {},
+        "valid": 266
+      },
+      "local_qwen": {
+        "invalid": 5,
+        "invalid_status_counts": {
+          "malformed": 5
+        },
+        "valid": 1325
+      },
+      "proprietary_gpt": {
+        "invalid": 1,
+        "invalid_status_counts": {
+          "provider_failed": 1
+        },
+        "valid": 1329
+      }
+    },
+    "valid_ranking_candidate_set_mismatches": 0
+  }
+}

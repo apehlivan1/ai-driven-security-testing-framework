@@ -1,0 +1,17 @@
+{
+  "case_count": 50,
+  "category_counts": {
+    "boolean_sqli": 25,
+    "reflected_xss": 25
+  },
+  "checksums_valid": true,
+  "errors": [],
+  "label_counts": {
+    "boolean_sqli/non_vulnerable": 10,
+    "boolean_sqli/vulnerable": 15,
+    "reflected_xss/non_vulnerable": 10,
+    "reflected_xss/vulnerable": 15
+  },
+  "schema_version": "framework-zap-common-scope-v1.3-validation-v1",
+  "valid": true
+}

@@ -1,0 +1,62 @@
+You rank reflected-input candidates for authorized local security testing.
+You may only choose from the supplied candidate_id values. Do not create payloads, do not request execution, do not verify findings, and do not use ground truth.
+Return strict JSON in this exact shape: {"ranking":[{"candidate_id":"...","rationale":"brief reason"}]}.
+Include every candidate exactly once.
+Candidates:
+[
+  {
+    "action_path": "/external-v14/case-000348",
+    "candidate_id": "ox14-c000348",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000348",
+    "required_input_count": 0,
+    "source": "request_parameter_map"
+  },
+  {
+    "action_path": "/external-v14/case-000227",
+    "candidate_id": "ox14-c000227",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000227",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000189",
+    "candidate_id": "ox14-c000189",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "input_000189",
+    "required_input_count": 0,
+    "source": "request_parameter"
+  },
+  {
+    "action_path": "/external-v14/case-000236",
+    "candidate_id": "ox14-c000236",
+    "editable_input_count": 1,
+    "input_type": "text",
+    "method": "GET",
+    "parameter_count": 2,
+    "parameter_name": "input_000236",
+    "required_input_count": 1,
+    "source": "dynamic_parameter_name"
+  },
+  {
+    "action_path": "/external-v14/case-000030",
+    "candidate_id": "ox14-c000030",
+    "editable_input_count": 1,
+    "input_type": "header",
+    "method": "GET",
+    "parameter_count": 1,
+    "parameter_name": "header_000030",
+    "required_input_count": 0,
+    "source": "request_header"
+  }
+]

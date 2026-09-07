@@ -1,0 +1,457 @@
+{
+  "base_url": "https://host.docker.internal:8443/benchmark",
+  "ground_truth_included": false,
+  "schema_version": "framework-zap-common-scope-v1.3-zap-targets-v1",
+  "targets": [
+    {
+      "candidate_id": "ox14-c000330",
+      "case_key": "xss::ox14-c000330",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02132",
+      "parameter": "BenchmarkTest02132",
+      "path": "/benchmark/xss-04/BenchmarkTest02132",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02132?BenchmarkTest02132=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000419",
+      "case_key": "xss::ox14-c000419",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02586",
+      "parameter": "BenchmarkTest02586",
+      "path": "/benchmark/xss-05/BenchmarkTest02586",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-05/BenchmarkTest02586?BenchmarkTest02586=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000382",
+      "case_key": "xss::ox14-c000382",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02399",
+      "parameter": "BenchmarkTest02399",
+      "path": "/benchmark/xss-04/BenchmarkTest02399",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02399?BenchmarkTest02399=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000116",
+      "case_key": "xss::ox14-c000116",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest00721",
+      "parameter": "BenchmarkTest00721",
+      "path": "/benchmark/xss-01/BenchmarkTest00721",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-01/BenchmarkTest00721?BenchmarkTest00721=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000431",
+      "case_key": "xss::ox14-c000431",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02598",
+      "parameter": "BenchmarkTest02598",
+      "path": "/benchmark/xss-05/BenchmarkTest02598",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-05/BenchmarkTest02598?BenchmarkTest02598=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000200",
+      "case_key": "xss::ox14-c000200",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest01267",
+      "parameter": "BenchmarkTest01267",
+      "path": "/benchmark/xss-02/BenchmarkTest01267",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-02/BenchmarkTest01267?BenchmarkTest01267=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000394",
+      "case_key": "xss::ox14-c000394",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02480",
+      "parameter": "BenchmarkTest02480",
+      "path": "/benchmark/xss-04/BenchmarkTest02480",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02480?BenchmarkTest02480=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000403",
+      "case_key": "xss::ox14-c000403",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02489",
+      "parameter": "BenchmarkTest02489",
+      "path": "/benchmark/xss-05/BenchmarkTest02489",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-05/BenchmarkTest02489?BenchmarkTest02489=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000104",
+      "case_key": "xss::ox14-c000104",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest00651",
+      "parameter": "BenchmarkTest00651",
+      "path": "/benchmark/xss-01/BenchmarkTest00651",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-01/BenchmarkTest00651?BenchmarkTest00651=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000400",
+      "case_key": "xss::ox14-c000400",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02486",
+      "parameter": "BenchmarkTest02486",
+      "path": "/benchmark/xss-04/BenchmarkTest02486",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02486?BenchmarkTest02486=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000062",
+      "case_key": "xss::ox14-c000062",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest00395",
+      "parameter": "BenchmarkTest00395",
+      "path": "/benchmark/xss-00/BenchmarkTest00395",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-00/BenchmarkTest00395?BenchmarkTest00395=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000421",
+      "case_key": "xss::ox14-c000421",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02588",
+      "parameter": "BenchmarkTest02588",
+      "path": "/benchmark/xss-05/BenchmarkTest02588",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-05/BenchmarkTest02588?BenchmarkTest02588=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000253",
+      "case_key": "xss::ox14-c000253",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest01587",
+      "parameter": "BenchmarkTest01587",
+      "path": "/benchmark/xss-03/BenchmarkTest01587",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-03/BenchmarkTest01587?BenchmarkTest01587=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000124",
+      "case_key": "xss::ox14-c000124",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest00729",
+      "parameter": "BenchmarkTest00729",
+      "path": "/benchmark/xss-01/BenchmarkTest00729",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-01/BenchmarkTest00729?BenchmarkTest00729=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000386",
+      "case_key": "xss::ox14-c000386",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02403",
+      "parameter": "BenchmarkTest02403",
+      "path": "/benchmark/xss-04/BenchmarkTest02403",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02403?BenchmarkTest02403=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000352",
+      "case_key": "xss::ox14-c000352",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02237",
+      "parameter": "BenchmarkTest02237",
+      "path": "/benchmark/xss-04/BenchmarkTest02237",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02237?BenchmarkTest02237=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000399",
+      "case_key": "xss::ox14-c000399",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02485",
+      "parameter": "BenchmarkTest02485",
+      "path": "/benchmark/xss-04/BenchmarkTest02485",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02485?BenchmarkTest02485=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000273",
+      "case_key": "xss::ox14-c000273",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest01664",
+      "parameter": "BenchmarkTest01664",
+      "path": "/benchmark/xss-03/BenchmarkTest01664",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-03/BenchmarkTest01664?BenchmarkTest01664=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000398",
+      "case_key": "xss::ox14-c000398",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02484",
+      "parameter": "BenchmarkTest02484",
+      "path": "/benchmark/xss-04/BenchmarkTest02484",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02484?BenchmarkTest02484=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000384",
+      "case_key": "xss::ox14-c000384",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02401",
+      "parameter": "BenchmarkTest02401",
+      "path": "/benchmark/xss-04/BenchmarkTest02401",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02401?BenchmarkTest02401=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000219",
+      "case_key": "xss::ox14-c000219",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest01351",
+      "parameter": "BenchmarkTest01351",
+      "path": "/benchmark/xss-02/BenchmarkTest01351",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-02/BenchmarkTest01351?BenchmarkTest01351=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000065",
+      "case_key": "xss::ox14-c000065",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest00469",
+      "parameter": "BenchmarkTest00469",
+      "path": "/benchmark/xss-00/BenchmarkTest00469",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-00/BenchmarkTest00469?BenchmarkTest00469=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000351",
+      "case_key": "xss::ox14-c000351",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02236",
+      "parameter": "BenchmarkTest02236",
+      "path": "/benchmark/xss-04/BenchmarkTest02236",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02236?BenchmarkTest02236=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000377",
+      "case_key": "xss::ox14-c000377",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest02394",
+      "parameter": "BenchmarkTest02394",
+      "path": "/benchmark/xss-04/BenchmarkTest02394",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-04/BenchmarkTest02394?BenchmarkTest02394=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "ox14-c000261",
+      "case_key": "xss::ox14-c000261",
+      "category": "reflected_xss",
+      "original_case_id": "BenchmarkTest01595",
+      "parameter": "BenchmarkTest01595",
+      "path": "/benchmark/xss-03/BenchmarkTest01595",
+      "target_url": "https://host.docker.internal:8443/benchmark/xss-03/BenchmarkTest01595?BenchmarkTest01595=adstf_zap_seed"
+    },
+    {
+      "candidate_id": "os15-c000302",
+      "case_key": "sqli::os15-c000302",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01726",
+      "parameter": "BenchmarkTest01726",
+      "path": "/benchmark/sqli-03/BenchmarkTest01726",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-03/BenchmarkTest01726?password=&username=&BenchmarkTest01726=bar"
+    },
+    {
+      "candidate_id": "os15-c000477",
+      "case_key": "sqli::os15-c000477",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02644",
+      "parameter": "BenchmarkTest02644",
+      "path": "/benchmark/sqli-05/BenchmarkTest02644",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02644?password=&username=&BenchmarkTest02644=bar"
+    },
+    {
+      "candidate_id": "os15-c000142",
+      "case_key": "sqli::os15-c000142",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00845",
+      "parameter": "BenchmarkTest00845",
+      "path": "/benchmark/sqli-01/BenchmarkTest00845",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-01/BenchmarkTest00845?password=&username=&BenchmarkTest00845=bar"
+    },
+    {
+      "candidate_id": "os15-c000304",
+      "case_key": "sqli::os15-c000304",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01728",
+      "parameter": "BenchmarkTest01728",
+      "path": "/benchmark/sqli-03/BenchmarkTest01728",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-03/BenchmarkTest01728?password=&username=&BenchmarkTest01728=bar"
+    },
+    {
+      "candidate_id": "os15-c000005",
+      "case_key": "sqli::os15-c000005",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00026",
+      "parameter": "BenchmarkTest00026",
+      "path": "/benchmark/sqli-00/BenchmarkTest00026",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-00/BenchmarkTest00026?password=&username=&BenchmarkTest00026=bar"
+    },
+    {
+      "candidate_id": "os15-c000146",
+      "case_key": "sqli::os15-c000146",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00849",
+      "parameter": "BenchmarkTest00849",
+      "path": "/benchmark/sqli-01/BenchmarkTest00849",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-01/BenchmarkTest00849?password=&username=&BenchmarkTest00849=bar"
+    },
+    {
+      "candidate_id": "os15-c000443",
+      "case_key": "sqli::os15-c000443",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02532",
+      "parameter": "BenchmarkTest02532",
+      "path": "/benchmark/sqli-05/BenchmarkTest02532",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02532?password=&username=&BenchmarkTest02532=bar"
+    },
+    {
+      "candidate_id": "os15-c000292",
+      "case_key": "sqli::os15-c000292",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01716",
+      "parameter": "BenchmarkTest01716",
+      "path": "/benchmark/sqli-03/BenchmarkTest01716",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-03/BenchmarkTest01716?password=&username=&BenchmarkTest01716=bar"
+    },
+    {
+      "candidate_id": "os15-c000145",
+      "case_key": "sqli::os15-c000145",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00848",
+      "parameter": "BenchmarkTest00848",
+      "path": "/benchmark/sqli-01/BenchmarkTest00848",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-01/BenchmarkTest00848?password=&username=&BenchmarkTest00848=bar"
+    },
+    {
+      "candidate_id": "os15-c000453",
+      "case_key": "sqli::os15-c000453",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02542",
+      "parameter": "BenchmarkTest02542",
+      "path": "/benchmark/sqli-05/BenchmarkTest02542",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02542?password=&username=&BenchmarkTest02542=bar"
+    },
+    {
+      "candidate_id": "os15-c000468",
+      "case_key": "sqli::os15-c000468",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02635",
+      "parameter": "BenchmarkTest02635",
+      "path": "/benchmark/sqli-05/BenchmarkTest02635",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02635?password=&username=&BenchmarkTest02635=bar"
+    },
+    {
+      "candidate_id": "os15-c000482",
+      "case_key": "sqli::os15-c000482",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02649",
+      "parameter": "BenchmarkTest02649",
+      "path": "/benchmark/sqli-06/BenchmarkTest02649",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-06/BenchmarkTest02649?password=&username=&BenchmarkTest02649=bar"
+    },
+    {
+      "candidate_id": "os15-c000480",
+      "case_key": "sqli::os15-c000480",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02647",
+      "parameter": "BenchmarkTest02647",
+      "path": "/benchmark/sqli-05/BenchmarkTest02647",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02647?password=&username=&BenchmarkTest02647=bar"
+    },
+    {
+      "candidate_id": "os15-c000483",
+      "case_key": "sqli::os15-c000483",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02650",
+      "parameter": "BenchmarkTest02650",
+      "path": "/benchmark/sqli-06/BenchmarkTest02650",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-06/BenchmarkTest02650?password=&username=&BenchmarkTest02650=bar"
+    },
+    {
+      "candidate_id": "os15-c000478",
+      "case_key": "sqli::os15-c000478",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02645",
+      "parameter": "BenchmarkTest02645",
+      "path": "/benchmark/sqli-05/BenchmarkTest02645",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02645?password=&username=&BenchmarkTest02645=bar"
+    },
+    {
+      "candidate_id": "os15-c000152",
+      "case_key": "sqli::os15-c000152",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00927",
+      "parameter": "BenchmarkTest00927",
+      "path": "/benchmark/sqli-01/BenchmarkTest00927",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-01/BenchmarkTest00927?password=&username=&BenchmarkTest00927=bar"
+    },
+    {
+      "candidate_id": "os15-c000469",
+      "case_key": "sqli::os15-c000469",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02636",
+      "parameter": "BenchmarkTest02636",
+      "path": "/benchmark/sqli-05/BenchmarkTest02636",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02636?password=&username=&BenchmarkTest02636=bar"
+    },
+    {
+      "candidate_id": "os15-c000305",
+      "case_key": "sqli::os15-c000305",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01729",
+      "parameter": "BenchmarkTest01729",
+      "path": "/benchmark/sqli-03/BenchmarkTest01729",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-03/BenchmarkTest01729?password=&username=&BenchmarkTest01729=bar"
+    },
+    {
+      "candidate_id": "os15-c000087",
+      "case_key": "sqli::os15-c000087",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest00517",
+      "parameter": "BenchmarkTest00517",
+      "path": "/benchmark/sqli-01/BenchmarkTest00517",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-01/BenchmarkTest00517?password=&username=&BenchmarkTest00517=bar"
+    },
+    {
+      "candidate_id": "os15-c000485",
+      "case_key": "sqli::os15-c000485",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02652",
+      "parameter": "BenchmarkTest02652",
+      "path": "/benchmark/sqli-06/BenchmarkTest02652",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-06/BenchmarkTest02652?password=&username=&BenchmarkTest02652=bar"
+    },
+    {
+      "candidate_id": "os15-c000308",
+      "case_key": "sqli::os15-c000308",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01732",
+      "parameter": "BenchmarkTest01732",
+      "path": "/benchmark/sqli-03/BenchmarkTest01732",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-03/BenchmarkTest01732?password=&username=&BenchmarkTest01732=bar"
+    },
+    {
+      "candidate_id": "os15-c000216",
+      "case_key": "sqli::os15-c000216",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest01303",
+      "parameter": "BenchmarkTest01303",
+      "path": "/benchmark/sqli-02/BenchmarkTest01303",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-02/BenchmarkTest01303?password=&username=&BenchmarkTest01303=bar"
+    },
+    {
+      "candidate_id": "os15-c000373",
+      "case_key": "sqli::os15-c000373",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02173",
+      "parameter": "BenchmarkTest02173",
+      "path": "/benchmark/sqli-04/BenchmarkTest02173",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-04/BenchmarkTest02173?password=&username=&BenchmarkTest02173=bar"
+    },
+    {
+      "candidate_id": "os15-c000464",
+      "case_key": "sqli::os15-c000464",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02631",
+      "parameter": "BenchmarkTest02631",
+      "path": "/benchmark/sqli-05/BenchmarkTest02631",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-05/BenchmarkTest02631?password=&username=&BenchmarkTest02631=bar"
+    },
+    {
+      "candidate_id": "os15-c000501",
+      "case_key": "sqli::os15-c000501",
+      "category": "boolean_sqli",
+      "original_case_id": "BenchmarkTest02737",
+      "parameter": "BenchmarkTest02737",
+      "path": "/benchmark/sqli-06/BenchmarkTest02737",
+      "target_url": "https://host.docker.internal:8443/benchmark/sqli-06/BenchmarkTest02737?password=&username=&BenchmarkTest02737=bar"
+    }
+  ]
+}

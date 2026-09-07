@@ -1,0 +1,89 @@
+{
+  "artifact_status": "derived_documentation_only_no_model_or_experiment_execution",
+  "created_from_existing_artifacts_only": true,
+  "generated_files": [
+    {
+      "path": "appendix-source-report.md",
+      "sha256": "e6f9b6cca9ea85c32859d3c1b391ad3736955ffd89d1fa19aa008c8e15ce730d"
+    },
+    {
+      "path": "exact-prompt-v14.txt",
+      "sha256": "bd2358e36383b4182268127e6ce8195fc43cc9dc0d8455eaf2f3e6e04252ef02"
+    },
+    {
+      "path": "exact-prompt-v15.1-sqli.txt",
+      "sha256": "bb1bc32d7cf3435d37ddcd8538f6dbc989111c49b2d5ab49c22ea431f4248224"
+    },
+    {
+      "path": "example-candidate-pack-v14.json",
+      "sha256": "1feee6ccd2b9ef820ae9c34005e589638300a0bee5c22ec2895128d983d764bc"
+    },
+    {
+      "path": "example-candidate-pack-v15.1-sqli.json",
+      "sha256": "650c286463d869b71e508526adc336570f59d9774495c4c201004eaf05109a7f"
+    },
+    {
+      "path": "example-model-output-v14.json",
+      "sha256": "826a0b66299da2e1eda507fd770743e37974f70a37a021aac5018cfa699a3145"
+    },
+    {
+      "path": "example-model-output-v15.1-sqli.json",
+      "sha256": "8566544de5247671ecb2dfb69b91ecb9c71ea52fd54df813540ff4772101ec6d"
+    },
+    {
+      "path": "prompt-version-comparison.md",
+      "sha256": "5edce72e40e907e11b7aa37f523fe8406643cb036986329ab5e3e0a41578ed5f"
+    },
+    {
+      "path": "response-schema-v14.json",
+      "sha256": "789e4c6903577d51890bc6679296de1998d1ddf8df13f95d5edbc26fc59be97b"
+    },
+    {
+      "path": "thesis-appendix-draft.tex",
+      "sha256": "9a32954282715cf6edf071baf18b47c1b73a4835eeb863357c5868c831352579"
+    }
+  ],
+  "output_directory": "results/thesis-prompt-reproducibility-appendix",
+  "primary_example": {
+    "candidate_pack": "results/owasp-xss-v14-protocol-freeze/model-facing/candidate-snapshots/ow14-s0001.json",
+    "gpt_row": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/raw/ranking-rows/sequence-0267__proprietary_gpt__ow14-s0001__trial-1.json",
+    "local_schema": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/runtime/local-qwen-schemas/ow14-s0001.schema.json",
+    "qwen_row": "results/owasp-xss-v14-confirmatory-final/owasp-xss-v14-confirmatory-20260821T235804Z/raw/ranking-rows/sequence-1597__local_qwen__ow14-s0001__trial-1.json",
+    "scenario_id": "ow14-s0001"
+  },
+  "schema_version": "thesis-prompt-reproducibility-appendix-manifest-v1",
+  "source_integrity": {
+    "v14_gpt_raw_row_sha256_actual": "55db3908f313ddf4dc46f5d21186f3e8b376f14333c1166427ecd1d8bfeea6bb",
+    "v14_gpt_raw_row_sha256_run_checksums": "55db3908f313ddf4dc46f5d21186f3e8b376f14333c1166427ecd1d8bfeea6bb",
+    "v14_local_schema_sha256_actual": "96b7e4e9e415771a2bc46857ea6c32b4aab2c9ebeb222fc4c9366d79d192d728",
+    "v14_local_schema_sha256_run_checksums": "96b7e4e9e415771a2bc46857ea6c32b4aab2c9ebeb222fc4c9366d79d192d728",
+    "v14_qwen_raw_row_sha256_actual": "b386f29a0c2c0050fc95f5f2a05cd55093ac1199685c78c1b6734bde104b0482",
+    "v14_qwen_raw_row_sha256_run_checksums": "b386f29a0c2c0050fc95f5f2a05cd55093ac1199685c78c1b6734bde104b0482",
+    "v14_snapshot_sha256_actual": "8a17b87cff9e0c7148d651d1b9145ce8b47ce6868cff261783afb70b28cd1c0e",
+    "v14_snapshot_sha256_protocol_checksums": "8a17b87cff9e0c7148d651d1b9145ce8b47ce6868cff261783afb70b28cd1c0e",
+    "v151_sqli_gpt_raw_row_sha256_actual": "fa50f6ae5f42c5ca133985ab17662c1d96e226074625e61af9345a7721a5794c"
+  },
+  "source_version_references": {
+    "current_extraction_head": "64258c6755c8098dad13a0851dd840390dddbd6f",
+    "v14_protocol_freeze_commit": "b4674bd3cc7e301764cee977fde542260182ef4e",
+    "v14_protocol_freeze_commit_message": "Freeze v1.4 OWASP XSS confirmatory evaluation setup"
+  },
+  "verified_properties": {
+    "gpt_and_qwen_prompt_match_for_example": true,
+    "gpt_candidate_input_matches_snapshot": true,
+    "gpt_contract_valid": true,
+    "gpt_ground_truth_included": false,
+    "qwen_candidate_input_matches_snapshot": true,
+    "qwen_contract_valid": true,
+    "qwen_ground_truth_included": false,
+    "v14_execution_manifest_ground_truth_loaded_during_ranking": false,
+    "v14_run_manifest_validation_valid": true,
+    "v151_sqli_contract_valid_derived_from_parser": true,
+    "v151_sqli_contract_valid_raw_field_present": false,
+    "v151_sqli_ground_truth_absence_derived": true,
+    "v151_sqli_ground_truth_included_raw_field_present": false,
+    "v151_sqli_prompt_matches_source_serialization": true,
+    "v151_sqli_prompt_version": true,
+    "v151_sqli_provider_failed_false": true
+  }
+}

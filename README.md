@@ -40,6 +40,38 @@ checksums and validation reports. The results are valid for the frozen local
 benchmark and should not be interpreted as a general claim of model or scanner
 superiority.
 
+## Thesis Code and Artifact Availability
+
+The public repository contains the implementation code, tests, frozen
+protocols, canonical/normalized evidence packages, derived analysis packages,
+manifests, checksums and validation reports needed to audit the thesis results.
+The main evidence index is `docs/thesis-evidence-index.md`.
+
+Key public evidence packages include:
+
+- `results/xss-v13-ablation-v1.3.1-final/canonical/`: final corrected
+  internally constructed reflected-XSS ablation evidence.
+- `results/owasp-xss-v14-confirmatory-final/canonical/`: final OWASP Benchmark
+  reflected-XSS ranking evidence.
+- `results/owasp-xss-v14-input-order-audit/`: derived input-order dependence
+  audit for the OWASP XSS v1.4 ranking artifacts.
+- `results/owasp-xss-v14-1-confirmatory-final/canonical-analysis/`: final
+  OWASP XSS context-enrichment analysis.
+- `results/owasp-sqli-v15-1-confirmatory-final/canonical/`: final OWASP SQLi
+  v1.5.1 confirmatory evidence.
+- `results/framework-zap-common-scope-v1.3/`: 50-case Framework/ZAP
+  common-scope protocol, selected cases, canonical summaries and validation
+  evidence.
+- `results/thesis-prompt-reproducibility-appendix/`: derived prompt,
+  candidate-input, schema and retained-output examples for reproducibility.
+
+Large raw execution directories, local model/runtime binaries and third-party
+literature PDFs are not intended to be published in the repository. They are
+retained locally or separately because of size, redistribution and artifact
+sensitivity considerations. Public canonical packages retain normalized data,
+source provenance, manifests and checksums so thesis claims can be traced
+without publishing every raw browser, scanner or model-runtime artifact.
+
 ## Scaffold Decisions
 
 - Python is used for the initial scaffold because it is well suited for security automation, research workflows, and later LLM/tool integrations.

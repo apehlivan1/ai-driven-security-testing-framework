@@ -1,0 +1,43 @@
+{
+  "case_count": 50,
+  "case_distribution": {
+    "boolean_sqli": 25,
+    "reflected_xss": 25
+  },
+  "created_at": "2026-08-31T11:11:35.388016+00:00",
+  "ground_truth_policy": "Separated scoring data is not consumed by runtime framework or ZAP execution.",
+  "label_distribution": {
+    "boolean_sqli/non_vulnerable": 10,
+    "boolean_sqli/vulnerable": 15,
+    "reflected_xss/non_vulnerable": 10,
+    "reflected_xss/vulnerable": 15
+  },
+  "output_dir": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\framework-zap-common-scope-v1.3",
+  "protocol_version": "framework-zap-common-scope-v1.3",
+  "schema_version": "framework-zap-common-scope-v1.3-manifest-v1",
+  "selection_seed": "framework-zap-common-scope-v1.3-selection-v1",
+  "source_packages": {
+    "sqli": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\owasp-sqli-v15-protocol-freeze",
+    "xss": "C:\\Users\\SELUAPNS\\source\\repos\\ai-driven-security-testing-framework\\results\\owasp-xss-v14-protocol-freeze"
+  },
+  "status": "frozen_before_runtime_execution",
+  "zap": {
+    "active_rules": [
+      {
+        "id": 40012,
+        "name": "Cross Site Scripting (Reflected)",
+        "strength": "Low",
+        "threshold": "Medium"
+      },
+      {
+        "id": 40018,
+        "name": "SQL Injection",
+        "strength": "Low",
+        "threshold": "Medium"
+      }
+    ],
+    "image": "zaproxy/zap-stable:2.16.1",
+    "image_digest": null,
+    "mapping_version": "zap-owasp-common-scope-v1"
+  }
+}
